@@ -6,12 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "npx tsx scripts/validar-catalogo.mts",
+    "typecheck": "tsc --noEmit",
+    "test": "npx tsx scripts/pruebas.mts",
+    "catalogo:convertir": "node scripts/convertir-catalogo.mjs",
+    "catalogo:validar": "npx tsx scripts/validar-catalogo.mts",
+    "check": "npm run typecheck && npm run lint && npm run catalogo:validar && npm run test"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "clsx": "^2.1.1",
+    "geist": "^1.7.2",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.31.0",
     "next": "16.3.0",
+    "nuqs": "^2.9.5",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

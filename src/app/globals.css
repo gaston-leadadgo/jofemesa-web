@@ -1,26 +1,493 @@
 @import "tailwindcss";
 
+/* ============================================================
+   PLACA · Sistema de diseño JOFEMESA
+   La placa de características del chasis, a escala de web.
+   Chapa, filetes de 1px, etiquetas mono sobre cifras exactas,
+   cero decoración y una sola marca roja.
+   ============================================================ */
+
+@theme {
+  /* ---------- Superficies ---------- */
+  --color-surface: #ffffff;
+  --color-sunken: #f6f8f9;
+  --color-muted: #eef1f3;
+  --color-inverse: #14171a;
+  --color-inverse-2: #1f2428;
+
+  /* ---------- Filetes ---------- */
+  --color-rule: #dfe4e8;
+  --color-rule-strong: #c3cbd1;
+  --color-rule-control: #4a545c;
+  --color-rule-inverse: rgba(255, 255, 255, 0.16);
+
+  /* ---------- Texto ---------- */
+  --color-ink: #14171a; /* 17,99:1 sobre blanco  AAA */
+  --color-ink-2: #4a545c; /*  7,74:1  AAA */
+  --color-ink-3: #6b7780; /*  4,59:1  AA — solo sobre blanco */
+  --color-ink-inv: #ffffff; /* 17,99:1 sobre #14171A */
+  --color-ink-inv-2: #c3cbd1; /* 10,95:1 */
+  --color-ink-inv-3: #8a9199; /*  5,65:1 */
+
+  /* ---------- El acento. Uno solo. ---------- */
+  --color-accent: #e30613; /*  4,88:1 sobre blanco  AA  · el rojo JOFEMESA */
+  --color-accent-hover: #c20510; /*  6,32:1 */
+  --color-accent-active: #a80410; /*  7,81:1  AAA */
+  --color-accent-dark: #ff4438; /*  5,26:1 sobre #14171A */
+  --color-accent-tint: #fff5f5;
+
+  /* ---------- Solo logotipo, jamás interfaz ---------- */
+  --color-brand-raw: #ff0000;
+
+  /* ---------- Estado. Siempre marca + palabra. ---------- */
+  --color-ok: #0e7a46; /*  5,40:1 sobre blanco */
+  --color-ok-dark: #3fcf8e; /*  9,02:1 sobre #14171A */
+  --color-wait: #efbb20; /* ámbar: SOLO fondo de chip */
+  --color-wait-ink: #14171a; /* 10,11:1 sobre el ámbar */
+  --color-wait-text: #8a5a00; /*  5,93:1 sobre blanco */
+  --color-danger: #a81208;
+
+  /* ---------- Tipografía ---------- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* ---------- Puntos de ruptura: exactamente cuatro ---------- */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  /* ---------- Radio: cero. Sin excepciones. ---------- */
+  --radius-*: initial;
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+
+  /* ---------- Las dos únicas sombras ---------- */
+  --shadow-panel: 0 24px 64px -16px rgba(20, 23, 26, 0.28);
+  --shadow-sticky:
+    0 -1px 0 0 #dfe4e8, 0 -8px 24px -12px rgba(20, 23, 26, 0.16);
+
+  /* ---------- Curvas ---------- */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light; /* sin modo oscuro: uso a plena luz en obra */
+  --alto-cabecera: 60px; /* debe cuadrar con la altura de <Header> */
+  --alto-barra-movil: 65px; /* la barra fija de Llamar / Consultar */
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (width >= 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --alto-cabecera: 72px;
+    --alto-barra-movil: 0px;
   }
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (width >= 1024px) {
+  body {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Foco visible siempre. Nunca se quita el anillo. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.on-dark :focus-visible,
+[data-surface="dark"] :focus-visible {
+  outline-color: var(--color-accent-dark);
+}
+
+/* Sobre el botón rojo el anillo pasa a tinta: visible contra
+   el rojo (3,53:1) y contra la página (17,99:1). */
+.btn-accent:focus-visible {
+  outline-color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* ============================================================
+   Escala tipográfica
+   Caja baja en los títulos. Las mayúsculas quedan enteramente
+   para las etiquetas de dato en mono.
+   ============================================================ */
+
+@utility display-1 {
+  font-size: clamp(2.25rem, 5.6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+@utility display-2 {
+  font-size: clamp(1.875rem, 4.2vw, 3.5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+@utility display-3 {
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+@utility title {
+  font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility lede {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* Etiqueta de DATO, no meta-etiqueta de sección.
+   "ALTURA DE TRABAJO", no "SECCIÓN 01". */
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@utility label-sm {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+@utility value {
+  font-family: var(--font-mono);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+@utility value-lg {
+  font-family: var(--font-mono);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Contenedor y retícula
+   ============================================================ */
+
+@utility container-placa {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1320px;
+  padding-inline: 1.25rem;
+}
+
+@media (width >= 768px) {
+  .container-placa {
+    padding-inline: 2rem;
+  }
+}
+@media (width >= 1024px) {
+  .container-placa {
+    padding-inline: 3rem;
+  }
+}
+@media (width >= 1440px) {
+  .container-placa {
+    padding-inline: 4rem;
+  }
+}
+
+/* Padding de sección: 56 / 72 / 88px.
+   Muy por debajo del cine de 192px que pide gpt-taste, y a propósito.
+   Esto es un catálogo: si una sección no cabe de un vistazo, el usuario
+   scrollea a ciegas y la comparación entre tarjetas se rompe. El aire
+   se gana con filetes y con jerarquía tipográfica, no con vacío. */
+@utility section-y {
+  padding-block: 3.5rem;
+}
+@media (width >= 768px) {
+  .section-y {
+    padding-block: 4.5rem;
+  }
+}
+@media (width >= 1024px) {
+  .section-y {
+    padding-block: 5.5rem;
+  }
+}
+
+/* Sección corta, para bandas de apoyo. */
+@utility section-y-sm {
+  padding-block: 2.5rem;
+}
+@media (width >= 1024px) {
+  .section-y-sm {
+    padding-block: 3.5rem;
+  }
+}
+
+/* Alto del hero: pantalla completa menos la cabecera, que es fija.
+   `dvh` y no `vh` porque en móvil la barra del navegador se retrae y
+   `vh` deja el CTA cortado justo en el primer vistazo. */
+@utility hero-alto {
+  min-height: calc(
+    100svh - var(--alto-cabecera) - var(--alto-barra-movil)
+  );
+}
+
+/* ============================================================
+   Fondos ambientales. Exactamente dos, ambos estáticos.
+   ============================================================ */
+
+@utility ambient-light {
+  position: relative;
+  isolation: isolate;
+}
+.ambient-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      1200px 700px at 78% -12%,
+      rgba(216, 31, 19, 0.07),
+      transparent 62%
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(20, 23, 26, 0.03) 0 1px,
+      transparent 1px 8.3333%
+    );
+}
+
+@utility ambient-dark {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-inverse);
+}
+.ambient-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    900px 520px at 12% 0%,
+    rgba(255, 68, 56, 0.1),
+    transparent 60%
+  );
+}
+
+/* ============================================================
+   Movimiento
+   Los estados iniciales ocultos los pone JS, nunca CSS: la
+   página se sirve visible, así que un fallo de JS o un render
+   de bot nunca produce una pantalla en blanco.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Impresión: el jefe de obra imprime el comparador
+   y se lo lleva a la caseta.
+   ============================================================ */
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+  body {
+    background: #fff;
+    font-size: 10pt;
+  }
+  .no-print {
+    display: none !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+}
+
+/* ============================================================
+   Movimiento · el motor de revelado
+
+   La regla dura: los estados iniciales ocultos NO existen en CSS
+   sola. El selector cuelga de `html[data-motor]`, que solo pone el
+   JavaScript al arrancar. Sin JS, con JS caído o con un rastreador
+   leyendo, la página se sirve entera y visible.
+
+   Un único IntersectionObserver global observa todo lo que lleve
+   `data-revelar`, así que las secciones de servidor se animan sin
+   convertirse en componentes de cliente.
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motor] [data-revelar] {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    transition:
+      opacity 0.45s var(--ease-entrance),
+      transform 0.45s var(--ease-entrance);
+    transition-delay: calc(var(--retardo, 0) * 55ms);
+  }
+
+  html[data-motor] [data-revelar="izquierda"] {
+    transform: translate3d(-18px, 0, 0);
+  }
+
+  html[data-motor] [data-revelar="escala"] {
+    transform: scale(0.985);
+  }
+
+  /* Cifra que sube desde su propia línea base: el gesto de la placa
+     de características al girar. Solo en titulares cortos. */
+  html[data-motor] [data-revelar="linea"] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 105% 0);
+    transition: clip-path 0.6s var(--ease-entrance);
+    transition-delay: calc(var(--retardo, 0) * 55ms);
+  }
+
+  html[data-motor] [data-revelar][data-visible] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 -0.2em 0);
+  }
+}
+
+/* El filete rojo que se dibuja de izquierda a derecha al entrar la
+   sección. Es la firma de movimiento del sistema: una sola línea. */
+@utility filete-anim {
+  position: relative;
+}
+.filete-anim::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 0.5s var(--ease-entrance);
+}
+.filete-anim[data-visible]::after,
+html:not([data-motor]) .filete-anim::after {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------
+   Barra de progreso de navegación.
+   No acelera nada: hace que la espera sea legible, que es lo que
+   convierte "se ha colgado" en "está cargando".
+   ------------------------------------------------------------ */
+
+@keyframes barra-avance {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.barra-navegando {
+  animation: barra-avance 1.4s var(--ease-entrance) forwards;
+}
+
+/* ------------------------------------------------------------
+   Entrada del modal / hoja móvil
+   ------------------------------------------------------------ */
+
+@keyframes panel-entra {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes velo-entra {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog[open] .panel-modal {
+    animation: panel-entra 0.26s var(--ease-entrance);
+  }
+  dialog[open]::backdrop {
+    animation: velo-entra 0.2s linear;
+  }
 }
