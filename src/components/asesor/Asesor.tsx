@@ -409,7 +409,7 @@ export function Asesor({
                           .join(",")}`
                       : ""
                   }`}
-                  className="btn-accent inline-flex h-13 items-center justify-center bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                  className="btn-accent inline-flex h-13 items-center justify-center bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
                 >
                   Consultar disponibilidad
                 </Link>
@@ -523,7 +523,7 @@ function SinResultados() {
       </p>
       <a
         href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-        className="mt-4 inline-flex min-h-12 items-center gap-2 border border-rule-control bg-surface px-5 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+        className="mt-4 inline-flex min-h-12 items-center gap-2 border border-rule-control bg-surface px-5 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken pastilla"
       >
         <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
         <span className="value">{TELEFONO_PRINCIPAL.visible}</span>

@@ -85,7 +85,7 @@ export function PanelFiltros({
             value={filtros.texto ?? ""}
             onChange={(e) => acciones.texto(e.target.value || null)}
             placeholder="GS-4390, Manitou, tijera diésel…"
-            className="h-12 w-full border border-rule-control bg-surface pr-3 pl-10 text-base text-ink placeholder:text-ink-3"
+            className="h-12 w-full border border-rule-control bg-surface pr-3 pl-10 text-base text-ink placeholder:text-ink-3 pastilla"
           />
         </div>
       </div>
@@ -159,7 +159,7 @@ export function PanelFiltros({
           <select
             value={filtros.marca ?? ""}
             onChange={(e) => acciones.marca(e.target.value || null)}
-            className="h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink"
+            className="h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink pastilla"
           >
             <option value="">Todos los fabricantes</option>
             {MARCAS.map((m) => {
@@ -192,7 +192,7 @@ export function PanelFiltros({
           </p>
           <Link
             href="/asesor"
-            className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 bg-ink text-base font-semibold text-white transition-colors duration-200 hover:bg-inverse-2"
+            className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 bg-ink text-base font-semibold text-white transition-colors duration-200 hover:bg-inverse-2 pastilla"
           >
             Iniciar asistente
             <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />

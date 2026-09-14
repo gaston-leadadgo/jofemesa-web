@@ -202,7 +202,7 @@ export function Header() {
                           <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
                         </Link>
                       </div>
-                      <ul className="grid grid-cols-2 gap-px bg-rule">
+                      <ul className="grid grid-cols-2 gap-px bg-rule overflow-hidden rounded-2xl border border-rule">
                         {FAMILIAS.map((f) => {
                           const n = ALQUILER.filter(
                             (m) => m.familia === f.id,
@@ -271,7 +271,7 @@ export function Header() {
 
             <Link
               href="/consultar-disponibilidad"
-              className="btn-accent hidden h-11 items-center bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover md:inline-flex"
+              className="btn-accent hidden h-11 items-center bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover md:inline-flex pastilla"
             >
               Consultar disponibilidad
             </Link>
@@ -360,13 +360,13 @@ export function Header() {
             <Link
               href="/consultar-disponibilidad"
               onClick={cerrarTodo}
-              className="btn-accent mt-6 flex h-14 items-center justify-center bg-accent text-base font-semibold text-white"
+              className="btn-accent mt-6 flex h-14 items-center justify-center bg-accent text-base font-semibold text-white pastilla"
             >
               Consultar disponibilidad
             </Link>
             <a
               href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-              className="mt-3 flex h-14 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink"
+              className="mt-3 flex h-14 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink pastilla"
             >
               <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
               <span className="value">{TELEFONO_PRINCIPAL.visible}</span>

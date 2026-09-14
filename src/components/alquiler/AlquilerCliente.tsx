@@ -211,7 +211,7 @@ export function AlquilerCliente({
                   value={p.orden}
                   onChange={(e) => setP({ orden: e.target.value as OrdenId })}
                   aria-label="Ordenar resultados"
-                  className="min-h-11 max-w-52 border border-rule-control bg-surface px-2 text-base text-ink lg:px-3"
+                  className="min-h-11 max-w-52 border border-rule-control bg-surface px-2 text-base text-ink lg:px-3 pastilla"
                 >
                   {Object.entries(ETIQUETAS_ORDEN).map(([v, t]) => (
                     <option key={v} value={v}>
@@ -239,14 +239,14 @@ export function AlquilerCliente({
                   value={p.q ?? ""}
                   onChange={(e) => setP({ q: e.target.value || null })}
                   placeholder="Buscar marca o modelo"
-                  className="h-12 w-full min-w-0 border border-rule-control bg-surface pr-3 pl-9 text-base text-ink placeholder:text-ink-3"
+                  className="h-12 w-full min-w-0 border border-rule-control bg-surface pr-3 pl-9 text-base text-ink placeholder:text-ink-3 pastilla"
                 />
               </div>
 
               <button
                 type="button"
                 onClick={() => setHojaAbierta(true)}
-                className="inline-flex h-12 shrink-0 items-center gap-2 border border-rule-control px-3.5 text-base font-semibold text-ink"
+                className="inline-flex h-12 shrink-0 items-center gap-2 border border-rule-control px-3.5 text-base font-semibold text-ink pastilla"
               >
                 <SlidersHorizontal
                   size={18}
@@ -335,7 +335,7 @@ export function AlquilerCliente({
                               q: "texto" in q ? null : p.q,
                             });
                           }}
-                          className="inline-flex min-h-12 items-center border border-rule-control bg-surface px-4 text-base font-semibold text-ink transition-colors duration-200 hover:bg-muted"
+                          className="inline-flex min-h-12 items-center border border-rule-control bg-surface px-4 text-base font-semibold text-ink transition-colors duration-200 hover:bg-muted pastilla"
                         >
                           Quitar {r.etiqueta}
                           <span className="value ml-3 text-accent">
@@ -364,7 +364,7 @@ export function AlquilerCliente({
               <button
                 type="button"
                 onClick={() => setVisibles((v) => v + PASO)}
-                className="inline-flex h-14 items-center border border-rule-control px-8 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+                className="inline-flex h-14 items-center border border-rule-control px-8 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken pastilla"
               >
                 Ver {Math.min(PASO, resultados.length - visibles)} máquinas más
               </button>
@@ -413,7 +413,7 @@ export function AlquilerCliente({
               <button
                 type="button"
                 onClick={() => setHojaAbierta(false)}
-                className="btn-accent flex h-14 flex-1 items-center justify-center bg-accent text-base font-semibold text-white"
+                className="btn-accent flex h-14 flex-1 items-center justify-center bg-accent text-base font-semibold text-white pastilla"
               >
                 Ver {resultados.length}{" "}
                 {resultados.length === 1 ? "máquina" : "máquinas"}
@@ -447,7 +447,7 @@ export function BuscadorCatalogo() {
         onChange={(e) => setP({ q: e.target.value || null })}
         placeholder="Buscar por marca o modelo: Genie, GS-4390, Takeuchi…"
         className={cn(
-          "h-14 w-full border border-rule-control bg-surface pr-4 pl-12",
+          "h-14 w-full border border-rule-control bg-surface pr-4 pl-12 rounded-xl",
           "text-base text-ink placeholder:text-ink-3 focus:outline-none",
         )}
       />

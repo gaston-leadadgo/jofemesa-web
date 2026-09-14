@@ -1,24 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Archivo, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { DELEGACIONES } from "@/content/es/empresa";
 import "./globals.css";
 
 /**
- * Tipografía.
+ * Tipografía: la misma que la versión de Emilio.
  *
- * Montserrat en los titulares porque es lo que pidió la reunión:
- * «tenemos que utilizar su tipografía». El logotipo de JOFEMESA está
- * dibujado con una geométrica de caja alta —O casi circular, E de
- * brazos iguales, A de ápice apuntado— y Montserrat es la que se le
- * pega sin pagar una licencia ni desalinear el peso del rótulo.
+ * **Archivo** en los titulares y **Plus Jakarta Sans** en el texto
+ * corrido. Es un cambio deliberado respecto a Montserrat extrabold, que
+ * es lo que había: una geométrica de caja alta a peso 800 da un bloque
+ * macizo, y eso leído en pantalla completa resulta tosco. Archivo es
+ * una grotesca de proporción estrecha que aguanta pesos ligeros sin
+ * deshacerse, así que los titulares pueden ir en **300 y 400** —de ahí
+ * viene la elegancia, no de la escala— y el conjunto respira.
  *
- * Geist Sans se queda en el texto corrido, donde Montserrat cansa a
- * partir del segundo párrafo, y Geist Mono en las etiquetas y en las
- * cifras, que es donde el sistema PLACA pide versalitas tabulares.
+ * Las dos son fuentes variables de Google, muy comunes y sin licencia
+ * que pagar, y las dos traen cifras tabulares.
+ *
+ * Geist Mono se queda, pero SOLO para columnas de cifras que tienen que
+ * alinearse —tabla del comparador y especificaciones—. Las etiquetas de
+ * sección ya no van en mono: van en Plus Jakarta Sans en caja alta con
+ * interletrado abierto, que es lo que hace la versión de Emilio y pesa
+ * bastante menos en pantalla.
  */
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -26,13 +39,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -60,7 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${archivo.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <NuqsAdapter>{children}</NuqsAdapter>

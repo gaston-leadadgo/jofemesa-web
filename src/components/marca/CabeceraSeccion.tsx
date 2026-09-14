@@ -127,7 +127,7 @@ export function CabeceraSeccion({
                 {cta && (
                   <Link
                     href={cta.href}
-                    className="btn-accent inline-flex h-13 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                    className="btn-accent inline-flex h-13 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
                   >
                     {cta.texto}
                     <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
@@ -156,7 +156,7 @@ export function CabeceraSeccion({
           {datos && datos.length > 0 && (
             <div className="lg:col-span-5 lg:self-end">
               <dl
-                className="grid grid-cols-3 gap-px border border-rule-inverse bg-white/10"
+                className="grid grid-cols-3 gap-px border border-rule-inverse bg-white/10 overflow-hidden rounded-2xl"
                 data-escalonar
               >
                 {datos.slice(0, 3).map((d) => (

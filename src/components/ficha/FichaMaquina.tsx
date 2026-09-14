@@ -210,7 +210,7 @@ export function FichaMaquina({
           <div className="mt-8 space-y-3 border-t border-rule pt-6">
             <Link
               href={`/consultar-disponibilidad?m=${m.slug}`}
-              className="btn-accent flex h-14 items-center justify-center bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+              className="btn-accent flex h-14 items-center justify-center bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
             >
               Consultar disponibilidad
             </Link>
@@ -224,7 +224,7 @@ export function FichaMaquina({
                 <a
                   href={m.fichaTecnica.src}
                   download
-                  className="flex h-12 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken md:flex-1"
+                  className="flex h-12 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken md:flex-1 pastilla"
                 >
                   <Download size={18} strokeWidth={1.75} aria-hidden="true" />
                   Ficha técnica
@@ -233,7 +233,7 @@ export function FichaMaquina({
               )}
               <a
                 href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-                className="flex h-12 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken md:flex-1"
+                className="flex h-12 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken md:flex-1 pastilla"
               >
                 <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
                 <span className="value">{TELEFONO_PRINCIPAL.visible}</span>

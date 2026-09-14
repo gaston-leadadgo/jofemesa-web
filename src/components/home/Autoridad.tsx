@@ -81,7 +81,7 @@ export function Autoridad() {
               experiencia, mantenimiento y gente que sepa de maquinaria.
             </p>
 
-            <dl className="mt-6 grid grid-cols-2 gap-px border border-rule bg-rule md:grid-cols-4">
+            <dl className="mt-6 grid grid-cols-2 gap-px border border-rule bg-rule md:grid-cols-4 overflow-hidden rounded-2xl">
               {CIFRAS.map((c) => (
                 <div key={c.k} className="bg-surface px-4 py-4">
                   <dt className="label-sm text-ink-3">{c.k}</dt>
@@ -130,7 +130,7 @@ export function Autoridad() {
         </div>
 
         <div
-          className="mt-6 grid gap-px bg-rule md:grid-cols-2 lg:grid-cols-4"
+          className="mt-6 grid gap-px bg-rule md:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl border border-rule"
           data-escalonar
         >
           {PILARES.map((p) => (

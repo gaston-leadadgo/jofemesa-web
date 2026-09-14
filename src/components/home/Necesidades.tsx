@@ -52,7 +52,7 @@ export function Necesidades() {
         </div>
 
         <ul
-          className="mt-8 grid gap-px border border-rule bg-rule md:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-px border border-rule bg-rule md:grid-cols-2 lg:grid-cols-3 overflow-hidden rounded-2xl"
           data-escalonar
         >
           {FAMILIAS.map((f) => {

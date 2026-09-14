@@ -73,7 +73,7 @@ export function BandejaComparador() {
 
         <Link
           href={`/comparador?m=${slugs.join(",")}`}
-          className="btn-accent flex h-12 shrink-0 items-center gap-2 bg-accent px-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+          className="btn-accent flex h-12 shrink-0 items-center gap-2 bg-accent px-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
         >
           Comparar
           <span className="value text-white md:hidden">({slugs.length})</span>

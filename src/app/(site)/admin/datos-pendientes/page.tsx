@@ -49,7 +49,7 @@ export default function PaginaDatosPendientes() {
         dato, el usuario ve una etiqueta de pendiente.
       </p>
 
-      <dl className="mt-10 grid grid-cols-2 gap-px border border-rule bg-rule md:grid-cols-3 lg:grid-cols-6">
+      <dl className="mt-10 grid grid-cols-2 gap-px border border-rule bg-rule md:grid-cols-3 lg:grid-cols-6 overflow-hidden rounded-2xl">
         {[
           { k: "Máquinas", v: CATALOGO.length },
           { k: "Specs confirmadas", v: confirmadas },

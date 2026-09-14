@@ -72,7 +72,7 @@ export default function PaginaDelegaciones() {
             </h2>
 
             <ul
-              className="mt-7 grid gap-px bg-rule md:grid-cols-2 xl:grid-cols-3"
+              className="mt-7 grid gap-px bg-rule md:grid-cols-2 xl:grid-cols-3 overflow-hidden rounded-2xl border border-rule"
               data-escalonar
             >
               {g.delegaciones.map((d) => (
@@ -182,7 +182,7 @@ export default function PaginaDelegaciones() {
 
                   <Link
                     href={`/consultar-disponibilidad?del=${d.id}`}
-                    className="btn-accent mt-auto flex h-12 items-center justify-center gap-2 bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                    className="btn-accent mt-auto flex h-12 items-center justify-center gap-2 bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
                   >
                     Pedir máquina en {d.nombre}
                     <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
@@ -201,7 +201,7 @@ export default function PaginaDelegaciones() {
             Dos direcciones más, con teléfono y correo propios, que también
             aparecen en nuestro catálogo general.
           </p>
-          <ul className="mt-6 grid gap-px bg-rule md:grid-cols-2">
+          <ul className="mt-6 grid gap-px bg-rule md:grid-cols-2 overflow-hidden rounded-2xl border border-rule">
             {CENTROS.map((c) => (
               <li key={c.id} className="bg-surface p-5 md:p-6">
                 <h3 className="title text-ink">{c.nombre}</h3>

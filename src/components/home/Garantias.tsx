@@ -62,7 +62,7 @@ export function Garantias() {
     <section className="border-b border-rule bg-sunken">
       <div className="container-placa">
         <ul
-          className="grid grid-cols-2 gap-px bg-rule lg:grid-cols-4"
+          className="grid grid-cols-2 gap-px bg-rule lg:grid-cols-4 overflow-hidden rounded-2xl border border-rule"
           data-escalonar
         >
           {COLUMNAS.map((c) => (

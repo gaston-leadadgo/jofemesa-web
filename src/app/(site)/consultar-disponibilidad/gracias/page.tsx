@@ -38,7 +38,7 @@ export default async function PaginaGracias({
         <div className="mt-10 flex flex-col gap-4 md:flex-row">
           <a
             href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-            className="inline-flex h-14 items-center justify-center gap-2 border border-rule-control px-6 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+            className="inline-flex h-14 items-center justify-center gap-2 border border-rule-control px-6 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken pastilla"
           >
             <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
             <span className="value">{TELEFONO_PRINCIPAL.visible}</span>

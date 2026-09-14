@@ -83,7 +83,7 @@ export function Buscador() {
 
         <button
           type="submit"
-          className="btn-accent group flex h-14 shrink-0 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover active:bg-accent-active"
+          className="btn-accent group flex h-14 shrink-0 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover active:bg-accent-active pastilla"
         >
           Ver disponibilidad
           <ArrowRight

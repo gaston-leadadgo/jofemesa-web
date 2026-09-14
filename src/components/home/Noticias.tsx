@@ -40,7 +40,7 @@ export function Noticias() {
         </div>
 
         <ul
-          className="mt-7 grid gap-px border border-rule bg-rule md:grid-cols-3"
+          className="mt-7 grid gap-px border border-rule bg-rule md:grid-cols-3 overflow-hidden rounded-2xl"
           data-escalonar
         >
           {NOTICIAS_RECIENTES.map((n) => (

@@ -124,6 +124,12 @@ export type SpecGrupo =
 export interface SpecDef {
   key: SpecKey;
   etiqueta: string;
+  /**
+   * Versión corta para la franja de tres cifras de la tarjeta, donde
+   * «Profundidad de excavación» no cabe y se corta a la mitad. Si no
+   * hay, se usa `etiqueta`.
+   */
+  etiquetaCorta?: string;
   /** Unidad ya formateada. Cadena vacía si el propio valor la trae. */
   unidad: string;
   grupo: SpecGrupo;
@@ -138,6 +144,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "alturaTrabajo",
     etiqueta: "Altura de trabajo",
+    etiquetaCorta: "Altura trabajo",
     unidad: "m",
     grupo: "prestaciones",
     orden: 10,
@@ -147,6 +154,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "alcanceHorizontal",
     etiqueta: "Alcance horizontal",
+    etiquetaCorta: "Alcance",
     unidad: "m",
     grupo: "prestaciones",
     orden: 20,
@@ -156,6 +164,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "alturaElevacion",
     etiqueta: "Altura de elevación",
+    etiquetaCorta: "Altura elev.",
     unidad: "m",
     grupo: "prestaciones",
     orden: 30,
@@ -165,6 +174,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "capacidadCarga",
     etiqueta: "Capacidad de carga",
+    etiquetaCorta: "Carga máx.",
     unidad: "kg",
     grupo: "capacidades",
     orden: 40,
@@ -174,6 +184,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "profundidadExcavacion",
     etiqueta: "Profundidad de excavación",
+    etiquetaCorta: "Prof. excav.",
     unidad: "m",
     grupo: "prestaciones",
     orden: 50,
@@ -183,6 +194,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "capacidadCazo",
     etiqueta: "Capacidad del cazo",
+    etiquetaCorta: "Cazo",
     unidad: "",
     grupo: "capacidades",
     orden: 60,
@@ -200,6 +212,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "caudalAire",
     etiqueta: "Caudal de aire",
+    etiquetaCorta: "Caudal",
     unidad: "",
     grupo: "capacidades",
     orden: 80,
@@ -209,6 +222,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "presionAire",
     etiqueta: "Presión de trabajo",
+    etiquetaCorta: "Presión",
     unidad: "",
     grupo: "capacidades",
     orden: 90,
@@ -217,6 +231,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "anchoTrabajo",
     etiqueta: "Ancho de trabajo",
+    etiquetaCorta: "Ancho trabajo",
     unidad: "m",
     grupo: "prestaciones",
     orden: 100,
@@ -226,6 +241,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "fuerzaCentrifuga",
     etiqueta: "Fuerza centrífuga",
+    etiquetaCorta: "Fuerza centr.",
     unidad: "",
     grupo: "prestaciones",
     orden: 110,
@@ -234,6 +250,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "dimensionesPlataforma",
     etiqueta: "Plataforma de trabajo",
+    etiquetaCorta: "Plataforma",
     unidad: "",
     grupo: "dimensiones",
     orden: 120,
@@ -251,6 +268,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "alturaTransporte",
     etiqueta: "Altura replegada",
+    etiquetaCorta: "Altura repl.",
     unidad: "mm",
     grupo: "dimensiones",
     orden: 140,
@@ -276,6 +294,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "pendienteSuperable",
     etiqueta: "Pendiente superable",
+    etiquetaCorta: "Pendiente",
     unidad: "%",
     grupo: "prestaciones",
     orden: 170,
@@ -284,6 +303,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "velocidadTraslacion",
     etiqueta: "Velocidad de traslación",
+    etiquetaCorta: "Velocidad",
     unidad: "",
     grupo: "prestaciones",
     orden: 180,
@@ -317,6 +337,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "alturaPlataforma",
     etiqueta: "Altura de plataforma",
+    etiquetaCorta: "Altura plat.",
     unidad: "m",
     grupo: "prestaciones",
     orden: 15,
@@ -325,6 +346,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "personas",
     etiqueta: "Personas en plataforma",
+    etiquetaCorta: "Personas",
     unidad: "",
     grupo: "capacidades",
     orden: 45,
@@ -333,6 +355,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "extensionPlataforma",
     etiqueta: "Extensión de plataforma",
+    etiquetaCorta: "Extensión",
     unidad: "m",
     grupo: "dimensiones",
     orden: 125,
@@ -341,6 +364,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "radioGiroInterior",
     etiqueta: "Radio de giro interior",
+    etiquetaCorta: "Radio giro",
     unidad: "m",
     grupo: "dimensiones",
     orden: 155,
@@ -349,6 +373,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   {
     key: "rotacionTorreta",
     etiqueta: "Rotación de torreta",
+    etiquetaCorta: "Rotación",
     unidad: "°",
     grupo: "prestaciones",
     orden: 35,

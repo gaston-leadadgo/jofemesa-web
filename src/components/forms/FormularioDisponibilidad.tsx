@@ -225,7 +225,7 @@ export function FormularioDisponibilidad({
               required
               defaultValue={estado.valores?.provincia ?? ""}
               aria-invalid={Boolean(errores.provincia)}
-              className="mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink"
+              className="mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink pastilla"
             >
               <option value="">Elige provincia</option>
               {PROVINCIAS.map((p) => (
@@ -265,7 +265,7 @@ export function FormularioDisponibilidad({
           <select
             name="delegacion"
             defaultValue={estado.valores?.delegacion ?? delegacionInicial}
-            className="mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink"
+            className="mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink pastilla"
           >
             <option value="">La que mejor me cuadre</option>
             {DELEGACIONES.map((d) => (
@@ -331,7 +331,7 @@ export function FormularioDisponibilidad({
               value={cif}
               onChange={(e) => setCif(e.target.value)}
               aria-invalid={Boolean(errores.cif)}
-              className="value mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-ink"
+              className="value mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-ink pastilla"
             />
             {errores.cif && <Error>{errores.cif}</Error>}
             {!errores.cif && avisoDeCif && (
@@ -485,7 +485,7 @@ function Campo({
         aria-invalid={Boolean(error)}
         aria-describedby={ayuda ? `${id}-ayuda` : undefined}
         className={cn(
-          "mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-ink",
+          "mt-2 h-12 w-full border border-rule-control bg-surface px-3 text-ink rounded-xl",
           mono ? "value" : "text-base",
         )}
       />
@@ -505,7 +505,7 @@ function BotonEnviar() {
     <button
       type="submit"
       disabled={pending}
-      className="btn-accent mt-8 flex h-14 w-full items-center justify-center bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover disabled:opacity-70 md:w-auto md:px-8"
+      className="btn-accent mt-8 flex h-14 w-full items-center justify-center bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover disabled:opacity-70 md:w-auto md:px-8 pastilla"
     >
       {pending ? "Enviando…" : "Enviar la solicitud"}
     </button>

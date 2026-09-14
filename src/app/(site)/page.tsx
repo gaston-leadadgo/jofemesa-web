@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 import { TELEFONO_PRINCIPAL } from "@/content/es/empresa";
 import { CATALOGO } from "@/lib/catalog";
 import { Hero } from "@/components/home/Hero";
+import { Partners } from "@/components/home/Partners";
 import { Garantias } from "@/components/home/Garantias";
 import { Necesidades } from "@/components/home/Necesidades";
 import { Destacadas } from "@/components/home/Destacadas";
@@ -14,15 +15,16 @@ import { AsesorLocal } from "@/components/asesor/Asesor";
 /**
  * La portada, con el orden que salió de la reunión del 24/08/2026.
  *
- *   S1  Hero con imagen real, buscador y «lo más pedido».
- *   S2  Raíl de garantías con iconografía (la lámina del cliente).
- *   S3  Las seis familias, también con iconografía.
- *   S4  Asistente de selección guiada.
- *   S5  Las máquinas con foto y ficha oficial.
- *   S6  Delegaciones y mapa — ocupan el sitio que tenía el contacto.
- *   S7  Autoridad, con la antigüedad exacta desde el 24/03/1987.
- *   S8  Noticias reales de su blog.
- *   S9  Cierre.
+ *   S1  Hero con imagen a sangre, buscador y «lo más pedido».
+ *   S2  Distribuciones oficiales: Jungheinrich y Takeuchi.
+ *   S3  Raíl de garantías con iconografía (la lámina del cliente).
+ *   S4  Las seis familias, también con iconografía.
+ *   S5  Asistente de selección guiada.
+ *   S6  Las máquinas con foto y ficha oficial.
+ *   S7  Delegaciones y mapa — ocupan el sitio que tenía el contacto.
+ *   S8  Autoridad, con la antigüedad exacta desde el 24/03/1987.
+ *   S9  Noticias reales de su blog.
+ *   S10 Cierre.
  *
  * Lo que ya no está: el bloque doble de «venta / mantenimiento», que
  * ahora vive dentro de /servicios.
@@ -42,6 +44,9 @@ export default function Portada() {
   return (
     <>
       <Hero />
+      {/* Las distribuciones oficiales, arriba. Es el argumento que no
+          puede copiar un competidor, así que no espera media página. */}
+      <Partners />
       <Garantias />
       <Necesidades />
 
@@ -55,7 +60,7 @@ export default function Portada() {
       <Autoridad />
       <Noticias />
 
-      {/* S9 · Cierre */}
+      {/* S10 · Cierre */}
       <section data-surface="dark" className="relative bg-inverse">
         {/* Filete de seguridad: la única aparición del ámbar de la marca. */}
         <div aria-hidden="true" className="h-1 w-full bg-wait" />
@@ -71,13 +76,13 @@ export default function Portada() {
           <div className="mt-7 flex flex-col items-center justify-center gap-3 md:flex-row">
             <Link
               href="/consultar-disponibilidad"
-              className="btn-accent inline-flex h-14 w-full items-center justify-center bg-accent px-8 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover md:w-auto"
+              className="btn-accent pastilla inline-flex h-14 w-full items-center justify-center bg-accent px-8 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover md:w-auto"
             >
               Consultar disponibilidad
             </Link>
             <a
               href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-              className="inline-flex h-14 w-full items-center justify-center gap-2 border border-rule-inverse px-8 text-base font-semibold text-ink-inv transition-colors duration-200 hover:bg-inverse-2 md:w-auto"
+              className="pastilla inline-flex h-14 w-full items-center justify-center gap-2 border border-rule-inverse px-8 text-base font-semibold text-ink-inv transition-colors duration-200 hover:bg-inverse-2 md:w-auto"
             >
               <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
               <span className="value text-ink-inv">

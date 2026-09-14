@@ -64,7 +64,7 @@ export default function PaginaServicios() {
       <section className="border-b border-rule bg-sunken">
         <div className="container-placa py-8 md:py-10">
           <ul
-            className="grid grid-flow-dense gap-px border border-rule bg-rule md:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-flow-dense gap-px border border-rule bg-rule md:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl"
             data-escalonar
           >
             {SERVICIOS.map((s, i) => (
@@ -149,7 +149,7 @@ export default function PaginaServicios() {
 
                 {s.id === "formacion" && (
                   <>
-                    <ul className="mt-6 grid gap-px border border-rule bg-rule md:grid-cols-3">
+                    <ul className="mt-6 grid gap-px border border-rule bg-rule md:grid-cols-3 overflow-hidden rounded-2xl">
                       {HOMOLOGACIONES.map((h) => (
                         <li key={h.id} className="bg-surface px-4 py-3">
                           <p className="value text-sm text-ink">{h.nombre}</p>
@@ -168,7 +168,7 @@ export default function PaginaServicios() {
                 <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center">
                   <Link
                     href={s.cta.href}
-                    className="btn-accent group inline-flex h-14 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                    className="btn-accent group inline-flex h-14 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
                   >
                     {s.cta.texto}
                     <ArrowRight
@@ -180,7 +180,7 @@ export default function PaginaServicios() {
                   </Link>
                   <a
                     href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-                    className="inline-flex h-14 items-center justify-center gap-2 border border-rule-control px-6 text-base font-semibold text-ink transition-colors duration-200 hover:bg-surface"
+                    className="inline-flex h-14 items-center justify-center gap-2 border border-rule-control px-6 text-base font-semibold text-ink transition-colors duration-200 hover:bg-surface pastilla"
                   >
                     <Phone size={17} strokeWidth={1.75} aria-hidden="true" />
                     <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
@@ -351,7 +351,7 @@ export default function PaginaServicios() {
           </p>
           <Link
             href="/consultar-disponibilidad?asunto=servicios"
-            className="btn-accent mt-7 inline-flex h-14 items-center bg-accent px-8 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+            className="btn-accent mt-7 inline-flex h-14 items-center bg-accent px-8 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
           >
             Pedir información de servicios
           </Link>

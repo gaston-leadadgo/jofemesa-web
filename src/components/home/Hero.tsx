@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { EMPRESA } from "@/content/es/empresa";
+import { ArrowRight } from "lucide-react";
+import { EMPRESA, DELEGACIONES } from "@/content/es/empresa";
 import { ALQUILER } from "@/lib/catalog";
 import { Buscador } from "./Buscador";
 
@@ -11,101 +11,127 @@ import { Buscador } from "./Buscador";
  * Tres cosas salen de la reunión del 24/08/2026:
  *
  *   1. «Yo creo que tiene que ir una imagen, [sin ella] es muy pobre».
- *      Y va una de verdad: una GS-5390 de la flota, con su rotulación
- *      de JOFEMESA. Lo que había antes era una foto de Wikimedia de una
- *      tijera con el logotipo de «renta» —una empresa de alquiler de la
- *      competencia— repetido tres veces.
  *   2. «Que la búsqueda esté aquí, me gusta» + «incluso lo más pedido».
- *      El buscador es el CTA del hero, con los atajos debajo.
- *   3. «Le daría un poquito más de relevancia» a los años. El «desde
- *      1987» deja de ser una línea de 13 px gris y pasa a ser un dato
- *      con su filete rojo.
+ *   3. «Le daría un poquito más de relevancia» a los años.
  *
- * La foto es la de `tarjeta/` —4:3, la máquina entera— y NO la de
- * `recorte/`. El recorte automático partía la propia máquina: cortaba la
- * plataforma por arriba y metía en cuadro el trozo de otra unidad que hay
- * a la izquierda del original. Una foto de producto cortada por la mitad
- * dice más de la web que cualquier titular.
+ * La composición es una placa única de esquina blanda con la fotografía
+ * a sangre dentro y el texto ENCIMA, sobre un velo que va de opaco a
+ * transparente. No es decoración: con el texto fuera de la imagen hacen
+ * falta dos columnas y la foto se queda en un cuarto de pantalla; con el
+ * texto encima, la foto ocupa la placa entera y el titular se lee igual.
  *
- * La máquina no es decoración: lleva su pie, y el pie es un enlace a su
- * ficha. Es el primer producto de la tienda, no un adorno de fondo.
+ * ---------------------------------------------------------------------
+ * CAMBIAR LA FOTOGRAFÍA
+ *
+ * Todo lo que hay que tocar está en `HERO`. La actual es la creatividad
+ * de estudio que entregó el cliente: fondo claro, así que el velo va en
+ * `claro` y el texto en tinta. Cuando llegue una fotografía de obra de
+ * verdad —ambiente, hora dorada, máquina trabajando— se cambian `src`,
+ * `alt` y `velo: "oscuro"`, y el componente invierte el texto a blanco
+ * él solo. No hay que tocar nada más.
+ * ---------------------------------------------------------------------
  */
 
-/** La unidad que preside la portada. Su ficha existe: el pie enlaza a ella. */
-const PROTAGONISTA = {
-  slug: "genie-gs-5390",
-  marca: "Genie",
-  modelo: "GS-5390",
-  pie: "Tijera diésel · 18 m de altura de trabajo",
+const HERO = {
   src: "/img/maquinas/oficial/tarjeta/genie-gs-5390.webp",
-  alt: "Plataforma de tijera diésel Genie GS-5390 de la flota de JOFEMESA, con estabilizadores desplegados",
+  alt: "Plataforma de tijera diésel Genie GS-5390 de la flota de JOFEMESA",
+  /** `claro` = velo blanco y texto en tinta. `oscuro` = lo contrario. */
+  velo: "claro" as "claro" | "oscuro",
+  /** Hacia dónde se aparta la máquina para dejar sitio al texto. */
+  posicion: "object-[78%_center]",
 };
 
 export function Hero() {
-  return (
-    <section className="ambient-light relative overflow-hidden border-b border-rule">
-      {/* Galón de marca: el mismo ángulo del isotipo, a escala de muro y
-          casi invisible. Es la única capa con paralaje —decorativa, nunca
-          texto— y se queda quieta con prefers-reduced-motion. */}
-      <div
-        aria-hidden="true"
-        data-parallax="0.08"
-        className="pointer-events-none absolute -top-24 -right-24 -z-10 hidden w-[46rem] text-accent/[0.055] lg:block"
-      >
-        <svg viewBox="0 0 200 200" fill="none" className="w-full">
-          <path
-            d="M20 10 L110 100 L20 190"
-            stroke="currentColor"
-            strokeWidth="26"
-          />
-          <path
-            d="M90 10 L180 100 L90 190"
-            stroke="currentColor"
-            strokeWidth="26"
-          />
-        </svg>
-      </div>
+  const oscuro = HERO.velo === "oscuro";
 
-      <div className="container-placa relative">
-        {/* `grid-cols-1` explícito y no la pista implícita: una pista
-            `auto` se dimensiona por el contenido, así que el porcentaje
-            de anchura de la foto quedaba indefinido y el navegador
-            resolvía la pista a su min-content. Con `1fr` la pista la
-            manda el contenedor. */}
-        <div className="grid grid-cols-1 items-center gap-8 py-8 lg:grid-cols-12 lg:gap-10 lg:py-16 xl:gap-14">
-          {/* ---------- Palabra ---------- */}
-          <div className="lg:col-span-6 xl:col-span-6">
-            <p
-              className="label inline-flex items-baseline gap-2.5 border-l-2 border-accent pl-3 text-ink"
+  return (
+    <section className="border-b border-rule bg-surface">
+      <div className="container-placa py-6 md:py-10 lg:py-12">
+        <div
+          className={`relative isolate overflow-hidden rounded-3xl ${
+            oscuro ? "bg-inverse" : "bg-sunken"
+          }`}
+          {...(oscuro ? { "data-surface": "dark" } : {})}
+        >
+          {/* ---------- La fotografía, a sangre ---------- */}
+          <Image
+            src={HERO.src}
+            alt={HERO.alt}
+            fill
+            priority
+            sizes="100vw"
+            className={`-z-10 object-cover ${HERO.posicion}`}
+          />
+
+          {/* ---------- El velo ----------
+              Dos capas y no una: la vertical sostiene el texto en móvil,
+              donde la foto queda detrás del bloque entero, y la
+              horizontal lo sostiene en escritorio, donde el texto está a
+              la izquierda y la máquina se ve limpia a la derecha. Los
+              topes dejan la máquina sin velo por su lado. */}
+          <div
+            aria-hidden="true"
+            className={`absolute inset-0 -z-10 ${
+              oscuro
+                ? "bg-gradient-to-t from-inverse via-inverse/88 to-inverse/35 lg:bg-gradient-to-r lg:from-inverse lg:from-38% lg:via-inverse/75 lg:via-62% lg:to-transparent"
+                : "bg-gradient-to-t from-white via-white/90 to-white/40 lg:bg-gradient-to-r lg:from-white lg:from-38% lg:via-white/80 lg:via-62% lg:to-transparent"
+            }`}
+          />
+
+          <div className="relative px-6 py-10 md:px-10 md:py-12 lg:max-w-[58%] lg:px-12 lg:py-16">
+            {/* Etiqueta de autoridad en pastilla. El «desde 1987» con
+                peso propio, que es lo que se pidió. */}
+            <div
+              className="flex flex-wrap items-center gap-x-3 gap-y-2"
               data-revelar
             >
-              <span className="value-lg text-accent">{EMPRESA.fundacion}</span>
-              <span className="text-ink-2">Alquiler de maquinaria</span>
-            </p>
+              <span
+                className={`label pastilla inline-flex items-center gap-2 border px-3 py-1.5 ${
+                  oscuro
+                    ? "border-white/20 bg-white/10 text-ink-inv-2"
+                    : "border-rule bg-surface text-ink-2"
+                }`}
+              >
+                <span
+                  aria-hidden="true"
+                  className="size-1.5 rounded-full bg-accent"
+                />
+                Desde {EMPRESA.fundacion} especialistas en maquinaria
+              </span>
+              <span
+                className={`label hidden md:inline ${
+                  oscuro ? "text-ink-inv-3" : "text-ink-3"
+                }`}
+              >
+                España y Portugal
+              </span>
+            </div>
 
-            {/* Medida ancha a propósito: en dos líneas respira, y en tres
-                de móvil sigue leyéndose de un vistazo. Un titular de seis
-                líneas en una columna estrecha no es un titular. */}
             <h1
-              className="mt-4 text-[clamp(2.1rem,4.6vw,3.75rem)] leading-[0.97] font-extrabold tracking-[-0.035em] text-balance text-ink lg:mt-5"
+              className={`display-1 mt-6 max-w-[26ch] ${
+                oscuro ? "text-ink-inv" : "text-ink"
+              }`}
               data-revelar
               style={{ "--retardo": 1 } as React.CSSProperties}
             >
-              Alquilamos la máquina que tu obra necesita hoy.
+              Alquiler de maquinaria para que tu obra no se pare.
             </h1>
 
             <p
-              className="mt-4 max-w-[48ch] text-base leading-relaxed text-ink-2 lg:mt-6 lg:text-xl"
+              className={`mt-5 max-w-[52ch] text-base leading-relaxed lg:text-lg ${
+                oscuro ? "text-ink-inv-2" : "text-ink-2"
+              }`}
               data-revelar
               style={{ "--retardo": 2 } as React.CSSProperties}
             >
-              Plataformas, manipuladores, carretillas, tierras y energía.{" "}
-              {ALQUILER.length} referencias y diez delegaciones propias en
-              España y Portugal.
+              Plataformas elevadoras, manipuladores, carretillas, movimiento de
+              tierras y energía. {ALQUILER.length} referencias y{" "}
+              {DELEGACIONES.length} delegaciones propias con flota, taller y
+              camiones.
             </p>
 
             <div
-              className="mt-6 lg:mt-8"
+              className="mt-7 max-w-xl"
               data-revelar
               style={{ "--retardo": 3 } as React.CSSProperties}
             >
@@ -113,7 +139,7 @@ export function Hero() {
             </div>
 
             <div
-              className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-1 lg:mt-6"
+              className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2"
               data-revelar
               style={{ "--retardo": 4 } as React.CSSProperties}
             >
@@ -131,76 +157,15 @@ export function Hero() {
               </Link>
               <Link
                 href="/alquiler"
-                className="hidden min-h-11 items-center text-base text-ink-2 underline decoration-rule-strong decoration-2 underline-offset-4 transition-colors duration-200 hover:text-ink md:inline-flex"
+                className={`hidden min-h-11 items-center text-base underline decoration-rule-strong decoration-2 underline-offset-4 transition-colors duration-200 md:inline-flex ${
+                  oscuro
+                    ? "text-ink-inv-2 hover:text-ink-inv"
+                    : "text-ink-2 hover:text-ink"
+                }`}
               >
                 Ver todo el catálogo
               </Link>
             </div>
-          </div>
-
-          {/* ---------- Máquina ----------
-              Se sale del contenedor por la derecha en pantallas grandes:
-              una foto de producto que toca el borde se lee como escaparate,
-              y una encajada con margen a los dos lados, como un banner.
-
-              La anchura va ESCRITA (`calc(100% + padding × 2)`) y no
-              solo con márgenes negativos. Un elemento de rejilla tiene
-              `min-width: auto`, así que se estira hasta su min-content:
-              con la caja de proporción 4:3 dentro, el navegador resolvía
-              698 px de ancho dentro de una pista de 320 y la foto salía
-              recortada por los dos lados. Con la anchura escrita, la
-              pista manda.
-
-              Ojo con los espacios: en un valor arbitrario de Tailwind se
-              escriben con guion bajo. `w-[calc(100%+2.5rem)]` no genera
-              nada —`100%+2.5rem` no es CSS válido— y la clase muere en
-              silencio, que es justo como se coló este fallo. */}
-          <div
-            className="-mx-5 w-[calc(100%_+_2.5rem)] min-w-0 md:-mx-8 md:w-[calc(100%_+_4rem)] lg:col-span-6 lg:mx-0 lg:w-auto lg:-mr-12 xl:col-span-6 xl:-mr-16"
-            data-revelar="escala"
-            style={{ "--retardo": 2 } as React.CSSProperties}
-          >
-            <figure className="group relative">
-              <div className="relative aspect-[4/3] overflow-hidden border-y border-rule bg-sunken lg:border">
-                <Image
-                  src={PROTAGONISTA.src}
-                  alt={PROTAGONISTA.alt}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  /* Escala de partida 1,06: la creatividad original trae
-                     margen blanco cocido alrededor de la máquina, y a 1:1
-                     el hero enseñaba más fondo que tijera. Recorta margen,
-                     no máquina. */
-                  className="scale-[1.06] object-cover object-center transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:scale-[1.1]"
-                />
-              </div>
-
-              <figcaption className="border-b border-rule bg-surface lg:border-x lg:border-b">
-                <Link
-                  href={`/maquina/${PROTAGONISTA.slug}`}
-                  className="flex items-center justify-between gap-4 px-4 py-3 transition-colors duration-200 hover:bg-sunken lg:px-5"
-                >
-                  <span className="min-w-0">
-                    <span className="label-sm block text-ink-3">
-                      {PROTAGONISTA.marca}
-                    </span>
-                    <span className="title block truncate text-ink">
-                      {PROTAGONISTA.modelo}
-                    </span>
-                  </span>
-                  <span className="hidden shrink-0 text-sm text-ink-2 md:block">
-                    {PROTAGONISTA.pie}
-                  </span>
-                  <ArrowUpRight
-                    size={18}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                    className="shrink-0 text-rule-strong transition-all duration-200 group-hover:-translate-y-0.5 group-hover:text-accent"
-                  />
-                </Link>
-              </figcaption>
-            </figure>
           </div>
         </div>
       </div>

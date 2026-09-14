@@ -48,14 +48,14 @@ export default function PaginaContacto() {
           <div className="mt-8 flex flex-col gap-3 md:flex-row">
             <a
               href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-              className="inline-flex h-14 items-center justify-center gap-2.5 border border-rule-inverse px-6 text-base font-semibold text-ink-inv transition-colors duration-200 hover:bg-inverse-2"
+              className="inline-flex h-14 items-center justify-center gap-2.5 border border-rule-inverse px-6 text-base font-semibold text-ink-inv transition-colors duration-200 hover:bg-inverse-2 pastilla"
             >
               <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
               <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
             </a>
             <a
               href={`mailto:${EMAIL_PRINCIPAL}`}
-              className="inline-flex h-14 items-center justify-center gap-2.5 border border-rule-inverse px-6 text-base font-semibold text-ink-inv transition-colors duration-200 hover:bg-inverse-2"
+              className="inline-flex h-14 items-center justify-center gap-2.5 border border-rule-inverse px-6 text-base font-semibold text-ink-inv transition-colors duration-200 hover:bg-inverse-2 pastilla"
             >
               <Mail size={18} strokeWidth={1.75} aria-hidden="true" />
               {EMAIL_PRINCIPAL}
@@ -151,7 +151,7 @@ export default function PaginaContacto() {
                 allí: te ahorra un paso.
               </p>
 
-              <ul className="mt-6 grid gap-px border border-rule bg-rule md:grid-cols-2">
+              <ul className="mt-6 grid gap-px border border-rule bg-rule md:grid-cols-2 overflow-hidden rounded-2xl">
                 {DELEGACIONES.map((d) => (
                   <li key={d.id} className="bg-surface px-4 py-3.5">
                     <div className="flex items-baseline justify-between gap-2">
@@ -219,13 +219,13 @@ export default function PaginaContacto() {
             <div className="lg:col-span-5">
               <Link
                 href="/consultar-disponibilidad"
-                className="btn-accent flex h-14 items-center justify-center bg-accent px-8 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                className="btn-accent flex h-14 items-center justify-center bg-accent px-8 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
               >
                 Abrir el formulario
               </Link>
               <Link
                 href="/asesor"
-                className="mt-3 flex h-14 items-center justify-center border border-rule-control px-8 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+                className="mt-3 flex h-14 items-center justify-center border border-rule-control px-8 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken pastilla"
               >
                 No sé qué máquina necesito
               </Link>

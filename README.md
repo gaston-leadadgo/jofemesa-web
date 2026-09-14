@@ -327,41 +327,109 @@ inerte son del navegador.
 
 ## Diseño
 
-**El espaciado se ha ceñido a la mitad.** El padding de sección era
-80/128/192px, siguiendo el cine editorial que pide `gpt-taste`. En un
-catálogo eso es un error: si una sección no cabe de un vistazo hay que
-scrollear a ciegas. Ahora es 56/72/88px. El aire se gana con filetes y
-jerarquía tipográfica, no con vacío.
+El sistema se rehízo en la revisión posterior a la primera entrega. El
+diagnóstico del cliente fue «demasiado tosca», y tenía razón: la versión
+anterior era radio cero en todo, filete de 1 px a #DFE4E8 por toda la
+página, titulares en Montserrat **extrabold** a 88 px y cada etiqueta en
+monoespaciada de caja alta. Cada pieza se defendía sola; juntas daban una
+placa de características industrial, no una tienda. La referencia ahora es
+la versión de Emilio.
 
-El hero ocupa exactamente `100svh` menos la cabecera —y menos la barra
-fija en móvil—, así que titular, buscador y las dos salidas entran sin
-scroll. `svh` y no `vh`: con `vh`, en móvil el navegador cuenta su propia
-barra como retraída y el CTA acaba cortado justo en el vistazo que decide
-el primer clic.
+### Tipografía
 
-Sistema **PLACA**: la placa de características del chasis a escala de
-web. Radio cero en todo (la escala de Tailwind está anulada a `0px`),
-filetes de 1 px en lugar de sombras, **exactamente cuatro puntos de
-ruptura (375 / 768 / 1024 / 1440)** y cifras siempre en versalitas
-tabulares. Ojo con esto último: `sm:` **no existe** en este proyecto, y
-una utilidad `sm:algo` se compila a nada.
+**Archivo** en titulares, **Plus Jakarta Sans** en texto corrido. Las dos
+de Google, variables, muy comunes.
 
-Un solo acento: el rojo JOFEMESA **#E30613**, que mide 4,88:1 sobre
-blanco. El rojo puro del logotipo (#FF0000) mide 4,00:1 y no llega al
-mínimo, así que vive solo en el logotipo. El ámbar #EFBB20 de su web
-sobrevive como fondo de chip y como filete de seguridad.
-`scripts/contraste.mjs` lo comprueba.
+Lo que cambia el aire no es la familia, es el **peso**: los titulares van
+en 300 y 400. Archivo es una grotesca estrecha que aguanta pesos ligeros
+sin deshacerse, así que la jerarquía la da la escala y el interletrado, no
+el grosor. `display-1` baja de 88 px a 56 px de tope.
 
-Tipografía **Montserrat** en los titulares —«tenemos que utilizar su
-tipografía»: el rótulo de JOFEMESA está dibujado con una geométrica de
-caja alta y Montserrat es la que se le pega—, Geist Sans en el texto
-corrido y Geist Mono en etiquetas y cifras. Títulos en caja baja; las
-mayúsculas quedan para las etiquetas de dato en mono.
+Las etiquetas ya no van en monoespaciada. La mono en versalitas repetida
+cien veces por página daba un aire de terminal que era buena parte del
+problema; ahora son Plus Jakarta Sans en caja alta con interletrado
+abierto. Geist Mono se queda **solo** en cifras que tienen que alinearse
+en columna: tabla del comparador y especificaciones.
 
-El **faldón del pie va en rojo de marca**, que es lo que se pidió. Es la
-única superficie de la web pintada en rojo entera, y por eso funciona.
+### Superficie
 
----
+Radio real donde antes había cero: 8 px en chips, 16 px en paneles
+internos, 28 px en la tarjeta, 32 px en el hero, y pastilla completa en
+los botones. El botón en pastilla es la decisión que más limpia la página:
+un rectángulo recto en rojo de marca pesa el doble.
+
+Los filetes se aclaran a #ECEFF1 y la elevación la hace una sombra
+mínima (`--shadow-tarjeta`) en vez de un filete duro. Tres utilidades
+—`tarjeta`, `panel`, `pastilla`— concentran eso, así que dejó de estar
+repetido a mano en cada componente.
+
+Sigue habiendo **un solo acento**: el rojo JOFEMESA #E30613, que mide
+4,88:1 sobre blanco. El rojo puro del logotipo (#FF0000) mide 4,00:1 y no
+llega al mínimo, así que vive solo en el logotipo. `scripts/contraste.mjs`
+lo comprueba.
+
+### Hero
+
+Una placa única de esquina blanda con la fotografía **a sangre** dentro y
+el texto encima, sobre un velo que va de opaco a transparente. Con el
+texto fuera de la imagen hacen falta dos columnas y la foto se queda en un
+cuarto de pantalla; con el texto encima, la foto ocupa la placa entera y
+el titular se lee igual.
+
+Todo lo que hay que tocar para cambiar la fotografía está en la constante
+`HERO` de `src/components/home/Hero.tsx`: `src`, `alt`, `velo`
+(`claro` / `oscuro`) y `posicion`. Con `velo: "oscuro"` el componente
+invierte el texto a blanco él solo. La actual es la creatividad de estudio
+del cliente, que tiene fondo claro; cuando llegue una fotografía de obra
+de ambiente se cambian esos cuatro campos y nada más.
+
+### La tarjeta de máquina
+
+Composición de la versión de Emilio: cabecera con marca y modelo,
+**etiqueta de alimentación** a la derecha, plataforma hundida para la
+foto, franja de tres cifras, una línea de beneficio y dos acciones en
+pastilla.
+
+La etiqueta de alimentación es nueva y es la que más se echaba en falta:
+eléctrico, híbrido o diésel decide un alquiler **antes** que la altura, y
+si es 4x4 se rotula «Diésel 4x4». El color no es el único portador —cada
+etiqueta lleva su palabra— y los tres pares están medidos sobre su propio
+fondo, no sobre blanco: 7,26:1, 8,04:1 y 7,80:1.
+
+La plataforma de la foto tiene alto **fijo** (11rem) y no proporción 4:3:
+con 4:3 la tarjeta se iba a 670 px en una columna de 390, y una rejilla de
+tarjetas de 670 px se recorre a ciegas.
+
+De la reunión del 24/08/2026 se mantienen las dos instrucciones sobre los
+botones: **Ficha va en rojo de marca** —literal: «aunque quede peor, pues
+tiene que ir en rojo»— y por eso «Consultar disponibilidad» cede y pasa a
+tinta. Un rojo por tarjeta.
+
+### Las distribuciones oficiales, arriba
+
+Ser partner oficial de Jungheinrich y distribuidor oficial de Takeuchi es
+lo único de esta web que un competidor no puede copiar, así que tiene
+banda propia justo debajo del hero, con el logotipo a tamaño legible y su
+salida. Antes estaba a media página de profundidad, dentro de un párrafo
+y en una línea de texto entre nueve marcas más.
+
+La distinción se rotula, porque no es la misma cosa: **partner** de
+Jungheinrich (su catálogo completo, incluida la gama reacondicionada
+JUNGSTARS) y **distribuidor oficial** de Takeuchi, con centro propio en
+San Fernando de Henares. Lo demás son fabricantes de la flota —alquilamos
+su maquinaria, no la distribuimos— y por eso van debajo, en gris y sin
+logotipo.
+
+### Espaciado
+
+El padding de sección es 56/72/88 px. Muy por debajo del cine de 192 px
+que pide `gpt-taste`, y a propósito: en un catálogo, si una sección no
+cabe de un vistazo hay que scrollear a ciegas. El aire se gana con
+filetes y jerarquía tipográfica, no con vacío.
+
+Cuatro puntos de ruptura y solo cuatro: 375 / 768 / 1024 / 1440. Ojo con
+esto: **`sm:` no existe** en este proyecto —el tema anula la escala— y una
+utilidad `sm:algo` se compila a nada sin avisar.
 
 ## Scripts
 
@@ -369,7 +437,7 @@ El **faldón del pie va en rojo de marca**, que es lo que se pidió. Es la
 |---|---|
 | `npm run check` | Tipos, lint, validación del catálogo y pruebas |
 | `npm test` | 57 aserciones sobre filtros, asesor, comparador y formulario |
-| `PUERTO=4477 node scripts/verificar-servidor.mjs` | 149 comprobaciones del HTML servido. **Contra una compilación de producción**, no contra `dev` |
+| `PUERTO=4477 node scripts/verificar-servidor.mjs` | 153 comprobaciones del HTML servido. **Contra una compilación de producción**, no contra `dev` |
 | `npm run catalogo:validar` | Corre en `prebuild`: para la compilación si hay un slug duplicado, un PDF o una imagen que no existen, un `alt` vacío, una spec sin definición o una **subcategoría vacía en el menú** |
 | `node scripts/contraste.mjs` | Contrastes WCAG de la paleta |
 | `node scripts/preparar-logo.mjs` | Histórico: recortaba el fondo del PNG del logotipo, que ya no se usa |

@@ -51,7 +51,7 @@ export default function PaginaIconos() {
         derecha, cada uno a los tres tamaños reales en los que se usa.
       </p>
 
-      <ul className="mt-10 grid gap-px border border-rule bg-rule md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-10 grid gap-px border border-rule bg-rule md:grid-cols-2 lg:grid-cols-3 overflow-hidden rounded-2xl">
         {[...unicos.entries()].map(([id, info]) => {
           const usos =
             TODOS.filter((t) => t.id === id).length +

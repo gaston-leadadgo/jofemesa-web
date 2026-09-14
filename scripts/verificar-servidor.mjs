@@ -171,7 +171,7 @@ t(
    ============================================================ */
 
 for (const [ruta, marca] of [
-  ["/", "Alquilamos la máquina"],
+  ["/", "para que tu obra no se pare"],
   ["/servicios", "partner oficial de Jungheinrich"],
   ["/delegaciones", "delegaciones propias"],
   ["/noticias", "Alquiler de manipuladores telescópicos en Madrid"],
@@ -323,7 +323,43 @@ t(
 );
 
 /* ============================================================
-   13 · 404 real
+   13 · La estética acordada
+   ============================================================
+
+   Tres decisiones de la revisión posterior que es fácil deshacer sin
+   darse cuenta, así que quedan ancladas aquí.
+*/
+
+const port = await html("/");
+
+/* Las tipografías son las de la versión de Emilio. Si alguien vuelve a
+   Montserrat extrabold, esto lo dice. */
+t(
+  "la portada carga Archivo y Plus Jakarta Sans",
+  /archivo/i.test(port.cuerpo) && /jakarta/i.test(port.cuerpo),
+);
+
+/* Las distribuciones oficiales van EN LA PORTADA, no enterradas en la
+   sección de autoridad: es el argumento que un competidor no copia. */
+t(
+  "la portada rotula el partner oficial de Jungheinrich",
+  /Partner oficial/i.test(port.cuerpo) && /Jungheinrich/.test(port.cuerpo),
+);
+t(
+  "la portada rotula la distribución oficial de Takeuchi",
+  /Distribuidor oficial/i.test(port.cuerpo) && /Takeuchi/.test(port.cuerpo),
+);
+
+/* La tarjeta lleva etiqueta de alimentación: es el dato que decide un
+   alquiler antes que la altura. */
+const cat = await html("/alquiler");
+t(
+  "las tarjetas del catálogo llevan etiqueta de alimentación",
+  /Eléctrico|Híbrido|Diésel/.test(cat.cuerpo),
+);
+
+/* ============================================================
+   14 · 404 real
    ============================================================ */
 
 const nada = await fetch(BASE + "/maquina/no-existe-esta-maquina");

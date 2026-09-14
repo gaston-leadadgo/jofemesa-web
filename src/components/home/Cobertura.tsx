@@ -38,7 +38,7 @@ export function Cobertura() {
             </div>
 
             <ul
-              className="mt-7 grid gap-px bg-rule-inverse md:grid-cols-2 xl:grid-cols-3"
+              className="mt-7 grid gap-px bg-rule-inverse md:grid-cols-2 xl:grid-cols-3 overflow-hidden rounded-2xl border border-rule"
               data-escalonar
             >
               {DELEGACIONES.map((d) => (
@@ -79,7 +79,7 @@ export function Cobertura() {
             <div className="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
               <Link
                 href="/consultar-disponibilidad"
-                className="btn-accent inline-flex h-13 items-center justify-center bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                className="btn-accent inline-flex h-13 items-center justify-center bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
               >
                 Consultar disponibilidad
               </Link>

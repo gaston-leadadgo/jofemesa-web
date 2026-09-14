@@ -151,7 +151,7 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
                   </Link>
                   <Link
                     href={`/consultar-disponibilidad?m=${m.slug}`}
-                    className="btn-accent no-print mt-3 flex h-11 items-center justify-center bg-accent text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                    className="btn-accent no-print mt-3 flex h-11 items-center justify-center bg-accent text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
                   >
                     Consultar disponibilidad
                   </Link>
@@ -227,7 +227,7 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
         <div className="no-print mt-8 border-t border-rule pt-6">
           <Link
             href={`/consultar-disponibilidad?m=${maquinas.map((m) => m.slug).join(",")}`}
-            className="btn-accent inline-flex h-14 items-center bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+            className="btn-accent inline-flex h-14 items-center bg-accent px-6 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
           >
             Consultar disponibilidad de las {maquinas.length}
           </Link>
@@ -251,7 +251,7 @@ function Vacio() {
       </p>
       <Link
         href="/alquiler"
-        className="btn-accent inline-flex h-12 items-center bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+        className="btn-accent inline-flex h-12 items-center bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
       >
         Ir al catálogo
       </Link>

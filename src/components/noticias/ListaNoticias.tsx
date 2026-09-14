@@ -91,7 +91,7 @@ export function ListaNoticias() {
                   reiniciar();
                 }}
                 className={cn(
-                  "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200",
+                  "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200 pastilla",
                   categoria === null
                     ? "border-ink bg-ink text-white"
                     : "border-rule bg-surface text-ink-2 hover:border-rule-control hover:text-ink",
@@ -113,7 +113,7 @@ export function ListaNoticias() {
                       reiniciar();
                     }}
                     className={cn(
-                      "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200",
+                      "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200 pastilla",
                       categoria === c.id
                         ? "border-ink bg-ink text-white"
                         : "border-rule bg-surface text-ink-2 hover:border-rule-control hover:text-ink",
@@ -148,7 +148,7 @@ export function ListaNoticias() {
                   reiniciar();
                 }}
                 className={cn(
-                  "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200",
+                  "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200 pastilla",
                   delegacion === null
                     ? "border-ink bg-ink text-white"
                     : "border-rule bg-surface text-ink-2 hover:border-rule-control hover:text-ink",
@@ -170,7 +170,7 @@ export function ListaNoticias() {
                       reiniciar();
                     }}
                     className={cn(
-                      "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200",
+                      "inline-flex min-h-11 items-center border px-3.5 text-sm transition-colors duration-200 pastilla",
                       delegacion === d
                         ? "border-ink bg-ink text-white"
                         : "border-rule bg-surface text-ink-2 hover:border-rule-control hover:text-ink",
@@ -190,7 +190,7 @@ export function ListaNoticias() {
         {filtradas.length} entrada{filtradas.length === 1 ? "" : "s"}
       </p>
 
-      <ul className="mt-4 grid gap-px bg-rule md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-4 grid gap-px bg-rule md:grid-cols-2 lg:grid-cols-3 overflow-hidden rounded-2xl border border-rule">
         {filtradas.slice(0, visibles).map((n) => (
           <li key={n.slug} className="bg-surface">
             <a
@@ -238,7 +238,7 @@ export function ListaNoticias() {
           <button
             type="button"
             onClick={() => setVisibles((v) => v + PASO)}
-            className="inline-flex h-14 items-center border border-rule-control px-8 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+            className="inline-flex h-14 items-center border border-rule-control px-8 text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken pastilla"
           >
             Ver {Math.min(PASO, filtradas.length - visibles)} entradas más
           </button>
