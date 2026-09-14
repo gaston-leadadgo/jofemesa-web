@@ -75,12 +75,16 @@ export function Necesidades() {
                     <span className="mt-1.5 block text-sm text-ink-2">
                       {f.necesidadDesc}
                     </span>
-                    <span className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-rule pt-3">
-                      <span className="label-sm text-ink-3">{f.rango}</span>
+                    {/* En caja baja y no en versalitas: «Demolición, corte
+                        y perforación» en caja alta y partido en dos líneas
+                        es lo que hacía este pie ilegible. La caja alta es
+                        para etiquetas, no para frases. */}
+                    <span className="meta mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-rule pt-3 text-ink-3">
+                      <span>{f.rango}</span>
                       <span aria-hidden="true" className="text-rule-strong">
                         ·
                       </span>
-                      <span className="label-sm text-ink-3">
+                      <span className="whitespace-nowrap">
                         {unidades} referencia{unidades === 1 ? "" : "s"}
                       </span>
                     </span>

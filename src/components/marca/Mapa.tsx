@@ -103,15 +103,26 @@ function desplazamientos(): Record<string, number> {
 
 const DY = desplazamientos();
 
+/** De norte a sur: es el orden en el que caen los puntos al animarse. */
+const ORDEN_NORTE_SUR = [...DELEGACIONES].sort((a, b) => a.mapa.y - b.mapa.y);
+
 export function Mapa({
   className,
   activa,
   tono = "claro",
+  animado = false,
 }: {
   className?: string;
   /** Delegación resaltada, si la hay. */
   activa?: string;
   tono?: "claro" | "oscuro";
+  /**
+   * Los puntos van cayendo de norte a sur y las etiquetas detrás. Es
+   * CSS puro y cuelga de `html[data-motor]`, así que sin JavaScript, con
+   * un rastreador o con `prefers-reduced-motion` el mapa sale entero y
+   * quieto: lo animado es cómo aparece, no si aparece.
+   */
+  animado?: boolean;
 }) {
   const oscuro = tono === "oscuro";
 
@@ -128,6 +139,7 @@ export function Mapa({
         stroke={oscuro ? "var(--color-rule-inverse)" : "var(--color-rule-strong)"}
         strokeWidth={0.7}
         strokeLinejoin="round"
+        className={animado ? "mapa-costa" : undefined}
       />
       <path
         d={camino(FRONTERA)}
@@ -138,11 +150,19 @@ export function Mapa({
         strokeLinecap="round"
       />
 
-      {DELEGACIONES.map((d) => {
+      {ORDEN_NORTE_SUR.map((d, i) => {
         const esActiva = activa === d.id;
         const dy = DY[d.id] ?? 0;
         return (
-          <g key={d.id}>
+          <g
+            key={d.id}
+            className={animado ? "mapa-punto" : undefined}
+            style={
+              animado
+                ? ({ "--retardo-punto": `${i * 70}ms` } as React.CSSProperties)
+                : undefined
+            }
+          >
             {(esActiva || d.central) && (
               <circle
                 cx={d.mapa.x}

@@ -143,7 +143,7 @@ export function FormularioDisponibilidad({
           </p>
         )}
 
-        <h2 className="label border-b border-ink pb-3 text-ink">
+        <h2 className="display-3 border-b border-rule-strong pb-3 text-ink">
           {asuntoNombre ? "Cuándo y dónde" : "Qué necesitas"}
         </h2>
 
@@ -217,7 +217,7 @@ export function FormularioDisponibilidad({
 
         <div className="mt-5 grid gap-5 md:grid-cols-2">
           <label className="block">
-            <span className="label text-ink">
+            <span className="etiqueta-campo text-ink">
               Provincia de la obra <Obligatorio />
             </span>
             <select
@@ -261,7 +261,7 @@ export function FormularioDisponibilidad({
             ubicación». Es opcional a propósito: si no la eliges, la
             asignamos por la provincia de la obra. */}
         <label className="mt-5 block">
-          <span className="label text-ink">Delegación de referencia</span>
+          <span className="etiqueta-campo text-ink">Delegación de referencia</span>
           <select
             name="delegacion"
             defaultValue={estado.valores?.delegacion ?? delegacionInicial}
@@ -283,7 +283,7 @@ export function FormularioDisponibilidad({
 
       {/* ---------- Columna derecha: quién lo pide ---------- */}
       <div className="lg:col-span-7">
-        <h2 className="label border-b border-ink pb-3 text-ink">
+        <h2 className="display-3 border-b border-rule-strong pb-3 text-ink">
           Quién lo pide
         </h2>
 
@@ -322,7 +322,7 @@ export function FormularioDisponibilidad({
             valor={estado.valores?.empresa}
           />
           <label className="block">
-            <span className="label text-ink">
+            <span className="etiqueta-campo text-ink">
               CIF o NIF <Obligatorio />
             </span>
             <input
@@ -373,7 +373,7 @@ export function FormularioDisponibilidad({
         </div>
 
         <label className="mt-5 block">
-          <span className="label text-ink">Algo más que debamos saber</span>
+          <span className="etiqueta-campo text-ink">Algo más que debamos saber</span>
           <textarea
             name="notas"
             rows={4}
@@ -471,7 +471,7 @@ function Campo({
 }) {
   return (
     <label className="block">
-      <span className="label text-ink">
+      <span className="etiqueta-campo text-ink">
         {etiqueta} {requerido && <Obligatorio />}
       </span>
       <input

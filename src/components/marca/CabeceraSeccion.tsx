@@ -40,6 +40,7 @@ export function CabeceraSeccion({
   cta,
   secundario,
   children,
+  aside,
   className,
 }: {
   /** Etiqueta corta en mono. Nunca «Sección 01»: dice de qué va esto. */
@@ -54,6 +55,13 @@ export function CabeceraSeccion({
   cta?: { href: string; texto: string };
   secundario?: { href: string; texto: string };
   children?: React.ReactNode;
+  /**
+   * Ocupa la columna derecha entera, en lugar del raíl de cifras. Es
+   * para piezas que necesitan sitio de verdad —el mapa de delegaciones—
+   * y que colgando debajo del texto se quedaban en un cuarto de ancho
+   * con media pantalla vacía al lado.
+   */
+  aside?: React.ReactNode;
   className?: string;
 }) {
   return (
@@ -153,7 +161,11 @@ export function CabeceraSeccion({
             {children}
           </div>
 
-          {datos && datos.length > 0 && (
+          {aside && (
+            <div className="lg:col-span-5 lg:self-center">{aside}</div>
+          )}
+
+          {!aside && datos && datos.length > 0 && (
             <div className="lg:col-span-5 lg:self-end">
               <dl
                 className="grid grid-cols-3 gap-px border border-rule-inverse bg-white/10 overflow-hidden rounded-2xl"

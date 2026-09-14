@@ -33,12 +33,22 @@ export function Partners() {
               <BadgeCheck size={15} strokeWidth={2.25} aria-hidden="true" />
               Partner oficial
             </p>
+            {/* El original venía con un «Partner of» diminuto incrustado
+                arriba a la derecha: duplicaba la etiqueta roja de encima y
+                a 36 px de alto se veía sucio. Está recortado al logotipo
+                limpio y escalado ×4, así que en pantallas de 2x ya no lo
+                interpola el navegador.
+
+                `self-start` no es opcional: dentro de un contenedor flex
+                en columna, `align-items: stretch` le gana a `w-auto` y
+                estiraba el logotipo a los 469 px de la tarjeta. Eso era
+                la deformación. */}
             <Image
-              src="/marca/partner-jungheinrich.png"
-              alt="Partner oficial de Jungheinrich"
-              width={210}
-              height={42}
-              className="mt-5 h-9 w-auto"
+              src="/marca/jungheinrich.webp"
+              alt="Jungheinrich"
+              width={840}
+              height={124}
+              className="mt-5 h-8 w-auto self-start"
             />
             <p className="mt-5 flex-1 text-base leading-relaxed text-ink-2">
               Distribuimos todo el catálogo de Jungheinrich en manutención:

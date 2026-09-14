@@ -345,11 +345,49 @@ en 300 y 400. Archivo es una grotesca estrecha que aguanta pesos ligeros
 sin deshacerse, así que la jerarquía la da la escala y el interletrado, no
 el grosor. `display-1` baja de 88 px a 56 px de tope.
 
-Las etiquetas ya no van en monoespaciada. La mono en versalitas repetida
-cien veces por página daba un aire de terminal que era buena parte del
-problema; ahora son Plus Jakarta Sans en caja alta con interletrado
-abierto. Geist Mono se queda **solo** en cifras que tienen que alinearse
-en columna: tabla del comparador y especificaciones.
+#### La caja alta es para etiquetas, no para frases
+
+Esta es la regla que faltaba, y es la que más limpió la página. Hay tres
+utilidades y la elección **no** es de tamaño, es de qué clase de texto es:
+
+| Utilidad | Para qué | Ejemplo |
+|---|---|---|
+| `label` / `label-sm` | Etiquetas cortas, en caja alta | `GAMA`, `PARTNER OFICIAL` |
+| `meta` | Frases de apoyo, en caja baja | «Demolición, corte y perforación · 1 referencia» |
+| `etiqueta-campo` | Etiquetas de formulario, en caja baja | «Algo más que debamos saber» |
+
+`label` además se suavizó dos veces: primero saliendo de la monoespaciada
+—cien versalitas de terminal por página—, y después bajando de peso 600 a
+500 y de 0,18em a 0,10em de interletrado. La caja alta muy espaciada y en
+seminegrita grita, y repetida no deja respirar a nada.
+
+En la duda, `meta`. Lo que rompía era la caja alta aplicada a frases:
+«DEMOLICIÓN, CORTE Y PERFORACIÓN» partido en dos líneas no se lee, y
+«ALTURA TRABAJO» en un tercio de tarjeta salía como «ALTURA TRA…».
+Los formularios van enteros en caja baja: un formulario de doce campos
+con las etiquetas en versalitas es un cartel de avisos, y se rellenan
+mejor cuando parecen amables.
+
+Geist Mono se queda **solo** en cifras que tienen que alinearse en
+columna: tabla del comparador y especificaciones.
+
+### Dos trampas de maquetación que costaron encontrar
+
+Las dos dan el mismo síntoma —una imagen deformada— y ninguna avisa.
+
+1. **`w-auto` no sobrevive a un contenedor flex en columna.** El
+   `align-items: stretch` que trae por defecto le gana, así que el
+   logotipo de Jungheinrich se estiraba de 217 px a los 469 px de la
+   tarjeta. Se arregla con `self-start`.
+2. **Un elemento de rejilla tiene `min-width: auto`**, así que se estira
+   hasta su min-content y puede reventar su propia pista: la foto del
+   hero se resolvía a 698 px dentro de una pista de 320 y se recortaba
+   por los dos lados. Se arregla con la anchura escrita y
+   `grid-cols-1` explícito.
+
+Y una tercera, de Tailwind: en un valor arbitrario los espacios van con
+guion bajo. `w-[calc(100%+2.5rem)]` no genera nada y la clase muere en
+silencio; hay que escribir `w-[calc(100%_+_2.5rem)]`.
 
 ### Superficie
 
@@ -367,6 +405,18 @@ Sigue habiendo **un solo acento**: el rojo JOFEMESA #E30613, que mide
 4,88:1 sobre blanco. El rojo puro del logotipo (#FF0000) mide 4,00:1 y no
 llega al mínimo, así que vive solo en el logotipo. `scripts/contraste.mjs`
 lo comprueba.
+
+### El mapa de delegaciones
+
+Ocupa la columna derecha entera de la cabecera y se lleva consigo las tres
+cifras. Colgando debajo del texto se quedaba en 380 px con media pantalla
+vacía al lado, y es la pieza que contesta la única pregunta de esa página:
+«¿llegáis a mi obra?».
+
+La costa se traza y los diez puntos caen de norte a sur. Es CSS puro y
+cuelga de `html[data-motor]`, igual que el motor de revelado: sin
+JavaScript, con un rastreador o con `prefers-reduced-motion` el mapa sale
+entero y quieto. Lo animado es **cómo** aparece, no **si** aparece.
 
 ### Hero
 

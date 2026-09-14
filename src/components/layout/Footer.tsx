@@ -143,29 +143,27 @@ export function Footer() {
             <h2 className="label text-ink-inv-3">
               Delegaciones · {DELEGACIONES.length}
             </h2>
-            <ul className="mt-4 grid gap-x-6 gap-y-1.5 lg:grid-cols-2">
+            {/* Nombre ARRIBA y teléfono debajo, no los dos en la misma
+                línea. En dos columnas de pie no caben juntos: el nombre se
+                recortaba a «Mad…» y, en Oporto y Lisboa, a «O» y «L.».
+                Una delegación que no se puede nombrar no sirve de nada. */}
+            <ul className="mt-4 grid gap-x-6 gap-y-3 lg:grid-cols-2">
               {DELEGACIONES.map((d) => (
                 <li
                   key={d.id}
-                  className="flex items-baseline justify-between gap-3 border-b border-rule-inverse pb-1.5 text-sm"
+                  className="border-b border-rule-inverse pb-2.5"
                 >
-                  {/* El que se estrecha es el nombre, no el número: un
-                      teléfono partido en dos líneas deja de leerse como
-                      un teléfono. */}
-                  <span className="min-w-0 truncate font-semibold text-ink-inv">
-                    {d.nombre}
-                  </span>
                   <a
                     href={`tel:${d.tel}`}
-                    className="value inline-block shrink-0 py-0.5 text-sm whitespace-nowrap text-ink-inv-2 transition-colors duration-200 hover:text-accent-dark"
+                    className="group block transition-colors duration-200"
                   >
-                    <Phone
-                      size={12}
-                      strokeWidth={2}
-                      aria-hidden="true"
-                      className="mr-1.5 inline align-baseline"
-                    />
-                    {d.telefono}
+                    <span className="block text-sm font-semibold text-ink-inv transition-colors duration-200 group-hover:text-accent-dark">
+                      {d.nombre}
+                    </span>
+                    <span className="value mt-0.5 flex items-center gap-1.5 text-sm whitespace-nowrap text-ink-inv-2 transition-colors duration-200 group-hover:text-accent-dark">
+                      <Phone size={12} strokeWidth={2} aria-hidden="true" />
+                      {d.telefono}
+                    </span>
                   </a>
                 </li>
               ))}

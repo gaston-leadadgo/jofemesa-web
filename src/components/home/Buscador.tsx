@@ -51,9 +51,13 @@ export function Buscador() {
           e.preventDefault();
           buscar();
         }}
-        className="flex flex-col border border-rule-control bg-surface shadow-[0_1px_0_0_rgba(20,23,26,.04)] transition-shadow duration-200 focus-within:shadow-[0_0_0_3px_rgba(227,6,19,.12)] md:flex-row"
+        /* La caja va en pastilla como el botón que lleva dentro. Con el
+           botón redondeado y la caja recta, el conjunto parecía un error
+           de montaje. En escritorio el botón se mete DENTRO con 4px de
+           aire alrededor; en móvil la caja apila y se cierra en 1rem. */
+        className="flex flex-col rounded-2xl border border-rule-strong bg-surface p-1 shadow-[0_1px_2px_rgba(20,23,26,.04)] transition-shadow duration-200 focus-within:border-rule-control focus-within:shadow-[0_0_0_3px_rgba(227,6,19,.12)] md:flex-row md:rounded-full md:p-1.5"
       >
-        <div className="relative min-w-0 flex-1 border-b border-rule md:border-r md:border-b-0">
+        <div className="relative min-w-0 flex-1">
           <label htmlFor="busca-maquina" className="sr-only">
             ¿Qué máquina necesitas?
           </label>
@@ -70,7 +74,7 @@ export function Buscador() {
             onChange={(e) => setTexto(e.target.value)}
             placeholder="¿Qué máquina necesitas?"
             list="familias-sugeridas"
-            className="h-14 w-full bg-transparent pr-4 pl-11 text-base text-ink placeholder:text-ink-3 focus:outline-none"
+            className="h-13 w-full bg-transparent pr-4 pl-11 text-base text-ink placeholder:text-ink-3 focus:outline-none"
           />
           <datalist id="familias-sugeridas">
             {FAMILIAS.flatMap((f) =>
@@ -83,7 +87,7 @@ export function Buscador() {
 
         <button
           type="submit"
-          className="btn-accent group flex h-14 shrink-0 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover active:bg-accent-active pastilla"
+          className="btn-accent pastilla group mt-1 flex h-13 shrink-0 items-center justify-center gap-2 bg-accent px-6 text-base font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover active:bg-accent-active md:mt-0"
         >
           Ver disponibilidad
           <ArrowRight

@@ -215,30 +215,57 @@ body {
   text-wrap: pretty;
 }
 
-/* Etiqueta de DATO, no meta-etiqueta de sección.
-   "ALTURA DE TRABAJO", no "SECCIÓN 01".
+/* Etiquetas. Hay DOS familias y la distinción no es de tamaño:
+   es de longitud del texto.
 
-   Ya no va en monoespaciada. La mono en versalitas daba un aire de
-   terminal que, repetida cien veces por página, era buena parte de lo
-   que hacía la web tosca. Ahora es Plus Jakarta Sans en caja alta con
-   interletrado abierto —el recurso de la versión de Emilio—: dice lo
-   mismo y pesa mucho menos. La mono se queda solo en las cifras. */
+   `label` es la caja alta, y se ha suavizado dos veces. Primero salió de
+   la monoespaciada —cien versalitas de terminal por página eran buena
+   parte de lo que hacía la web tosca—. Y ahora baja de peso 600 a 500 y
+   de 0,18em a 0,10em de interletrado: la caja alta muy espaciada y en
+   seminegrita grita, y repetida no deja respirar a nada.
+
+   La regla que faltaba: **la caja alta es para ETIQUETAS, no para
+   frases.** «ALTURA TRABAJO» funciona; «DEMOLICIÓN, CORTE Y
+   PERFORACIÓN» partido en dos líneas, no. Para eso está `meta`, que es
+   la misma jerarquía en caja baja. En la duda, `meta`. */
 @utility label {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 @utility label-sm {
   font-family: var(--font-sans);
   font-size: 0.625rem;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: 0.16em;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* Etiqueta de CAMPO de formulario. En caja baja, y no es un capricho:
+   una etiqueta de campo en versalitas espaciadas se lee peor y, en un
+   formulario de doce campos, convierte la página en un cartel de avisos.
+   Los formularios se rellenan mejor cuando parecen amables. */
+@utility etiqueta-campo {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+/* Dato o apoyo en CAJA BAJA. Misma jerarquía que `label` y sin gritar:
+   es la que va en cuanto el texto es una frase y no una etiqueta. */
+@utility meta {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 /* La cifra. Sigue en mono porque tiene que alinearse en columna, pero
@@ -258,6 +285,35 @@ body {
   line-height: 1.1;
   letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   El mapa de delegaciones
+   Cuelga de `html[data-motor]`, igual que el motor de revelado: sin
+   JavaScript o con prefers-reduced-motion el mapa sale entero y quieto.
+   ============================================================ */
+
+html[data-motor] .mapa-costa {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: trazar-costa 1400ms var(--ease-entrance) forwards;
+}
+html[data-motor] .mapa-punto {
+  opacity: 0;
+  transform: translateY(-3px);
+  animation: caer-punto 420ms var(--ease-entrance) forwards;
+  animation-delay: calc(500ms + var(--retardo-punto, 0ms));
+}
+@keyframes trazar-costa {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes caer-punto {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================================

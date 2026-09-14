@@ -91,11 +91,16 @@ export function Header() {
         className="hidden border-b border-rule-inverse bg-inverse md:block"
       >
         <div className="container-placa flex h-9 items-center justify-between gap-6">
-          <p className="label-sm flex items-center gap-2 text-ink-inv-2">
-            <span aria-hidden="true" className="size-1.5 bg-accent-dark" />
+          {/* Caja baja: dos frases largas en versalitas espaciadas, y lo
+              primero que ve cualquiera al entrar es un cartel. */}
+          <p className="meta flex items-center gap-2 text-ink-inv-2">
+            <span
+              aria-hidden="true"
+              className="size-1.5 rounded-full bg-accent-dark"
+            />
             Especialistas en maquinaria desde {EMPRESA.fundacion}
           </p>
-          <p className="label-sm hidden text-ink-inv-3 lg:block">
+          <p className="meta hidden text-ink-inv-3 lg:block">
             Delegaciones propias en España y Portugal
           </p>
           <Link

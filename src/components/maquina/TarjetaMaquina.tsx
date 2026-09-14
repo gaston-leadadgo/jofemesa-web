@@ -166,7 +166,11 @@ export function TarjetaMaquina({
               <dd className="order-1">
                 <DatoValor dato={m.specs[k]} def={def} />
               </dd>
-              <dt className="label-sm order-2 mt-1 truncate text-ink-3">
+              {/* Caja baja y sin recortar. En versalitas, «ALTURA
+                  TRABAJO» no entra en un tercio de tarjeta y salía
+                  «ALTURA TRA…», que no significa nada. En caja baja
+                  entra, y si no entra parte en dos líneas y se lee. */}
+              <dt className="order-2 mt-1 text-[0.6875rem] leading-tight font-medium text-ink-3">
                 {def.etiquetaCorta ?? def.etiqueta}
               </dt>
             </div>

@@ -58,9 +58,9 @@ export const SERVICIOS: readonly BloqueServicio[] = [
     cta: { texto: "Pedir presupuesto de venta", href: "/consultar-disponibilidad?asunto=venta" },
     icono: "carretilla",
     credencial: {
-      logo: "/marca/partner-jungheinrich.png",
-      ancho: 210,
-      alto: 42,
+      logo: "/marca/jungheinrich.webp",
+      ancho: 840,
+      alto: 124,
       alt: "Partner oficial de Jungheinrich",
       texto:
         "Somos partner oficial de Jungheinrich y distribuimos todo su catálogo: contrapesadas eléctricas y diésel, mástil retráctil, trilaterales EKX y EFX, preparadoras de pedidos, transpaletas, apiladores y tractores de arrastre. También su gama reacondicionada JUNGSTARS.",

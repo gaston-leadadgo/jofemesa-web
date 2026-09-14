@@ -52,17 +52,29 @@ export default function PaginaDelegaciones() {
             delegaciones: llámanos y te decimos plazo.
           </>
         }
-        datos={[
-          { k: "España", v: `${DELEGACIONES_ESPANA.length}` },
-          { k: "Portugal", v: `${DELEGACIONES_PORTUGAL.length}` },
-          { k: "Centros", v: `${CENTROS.length}` },
-        ]}
         cta={{ href: "/consultar-disponibilidad", texto: "Pedir una máquina" }}
-      >
-        <div className="mt-9 max-w-sm" data-revelar="escala">
-          <Mapa className="w-full" tono="oscuro" />
-        </div>
-      </CabeceraSeccion>
+        /* El mapa ocupa la columna derecha entera y se lleva consigo las
+           tres cifras. Colgando debajo del texto se quedaba en 380px con
+           media pantalla vacía al lado, y es la pieza que contesta la
+           única pregunta de esta página: «¿llegáis a mi obra?». */
+        aside={
+          <div data-revelar="escala">
+            <Mapa className="w-full" tono="oscuro" animado />
+            <dl className="mt-5 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-rule-inverse bg-white/10">
+              {[
+                { k: "España", v: DELEGACIONES_ESPANA.length },
+                { k: "Portugal", v: DELEGACIONES_PORTUGAL.length },
+                { k: "Centros", v: CENTROS.length },
+              ].map((d) => (
+                <div key={d.k} className="bg-inverse px-3 py-3.5 text-center">
+                  <dd className="value text-xl text-ink-inv">{d.v}</dd>
+                  <dt className="label-sm mt-1 text-ink-inv-3">{d.k}</dt>
+                </div>
+              ))}
+            </dl>
+          </div>
+        }
+      />
 
       {grupos.map((g) => (
         <section key={g.titulo} className="section-y border-b border-rule">

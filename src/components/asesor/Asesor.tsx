@@ -217,7 +217,7 @@ export function Asesor({
             Claro sobre la banda oscura: así se lee como una superficie
             donde se introducen datos, no como más contenido. */}
         <div
-          className="border border-rule bg-surface shadow-panel"
+          className="overflow-hidden rounded-3xl border border-rule bg-surface shadow-[0_18px_50px_-24px_rgba(20,23,26,.35)]"
           data-revelar="escala"
           suppressHydrationWarning
         >
@@ -232,15 +232,22 @@ export function Asesor({
                   ? "Resultado"
                   : `${contestadas} de 3 contestadas`}
               </span>
-              <span className="flex gap-1" aria-hidden="true">
+              {/* Tres canales fijos y dentro una barra que CRECE. Antes
+                  el filete cambiaba de color de golpe, que informa pero
+                  no acusa recibo: el movimiento sí. */}
+              <span className="flex gap-1.5" aria-hidden="true">
                 {[1, 2, 3].map((n) => (
                   <span
                     key={n}
-                    className={cn(
-                      "h-1.5 w-8 transition-colors duration-200",
-                      contestadas >= n ? "bg-accent" : "bg-rule",
-                    )}
-                  />
+                    className="h-1.5 w-8 overflow-hidden rounded-full bg-rule"
+                  >
+                    <span
+                      className={cn(
+                        "block h-full origin-left rounded-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                        contestadas >= n ? "scale-x-100" : "scale-x-0",
+                      )}
+                    />
+                  </span>
                 ))}
               </span>
             </div>
@@ -512,7 +519,7 @@ function FilaResultado({
 
 function SinResultados() {
   return (
-    <div className="mt-5 border border-rule bg-sunken p-5">
+    <div className="panel mt-5 p-5">
       <p className="title text-ink">
         No tenemos una máquina que cumpla las tres condiciones a la vez.
       </p>
@@ -558,8 +565,20 @@ function Selector({
 
   return (
     <label className="block">
-      <span className="label flex items-baseline gap-2 text-ink">
-        <span className="value text-accent">{numero}</span>
+      <span className="etiqueta-campo flex items-center gap-2.5 text-ink">
+        <span
+          className={cn(
+            "value flex size-6 shrink-0 items-center justify-center rounded-full text-xs transition-colors duration-300",
+            valor
+              ? "bg-accent text-white"
+              : bloqueado
+                ? "bg-muted text-ink-3"
+                : "bg-accent-tint text-accent",
+          )}
+          aria-hidden="true"
+        >
+          {valor ? "✓" : numero}
+        </span>
         {etiqueta}
       </span>
 
@@ -569,10 +588,11 @@ function Selector({
           disabled={bloqueado}
           onChange={(e) => onChange(e.target.value)}
           className={cn(
-            "h-13 w-full appearance-none border bg-surface pr-10 pl-3 text-base",
+            "h-13 w-full cursor-pointer appearance-none rounded-xl border bg-surface pr-10 pl-3.5 text-base transition-[border-color,box-shadow] duration-200",
             bloqueado
-              ? "cursor-not-allowed border-rule text-ink-3"
-              : "border-rule-control text-ink",
+              ? "cursor-not-allowed border-rule bg-sunken text-ink-3"
+              : "border-rule-strong text-ink hover:border-rule-control focus:border-accent focus:shadow-[0_0_0_3px_rgba(227,6,19,.12)]",
+            valor && !bloqueado && "border-ink",
           )}
         >
           <option value="">{bloqueado ? "—" : placeholder}</option>
@@ -611,7 +631,7 @@ function Ayudas({ r }: { r: Respuestas }) {
   if (elegidas.length === 0) return null;
 
   return (
-    <ul className="mt-5 space-y-2 border-l-2 border-accent pl-4">
+    <ul className="panel mt-5 space-y-2 border-l-2 border-l-accent px-4 py-3.5">
       {elegidas.map((o) => (
         <li key={o.id} className="text-sm text-ink-2">
           <span className="font-semibold text-ink">{o.label}</span> — {o.desc}
