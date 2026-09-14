@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EMPRESA } from "@/content/es/empresa";
+import { EMAIL_PRINCIPAL, EMPRESA } from "@/content/es/empresa";
 
 export const metadata: Metadata = {
   title: "Aviso legal",
@@ -30,15 +30,24 @@ export default function PaginaAvisoLegal() {
             </dl>
           </section>
 
-          {/* Su propio aviso legal publica los campos del Registro Mercantil
-              en blanco. No los rellenamos a ojo: se piden al cliente. */}
+          {/* El aviso legal actual de jofemesa.com publica los campos del
+              Registro Mercantil en blanco, así que aquí no se rellenan a
+              ojo. Esta nota es lo que se ve mientras falten, y el recado
+              de pedirlos está en /admin/datos-pendientes, que es donde
+              van los recados: esta página la lee cualquiera. */}
           <section className="border-l-2 border-wait bg-sunken px-5 py-4">
             <p className="label-sm text-ink-2">Pendiente de completar</p>
             <p className="mt-2 text-base text-ink">
-              Faltan los datos de inscripción en el Registro Mercantil (tomo,
-              folio y hoja). En el aviso legal actual de jofemesa.com esos
-              campos están publicados en blanco, así que no los damos por
-              buenos: hay que pedírselos al cliente antes de publicar.
+              Los datos de inscripción en el Registro Mercantil —tomo, folio
+              y hoja— se incorporarán a este aviso legal en cuanto estén
+              verificados. Si los necesitas antes, escríbenos a{" "}
+              <a
+                href={`mailto:${EMAIL_PRINCIPAL}`}
+                className="font-semibold text-accent underline decoration-2 underline-offset-4"
+              >
+                {EMAIL_PRINCIPAL}
+              </a>{" "}
+              y te los facilitamos.
             </p>
           </section>
 
@@ -61,6 +70,17 @@ export default function PaginaAvisoLegal() {
               Las marcas de los fabricantes que aparecen en este sitio
               pertenecen a sus respectivos titulares y se usan únicamente para
               identificar los equipos de la flota.
+            </p>
+            {/* Aquí aterriza la antigua /creditos-imagen. Esa página
+                existía para citar la autoría de 57 fotografías de licencia
+                Creative Commons que ya no se usan: toda la fotografía de
+                producto de la web es material propio del cliente. */}
+            <p className="mt-3 text-base text-ink-2">
+              La fotografía de producto de este sitio es material propio de
+              JOFEMESA, tomado de su propia flota. Las máquinas para las que
+              todavía no hay fotografía se representan con un dibujo técnico
+              hecho para esta web, nunca con fotografía de archivo de otra
+              empresa.
             </p>
           </section>
         </div>

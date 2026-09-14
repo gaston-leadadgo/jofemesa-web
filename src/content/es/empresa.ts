@@ -1,9 +1,28 @@
 /**
- * Datos reales de JOFEMESA, verificados en jofemesa.com (agosto 2026).
+ * Datos reales de JOFEMESA.
  *
  * REGLA DURA DEL PROYECTO: aquí no se inventa nada. Cada dato con valor
  * está publicado por el cliente. Lo que no esté verificado se deja en
  * `null` y la interfaz lo dice, en vez de rellenarlo a ojo.
+ *
+ * Fuentes, por orden de autoridad:
+ *
+ *   1. `CATÁLOGO GENERAL DE MAQUINARIA JOFEMESA.pdf` y su edición
+ *      portuguesa de 2026 — material comercial vigente entregado por el
+ *      cliente. De aquí salen las direcciones, teléfonos y correos de
+ *      todas las delegaciones, incluidas las dos de Portugal, que su web
+ *      actual no publica en ninguna parte.
+ *   2. jofemesa.com (agosto de 2026) y su blog.
+ *   3. Creatividades propias del cliente (la lámina de iconografía que
+ *      pasó en la reunión de seguimiento del 24/08/2026).
+ *
+ * Lo que la reunión de seguimiento dejó cerrado y afecta a este fichero:
+ *
+ *   · «Desde 1987» tiene que ganar relevancia en la portada.
+ *   · NO se puede decir que la flota sea nueva. Jorge lo desmintió por
+ *     teléfono: «hay máquinas que están nuevas, pero hay máquinas que
+ *     tienen un montón de años; eso no lo puedo poner». Cuando amplíen
+ *     catálogo se hablará de «nuevo catálogo», nunca de «flota nueva».
  */
 
 export const EMPRESA = {
@@ -11,12 +30,15 @@ export const EMPRESA = {
   razonSocial: "JOFEME S.A.",
   cif: "A33098948",
   fundacion: 1987,
-  /** Se calcula: su web actual sigue diciendo "tres décadas". */
+  /** Fecha exacta, de la lámina de iconografía del propio cliente. */
+  fundacionIso: "1987-03-24",
+  /** Se calcula. Su web actual sigue diciendo «tres décadas». */
   get anios() {
     return new Date().getFullYear() - this.fundacion;
   },
   domicilioSocial:
     "Avda. del Aluminio, 20 — Parque Empresarial del Principado de Asturias, 33490 Avilés",
+  web: "https://www.jofemesa.com",
 } as const;
 
 /** Teléfono principal. Un solo sitio: cambiarlo aquí arregla todos los tel:. */
@@ -24,6 +46,8 @@ export const TELEFONO_PRINCIPAL = {
   visible: "91 361 31 31",
   tel: "+34913613131",
 } as const;
+
+export const EMAIL_PRINCIPAL = "jofemesa@jofemesa.com";
 
 export const WHATSAPP = {
   /** Pendiente de que el cliente confirme un número de WhatsApp Business. */
@@ -35,13 +59,14 @@ export type Pais = "España" | "Portugal";
 export type DelegacionId =
   | "madrid"
   | "asturias"
+  | "valladolid"
   | "valencia"
   | "castellon"
-  | "malaga"
-  | "sevilla"
-  | "valladolid"
   | "alicante"
-  | "portugal";
+  | "sevilla"
+  | "malaga"
+  | "oporto"
+  | "lisboa";
 
 export interface Delegacion {
   id: DelegacionId;
@@ -58,8 +83,15 @@ export interface Delegacion {
   horario: string | null;
   /** Servicios verificados: unidades de negocio propias que sí documentan. */
   servicios: string[];
-  /** Coordenadas en porcentaje sobre el mapa peninsular. */
+  /**
+   * Posición sobre el mapa peninsular, en porcentaje.
+   * Calculada desde la longitud y la latitud reales de cada dirección:
+   * x = (lon + 9,6) / 13,1 · 100 e y = (44 − lat) / 8,2 · 100, que es
+   * la misma proyección que usa el trazado de la península en <Mapa>.
+   */
   mapa: { x: number; y: number };
+  /** Sede central de alquiler. */
+  central?: boolean;
 }
 
 export const DELEGACIONES: readonly Delegacion[] = [
@@ -68,7 +100,7 @@ export const DELEGACIONES: readonly Delegacion[] = [
     nombre: "Madrid",
     provincia: "Madrid",
     pais: "España",
-    direccion: "Carretera Madrid-Barcelona (A-2), km 15,300",
+    direccion: "A-2 dirección Barcelona, km 15,300 (vía de servicio)",
     cp: "28022",
     localidad: "Madrid",
     telefono: "91 361 31 31",
@@ -76,19 +108,20 @@ export const DELEGACIONES: readonly Delegacion[] = [
     email: "jofemesamadrid@jofemesa.com",
     horario: null,
     servicios: [
-      "Parque de elevación y maquinaria",
-      "Maquinaria Madrid — San Fernando de Henares",
-      "Ferretería Madrid — Móstoles",
+      "Sede central de alquiler",
+      "Parque de elevación y maquinaria de obra",
+      "Taller y asistencia técnica móvil",
     ],
-    mapa: { x: 51, y: 47 },
+    mapa: { x: 46.0, y: 43.3 },
+    central: true,
   },
   {
     id: "asturias",
     nombre: "Asturias",
     provincia: "Asturias",
     pais: "España",
-    direccion: "Parque Empresarial Pdo. Asturias, Avda. del Aluminio, 20",
-    cp: "33417",
+    direccion: "Parque Empresarial Principado de Asturias, Avda. del Aluminio, 20",
+    cp: "33490",
     localidad: "Avilés",
     telefono: "985 985 212",
     tel: "+34985985212",
@@ -96,11 +129,25 @@ export const DELEGACIONES: readonly Delegacion[] = [
     horario: null,
     servicios: [
       "Domicilio social y origen de la empresa",
-      "Manutención Asturias — venta y recambios",
+      "Venta y recambios de manutención",
       "Distribución Jungheinrich",
-      "Centro de formación IPAF",
     ],
-    mapa: { x: 42, y: 14 },
+    mapa: { x: 28.1, y: 5.5 },
+  },
+  {
+    id: "valladolid",
+    nombre: "Valladolid",
+    provincia: "Valladolid",
+    pais: "España",
+    direccion: "Polígono Industrial San Cristóbal, C/ Pirita, 2",
+    cp: "47012",
+    localidad: "Valladolid",
+    telefono: "983 525 363",
+    tel: "+34983525363",
+    email: "valladolid@jofemesa.com",
+    horario: null,
+    servicios: ["Plataformas elevadoras", "Carretillas industriales"],
+    mapa: { x: 37.4, y: 28.9 },
   },
   {
     id: "valencia",
@@ -110,16 +157,15 @@ export const DELEGACIONES: readonly Delegacion[] = [
     direccion: "Polígono Industrial Parc Sagunt, C/ Braç de la Creu, s/n",
     cp: "46520",
     localidad: "Puerto de Sagunto",
-    telefono: "962 680 581",
+    telefono: "96 268 05 81",
     tel: "+34962680581",
     email: "valencia@jofemesa.com",
     horario: null,
     servicios: [
       "Elevación y maquinaria de obra",
-      "Maquinaria Valencia — Pol. Ind. Ingruinsa",
       "Servicio de estiba en puerto",
     ],
-    mapa: { x: 73, y: 52 },
+    mapa: { x: 71.5, y: 53.2 },
   },
   {
     id: "castellon",
@@ -134,52 +180,7 @@ export const DELEGACIONES: readonly Delegacion[] = [
     email: "castellon@jofemesa.com",
     horario: null,
     servicios: ["Sector cerámico e industrial", "Elevación y manipulación"],
-    mapa: { x: 74, y: 44 },
-  },
-  {
-    id: "malaga",
-    nombre: "Málaga",
-    provincia: "Málaga",
-    pais: "España",
-    direccion: "Polígono Industrial Guadalhorce, C/ Hermanas Bronte, 70",
-    cp: "29004",
-    localidad: "Málaga",
-    telefono: "951 173 730",
-    tel: "+34951173730",
-    email: "jofemesamalaga@jofemesa.com",
-    horario: null,
-    servicios: ["Elevación para infraestructura y edificación"],
-    mapa: { x: 46, y: 86 },
-  },
-  {
-    id: "sevilla",
-    nombre: "Sevilla",
-    provincia: "Sevilla",
-    pais: "España",
-    direccion: "Polígono Industrial Polysol, C/ Polysol Tres, 6",
-    cp: "41500",
-    localidad: "Alcalá de Guadaíra",
-    telefono: "955 77 63 63",
-    tel: "+34955776363",
-    email: "jofemesasevilla@jofemesa.com",
-    horario: null,
-    servicios: ["Elevación y movimiento de tierras", "Abierta en abril de 2023"],
-    mapa: { x: 34, y: 78 },
-  },
-  {
-    id: "valladolid",
-    nombre: "Valladolid",
-    provincia: "Valladolid",
-    pais: "España",
-    direccion: "Polígono San Cristóbal, C/ Turquesa, 47",
-    cp: "47012",
-    localidad: "Valladolid",
-    telefono: "983 525 363",
-    tel: "+34983525363",
-    email: "valladolid@jofemesa.com",
-    horario: null,
-    servicios: ["Plataformas y carretillas industriales"],
-    mapa: { x: 45, y: 35 },
+    mapa: { x: 72.8, y: 49.5 },
   },
   {
     id: "alicante",
@@ -193,26 +194,68 @@ export const DELEGACIONES: readonly Delegacion[] = [
     tel: "+34965742175",
     email: "alquileresalicante@jofemesa.com",
     horario: null,
-    servicios: ["Elevación para edificación e industria", "Abierta en julio de 2023"],
-    mapa: { x: 72, y: 64 },
+    servicios: ["Elevación para edificación e industria"],
+    mapa: { x: 69.6, y: 68.9 },
   },
   {
-    // Su primera expansión internacional, anunciada en noviembre de 2024 y
-    // que su web actual no cuenta en ningún sitio visible. La dirección y el
-    // teléfono los tiene que confirmar el cliente.
-    id: "portugal",
-    nombre: "Portugal",
-    provincia: "Portugal",
-    pais: "Portugal",
-    direccion: null,
-    cp: null,
-    localidad: null,
-    telefono: null,
-    tel: null,
-    email: null,
+    id: "sevilla",
+    nombre: "Sevilla",
+    provincia: "Sevilla",
+    pais: "España",
+    direccion: "Polígono Industrial Polysol, C/ Polysol Tres, 6",
+    cp: "41500",
+    localidad: "Alcalá de Guadaíra",
+    telefono: "955 77 63 63",
+    tel: "+34955776363",
+    email: "jofemesasevilla@jofemesa.com",
     horario: null,
-    servicios: ["Primera expansión internacional, desde noviembre de 2024"],
-    mapa: { x: 14, y: 44 },
+    servicios: ["Elevación y movimiento de tierras", "Taller y recambios"],
+    mapa: { x: 28.7, y: 81.2 },
+  },
+  {
+    id: "malaga",
+    nombre: "Málaga",
+    provincia: "Málaga",
+    pais: "España",
+    direccion: "Polígono Industrial Guadalhorce, C/ Hermanas Bronte, 70",
+    cp: "29004",
+    localidad: "Málaga",
+    telefono: "951 173 730",
+    tel: "+34951173730",
+    email: "alquileresmalaga@jofemesa.com",
+    horario: null,
+    servicios: ["Elevación para infraestructura y edificación"],
+    mapa: { x: 39.0, y: 88.8 },
+  },
+  {
+    id: "oporto",
+    nombre: "Oporto",
+    provincia: "Oporto",
+    pais: "Portugal",
+    direccion: "Rua Central do Olival, n.º 7494",
+    cp: "4415-957",
+    localidad: "Vila Nova de Gaia",
+    telefono: "+351 220 946 176",
+    tel: "+351220946176",
+    email: "logistica.porto@jofemesa.com",
+    horario: null,
+    servicios: ["Plataformas elevadoras", "Logística del norte"],
+    mapa: { x: 7.6, y: 35.1 },
+  },
+  {
+    id: "lisboa",
+    nombre: "Lisboa",
+    provincia: "Setúbal",
+    pais: "Portugal",
+    direccion: "Quinta da Marquesa I, junto a Autoeuropa",
+    cp: "2954-024",
+    localidad: "Quinta do Anjo, Palmela",
+    telefono: "+351 211 333 790",
+    tel: "+351211333790",
+    email: "jofemesa.portugal@jofemesa.com",
+    horario: null,
+    servicios: ["Alquiler de equipos", "Asistencia técnica"],
+    mapa: { x: 5.0, y: 66.1 },
   },
 ] as const;
 
@@ -220,10 +263,45 @@ export const DELEGACIONES_POR_ID = Object.fromEntries(
   DELEGACIONES.map((d) => [d.id, d]),
 ) as Record<DelegacionId, Delegacion>;
 
-/** Solo las que se pueden ofrecer como punto de recogida hoy. */
+/** Todas tienen teléfono publicado, así que todas son operativas. */
 export const DELEGACIONES_OPERATIVAS = DELEGACIONES.filter(
   (d) => d.telefono !== null,
 );
+
+export const DELEGACIONES_ESPANA = DELEGACIONES.filter(
+  (d) => d.pais === "España",
+);
+
+export const DELEGACIONES_PORTUGAL = DELEGACIONES.filter(
+  (d) => d.pais === "Portugal",
+);
+
+/**
+ * Centros que no son delegación de alquiler pero sí dirección propia con
+ * teléfono y correo distintos. Salen los dos del catálogo general.
+ */
+export const CENTROS = [
+  {
+    id: "formacion",
+    nombre: "Central de Formación",
+    direccion: "Polígono Industrial Las Fronteras, C/ Mar Mediterráneo, 1",
+    cp: "28830",
+    localidad: "San Fernando de Henares, Madrid",
+    telefono: "649 755 883",
+    tel: "+34649755883",
+    email: "formacion@jofemesa.com",
+  },
+  {
+    id: "takeuchi",
+    nombre: "Distribuidor oficial Takeuchi",
+    direccion: "Polígono Industrial Las Fronteras, C/ Mar Mediterráneo, 1",
+    cp: "28830",
+    localidad: "San Fernando de Henares, Madrid",
+    telefono: "680 800 215",
+    tel: "+34680800215",
+    email: "ventastakeuchi@jofemesa.com",
+  },
+] as const;
 
 export const CERTIFICACIONES = [
   {
@@ -243,8 +321,29 @@ export const CERTIFICACIONES = [
   },
 ] as const;
 
+/**
+ * Homologaciones de formación, tal y como aparecen en la contraportada
+ * del catálogo general: el sello IPAF y los dos de AENOR con su norma.
+ */
+export const HOMOLOGACIONES = [
+  {
+    id: "ipaf",
+    nombre: "IPAF",
+    descripcion: "Centro de formación homologado",
+  },
+  {
+    id: "aenor-pemp",
+    nombre: "AENOR · UNE 58923",
+    descripcion: "Formación de operadores de PEMP",
+  },
+  {
+    id: "aenor-carretillas",
+    nombre: "AENOR · UNE 58451",
+    descripcion: "Formación de operadores de carretillas",
+  },
+] as const;
+
 export const AFILIACIONES = [
-  { id: "ipaf", nombre: "IPAF", descripcion: "Centro de formación homologado" },
   { id: "anapat", nombre: "ANAPAT", descripcion: "Asociación del sector" },
   { id: "aseamac", nombre: "ASEAMAC", descripcion: "Alquiler de maquinaria" },
   {
@@ -254,25 +353,43 @@ export const AFILIACIONES = [
   },
 ] as const;
 
-/** Fabricantes cuya maquinaria está documentada en su propia flota. */
+/** Fabricantes cuya maquinaria está en el catálogo general vigente. */
 export const FABRICANTES_FLOTA = [
-  { nombre: "Genie", area: "Elevación e híbridos" },
-  { nombre: "JLG", area: "Plataformas telescópicas" },
-  { nombre: "Haulotte", area: "Brazos y mástiles" },
+  { nombre: "Genie", area: "Tijeras, brazos y telescópicas" },
+  { nombre: "JLG", area: "Brazos, telescópicas y orugas" },
+  { nombre: "Haulotte", area: "Tijeras, mástiles y brazos" },
   { nombre: "Manitou", area: "Manipuladores y carretillas" },
-  { nombre: "Jungheinrich", area: "Partner intralogística" },
-  { nombre: "Takeuchi", area: "Miniexcavadoras" },
-  { nombre: "Volvo", area: "Palas cargadoras" },
+  { nombre: "Jungheinrich", area: "Partner de intralogística" },
+  { nombre: "Takeuchi", area: "Retroexcavadoras" },
+  { nombre: "JCB", area: "Retrocargadoras y tijeras" },
+  { nombre: "Snorkel", area: "Tijeras y brazos" },
+  { nombre: "Ausa", area: "Dúmperes 4x4" },
   { nombre: "Bomag", area: "Compactación" },
-  { nombre: "Pramac", area: "Energía profesional" },
-  { nombre: "Atlas Copco", area: "Compresores" },
+  { nombre: "Hamm", area: "Rodillos" },
+  { nombre: "Wacker Neuson", area: "Compactación y carga" },
+  { nombre: "Atlas Copco", area: "Aire comprimido y energía" },
+  { nombre: "Himoinsa", area: "Grupos electrógenos" },
+  { nombre: "Dagartech", area: "Grupos electrógenos" },
+  { nombre: "Hilti", area: "Herramienta de obra" },
 ] as const;
+
+/**
+ * Cifra de la propia lámina del cliente. Se publica porque es suya, no
+ * nuestra, y queda anotada en DATOS_PENDIENTES para que la confirme.
+ */
+export const FLOTA = {
+  equipos: "+5.000",
+  nota: "Cifra de la creatividad entregada el 24/08/2026.",
+} as const;
 
 /**
  * Suyo, y hoy enterrado en su web. Especialmente bueno para una
  * empresa con delegación propia en cada provincia donde opera.
  */
 export const LEMA = "Llegamos lejos para estar cerca.";
+
+/** El de su blog, que firma todas las entradas. */
+export const LEMA_EQUIPO = "Un equipo de profesionales siempre a tu disposición";
 
 /**
  * Lo que NO sabemos y por tanto NO se escribe en ninguna página.
@@ -281,38 +398,42 @@ export const LEMA = "Llegamos lejos para estar cerca.";
 export const DATOS_PENDIENTES = [
   {
     campo: "Horarios de apertura",
-    nota: "No publicados en ninguna página de jofemesa.com. La web dice «consúltanos» en vez de inventar un horario.",
+    nota: "No publicados en ninguna página de jofemesa.com ni en el catálogo general. La web dice «llámanos» en vez de inventar un horario.",
   },
   {
-    campo: "Delegación de Portugal",
-    nota: "El blog anuncia la expansión en noviembre de 2024 pero no da ciudad, dirección ni teléfono.",
+    campo: "Tamaño de flota",
+    nota: "La lámina entregada el 24/08/2026 dice «+5.000 equipos en flota». Está publicado con esa cifra: hay que confirmarla antes de salir a producción.",
   },
   {
-    campo: "Tamaño de flota y plantilla",
-    nota: "Nunca lo publican. No se estima.",
+    campo: "Antigüedad de la flota",
+    nota: "Jorge desmintió por teléfono que la flota sea nueva: hay máquinas nuevas y máquinas de muchos años. Ningún claim de la web dice «flota nueva». Cuando amplíen catálogo se hablará de «nuevo catálogo».",
   },
   {
     campo: "Número de WhatsApp Business",
-    nota: "La barra móvil lo necesita para el botón de WhatsApp.",
+    nota: "La barra móvil lo necesita para el botón de WhatsApp. Mientras no esté, la barra sale con dos acciones en vez de tres.",
   },
   {
     campo: "Certificados ISO en PDF",
-    nota: "Los enlaces de su web (/images/certifications/*.pdf) devuelven una página HTML vacía con código 200. Hacen falta los documentos reales.",
+    nota: "Los enlaces de la web actual (/images/certifications/*.pdf) devuelven una página HTML vacía con código 200. Hacen falta los documentos reales.",
   },
   {
-    campo: "Inicio del partnership Jungheinrich",
-    nota: "La página de partner no da fecha.",
+    campo: "Delegación de Castellón",
+    nota: "El catálogo general la nombra en la portada pero no le da ficha de contacto. La dirección y el 902 vienen de jofemesa.com: conviene confirmarlos.",
   },
   {
-    campo: "Territorio Jungheinrich",
-    nota: "Su web dice «distribuidores para Asturias», pero el blog anuncia venta en Valencia, Castellón y Madrid.",
+    campo: "Fichas técnicas de manutención, tierras y energía",
+    nota: "Están las 34 fichas de elevación. Para manutención de cargas, movimiento de tierras, compactación y energía el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
   },
   {
-    campo: "Teléfono de Valladolid",
-    nota: "Su web da dos números distintos: 983 525 363 en contacto y 681 144 958 en situación.",
+    campo: "Fotografía de manutención, tierras y energía",
+    nota: "Hay 27 fotos oficiales de JOFEMESA de tijeras eléctricas, diésel e híbridas. El resto del catálogo sale con dibujo técnico hasta que lleguen las fotografías de esas familias.",
   },
   {
-    campo: "Autorización de imagen de fabricantes",
-    nota: "La fotografía de producto de Genie, JLG, Haulotte, Manitou, Takeuchi y Jungheinrich tiene derechos. Hay que pedir acceso al portal de medios antes de publicar.",
+    campo: "Contenido de Formación",
+    nota: "Acordado en la reunión: se nombra dentro de Servicios pero no se desarrolla hasta que estén el calendario de convocatorias y el catálogo de cursos.",
+  },
+  {
+    campo: "Migración del blog",
+    nota: "Hay unas 267 entradas reales en /blogs/. Las 14 últimas están cargadas con título, fecha y entradilla verificados; el cuerpo sigue en el servidor actual y la tarjeta enlaza allí hasta que se migre.",
   },
 ] as const;

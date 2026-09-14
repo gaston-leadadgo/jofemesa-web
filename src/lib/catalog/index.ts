@@ -1,7 +1,5 @@
 import type { DelegacionId } from "@/content/es/empresa";
-import { MAQUINAS_CATALOGO } from "./maquinas-catalogo";
-import { MAQUINAS_TIJERAS } from "./maquinas-tijeras";
-import { MAQUINAS_VERIFICADAS } from "./maquinas-verificadas";
+import { FLOTA } from "./flota";
 import { FAMILIAS, FAMILIA_POR_ID, SUBCATEGORIA_POR_SLUG } from "./familias";
 import {
   numeroDe,
@@ -19,19 +17,16 @@ export { FAMILIAS, FAMILIA_POR_ID, SUBCATEGORIA_POR_SLUG } from "./familias";
 
 /** El catálogo completo, ordenado. Fuente única para filtros, asesor,
  *  comparador y fichas: si algo no está aquí, no existe en la web. */
-const TODAS = [
-  ...MAQUINAS_TIJERAS,
-  ...MAQUINAS_VERIFICADAS,
-  ...MAQUINAS_CATALOGO,
-];
-
-/** Si dos ficheros describen el mismo modelo, gana el que tiene la ficha
- *  técnica real transcrita: MAQUINAS_TIJERAS va primero a propósito. */
-export const CATALOGO: readonly Maquina[] = TODAS.filter(
-  (m, i) => TODAS.findIndex((o) => o.slug === m.slug) === i,
-).sort((a, b) => a.orden - b.orden);
+export const CATALOGO: readonly Maquina[] = [...FLOTA].sort(
+  (a, b) => a.orden - b.orden,
+);
 
 export const ALQUILER = CATALOGO.filter((m) => m.lineas.includes("alquiler"));
+
+/** Los fabricantes que hay de verdad en el catálogo, ordenados. */
+export const MARCAS = [...new Set(CATALOGO.map((m) => m.marca))].sort((a, b) =>
+  a.localeCompare(b, "es"),
+);
 export const VENTA = CATALOGO.filter((m) => m.lineas.includes("venta"));
 
 const POR_SLUG = new Map(CATALOGO.map((m) => [m.slug, m]));
@@ -50,6 +45,8 @@ export interface Filtros {
   energia: Energia[];
   entorno: Entorno[];
   delegacion: DelegacionId[];
+  /** Fabricante exacto, tal y como se escribe en el catálogo. */
+  marca?: string | null;
   /** Altura de trabajo en metros. */
   alturaMin?: number | null;
   alturaMax?: number | null;
@@ -71,6 +68,7 @@ export const FILTROS_VACIOS: Filtros = {
   energia: [],
   entorno: [],
   delegacion: [],
+  marca: null,
   alturaMin: null,
   alturaMax: null,
   cargaMin: null,
@@ -108,6 +106,7 @@ export function filtrar(
       !f.delegacion.some((d) => m.delegaciones.includes(d))
     )
       return false;
+    if (f.marca && m.marca !== f.marca) return false;
 
     if (f.alturaMin != null || f.alturaMax != null) {
       const h = numeroDe(m.specs.alturaTrabajo);
@@ -156,11 +155,17 @@ export function ordenar(maquinas: Maquina[], orden: OrdenId): Maquina[] {
     case "carga-desc":
       return copia.sort(desc("capacidadCarga"));
     default:
-      // Relevancia: primero las destacadas, después por orden de catálogo.
-      return copia.sort(
-        (a, b) =>
-          Number(b.destacada) - Number(a.destacada) || a.orden - b.orden,
-      );
+      /* El orden por defecto es EXACTAMENTE el del catálogo impreso:
+         columnas verticales, tijeras eléctricas, brazos eléctricos,
+         híbridos, diésel, orugas, camión, y después manutención,
+         tierras, energía, aire y herramienta.
+
+         Antes ponía delante las marcadas como destacadas y la etiqueta
+         del selector decía «más solicitadas». Eran dos problemas en
+         uno: no tenemos estadística de rotación —ese dato no existe— y
+         quien abre el catálogo del cliente y lo compara con la web
+         espera encontrar lo mismo en el mismo orden. */
+      return copia.sort((a, b) => a.orden - b.orden);
   }
 }
 
@@ -190,6 +195,9 @@ export function contarFacetas(maquinas: readonly Maquina[], f: Filtros) {
     entorno: cuenta(["interior", "exterior"] as const, (e) => ({
       entorno: [e],
     })),
+    marca: Object.fromEntries(
+      MARCAS.map((marca) => [marca, filtrar(maquinas, { ...f, marca }).length]),
+    ) as Record<string, number>,
   };
 }
 
@@ -214,8 +222,8 @@ export function filtrosQueMasExcluyen(
     candidatos.push({ etiqueta: "el filtro de alimentación", quitar: { energia: [] } });
   if (f.entorno.length)
     candidatos.push({ etiqueta: "el filtro de uso", quitar: { entorno: [] } });
-  if (f.delegacion.length)
-    candidatos.push({ etiqueta: "el filtro de delegación", quitar: { delegacion: [] } });
+  if (f.marca)
+    candidatos.push({ etiqueta: "el filtro de fabricante", quitar: { marca: null } });
   if (f.subcategoria)
     candidatos.push({ etiqueta: "la subcategoría", quitar: { subcategoria: null } });
   if (f.texto)
@@ -257,27 +265,52 @@ export function filtrosQueMasExcluyen(
    Specs de la tarjeta
    ============================================================ */
 
-/** Las tres specs que salen en la franja de la tarjeta, por familia. */
+/**
+ * Las tres specs que salen en la franja de la tarjeta.
+ *
+ * Nunca una que no aplique. Una tijera no tiene «altura de elevación»
+ * y una excavadora no tiene «altura de trabajo»: esas specs existen en
+ * la máquina como `na()` para que el comparador pueda poner la raya en
+ * su fila, pero en una tarjeta de tres columnas una raya ocupa el sitio
+ * de un dato y no dice nada. Se prefiere lo que tiene cifra, después lo
+ * que está pendiente, y lo que no aplica se descarta.
+ */
 export function specsDestacadas(m: Maquina): SpecKey[] {
+  const util = (k: SpecKey) => {
+    const d = m.specs[k];
+    if (!d || d.estado === "no_aplica") return 0;
+    return d.estado === "pendiente" ? 1 : 2;
+  };
+
   const preferidas = SPEC_DEFS.filter(
-    (d) => d.destacadaEn?.includes(m.familia) && m.specs[d.key],
+    (d) => d.destacadaEn?.includes(m.familia) && util(d.key) === 2,
   ).map((d) => d.key);
 
-  if (preferidas.length >= 3) return preferidas.slice(0, 3);
-
-  const relleno = SPEC_DEFS.filter(
-    (d) => !preferidas.includes(d.key) && m.specs[d.key],
+  const resto = SPEC_DEFS.filter(
+    (d) => !preferidas.includes(d.key) && util(d.key) === 2,
   ).map((d) => d.key);
 
-  return [...preferidas, ...relleno].slice(0, 3);
+  const pendientes = SPEC_DEFS.filter((d) => util(d.key) === 1).map(
+    (d) => d.key,
+  );
+
+  return [...preferidas, ...resto, ...pendientes].slice(0, 3);
 }
 
-/** Specs de la ficha, agrupadas y ordenadas por el registro. */
+/**
+ * Specs de la ficha, agrupadas y ordenadas por el registro.
+ *
+ * Las que no aplican se quedan fuera. En el COMPARADOR sí salen —ahí la
+ * raya es información: dice que esa máquina no juega en esa fila y
+ * mantiene las filas alineadas entre columnas—, pero en la ficha de una
+ * sola máquina cuatro rayas seguidas solo alargan la tabla. Una tijera
+ * no tiene profundidad de excavación y nadie viene a comprobarlo.
+ */
 export function specsAgrupadas(m: Maquina) {
   const grupos = new Map<string, { def: (typeof SPEC_DEFS)[number]; dato: NonNullable<Maquina["specs"][SpecKey]> }[]>();
   for (const def of SPEC_DEFS) {
     const dato = m.specs[def.key];
-    if (!dato) continue;
+    if (!dato || dato.estado === "no_aplica") continue;
     const lista = grupos.get(def.grupo) ?? [];
     lista.push({ def, dato });
     grupos.set(def.grupo, lista);

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, Phone, Check } from "lucide-react";
+import { Download, Phone, Check, Layers } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { DELEGACIONES_POR_ID, TELEFONO_PRINCIPAL } from "@/content/es/empresa";
 import { specsAgrupadas, relacionadas } from "@/lib/catalog";
@@ -31,6 +31,11 @@ export function FichaMaquina({
   variante: "pagina" | "modal";
 }) {
   const grupos = specsAgrupadas(m);
+  /* La frase del subrayado ámbar solo se escribe si hay algo subrayado:
+     si no, habla de una marca que no aparece en esta página. */
+  const hayEstimadas = [...grupos.values()]
+    .flat()
+    .some(({ dato }) => dato.estado === "estimado");
   const subcat = SUBCATEGORIA_POR_SLUG[m.subcategoriaSlug];
   const familia = FAMILIA_POR_ID[m.familia];
   const otras = variante === "pagina" ? relacionadas(m) : [];
@@ -93,6 +98,24 @@ export function FichaMaquina({
 
           <p className="lede mt-5 text-ink-2">{m.descripcionCorta}</p>
 
+          {m.gama && (
+            <p className="mt-5 flex items-start gap-3 border-l-2 border-wait bg-sunken px-4 py-3 text-base text-ink-2">
+              <Layers
+                size={17}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="mt-1 shrink-0 text-wait-text"
+              />
+              <span>
+                Esta ficha es la <strong className="font-semibold text-ink">gama completa</strong>,
+                no una unidad concreta. El catálogo de JOFEMESA publica esta
+                familia por rangos, así que aquí verás el máximo de la gama:
+                dinos qué necesitas mover y a qué altura y te decimos el
+                modelo exacto.
+              </span>
+            </p>
+          )}
+
           {/* ---------- Especificaciones ---------- */}
           <div className="mt-8">
             <h2 className="label border-b border-ink pb-3 text-ink">
@@ -120,9 +143,11 @@ export function FichaMaquina({
             ))}
 
             <p className="mt-4 text-sm text-ink-3">
-              Las cifras subrayadas en ámbar vienen del catálogo del
-              fabricante; las confirmamos con la unidad concreta al responder
-              tu solicitud.
+              Las cifras salen del Catálogo General de Maquinaria de JOFEMESA
+              y de la ficha técnica del fabricante.
+              {hayEstimadas
+                ? " Las subrayadas en ámbar están sin confirmar contra la unidad concreta: las comprobamos al responder tu solicitud."
+                : " La disponibilidad y las cotas de acceso las confirmamos al responder tu solicitud."}
             </p>
           </div>
 
@@ -143,9 +168,16 @@ export function FichaMaquina({
             </div>
           )}
 
-          {/* ---------- Disponibilidad ---------- */}
+          {/* ---------- Disponibilidad ----------
+              «Se sirve desde» y no «se puede recoger en». Es una
+              diferencia de precisión, no de estilo: el cliente no
+              publica en qué parque está cada unidad, así que decir «se
+              recoge en Málaga» sería una afirmación que no podemos
+              sostener. Lo que sí es cierto es que el catálogo es común a
+              las diez delegaciones y que la fecha la confirma la que te
+              atienda. */}
           <div className="mt-8">
-            <h2 className="label text-ink-3">Se puede recoger en</h2>
+            <h2 className="label text-ink-3">Se sirve desde</h2>
             <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-1">
               {m.delegaciones.map((d) => {
                 const del = DELEGACIONES_POR_ID[d];
@@ -162,8 +194,9 @@ export function FichaMaquina({
               })}
             </ul>
             <p className="mt-3 text-sm text-ink-3">
-              La disponibilidad de la fecha la confirma la delegación al
-              responder tu solicitud.
+              Con transporte propio entre delegaciones. La disponibilidad de
+              la fecha la confirma la delegación que te atiende al responder
+              tu solicitud.
             </p>
           </div>
 
@@ -182,13 +215,16 @@ export function FichaMaquina({
               Consultar disponibilidad
             </Link>
 
+            {/* `md:flex-1` y no `flex-1`: en columna el eje principal es
+                el vertical, así que un `flex-basis: 0` se comía el `h-12`
+                y los dos botones quedaban en 22 px de alto en el móvil. */}
             <div className="flex flex-col gap-3 md:flex-row">
               {/* Si no hay PDF el botón NO se dibuja: nunca una descarga rota. */}
               {m.fichaTecnica && (
                 <a
                   href={m.fichaTecnica.src}
                   download
-                  className="flex h-12 flex-1 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+                  className="flex h-12 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken md:flex-1"
                 >
                   <Download size={18} strokeWidth={1.75} aria-hidden="true" />
                   Ficha técnica
@@ -197,7 +233,7 @@ export function FichaMaquina({
               )}
               <a
                 href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-                className="flex h-12 flex-1 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken"
+                className="flex h-12 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink transition-colors duration-200 hover:bg-sunken md:flex-1"
               >
                 <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
                 <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
@@ -221,7 +257,7 @@ export function FichaMaquina({
                   className="group flex h-full flex-col border border-rule transition-colors duration-200 hover:border-rule-strong"
                 >
                   <span className="relative block aspect-4/3 overflow-hidden border-b border-rule bg-muted">
-                    <ImagenMaquina maquina={o} sizes="33vw" marca={false} />
+                    <ImagenMaquina maquina={o} sizes="33vw" compacto />
                   </span>
                   <span className="flex flex-1 flex-col p-4">
                     <span className="label-sm text-ink-3">{o.marca}</span>

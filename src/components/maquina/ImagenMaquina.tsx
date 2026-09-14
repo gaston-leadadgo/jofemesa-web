@@ -1,24 +1,24 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils/cn";
 import type { Maquina } from "@/lib/catalog/types";
-import { fotoProvisional } from "@/lib/catalog/fotos";
-import { SiluetaMaquina } from "./SiluetaMaquina";
+import { SUBCATEGORIA_POR_SLUG, FAMILIA_POR_ID } from "@/lib/catalog/familias";
+import { IconoMaquina } from "@/components/marca/IconoMaquina";
 
 /**
- * La foto de la máquina, que es la protagonista de esta web.
+ * La imagen de la máquina.
  *
- * Tres niveles, en este orden:
+ * Dos niveles y ninguno más:
  *
- *   1. `maquina.imagenes` — la foto real del modelo. Manda siempre.
- *   2. Foto provisional de licencia libre por subcategoría. Es de otra
- *      unidad de la misma familia, así que se marca como referencia.
- *   3. Silueta técnica dibujada, si no hay ninguna de las dos.
+ *   1. `maquina.imagenes` — la fotografía oficial de JOFEMESA. Son 27
+ *      máquinas de su propia flota, con su rotulación.
+ *   2. El dibujo técnico de su subcategoría, si no hay foto.
  *
- * El relleno lo pone este componente y no quien lo llama, porque depende
- * del tipo de imagen: la foto de fabricante viene recortada sobre fondo
- * limpio y necesita aire para que `contain` no la pegue al filete; la
- * foto de obra va a sangre, y ahí cualquier margen deja un marco gris
- * que rompe la rejilla.
+ * Lo que se ha quitado a propósito es el nivel intermedio que había
+ * antes: 57 fotografías de licencia libre de Wikimedia repartidas por
+ * subcategoría. No era solo que no fueran del modelo exacto —varias
+ * llevaban rotulación visible de empresas de alquiler de la
+ * competencia, y una de ellas era el hero de la portada—. Un dibujo
+ * parece deliberado; la máquina de otro con su logotipo, no.
  */
 export function ImagenMaquina({
   maquina,
@@ -26,7 +26,7 @@ export function ImagenMaquina({
   sizes,
   prioridad = false,
   className,
-  marca = true,
+  compacto = false,
 }: {
   maquina: Maquina;
   indice?: number;
@@ -34,57 +34,39 @@ export function ImagenMaquina({
   prioridad?: boolean;
   /** Se aplica a la imagen, para el zoom al pasar por encima. */
   className?: string;
-  /** Dibuja el aviso de "foto de referencia". Se apaga en miniaturas. */
-  marca?: boolean;
+  /** En miniatura se quita la palabra «Foto pendiente». */
+  compacto?: boolean;
 }) {
   const real = maquina.imagenes[indice];
 
   if (real) {
     return (
-      <span className="absolute inset-0 block p-4">
-        <Image
-          src={real.src}
-          alt={real.alt}
-          fill
-          sizes={sizes}
-          priority={prioridad}
-          className={cn("object-contain", className)}
-        />
-      </span>
-    );
-  }
-
-  const prov = fotoProvisional(maquina);
-
-  if (!prov) {
-    return (
-      <span className="absolute inset-0 flex items-center justify-center p-5">
-        <SiluetaMaquina
-          familia={maquina.familia}
-          etiqueta={`${maquina.marca} ${maquina.modelo}`}
-        />
-      </span>
-    );
-  }
-
-  return (
-    <>
       <Image
-        src={prov.fichero}
-        alt={`Fotografía de referencia de un equipo de la misma familia que el ${maquina.marca} ${maquina.modelo}`}
+        src={real.src}
+        alt={real.alt}
         fill
         sizes={sizes}
         priority={prioridad}
         className={cn("object-cover", className)}
       />
-      {marca && (
-        <span
-          className="label-sm pointer-events-none absolute right-0 bottom-0 z-1 bg-surface/90 px-2 py-1 text-ink-3"
-          title={`Imagen de referencia (${prov.licencia}, Wikimedia Commons). Pendiente la foto del modelo exacto.`}
-        >
-          Foto de referencia
-        </span>
+    );
+  }
+
+  const icono =
+    SUBCATEGORIA_POR_SLUG[maquina.subcategoriaSlug]?.icono ??
+    FAMILIA_POR_ID[maquina.familia]?.icono ??
+    "tijera";
+
+  return (
+    <span className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-muted">
+      <IconoMaquina
+        icono={icono}
+        etiqueta={`Dibujo técnico de ${maquina.marca} ${maquina.modelo}`}
+        className="h-1/2 w-auto max-w-[62%] text-rule-strong"
+      />
+      {!compacto && (
+        <span className="label-sm text-ink-3">Foto pendiente</span>
       )}
-    </>
+    </span>
   );
 }

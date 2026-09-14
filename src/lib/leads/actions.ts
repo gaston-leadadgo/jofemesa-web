@@ -54,7 +54,7 @@ async function sumideroConsola(ref: string, d: DatosSolicitud) {
       `  Máquinas    ${maquinas || "sin especificar"}`,
       `  Fechas      ${d.fechaInicio} → ${d.fechaFin}`,
       `  Obra        ${d.localidad} (${d.provincia})${d.direccionObra ? ` · ${d.direccionObra}` : ""}`,
-      `  Delegación  ${delegacionSugerida(d.provincia) ?? "a asignar"}`,
+      `  Delegación  ${d.delegacion || delegacionSugerida(d.provincia) || "a asignar"}`,
       `  Empresa     ${d.empresa} · ${d.cif}`,
       `  Contacto    ${d.contacto} · ${d.telefono} · ${d.email}`,
       d.contextoAsesor ? `  Asesor      ${d.contextoAsesor}` : null,

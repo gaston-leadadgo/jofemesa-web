@@ -46,7 +46,7 @@ export function BandejaComparador() {
               className="relative flex shrink-0 items-center gap-2 border border-rule-inverse bg-inverse-2 pr-1"
             >
               <span className="relative block size-11 shrink-0 overflow-hidden bg-muted">
-                <ImagenMaquina maquina={m!} sizes="44px" marca={false} />
+                <ImagenMaquina maquina={m!} sizes="44px" compacto />
               </span>
               <span className="max-w-32 truncate py-1 text-sm text-ink-inv">
                 {m!.modelo}

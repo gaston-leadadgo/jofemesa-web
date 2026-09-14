@@ -72,13 +72,63 @@ export function MotorRevelado() {
       }
     }
 
-    preparar();
+    /* La primera pasada espera dos fotogramas.
+     *
+     * No es una precaución vaga: este efecto corre cuando hidrata el
+     * layout, pero React hidrata de forma selectiva y los árboles que
+     * hay dentro de un <Suspense> —el catálogo y el asesor— pueden
+     * hidratar después. Si `preparar()` escribe `data-visible` en un
+     * nodo de esos ANTES de que React lo hidrate, React encuentra un
+     * atributo que no puso y avisa de desajuste de hidratación. Dos
+     * `requestAnimationFrame` dejan pasar la hidratación selectiva y no
+     * se notan: el estado inicial de los elementos ya es el oculto.
+     */
+    let pendiente = 0;
+    pendiente = requestAnimationFrame(() => {
+      pendiente = requestAnimationFrame(preparar);
+    });
 
     // El catálogo filtra en cliente: los nodos nuevos también se animan.
     const vigilante = new MutationObserver(() => preparar());
     vigilante.observe(document.body, { childList: true, subtree: true });
 
+    /* ---------- Paralaje ----------
+     *
+     * Solo sobre capas DECORATIVAS marcadas con `data-parallax`, nunca
+     * sobre texto ni sobre controles: desplazar la línea que alguien
+     * está leyendo es incomodísimo y, a poco que se pase, marea.
+     *
+     * Un único listener pasivo para todas, y el trabajo real dentro de
+     * un `requestAnimationFrame`, así que como mucho se toca el estilo
+     * una vez por fotograma aunque el scroll dispare veinte eventos.
+     * Solo `transform`: ni una propiedad que obligue a recalcular
+     * distribución.
+     */
+    const capas = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-parallax]"),
+    );
+    let tick = 0;
+    function mover() {
+      tick = 0;
+      const y = window.scrollY;
+      for (const capa of capas) {
+        const factor = Number(capa.dataset.parallax) || 0;
+        capa.style.transform = `translate3d(0, ${(y * factor).toFixed(1)}px, 0)`;
+      }
+    }
+    function alScroll() {
+      if (tick) return;
+      tick = requestAnimationFrame(mover);
+    }
+    if (capas.length) {
+      window.addEventListener("scroll", alScroll, { passive: true });
+      mover();
+    }
+
     return () => {
+      cancelAnimationFrame(pendiente);
+      if (tick) cancelAnimationFrame(tick);
+      window.removeEventListener("scroll", alScroll);
       observador.disconnect();
       vigilante.disconnect();
       delete raiz.dataset.motor;

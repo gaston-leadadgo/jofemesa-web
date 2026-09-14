@@ -50,6 +50,11 @@
   /* ---------- Tipografía ---------- */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Montserrat: la geométrica que se pega al rótulo de JOFEMESA. Solo
+     titulares; el texto corrido se queda en Geist. */
+  --font-display:
+    var(--font-montserrat), var(--font-geist-sans), ui-sans-serif, system-ui,
+    sans-serif;
 
   /* ---------- Puntos de ruptura: exactamente cuatro ---------- */
   --breakpoint-*: initial;
@@ -85,12 +90,18 @@
 
 :root {
   color-scheme: light; /* sin modo oscuro: uso a plena luz en obra */
-  --alto-cabecera: 60px; /* debe cuadrar con la altura de <Header> */
+  /* Tiene que cuadrar con <Header>. En escritorio son 72px de cabecera
+     más los 36px de la franja de confianza que va encima. */
+  --alto-cabecera: 60px;
   --alto-barra-movil: 65px; /* la barra fija de Llamar / Consultar */
+  /* La anchura de `container-placa`, como variable: el hero la necesita
+     para sangrar la foto hasta el borde de la ventana sin repetir la
+     cifra y arriesgarse a que las dos se separen. */
+  --ancho-placa: 1320px;
 }
 @media (width >= 768px) {
   :root {
-    --alto-cabecera: 72px;
+    --alto-cabecera: 108px;
     --alto-barra-movil: 0px;
   }
 }
@@ -145,6 +156,7 @@ body {
    ============================================================ */
 
 @utility display-1 {
+  font-family: var(--font-display);
   font-size: clamp(2.25rem, 5.6vw, 5.5rem);
   font-weight: 800;
   line-height: 0.94;
@@ -153,6 +165,7 @@ body {
 }
 
 @utility display-2 {
+  font-family: var(--font-display);
   font-size: clamp(1.875rem, 4.2vw, 3.5rem);
   font-weight: 700;
   line-height: 0.98;
@@ -161,6 +174,7 @@ body {
 }
 
 @utility display-3 {
+  font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.4vw, 2.25rem);
   font-weight: 700;
   line-height: 1.05;
@@ -169,6 +183,7 @@ body {
 }
 
 @utility title {
+  font-family: var(--font-display);
   font-size: clamp(1.125rem, 1.4vw, 1.375rem);
   font-weight: 600;
   line-height: 1.2;
@@ -226,7 +241,7 @@ body {
 @utility container-placa {
   margin-inline: auto;
   width: 100%;
-  max-width: 1320px;
+  max-width: var(--ancho-placa);
   padding-inline: 1.25rem;
 }
 
@@ -489,5 +504,96 @@ html:not([data-motor]) .filete-anim::after {
   }
   dialog[open]::backdrop {
     animation: velo-entra 0.2s linear;
+  }
+}
+
+/* ------------------------------------------------------------
+   Pista horizontal: carruseles de categoría y de tarjeta.
+
+   Barra fina y discreta en escritorio, y oculta en móvil, donde el
+   dedo ya dice que se arrastra y la barra solo roba 8px de alto. La
+   señal de «hay más» la dan los degradados de borde y las flechas,
+   no la barra.
+   ------------------------------------------------------------ */
+
+@utility pista-horizontal {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-rule-strong) transparent;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.pista-horizontal::-webkit-scrollbar {
+  height: 6px;
+}
+.pista-horizontal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.pista-horizontal::-webkit-scrollbar-thumb {
+  background: var(--color-rule-strong);
+}
+@media (pointer: coarse) {
+  .pista-horizontal {
+    scrollbar-width: none;
+  }
+  .pista-horizontal::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   Entrada de la hoja inferior de filtros
+   ------------------------------------------------------------ */
+
+@keyframes hoja-entra {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   Movimiento de refuerzo
+
+   Tres gestos y ninguno más, todos sobre `transform` u `opacity` y
+   todos por debajo de 500 ms:
+
+     · `filete-barrido`  el filete rojo que cruza el borde inferior
+       de una tarjeta al pasar por encima. Ya estaba.
+     · `subrayado-vivo`  el subrayado de un enlace que crece de
+       izquierda a derecha en vez de aparecer de golpe.
+     · `contador`        la cifra que sube desde su línea base.
+
+   Lo que NO hay, a propósito: fijado de secciones con GSAP. En una
+   rejilla de catálogo el pinning esconde contenido y rompe la
+   restauración del scroll, y el usuario de esta web está buscando una
+   máquina, no viendo una película.
+   ------------------------------------------------------------ */
+
+@utility subrayado-vivo {
+  position: relative;
+  text-decoration: none;
+}
+.subrayado-vivo::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  background: currentColor;
+  transition: transform 0.28s var(--ease-entrance);
+}
+.subrayado-vivo:hover::after,
+.subrayado-vivo:focus-visible::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .subrayado-vivo::after {
+    transition: none;
+    transform: scaleX(1);
   }
 }

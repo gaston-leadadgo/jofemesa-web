@@ -142,8 +142,8 @@ const FAMILIAS_POR_TRABAJO: Record<
   altura: { preferidas: ["elevacion"], aceptables: ["manipulacion"] },
   cargas: { preferidas: ["manipulacion"], aceptables: ["movimiento-tierras"] },
   tierra: {
-    preferidas: ["movimiento-tierras", "compactacion"],
-    aceptables: ["manipulacion", "herramienta-auxiliar"],
+    preferidas: ["movimiento-tierras"],
+    aceptables: ["manipulacion", "herramienta-auxiliar", "aire-martillos"],
   },
   energia: {
     preferidas: ["energia", "aire-martillos"],
@@ -151,17 +151,18 @@ const FAMILIAS_POR_TRABAJO: Record<
   },
 };
 
+/** Subcategorías del catálogo nuevo que responden a cada parámetro. */
 const SUBCAT_PARAMETRO: Record<string, string[]> = {
   "c-giro": ["manipuladores-telescopicos-giratorios"],
-  "t-zanja": ["miniexcavadoras"],
-  "t-profundo": ["miniexcavadoras", "retrocargadoras"],
+  "t-zanja": ["retroexcavadoras"],
+  "t-profundo": ["retroexcavadoras", "retrocargadoras"],
   "t-mixta": ["retrocargadoras", "minicargadoras"],
-  "t-transporte": ["dumpers-4x4"],
-  "t-compactar": ["rodillos", "pisones", "bandejas-vibrantes"],
+  "t-transporte": ["dumperes"],
+  "t-compactar": ["rodillos", "pisones-bandejas"],
   "e-luz": ["torres-iluminacion"],
-  "e-medio": ["grupos-electrogenos"],
+  "e-medio": ["grupos-electrogenos", "grupos-electrogenos-portatiles"],
   "e-grande": ["grupos-electrogenos"],
-  "e-aire": ["compresores-portatiles", "martillos-neumaticos"],
+  "e-aire": ["compresores-remolcables", "martillos-neumaticos"],
 };
 
 /* ---------- el motor ---------- */

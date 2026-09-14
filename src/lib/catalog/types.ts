@@ -8,6 +8,8 @@ import type { DelegacionId } from "@/content/es/empresa";
    ============================================================ */
 
 export type FuenteDato =
+  /** CATÁLOGO GENERAL DE MAQUINARIA JOFEMESA — su material comercial vigente */
+  | "catalogo-jofemesa"
   /** Publicado por el cliente en jofemesa.com */
   | "jofemesa.com"
   /** Transcrito de la ficha técnica en PDF que sirven ellos mismos */
@@ -61,7 +63,6 @@ export type FamiliaId =
   | "elevacion"
   | "manipulacion"
   | "movimiento-tierras"
-  | "compactacion"
   | "energia"
   | "aire-martillos"
   | "herramienta-auxiliar";
@@ -220,7 +221,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     grupo: "prestaciones",
     orden: 100,
     mejor: "mayor",
-    destacadaEn: ["compactacion"],
+    destacadaEn: ["movimiento-tierras"],
   },
   {
     key: "fuerzaCentrifuga",
@@ -245,7 +246,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     grupo: "dimensiones",
     orden: 130,
     mejor: "menor",
-    destacadaEn: ["movimiento-tierras", "compactacion"],
+    destacadaEn: ["movimiento-tierras"],
   },
   {
     key: "alturaTransporte",
@@ -270,7 +271,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     grupo: "dimensiones",
     orden: 160,
     mejor: null,
-    destacadaEn: ["movimiento-tierras", "compactacion"],
+    destacadaEn: ["movimiento-tierras"],
   },
   {
     key: "pendienteSuperable",
@@ -371,17 +372,49 @@ export const SPEC_POR_KEY = Object.fromEntries(
    Familias y subcategorías
    ============================================================ */
 
+/**
+ * Los dibujos de máquina del sistema. Es la iconografía que el cliente
+ * pasó en la reunión del 24/08/2026 y que gustó a las dos partes: trazo
+ * rojo de una sola anchura, una máquina reconocible por categoría.
+ */
+export type IconoId =
+  | "tijera"
+  | "columna"
+  | "brazo"
+  | "telescopica"
+  | "oruga"
+  | "camion"
+  | "manipulador"
+  | "giratorio"
+  | "carretilla"
+  | "todoterreno"
+  | "almacen"
+  | "excavadora"
+  | "mixta"
+  | "minicargadora"
+  | "dumper"
+  | "rodillo"
+  | "pison"
+  | "grupo"
+  | "torre"
+  | "compresor"
+  | "martillo"
+  | "herramienta";
+
 export interface Subcategoria {
   nombre: string;
   slug: string;
   /** Una frase que dice para qué sirve, sin jerga. */
   claim: string;
   descripcion: string;
+  icono: IconoId;
 }
 
 export interface Familia {
   id: FamiliaId;
   nombre: string;
+  /** El nombre tal y como lo titula su catálogo general. */
+  nombreLargo: string;
   slug: string;
   claim: string;
   descripcion: string;
@@ -390,7 +423,8 @@ export interface Familia {
   /** Título de la tarjeta de portada, en clave de necesidad. */
   necesidad: string;
   necesidadDesc: string;
-  subcategorias: Subcategoria[];
+  icono: IconoId;
+  subcategorias: readonly Subcategoria[];
 }
 
 /* ============================================================
@@ -425,6 +459,15 @@ export interface Maquina {
   condicionVenta?: CondicionVenta;
   destacada: boolean;
   orden: number;
+
+  /**
+   * Una gama, no una unidad concreta. Su catálogo general publica
+   * manutención, energía, aire y herramienta por rangos («desde 2.000
+   * hasta 7.000 kg») en vez de modelo a modelo, así que esas entradas
+   * son la gama entera y la ficha lo dice con estas palabras. No se
+   * inventa una lista de modelos que ellos no publican.
+   */
+  gama?: boolean;
 
   /** Facetas duras: siempre conocidas, alimentan los filtros. */
   facetas: {

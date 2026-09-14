@@ -49,13 +49,14 @@ export default function PaginaDatosPendientes() {
         dato, el usuario ve una etiqueta de pendiente.
       </p>
 
-      <dl className="mt-10 grid grid-cols-2 gap-px border border-rule bg-rule lg:grid-cols-5">
+      <dl className="mt-10 grid grid-cols-2 gap-px border border-rule bg-rule md:grid-cols-3 lg:grid-cols-6">
         {[
           { k: "Máquinas", v: CATALOGO.length },
-          { k: "Specs de ficha real", v: confirmadas },
-          { k: "Specs de fabricante", v: estimadas },
+          { k: "Specs confirmadas", v: confirmadas },
+          { k: "Specs sin confirmar", v: estimadas },
           { k: "Specs pendientes", v: pendientes },
           { k: "Sin fotografía", v: sinImagen },
+          { k: "Sin ficha en PDF", v: sinFicha },
         ].map((c) => (
           <div key={c.k} className="bg-surface p-5">
             <dt className="label-sm text-ink-3">{c.k}</dt>
@@ -80,10 +81,15 @@ export default function PaginaDatosPendientes() {
       {/* ---------- Del catálogo ---------- */}
       <section className="mt-14">
         <h2 className="display-3 text-ink">Del catálogo</h2>
-        <p className="mt-4 max-w-[64ch] text-base text-ink-2">
-          {sinFicha} de {CATALOGO.length} máquinas no tienen ficha técnica en
-          PDF. Las {CATALOGO.length - sinFicha} que sí la tienen usan el
-          documento real que ya sirve jofemesa.com.
+        <p className="mt-4 max-w-[70ch] text-base text-ink-2">
+          {sinFicha} de {CATALOGO.length} referencias no tienen ficha técnica
+          en PDF. Las {CATALOGO.length - sinFicha} que sí la tienen usan el
+          documento del fabricante que aportó JOFEMESA: son las de
+          elevación —columnas verticales, tijeras eléctricas, diésel e
+          híbridas—. Para manutención de cargas, movimiento de tierras,
+          compactación, energía y aire, el catálogo general solo publica
+          tablas, así que esas referencias salen con las cifras del catálogo
+          y sin PDF.
         </p>
 
         <div className="mt-6 overflow-x-auto border border-rule">
@@ -104,7 +110,7 @@ export default function PaginaDatosPendientes() {
                   <td className="p-4 align-top">
                     <Link
                       href={`/maquina/${f.slug}`}
-                      className="font-semibold text-ink hover:text-accent"
+                      className="inline-block py-1 font-semibold text-ink hover:text-accent"
                     >
                       {f.maquina}
                     </Link>

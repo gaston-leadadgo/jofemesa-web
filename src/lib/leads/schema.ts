@@ -43,9 +43,26 @@ const HOY = () => new Date().toISOString().slice(0, 10);
 
 export const esquemaSolicitud = z
   .object({
+    /**
+     * De qué va la solicitud. Lo fija el enlace del que se viene: los
+     * cuatro bloques de /servicios llevan cada uno su `?asunto=`, que
+     * era la petición de la reunión —un call to action por sección— y
+     * sirve para que la solicitud llegue sabiendo de qué habla.
+     */
     tipo: z
-      .enum(["alquiler", "venta", "recambios", "mantenimiento"])
+      .enum([
+        "alquiler",
+        "venta",
+        "recambios",
+        "mantenimiento",
+        "transporte",
+        "formacion",
+        "servicios",
+      ])
       .default("alquiler"),
+
+    /** Delegación preferida, si el cliente elige una. */
+    delegacion: z.string().trim().optional().default(""),
 
     maquinas: z.array(z.string()).default([]),
 

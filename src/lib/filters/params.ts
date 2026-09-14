@@ -23,6 +23,7 @@ export const PARSERS_FILTROS = {
   energia: parseAsArrayOf(parseAsString, ",").withDefault([]),
   uso: parseAsArrayOf(parseAsString, ",").withDefault([]),
   del: parseAsArrayOf(parseAsString, ",").withDefault([]),
+  marca: parseAsString,
   hmin: parseAsFloat,
   hmax: parseAsFloat,
   carga: parseAsFloat,
@@ -43,7 +44,9 @@ export const OPCIONES_FILTROS = {
 };
 
 export const ETIQUETAS_ORDEN: Record<OrdenId, string> = {
-  relevancia: "Más solicitadas",
+  /* «Más solicitadas» era un dato que no tenemos: no hay estadística de
+     rotación. Este orden es el del catálogo impreso, que sí es real. */
+  relevancia: "Orden del catálogo",
   "altura-asc": "Altura, de menor a mayor",
   "altura-desc": "Altura, de mayor a menor",
   "carga-desc": "Capacidad de carga",

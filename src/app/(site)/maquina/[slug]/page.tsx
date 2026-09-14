@@ -57,14 +57,14 @@ export default async function PaginaMaquina({
 
   return (
     <div className="container-placa py-8 md:py-10">
-      <nav aria-label="Migas de pan" className="label-sm mb-8 text-ink-3">
-        <Link href="/alquiler" className="hover:text-ink">
+      <nav aria-label="Migas de pan" className="label-sm mb-8 -mt-1.5 text-ink-3">
+        <Link href="/alquiler" className="inline-block py-1.5 hover:text-ink">
           Alquiler
         </Link>
         {familia && (
           <>
             <span aria-hidden="true" className="mx-2">/</span>
-            <Link href={`/alquiler/${familia.slug}`} className="hover:text-ink">
+            <Link href={`/alquiler/${familia.slug}`} className="inline-block py-1.5 hover:text-ink">
               {familia.nombre}
             </Link>
           </>

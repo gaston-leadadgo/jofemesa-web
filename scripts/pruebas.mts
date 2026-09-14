@@ -62,9 +62,9 @@ afirma(
   CATALOGO.every((m) => m.delegaciones.length > 0),
   "todas tienen al menos una delegación",
 );
-afirma(getMaquina("genie-gs-3268rt") !== undefined, "se encuentra la GS-3268RT");
+afirma(getMaquina("genie-gs-4390") !== undefined, "se encuentra la GS-4390");
 afirma(getMaquina("no-existe") === undefined, "un slug inventado no devuelve nada");
-afirma(getMaquinas(["genie-gs-3268rt", "no-existe"]).length === 1, "getMaquinas descarta lo que no existe");
+afirma(getMaquinas(["genie-gs-4390", "no-existe"]).length === 1, "getMaquinas descarta lo que no existe");
 
 /* ============================================================
    Filtros
@@ -126,7 +126,7 @@ afirma(
 
 const porTexto = filtrar(ALQUILER, f({ texto: "genie" }));
 afirma(porTexto.length > 0, "la búsqueda por texto encuentra Genie");
-const porModelo = filtrar(ALQUILER, f({ texto: "gs-3268" }));
+const porModelo = filtrar(ALQUILER, f({ texto: "gs-4390" }));
 afirma(porModelo.length >= 1, "la búsqueda por modelo parcial funciona");
 afirma(
   filtrar(ALQUILER, f({ texto: "zzzzz" })).length === 0,
@@ -146,7 +146,7 @@ afirma(
 
 /* Rescate del estado vacío. */
 const imposible = f({
-  familia: "compactacion",
+  familia: "movimiento-tierras",
   energia: ["electrico"],
   alturaMin: 40,
 });
@@ -180,21 +180,35 @@ afirma(
   CATALOGO.every((m) => specsDestacadas(m).length <= 3),
   "la tarjeta nunca enseña más de tres specs",
 );
+/* «Datos suficientes» son tres specs UTILIZABLES, no tres claves en el
+   objeto: una gama del catálogo puede tener seis specs y que cinco sean
+   `na()` porque no aplican a una carretilla. La tarjeta descarta las que
+   no aplican a propósito —una raya ocupa el sitio de un dato—, así que
+   la prueba cuenta lo mismo que cuenta la tarjeta. */
+const utilizables = (m: (typeof CATALOGO)[number]) =>
+  Object.values(m.specs).filter((d) => d && d.estado !== "no_aplica").length;
+
 afirma(
-  CATALOGO.filter((m) => Object.keys(m.specs).length >= 3).every(
+  CATALOGO.filter((m) => utilizables(m) >= 3).every(
     (m) => specsDestacadas(m).length === 3,
   ),
   "con datos suficientes la tarjeta enseña exactamente tres specs",
+);
+afirma(
+  CATALOGO.every((m) =>
+    specsDestacadas(m).every((k) => m.specs[k]?.estado !== "no_aplica"),
+  ),
+  "la tarjeta nunca destaca una spec que no aplica",
 );
 afirma(
   CATALOGO.every((m) => specsDestacadas(m).every((k) => m.specs[k] !== undefined)),
   "las specs destacadas existen en la máquina",
 );
 
-const rel = relacionadas(getMaquina("genie-gs-3268rt")!);
+const rel = relacionadas(getMaquina("genie-gs-4390")!);
 afirma(rel.length === 3, "se proponen tres máquinas relacionadas");
 afirma(
-  rel.every((m) => m.slug !== "genie-gs-3268rt"),
+  rel.every((m) => m.slug !== "genie-gs-4390"),
   "una máquina no se relaciona consigo misma",
 );
 
@@ -318,7 +332,7 @@ const manana = new Date(Date.now() + 86_400_000).toISOString().slice(0, 10);
 const pasado = new Date(Date.now() + 5 * 86_400_000).toISOString().slice(0, 10);
 const base = {
   tipo: "alquiler",
-  maquinas: ["genie-gs-3268rt"],
+  maquinas: ["genie-gs-4390"],
   fechaInicio: manana,
   fechaFin: pasado,
   provincia: "Madrid",

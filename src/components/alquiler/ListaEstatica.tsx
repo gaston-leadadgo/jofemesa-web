@@ -3,6 +3,9 @@ import { FAMILIA_POR_ID } from "@/lib/catalog/familias";
 import type { FamiliaId } from "@/lib/catalog/types";
 import { TarjetaMaquina } from "@/components/maquina/TarjetaMaquina";
 
+/** Las mismas 24 que pinta la versión interactiva en la primera tanda. */
+const TANDA = 24;
+
 /**
  * El catálogo renderizado en el SERVIDOR.
  *
@@ -15,20 +18,26 @@ import { TarjetaMaquina } from "@/components/maquina/TarjetaMaquina";
  * Googlebot, y una pantalla de cajas grises para quien entra con la red
  * lenta de una obra.
  *
- * Poniendo aquí la lista completa, el HTML servido trae las 63 máquinas
+ * Poniendo aquí la primera tanda, el HTML servido trae máquinas de verdad
  * con su nombre, sus tres especificaciones y su enlace. Cuando hidrata,
  * la versión interactiva toma el relevo y a partir de ahí el filtrado es
  * instantáneo en memoria. Se paga con HTML de más; se cobra en contenido
  * rastreable y en primera pintura útil.
+ *
+ * Son 24 y no las 145: para el rastreador, el camino completo son las
+ * seis páginas de familia —que además son las URL de campaña— y el
+ * sitemap con las 145 fichas. Servir 145 tarjetas de cliente en un
+ * respaldo que se va a descartar al hidratar es pagar dos veces.
  */
 export function ListaEstatica({
   familiaFija,
 }: {
   familiaFija?: FamiliaId;
 }) {
-  const maquinas = familiaFija
+  const todas = familiaFija
     ? ALQUILER.filter((m) => m.familia === familiaFija)
     : ALQUILER;
+  const maquinas = todas.slice(0, TANDA);
 
   return (
     <div className="container-placa grid gap-8 py-8 lg:grid-cols-12 lg:gap-8">
@@ -41,12 +50,12 @@ export function ListaEstatica({
 
       <div className="lg:col-span-9">
         <p className="label text-ink-2">
-          {maquinas.length} máquina{maquinas.length === 1 ? "" : "s"}
+          {todas.length} máquina{todas.length === 1 ? "" : "s"}
           {familiaFija && ` · ${FAMILIA_POR_ID[familiaFija]?.nombre}`}
         </p>
 
         <ul
-          className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3"
           data-escalonar
         >
           {maquinas.map((m, i) => (

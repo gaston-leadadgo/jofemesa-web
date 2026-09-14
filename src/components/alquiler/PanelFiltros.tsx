@@ -1,9 +1,10 @@
 "use client";
 
+import { useId } from "react";
+import Link from "next/link";
+import { Search, Sparkles, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
-import { DELEGACIONES_OPERATIVAS } from "@/content/es/empresa";
-import { FAMILIAS } from "@/lib/catalog/familias";
-import type { Filtros } from "@/lib/catalog";
+import { MARCAS, type Filtros } from "@/lib/catalog";
 import {
   ETIQUETAS_ENERGIA,
   ETIQUETAS_USO,
@@ -14,24 +15,44 @@ type Cuentas = {
   familia: Record<string, number>;
   energia: Record<string, number>;
   entorno: Record<string, number>;
+  marca: Record<string, number>;
 };
 
 export interface AccionesFiltro {
-  familia: (id: string | null) => void;
-  subcategoria: (slug: string | null) => void;
   energia: (v: string) => void;
   uso: (v: string) => void;
-  delegacion: (v: string) => void;
+  marca: (v: string | null) => void;
   altura: (min: number | null, max: number | null) => void;
+  texto: (v: string | null) => void;
 }
 
 /**
- * Panel de facetas. Dos reglas que no se saltan:
+ * Panel de filtros TÉCNICOS.
  *
- * 1. Las opciones con cero resultados se DESHABILITAN en gris, no se
- *    eliminan: quitarlas hace creer al usuario que el filtro se ha roto.
- * 2. Casillas cuadradas de 24px con área táctil de 44: un cuadrado se
- *    encuentra con guante puesto, una marca de verificación no.
+ * La reunión separó los dos planos: «un filtro de las categorías previo
+ * y el filtro técnico a la izquierda con el buscador». Así que la
+ * familia y la subcategoría ya no están aquí —viven en las tiras de
+ * arriba, que además tienen URL propia para campañas— y este panel se
+ * queda con lo que de verdad es técnico: modelo, alimentación, altura,
+ * uso y fabricante.
+ *
+ * El buscador por modelo va DENTRO del panel y es el primer campo. Eso
+ * resuelve la pega que se detectó en móvil —«el filtro oculta el
+ * buscador… tendría que estar visible»—: al abrir la hoja de filtros en
+ * el móvil, lo primero que aparece es el campo de búsqueda.
+ *
+ * Se ha quitado el filtro de delegación. Ninguna máquina está asignada
+ * a un parque concreto porque el cliente no publica ese dato, así que
+ * era un filtro que salía siempre con las diez marcadas y no descartaba
+ * nada: ruido con aspecto de función. La delegación se elige donde sí
+ * significa algo, que es el formulario.
+ *
+ * Dos reglas que no se saltan:
+ *
+ *   1. Las opciones con cero resultados se DESHABILITAN en gris, no se
+ *      eliminan: quitarlas hace creer que el filtro se ha roto.
+ *   2. Casillas cuadradas de 24 px con área táctil de 44: un cuadrado se
+ *      encuentra con guante puesto, una marca de verificación no.
  */
 export function PanelFiltros({
   filtros,
@@ -42,64 +63,48 @@ export function PanelFiltros({
   cuentas: Cuentas;
   acciones: AccionesFiltro;
 }) {
-  const familia = FAMILIAS.find((f) => f.id === filtros.familia);
+  const idBusqueda = useId();
 
   return (
     <div className="divide-y divide-rule border-y border-rule">
-      {/* ---------- Familia ---------- */}
-      <Grupo titulo="Tipo de máquina">
+      {/* ---------- Búsqueda por modelo ---------- */}
+      <div className="py-5">
+        <label htmlFor={idBusqueda} className="label block text-ink">
+          Búsqueda por modelo
+        </label>
+        <div className="relative mt-3">
+          <Search
+            size={17}
+            strokeWidth={1.75}
+            aria-hidden="true"
+            className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-ink-3"
+          />
+          <input
+            id={idBusqueda}
+            type="search"
+            value={filtros.texto ?? ""}
+            onChange={(e) => acciones.texto(e.target.value || null)}
+            placeholder="GS-4390, Manitou, tijera diésel…"
+            className="h-12 w-full border border-rule-control bg-surface pr-3 pl-10 text-base text-ink placeholder:text-ink-3"
+          />
+        </div>
+      </div>
+
+      {/* ---------- Alimentación ---------- */}
+      <Grupo titulo="Tipo de energía">
         <ul>
-          <li>
-            <Radio
-              nombre="familia"
-              etiqueta="Todas las familias"
-              cuenta={Object.values(cuentas.familia).reduce((a, b) => Math.max(a, b), 0)}
-              marcado={!filtros.familia}
-              onChange={() => acciones.familia(null)}
-              sinCuenta
-            />
-          </li>
-          {FAMILIAS.map((f) => (
-            <li key={f.id}>
-              <Radio
-                nombre="familia"
-                etiqueta={f.nombre}
-                cuenta={cuentas.familia[f.id] ?? 0}
-                marcado={filtros.familia === f.id}
-                onChange={() => acciones.familia(f.id)}
+          {Object.entries(ETIQUETAS_ENERGIA).map(([id, etiqueta]) => (
+            <li key={id}>
+              <Casilla
+                etiqueta={etiqueta}
+                cuenta={cuentas.energia[id] ?? 0}
+                marcado={filtros.energia.includes(id as never)}
+                onChange={() => acciones.energia(id)}
               />
             </li>
           ))}
         </ul>
       </Grupo>
-
-      {/* ---------- Subcategoría: solo si hay familia elegida ---------- */}
-      {familia && (
-        <Grupo titulo={`Dentro de ${familia.nombre.toLowerCase()}`}>
-          <ul>
-            <li>
-              <Radio
-                nombre="sub"
-                etiqueta="Todas"
-                marcado={!filtros.subcategoria}
-                onChange={() => acciones.subcategoria(null)}
-                sinCuenta
-              />
-            </li>
-            {familia.subcategorias.map((s) => (
-              <li key={s.slug}>
-                <Radio
-                  nombre="sub"
-                  etiqueta={s.nombre}
-                  marcado={filtros.subcategoria === s.slug}
-                  onChange={() => acciones.subcategoria(s.slug)}
-                  sinCuenta
-                />
-              </li>
-            ))}
-          </ul>
-        </Grupo>
-      )}
 
       {/* ---------- Altura de trabajo ---------- */}
       <Grupo titulo="Altura de trabajo">
@@ -126,26 +131,9 @@ export function PanelFiltros({
           })}
         </ul>
         <p className="mt-3 text-sm text-ink-3">
-          Las máquinas cuya altura todavía no está confirmada quedan fuera de
-          este filtro: preferimos no enseñártelas que darte una cifra que no
-          hemos comprobado.
+          Las máquinas que no tienen altura de trabajo —carretillas,
+          excavadoras, compactación— quedan fuera de este filtro.
         </p>
-      </Grupo>
-
-      {/* ---------- Alimentación ---------- */}
-      <Grupo titulo="Alimentación">
-        <ul>
-          {Object.entries(ETIQUETAS_ENERGIA).map(([id, etiqueta]) => (
-            <li key={id}>
-              <Casilla
-                etiqueta={etiqueta}
-                cuenta={cuentas.energia[id] ?? 0}
-                marcado={filtros.energia.includes(id as never)}
-                onChange={() => acciones.energia(id)}
-              />
-            </li>
-          ))}
-        </ul>
       </Grupo>
 
       {/* ---------- Uso ---------- */}
@@ -164,21 +152,53 @@ export function PanelFiltros({
         </ul>
       </Grupo>
 
-      {/* ---------- Delegación ---------- */}
-      <Grupo titulo="Recogida en">
-        <ul>
-          {DELEGACIONES_OPERATIVAS.map((d) => (
-            <li key={d.id}>
-              <Casilla
-                etiqueta={d.nombre}
-                marcado={filtros.delegacion.includes(d.id)}
-                onChange={() => acciones.delegacion(d.id)}
-                sinCuenta
-              />
-            </li>
-          ))}
-        </ul>
+      {/* ---------- Fabricante ---------- */}
+      <Grupo titulo="Fabricante">
+        <label className="block">
+          <span className="sr-only">Fabricante</span>
+          <select
+            value={filtros.marca ?? ""}
+            onChange={(e) => acciones.marca(e.target.value || null)}
+            className="h-12 w-full border border-rule-control bg-surface px-3 text-base text-ink"
+          >
+            <option value="">Todos los fabricantes</option>
+            {MARCAS.map((m) => {
+              const n = cuentas.marca[m] ?? 0;
+              return (
+                <option key={m} value={m} disabled={n === 0}>
+                  {m} ({n})
+                </option>
+              );
+            })}
+          </select>
+        </label>
       </Grupo>
+
+      {/* ---------- Salida al asesor ---------- */}
+      <div className="py-5">
+        <div className="border border-rule bg-sunken p-4">
+          <p className="flex items-center gap-2 text-base font-semibold text-ink">
+            <Sparkles
+              size={16}
+              strokeWidth={2}
+              aria-hidden="true"
+              className="shrink-0 text-accent"
+            />
+            ¿Dudas con la maquinaria?
+          </p>
+          <p className="mt-2 text-sm text-ink-2">
+            Cuéntanos la altura y el tipo de suelo en tres preguntas y te
+            decimos qué encaja.
+          </p>
+          <Link
+            href="/asesor"
+            className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 bg-ink text-base font-semibold text-white transition-colors duration-200 hover:bg-inverse-2"
+          >
+            Iniciar asistente
+            <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

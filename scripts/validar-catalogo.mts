@@ -8,13 +8,12 @@ import { join } from "node:path";
 import { CATALOGO, FAMILIAS, SUBCATEGORIA_POR_SLUG } from "../src/lib/catalog/index.js";
 import { SPEC_POR_KEY } from "../src/lib/catalog/types.js";
 import { DELEGACIONES_POR_ID } from "../src/content/es/empresa.js";
-import { fotoProvisional } from "../src/lib/catalog/fotos.js";
 
 const errores: string[] = [];
 const avisos: string[] = [];
 const vistos = new Set<string>();
 let conFotoReal = 0;
-let conFotoProvisional = 0;
+let conDibujo = 0;
 
 for (const m of CATALOGO) {
   const donde = `${m.marca} ${m.modelo}`;
@@ -47,12 +46,10 @@ for (const m of CATALOGO) {
       avisos.push(`${donde}: bytes de la ficha desactualizados`);
   }
 
-  // Tres estados de imagen, y solo el tercero es un aviso: sin foto real
-  // pero con provisional la web se ve; sin ninguna de las dos se cae a la
-  // silueta técnica, y eso sí conviene saberlo.
+  // Dos estados de imagen: foto oficial de JOFEMESA o dibujo técnico.
+  // El dibujo no es un error, es la respuesta honesta a no tener la foto.
   if (m.imagenes.length) conFotoReal++;
-  else if (fotoProvisional(m)) conFotoProvisional++;
-  else avisos.push(`${donde}: sin foto real ni provisional`);
+  else conDibujo++;
   if (!m.descripcionCorta?.trim()) errores.push(`${donde}: sin descripción`);
 }
 
@@ -74,9 +71,17 @@ for (const f of FAMILIAS) {
 console.log(`\nEspecificaciones: ${conf} confirmadas · ${est} de fabricante · ${pend} pendientes · ${na} no aplican`);
 console.log(`Con ficha técnica real: ${CATALOGO.filter((m) => m.fichaTecnica).length}`);
 console.log(
-  `Imágenes: ${conFotoReal} del modelo exacto · ${conFotoProvisional} de referencia · ` +
-    `${CATALOGO.length - conFotoReal - conFotoProvisional} solo silueta`,
+  `Imágenes: ${conFotoReal} con fotografía oficial de JOFEMESA · ${conDibujo} con dibujo técnico`,
 );
+
+/* ---------- cobertura del catálogo impreso ---------- */
+const porSubcat = new Map<string, number>();
+for (const m of CATALOGO)
+  porSubcat.set(m.subcategoriaSlug, (porSubcat.get(m.subcategoriaSlug) ?? 0) + 1);
+for (const f of FAMILIAS)
+  for (const s of f.subcategorias)
+    if (!porSubcat.get(s.slug))
+      errores.push(`subcategoría vacía en el menú: ${f.nombre} › ${s.nombre}`);
 
 if (avisos.length) console.log(`\n${avisos.length} avisos (no bloquean)`);
 if (errores.length) {

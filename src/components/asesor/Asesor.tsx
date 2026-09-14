@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { useQueryStates, parseAsString } from "nuqs";
 import {
   ArrowLeft,
   ArrowRight,
   Check,
+  ChevronDown,
   HelpCircle,
   Phone,
   RotateCcw,
@@ -24,10 +23,9 @@ import {
 } from "@/lib/advisor";
 import { SPEC_POR_KEY, type Maquina } from "@/lib/catalog/types";
 import { specsDestacadas } from "@/lib/catalog";
-import { fotoProvisional } from "@/lib/catalog/fotos";
 import { SUBCATEGORIA_POR_SLUG } from "@/lib/catalog/familias";
 import { DatoValor } from "@/components/spec/DatoValor";
-import { SiluetaMaquina } from "@/components/maquina/SiluetaMaquina";
+import { ImagenMaquina } from "@/components/maquina/ImagenMaquina";
 
 /**
  * "¿Qué máquina necesito?" — tres preguntas, la segunda dependiente de
@@ -49,9 +47,9 @@ import { SiluetaMaquina } from "@/components/maquina/SiluetaMaquina";
  */
 
 const ENUNCIADOS: Record<number, string> = {
-  1: "¿Qué trabajo tienes que hacer?",
-  2: "¿Con qué exigencia?",
-  3: "¿Y dónde va a trabajar la máquina?",
+  1: "¿Qué trabajo necesitas realizar?",
+  2: "¿Con qué altura, carga o alcance?",
+  3: "¿Dónde va a trabajar la máquina?",
 };
 
 export interface Respuestas {
@@ -67,23 +65,54 @@ const VACIAS: Respuestas = { trabajo: "", parametro: "", entorno: "" };
  *
  * Aquí sí interesa: el resultado se comparte por enlace, el botón atrás
  * recorre el asistente y cada paso se mide como escalón de embudo en Ads.
- * El precio es que la página tiene que renderizarse en cada petición para
- * que un enlace con respuestas llegue ya resuelto.
+ *
+ * Las respuestas iniciales las lee el SERVIDOR y bajan como prop. Antes
+ * las leía `useQueryStates`, y eso obligaba a envolver el asistente en un
+ * `<Suspense>`: Next lo servía dentro de un `<div hidden>` detrás del pie
+ * y en su sitio quedaba un recuadro gris de 288 px, así que un enlace con
+ * respuestas abría en gris y sin JavaScript no abría nunca.
+ *
+ * La URL se mantiene con `pushState` —el mismo `history: "push"` que daba
+ * nuqs— y `popstate` la vuelve a leer, para que el botón atrás siga
+ * recorriendo el asistente pregunta a pregunta.
  */
-export function AsesorUrl() {
-  const [r, setR] = useQueryStates(
-    {
-      trabajo: parseAsString.withDefault(""),
-      parametro: parseAsString.withDefault(""),
-      entorno: parseAsString.withDefault(""),
-    },
-    { history: "push", shallow: true, clearOnDefault: true },
-  );
+export function AsesorUrl({ inicial }: { inicial: Respuestas }) {
+  const [r, setEstado] = useState<Respuestas>(inicial);
+
+  const leerUrl = useCallback((): Respuestas => {
+    const q = new URLSearchParams(window.location.search);
+    return {
+      trabajo: q.get("trabajo") ?? "",
+      parametro: q.get("parametro") ?? "",
+      entorno: q.get("entorno") ?? "",
+    };
+  }, []);
+
+  useEffect(() => {
+    const alVolver = () => setEstado(leerUrl());
+    window.addEventListener("popstate", alVolver);
+    return () => window.removeEventListener("popstate", alVolver);
+  }, [leerUrl]);
+
+  const cambiar = useCallback((p: Partial<Record<keyof Respuestas, string | null>>) => {
+    const siguiente: Respuestas = { ...leerUrl() };
+    for (const [k, v] of Object.entries(p))
+      siguiente[k as keyof Respuestas] = v ?? "";
+    setEstado(siguiente);
+
+    const url = new URL(window.location.href);
+    for (const k of ["trabajo", "parametro", "entorno"] as const) {
+      if (siguiente[k]) url.searchParams.set(k, siguiente[k]);
+      else url.searchParams.delete(k);
+    }
+    window.history.pushState(null, "", url);
+  }, [leerUrl]);
+
   return (
     <Asesor
       modo="pagina"
       respuestas={r}
-      cambiar={(p) => setR(p as Record<string, string | null>)}
+      cambiar={cambiar as (p: Record<string, string | null>) => void}
     />
   );
 }
@@ -125,6 +154,7 @@ export function Asesor({
   cambiar: (parcial: Partial<Record<keyof Respuestas, string | null>>) => void;
 }) {
   const paso = !r.trabajo ? 1 : !r.parametro ? 2 : !r.entorno ? 3 : 4;
+  const contestadas = [r.trabajo, r.parametro, r.entorno].filter(Boolean).length;
   const enfoque = useRef<HTMLLegendElement | HTMLHeadingElement>(null);
 
   // El foco viaja al enunciado nuevo: sin esto, quien navega con teclado
@@ -146,15 +176,6 @@ export function Asesor({
   );
 
   const empotrado = modo === "empotrado";
-
-  const opciones: Opcion[] =
-    paso === 1
-      ? TRABAJOS
-      : paso === 2
-        ? (PARAMETROS[r.trabajo] ?? [])
-        : paso === 3
-          ? ENTORNOS
-          : [];
 
   function atras() {
     setR(
@@ -198,12 +219,18 @@ export function Asesor({
         <div
           className="border border-rule bg-surface shadow-panel"
           data-revelar="escala"
+          suppressHydrationWarning
         >
           {/* Barra de estado del formulario */}
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-sunken px-4 py-3 md:px-6">
+            {/* Ya no dice «paso 1 de 3»: las tres preguntas están a la
+                vista al mismo tiempo, así que lo que informa es cuántas
+                llevas contestadas, no en cuál estás. */}
             <div className="flex items-center gap-3">
               <span className="label text-ink-2">
-                {paso === 4 ? "Resultado" : `Paso ${paso} de 3`}
+                {paso === 4
+                  ? "Resultado"
+                  : `${contestadas} de 3 contestadas`}
               </span>
               <span className="flex gap-1" aria-hidden="true">
                 {[1, 2, 3].map((n) => (
@@ -211,11 +238,7 @@ export function Asesor({
                     key={n}
                     className={cn(
                       "h-1.5 w-8 transition-colors duration-200",
-                      paso > n || paso === 4
-                        ? "bg-accent"
-                        : paso === n
-                          ? "bg-rule-control"
-                          : "bg-rule",
+                      contestadas >= n ? "bg-accent" : "bg-rule",
                     )}
                   />
                 ))}
@@ -246,7 +269,21 @@ export function Asesor({
             </div>
           </div>
 
-          {/* ---------- Preguntas ---------- */}
+          {/* ---------- Preguntas ----------
+              Tres selectores en una sola pantalla, no un asistente de
+              tres pasos con tarjetas. Es la forma que se pidió en la
+              reunión del 24/08/2026: «asesoría… lo dejaría con el look
+              and feel, pero lo metería de esta manera, que pueda
+              seleccionar».
+
+              Lo que se gana además del gusto: se ven las tres preguntas
+              de golpe, así que se entiende el compromiso antes de
+              empezar, y se puede cambiar la primera respuesta sin
+              deshacer las otras dos.
+
+              El segundo selector depende del primero —ahí está la
+              gracia del asesor— así que arranca desactivado y con su
+              motivo escrito, no simplemente vacío. */}
           {paso < 4 && (
             <fieldset className="px-4 py-5 md:px-6 md:py-6">
               <legend
@@ -254,69 +291,68 @@ export function Asesor({
                 tabIndex={-1}
                 className="display-3 mb-1 text-ink focus:outline-none"
               >
-                {ENUNCIADOS[paso]}
+                Tres respuestas y te decimos qué encaja
               </legend>
-              <p className="mb-5 text-sm text-ink-2">
+              <p className="mb-6 max-w-[60ch] text-sm text-ink-2">
                 Elige la opción que más se parezca. Si no lo tienes claro,
-                marca <em className="not-italic font-semibold">No lo sé</em>: el
-                asesor ensancha la búsqueda en vez de bloquearse.
+                marca <em className="font-semibold not-italic">No lo sé</em>:
+                el asesor ensancha la búsqueda en vez de bloquearse.
               </p>
 
-              <div className="grid gap-px bg-rule md:grid-cols-2 lg:grid-cols-3">
-                {opciones.map((o) => (
-                  <label
-                    key={o.id}
-                    className="group relative flex cursor-pointer gap-3 bg-surface p-4 transition-colors duration-200 hover:bg-sunken has-[:focus-visible]:outline-2 has-[:focus-visible]:-outline-offset-2 has-[:focus-visible]:outline-accent"
-                  >
-                    <input
-                      type="radio"
-                      name={`asesor-paso-${paso}`}
-                      value={o.id}
-                      className="peer sr-only"
-                      onChange={() =>
-                        setR(
-                          paso === 1
-                            ? { trabajo: o.id }
-                            : paso === 2
-                              ? { parametro: o.id }
-                              : { entorno: o.id },
-                        )
-                      }
-                    />
-                    {/* El indicador de radio es lo que dice "esto se
-                        elige". Cuadrado y de 20px: se ve con guante. */}
-                    <span
-                      aria-hidden="true"
-                      className="mt-0.5 flex size-5 shrink-0 items-center justify-center border-2 border-rule-control transition-colors duration-150 group-hover:border-accent peer-checked:border-accent peer-checked:bg-accent peer-checked:[&>svg]:opacity-100"
-                    >
-                      {/* `peer-checked:` compila a `.peer:checked ~ .x`, así
-                          que no alcanza a un descendiente: la opacidad del
-                          glifo se controla desde el hermano con [&>svg]. */}
-                      <Check
-                        size={13}
-                        strokeWidth={3}
-                        className="text-white opacity-0"
-                      />
-                    </span>
-                    <span>
-                      <span className="flex items-center gap-1.5 text-base font-semibold text-ink">
-                        {o.label}
-                        {o.id === "no-se" && (
-                          <HelpCircle
-                            size={14}
-                            strokeWidth={2}
-                            aria-hidden="true"
-                            className="text-ink-3"
-                          />
-                        )}
-                      </span>
-                      <span className="mt-1 block text-sm text-ink-2">
-                        {o.desc}
-                      </span>
-                    </span>
-                  </label>
-                ))}
+              <div className="grid gap-5 lg:grid-cols-3">
+                <Selector
+                  numero={1}
+                  etiqueta={ENUNCIADOS[1]}
+                  valor={r.trabajo}
+                  opciones={TRABAJOS}
+                  placeholder="Elige el trabajo"
+                  /* Cambiar de trabajo solo invalida la exigencia —sus
+                     opciones dependen del trabajo—. El entorno vale igual
+                     para las cuatro familias, así que no se borra. */
+                  onChange={(v) => setR({ trabajo: v, parametro: null })}
+                />
+                <Selector
+                  numero={2}
+                  etiqueta={ENUNCIADOS[2]}
+                  valor={r.parametro}
+                  opciones={PARAMETROS[r.trabajo] ?? []}
+                  placeholder="Elige la exigencia"
+                  motivoBloqueo={
+                    !r.trabajo ? "Contesta primero qué trabajo tienes" : undefined
+                  }
+                  onChange={(v) => setR({ parametro: v })}
+                />
+                <Selector
+                  numero={3}
+                  etiqueta={ENUNCIADOS[3]}
+                  valor={r.entorno}
+                  opciones={ENTORNOS}
+                  placeholder="Elige el entorno"
+                  /* Sin bloqueo: dónde va a trabajar la máquina no depende
+                     ni del trabajo ni de la altura, y el resultado ya se
+                     guarda hasta que estén las tres contestadas. Tenerlo
+                     cerrado era fricción sin motivo en una pantalla que
+                     presume de enseñar las tres preguntas a la vez. */
+                  onChange={(v) => setR({ entorno: v })}
+                />
               </div>
+
+              {/* La ayuda de la opción elegida, debajo: en un selector no
+                  cabe la descripción, y esa descripción es la que evita
+                  que alguien elija «excavación profunda» para una zanja
+                  de acometida. */}
+              <Ayudas r={r} />
+
+              <p className="mt-6 flex items-center gap-2 text-sm text-ink-2">
+                <HelpCircle
+                  size={15}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                  className="shrink-0 text-ink-3"
+                />
+                En cuanto contestes las tres, la recomendación aparece
+                aquí mismo.
+              </p>
             </fieldset>
           )}
 
@@ -412,8 +448,6 @@ function FilaResultado({
   maquina: Maquina;
   razones: string[];
 }) {
-  const foto = m.imagenes[0] ?? fotoProvisional(m);
-  const src = m.imagenes[0]?.src ?? (foto && "fichero" in foto ? foto.fichero : null);
   const specs = specsDestacadas(m).slice(0, 3);
   const subcat = SUBCATEGORIA_POR_SLUG[m.subcategoriaSlug];
 
@@ -425,19 +459,7 @@ function FilaResultado({
         tabIndex={-1}
         aria-hidden="true"
       >
-        {src ? (
-          <Image
-            src={src}
-            alt=""
-            fill
-            sizes="112px"
-            className="object-cover"
-          />
-        ) : (
-          <span className="flex size-full items-center justify-center p-2">
-            <SiluetaMaquina familia={m.familia} />
-          </span>
-        )}
+        <ImagenMaquina maquina={m} sizes="112px" compacto />
       </Link>
 
       <div className="min-w-0 flex-1">
@@ -445,7 +467,7 @@ function FilaResultado({
         <h4 className="title mt-0.5">
           <Link
             href={`/maquina/${m.slug}`}
-            className="text-ink transition-colors duration-200 hover:text-accent"
+            className="inline-block py-0.5 text-ink transition-colors duration-200 hover:text-accent"
           >
             {m.marca} {m.modelo}
           </Link>
@@ -507,5 +529,94 @@ function SinResultados() {
         <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
       </a>
     </div>
+  );
+}
+
+
+/* ============================================================
+   Piezas del formulario
+   ============================================================ */
+
+function Selector({
+  numero,
+  etiqueta,
+  valor,
+  opciones,
+  placeholder,
+  motivoBloqueo,
+  onChange,
+}: {
+  numero: number;
+  etiqueta: string;
+  valor: string;
+  opciones: readonly Opcion[];
+  placeholder: string;
+  motivoBloqueo?: string;
+  onChange: (v: string) => void;
+}) {
+  const bloqueado = Boolean(motivoBloqueo) || opciones.length === 0;
+
+  return (
+    <label className="block">
+      <span className="label flex items-baseline gap-2 text-ink">
+        <span className="value text-accent">{numero}</span>
+        {etiqueta}
+      </span>
+
+      <span className="relative mt-2.5 block">
+        <select
+          value={valor}
+          disabled={bloqueado}
+          onChange={(e) => onChange(e.target.value)}
+          className={cn(
+            "h-13 w-full appearance-none border bg-surface pr-10 pl-3 text-base",
+            bloqueado
+              ? "cursor-not-allowed border-rule text-ink-3"
+              : "border-rule-control text-ink",
+          )}
+        >
+          <option value="">{bloqueado ? "—" : placeholder}</option>
+          {opciones.map((o) => (
+            <option key={o.id} value={o.id}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+        <ChevronDown
+          size={17}
+          strokeWidth={2}
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute top-1/2 right-3 -translate-y-1/2",
+            bloqueado ? "text-rule-strong" : "text-ink-3",
+          )}
+        />
+      </span>
+
+      {motivoBloqueo && (
+        <span className="mt-2 block text-sm text-ink-3">{motivoBloqueo}</span>
+      )}
+    </label>
+  );
+}
+
+/** La descripción de lo ya elegido, que en un `<select>` no cabe. */
+function Ayudas({ r }: { r: Respuestas }) {
+  const elegidas = [
+    TRABAJOS.find((o) => o.id === r.trabajo),
+    (PARAMETROS[r.trabajo] ?? []).find((o) => o.id === r.parametro),
+    ENTORNOS.find((o) => o.id === r.entorno),
+  ].filter(Boolean) as Opcion[];
+
+  if (elegidas.length === 0) return null;
+
+  return (
+    <ul className="mt-5 space-y-2 border-l-2 border-accent pl-4">
+      {elegidas.map((o) => (
+        <li key={o.id} className="text-sm text-ink-2">
+          <span className="font-semibold text-ink">{o.label}</span> — {o.desc}
+        </li>
+      ))}
+    </ul>
   );
 }

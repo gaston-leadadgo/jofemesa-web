@@ -26,8 +26,21 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
   const maquinas = useMemo(() => getMaquinas(slugs), [slugs]);
 
   const filas = useMemo(() => {
+    /* Una fila entra si ALGUNA de las máquinas comparadas tiene ahí un
+       dato de verdad. Antes bastaba con que la clave existiera, y como
+       las specs que no aplican existen como `na()` para poder poner la
+       raya, comparar tres tijeras sacaba seis filas seguidas de rayas:
+       profundidad de excavación, capacidad del cazo, caudal de aire…
+       Ninguna tijera tiene nada de eso y nadie viene a comprobarlo.
+
+       La raya SÍ se mantiene cuando la fila es mixta —una tijera contra
+       una excavadora— porque ahí dice algo: esta máquina no juega en
+       esta fila. */
     const usadas = SPEC_DEFS.filter((def) =>
-      maquinas.some((m) => m.specs[def.key]),
+      maquinas.some((m) => {
+        const d = m.specs[def.key];
+        return d && d.estado !== "no_aplica";
+      }),
     );
     if (!soloDiferencias) return usadas;
     return usadas.filter((def) => {
@@ -124,7 +137,7 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
                   style={{ scrollSnapAlign: "start" }}
                 >
                   <div className="relative h-32 overflow-hidden border border-rule bg-muted">
-                    <ImagenMaquina maquina={m} sizes="240px" marca={false} />
+                    <ImagenMaquina maquina={m} sizes="240px" compacto />
                   </div>
                   <p className="label-sm mt-3 text-ink-3">
                     {SUBCATEGORIA_POR_SLUG[m.subcategoriaSlug]?.nombre}
@@ -132,7 +145,7 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
                   <p className="mt-1 text-sm text-ink-2">{m.marca}</p>
                   <Link
                     href={`/maquina/${m.slug}`}
-                    className="title block text-ink hover:text-accent"
+                    className="title block py-0.5 text-ink hover:text-accent"
                   >
                     {m.modelo}
                   </Link>

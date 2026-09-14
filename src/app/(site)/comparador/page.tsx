@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { ComparadorCliente } from "@/components/comparador/ComparadorCliente";
 
@@ -10,10 +9,26 @@ export const metadata: Metadata = {
 };
 
 /* La comparación se identifica por ?m=: si se prerenderiza, el HTML sale
-   sin ninguna máquina y el enlace compartido llega en blanco. */
+   sin ninguna máquina y el enlace compartido llega en blanco. Los slugs los
+   lee el servidor y bajan como prop, así la tabla va dentro del HTML en su
+   sitio y no dentro de un `<div hidden>` detrás del pie. */
 export const dynamic = "force-dynamic";
 
-export default function PaginaComparador() {
+/** `?m=a,b,c` → lista de slugs. Tolera el parámetro repetido. */
+function slugs(v: string | string[] | undefined): string[] {
+  const bruto = Array.isArray(v) ? v : v ? [v] : [];
+  return bruto
+    .flatMap((s) => s.split(","))
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+export default async function PaginaComparador({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const q = await searchParams;
   return (
     <div className="container-placa py-10 md:py-14">
       <h1 className="display-2 max-w-[24ch] text-ink">
@@ -25,9 +40,7 @@ export default function PaginaComparador() {
       </p>
 
       <div className="mt-10">
-        <Suspense fallback={<div className="h-96 border border-rule bg-sunken" />}>
-          <ComparadorCliente />
-        </Suspense>
+        <ComparadorCliente inicial={slugs(q.m)} />
       </div>
     </div>
   );

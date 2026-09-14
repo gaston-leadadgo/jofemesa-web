@@ -1,7 +1,17 @@
 import { AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { num } from "@/lib/utils/format";
-import type { SpecDef, SpecValor } from "@/lib/catalog/types";
+import type { FuenteDato, SpecDef, SpecValor } from "@/lib/catalog/types";
+
+/** De dónde sale cada cifra, en la propia interfaz. */
+const FUENTES: Record<FuenteDato, string> = {
+  "catalogo-jofemesa":
+    "Dato del Catálogo General de Maquinaria de JOFEMESA",
+  "jofemesa.com": "Dato publicado en jofemesa.com",
+  "ficha-pdf": "Dato de la ficha técnica del fabricante",
+  "nomenclatura-modelo": "Dato deducido de la designación del modelo",
+  fabricante: "Dato del catálogo público del fabricante",
+};
 
 /**
  * Dibuja una especificación según su estado de verificación.
@@ -55,7 +65,7 @@ export function DatoValor({
       className={cn(
         "value",
         invertido ? "text-ink-inv" : "text-ink",
-        // El dato de catálogo del fabricante se marca, no se disimula.
+        // El dato que no está confirmado se marca, no se disimula.
         dato.estado === "estimado" &&
           "decoration-wait underline decoration-2 underline-offset-4",
         className,
@@ -63,8 +73,8 @@ export function DatoValor({
       title={
         dato.estado === "estimado"
           ? (dato.nota ??
-            "Dato del catálogo del fabricante. Lo confirmamos con la unidad de flota al responder la solicitud.")
-          : "Dato de la ficha técnica del fabricante"
+            "Dato sin confirmar contra la unidad de flota. Lo comprobamos al responder tu solicitud.")
+          : FUENTES[dato.fuente]
       }
     >
       {texto}
