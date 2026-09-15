@@ -176,7 +176,7 @@ export function Hero() {
             data-revelar
             style={{ "--retardo": 3 } as React.CSSProperties}
           >
-            <Buscador />
+            <Buscador oscuro={oscuro} />
           </div>
 
           <div

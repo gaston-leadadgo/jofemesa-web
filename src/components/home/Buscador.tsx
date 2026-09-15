@@ -34,7 +34,7 @@ const ATAJOS = [
   { texto: "Retroexcavadora", q: "retroexcavadoras" },
 ] as const;
 
-export function Buscador() {
+export function Buscador({ oscuro = false }: { oscuro?: boolean }) {
   const router = useRouter();
   const [texto, setTexto] = useState("");
 
@@ -99,8 +99,14 @@ export function Buscador() {
         </button>
       </form>
 
-      {/* Esta línea evita la mitad de los rebotes de quien busca un precio. */}
-      <p className="mt-3 text-sm text-ink-2">
+      {/* Esta línea evita la mitad de los rebotes de quien busca un precio.
+          Va directo sobre el fondo del hero —sin caja propia—, así que
+          tiene que saber si ese fondo es la foto oscura o la superficie
+          clara: `text-ink-2` mide 7,7:1 sobre blanco, pero sobre la foto
+          era casi invisible. */}
+      <p
+        className={`mt-3 text-sm ${oscuro ? "text-ink-inv-2" : "text-ink-2"}`}
+      >
         Sin precios online: te confirmamos disponibilidad y presupuesto por
         teléfono o email.
       </p>
@@ -113,7 +119,11 @@ export function Buscador() {
           centro del bloque: cuando envuelven en dos filas, centrada
           quedaba flotando entre las dos. */}
       <div className="mt-3 flex items-start gap-2">
-        <span className="label-sm mt-3.5 shrink-0 text-ink-3">Empieza por</span>
+        <span
+          className={`label-sm mt-3.5 shrink-0 ${oscuro ? "text-ink-inv-3" : "text-ink-3"}`}
+        >
+          Empieza por
+        </span>
         <div className="pista-horizontal flex min-w-0 gap-2 overflow-x-auto md:flex-wrap md:overflow-visible">
           {ATAJOS.map((a) => (
             <button
