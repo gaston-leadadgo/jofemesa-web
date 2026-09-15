@@ -416,10 +416,26 @@ html[data-motor] .mapa-punto {
 /* Alto del hero: pantalla completa menos la cabecera, que es fija.
    `dvh` y no `vh` porque en móvil la barra del navegador se retrae y
    `vh` deja el CTA cortado justo en el primer vistazo. */
+/* Pantalla completa: la que se VE. `100vh` a secas deja el buscador
+   fuera del primer vistazo porque la cabecera fija ocupa 108px, y `svh`
+   en vez de `vh` porque en móvil el navegador cuenta su propia barra
+   como retraída y corta el CTA. */
 @utility hero-alto {
-  min-height: calc(
-    100svh - var(--alto-cabecera) - var(--alto-barra-movil)
-  );
+  min-height: calc(100svh - var(--alto-cabecera) - var(--alto-barra-movil));
+}
+
+/* La pista de scroll del hero. Recorrido corto a propósito: tiene que
+   insinuar que abajo hay más, no llamar la atención sobre sí misma. */
+@keyframes latir-abajo {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
 }
 
 /* ============================================================

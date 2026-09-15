@@ -420,11 +420,34 @@ entero y quieto. Lo animado es **cómo** aparece, no **si** aparece.
 
 ### Hero
 
-Una placa única de esquina blanda con la fotografía **a sangre** dentro y
-el texto encima, sobre un velo que va de opaco a transparente. Con el
-texto fuera de la imagen hacen falta dos columnas y la foto se queda en un
-cuarto de pantalla; con el texto encima, la foto ocupa la placa entera y
-el titular se lee igual.
+**A sangre y a pantalla completa.** La fotografía llega a los cuatro
+bordes y el texto va encima, sobre un velo que va de opaco a
+transparente. Hubo una versión intermedia metida en una placa con margen
+y esquina blanda, y el efecto era el contrario del buscado: la placa
+encogía la foto y la dejaba en una cajita en medio de la página. Una
+fotografía de obra o llega a los bordes o no vale la pena ponerla.
+
+El alto es `hero-alto` = `100svh` menos la cabecera fija y menos la barra
+fija de móvil. Pantalla completa de verdad, pero la que **se ve**: con
+`100vh` a secas la cabecera de 108 px empuja el buscador fuera del primer
+vistazo, que es justo el que decide el primer clic. Y `svh` en vez de
+`vh` porque en móvil el navegador cuenta su propia barra como retraída y
+corta el CTA. Comprobado a 1440×900, 1180×740, 768×1024 y 375×812: en los
+cuatro la sección llega al borde inferior de la ventana y el buscador
+entra sin scroll.
+
+Lo que sangra es la imagen; el **texto va contenido** en
+`container-placa`. Un titular que empieza a 8 px del borde de un monitor
+de 27 pulgadas no se lee.
+
+El velo está **medido**, no puesto a ojo: se compone el pixel real de la
+foto con el degradado y se calcula el contraste del titular y de la
+entradilla en su peor punto. Con la foto actual dan 11,3:1 y 6,1:1, con
+el 63% de la fotografía visible por la derecha. Una parada más suave
+enseña el 68% pero deja la entradilla en 5,0:1 —pasa, pero sin margen—.
+**Si se cambia la fotografía hay que volver a medir**: una imagen más
+clara por la izquierda tumba la entradilla por debajo del 4,5:1 de la
+WCAG AA sin que se note a simple vista.
 
 Todo lo que hay que tocar para cambiar la fotografía está en la constante
 `HERO` de `src/components/home/Hero.tsx`: `src`, `alt`, `velo`
