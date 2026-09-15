@@ -7,6 +7,7 @@ import { FAMILIAS } from "@/lib/catalog/familias";
 import { AlquilerCliente } from "@/components/alquiler/AlquilerCliente";
 import { ListaEstatica } from "@/components/alquiler/ListaEstatica";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
+import { fotoFamilia } from "@/lib/img/ambiente";
 import { DELEGACIONES } from "@/content/es/empresa";
 
 /**
@@ -49,6 +50,10 @@ export default async function PaginaFamilia({
       <CabeceraSeccion
         kicker={f.nombreLargo}
         icono={f.icono}
+        /* Si existe `public/img/familias/<slug>.jpg`, entra de fondo.
+           Estas páginas son aterrizajes de campaña: una cabecera con
+           fotografía de obra convierte mejor que una placa lisa. */
+        foto={fotoFamilia(f.slug)}
         titulo={f.claim}
         lede={f.descripcion}
         migas={

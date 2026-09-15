@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
@@ -30,6 +31,12 @@ import type { IconoId } from "@/lib/catalog/types";
 
 export type DatoCabecera = { k: string; v: string };
 
+/**
+ * Fotografía de fondo opcional. Cuando la hay, el galón decorativo se
+ * retira —dos capas de adorno encima de una foto es ruido— y entra un
+ * velo que garantiza el contraste del titular: la foto puede ser
+ * cualquiera, el texto tiene que leerse siempre.
+ */
 export function CabeceraSeccion({
   kicker,
   titulo,
@@ -41,6 +48,7 @@ export function CabeceraSeccion({
   secundario,
   children,
   aside,
+  foto,
   className,
 }: {
   /** Etiqueta corta en mono. Nunca «Sección 01»: dice de qué va esto. */
@@ -62,36 +70,56 @@ export function CabeceraSeccion({
    * con media pantalla vacía al lado.
    */
   aside?: React.ReactNode;
+  /** Fotografía de ambiente de fondo, si existe. */
+  foto?: string | null;
   className?: string;
 }) {
   return (
     <section
       data-surface="dark"
       className={cn(
-        "ambient-dark relative overflow-hidden border-b border-rule-inverse text-ink-inv-2",
+        "ambient-dark relative isolate overflow-hidden border-b border-rule-inverse text-ink-inv-2",
         className,
       )}
     >
-      {/* Galón de marca a escala de muro. Decorativo y con paralaje:
-          nunca lleva texto encima que se pueda desplazar al leer. */}
-      <div
-        aria-hidden="true"
-        data-parallax="0.06"
-        className="pointer-events-none absolute -top-20 -right-16 hidden w-[34rem] text-white/[0.035] lg:block"
-      >
-        <svg viewBox="0 0 200 200" fill="none" className="w-full">
-          <path
-            d="M20 10 L110 100 L20 190"
-            stroke="currentColor"
-            strokeWidth="26"
+      {foto ? (
+        <>
+          <Image
+            src={foto}
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="100vw"
+            className="-z-10 object-cover object-center"
           />
-          <path
-            d="M90 10 L180 100 L90 190"
-            stroke="currentColor"
-            strokeWidth="26"
+          {/* Velo: la foto la elige otro, el contraste lo garantiza esto. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-gradient-to-t from-inverse via-inverse/90 to-inverse/55 lg:bg-gradient-to-r lg:from-inverse lg:from-30% lg:via-inverse/80 lg:via-70% lg:to-inverse/50"
           />
-        </svg>
-      </div>
+        </>
+      ) : (
+        /* Sin foto, el galón de marca a escala de muro. Decorativo y con
+           paralaje: nunca lleva texto encima que se pueda desplazar. */
+        <div
+          aria-hidden="true"
+          data-parallax="0.06"
+          className="pointer-events-none absolute -top-20 -right-16 hidden w-[34rem] text-white/[0.035] lg:block"
+        >
+          <svg viewBox="0 0 200 200" fill="none" className="w-full">
+            <path
+              d="M20 10 L110 100 L20 190"
+              stroke="currentColor"
+              strokeWidth="26"
+            />
+            <path
+              d="M90 10 L180 100 L90 190"
+              stroke="currentColor"
+              strokeWidth="26"
+            />
+          </svg>
+        </div>
+      )}
 
       <div className="container-placa relative py-9 md:py-12 lg:py-14">
         {migas && <div className="mb-5 text-ink-inv-3">{migas}</div>}

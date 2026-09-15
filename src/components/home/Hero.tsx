@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { EMPRESA, DELEGACIONES } from "@/content/es/empresa";
 import { ALQUILER } from "@/lib/catalog";
+import { heroPortada } from "@/lib/img/ambiente";
 import { Buscador } from "./Buscador";
 
 /**
@@ -21,27 +22,43 @@ import { Buscador } from "./Buscador";
  * texto encima, la foto ocupa la placa entera y el titular se lee igual.
  *
  * ---------------------------------------------------------------------
- * CAMBIAR LA FOTOGRAFÍA
+ * LA FOTOGRAFÍA
  *
- * Todo lo que hay que tocar está en `HERO`. La actual es la creatividad
- * de estudio que entregó el cliente: fondo claro, así que el velo va en
- * `claro` y el texto en tinta. Cuando llegue una fotografía de obra de
- * verdad —ambiente, hora dorada, máquina trabajando— se cambian `src`,
- * `alt` y `velo: "oscuro"`, y el componente invierte el texto a blanco
- * él solo. No hay que tocar nada más.
+ * Dos estados, y el componente elige solo:
+ *
+ *   · Si existe `public/img/hero/portada.jpg` —una fotografía de obra,
+ *     de ambiente— se usa esa, el velo pasa a tinta y el texto a blanco.
+ *   · Si no existe, se cae a la creatividad de estudio del cliente, que
+ *     tiene fondo claro, así que el velo va en blanco y el texto en
+ *     tinta.
+ *
+ * No hay que tocar nada para cambiar de uno a otro: basta con dejar el
+ * archivo en su sitio. Medidas y encuadre, en `public/img/LEEME.md`.
  * ---------------------------------------------------------------------
  */
 
-const HERO = {
+/** El respaldo: la creatividad de estudio, con fondo claro. */
+const ESTUDIO = {
   src: "/img/maquinas/oficial/tarjeta/genie-gs-5390.webp",
   alt: "Plataforma de tijera diésel Genie GS-5390 de la flota de JOFEMESA",
-  /** `claro` = velo blanco y texto en tinta. `oscuro` = lo contrario. */
-  velo: "claro" as "claro" | "oscuro",
-  /** Hacia dónde se aparta la máquina para dejar sitio al texto. */
+  velo: "claro" as const,
   posicion: "object-[78%_center]",
 };
 
+/** La de ambiente, cuando está. Fondo de obra, así que velo en tinta. */
+const AMBIENTE = {
+  /* Genérica a propósito: el `alt` NO dice «nuestra máquina». Es una
+     imagen de ambiente y afirmar lo contrario sería falso. */
+  alt: "Plataforma elevadora trabajando en obra",
+  velo: "oscuro" as const,
+  posicion: "object-[60%_center]",
+};
+
 export function Hero() {
+  const deObra = heroPortada();
+  const HERO = deObra
+    ? { ...AMBIENTE, src: deObra }
+    : ESTUDIO;
   const oscuro = HERO.velo === "oscuro";
 
   return (

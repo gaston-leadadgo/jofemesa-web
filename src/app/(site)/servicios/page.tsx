@@ -12,6 +12,7 @@ import {
 import { IconoMaquina } from "@/components/marca/IconoMaquina";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
 import { Mapa } from "@/components/marca/Mapa";
+import { fotoServicio } from "@/lib/img/ambiente";
 
 export const metadata: Metadata = {
   title: "Servicios · venta, mantenimiento, transporte y formación",
@@ -42,6 +43,7 @@ export default function PaginaServicios() {
   return (
     <>
       <CabeceraSeccion
+        foto={fotoServicio("portada")}
         kicker="Servicios integrales de soporte"
         titulo="Respaldo técnico, transporte y formación"
         lede="No solo alquilamos. Vendemos carretillas y recambios, mantenemos maquinaria de cualquier marca, la llevamos a pie de obra y formamos a quien la va a manejar."
@@ -188,7 +190,26 @@ export default function PaginaServicios() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-5 space-y-5">
+                {/* Fotografía de ambiente del servicio, si está. Va
+                    ARRIBA del panel de credencial: la foto explica de qué
+                    va el bloque de un vistazo y el panel da el dato. */}
+                {fotoServicio(s.id) && (
+                  <div
+                    className="relative aspect-3/2 overflow-hidden rounded-2xl border border-rule bg-sunken"
+                    data-revelar="escala"
+                  >
+                    <Image
+                      src={fotoServicio(s.id)!}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      sizes="(min-width:1024px) 40vw, 92vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                )}
+
                 {s.credencial && (
                   <div
                     className="border border-rule bg-surface p-6"
@@ -212,7 +233,7 @@ export default function PaginaServicios() {
                     propios en el catálogo general. */}
                 {s.id === "venta" && (
                   <div
-                    className="mt-5 border border-rule bg-surface p-6"
+                    className="border border-rule bg-surface p-6"
                     data-revelar="escala"
                   >
                     <p className="label text-ink-3">Distribuidor oficial</p>
