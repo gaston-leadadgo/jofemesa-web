@@ -76,11 +76,17 @@ export default function PaginaAvisoLegal() {
                 Creative Commons que ya no se usan: toda la fotografía de
                 producto de la web es material propio del cliente. */}
             <p className="mt-3 text-base text-ink-2">
-              La fotografía de producto de este sitio es material propio de
-              JOFEMESA, tomado de su propia flota. Las máquinas para las que
-              todavía no hay fotografía se representan con un dibujo técnico
-              hecho para esta web, nunca con fotografía de archivo de otra
-              empresa.
+              La fotografía de producto de este sitio —la que ilustra cada
+              máquina del catálogo— es material propio de JOFEMESA, tomado de
+              su propia flota. Las máquinas para las que todavía no hay
+              fotografía se representan con un dibujo técnico hecho para esta
+              web, nunca con fotografía de archivo de otra empresa.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-ink-2">
+              Las imágenes de ambiente que acompañan a las cabeceras y a los
+              bloques de servicio son ilustrativas y se han generado para esta
+              web. No representan equipos ni instalaciones concretas de
+              JOFEMESA y no constituyen descripción de producto.
             </p>
           </section>
         </div>

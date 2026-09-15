@@ -28,6 +28,18 @@ que se detecten.
 | `familias/aire-martillos.jpg` | `/alquiler/aire-martillos` | 2560 × 1000 | Tercio izquierdo libre |
 | `familias/herramienta-auxiliar.jpg` | `/alquiler/herramienta-auxiliar` | 2560 × 1000 | Tercio izquierdo libre |
 
+## Si cambias la foto del hero, vuelve a medir
+
+El velo del hero no está puesto a ojo: sus paradas salen de componer el
+pixel real de la fotografía con el degradado y calcular el contraste del
+titular y de la entradilla **en su peor punto**. Con la foto actual dan
+11,5:1 y 6,0:1, y se ve el 63% de la fotografía por la derecha.
+
+Una foto más clara por la izquierda tumba la entradilla por debajo del
+4,5:1 que exige la WCAG AA sin que se note a simple vista. Así que al
+cambiarla hay que volver a medir y ajustar las paradas en
+`src/components/home/Hero.tsx`.
+
 El nombre de las familias es **el mismo slug que la URL**. Si algún día
 se añade una familia, su foto se llama igual que su slug.
 

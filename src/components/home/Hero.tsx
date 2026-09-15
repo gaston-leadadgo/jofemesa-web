@@ -49,9 +49,14 @@ const ESTUDIO = {
 const AMBIENTE = {
   /* Genérica a propósito: el `alt` NO dice «nuestra máquina». Es una
      imagen de ambiente y afirmar lo contrario sería falso. */
-  alt: "Plataforma elevadora trabajando en obra",
+  alt: "Plataforma elevadora de tijera trabajando en la estructura de una nave",
   velo: "oscuro" as const,
-  posicion: "object-[60%_center]",
+  /* 72% y no el centro: en móvil la placa es vertical y `object-cover`
+     solo deja ver una franja estrecha de una foto horizontal. A 72% esa
+     franja cae sobre la máquina en vez de sobre el cielo vacío. En
+     escritorio la placa es más ancha que la foto, así que se ve todo el
+     ancho y este valor no interviene. */
+  posicion: "object-[72%_center]",
 };
 
 export function Hero() {
@@ -84,13 +89,20 @@ export function Hero() {
               Dos capas y no una: la vertical sostiene el texto en móvil,
               donde la foto queda detrás del bloque entero, y la
               horizontal lo sostiene en escritorio, donde el texto está a
-              la izquierda y la máquina se ve limpia a la derecha. Los
-              topes dejan la máquina sin velo por su lado. */}
+              la izquierda y la máquina se ve limpia a la derecha.
+
+              Las paradas están MEDIDAS, no puestas a ojo: se compone el
+              pixel real de la foto con el velo y se calcula el contraste
+              del titular y de la entradilla en su peor punto. Con la
+              foto actual dan 11,5:1 y 6,0:1, y se ve el 63% de la
+              fotografía por la derecha. Bajar el velo la enseña más pero
+              tumba la entradilla por debajo del 4,5:1 que exige AA, así
+              que si se cambia la foto hay que volver a medir. */}
           <div
             aria-hidden="true"
             className={`absolute inset-0 -z-10 ${
               oscuro
-                ? "bg-gradient-to-t from-inverse via-inverse/88 to-inverse/35 lg:bg-gradient-to-r lg:from-inverse lg:from-38% lg:via-inverse/75 lg:via-62% lg:to-transparent"
+                ? "bg-gradient-to-t from-inverse/96 via-inverse/88 to-inverse/55 lg:bg-gradient-to-r lg:from-inverse/95 lg:via-inverse/78 lg:via-56% lg:to-transparent lg:to-90%"
                 : "bg-gradient-to-t from-white via-white/90 to-white/40 lg:bg-gradient-to-r lg:from-white lg:from-38% lg:via-white/80 lg:via-62% lg:to-transparent"
             }`}
           />
