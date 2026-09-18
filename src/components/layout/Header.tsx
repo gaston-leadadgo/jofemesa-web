@@ -33,7 +33,6 @@ const NAV = [
   { href: "/", label: "Inicio" },
   { href: "/alquiler", label: "Alquiler", familias: true },
   { href: "/servicios", label: "Servicios" },
-  { href: "/delegaciones", label: "Delegaciones" },
   { href: "/noticias", label: "Noticias" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
@@ -100,9 +99,12 @@ export function Header() {
             />
             Especialistas en maquinaria desde {EMPRESA.fundacion}
           </p>
-          <p className="meta hidden text-ink-inv-3 lg:block">
-            Delegaciones propias en España y Portugal
-          </p>
+          <Link
+            href="/delegaciones"
+            className="label-sm hidden h-full items-center text-ink-inv-3 underline decoration-rule-inverse decoration-from-font underline-offset-4 transition-colors duration-200 hover:text-accent-dark lg:flex"
+          >
+            Delegaciones
+          </Link>
           <Link
             href="/asesor"
             className="label-sm flex h-full items-center text-ink-inv-2 underline decoration-rule-inverse decoration-from-font underline-offset-4 transition-colors duration-200 hover:text-accent-dark"
@@ -347,6 +349,23 @@ export function Header() {
               </div>
             ))}
 
+            <Link
+              href="/delegaciones"
+              aria-current={activa("/delegaciones") ? "page" : undefined}
+              onClick={cerrarTodo}
+              className={cn(
+                "flex min-h-14 items-center justify-between border-b border-rule text-lg font-medium",
+                activa("/delegaciones") ? "text-accent" : "text-ink",
+              )}
+            >
+              Delegaciones
+              <ArrowRight
+                size={17}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="text-rule-strong"
+              />
+            </Link>
             <Link
               href="/asesor"
               onClick={cerrarTodo}

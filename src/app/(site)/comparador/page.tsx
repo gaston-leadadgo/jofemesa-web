@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ComparadorCliente } from "@/components/comparador/ComparadorCliente";
+import { slugsDeQuery } from "@/lib/compare/url";
 
 export const metadata: Metadata = {
   title: "Comparador de maquinaria",
@@ -14,15 +15,12 @@ export const metadata: Metadata = {
    sitio y no dentro de un `<div hidden>` detrás del pie. */
 export const dynamic = "force-dynamic";
 
-/** `?m=a,b,c` → lista de slugs. Tolera el parámetro repetido. */
-function slugs(v: string | string[] | undefined): string[] {
-  const bruto = Array.isArray(v) ? v : v ? [v] : [];
-  return bruto
-    .flatMap((s) => s.split(","))
-    .map((s) => s.trim())
-    .filter(Boolean);
-}
-
+/**
+ * Sin cabecera de portada: quien llega aquí ya decidió comparar, no hace
+ * falta convencerlo de nada. Al `<h1>` solo lo necesita el lector de
+ * pantalla y el título de pestaña; visualmente es una etiqueta, no un
+ * titular — la tabla empieza a la primera pantalla.
+ */
 export default async function PaginaComparador({
   searchParams,
 }: {
@@ -30,17 +28,11 @@ export default async function PaginaComparador({
 }) {
   const q = await searchParams;
   return (
-    <div className="container-placa py-10 md:py-14">
-      <h1 className="display-2 max-w-[24ch] text-ink">
-        Ficha contra ficha, sin abrir diez pestañas.
-      </h1>
-      <p className="lede mt-5 max-w-[56ch] text-ink-2">
-        Las mismas especificaciones, en el mismo orden, una columna por
-        máquina. El mejor valor de cada fila va marcado.
-      </p>
+    <div className="container-placa py-6 md:py-8">
+      <h1 className="label text-ink-3">Comparador de maquinaria</h1>
 
-      <div className="mt-10">
-        <ComparadorCliente inicial={slugs(q.m)} />
+      <div className="mt-5">
+        <ComparadorCliente inicial={slugsDeQuery(q.m)} />
       </div>
     </div>
   );

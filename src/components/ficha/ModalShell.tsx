@@ -149,7 +149,7 @@ export function ModalShell({
               desborda en vez de hacer scroll. */}
           <div
             ref={cuerpoRef}
-            className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-5 md:px-6 md:py-6"
+            className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-6 md:px-8 md:py-8"
             tabIndex={-1}
           >
             <div className={cn(completa && "container-placa")}>{children}</div>

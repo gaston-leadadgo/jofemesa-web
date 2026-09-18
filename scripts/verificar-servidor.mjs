@@ -123,8 +123,8 @@ t(
 );
 t("el comparador marca el máximo", p.cuerpo.includes("Máx."));
 t(
-  "el comparador ofrece solo diferencias",
-  p.cuerpo.includes("Solo mostrar diferencias"),
+  "el comparador ya no ofrece «solo diferencias»: pedido del cliente, vista simple",
+  !p.cuerpo.includes("Solo mostrar diferencias"),
 );
 t(
   "se puede añadir otra máquina desde el comparador",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import { X, Printer } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
@@ -19,10 +19,13 @@ import { HexagonoRelleno } from "@/components/marca/Hexagono";
  * hace `scroll-snap`: en móvil se avanza máquina a máquina, no píxel a
  * píxel. El mejor valor de cada fila lleva subrayado Y la etiqueta MÁX. —
  * marca y palabra, nunca solo color.
+ *
+ * Sin «Solo mostrar diferencias»: era una segunda decisión antes de poder
+ * leer la tabla, y la comparación completa ya cabe en pantalla con hasta
+ * cuatro máquinas, que es el máximo.
  */
 export function TablaComparador({ slugs }: { slugs: string[] }) {
   const { quitar, limpiar } = useComparar();
-  const [soloDiferencias, setSoloDiferencias] = useState(false);
   const maquinas = useMemo(() => getMaquinas(slugs), [slugs]);
 
   const filas = useMemo(() => {
@@ -36,23 +39,13 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
        La raya SÍ se mantiene cuando la fila es mixta —una tijera contra
        una excavadora— porque ahí dice algo: esta máquina no juega en
        esta fila. */
-    const usadas = SPEC_DEFS.filter((def) =>
+    return SPEC_DEFS.filter((def) =>
       maquinas.some((m) => {
         const d = m.specs[def.key];
         return d && d.estado !== "no_aplica";
       }),
     );
-    if (!soloDiferencias) return usadas;
-    return usadas.filter((def) => {
-      const valores = maquinas.map((m) => {
-        const d = m.specs[def.key];
-        return d && (d.estado === "confirmado" || d.estado === "estimado")
-          ? String(d.valor)
-          : d?.estado;
-      });
-      return new Set(valores).size > 1;
-    });
-  }, [maquinas, soloDiferencias]);
+  }, [maquinas]);
 
   if (maquinas.length === 0) return <Vacio />;
 
@@ -69,34 +62,6 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
   return (
     <div>
       <div className="no-print mb-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-        <label className="flex min-h-11 cursor-pointer items-center gap-3 text-base text-ink">
-          <input
-            type="checkbox"
-            checked={soloDiferencias}
-            onChange={(e) => setSoloDiferencias(e.target.checked)}
-            className="peer sr-only"
-          />
-          <span
-            aria-hidden="true"
-            className={cn(
-              "flex size-6 items-center justify-center border-2 transition-colors duration-200",
-              soloDiferencias ? "border-ink bg-ink text-white" : "border-rule-control",
-            )}
-          >
-            {soloDiferencias && (
-              <svg viewBox="0 0 16 16" className="size-4" fill="none">
-                <path
-                  d="M3 8.5 6.5 12 13 4.5"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            )}
-          </span>
-          Solo mostrar diferencias
-        </label>
-
         <button
           type="button"
           onClick={() => window.print()}

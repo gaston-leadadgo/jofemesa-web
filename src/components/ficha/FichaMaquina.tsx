@@ -48,10 +48,21 @@ export function FichaMaquina({
 
   return (
     <div>
+      {/* `11fr_9fr` y no `55%_45%`: un porcentaje se calcula sobre el
+          ancho del contenedor y el `gap` se suma aparte, así que
+          55%+45%+32px de gap desbordaba el panel exactamente esos 32px
+          —de ahí que hubiera que deslizar para ver el filo derecho—. Con
+          fracciones el `gap` se descuenta primero y el resto se reparte
+          55/45 sobre lo que queda: cabe siempre.
+
+          También pasa a dos columnas en `md:` y no en `lg:`: el panel
+          del modal ya mide hasta 1160px desde los 768px de viewport
+          (`md:w-[min(1160px,94vw)]` en ModalShell), así que esperar a
+          1024px solo alargaba la ficha en vertical sin necesidad. */}
       <div
         className={cn(
           "grid gap-8",
-          variante === "modal" ? "lg:grid-cols-[55%_45%]" : "lg:grid-cols-2 lg:gap-12",
+          variante === "modal" ? "md:grid-cols-[11fr_9fr]" : "lg:grid-cols-2 lg:gap-12",
         )}
       >
         {/* ---------- Imagen ---------- */}
