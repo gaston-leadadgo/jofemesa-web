@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
+import { MODULOS } from "@/lib/modulos";
 import { NOTICIAS, URL_BLOG } from "@/content/es/noticias";
 import { ListaNoticias } from "@/components/noticias/ListaNoticias";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
  * no se hace es fabricar un texto y firmarlo como suyo.
  */
 export default function PaginaNoticias() {
+  if (!MODULOS.noticias) notFound();
   return (
     <>
       <CabeceraSeccion

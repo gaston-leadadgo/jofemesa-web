@@ -11,6 +11,7 @@ import { Autoridad } from "@/components/home/Autoridad";
 import { Cobertura } from "@/components/home/Cobertura";
 import { Noticias } from "@/components/home/Noticias";
 import { AsesorLocal } from "@/components/asesor/Asesor";
+import { MODULOS } from "@/lib/modulos";
 
 /**
  * La portada, con el orden que salió de la reunión del 24/08/2026.
@@ -23,7 +24,7 @@ import { AsesorLocal } from "@/components/asesor/Asesor";
  *   S6  Las máquinas con foto y ficha oficial.
  *   S7  Delegaciones y mapa — ocupan el sitio que tenía el contacto.
  *   S8  Autoridad, con la antigüedad exacta desde el 24/03/1987.
- *   S9  Noticias reales de su blog.
+ *   S9  Noticias reales de su blog (apagado de momento: `MODULOS`).
  *   S10 Cierre.
  *
  * Lo que ya no está: el bloque doble de «venta / mantenimiento», que
@@ -58,7 +59,7 @@ export default function Portada() {
       <Destacadas maquinas={conFotoYFicha} />
       <Cobertura />
       <Autoridad />
-      <Noticias />
+      {MODULOS.noticias && <Noticias />}
 
       {/* S10 · Cierre */}
       <section data-surface="dark" className="relative bg-inverse">

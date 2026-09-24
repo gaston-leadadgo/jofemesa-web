@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CATALOGO } from "@/lib/catalog";
 import { FAMILIAS } from "@/lib/catalog/familias";
+import { MODULOS } from "@/lib/modulos";
 
 /**
  * Un árbol de URLs limpio.
@@ -20,7 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asesor`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
     { url: `${base}/servicios`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
     { url: `${base}/delegaciones`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
-    { url: `${base}/noticias`, priority: 0.7, changeFrequency: "weekly", lastModified: ahora },
+    ...(MODULOS.noticias
+      ? [{ url: `${base}/noticias`, priority: 0.7, changeFrequency: "weekly" as const, lastModified: ahora }]
+      : []),
     { url: `${base}/contacto`, priority: 0.7, changeFrequency: "yearly", lastModified: ahora },
     { url: `${base}/consultar-disponibilidad`, priority: 0.7, changeFrequency: "yearly", lastModified: ahora },
     ...FAMILIAS.map((f) => ({

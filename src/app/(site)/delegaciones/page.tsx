@@ -90,7 +90,8 @@ export default function PaginaDelegaciones() {
               {g.delegaciones.map((d) => (
                 <li
                   key={d.id}
-                  className="flex flex-col gap-5 bg-surface p-5 md:p-6"
+                  id={d.id}
+                  className="flex scroll-mt-32 flex-col gap-5 bg-surface p-5 md:p-6 target:bg-accent-tint"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-3">

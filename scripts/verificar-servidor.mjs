@@ -174,7 +174,6 @@ for (const [ruta, marca] of [
   ["/", "para que tu obra no se pare"],
   ["/servicios", "partner oficial de Jungheinrich"],
   ["/delegaciones", "delegaciones propias"],
-  ["/noticias", "Alquiler de manipuladores telescópicos en Madrid"],
   ["/contacto", "Hablas con la delegación"],
   ["/admin/datos-pendientes", "Datos pendientes"],
   ["/aviso-legal", "JOFEME"],
@@ -184,6 +183,14 @@ for (const [ruta, marca] of [
   t(`${ruta} responde 200`, q.estado === 200);
   t(`${ruta} tiene su contenido`, q.cuerpo.includes(marca));
   t(`${ruta} tiene un solo h1`, cuenta(q.cuerpo, /<h1[\s>]/g) === 1);
+}
+
+// Noticias está apagado de momento (src/lib/modulos.ts): ni página ni enlace.
+{
+  const q = await html("/noticias");
+  t("/noticias responde 404 mientras el módulo esté apagado", q.estado === 404);
+  const portada = await html("/");
+  t("la portada no enlaza a /noticias", !portada.cuerpo.includes('href="/noticias"'));
 }
 
 // Servicios lleva los cuatro bloques, en el orden que se acordó.
@@ -242,7 +249,6 @@ const rutasRevisadas = [
   "/alquiler/elevacion",
   "/servicios",
   "/delegaciones",
-  "/noticias",
   "/contacto",
   "/asesor",
 ];

@@ -6,10 +6,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
-import { TELEFONO_PRINCIPAL, EMPRESA } from "@/content/es/empresa";
+import { EMPRESA, DELEGACIONES } from "@/content/es/empresa";
 import { FAMILIAS } from "@/lib/catalog/familias";
 import { ALQUILER } from "@/lib/catalog";
+import { MODULOS } from "@/lib/modulos";
 import { IconoMaquina } from "@/components/marca/IconoMaquina";
+import { DesplegableDelegaciones } from "./DesplegableDelegaciones";
+import { DesplegableTelefonos } from "./DesplegableTelefonos";
 
 /**
  * La cabecera.
@@ -29,13 +32,15 @@ import { IconoMaquina } from "@/components/marca/IconoMaquina";
  * ratón. Se cierra con Escape y al salir del bloque.
  */
 
-const NAV = [
+type ItemNav = { href: string; label: string; familias?: true };
+
+const NAV: ItemNav[] = [
   { href: "/", label: "Inicio" },
   { href: "/alquiler", label: "Alquiler", familias: true },
   { href: "/servicios", label: "Servicios" },
-  { href: "/noticias", label: "Noticias" },
+  ...(MODULOS.noticias ? [{ href: "/noticias", label: "Noticias" }] : []),
   { href: "/contacto", label: "Contacto" },
-] as const;
+];
 
 export function Header() {
   const pathname = usePathname();
@@ -85,9 +90,11 @@ export function Header() {
     <>
       {/* Franja de confianza. Se retira en móvil: ahí el espacio vertical
           lo necesita el hero, y el teléfono ya está en la cabecera. */}
+      {/* `relative z-50`: el panel de delegaciones cae por encima de la
+          cabecera, que es `sticky z-40`. */}
       <div
         data-surface="dark"
-        className="hidden border-b border-rule-inverse bg-inverse md:block"
+        className="relative z-50 hidden border-b border-rule-inverse bg-inverse md:block"
       >
         <div className="container-placa flex h-9 items-center justify-between gap-6">
           {/* Caja baja: dos frases largas en versalitas espaciadas, y lo
@@ -99,18 +106,16 @@ export function Header() {
             />
             Especialistas en maquinaria desde {EMPRESA.fundacion}
           </p>
-          <Link
-            href="/delegaciones"
-            className="label-sm hidden h-full items-center text-ink-inv-3 underline decoration-rule-inverse decoration-from-font underline-offset-4 transition-colors duration-200 hover:text-accent-dark lg:flex"
-          >
-            Delegaciones
-          </Link>
-          <Link
-            href="/asesor"
-            className="label-sm flex h-full items-center text-ink-inv-2 underline decoration-rule-inverse decoration-from-font underline-offset-4 transition-colors duration-200 hover:text-accent-dark"
-          >
-            ¿Qué máquina necesito?
-          </Link>
+          <div className="flex h-full items-center gap-6">
+            <DesplegableDelegaciones />
+            <span aria-hidden="true" className="h-3.5 w-px bg-rule-inverse" />
+            <Link
+              href="/asesor"
+              className="label-sm flex h-full items-center text-ink-inv-2 underline decoration-rule-inverse decoration-from-font underline-offset-4 transition-colors duration-200 hover:text-accent-dark"
+            >
+              ¿Qué máquina necesito?
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -145,7 +150,7 @@ export function Header() {
             className="hidden items-center gap-6 lg:flex xl:gap-7"
           >
             {NAV.map((item) =>
-              "familias" in item ? (
+              item.familias ? (
                 <div
                   key={item.href}
                   ref={bloqueFamilias}
@@ -260,21 +265,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <a
-              href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-              className="hidden min-h-11 items-center gap-2 text-ink transition-colors duration-200 hover:text-accent xl:flex"
-            >
-              <Phone size={17} strokeWidth={1.75} aria-hidden="true" />
-              <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
-            </a>
-
-            <a
-              href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-              className="flex size-11 items-center justify-center border border-rule-control text-ink transition-colors duration-200 hover:bg-sunken xl:hidden"
-              aria-label={`Llamar al ${TELEFONO_PRINCIPAL.visible}`}
-            >
-              <Phone size={19} strokeWidth={1.75} aria-hidden="true" />
-            </a>
+            <DesplegableTelefonos alAbrir={() => setMenuAbierto(false)} />
 
             <Link
               href="/consultar-disponibilidad"
@@ -327,7 +318,7 @@ export function Header() {
                   />
                 </Link>
 
-                {"familias" in item && (
+                {item.familias && (
                   <ul className="border-b border-rule py-1.5">
                     {FAMILIAS.map((f) => (
                       <li key={f.id}>
@@ -388,13 +379,40 @@ export function Header() {
             >
               Consultar disponibilidad
             </Link>
-            <a
-              href={`tel:${TELEFONO_PRINCIPAL.tel}`}
-              className="mt-3 flex h-14 items-center justify-center gap-2 border border-rule-control text-base font-semibold text-ink pastilla"
-            >
-              <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
-              <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
-            </a>
+            {/* Todos los números en un <details>: nativo, funciona sin
+                JavaScript y no roba altura al menú hasta que se abre. */}
+            <details className="group mt-3 overflow-hidden rounded-3xl border border-rule-control">
+              <summary className="flex h-14 cursor-pointer list-none items-center justify-center gap-2 text-base font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
+                Llamar a una delegación
+                <ChevronDown
+                  size={16}
+                  strokeWidth={2.25}
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-open:rotate-180"
+                />
+              </summary>
+              <ul className="border-t border-rule">
+                {DELEGACIONES.filter((d) => d.tel).map((d) => (
+                  <li key={d.id} className="border-b border-rule last:border-b-0">
+                    <a
+                      href={`tel:${d.tel}`}
+                      className="flex min-h-12 items-center justify-between gap-4 px-5 text-base"
+                    >
+                      <span className="font-medium text-ink">
+                        {d.nombre}
+                        {d.central && (
+                          <span className="ml-2 rounded-full bg-accent-tint px-1.5 py-0.5 text-xs font-semibold text-accent">
+                            Central
+                          </span>
+                        )}
+                      </span>
+                      <span className="value text-ink-2">{d.telefono}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
           </nav>
         </div>
       )}

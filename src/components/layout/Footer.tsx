@@ -11,6 +11,7 @@ import {
   LEMA,
 } from "@/content/es/empresa";
 import { FAMILIAS } from "@/lib/catalog/familias";
+import { MODULOS } from "@/lib/modulos";
 import { Hexagono } from "@/components/marca/Hexagono";
 
 /**
@@ -41,9 +42,9 @@ const SECCIONES = [
   { href: "/servicios#transporte", label: "Transporte a obra" },
   { href: "/servicios#formacion", label: "Formación" },
   { href: "/delegaciones", label: "Delegaciones" },
-  { href: "/noticias", label: "Noticias" },
+  ...(MODULOS.noticias ? [{ href: "/noticias", label: "Noticias" }] : []),
   { href: "/contacto", label: "Contacto" },
-] as const;
+];
 
 const HERRAMIENTAS = [
   { href: "/asesor", label: "¿Qué máquina necesito?" },
