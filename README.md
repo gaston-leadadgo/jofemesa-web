@@ -560,8 +560,8 @@ al cliente. Lo bloqueante:
 5. **Horarios de las delegaciones.** No están publicados en ninguna
    parte.
 6. **Correo de Málaga.** El PDF de Interempresas dice
-   «alquileresamalaga@» y el catálogo general «alquileresmalaga@»; se
-   publica el del PDF.
+   «alquileresamalaga@» y el catálogo general «alquileresmalaga@». Se
+   publica tal cual el PDF; si es errata, se avisa al cliente.
 7. **Número de WhatsApp Business** para la barra móvil.
 8. **Registro Mercantil.** Su propio aviso legal publica esos campos en
    blanco.

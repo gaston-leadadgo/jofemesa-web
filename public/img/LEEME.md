@@ -31,9 +31,9 @@ que se detecten.
 
 ## Prompt para `hero/formacion.jpg`
 
-Mientras no exista, la portada de Formación usa la foto de obra en espejo
-y más oscura. En cuanto se deja el archivo, sale sola en el carrusel y en
-la cabecera de `/formacion`.
+Ya está puesta (28/09/2026, 2560 × 1429, 491 KB). Contraste medido con el
+velo en su peor punto: 11,1:1 el titular y 6,8:1 la entradilla. Si se
+quita, la portada de Formación vuelve a usar la foto de obra en espejo.
 
 > Fotografía editorial realista, formato horizontal 16:9, 2560×1440. Un
 > curso práctico de formación de operadores de maquinaria en el patio de

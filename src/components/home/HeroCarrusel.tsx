@@ -78,7 +78,11 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
       aria-roledescription="carrusel"
       aria-label="Portadas de JOFEMESA"
       data-surface="dark"
-      className="hero-alto relative isolate overflow-hidden bg-inverse"
+      /* Rejilla de UNA celda con todas las portadas apiladas: la sección
+         mide lo que mida la más alta (y como mínimo `hero-alto`). Con las
+         portadas en absoluto la altura no crecía, y en pantallas bajas el
+         texto se salía por arriba y quedaba cortado bajo la cabecera. */
+      className="hero-alto relative isolate grid overflow-hidden bg-inverse"
       onMouseEnter={() => setEncima(true)}
       onMouseLeave={() => setEncima(false)}
       onFocus={() => setFoco(true)}
@@ -96,19 +100,27 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
             aria-roledescription="portada"
             aria-label={`${i + 1} de ${ORDEN.length}: ${ROTULO[id]}`}
             inert={!esActiva}
+            /* Al terminar la cortina, la portada de debajo se oculta: ya
+               no hace falta de fondo y así no puede asomar nunca. */
+            onAnimationEnd={(e) => {
+              if (e.target === e.currentTarget && e.animationName === "hero-cortina")
+                setPrevia(null);
+            }}
             className={cn(
-              "absolute inset-0 flex items-center",
+              "relative col-start-1 row-start-1 flex items-center",
               esActiva ? "z-20" : esPrevia ? "z-10" : "pointer-events-none z-0 opacity-0",
               /* La cortina va sobre la portada ENTERA: si solo cubría la
                  foto, el texto nuevo aparecía encima del viejo. */
               esActiva && ciclo > 0 && "hero-cortina",
             )}
           >
-            {/* ---------- Foto: cortina + acercamiento ---------- */}
-            <div
-              key={esActiva ? `foto-${ciclo}` : "foto"}
-              className="absolute inset-0 -z-10 overflow-hidden"
-            >
+            {/* ---------- Foto: cortina + acercamiento ----------
+                SIN `key` por ciclo: remontar la imagen en cada cambio la
+                dejaba en blanco hasta decodificarla, y durante ese
+                instante se veía la portada anterior a través del velo.
+                El acercamiento se reinicia igual, porque la clase
+                `hero-acercar` entra y sale con la portada activa. */}
+            <div className="absolute inset-0 -z-10 overflow-hidden">
               <Image
                 src={fotos[id].src}
                 alt={fotos[id].alt}
@@ -135,7 +147,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
 
             <div
               key={esActiva ? `texto-${ciclo}` : "texto"}
-              className={cn("container-placa relative w-full py-14 md:py-16", esActiva && "hero-entra")}
+              className={cn("container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12", esActiva && "hero-entra")}
             >
               {id === "alquiler" ? <PortadaAlquiler /> : <PortadaFormacion />}
             </div>
@@ -152,6 +164,38 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
           className="hero-cuchilla pointer-events-none absolute inset-y-0 z-30 w-3 bg-accent"
         />
       )}
+
+      {/* ---------- Flechas laterales ----------
+          Lo primero que dice «esto es un carrusel». A media altura y en el
+          margen exterior, solo desde `xl`: por debajo el margen no da y
+          pisarían el titular, así que ahí mandan las flechas de abajo. */}
+      {(
+        [
+          ["anterior", -1, ChevronLeft, "left-4"],
+          ["siguiente", 1, ChevronRight, "right-4"],
+        ] as const
+      ).map(([nombre, paso, Icono, lado]) => (
+        <button
+          key={nombre}
+          type="button"
+          onClick={() => ir(activa + paso)}
+          aria-label={`Portada ${nombre}: ${ROTULO[ORDEN[(activa + paso + ORDEN.length) % ORDEN.length]]}`}
+          className={cn(
+            "group absolute top-1/2 z-40 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-white/10 text-ink-inv backdrop-blur-md transition-colors duration-200 hover:border-accent hover:bg-accent xl:flex",
+            lado,
+          )}
+        >
+          <Icono
+            size={26}
+            strokeWidth={2}
+            aria-hidden="true"
+            className={cn(
+              "transition-transform duration-200",
+              paso > 0 ? "group-hover:translate-x-0.5" : "group-hover:-translate-x-0.5",
+            )}
+          />
+        </button>
+      ))}
 
       {/* ---------- Mando: pestañas con progreso + flechas ---------- */}
       <div className="absolute inset-x-0 bottom-0 z-40">
@@ -205,17 +249,30 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
               type="button"
               onClick={() => ir(activa - 1)}
               aria-label="Portada anterior"
-              className="flex size-11 items-center justify-center rounded-full border border-white/25 text-ink-inv transition-colors duration-200 hover:border-accent hover:bg-accent"
+              className="flex size-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-ink-inv backdrop-blur-md transition-colors duration-200 hover:border-accent hover:bg-accent"
             >
               <ChevronLeft size={20} strokeWidth={2} aria-hidden="true" />
             </button>
+            {/* «Siguiente: Formación», con nombre: una flecha sola no dice
+                qué hay detrás. */}
             <button
               type="button"
               onClick={() => ir(activa + 1)}
-              aria-label="Portada siguiente"
-              className="flex size-11 items-center justify-center rounded-full border border-white/25 text-ink-inv transition-colors duration-200 hover:border-accent hover:bg-accent"
+              aria-label={`Portada siguiente: ${ROTULO[ORDEN[(activa + 1) % ORDEN.length]]}`}
+              className="group flex h-11 items-center gap-2 rounded-full bg-accent pr-2 pl-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
             >
-              <ChevronRight size={20} strokeWidth={2} aria-hidden="true" />
+              <span className="hidden md:inline">
+                Siguiente: {ROTULO[ORDEN[(activa + 1) % ORDEN.length]]}
+              </span>
+              <span className="md:hidden">{ROTULO[ORDEN[(activa + 1) % ORDEN.length]]}</span>
+              <span className="flex size-7 items-center justify-center rounded-full bg-white/20">
+                <ChevronRight
+                  size={17}
+                  strokeWidth={2.25}
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-0.5"
+                />
+              </span>
             </button>
           </div>
         </div>
@@ -307,8 +364,8 @@ function PortadaFormacion() {
   const siguiente = proximas[0];
 
   return (
-    <div className="grid items-center gap-10 pb-20 md:pb-16 lg:grid-cols-12">
-      <div className="max-w-[60ch] lg:col-span-7">
+    <div className="pb-20 md:pb-16">
+      <div className="max-w-[60ch] lg:max-w-[56%]">
         <div data-entra style={{ "--i": 0 } as React.CSSProperties}>
           <span className="label pastilla inline-flex items-center gap-2 border border-white/20 bg-white/10 px-3 py-1.5 text-ink-inv-2">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
@@ -344,10 +401,11 @@ function PortadaFormacion() {
             Catálogo de cursos
           </Link>
         </div>
-      </div>
-
-      {siguiente && (
-        <div className="hidden lg:col-span-5 lg:block" data-entra style={{ "--i": 4 } as React.CSSProperties}>
+        {/* La próxima convocatoria va en la columna del texto y no a la
+            derecha: en la foto de Formación el grupo ocupa justo ese
+            lado, y la tarjeta tapaba al instructor. */}
+        {siguiente && (
+          <div className="mt-8 hidden md:block" data-entra style={{ "--i": 4 } as React.CSSProperties}>
           <ProximaConvocatoria
             fecha={siguiente.fecha}
             curso={siguiente.curso}
@@ -358,8 +416,9 @@ function PortadaFormacion() {
               ).length - 1
             }
           />
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -379,30 +438,30 @@ function ProximaConvocatoria({
   const c = CURSOS[curso];
   const s = SEDES_CURSO[sede];
   return (
-    <div className="ml-auto max-w-sm rounded-[28px] border border-white/15 bg-white/10 p-6 text-ink-inv shadow-panel backdrop-blur-md">
-      <p className="meta flex items-center gap-2 text-ink-inv-2">
-        <CalendarDays size={15} strokeWidth={2} aria-hidden="true" className="text-accent-dark" />
-        Próxima convocatoria
-      </p>
-      <div className="mt-4 flex items-center gap-4">
-        <div className="flex size-18 shrink-0 flex-col items-center justify-center rounded-2xl bg-accent text-white">
-          <span className="font-[family-name:var(--font-display)] text-3xl leading-none">{f.dia}</span>
-          <span className="mt-1 text-xs font-semibold uppercase tracking-wide">{f.mesCorto}</span>
-        </div>
-        <div className="min-w-0">
-          <p className="text-lg leading-snug font-semibold">{c.nombre}</p>
-          {c.norma && <p className="mt-0.5 text-sm text-ink-inv-2">{c.norma}</p>}
-        </div>
+    <div className="flex max-w-xl items-center gap-4 rounded-[24px] border border-white/15 bg-white/10 p-3 pr-5 text-ink-inv backdrop-blur-md">
+      <div className="flex size-16 shrink-0 flex-col items-center justify-center rounded-2xl bg-accent text-white">
+        <span className="font-[family-name:var(--font-display)] text-2xl leading-none">{f.dia}</span>
+        <span className="mt-1 text-xs font-semibold uppercase tracking-wide">{f.mesCorto}</span>
       </div>
-      <p className="mt-4 flex items-center gap-2 text-sm text-ink-inv-2">
-        <MapPin size={14} strokeWidth={2} aria-hidden="true" className="text-accent-dark" />
-        {s.nombre} · <span className="capitalize">{f.diaSemana}</span>
-      </p>
+      <div className="min-w-0 flex-1">
+        <p className="meta flex items-center gap-1.5 text-ink-inv-3">
+          <CalendarDays size={13} strokeWidth={2} aria-hidden="true" className="text-accent-dark" />
+          Próxima convocatoria
+        </p>
+        <p className="mt-0.5 truncate text-base font-semibold">
+          {c.nombre}
+          {c.norma && <span className="font-normal text-ink-inv-2"> · {c.norma}</span>}
+        </p>
+        <p className="mt-0.5 flex items-center gap-1.5 text-sm text-ink-inv-2">
+          <MapPin size={13} strokeWidth={2} aria-hidden="true" className="text-accent-dark" />
+          {s.nombre} · <span className="capitalize">{f.diaSemana}</span>
+        </p>
+      </div>
       <Link
         href="/formacion#calendario"
-        className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink-inv underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-dark"
+        className="hidden shrink-0 items-center gap-1.5 text-sm font-semibold whitespace-nowrap text-ink-inv underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-dark lg:inline-flex"
       >
-        {masEsteMes > 0 ? `Y ${masEsteMes} más este mes` : "Ver el calendario"}
+        {masEsteMes > 0 ? `+${masEsteMes} este mes` : "Calendario"}
         <ArrowRight size={14} strokeWidth={2.25} aria-hidden="true" />
       </Link>
     </div>

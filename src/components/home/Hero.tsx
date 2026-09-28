@@ -35,8 +35,11 @@ export function Hero() {
     formacion: formacion
       ? {
           src: formacion,
-          alt: "Operarios con casco y arnés recibiendo formación junto a una plataforma elevadora",
-          posicion: "object-[70%_center]",
+          alt: "Instructor explicando los mandos de una plataforma elevadora de tijera a dos alumnos con casco y arnés",
+          /* El grupo ocupa del 60 al 95 % del ancho: en móvil la franja
+             visible tiene que caer sobre ellos. Contraste medido con el
+             velo en el peor punto: 11,1:1 titular, 6,8:1 entradilla. */
+          posicion: "object-[80%_center]",
         }
       : {
           src: obra,

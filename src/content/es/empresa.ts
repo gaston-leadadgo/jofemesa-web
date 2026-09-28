@@ -443,7 +443,7 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Correo de Málaga",
-    nota: "El PDF de Interempresas 2026 da «alquileresamalaga@jofemesa.com» (con una «a» antes de «malaga») y el catálogo general daba «alquileresmalaga@». La web publica el del PDF, que es el más reciente; conviene confirmar cuál recibe correo.",
+    nota: "Se publica TAL CUAL el PDF de Interempresas 2026: «alquileresamalaga@jofemesa.com», con una «a» antes de «malaga». El catálogo general daba «alquileresmalaga@». Si es una errata del PDF, hay que avisar al cliente para que la corrija en su material.",
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
