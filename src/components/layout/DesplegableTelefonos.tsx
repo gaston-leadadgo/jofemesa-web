@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils/cn";
 import {
   CENTROS,
   DELEGACIONES,
+  SEDE_FORMACION,
   TELEFONO_PRINCIPAL,
 } from "@/content/es/empresa";
 import { useDesplegable } from "./useDesplegable";
@@ -86,6 +87,15 @@ export function DesplegableTelefonos({ alAbrir }: { alAbrir?: () => void }) {
               Otros centros
             </p>
             <ul>
+              <li>
+                <Fila
+                  tel={SEDE_FORMACION.tel}
+                  visible={SEDE_FORMACION.telefono}
+                  nombre="Formación"
+                  detalle="Sede · cursos"
+                  cerrar={() => setAbierto(false)}
+                />
+              </li>
               {CENTROS.map((c) => (
                 <li key={c.id}>
                   <Fila

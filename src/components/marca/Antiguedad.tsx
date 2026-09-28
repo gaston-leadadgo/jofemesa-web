@@ -2,6 +2,12 @@
 
 import { useSyncExternalStore } from "react";
 import { EMPRESA } from "@/content/es/empresa";
+import {
+  claveFundacion,
+  leerClave,
+  plural,
+  suscribirDia,
+} from "@/lib/utils/antiguedad";
 
 /**
  * «Desde el 24/03/1987», al detalle.
@@ -11,48 +17,23 @@ import { EMPRESA } from "@/content/es/empresa";
  * relevancia al año de fundación, y esta es la forma de hacerlo sin
  * añadir una cifra nueva: la que ya tienen, contada exacta.
  *
- * La fecha de hoy es estado EXTERNO a React, igual que `localStorage`,
- * así que se lee con `useSyncExternalStore` y no con un efecto que hace
- * `setState`. La consecuencia práctica es la que importa: el servidor
- * pinta los años —una cifra que no depende de la hora ni de la zona—, y
- * el desglose aparece al hidratar, sin desajuste y sin un render
- * encadenado de más.
+ * La fecha de hoy es estado EXTERNO a React, así que se lee con
+ * `useSyncExternalStore`: el servidor pinta los años —una cifra que no
+ * depende de la hora ni de la zona— y el desglose aparece al hidratar.
  */
 
-function desglose(): string {
-  const desde = new Date(EMPRESA.fundacionIso);
-  const hoy = new Date();
-
-  let anios = hoy.getFullYear() - desde.getFullYear();
-  let meses = hoy.getMonth() - desde.getMonth();
-  let dias = hoy.getDate() - desde.getDate();
-
-  if (dias < 0) {
-    meses -= 1;
-    // Día 0 del mes actual = último día del mes anterior.
-    dias += new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
-  }
-  if (meses < 0) {
-    anios -= 1;
-    meses += 12;
-  }
-
-  return [
-    `${anios} año${anios === 1 ? "" : "s"}`,
-    `${meses} mes${meses === 1 ? "" : "es"}`,
-    `${dias} día${dias === 1 ? "" : "s"}`,
-  ].join(" · ");
-}
-
-/** No cambia mientras la pestaña está abierta: nada a lo que suscribirse. */
-const suscribir = () => () => {};
-const enServidor = () => `${EMPRESA.anios} años`;
+const enServidor = () => null;
 
 export function Antiguedad({ className }: { className?: string }) {
-  const texto = useSyncExternalStore(suscribir, desglose, enServidor);
+  const clave = useSyncExternalStore(suscribirDia, claveFundacion, enServidor);
+  if (!clave) {
+    return <span className={className}>{EMPRESA.anios} años</span>;
+  }
+  const { anios, meses, dias } = leerClave(clave);
   return (
-    <span className={className} suppressHydrationWarning>
-      {texto}
+    <span className={className}>
+      {anios} {plural(anios, "año", "años")} · {meses}{" "}
+      {plural(meses, "mes", "meses")} · {dias} {plural(dias, "día", "días")}
     </span>
   );
 }

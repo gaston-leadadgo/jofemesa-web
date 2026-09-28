@@ -6,13 +6,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
-import { EMPRESA, DELEGACIONES } from "@/content/es/empresa";
+import { PUNTOS_CONTACTO } from "@/content/es/empresa";
 import { FAMILIAS } from "@/lib/catalog/familias";
 import { ALQUILER } from "@/lib/catalog";
 import { MODULOS } from "@/lib/modulos";
 import { IconoMaquina } from "@/components/marca/IconoMaquina";
 import { DesplegableDelegaciones } from "./DesplegableDelegaciones";
 import { DesplegableTelefonos } from "./DesplegableTelefonos";
+import { ContadorFundacion } from "@/components/marca/ContadorFundacion";
 
 /**
  * La cabecera.
@@ -38,6 +39,7 @@ const NAV: ItemNav[] = [
   { href: "/", label: "Inicio" },
   { href: "/alquiler", label: "Alquiler", familias: true },
   { href: "/servicios", label: "Servicios" },
+  { href: "/formacion", label: "Formación" },
   ...(MODULOS.noticias ? [{ href: "/noticias", label: "Noticias" }] : []),
   { href: "/contacto", label: "Contacto" },
 ];
@@ -99,13 +101,7 @@ export function Header() {
         <div className="container-placa flex h-9 items-center justify-between gap-6">
           {/* Caja baja: dos frases largas en versalitas espaciadas, y lo
               primero que ve cualquiera al entrar es un cartel. */}
-          <p className="meta flex items-center gap-2 text-ink-inv-2">
-            <span
-              aria-hidden="true"
-              className="size-1.5 rounded-full bg-accent-dark"
-            />
-            Especialistas en maquinaria desde {EMPRESA.fundacion}
-          </p>
+          <ContadorFundacion />
           <div className="flex h-full items-center gap-6">
             <DesplegableDelegaciones />
             <span aria-hidden="true" className="h-3.5 w-px bg-rule-inverse" />
@@ -393,7 +389,7 @@ export function Header() {
                 />
               </summary>
               <ul className="border-t border-rule">
-                {DELEGACIONES.filter((d) => d.tel).map((d) => (
+                {PUNTOS_CONTACTO.filter((d) => d.tel).map((d) => (
                   <li key={d.id} className="border-b border-rule last:border-b-0">
                     <a
                       href={`tel:${d.tel}`}

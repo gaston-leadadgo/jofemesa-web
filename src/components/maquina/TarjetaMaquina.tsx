@@ -100,23 +100,19 @@ export function TarjetaMaquina({
       </div>
 
       {/* ---------- La plataforma de la foto ----------
-          Alto FIJO y no proporción 4:3. Con 4:3 la tarjeta se iba a 670px
-          en una columna de 390, y una rejilla de tarjetas de 670px se
-          recorre a ciegas. 11rem es lo que usa la versión de Emilio y
-          deja la tarjeta entera por debajo de 580px. */}
-      <div className="panel relative h-44 overflow-hidden">
+          6:5, casi cuadrada: las creatividades del cliente son cuadradas
+          y se ven COMPLETAS (logo, marca, modelo). Con el alto fijo de
+          11rem que había, la foto quedaba en un sello de 150px. Sin zoom
+          al pasar por encima: escalar dentro de un `overflow-hidden`
+          también recorta los bordes de la pieza. */}
+      <div className="panel relative aspect-[6/5] overflow-hidden">
         <Link
           href={`/maquina/${m.slug}`}
           className="absolute inset-0 block"
           tabIndex={-1}
           aria-hidden="true"
         >
-          <ImagenMaquina
-            maquina={m}
-            sizes={sizes}
-            prioridad={prioridad}
-            className="p-3 transition-transform duration-500 ease-out motion-safe:group-hover:scale-[1.05]"
-          />
+          <ImagenMaquina maquina={m} sizes={sizes} prioridad={prioridad} />
         </Link>
 
         {/* Casilla de comparar SIEMPRE visible: nunca revelada al hover.

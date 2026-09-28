@@ -17,15 +17,47 @@ PUERTO=3000 node scripts/verificar-servidor.mjs
 
 ---
 
-## Qué cambió en esta entrega
+## Entrega del 28/09/2026
+
+- **Delegaciones según el PDF de Interempresas 2026.** Castellón ya no
+  existe. `DELEGACIONES` son las nueve de alquiler y la **sede de
+  Formación** (San Fernando de Henares) va aparte, en `SEDE_FORMACION`:
+  sale en todos los listados de contacto, como en el PDF, pero no alquila
+  máquinas, así que no entra en el mapa ni en «se sirve desde». Cada
+  tarjeta de `/delegaciones` tiene ancla propia y enlace «Cómo llegar».
+- **Fotos de máquina COMPLETAS.** La versión 4:3 anterior recortaba el
+  logotipo de JOFEMESA, la marca y el modelo del fabricante, los
+  grafismos y, en algunas, la propia máquina; y encima se pintaba con
+  `object-cover`. Ahora van las creatividades originales enteras
+  (`oficial/completa/`, 1254 × 1254) con `object-contain`. Son 34: las
+  27 tijeras y las 7 columnas verticales que llegaron el 23/09.
+- **Contador de antigüedad en la franja superior**, en años, meses y
+  días desde el 24/03/1987. Cuenta de cero hasta hoy al cargar, con CSS
+  puro (`@property --n`). Se corrigió de paso un día de más que sumaba
+  al oeste de Greenwich (la fecha ISO se leía en UTC).
+- **Hero en carrusel de dos portadas**, Alquiler y Formación: cortina con
+  cuchilla roja, foto que se acerca, texto escalonado y la barra de la
+  pestaña como temporizador (se para con el ratón encima o escribiendo en
+  el buscador; con «reducir movimiento» no avanza solo). La portada de
+  Formación enseña la próxima convocatoria real. Su foto propia es
+  `public/img/hero/formacion.jpg`; el prompt está en `public/img/LEEME.md`.
+- **Página `/formacion`**, en el menú principal: catálogo de cursos,
+  calendario en lista filtrable por curso, sede y mes, sedes con Maps y
+  legislación de referencia. Las 69 convocatorias salen del Excel del
+  cliente (`src/content/es/convocatorias.ts`). Plazas y ocupación están
+  modeladas pero a `null` —el Excel no las trae—: cuando el panel de
+  WordPress las dé, cada fila pinta sola «Quedan N plazas» o «Completo».
+
+## Qué cambió en la entrega de agosto
 
 Todo lo de esta sección sale de la **reunión de seguimiento del
 24/08/2026** entre Emilio, Marcos y Gastón, y está implementado.
 
 ### Arquitectura
 
-El menú pasa a **Inicio · Alquiler · Servicios · Delegaciones · Noticias
-· Contacto**. Venta y mantenimiento **dejan de ser pestañas** y viven
+El menú pasa a **Inicio · Alquiler · Servicios · Formación · Contacto**
+(Delegaciones sube a la franja superior y Noticias está apagado de
+momento en `src/lib/modulos.ts`). Venta y mantenimiento **dejan de ser pestañas** y viven
 dentro de `/servicios`, en este orden: venta → mantenimiento →
 transporte → mención a formación, y **cada bloque con su propio call to
 action**. Las URL antiguas (`/venta`, `/mantenimiento`) redirigen con
@@ -77,14 +109,12 @@ completo**. No era solo que no fueran del modelo exacto: varias llevaban
 rotulación visible de empresas de alquiler de la competencia —«renta»,
 «Sunbelt», «Skyjack»— y una de ellas **era el hero de la portada**.
 
-En su lugar están las 27 creatividades oficiales que entregó el cliente:
-máquinas de su propia flota, con su rotulación. De cada una salen dos
-derivados generados una sola vez:
+En su lugar están las 34 creatividades oficiales que entregó el cliente:
+máquinas de su propia flota, con su rotulación, en
+`oficial/completa/` **tal cual**, sin recortes (ver la entrega del
+28/09).
 
-- `oficial/tarjeta/` — lienzo 4:3 de 1200×900, para tarjeta y ficha.
-- `oficial/recorte/` — la máquina a su caja real, en vertical, para el hero.
-
-Las 118 referencias que aún no tienen foto salen con **dibujo técnico**.
+Las 111 referencias que aún no tienen foto salen con **dibujo técnico**.
 Un dibujo parece deliberado; la máquina de otro con su logotipo, no.
 
 ### Lo que NO se puede decir
@@ -112,13 +142,11 @@ control en `/admin/iconos`.
 
 ### Datos de empresa
 
-Del catálogo general salen las direcciones, teléfonos y correos de las
-**diez** delegaciones, incluidas las **dos de Portugal** —Vila Nova de
-Gaia y Palmela— que su web actual no publica en ninguna parte y que la
-versión anterior de esta web tenía como «contacto pendiente de
-confirmar». También los dos centros con dirección propia: la central de
-formación y el distribuidor oficial Takeuchi, ambos en San Fernando de
-Henares.
+Del PDF de Interempresas 2026 y del catálogo general salen las
+direcciones, teléfonos y correos de las **nueve** delegaciones, incluidas
+las **dos de Portugal** —Vila Nova de Gaia y Palmela—, y de la **sede de
+Formación**. Aparte queda el distribuidor oficial Takeuchi, también en
+San Fernando de Henares.
 
 Los horarios siguen en blanco porque no los publican. La web dice
 «llámanos y te lo confirmamos».
@@ -449,12 +477,9 @@ enseña el 68% pero deja la entradilla en 5,0:1 —pasa, pero sin margen—.
 clara por la izquierda tumba la entradilla por debajo del 4,5:1 de la
 WCAG AA sin que se note a simple vista.
 
-Todo lo que hay que tocar para cambiar la fotografía está en la constante
-`HERO` de `src/components/home/Hero.tsx`: `src`, `alt`, `velo`
-(`claro` / `oscuro`) y `posicion`. Con `velo: "oscuro"` el componente
-invierte el texto a blanco él solo. La actual es la creatividad de estudio
-del cliente, que tiene fondo claro; cuando llegue una fotografía de obra
-de ambiente se cambian esos cuatro campos y nada más.
+Las dos portadas se configuran en `src/components/home/Hero.tsx`
+(`src`, `alt` y `posicion` de cada foto) y el carrusel vive en
+`HeroCarrusel.tsx`.
 
 ### La tarjeta de máquina
 
@@ -469,9 +494,9 @@ si es 4x4 se rotula «Diésel 4x4». El color no es el único portador —cada
 etiqueta lleva su palabra— y los tres pares están medidos sobre su propio
 fondo, no sobre blanco: 7,26:1, 8,04:1 y 7,80:1.
 
-La plataforma de la foto tiene alto **fijo** (11rem) y no proporción 4:3:
-con 4:3 la tarjeta se iba a 670 px en una columna de 390, y una rejilla de
-tarjetas de 670 px se recorre a ciegas.
+La plataforma de la foto es **6:5**, casi cuadrada, porque las
+creatividades del cliente son cuadradas y se ven enteras. Sin zoom al
+pasar el ratón: escalar dentro de un `overflow-hidden` recorta los bordes.
 
 De la reunión del 24/08/2026 se mantienen las dos instrucciones sobre los
 botones: **Ficha va en rojo de marca** —literal: «aunque quede peor, pues
@@ -525,16 +550,18 @@ al cliente. Lo bloqueante:
 1. **Confirmar la cifra de flota.** La web publica «+5.000 equipos en
    flota» porque es lo que dice su propia lámina del 24/08/2026. Hay que
    confirmarla.
-2. **Fotografía de manutención, tierras y energía.** 118 referencias
-   salen con dibujo técnico. El cliente dijo que a final de mes tendría
+2. **Fotografía del resto del catálogo.** 111 referencias salen con
+   dibujo técnico (listado en el artifact «Material fotográfico
+   pendiente»). El cliente dijo que a final de mes tendría
    los PDF y las fotos del catálogo ampliado.
 3. **Fichas técnicas del resto del catálogo.** Están las 34 de elevación.
-4. **Contenido de formación.** Acordado: se nombra y no se desarrolla
-   hasta definirlo con el cliente.
+4. **Plazas de las convocatorias y validación de la legislación** de
+   `/formacion`.
 5. **Horarios de las delegaciones.** No están publicados en ninguna
    parte.
-6. **Teléfono y dirección de Castellón.** El catálogo general la nombra
-   en la portada pero no le da ficha de contacto.
+6. **Correo de Málaga.** El PDF de Interempresas dice
+   «alquileresamalaga@» y el catálogo general «alquileresmalaga@»; se
+   publica el del PDF.
 7. **Número de WhatsApp Business** para la barra móvil.
 8. **Registro Mercantil.** Su propio aviso legal publica esos campos en
    blanco.

@@ -2,7 +2,7 @@ import { DELEGACIONES } from "@/content/es/empresa";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * El mapa de la península con las diez delegaciones.
+ * El mapa de la península con las delegaciones de alquiler.
  *
  * La proyección es equirrectangular y explícita:
  *
@@ -11,9 +11,7 @@ import { cn } from "@/lib/utils/cn";
  *
  * Es la misma fórmula con la que están calculadas las coordenadas de
  * cada delegación en `empresa.ts`, así que los puntos caen donde caen
- * de verdad y no donde quedaban bonitos. Almassora y Puerto de Sagunto
- * salen a 4 puntos de distancia porque están a 40 km, y eso es
- * información: si tu obra está en Castellón, tienes dos parques a mano.
+ * de verdad y no donde quedaban bonitos.
  *
  * Trazado deliberadamente simplificado: unos 35 vértices de costa y la
  * frontera con Portugal. No es un mapa de consulta —para eso está la
@@ -82,8 +80,8 @@ const camino = (puntos: readonly (readonly [number, number])[], cerrar = false) 
 /**
  * Separa las etiquetas que se pisan.
  *
- * Castellón y Puerto de Sagunto están a 40 km, así que sus puntos caen
- * a menos de cuatro unidades y los dos rótulos se solapaban. El punto NO
+ * Cuando dos delegaciones caen a menos de cuatro unidades, sus rótulos
+ * se solapan. El punto NO
  * se mueve —esa es la información— pero el rótulo sí: se empuja hacia
  * abajo lo justo para que quepan los dos, por parejas y de norte a sur.
  */

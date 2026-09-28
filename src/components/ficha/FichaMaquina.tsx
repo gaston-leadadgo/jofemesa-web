@@ -67,7 +67,7 @@ export function FichaMaquina({
       >
         {/* ---------- Imagen ---------- */}
         <div>
-          <div className="relative aspect-4/3 overflow-hidden border border-rule bg-muted">
+          <div className="relative aspect-square overflow-hidden rounded-2xl border border-rule bg-white">
             <ImagenMaquina
               maquina={m}
               sizes={variante === "modal" ? "600px" : "(min-width:1024px) 640px, 92vw"}
@@ -185,7 +185,7 @@ export function FichaMaquina({
               publica en qué parque está cada unidad, así que decir «se
               recoge en Málaga» sería una afirmación que no podemos
               sostener. Lo que sí es cierto es que el catálogo es común a
-              las diez delegaciones y que la fecha la confirma la que te
+              todas las delegaciones y que la fecha la confirma la que te
               atienda. */}
           <div className="mt-8">
             <h2 className="label text-ink-3">Se sirve desde</h2>
@@ -267,7 +267,7 @@ export function FichaMaquina({
                   href={`/maquina/${o.slug}`}
                   className="group flex h-full flex-col border border-rule transition-colors duration-200 hover:border-rule-strong"
                 >
-                  <span className="relative block aspect-4/3 overflow-hidden border-b border-rule bg-muted">
+                  <span className="relative block aspect-square overflow-hidden border-b border-rule bg-muted">
                     <ImagenMaquina maquina={o} sizes="33vw" compacto />
                   </span>
                   <span className="flex flex-1 flex-col p-4">

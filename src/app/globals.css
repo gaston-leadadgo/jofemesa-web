@@ -736,3 +736,117 @@ html:not([data-motor]) .filete-anim::after {
     transform: scaleX(1);
   }
 }
+
+/* ------------------------------------------------------------
+   Contador de antigüedad (franja superior)
+   Una cifra entera que cuenta de 0 a su valor con CSS puro: la
+   propiedad registrada `--n` se puede interpolar como entero, y
+   `counter()` la pinta. Sin JavaScript, sin estado.
+   ------------------------------------------------------------ */
+@property --n {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+.cifra-contador {
+  counter-reset: n var(--n);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  animation: contar-cifra 1.6s var(--ease-entrance) both;
+  animation-delay: var(--retardo-cifra, 0ms);
+}
+.cifra-contador::after {
+  content: counter(n);
+}
+@keyframes contar-cifra {
+  from {
+    --n: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cifra-contador {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   Hero en carrusel
+   · cortina: la portada entrante se descubre de derecha a izquierda.
+   · cuchilla: la franja roja que cruza con la cortina.
+   · acercar: la foto se acerca despacio mientras está en pantalla.
+   · entra: el texto sube escalonado (--i marca el orden).
+   · progreso: la barra de la pestaña; su final dispara el cambio.
+   ------------------------------------------------------------ */
+.hero-cortina {
+  animation: hero-cortina 1s cubic-bezier(0.77, 0, 0.175, 1) both;
+}
+@keyframes hero-cortina {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.hero-cuchilla {
+  left: 0;
+  animation: hero-cuchilla 1s cubic-bezier(0.77, 0, 0.175, 1) both;
+  box-shadow: 0 0 40px 6px rgba(227, 6, 19, 0.45);
+}
+@keyframes hero-cuchilla {
+  0% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1rem);
+    opacity: 0;
+  }
+}
+.hero-acercar {
+  animation: hero-acercar 9s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+@keyframes hero-acercar {
+  from {
+    scale: 1.09;
+  }
+  to {
+    scale: 1;
+  }
+}
+.hero-entra [data-entra] {
+  animation: hero-subir 0.8s var(--ease-entrance) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 420ms);
+}
+@keyframes hero-subir {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+  }
+}
+.hero-progreso {
+  animation: hero-progreso var(--duracion-hero, 8s) linear both;
+}
+@keyframes hero-progreso {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-cortina,
+  .hero-cuchilla,
+  .hero-acercar,
+  .hero-entra [data-entra],
+  .hero-progreso {
+    animation: none;
+  }
+  .hero-cuchilla {
+    display: none;
+  }
+}

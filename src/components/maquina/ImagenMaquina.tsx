@@ -39,16 +39,23 @@ export function ImagenMaquina({
 }) {
   const real = maquina.imagenes[indice];
 
+  /* `object-contain` sobre blanco, NUNCA `object-cover`: la creatividad
+     del cliente es una pieza cerrada (logotipo, marca, modelo y
+     grafismos) y cualquier recorte se la come. En un hueco cuadrado
+     llena entero; en uno apaisado quedan márgenes blancos que se funden
+     con el fondo de la propia foto. */
   if (real) {
     return (
-      <Image
-        src={real.src}
-        alt={real.alt}
-        fill
-        sizes={sizes}
-        priority={prioridad}
-        className={cn("object-cover", className)}
-      />
+      <span className="absolute inset-0 bg-white">
+        <Image
+          src={real.src}
+          alt={real.alt}
+          fill
+          sizes={sizes}
+          priority={prioridad}
+          className={cn("object-contain", className)}
+        />
+      </span>
     );
   }
 

@@ -27,7 +27,7 @@ import { conf, est, na } from "../types";
    ============================================================ */
 
 /**
- * Las diez delegaciones. Ninguna máquina está asignada a un parque
+ * Las nueve delegaciones de alquiler. Ninguna máquina está asignada a un parque
  * concreto porque el cliente no publica ese dato: el catálogo es común
  * y la disponibilidad de la fecha la confirma la delegación al
  * responder la solicitud. La interfaz lo dice con esas palabras.
@@ -37,7 +37,6 @@ export const DELEGACIONES_TODAS: DelegacionId[] = [
   "asturias",
   "valladolid",
   "valencia",
-  "castellon",
   "alicante",
   "sevilla",
   "malaga",
@@ -77,18 +76,18 @@ export function num(n: number, decimales = 0): string {
    ------------------------------------------------------------ */
 
 /**
- * Las 27 fotos oficiales de JOFEMESA que entregó el cliente. Son sus
+ * Las 34 fotos oficiales de JOFEMESA que entregó el cliente. Son sus
  * propias creatividades de producto —máquinas de su flota, con su
  * rotulación y su marca de agua—, así que no hay ningún problema de
  * derechos y no hace falta ninguna etiqueta de «foto de referencia».
  *
- * De cada creatividad salen dos derivados, generados una sola vez:
- *
- *   · `tarjeta/` — lienzo 4:3 de 1200×900 con la máquina centrada. Es
- *     lo que se ve en la tarjeta y en la ficha, y hace que las 27 se
- *     vean como una serie y no como 27 encuadres distintos.
- *   · `recorte/` — la máquina recortada a su caja real, en vertical.
- *     Es lo que se usa a sangre en el hero.
+ * Van COMPLETAS en `completa/`: la creatividad cuadrada original, a su
+ * tamaño (1254×1254), solo convertida a WebP. Nada de recortes ni
+ * reencuadres: cada pieza lleva el logotipo de JOFEMESA, la marca y el
+ * modelo del fabricante y los grafismos de la casa, y la versión 4:3 que
+ * había antes se comía todo eso —y en algunas, parte de la máquina—.
+ * Por lo mismo, en pantalla se pintan con `object-contain`, nunca
+ * `object-cover`.
  *
  * La capa de fotografía provisional de Wikimedia Commons que había
  * antes está retirada por completo: varias de esas imágenes llevaban
@@ -124,6 +123,14 @@ export const CON_FOTO = new Set([
   "snorkel-s3970-rt",
   "haulotte-hs15-e-pro",
   "haulotte-hs18-e-pro",
+  // Columnas verticales, entregadas el 23/09/2026.
+  "genie-gr-15",
+  "genie-gr-26j",
+  "haulotte-star-8-ae",
+  "haulotte-star-10",
+  "jlg-1230-es",
+  "jlg-nano-sp-plus",
+  "jlg-toucan-12e",
 ]);
 
 /**
@@ -294,10 +301,10 @@ export function construir(
       imagenes: CON_FOTO.has(slug)
         ? [
             {
-              src: `/img/maquinas/oficial/tarjeta/${slug}.webp`,
+              src: `/img/maquinas/oficial/completa/${slug}.webp`,
               alt: `${f.marca} ${f.modelo} de la flota de JOFEMESA`,
-              ancho: 1200,
-              alto: 900,
+              ancho: 1254,
+              alto: 1254,
               origen: "jofemesa.com" as const,
             },
           ]

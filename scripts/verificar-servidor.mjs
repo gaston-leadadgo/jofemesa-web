@@ -40,7 +40,7 @@ t(
 );
 t(
   "la ficha enseña la foto oficial de JOFEMESA",
-  p.cuerpo.includes("oficial/tarjeta/genie-gs-4390.webp"),
+  p.cuerpo.includes("oficial/completa/genie-gs-4390.webp"),
 );
 t("la ficha lleva JSON-LD de Product", p.cuerpo.includes('"@type":"Product"'));
 t("el JSON-LD es de arrendamiento", p.cuerpo.includes("LeaseOut"));
@@ -238,6 +238,37 @@ for (const [vieja, nueva] of [
       r.headers.get("location") === nueva,
   );
 }
+
+/* ============================================================
+   10b · Entrega del 28/09/2026
+   ============================================================ */
+
+p = await html("/formacion");
+t("/formacion responde 200", p.estado === 200);
+t("/formacion tiene un solo h1", cuenta(p.cuerpo, /<h1[\s>]/g) === 1);
+t("/formacion lista los cinco cursos", [
+  "Operador de plataformas elevadoras",
+  "Operador de carretillas elevadoras",
+  "Trabajos en altura",
+  "Montaje y desmontaje de andamios de torre móvil",
+  "Espacios confinados",
+].every((c) => p.cuerpo.includes(c)));
+t("/formacion trae el calendario en el HTML", cuenta(p.cuerpo, /Solicitar plaza/g) >= 20);
+t("/formacion enlaza a Maps con los enlaces del Excel", p.cuerpo.includes("maps.app.goo.gl/rEFVwDXHP6VVntpP7"));
+t("/formacion no inventa plazas", p.cuerpo.includes("Consultar plazas"));
+
+p = await html("/");
+t("el menú principal lleva Formación", p.cuerpo.includes('href="/formacion"'));
+t("el hero tiene las dos portadas", p.cuerpo.includes("Alquiler de maquinaria para que tu obra no se pare") && p.cuerpo.includes("Formación de operadores para trabajar seguro"));
+t("la portada sigue con un solo h1", cuenta(p.cuerpo, /<h1[\s>]/g) === 1);
+
+p = await html("/delegaciones");
+t("Castellón ya no figura", !p.cuerpo.includes("Castellón") && !p.cuerpo.includes("Almassora"));
+t("la sede de Formación figura como sede", p.cuerpo.includes('id="formacion"') && p.cuerpo.includes("formacion@jofemesa.com"));
+
+p = await html("/maquina/jlg-nano-sp-plus");
+t("las columnas verticales ya tienen foto completa", p.cuerpo.includes("oficial/completa/jlg-nano-sp-plus.webp"));
+t("no queda ninguna foto recortada", !p.cuerpo.includes("oficial/tarjeta/") && !p.cuerpo.includes("oficial/recorte/"));
 
 /* ============================================================
    11 · Lo que el cliente dijo que NO se puede publicar

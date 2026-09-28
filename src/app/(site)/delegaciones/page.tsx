@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  ArrowRight,
+  Navigation,
+  GraduationCap,
+} from "lucide-react";
 import {
   DELEGACIONES,
   DELEGACIONES_ESPANA,
   DELEGACIONES_PORTUGAL,
+  PUNTOS_ESPANA,
   CENTROS,
   LEMA,
 } from "@/content/es/empresa";
+import { urlMaps } from "@/lib/utils/maps";
 import { Mapa } from "@/components/marca/Mapa";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
 
 export const metadata: Metadata = {
   title: "Delegaciones en España y Portugal",
   description:
-    "Diez delegaciones propias: Madrid, Asturias, Valladolid, Valencia, Castellón, Alicante, Sevilla, Málaga, Oporto y Lisboa. Dirección, teléfono y correo de cada una.",
+    "Nueve delegaciones propias —Madrid, Asturias, Valladolid, Valencia, Alicante, Sevilla, Málaga, Oporto y Lisboa— y la sede de formación de San Fernando de Henares. Dirección, teléfono y correo de cada una.",
 };
 
 /**
@@ -25,18 +35,22 @@ export const metadata: Metadata = {
  * delegaciones».
  *
  * Lo importante de esta página no es el diseño: son los datos. Las
- * direcciones, teléfonos y correos de las diez delegaciones salen del
- * catálogo general que entregó el cliente, incluidas las DOS de
+ * direcciones, teléfonos y correos salen del PDF de Interempresas 2026
+ * y del catálogo general que entregó el cliente, incluidas las DOS de
  * Portugal —Vila Nova de Gaia y Palmela—, que su web actual no publica
  * en ninguna parte y que la versión anterior de esta web tenía como
  * «contacto pendiente de confirmar».
  *
  * Los horarios siguen en blanco porque no los publican en ningún sitio.
  * La página lo dice en vez de inventarse un «L-V 8:00-18:00».
+ *
+ * La sede de Formación va en el bloque de España, como en la lámina del
+ * PDF, pero se distingue: su botón no pide una máquina —no alquila—,
+ * lleva al calendario de cursos.
  */
 export default function PaginaDelegaciones() {
   const grupos = [
-    { titulo: "España", delegaciones: DELEGACIONES_ESPANA },
+    { titulo: "España", delegaciones: PUNTOS_ESPANA },
     { titulo: "Portugal", delegaciones: DELEGACIONES_PORTUGAL },
   ];
 
@@ -44,7 +58,7 @@ export default function PaginaDelegaciones() {
     <>
       <CabeceraSeccion
         kicker="Cobertura territorial ibérica"
-        titulo={`${DELEGACIONES.length} delegaciones propias`}
+        titulo={`${DELEGACIONES.length} delegaciones propias y una sede de formación`}
         lede={
           <>
             Flota, taller y camiones propios en cada una. {LEMA} Si tu obra está
@@ -64,7 +78,7 @@ export default function PaginaDelegaciones() {
               {[
                 { k: "España", v: DELEGACIONES_ESPANA.length },
                 { k: "Portugal", v: DELEGACIONES_PORTUGAL.length },
-                { k: "Centros", v: CENTROS.length },
+                { k: "Sede formación", v: 1 },
               ].map((d) => (
                 <div key={d.k} className="bg-inverse px-3 py-3.5 text-center">
                   <dd className="value text-xl text-ink-inv">{d.v}</dd>
@@ -84,10 +98,12 @@ export default function PaginaDelegaciones() {
             </h2>
 
             <ul
-              className="mt-7 grid gap-px bg-rule md:grid-cols-2 xl:grid-cols-3 overflow-hidden rounded-2xl border border-rule"
+              className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-rule bg-rule md:grid-cols-2 xl:grid-cols-3 xl:[&>li:last-child:nth-child(3n+2)]:col-span-2"
               data-escalonar
             >
-              {g.delegaciones.map((d) => (
+              {g.delegaciones.map((d) => {
+                const sede = "tipo" in d;
+                return (
                 <li
                   key={d.id}
                   id={d.id}
@@ -97,17 +113,22 @@ export default function PaginaDelegaciones() {
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         {/* La provincia solo se rotula cuando dice algo que
-                            el nombre no dice ya: en ocho de las diez
-                            delegaciones son la misma palabra y salía
-                            «Madrid / Madrid». */}
+                            el nombre no dice ya: en casi todas son la misma
+                            palabra y salía «Madrid / Madrid». */}
                         {d.provincia !== d.nombre && (
                           <p className="label-sm text-ink-3">{d.provincia}</p>
                         )}
                         <h3 className="display-3 text-ink">{d.nombre}</h3>
                       </div>
                       {d.central && (
-                        <span className="label-sm shrink-0 bg-accent px-2 py-1 text-white">
+                        <span className="label-sm shrink-0 rounded-full bg-accent px-2.5 py-1 text-white">
                           Central
+                        </span>
+                      )}
+                      {sede && (
+                        <span className="label-sm inline-flex shrink-0 items-center gap-1.5 rounded-full bg-ink px-2.5 py-1 text-white">
+                          <GraduationCap size={13} strokeWidth={2} aria-hidden="true" />
+                          Sede
                         </span>
                       )}
                     </div>
@@ -126,6 +147,15 @@ export default function PaginaDelegaciones() {
                           <br />
                           <span className="value text-sm">{d.cp}</span>{" "}
                           {d.localidad}
+                          <a
+                            href={urlMaps(d)}
+                            target="_blank"
+                            rel="noopener"
+                            className="mt-1 flex min-h-8 w-fit items-center gap-1.5 text-sm font-semibold text-accent underline decoration-2 underline-offset-4 hover:text-accent-hover"
+                          >
+                            <Navigation size={13} strokeWidth={2.25} aria-hidden="true" />
+                            Cómo llegar
+                          </a>
                         </dd>
                       </div>
 
@@ -174,12 +204,13 @@ export default function PaginaDelegaciones() {
                           className="mt-1 shrink-0 text-ink-3"
                         />
                         <dd className="text-sm text-ink-3">
-                          {d.horario ?? "Llámanos y te confirmamos el horario"}
+                          {("horario" in d && d.horario) ||
+                            "Llámanos y te confirmamos el horario"}
                         </dd>
                       </div>
                     </dl>
 
-                    {d.servicios.length > 0 && (
+                    {"servicios" in d && d.servicios.length > 0 && (
                       <ul className="mt-5 flex flex-wrap gap-1.5 border-t border-rule pt-4">
                         {d.servicios.map((s) => (
                           <li
@@ -193,15 +224,26 @@ export default function PaginaDelegaciones() {
                     )}
                   </div>
 
-                  <Link
-                    href={`/consultar-disponibilidad?del=${d.id}`}
-                    className="btn-accent mt-auto flex h-12 items-center justify-center gap-2 bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
-                  >
-                    Pedir máquina en {d.nombre}
-                    <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
-                  </Link>
+                  {sede ? (
+                    <Link
+                      href="/formacion"
+                      className="mt-auto flex h-12 items-center justify-center gap-2 bg-ink text-base font-semibold text-white transition-colors duration-200 hover:bg-accent pastilla"
+                    >
+                      Ver cursos y convocatorias
+                      <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/consultar-disponibilidad?del=${d.id}`}
+                      className="btn-accent mt-auto flex h-12 items-center justify-center gap-2 bg-accent text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
+                    >
+                      Pedir máquina en {d.nombre}
+                      <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+                    </Link>
+                  )}
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -211,8 +253,8 @@ export default function PaginaDelegaciones() {
         <div className="container-placa">
           <h2 className="display-3 text-ink">Otros centros</h2>
           <p className="mt-4 max-w-[56ch] text-base text-ink-2">
-            Dos direcciones más, con teléfono y correo propios, que también
-            aparecen en nuestro catálogo general.
+            Con teléfono y correo propios; también figura en nuestro catálogo
+            general.
           </p>
           <ul className="mt-6 grid gap-px bg-rule md:grid-cols-2 overflow-hidden rounded-2xl border border-rule">
             {CENTROS.map((c) => (

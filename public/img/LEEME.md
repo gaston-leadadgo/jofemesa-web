@@ -15,7 +15,8 @@ que se detecten.
 
 | Archivo | Dónde sale | Medida | Encuadre |
 |---|---|---|---|
-| `hero/portada.jpg` | Portada, a sangre detrás del titular | 2560 × 1440 (16:9) | **Mitad izquierda libre**: ahí va el texto |
+| `hero/portada.jpg` | Portada 1 del carrusel (Alquiler), a sangre detrás del titular | 2560 × 1440 (16:9) | **Mitad izquierda libre**: ahí va el texto |
+| `hero/formacion.jpg` | Portada 2 del carrusel (Formación) y cabecera de `/formacion` | 2560 × 1440 (16:9) | **Mitad izquierda libre**; el motivo entre el 55 % y el 85 % del ancho |
 | `servicios/portada.jpg` | Cabecera de `/servicios` | 2560 × 1000 (~21:9) | Tercio izquierdo libre |
 | `servicios/venta.jpg` | Bloque «Venta de maquinaria y recambios» | 1600 × 1067 (3:2) | Centrado |
 | `servicios/mantenimiento.jpg` | Bloque «Mantenimiento y taller propio» | 1600 × 1067 (3:2) | Centrado |
@@ -27,6 +28,38 @@ que se detecten.
 | `familias/energia.jpg` | `/alquiler/energia` | 2560 × 1000 | Tercio izquierdo libre |
 | `familias/aire-martillos.jpg` | `/alquiler/aire-martillos` | 2560 × 1000 | Tercio izquierdo libre |
 | `familias/herramienta-auxiliar.jpg` | `/alquiler/herramienta-auxiliar` | 2560 × 1000 | Tercio izquierdo libre |
+
+## Prompt para `hero/formacion.jpg`
+
+Mientras no exista, la portada de Formación usa la foto de obra en espejo
+y más oscura. En cuanto se deja el archivo, sale sola en el carrusel y en
+la cabecera de `/formacion`.
+
+> Fotografía editorial realista, formato horizontal 16:9, 2560×1440. Un
+> curso práctico de formación de operadores de maquinaria en el patio de
+> una nave industrial, a primera hora de la tarde con luz dorada lateral.
+> En el tercio derecho de la imagen, un instructor de unos 45 años con
+> casco blanco y chaleco de alta visibilidad rojo señala el panel de
+> mandos de una plataforma elevadora de tijera; a su lado, dos alumnos
+> —un hombre y una mujer— con casco, arnés anticaídas y chaleco rojo
+> atienden. La plataforma, de color gris y rojo, está en posición baja,
+> con la cesta a la altura de los hombros. Al fondo, desenfocado, el
+> muro de una nave y otra máquina aparcada. Toda la mitad IZQUIERDA de
+> la imagen queda en calma y más oscura (pared de nave en sombra,
+> asfalto), sin personas ni objetos importantes, porque encima irá texto.
+> Acentos de color rojo intenso (#E30613) solo en chalecos y detalles de
+> seguridad; el resto en grises industriales y tonos cálidos del
+> atardecer. Cámara a la altura de los ojos, objetivo de 35 mm,
+> profundidad de campo media, grano fino de película, contraste natural.
+> Sin texto, sin logotipos, sin marcas de agua, sin rótulos legibles en
+> la ropa ni en la máquina.
+
+Negativo recomendado: texto, letras, logotipos, marcas de agua, manos
+deformes, caras distorsionadas, cascos sin barbuquejo, personas
+subidas a la cesta sin arnés, cielo azul saturado, aspecto de render 3D.
+
+Al subirla, vuelve a medir el velo como se explica abajo: el texto de
+esta portada cae en la misma zona que el de la de Alquiler.
 
 ## Si cambias la foto del hero, vuelve a medir
 
@@ -47,8 +80,10 @@ se añade una familia, su foto se llama igual que su slug.
 
 Fotografía de **producto**: la tarjeta y la ficha de una máquina solo
 llevan fotos de unidades reales de la flota, y viven en
-`public/img/maquinas/oficial/`. Las 118 referencias sin fotografía salen
-con dibujo técnico a propósito.
+`public/img/maquinas/oficial/completa/`. Van **completas**, tal cual las
+entregó el cliente (1254 × 1254, con su logotipo, marca, modelo y
+grafismos), y se pintan con `object-contain`: nunca se recortan. Las 111
+referencias sin fotografía salen con dibujo técnico a propósito.
 
 La diferencia no es de estilo, es de lo que la imagen afirma. Una foto de
 producto dice «esta es la máquina que te vamos a servir»; una de ambiente

@@ -32,7 +32,7 @@ const PILARES = [
     icono: Clock,
     titulo: `Desde ${EMPRESA.fundacion}`,
     texto:
-      "Empezamos en Avilés y hoy servimos desde diez delegaciones propias. Décadas junto a profesionales que necesitan maquinaria para avanzar sin contratiempos.",
+      "Empezamos en Avilés y hoy servimos desde nueve delegaciones propias. Décadas junto a profesionales que necesitan maquinaria para avanzar sin contratiempos.",
     pie: "Solidez empresarial",
   },
   {

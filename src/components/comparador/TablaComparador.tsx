@@ -101,7 +101,7 @@ export function TablaComparador({ slugs }: { slugs: string[] }) {
                   className="w-60 min-w-60 border-b border-ink bg-surface p-4 align-bottom"
                   style={{ scrollSnapAlign: "start" }}
                 >
-                  <div className="relative h-32 overflow-hidden border border-rule bg-muted">
+                  <div className="relative aspect-square overflow-hidden rounded-xl border border-rule bg-muted">
                     <ImagenMaquina maquina={m} sizes="240px" compacto />
                   </div>
                   <p className="label-sm mt-3 text-ink-3">

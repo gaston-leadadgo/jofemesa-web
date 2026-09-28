@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ArrowRight, Building2 } from "lucide-react";
 import {
-  DELEGACIONES,
+  PUNTOS_CONTACTO,
   DELEGACIONES_POR_ID,
   EMPRESA,
   EMAIL_PRINCIPAL,
@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Teléfonos y correos de las diez delegaciones de JOFEMESA, dirección de la sede central y formulario de consulta directa.",
+    "Teléfonos y correos de las nueve delegaciones de JOFEMESA y de su sede de formación, dirección de la sede central y formulario de consulta directa.",
 };
 
 /**
@@ -152,7 +152,7 @@ export default function PaginaContacto() {
               </p>
 
               <ul className="mt-6 grid gap-px border border-rule bg-rule md:grid-cols-2 overflow-hidden rounded-2xl">
-                {DELEGACIONES.map((d) => (
+                {PUNTOS_CONTACTO.map((d) => (
                   <li key={d.id} className="bg-surface px-4 py-3.5">
                     <div className="flex items-baseline justify-between gap-2">
                       <p className="text-base font-semibold text-ink">
@@ -161,6 +161,11 @@ export default function PaginaContacto() {
                       {d.pais === "Portugal" && (
                         <span className="label-sm shrink-0 bg-wait px-1.5 py-0.5 text-wait-ink">
                           PT
+                        </span>
+                      )}
+                      {"tipo" in d && (
+                        <span className="label-sm shrink-0 rounded-full bg-sunken px-2 py-0.5 text-ink-2">
+                          Sede
                         </span>
                       )}
                     </div>

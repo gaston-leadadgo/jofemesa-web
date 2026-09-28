@@ -6,14 +6,14 @@ import { MapPin, ChevronDown, ArrowRight, Phone } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import {
   DELEGACIONES,
-  DELEGACIONES_ESPANA,
   DELEGACIONES_PORTUGAL,
-  type Delegacion,
+  PUNTOS_ESPANA,
+  type PuntoContacto,
 } from "@/content/es/empresa";
 import { useDesplegable } from "./useDesplegable";
 
 /**
- * «Delegaciones» en la franja superior: un vistazo de las diez sin salir
+ * «Delegaciones» en la franja superior: un vistazo de todas sin salir
  * de la página. Cada nombre lleva a su ficha en /delegaciones y cada
  * teléfono llama directo; son dos enlaces separados y no una fila entera
  * clicable, porque un enlace dentro de otro no se puede pulsar bien.
@@ -52,7 +52,7 @@ export function DesplegableDelegaciones() {
         >
           <div className="flex items-center justify-between gap-4 border-b border-rule px-5 py-3">
             <p className="text-sm font-semibold text-ink">
-              {DELEGACIONES.length} delegaciones propias
+              {DELEGACIONES.length} delegaciones y una sede de formación
             </p>
             <Link
               href="/delegaciones"
@@ -65,7 +65,7 @@ export function DesplegableDelegaciones() {
           </div>
 
           <div className="max-h-[min(78vh,40rem)] overflow-y-auto px-5 py-4">
-            <Grupo titulo="España" delegaciones={DELEGACIONES_ESPANA} cerrar={() => setAbierto(false)} />
+            <Grupo titulo="España" delegaciones={PUNTOS_ESPANA} cerrar={() => setAbierto(false)} />
             <Grupo
               titulo="Portugal"
               delegaciones={DELEGACIONES_PORTUGAL}
@@ -86,7 +86,7 @@ function Grupo({
   className,
 }: {
   titulo: string;
-  delegaciones: readonly Delegacion[];
+  delegaciones: readonly PuntoContacto[];
   cerrar: () => void;
   className?: string;
 }) {
@@ -107,6 +107,11 @@ function Grupo({
                 {d.central && (
                   <span className="ml-2 rounded-full bg-accent-tint px-1.5 py-0.5 text-[0.6875rem] font-semibold text-accent">
                     Central
+                  </span>
+                )}
+                {"tipo" in d && (
+                  <span className="ml-2 rounded-full bg-sunken px-1.5 py-0.5 text-[0.6875rem] font-semibold text-ink-2">
+                    Sede
                   </span>
                 )}
               </Link>

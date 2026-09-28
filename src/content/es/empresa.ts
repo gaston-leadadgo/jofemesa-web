@@ -12,6 +12,9 @@
  *      cliente. De aquí salen las direcciones, teléfonos y correos de
  *      todas las delegaciones, incluidas las dos de Portugal, que su web
  *      actual no publica en ninguna parte.
+ *   1b. `PÁGINAS INTEREMPRESAS JOFEMESA 2026.pdf` — manda sobre el
+ *      catálogo en las delegaciones (28/09/2026): Castellón ya no
+ *      existe, y Formación figura como sede con sus propios datos.
  *   2. jofemesa.com (agosto de 2026) y su blog.
  *   3. Creatividades propias del cliente (la lámina de iconografía que
  *      pasó en la reunión de seguimiento del 24/08/2026).
@@ -61,7 +64,6 @@ export type DelegacionId =
   | "asturias"
   | "valladolid"
   | "valencia"
-  | "castellon"
   | "alicante"
   | "sevilla"
   | "malaga"
@@ -157,7 +159,7 @@ export const DELEGACIONES: readonly Delegacion[] = [
     direccion: "Polígono Industrial Parc Sagunt, C/ Braç de la Creu, s/n",
     cp: "46520",
     localidad: "Puerto de Sagunto",
-    telefono: "96 268 05 81",
+    telefono: "962 680 581",
     tel: "+34962680581",
     email: "valencia@jofemesa.com",
     horario: null,
@@ -166,21 +168,6 @@ export const DELEGACIONES: readonly Delegacion[] = [
       "Servicio de estiba en puerto",
     ],
     mapa: { x: 71.5, y: 53.2 },
-  },
-  {
-    id: "castellon",
-    nombre: "Castellón",
-    provincia: "Castellón",
-    pais: "España",
-    direccion: "Polígono Les Forques, Camí Plá de Museros, nave 3",
-    cp: "12550",
-    localidad: "Almassora",
-    telefono: "902 220 252",
-    tel: "+34902220252",
-    email: "castellon@jofemesa.com",
-    horario: null,
-    servicios: ["Sector cerámico e industrial", "Elevación y manipulación"],
-    mapa: { x: 72.8, y: 49.5 },
   },
   {
     id: "alicante",
@@ -222,7 +209,7 @@ export const DELEGACIONES: readonly Delegacion[] = [
     localidad: "Málaga",
     telefono: "951 173 730",
     tel: "+34951173730",
-    email: "alquileresmalaga@jofemesa.com",
+    email: "alquileresamalaga@jofemesa.com",
     horario: null,
     servicios: ["Elevación para infraestructura y edificación"],
     mapa: { x: 39.0, y: 88.8 },
@@ -277,20 +264,50 @@ export const DELEGACIONES_PORTUGAL = DELEGACIONES.filter(
 );
 
 /**
+ * La sede de Formación. En el PDF de Interempresas 2026 va en la misma
+ * lámina que las delegaciones, con su teléfono, su correo y su dirección
+ * —y así se publica aquí, tal cual—, pero es una SEDE, no una delegación
+ * de alquiler: no sirve máquinas, así que no entra en `DELEGACIONES`, ni
+ * en el mapa, ni en «se sirve desde» de las fichas.
+ */
+export const SEDE_FORMACION = {
+  id: "formacion",
+  nombre: "Formación",
+  tipo: "Sede de formación",
+  provincia: "Madrid",
+  pais: "España",
+  direccion: "Pol. Ind. Las Fronteras, C/ Mar Mediterráneo, 1",
+  cp: "28830",
+  localidad: "San Fernando de Henares",
+  telefono: "649 755 883",
+  tel: "+34649755883",
+  email: "formacion@jofemesa.com",
+} as const;
+
+/**
+ * Los puntos de contacto tal cual la lámina «Nuestras delegaciones» del
+ * PDF de Interempresas 2026: las de España, la sede de Formación y las de
+ * Portugal. Es la lista para contactar; para alquilar manda `DELEGACIONES`.
+ */
+export type PuntoContacto =
+  | Delegacion
+  | (typeof SEDE_FORMACION & { central?: undefined });
+
+export const PUNTOS_ESPANA: readonly PuntoContacto[] = [
+  ...DELEGACIONES_ESPANA,
+  SEDE_FORMACION,
+];
+
+export const PUNTOS_CONTACTO: readonly PuntoContacto[] = [
+  ...PUNTOS_ESPANA,
+  ...DELEGACIONES_PORTUGAL,
+];
+
+/**
  * Centros que no son delegación de alquiler pero sí dirección propia con
- * teléfono y correo distintos. Salen los dos del catálogo general.
+ * teléfono y correo distintos.
  */
 export const CENTROS = [
-  {
-    id: "formacion",
-    nombre: "Central de Formación",
-    direccion: "Polígono Industrial Las Fronteras, C/ Mar Mediterráneo, 1",
-    cp: "28830",
-    localidad: "San Fernando de Henares, Madrid",
-    telefono: "649 755 883",
-    tel: "+34649755883",
-    email: "formacion@jofemesa.com",
-  },
   {
     id: "takeuchi",
     nombre: "Distribuidor oficial Takeuchi",
@@ -417,8 +434,16 @@ export const DATOS_PENDIENTES = [
     nota: "Los enlaces de la web actual (/images/certifications/*.pdf) devuelven una página HTML vacía con código 200. Hacen falta los documentos reales.",
   },
   {
-    campo: "Delegación de Castellón",
-    nota: "El catálogo general la nombra en la portada pero no le da ficha de contacto. La dirección y el 902 vienen de jofemesa.com: conviene confirmarlos.",
+    campo: "Plazas y ocupación de cada convocatoria",
+    nota: "El Excel de convocatorias trae curso, fecha, sede y horario, pero no plazas. La lista de /formacion ya está preparada: en cuanto el panel dé plazas y ocupadas, cada fila pinta «Quedan N plazas» o «Completo». Mientras, dice «Consultar plazas».",
+  },
+  {
+    campo: "Legislación de referencia de Formación",
+    nota: "/formacion cita la Ley 31/1995, los RD 1215/1997 y 2177/2004 y las normas UNE 58923 y UNE 58451, sin año de edición. Conviene que el departamento de Formación la valide y añada lo que falte (espacios confinados, andamios).",
+  },
+  {
+    campo: "Correo de Málaga",
+    nota: "El PDF de Interempresas 2026 da «alquileresamalaga@jofemesa.com» (con una «a» antes de «malaga») y el catálogo general daba «alquileresmalaga@». La web publica el del PDF, que es el más reciente; conviene confirmar cuál recibe correo.",
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",

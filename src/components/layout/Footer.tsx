@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import {
-  DELEGACIONES,
+  PUNTOS_CONTACTO,
   EMPRESA,
   CERTIFICACIONES,
   HOMOLOGACIONES,
@@ -40,7 +40,7 @@ const SECCIONES = [
   { href: "/servicios#venta", label: "Venta y recambios" },
   { href: "/servicios#mantenimiento", label: "Mantenimiento" },
   { href: "/servicios#transporte", label: "Transporte a obra" },
-  { href: "/servicios#formacion", label: "Formación" },
+  { href: "/formacion", label: "Formación y calendario" },
   { href: "/delegaciones", label: "Delegaciones" },
   ...(MODULOS.noticias ? [{ href: "/noticias", label: "Noticias" }] : []),
   { href: "/contacto", label: "Contacto" },
@@ -142,14 +142,14 @@ export function Footer() {
           {/* ---------- Delegaciones ---------- */}
           <div className="lg:col-span-4">
             <h2 className="label text-ink-inv-3">
-              Delegaciones · {DELEGACIONES.length}
+              Delegaciones y sede
             </h2>
             {/* Nombre ARRIBA y teléfono debajo, no los dos en la misma
                 línea. En dos columnas de pie no caben juntos: el nombre se
                 recortaba a «Mad…» y, en Oporto y Lisboa, a «O» y «L.».
                 Una delegación que no se puede nombrar no sirve de nada. */}
             <ul className="mt-4 grid gap-x-6 gap-y-3 lg:grid-cols-2">
-              {DELEGACIONES.map((d) => (
+              {PUNTOS_CONTACTO.map((d) => (
                 <li
                   key={d.id}
                   className="border-b border-rule-inverse pb-2.5"

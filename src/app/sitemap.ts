@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asesor`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
     { url: `${base}/servicios`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
     { url: `${base}/delegaciones`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
+    { url: `${base}/formacion`, priority: 0.8, changeFrequency: "weekly", lastModified: ahora },
     ...(MODULOS.noticias
       ? [{ url: `${base}/noticias`, priority: 0.7, changeFrequency: "weekly" as const, lastModified: ahora }]
       : []),

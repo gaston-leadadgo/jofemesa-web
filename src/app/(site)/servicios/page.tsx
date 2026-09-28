@@ -6,6 +6,7 @@ import { SERVICIOS, FORMACION_PENDIENTE } from "@/content/es/servicios";
 import {
   TELEFONO_PRINCIPAL,
   CENTROS,
+  SEDE_FORMACION,
   HOMOLOGACIONES,
   DELEGACIONES,
 } from "@/content/es/empresa";
@@ -266,28 +267,32 @@ export default function PaginaServicios() {
                     className="border border-rule bg-surface p-6"
                     data-revelar="escala"
                   >
-                    <p className="label text-ink-3">Central de formación</p>
-                    {CENTROS.filter((c) => c.id === "formacion").map((c) => (
-                      <div key={c.id} className="mt-4">
-                        <p className="text-base text-ink">{c.direccion}</p>
-                        <p className="text-base text-ink-2">
-                          {c.cp} {c.localidad}
-                        </p>
-                        <a
-                          href={`tel:${c.tel}`}
-                          className="value mt-4 inline-flex min-h-11 items-center gap-2 text-ink transition-colors duration-200 hover:text-accent"
-                        >
-                          <Phone size={16} strokeWidth={1.75} aria-hidden="true" />
-                          {c.telefono}
-                        </a>
-                        <a
-                          href={`mailto:${c.email}`}
-                          className="mt-1 block text-base text-ink-2 underline decoration-rule-strong underline-offset-4 transition-colors duration-200 hover:text-ink"
-                        >
-                          {c.email}
-                        </a>
-                      </div>
-                    ))}
+                    <p className="label text-ink-3">Sede de formación</p>
+                    <div className="mt-4">
+                      <p className="text-base text-ink">{SEDE_FORMACION.direccion}</p>
+                      <p className="text-base text-ink-2">
+                        {SEDE_FORMACION.cp} {SEDE_FORMACION.localidad} ({SEDE_FORMACION.provincia})
+                      </p>
+                      <a
+                        href={`tel:${SEDE_FORMACION.tel}`}
+                        className="value mt-4 inline-flex min-h-11 items-center gap-2 text-ink transition-colors duration-200 hover:text-accent"
+                      >
+                        <Phone size={16} strokeWidth={1.75} aria-hidden="true" />
+                        {SEDE_FORMACION.telefono}
+                      </a>
+                      <a
+                        href={`mailto:${SEDE_FORMACION.email}`}
+                        className="mt-1 block text-base text-ink-2 underline decoration-rule-strong underline-offset-4 transition-colors duration-200 hover:text-ink"
+                      >
+                        {SEDE_FORMACION.email}
+                      </a>
+                      <Link
+                        href="/formacion"
+                        className="mt-5 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-accent underline decoration-2 underline-offset-4 hover:text-accent-hover"
+                      >
+                        Ver calendario de convocatorias
+                      </Link>
+                    </div>
                   </div>
                 )}
 
