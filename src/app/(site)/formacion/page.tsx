@@ -186,7 +186,7 @@ export default function PaginaFormacion() {
                 </p>
               </div>
               <Link
-                href="/formacion/solicitar"
+                href="/formacion/solicitar?curso=otro"
                 className="btn-accent inline-flex h-12 items-center justify-center gap-2 bg-accent px-5 text-base font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
               >
                 Cuéntanos qué necesitas

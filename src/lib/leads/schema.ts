@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { CONVOCATORIAS } from "@/content/es/convocatorias";
-import { esCursoId } from "@/content/es/formacion";
+import { OTRO_CURSO, esCursoSolicitado } from "@/content/es/formacion";
 
 /**
  * El mismo esquema en cliente y servidor. La validación de cliente es
@@ -124,7 +124,9 @@ export type DatosSolicitud = z.infer<typeof esquemaSolicitud>;
  */
 export const esquemaFormacion = z
   .object({
-    curso: z.string().refine(esCursoId, "Elige el curso que te interesa."),
+    curso: z.string().refine(esCursoSolicitado, "Elige el curso que te interesa."),
+    /** Lo que describe quien pide un curso que no está en el catálogo. */
+    cursoMedida: z.string().trim().max(1000).optional().default(""),
     /** Id de la convocatoria. Vacío = otra fecha o curso a medida. */
     convocatoria: z.string().trim().optional().default(""),
     lugar: z
@@ -154,6 +156,13 @@ export const esquemaFormacion = z
     _t: z.string().optional().default(""),
   })
   .superRefine((d, ctx) => {
+    if (d.curso === OTRO_CURSO && d.cursoMedida.length < 5) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["cursoMedida"],
+        message: "Cuéntanos qué formación necesitas: el equipo, la tarea o lo que tenéis que aprender.",
+      });
+    }
     if (!d.convocatoria) return;
     const c = CONVOCATORIAS.find((x) => x.id === d.convocatoria);
     if (!c || c.curso !== d.curso) {

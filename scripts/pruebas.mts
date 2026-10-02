@@ -425,6 +425,19 @@ afirma(
   !esquemaFormacion.safeParse({ ...baseFormacion, alumnos: "0" }).success,
   "cero personas no valida",
 );
+afirma(
+  !esquemaFormacion.safeParse({ ...baseFormacion, curso: "otro", convocatoria: "" }).success,
+  "un curso que no está en el catálogo pide que se describa",
+);
+afirma(
+  esquemaFormacion.safeParse({
+    ...baseFormacion,
+    curso: "otro",
+    convocatoria: "",
+    cursoMedida: "Grúa autocargante para cuatro operarios",
+  }).success,
+  "un curso que no está en el catálogo valida con su descripción",
+);
 if (pasada) {
   afirma(
     !esquemaFormacion.safeParse({ ...baseFormacion, curso: pasada.curso, convocatoria: pasada.id }).success,

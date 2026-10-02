@@ -470,6 +470,12 @@ export const esCursoConvocatoria = (id: CursoId): id is CursoConvocatoriaId =>
 export const esCursoId = (v: string | null | undefined): v is CursoId =>
   !!v && v in CURSOS;
 
+/** Valor del formulario para un curso que no está en el catálogo. */
+export const OTRO_CURSO = "otro";
+export type CursoSolicitado = CursoId | typeof OTRO_CURSO;
+export const esCursoSolicitado = (v: string | null | undefined): v is CursoSolicitado =>
+  v === OTRO_CURSO || esCursoId(v);
+
 export interface SedeCurso {
   id: SedeCursoId;
   nombre: string;

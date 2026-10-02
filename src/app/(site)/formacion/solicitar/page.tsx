@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Phone } from "lucide-react";
 import { FormularioFormacion } from "@/components/forms/FormularioFormacion";
 import { CONVOCATORIAS } from "@/content/es/convocatorias";
-import { esCursoId } from "@/content/es/formacion";
+import { OTRO_CURSO, esCursoSolicitado } from "@/content/es/formacion";
 import { SEDE_FORMACION } from "@/content/es/empresa";
 
 /** Los parámetros los lee el servidor, como en el formulario de alquiler. */
@@ -26,7 +26,7 @@ export default async function PaginaSolicitarFormacion({
   const q = await searchParams;
   const conv = CONVOCATORIAS.find((c) => c.id === uno(q.convocatoria)) ?? null;
   const cursoUrl = uno(q.curso);
-  const curso = conv?.curso ?? (esCursoId(cursoUrl) ? cursoUrl : null);
+  const curso = conv?.curso ?? (esCursoSolicitado(cursoUrl) ? cursoUrl : null);
 
   return (
     <div className="container-placa py-10 md:py-14">
@@ -39,7 +39,11 @@ export default async function PaginaSolicitarFormacion({
       </Link>
       <p className="label text-accent">Departamento de Formación</p>
       <h1 className="display-2 mt-3 max-w-[24ch] text-ink">
-        {conv ? "Solicita tu plaza." : "Cuéntanos qué formación necesitas."}
+        {conv
+          ? "Solicita tu plaza."
+          : curso === OTRO_CURSO
+            ? "Cuéntanos el curso que necesitas y lo diseñamos."
+            : "Cuéntanos qué formación necesitas."}
       </h1>
       <p className="lede mt-5 max-w-[58ch] text-ink-2">
         Formación revisa la solicitud y te llama para confirmar la plaza, el

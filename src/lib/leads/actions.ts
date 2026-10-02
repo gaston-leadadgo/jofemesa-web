@@ -12,7 +12,7 @@ import {
 import { getMaquina } from "@/lib/catalog";
 import { DELEGACIONES_OPERATIVAS } from "@/content/es/empresa";
 import { CONVOCATORIAS } from "@/content/es/convocatorias";
-import { CURSOS, SEDES_CURSO, partesFecha, type CursoId } from "@/content/es/formacion";
+import { CURSOS, OTRO_CURSO, SEDES_CURSO, partesFecha, type CursoId } from "@/content/es/formacion";
 
 export interface EstadoFormulario {
   ok: boolean;
@@ -167,6 +167,13 @@ const LUGARES: Record<string, string> = {
 
 /** Lo que se guarda: los datos y su lectura humana. */
 function resumenFormacion(d: DatosFormacion) {
+  if (d.curso === OTRO_CURSO) {
+    return {
+      cursoNombre: `Curso a medida (no está en el catálogo): ${d.cursoMedida}`,
+      convocatoriaTexto: "Curso a medida",
+      lugarTexto: LUGARES[d.lugar] ?? null,
+    };
+  }
   const curso = CURSOS[d.curso as CursoId];
   const conv = CONVOCATORIAS.find((c) => c.id === d.convocatoria);
   const fecha = conv

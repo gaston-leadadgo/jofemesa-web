@@ -284,6 +284,10 @@ p = await html("/formacion/solicitar?convocatoria=2026-12-14-carretillas-sagunto
 t("el formulario de formación responde 200", p.estado === 200);
 t("el formulario de formación es distinto del de alquiler", p.cuerpo.includes('name="alumnos"') && p.cuerpo.includes('name="convocatoria"') && !p.cuerpo.includes('name="provincia"') && !p.cuerpo.includes('name="fechaInicio"'));
 t("el formulario de formación llega con la convocatoria elegida", p.cuerpo.includes('value="2026-12-14-carretillas-sagunto" selected') || p.cuerpo.includes('selected="" value="2026-12-14-carretillas-sagunto"'));
+p = await html("/formacion");
+t("«¿No está tu curso?» abre el formulario con «Otro curso» elegido", p.cuerpo.includes('href="/formacion/solicitar?curso=otro"'));
+p = await html("/formacion/solicitar?curso=otro");
+t("con «Otro curso» el formulario pide describir la formación", p.cuerpo.includes('name="cursoMedida"') && p.cuerpo.includes('name="lugar"') && !p.cuerpo.includes('name="convocatoria"'));
 p = await html("/formacion/solicitar?curso=puente-grua");
 t("un curso a medida pide dónde formarse", p.cuerpo.includes('name="lugar"') && !p.cuerpo.includes('name="convocatoria"'));
 {

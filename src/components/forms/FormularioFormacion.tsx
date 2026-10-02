@@ -11,18 +11,20 @@ import {
   CURSOS,
   ORDEN_A_MEDIDA,
   ORDEN_CURSOS,
+  OTRO_CURSO,
   SEDES_CURSO,
   esCursoConvocatoria,
   esCursoId,
+  esCursoSolicitado,
   partesFecha,
-  type CursoId,
+  type CursoSolicitado,
 } from "@/content/es/formacion";
 import { proximasDe, useHoy } from "@/lib/formacion/estado";
 
 const INICIAL: EstadoFormulario = { ok: false };
 
 export type ParametrosFormacion = {
-  curso: CursoId | null;
+  curso: CursoSolicitado | null;
   convocatoria: string | null;
 };
 
@@ -48,8 +50,8 @@ export function FormularioFormacion({ inicial }: { inicial: ParametrosFormacion 
   const hayErrores = Object.keys(errores).length > 0;
   const hoy = useHoy();
 
-  const [curso, setCurso] = useState<CursoId | "">(
-    esCursoId(v?.curso) ? v.curso : (inicial.curso ?? ""),
+  const [curso, setCurso] = useState<CursoSolicitado | "">(
+    esCursoSolicitado(v?.curso) ? v.curso : (inicial.curso ?? ""),
   );
   const [convocatoria, setConvocatoria] = useState(
     v?.convocatoria ?? inicial.convocatoria ?? "",
@@ -62,7 +64,9 @@ export function FormularioFormacion({ inicial }: { inicial: ParametrosFormacion 
     if (hayErrores) resumenErrores.current?.focus();
   }, [hayErrores, estado]);
 
-  const fechas = curso && esCursoConvocatoria(curso) ? proximasDe(curso, hoy) : [];
+  const cursoId = esCursoId(curso) ? curso : null;
+  const otro = curso === OTRO_CURSO;
+  const fechas = cursoId && esCursoConvocatoria(cursoId) ? proximasDe(cursoId, hoy) : [];
   const aMedida = !convocatoria;
   const avisoDeCif = avisoCif(cif);
 
@@ -87,10 +91,12 @@ export function FormularioFormacion({ inicial }: { inicial: ParametrosFormacion 
             required
             value={curso}
             onChange={(e) => {
-              const nuevo = e.target.value as CursoId | "";
+              const nuevo = e.target.value as CursoSolicitado | "";
               setCurso(nuevo);
               setConvocatoria(
-                nuevo && esCursoConvocatoria(nuevo) ? (proximasDe(nuevo, hoy)[0]?.id ?? "") : "",
+                esCursoId(nuevo) && esCursoConvocatoria(nuevo)
+                  ? (proximasDe(nuevo, hoy)[0]?.id ?? "")
+                  : "",
               );
             }}
             aria-invalid={Boolean(errores.curso)}
@@ -112,13 +118,16 @@ export function FormularioFormacion({ inicial }: { inicial: ParametrosFormacion 
                 </option>
               ))}
             </optgroup>
+            <optgroup label="¿No está en la lista?">
+              <option value={OTRO_CURSO}>Otro curso: diseñadlo para nosotros</option>
+            </optgroup>
           </select>
           {errores.curso && <Error>{errores.curso}</Error>}
         </label>
 
-        {curso && (
+        {cursoId && (
           <Link
-            href={`/formacion/cursos/${curso}`}
+            href={`/formacion/cursos/${cursoId}`}
             className="mt-2 inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-accent underline decoration-2 underline-offset-4 hover:text-accent-hover"
           >
             <Info size={14} strokeWidth={2} aria-hidden="true" />
@@ -126,7 +135,7 @@ export function FormularioFormacion({ inicial }: { inicial: ParametrosFormacion 
           </Link>
         )}
 
-        {curso && esCursoConvocatoria(curso) && (
+        {cursoId && esCursoConvocatoria(cursoId) && (
           <label className="mt-5 block">
             <span className="etiqueta-campo text-ink">Convocatoria</span>
             <select
@@ -149,11 +158,34 @@ export function FormularioFormacion({ inicial }: { inicial: ParametrosFormacion 
             {errores.convocatoria && <Error>{errores.convocatoria}</Error>}
           </label>
         )}
-        {curso && !esCursoConvocatoria(curso) && (
+        {cursoId && !esCursoConvocatoria(cursoId) && (
           <p className="mt-5 border-l-2 border-accent bg-accent-tint px-4 py-3 text-sm text-ink-2">
             Este curso no tiene convocatoria abierta: se imparte a medida.
             Formación te propone fecha y lugar.
           </p>
+        )}
+        {otro && (
+          <label className="mt-5 block">
+            <span className="etiqueta-campo text-ink">
+              ¿Qué formación necesitas? <Obligatorio />
+            </span>
+            <textarea
+              id="cursoMedida"
+              name="cursoMedida"
+              required
+              rows={4}
+              defaultValue={v?.cursoMedida ?? ""}
+              aria-invalid={Boolean(errores.cursoMedida)}
+              aria-describedby="cursoMedida-ayuda"
+              placeholder="Por ejemplo: manejo de grúa autocargante para cuatro operarios, con nuestras propias máquinas."
+              className="mt-2 w-full rounded-xl border border-rule-control bg-surface p-3 text-base text-ink placeholder:text-ink-3"
+            />
+            <span id="cursoMedida-ayuda" className="mt-2 block text-sm text-ink-3">
+              El equipo o la tarea, y si hay alguna norma o certificado que necesitéis.
+              Formación diseña el curso y te propone fecha, lugar y precio.
+            </span>
+            {errores.cursoMedida && <Error>{errores.cursoMedida}</Error>}
+          </label>
         )}
 
         {curso && aMedida && (
