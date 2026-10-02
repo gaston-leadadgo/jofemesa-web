@@ -25,7 +25,7 @@ const TAKEUCHI = CENTROS.find((c) => c.id === "takeuchi");
 export function Partners() {
   return (
     <section className="border-b border-rule bg-surface">
-      <div className="container-placa py-10 md:py-12">
+      <div className="container-placa py-7 md:py-9">
         <div className="grid gap-px overflow-hidden rounded-2xl border border-rule bg-rule md:grid-cols-2">
           {/* ---------- Jungheinrich ---------- */}
           <div className="flex flex-col bg-surface p-6 md:p-8">

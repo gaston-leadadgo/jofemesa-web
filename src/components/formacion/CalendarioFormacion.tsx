@@ -171,7 +171,7 @@ export function CalendarioFormacion() {
               {nombreMes(mes)}
               <span className="text-sm text-ink-3">{lista.length}</span>
             </h3>
-            <ul className="mt-3 overflow-hidden rounded-3xl border border-rule bg-surface">
+            <ul className="mt-2 overflow-hidden rounded-3xl border border-rule bg-surface">
               {lista.map((c) => (
                 <Fila key={c.id} c={c} esHoy={c.fecha === hoy} />
               ))}
@@ -245,23 +245,23 @@ function Fila({ c, esHoy }: { c: Convocatoria; esHoy: boolean }) {
   const completo = c.plazas != null && c.ocupadas != null && c.ocupadas >= c.plazas;
 
   return (
-    <li className="grid gap-4 border-b border-rule p-4 last:border-b-0 md:grid-cols-[4.5rem_1fr_auto] md:items-center md:gap-6 md:px-6 lg:grid-cols-[4.5rem_minmax(0,1.2fr)_minmax(0,1fr)_auto]">
+    <li className="grid gap-3 border-b border-rule p-4 last:border-b-0 md:grid-cols-[3.5rem_1fr_auto] md:items-center md:gap-x-6 md:px-5 md:py-3 lg:grid-cols-[3.5rem_minmax(0,1.1fr)_minmax(0,1fr)_auto]">
       {/* Fecha */}
       <div className="flex items-center gap-3 md:block md:text-center">
         <div
           className={cn(
-            "flex size-16 shrink-0 flex-col items-center justify-center rounded-2xl",
+            "flex size-14 shrink-0 flex-col items-center justify-center rounded-2xl",
             esHoy ? "bg-accent text-white" : "bg-sunken text-ink",
           )}
         >
           <span className="font-[family-name:var(--font-display)] text-2xl leading-none">
             {f.dia}
           </span>
-          <span className="mt-1 text-xs font-semibold uppercase tracking-wide opacity-80">
+          <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide opacity-80">
             {f.mesCorto}
           </span>
         </div>
-        <p className="text-sm text-ink-3 capitalize md:mt-1.5">
+        <p className="text-sm text-ink-3 capitalize md:hidden">
           {esHoy ? "Hoy" : f.diaSemana}
         </p>
       </div>
@@ -277,6 +277,7 @@ function Fila({ c, esHoy }: { c: Convocatoria; esHoy: boolean }) {
           )}
           <span className="inline-flex items-center gap-1.5">
             <Clock size={13} strokeWidth={2} aria-hidden="true" className="text-ink-3" />
+            <span className="hidden capitalize md:inline">{esHoy ? "Hoy" : f.diaSemana} ·</span>
             {c.inicio} – {c.fin} h
           </span>
         </div>
@@ -293,24 +294,26 @@ function Fila({ c, esHoy }: { c: Convocatoria; esHoy: boolean }) {
           {sede.nombre}
           <span className="font-normal text-ink-3">· {sede.zona}</span>
         </p>
-        <p className="mt-0.5 text-xs text-ink-3">{sede.direccion}</p>
-        <a
-          href={sede.maps}
-          target="_blank"
-          rel="noopener"
-          className="mt-1 inline-flex min-h-8 items-center gap-1.5 text-xs font-semibold text-accent underline decoration-2 underline-offset-4 hover:text-accent-hover"
-        >
-          <Navigation size={12} strokeWidth={2.25} aria-hidden="true" />
-          Ver en Maps
-        </a>
+        <p className="mt-0.5 text-xs text-ink-3">
+          {sede.direccion}
+          <a
+            href={sede.maps}
+            target="_blank"
+            rel="noopener"
+            className="ml-2 inline-flex min-h-8 items-center gap-1 align-middle font-semibold whitespace-nowrap text-accent underline decoration-2 underline-offset-4 hover:text-accent-hover md:min-h-0"
+          >
+            <Navigation size={12} strokeWidth={2.25} aria-hidden="true" />
+            Ver en Maps
+          </a>
+        </p>
       </div>
 
       {/* Acciones: la información del curso y la plaza. */}
-      <div className="flex flex-col gap-2 md:col-start-3 md:row-span-2 md:row-start-1 lg:col-start-auto lg:row-span-1 lg:row-start-auto">
+      <div className="flex flex-col gap-2 md:col-start-3 md:row-span-2 md:row-start-1 lg:col-start-auto lg:row-span-1 lg:row-start-auto lg:flex-row">
         <Link
           href={`/formacion/cursos/${curso.id}`}
           scroll={false}
-          className="inline-flex h-11 items-center justify-center gap-2 border border-rule-control bg-surface px-5 text-sm font-semibold whitespace-nowrap text-ink transition-colors duration-200 hover:border-ink hover:bg-sunken pastilla"
+          className="inline-flex h-11 items-center justify-center gap-2 border border-rule-control bg-surface px-4 text-sm font-semibold whitespace-nowrap text-ink transition-colors duration-200 hover:border-ink hover:bg-sunken pastilla"
         >
           <Info size={15} strokeWidth={2} aria-hidden="true" className="text-accent" />
           Ver información del curso

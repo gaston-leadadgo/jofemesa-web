@@ -122,7 +122,7 @@ export default function PaginaFormacion() {
       <section id="cursos" className="section-y scroll-mt-32 border-b border-rule">
         <div className="container-placa">
           <p className="label text-accent">Catálogo de cursos</p>
-          <h2 className="display-2 mt-3 max-w-[26ch] text-ink">
+          <h2 className="display-2 mt-3 max-w-[36ch] text-ink">
             Si no encuentras el curso que necesitas, lo diseñamos exclusivamente
             para ti.
           </h2>
@@ -133,10 +133,33 @@ export default function PaginaFormacion() {
               Fechas fijas cada semana en San Fernando de Henares y Puerto de Sagunto
             </p>
           </div>
-          <ul className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" data-escalonar>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-escalonar>
             {ORDEN_CURSOS.map((id) => (
               <TarjetaCurso key={id} id={id} convocatorias={porCurso(id)} />
             ))}
+            {/* Sexta casilla: con cinco cursos la rejilla de tres dejaba un
+                hueco, y el hueco es justo lo que hacía la página vacía. */}
+            <li className="flex flex-col justify-between gap-6 rounded-3xl bg-inverse p-6 text-ink-inv-2">
+              <div>
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-accent text-white">
+                  <CalendarDays size={20} strokeWidth={1.75} aria-hidden="true" />
+                </span>
+                <p className="mt-5 font-[family-name:var(--font-display)] text-4xl leading-none font-extrabold tracking-[-0.02em] text-ink-inv">
+                  {CONVOCATORIAS.length}
+                </p>
+                <p className="mt-2 text-base leading-relaxed">
+                  convocatorias en 2026, todas de 07:30 a 15:30, en San Fernando
+                  de Henares y Puerto de Sagunto.
+                </p>
+              </div>
+              <EnlaceCalendario
+                curso={null}
+                className="btn-accent inline-flex h-12 items-center justify-center gap-2 bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
+              >
+                Ver el calendario
+                <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+              </EnlaceCalendario>
+            </li>
           </ul>
 
           <div className="mt-14 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
@@ -145,11 +168,11 @@ export default function PaginaFormacion() {
               A medida, en tus instalaciones o en las nuestras
             </p>
           </div>
-          <ul className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" data-escalonar>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-escalonar>
             {ORDEN_A_MEDIDA.map((id) => (
               <TarjetaCurso key={id} id={id} convocatorias={0} />
             ))}
-            <li className="flex flex-col justify-between gap-6 rounded-3xl bg-inverse p-6 text-ink-inv-2">
+            <li className="flex flex-col justify-between gap-6 rounded-3xl bg-inverse p-6 text-ink-inv-2 lg:col-span-2 xl:col-span-1">
               <div>
                 <span className="flex size-11 items-center justify-center rounded-2xl bg-accent text-white">
                   <Wrench size={20} strokeWidth={1.75} aria-hidden="true" />
@@ -164,7 +187,7 @@ export default function PaginaFormacion() {
               </div>
               <Link
                 href="/formacion/solicitar"
-                className="btn-accent inline-flex h-12 items-center justify-center gap-2 bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
+                className="btn-accent inline-flex h-12 items-center justify-center gap-2 bg-accent px-5 text-base font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
               >
                 Cuéntanos qué necesitas
                 <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />

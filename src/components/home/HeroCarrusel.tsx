@@ -82,7 +82,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
          mide lo que mida la más alta (y como mínimo `hero-alto`). Con las
          portadas en absoluto la altura no crecía, y en pantallas bajas el
          texto se salía por arriba y quedaba cortado bajo la cabecera. */
-      className="hero-alto relative isolate grid overflow-hidden bg-inverse"
+      className="hero-alto relative isolate grid grid-cols-[minmax(0,1fr)] overflow-hidden bg-inverse"
       onMouseEnter={() => setEncima(true)}
       onMouseLeave={() => setEncima(false)}
       onFocus={() => setFoco(true)}
@@ -107,7 +107,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
                 setPrevia(null);
             }}
             className={cn(
-              "relative col-start-1 row-start-1 flex items-center",
+              "relative col-start-1 row-start-1 flex min-w-0 items-center",
               esActiva ? "z-20" : esPrevia ? "z-10" : "pointer-events-none z-0 opacity-0",
               /* La cortina va sobre la portada ENTERA: si solo cubría la
                  foto, el texto nuevo aparecía encima del viejo. */
@@ -147,7 +147,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
 
             <div
               key={esActiva ? `texto-${ciclo}` : "texto"}
-              className={cn("container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12", esActiva && "hero-entra")}
+              className={cn("container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12 xl:px-24!", esActiva && "hero-entra")}
             >
               {id === "alquiler" ? <PortadaAlquiler /> : <PortadaFormacion />}
             </div>
@@ -199,7 +199,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
 
       {/* ---------- Mando: pestañas con progreso + flechas ---------- */}
       <div className="absolute inset-x-0 bottom-0 z-40">
-        <div className="container-placa flex items-end justify-between gap-4 pb-5 md:pb-7">
+        <div className="container-placa flex items-end justify-between gap-4 pb-5 md:pb-7 xl:px-24!">
           <div role="tablist" aria-label="Elegir portada" className="flex gap-2 md:gap-3">
             {ORDEN.map((id, i) => {
               const esActiva = i === activa;
@@ -214,7 +214,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
                     if (e.key === "ArrowRight") ir(activa + 1);
                     if (e.key === "ArrowLeft") ir(activa - 1);
                   }}
-                  className="group flex min-h-11 w-28 flex-col justify-end gap-2 text-left md:w-40"
+                  className="group flex min-h-11 w-24 flex-col justify-end gap-2 text-left md:w-40"
                 >
                   <span
                     className={cn(
@@ -259,12 +259,11 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
               type="button"
               onClick={() => ir(activa + 1)}
               aria-label={`Portada siguiente: ${ROTULO[ORDEN[(activa + 1) % ORDEN.length]]}`}
-              className="group flex h-11 items-center gap-2 rounded-full bg-accent pr-2 pl-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+              className="group flex h-11 w-11 items-center justify-center gap-2 rounded-full bg-accent text-sm md:w-auto md:pr-2 md:pl-4 font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
             >
               <span className="hidden md:inline">
                 Siguiente: {ROTULO[ORDEN[(activa + 1) % ORDEN.length]]}
               </span>
-              <span className="md:hidden">{ROTULO[ORDEN[(activa + 1) % ORDEN.length]]}</span>
               <span className="flex size-7 items-center justify-center rounded-full bg-white/20">
                 <ChevronRight
                   size={17}

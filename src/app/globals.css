@@ -109,7 +109,7 @@
   /* La anchura de `container-placa`, como variable: el hero la necesita
      para sangrar la foto hasta el borde de la ventana sin repetir la
      cifra y arriesgarse a que las dos se separen. */
-  --ancho-placa: 1320px;
+  --ancho-placa: 1440px;
 }
 @media (width >= 768px) {
   :root {
@@ -173,29 +173,31 @@ body {
    cuidado. Archivo aguanta 300 sin deshacerse, así que la jerarquía la
    da la escala y el interletrado, no el grosor. Las escalas también
    bajan: 4,5rem de tope en portada y 2,75rem en sección. */
+/* Titulares en 500 y no en 300: a tamaño de display el peso fino se
+   leía débil y, con el aire alrededor, la web parecía vacía. */
 @utility display-1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.375rem);
+  font-weight: 500;
   line-height: 1.04;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.032em;
   text-wrap: balance;
 }
 
 @utility display-2 {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
-  font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: -0.028em;
+  font-size: clamp(1.625rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
 @utility display-3 {
   font-family: var(--font-display);
-  font-size: clamp(1.375rem, 2vw, 1.875rem);
-  font-weight: 400;
-  line-height: 1.18;
+  font-size: clamp(1.3125rem, 1.9vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.16;
   letter-spacing: -0.022em;
   text-wrap: balance;
 }
@@ -209,7 +211,7 @@ body {
 }
 
 @utility lede {
-  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);
   font-weight: 400;
   line-height: 1.55;
   text-wrap: pretty;
@@ -380,36 +382,37 @@ html[data-motor] .mapa-punto {
 }
 @media (width >= 1440px) {
   .container-placa {
-    padding-inline: 4rem;
+    padding-inline: 3rem;
   }
 }
 
-/* Padding de sección: 56 / 72 / 88px.
+/* Padding de sección: 40 / 52 / 64px (antes 56 / 72 / 88: entre dos
+   secciones quedaban 176px en blanco y la web se veía vacía).
    Muy por debajo del cine de 192px que pide gpt-taste, y a propósito.
    Esto es un catálogo: si una sección no cabe de un vistazo, el usuario
    scrollea a ciegas y la comparación entre tarjetas se rompe. El aire
    se gana con filetes y con jerarquía tipográfica, no con vacío. */
 @utility section-y {
-  padding-block: 3.5rem;
+  padding-block: 2.5rem;
 }
 @media (width >= 768px) {
   .section-y {
-    padding-block: 4.5rem;
+    padding-block: 3.25rem;
   }
 }
 @media (width >= 1024px) {
   .section-y {
-    padding-block: 5.5rem;
+    padding-block: 4rem;
   }
 }
 
 /* Sección corta, para bandas de apoyo. */
 @utility section-y-sm {
-  padding-block: 2.5rem;
+  padding-block: 2rem;
 }
 @media (width >= 1024px) {
   .section-y-sm {
-    padding-block: 3.5rem;
+    padding-block: 2.75rem;
   }
 }
 
