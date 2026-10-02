@@ -121,7 +121,7 @@ export function CabeceraSeccion({
         </div>
       )}
 
-      <div className="container-placa relative py-8 md:py-10 lg:py-11">
+      <div className="container-placa relative py-9 md:py-12 lg:py-14">
         {migas && <div className="mb-5 text-ink-inv-3">{migas}</div>}
 
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">

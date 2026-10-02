@@ -147,7 +147,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
 
             <div
               key={esActiva ? `texto-${ciclo}` : "texto"}
-              className={cn("container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12 xl:px-24!", esActiva && "hero-entra")}
+              className={cn("container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12", esActiva && "hero-entra")}
             >
               {id === "alquiler" ? <PortadaAlquiler /> : <PortadaFormacion />}
             </div>
@@ -199,7 +199,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
 
       {/* ---------- Mando: pestañas con progreso + flechas ---------- */}
       <div className="absolute inset-x-0 bottom-0 z-40">
-        <div className="container-placa flex items-end justify-between gap-4 pb-5 md:pb-7 xl:px-24!">
+        <div className="container-placa flex items-end justify-between gap-4 pb-5 md:pb-7">
           <div role="tablist" aria-label="Elegir portada" className="flex gap-2 md:gap-3">
             {ORDEN.map((id, i) => {
               const esActiva = i === activa;

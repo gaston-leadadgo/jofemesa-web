@@ -119,7 +119,7 @@ export default function PaginaFormacion() {
       </nav>
 
       {/* ---------- Catálogo de cursos ---------- */}
-      <section id="cursos" className="section-y scroll-mt-32 border-b border-rule">
+      <section id="cursos" className="py-10 scroll-mt-32 md:py-12 lg:py-14 border-b border-rule">
         <div className="container-placa">
           <p className="label text-accent">Catálogo de cursos</p>
           <h2 className="display-2 mt-3 max-w-[36ch] text-ink">
@@ -127,7 +127,7 @@ export default function PaginaFormacion() {
             para ti.
           </h2>
 
-          <div className="mt-12 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
+          <div className="mt-9 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
             <h3 className="display-3 text-ink">Convocatorias abiertas</h3>
             <p className="text-sm text-ink-3">
               Fechas fijas cada semana en San Fernando de Henares y Puerto de Sagunto
@@ -162,7 +162,7 @@ export default function PaginaFormacion() {
             </li>
           </ul>
 
-          <div className="mt-14 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
+          <div className="mt-11 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
             <h3 className="display-3 text-ink">Resto de cursos</h3>
             <p className="text-sm text-ink-3">
               A medida, en tus instalaciones o en las nuestras
@@ -198,7 +198,7 @@ export default function PaginaFormacion() {
       </section>
 
       {/* ---------- Calendario ---------- */}
-      <section id="calendario" className="section-y scroll-mt-32 border-b border-rule bg-sunken">
+      <section id="calendario" className="py-10 scroll-mt-32 md:py-12 lg:py-14 border-b border-rule bg-sunken">
         <div className="container-placa">
           <p className="label text-accent">Calendario de formaciones</p>
           <h2 className="display-2 mt-3 max-w-[24ch] text-ink">
@@ -209,18 +209,18 @@ export default function PaginaFormacion() {
             cada curso o pide tu plaza desde la convocatoria, y el equipo de
             Formación te confirma la inscripción.
           </p>
-          <div className="mt-8">
+          <div className="mt-6">
             <CalendarioFormacion />
           </div>
         </div>
       </section>
 
       {/* ---------- Sedes ---------- */}
-      <section id="sedes" className="section-y scroll-mt-32 border-b border-rule">
+      <section id="sedes" className="py-10 scroll-mt-32 md:py-12 lg:py-14 border-b border-rule">
         <div className="container-placa">
           <p className="label text-accent">Dónde se imparten</p>
           <h2 className="display-2 mt-3 text-ink">Sedes de formación.</h2>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {Object.values(SEDES_CURSO).map((s) => (
               <li key={s.id} className="tarjeta flex flex-col gap-4 p-6 md:p-7">
                 <div>
@@ -269,7 +269,7 @@ export default function PaginaFormacion() {
       </section>
 
       {/* ---------- Legislación ---------- */}
-      <section id="legislacion" className="section-y scroll-mt-32">
+      <section id="legislacion" className="py-10 scroll-mt-32 md:py-12 lg:py-14">
         <div className="container-placa grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="label text-accent">Legislación de referencia</p>
