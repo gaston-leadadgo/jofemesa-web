@@ -205,7 +205,8 @@ t(
 );
 t(
   "cada bloque de servicios lleva su call to action",
-  cuenta(p.cuerpo, /consultar-disponibilidad\?asunto=/g) >= 4,
+  cuenta(p.cuerpo, /consultar-disponibilidad\?asunto=/g) >= 3 &&
+    p.cuerpo.includes('href="/formacion#calendario"'),
 );
 
 // Las delegaciones de Portugal, que su web actual no publica.
@@ -246,16 +247,51 @@ for (const [vieja, nueva] of [
 p = await html("/formacion");
 t("/formacion responde 200", p.estado === 200);
 t("/formacion tiene un solo h1", cuenta(p.cuerpo, /<h1[\s>]/g) === 1);
-t("/formacion lista los cinco cursos", [
-  "Operador de plataformas elevadoras",
-  "Operador de carretillas elevadoras",
-  "Trabajos en altura",
-  "Montaje y desmontaje de andamios de torre móvil",
-  "Espacios confinados",
-].every((c) => p.cuerpo.includes(c)));
+const CURSOS_DOC = {
+  plataformas: "Operador de plataformas elevadoras",
+  altura: "Trabajos en altura",
+  confinados: "Trabajos en espacios confinados",
+  andamios: "Montaje y desmontaje de andamios de torre móvil",
+  carretillas: "Operador de carretillas elevadoras",
+  ipaf: "Programa de formación IPAF",
+  "movimiento-de-tierras": "movimiento de tierras",
+  "carretillas-mas-10000-kg": "más de 10.000 kg",
+  "gondolas-suspendidas": "góndolas suspendidas",
+  "puente-grua": "puente grúa",
+  "camion-pluma": "camión pluma",
+  "estiba-y-eslingado": "Estiba y eslingado",
+};
+t("/formacion lista los doce cursos del documento", Object.values(CURSOS_DOC).every((c) => p.cuerpo.includes(c)));
+t("/formacion cambia el titular del catálogo", p.cuerpo.includes("Si no encuentras el curso que necesitas, lo diseñamos exclusivamente") && !p.cuerpo.includes("Cinco cursos con convocatoria abierta"));
+t("/formacion separa convocatorias abiertas y resto de cursos", p.cuerpo.includes("Convocatorias abiertas") && p.cuerpo.includes("Resto de cursos"));
+t("/formacion pone los datos de autoridad debajo de la cabecera", p.cuerpo.indexOf('aria-label="Formación certificada"') > p.cuerpo.indexOf("<h1") && p.cuerpo.includes("AENOR") && p.cuerpo.includes("Bureau Veritas"));
 t("/formacion trae el calendario en el HTML", cuenta(p.cuerpo, /Solicitar plaza/g) >= 20);
 t("/formacion enlaza a Maps con los enlaces del Excel", p.cuerpo.includes("maps.app.goo.gl/rEFVwDXHP6VVntpP7"));
-t("/formacion no inventa plazas", p.cuerpo.includes("Consultar plazas"));
+t("/formacion ya no dice «Consultar plazas»", !p.cuerpo.includes("Consultar plazas"));
+t("cada convocatoria abre la información del curso", cuenta(p.cuerpo, /Ver información del curso/g) >= 20 && p.cuerpo.includes('href="/formacion/cursos/plataformas"'));
+t("«Solicitar plaza» va al formulario de formación", p.cuerpo.includes("/formacion/solicitar?convocatoria=") && !p.cuerpo.includes("asunto=formacion"));
+
+for (const [id, texto] of Object.entries(CURSOS_DOC)) {
+  const c = await html(`/formacion/cursos/${id}`);
+  t(`/formacion/cursos/${id} tiene página propia`, c.estado === 200 && cuenta(c.cuerpo, /<h1[\s>]/g) === 1 && c.cuerpo.toLowerCase().includes(texto.toLowerCase()) && c.cuerpo.includes("¿Quién necesita esta formación?"));
+}
+p = await html("/formacion/cursos/plataformas");
+t("la ficha del curso trae el texto del documento", p.cuerpo.includes("certificado por AENOR en la Norma UNE 58923") && p.cuerpo.includes("barbuquejo"));
+t("la ficha del curso enlaza al calendario", p.cuerpo.includes("calendario de convocatorias abiertas"));
+t("un curso inexistente da 404", (await html("/formacion/cursos/no-existe")).estado === 404);
+
+p = await html("/formacion/solicitar?convocatoria=2026-12-14-carretillas-sagunto");
+t("el formulario de formación responde 200", p.estado === 200);
+t("el formulario de formación es distinto del de alquiler", p.cuerpo.includes('name="alumnos"') && p.cuerpo.includes('name="convocatoria"') && !p.cuerpo.includes('name="provincia"') && !p.cuerpo.includes('name="fechaInicio"'));
+t("el formulario de formación llega con la convocatoria elegida", p.cuerpo.includes('value="2026-12-14-carretillas-sagunto" selected') || p.cuerpo.includes('selected="" value="2026-12-14-carretillas-sagunto"'));
+p = await html("/formacion/solicitar?curso=puente-grua");
+t("un curso a medida pide dónde formarse", p.cuerpo.includes('name="lugar"') && !p.cuerpo.includes('name="convocatoria"'));
+{
+  const r = await fetch(BASE + "/consultar-disponibilidad?asunto=formacion", { redirect: "manual" });
+  t("el enlace antiguo de formación redirige al formulario nuevo", [303, 307, 308].includes(r.status) && (r.headers.get("location") ?? "").includes("/formacion/solicitar"));
+}
+p = await html("/consultar-disponibilidad");
+t("el formulario de alquiler sigue pidiendo obra y fechas", p.cuerpo.includes('name="provincia"') && p.cuerpo.includes('name="fechaInicio"'));
 
 p = await html("/");
 t("el menú principal lleva Formación", p.cuerpo.includes('href="/formacion"'));

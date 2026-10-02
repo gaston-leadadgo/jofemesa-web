@@ -113,7 +113,7 @@ export const SERVICIOS: readonly BloqueServicio[] = [
       "Certificación AENOR UNE 58923 para operadores de PEMP",
       "Certificación AENOR UNE 58451 para operadores de carretillas",
     ],
-    cta: { texto: "Consultar convocatorias", href: "/consultar-disponibilidad?asunto=formacion" },
+    cta: { texto: "Consultar convocatorias", href: "/formacion#calendario" },
     icono: "columna",
   },
 ] as const;

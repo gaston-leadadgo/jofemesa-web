@@ -23,7 +23,9 @@ import {
 } from "../src/lib/catalog/index.js";
 import { numeroDe } from "../src/lib/catalog/types.js";
 import { recomendar, PARAMETROS, TRABAJOS, ENTORNOS } from "../src/lib/advisor/index.js";
-import { avisoCif, esquemaSolicitud } from "../src/lib/leads/schema.js";
+import { avisoCif, esquemaFormacion, esquemaSolicitud } from "../src/lib/leads/schema.js";
+import { CONVOCATORIAS } from "../src/content/es/convocatorias.js";
+import { CURSOS, TODOS_LOS_CURSOS } from "../src/content/es/formacion.js";
 
 let ok = 0;
 const fallos: string[] = [];
@@ -375,6 +377,60 @@ afirma(
   }).success,
   "una fecha pasada no valida",
 );
+
+for (const tel of ["600 123 456", "91 123 45 67", "+34 600 12 34 56", "962-680-581"]) {
+  afirma(esquemaSolicitud.safeParse({ ...base, telefono: tel }).success, `el teléfono «${tel}» valida`);
+}
+afirma(
+  !esquemaSolicitud.safeParse({ ...base, telefono: "500 123 456" }).success,
+  "un teléfono que no empieza por 6, 7, 8 o 9 no valida",
+);
+
+/* ============================================================
+   Formación: formulario propio
+   ============================================================ */
+
+const hoyUtc = new Date().toISOString().slice(0, 10);
+const futura = CONVOCATORIAS.find((c) => c.fecha > hoyUtc);
+const pasada = CONVOCATORIAS.find((c) => c.fecha < hoyUtc);
+const baseFormacion = {
+  curso: futura?.curso ?? "plataformas",
+  convocatoria: futura?.id ?? "",
+  alumnos: "2",
+  contacto: "Luis Gómez",
+  telefono: "600 123 456",
+  email: "luis@ejemplo.es",
+  consentimiento: "on",
+};
+
+afirma(TODOS_LOS_CURSOS.length === 12, "el catálogo de formación tiene los doce cursos del documento");
+afirma(
+  TODOS_LOS_CURSOS.every((id) => CURSOS[id].preguntas.length >= 3 && CURSOS[id].descripcion.length > 40),
+  "cada curso trae descripción y preguntas",
+);
+afirma(esquemaFormacion.safeParse(baseFormacion).success, "una solicitud de formación completa valida");
+afirma(
+  esquemaFormacion.safeParse({ ...baseFormacion, curso: "puente-grua", convocatoria: "", lugar: "cliente" }).success,
+  "un curso a medida valida sin convocatoria y sin empresa",
+);
+afirma(
+  !esquemaFormacion.safeParse({ ...baseFormacion, curso: "inventado" }).success,
+  "un curso que no existe no valida",
+);
+afirma(
+  !esquemaFormacion.safeParse({ ...baseFormacion, curso: "puente-grua" }).success,
+  "una convocatoria de otro curso no valida",
+);
+afirma(
+  !esquemaFormacion.safeParse({ ...baseFormacion, alumnos: "0" }).success,
+  "cero personas no valida",
+);
+if (pasada) {
+  afirma(
+    !esquemaFormacion.safeParse({ ...baseFormacion, curso: pasada.curso, convocatoria: pasada.id }).success,
+    "una convocatoria pasada no valida",
+  );
+}
 
 /* ============================================================
    Resultado

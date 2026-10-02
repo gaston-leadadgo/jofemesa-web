@@ -25,12 +25,14 @@ import { cn } from "@/lib/utils/cn";
  */
 export function ModalShell({
   titulo,
-  slug,
+  enlace,
+  cerrarEtiqueta = "Cerrar la ficha y volver al catálogo",
   children,
 }: {
   titulo: string;
-  /** Para el enlace a la ficha completa y rastreable. */
-  slug?: string;
+  /** Enlace a la página completa y rastreable de lo que se enseña. */
+  enlace?: { href: string; texto: string };
+  cerrarEtiqueta?: string;
   children: React.ReactNode;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -101,13 +103,13 @@ export function ModalShell({
             <p className="label truncate text-ink-2">{titulo}</p>
 
             <div className="flex shrink-0 items-center gap-1">
-              {slug && (
+              {enlace && (
                 <Link
-                  href={`/maquina/${slug}`}
+                  href={enlace.href}
                   className="hidden min-h-11 items-center gap-2 px-3 text-sm font-semibold text-ink-2 transition-colors duration-200 hover:text-accent md:inline-flex"
                 >
                   <ExternalLink size={15} strokeWidth={2} aria-hidden="true" />
-                  Abrir la ficha
+                  {enlace.texto}
                 </Link>
               )}
 
@@ -136,7 +138,7 @@ export function ModalShell({
                 onClick={cerrar}
                 autoFocus
                 className="flex size-11 items-center justify-center text-ink transition-colors duration-200 hover:text-accent"
-                aria-label="Cerrar la ficha y volver al catálogo"
+                aria-label={cerrarEtiqueta}
               >
                 <X size={21} strokeWidth={2} aria-hidden="true" />
               </button>
@@ -157,14 +159,14 @@ export function ModalShell({
 
           {/* En móvil el enlace a la ficha completa va abajo, donde el
               pulgar llega. */}
-          {slug && (
+          {enlace && (
             <div className="shrink-0 border-t border-rule bg-sunken px-4 py-2 md:hidden">
               <Link
-                href={`/maquina/${slug}`}
+                href={enlace.href}
                 className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink-2"
               >
                 <ExternalLink size={15} strokeWidth={2} aria-hidden="true" />
-                Abrir la ficha completa
+                {enlace.texto}
               </Link>
             </div>
           )}

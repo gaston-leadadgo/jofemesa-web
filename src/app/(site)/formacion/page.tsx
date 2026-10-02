@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   ArrowRight,
+  BadgeCheck,
   CalendarDays,
+  Clock,
   GraduationCap,
+  Info,
   Mail,
   MapPin,
   Navigation,
   Phone,
   Scale,
+  Wrench,
 } from "lucide-react";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
 import { CalendarioFormacion } from "@/components/formacion/CalendarioFormacion";
+import { EnlaceCalendario } from "@/components/formacion/EnlaceCalendario";
 import { CONVOCATORIAS } from "@/content/es/convocatorias";
 import {
   CURSOS,
   LEGISLACION,
+  ORDEN_A_MEDIDA,
   ORDEN_CURSOS,
   SEDES_CURSO,
+  TODOS_LOS_CURSOS,
+  esCursoConvocatoria,
+  type CursoId,
 } from "@/content/es/formacion";
 import { SEDE_FORMACION } from "@/content/es/empresa";
 import { ambiente } from "@/lib/img/ambiente";
@@ -24,7 +34,7 @@ import { ambiente } from "@/lib/img/ambiente";
 export const metadata: Metadata = {
   title: "Formación de operadores y calendario de cursos",
   description:
-    "Cursos de operador de plataformas elevadoras (UNE 58923), carretillas (UNE 58451), trabajos en altura, andamios de torre móvil y espacios confinados. Convocatorias en San Fernando de Henares (Madrid) y Puerto de Sagunto (Valencia).",
+    "Cursos de operador de plataformas elevadoras (UNE 58923), carretillas (UNE 58451), trabajos en altura, andamios de torre móvil y espacios confinados, y formación a medida: IPAF, movimiento de tierras, puente grúa, camión pluma y más. Convocatorias en San Fernando de Henares (Madrid) y Puerto de Sagunto (Valencia).",
 };
 
 /**
@@ -52,11 +62,6 @@ export default function PaginaFormacion() {
         titulo="Formación de operadores, con la máquina delante."
         lede="Cursos certificados de plataformas elevadoras, carretillas, trabajos en altura, andamios y espacios confinados, con convocatorias cada semana en Madrid y en Valencia."
         foto={foto}
-        datos={[
-          { k: "Convocatorias 2026", v: String(CONVOCATORIAS.length) },
-          { k: "Cursos", v: String(ORDEN_CURSOS.length) },
-          { k: "Sedes", v: String(Object.keys(SEDES_CURSO).length) },
-        ]}
         cta={{ href: "#calendario", texto: "Ver convocatorias" }}
         secundario={{ href: "#cursos", texto: "Catálogo de cursos" }}
       >
@@ -69,6 +74,27 @@ export default function PaginaFormacion() {
         </a>
       </CabeceraSeccion>
 
+      {/* ---------- Datos de autoridad ----------
+          Petición del cliente (02/10/2026): en un bloque propio justo
+          debajo de la cabecera, no metidos en ella. Todo sale de sus
+          documentos: certificados AENOR y Bureau Veritas, homologación
+          IPAF y el Excel de convocatorias. */}
+      <section aria-label="Formación certificada" className="border-b border-rule bg-surface">
+        <dl className="container-placa grid grid-cols-2 gap-x-6 gap-y-6 py-7 md:py-8 lg:grid-cols-4" data-escalonar>
+          {AUTORIDAD.map((d) => (
+            <div key={d.k} className="border-l-2 border-accent pl-4">
+              <dt className="sr-only">{d.k}</dt>
+              <dd>
+                <span className="block font-[family-name:var(--font-display)] text-[clamp(1.5rem,2.4vw,2.1rem)] leading-none font-extrabold tracking-[-0.02em] text-ink">
+                  {d.v}
+                </span>
+                <span className="mt-2 block text-sm leading-snug text-ink-2">{d.texto}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
       {/* Índice de la página: cuatro saltos, no un menú. */}
       <nav
         aria-label="En esta página"
@@ -77,7 +103,7 @@ export default function PaginaFormacion() {
         <div className="container-placa pista-horizontal flex gap-1 overflow-x-auto py-2">
           {[
             ["#cursos", "Cursos"],
-            ["#calendario", "Calendario"],
+            ["#calendario", "Convocatorias"],
             ["#sedes", "Sedes"],
             ["#legislacion", "Legislación"],
           ].map(([href, texto]) => (
@@ -96,39 +122,54 @@ export default function PaginaFormacion() {
       <section id="cursos" className="section-y scroll-mt-32 border-b border-rule">
         <div className="container-placa">
           <p className="label text-accent">Catálogo de cursos</p>
-          <h2 className="display-2 mt-3 max-w-[22ch] text-ink">
-            Cinco cursos con convocatoria abierta.
+          <h2 className="display-2 mt-3 max-w-[26ch] text-ink">
+            Si no encuentras el curso que necesitas, lo diseñamos exclusivamente
+            para ti.
           </h2>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3" data-escalonar>
-            {ORDEN_CURSOS.map((id) => {
-              const c = CURSOS[id];
-              return (
-                <li key={id} className="tarjeta flex flex-col p-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="flex size-11 items-center justify-center rounded-2xl bg-accent-tint text-accent">
-                      <GraduationCap size={20} strokeWidth={1.75} aria-hidden="true" />
-                    </span>
-                    {c.norma && (
-                      <span className="rounded-full border border-rule-strong px-3 py-1 text-xs font-semibold text-ink-2">
-                        {c.norma}
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="mt-5 text-lg font-semibold text-ink">{c.nombre}</h3>
-                  <p className="mt-2 flex-1 text-base leading-relaxed text-ink-2">
-                    {c.resumen}
-                  </p>
-                  <a
-                    href="#calendario"
-                    className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent hover:text-accent-hover"
-                  >
-                    <CalendarDays size={15} strokeWidth={2} aria-hidden="true" />
-                    {porCurso(id)} convocatorias en 2026
-                    <ArrowRight size={14} strokeWidth={2.25} aria-hidden="true" />
-                  </a>
-                </li>
-              );
-            })}
+
+          <div className="mt-12 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
+            <h3 className="display-3 text-ink">Convocatorias abiertas</h3>
+            <p className="text-sm text-ink-3">
+              Fechas fijas cada semana en San Fernando de Henares y Puerto de Sagunto
+            </p>
+          </div>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" data-escalonar>
+            {ORDEN_CURSOS.map((id) => (
+              <TarjetaCurso key={id} id={id} convocatorias={porCurso(id)} />
+            ))}
+          </ul>
+
+          <div className="mt-14 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
+            <h3 className="display-3 text-ink">Resto de cursos</h3>
+            <p className="text-sm text-ink-3">
+              A medida, en tus instalaciones o en las nuestras
+            </p>
+          </div>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" data-escalonar>
+            {ORDEN_A_MEDIDA.map((id) => (
+              <TarjetaCurso key={id} id={id} convocatorias={0} />
+            ))}
+            <li className="flex flex-col justify-between gap-6 rounded-3xl bg-inverse p-6 text-ink-inv-2">
+              <div>
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-accent text-white">
+                  <Wrench size={20} strokeWidth={1.75} aria-hidden="true" />
+                </span>
+                <p className="mt-5 text-lg font-semibold text-ink-inv">
+                  ¿No está tu curso?
+                </p>
+                <p className="mt-2 text-base leading-relaxed">
+                  Lo diseñamos para tu equipo, con tus máquinas y en tus
+                  instalaciones o en las nuestras.
+                </p>
+              </div>
+              <Link
+                href="/formacion/solicitar"
+                className="btn-accent inline-flex h-12 items-center justify-center gap-2 bg-accent px-5 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
+              >
+                Cuéntanos qué necesitas
+                <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </li>
           </ul>
         </div>
       </section>
@@ -138,11 +179,12 @@ export default function PaginaFormacion() {
         <div className="container-placa">
           <p className="label text-accent">Calendario de formaciones</p>
           <h2 className="display-2 mt-3 max-w-[24ch] text-ink">
-            Próximas convocatorias.
+            Convocatorias abiertas.
           </h2>
           <p className="mt-4 max-w-[60ch] text-base text-ink-2">
-            Todas las jornadas son de 07:30 a 15:30. Pide tu plaza desde la
-            convocatoria y el equipo de Formación te confirma la inscripción.
+            Todas las jornadas son de 07:30 a 15:30. Abre la información de
+            cada curso o pide tu plaza desde la convocatoria, y el equipo de
+            Formación te confirma la inscripción.
           </p>
           <div className="mt-8">
             <CalendarioFormacion />
@@ -233,5 +275,74 @@ export default function PaginaFormacion() {
         </div>
       </section>
     </>
+  );
+}
+
+const AUTORIDAD = [
+  {
+    k: "Certificación AENOR",
+    v: "AENOR",
+    texto: "Cursos certificados en UNE 58923 (plataformas) y UNE 58451 (carretillas)",
+  },
+  {
+    k: "Homologación IPAF",
+    v: "IPAF",
+    texto: "Centro homologado. Programa certificado por Bureau Veritas (ISO 18878)",
+  },
+  {
+    k: "Convocatorias en 2026",
+    v: String(CONVOCATORIAS.length),
+    texto: "Convocatorias en 2026, cada semana en Madrid y en Valencia",
+  },
+  {
+    k: "Cursos",
+    v: String(TODOS_LOS_CURSOS.length),
+    texto: `Cursos en catálogo y ${Object.keys(SEDES_CURSO).length} sedes de formación propias`,
+  },
+];
+
+function TarjetaCurso({ id, convocatorias }: { id: CursoId; convocatorias: number }) {
+  const c = CURSOS[id];
+  return (
+    <li className="tarjeta flex flex-col p-6">
+      <div className="flex items-start justify-between gap-3">
+        <span className="flex size-11 items-center justify-center rounded-2xl bg-accent-tint text-accent">
+          <GraduationCap size={20} strokeWidth={1.75} aria-hidden="true" />
+        </span>
+        {c.norma && (
+          <span className="inline-flex items-center gap-1 rounded-full border border-rule-strong px-3 py-1 text-xs font-semibold text-ink-2">
+            {c.certificacion && (
+              <BadgeCheck size={13} strokeWidth={2} aria-hidden="true" className="text-accent" />
+            )}
+            {c.norma}
+          </span>
+        )}
+      </div>
+      <h4 className="mt-5 text-lg font-semibold text-ink">{c.nombre}</h4>
+      <p className="mt-2 flex-1 text-base leading-relaxed text-ink-2">{c.paraQuien}</p>
+      <p className="mt-4 inline-flex items-center gap-1.5 text-sm text-ink-3">
+        <Clock size={14} strokeWidth={2} aria-hidden="true" />
+        {c.duracion}
+      </p>
+      <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-1 border-t border-rule pt-3">
+        <Link
+          href={`/formacion/cursos/${id}`}
+          scroll={false}
+          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink transition-colors duration-200 hover:text-accent"
+        >
+          <Info size={15} strokeWidth={2} aria-hidden="true" className="text-accent" />
+          Ver información del curso
+        </Link>
+        {esCursoConvocatoria(id) && convocatorias > 0 && (
+          <EnlaceCalendario
+            curso={id}
+            className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent hover:text-accent-hover"
+          >
+            <CalendarDays size={15} strokeWidth={2} aria-hidden="true" />
+            {convocatorias} convocatorias
+          </EnlaceCalendario>
+        )}
+      </div>
+    </li>
   );
 }

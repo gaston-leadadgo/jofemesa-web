@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { FormularioDisponibilidad } from "@/components/forms/FormularioDisponibilidad";
 
 /**
@@ -41,6 +42,9 @@ export default async function PaginaDisponibilidad({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const q = await searchParams;
+
+  // Formación tiene su propio formulario; los enlaces antiguos llegan allí.
+  if (uno(q.asunto) === "formacion") redirect("/formacion/solicitar");
 
   return (
     <div className="container-placa py-10 md:py-14">

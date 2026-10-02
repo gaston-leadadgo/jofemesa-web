@@ -37,7 +37,6 @@ const TIPOS: Record<string, { tipo: string; nombre: string }> = {
     nombre: "Mantenimiento y servicio técnico",
   },
   transporte: { tipo: "transporte", nombre: "Transporte y entrega en obra" },
-  formacion: { tipo: "formacion", nombre: "Formación de operadores" },
   servicios: { tipo: "servicios", nombre: "Servicios a medida" },
 };
 
@@ -191,9 +190,7 @@ export function FormularioDisponibilidad({
         {contexto && (
           <div className="mt-6 border-l-2 border-accent bg-accent-tint px-4 py-3">
             <p className="label-sm text-ink-2">
-              {asunto === "formacion"
-                ? "La convocatoria que te interesa"
-                : "Lo que nos contaste en el asesor"}
+              Lo que nos contaste en el asesor
             </p>
             <p className="mt-1.5 text-base text-ink">{contexto}</p>
             <input type="hidden" name="contextoAsesor" value={contexto} />

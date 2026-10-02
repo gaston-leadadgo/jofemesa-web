@@ -435,7 +435,7 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Plazas y ocupación de cada convocatoria",
-    nota: "El Excel de convocatorias trae curso, fecha, sede y horario, pero no plazas. La lista de /formacion ya está preparada: en cuanto el panel dé plazas y ocupadas, cada fila pinta «Quedan N plazas» o «Completo». Mientras, dice «Consultar plazas».",
+    nota: "El Excel de convocatorias trae curso, fecha, sede y horario, pero no plazas. La lista de /formacion ya está preparada: en cuanto el panel dé plazas y ocupadas, cada fila pinta «Quedan N plazas» o «Completo». Mientras, en su lugar va el botón «Ver información del curso».",
   },
   {
     campo: "Legislación de referencia de Formación",
@@ -454,8 +454,12 @@ export const DATOS_PENDIENTES = [
     nota: "Hay 27 fotos oficiales de JOFEMESA de tijeras eléctricas, diésel e híbridas. El resto del catálogo sale con dibujo técnico hasta que lleguen las fotografías de esas familias.",
   },
   {
-    campo: "Contenido de Formación",
-    nota: "Acordado en la reunión: se nombra dentro de Servicios pero no se desarrolla hasta que estén el calendario de convocatorias y el catálogo de cursos.",
+    campo: "Fichas de los cursos: pregunta de los EPI",
+    nota: "El documento de cursos (02/10/2026) repite en los doce cursos «¿Qué EPI necesito para realizar el curso o trabajar con una Plataforma Elevadora?», también en puente grúa o carretillas. Se publica la coletilla solo en los dos cursos de plataformas (PEMP e IPAF); en el resto la pregunta termina en «realizar el curso». Las respuestas van tal cual.",
+  },
+  {
+    campo: "Fichas de los cursos: textos repetidos",
+    nota: "Publicado tal cual el documento, pero parece arrastre de plantilla y conviene que Formación lo confirme: (1) Góndolas suspendidas dice que está orientado a quien trabaja «en cubiertas, torres, postes y realiza progresiones por estructuras», igual que Trabajos en altura; (2) Espacios confinados cita el «RD 2177/2004 de trabajos temporales en altura».",
   },
   {
     campo: "Migración del blog",

@@ -30,6 +30,38 @@ interface Solicitud {
   contextoAsesor?: string;
 }
 
+interface SolicitudFormacion {
+  ref: string;
+  recibida: string;
+  cursoNombre: string;
+  convocatoriaTexto: string;
+  lugarTexto: string | null;
+  localidad?: string;
+  alumnos: number;
+  contacto: string;
+  telefono: string;
+  email: string;
+  empresa?: string;
+  cif?: string;
+  notas?: string;
+}
+
+async function leerFormacion(): Promise<SolicitudFormacion[]> {
+  try {
+    const crudo = await readFile(
+      join(process.cwd(), ".data", "solicitudes-formacion.jsonl"),
+      "utf8",
+    );
+    return crudo
+      .split("\n")
+      .filter(Boolean)
+      .map((l) => JSON.parse(l) as SolicitudFormacion)
+      .reverse();
+  } catch {
+    return [];
+  }
+}
+
 async function leer(): Promise<Solicitud[]> {
   try {
     const crudo = await readFile(
@@ -55,7 +87,7 @@ async function leer(): Promise<Solicitud[]> {
  * máquinas. Es la diferencia entre "esto funcionará" y "aquí está tu lead".
  */
 export default async function PaginaSolicitudes() {
-  const solicitudes = await leer();
+  const [solicitudes, formacion] = await Promise.all([leer(), leerFormacion()]);
 
   return (
     <div className="container-placa py-14">
@@ -66,6 +98,65 @@ export default async function PaginaSolicitudes() {
         consola del servidor. Con las variables de entorno configuradas se
         reenvía además por correo o al CRM, sin tocar código.
       </p>
+
+      {formacion.length > 0 && (
+        <section className="mt-10">
+          <h2 className="display-3 text-ink">
+            Formación <span className="value text-base font-normal text-ink-2">{formacion.length}</span>
+          </h2>
+          <ul className="mt-4 space-y-px bg-rule">
+            {formacion.map((s) => (
+              <li key={s.ref} className="bg-surface p-6">
+                <div className="flex flex-wrap items-baseline justify-between gap-3">
+                  <p className="value-lg text-ink">{s.ref}</p>
+                  <p className="label-sm text-ink-3">{fechaCorta(s.recibida)} · formación</p>
+                </div>
+                <dl className="mt-5 grid gap-x-8 gap-y-3 md:grid-cols-2 lg:grid-cols-3">
+                  <Dato k="Curso">{s.cursoNombre}</Dato>
+                  <Dato k="Convocatoria">
+                    {s.convocatoriaTexto}
+                    {s.lugarTexto && (
+                      <>
+                        <br />
+                        <span className="label-sm text-ink-3">
+                          {s.lugarTexto}
+                          {s.localidad ? ` · ${s.localidad}` : ""}
+                        </span>
+                      </>
+                    )}
+                  </Dato>
+                  <Dato k="Personas">
+                    <span className="value">{s.alumnos}</span>
+                  </Dato>
+                  <Dato k="Contacto">
+                    {s.contacto}
+                    <br />
+                    <a href={`tel:${s.telefono}`} className="value text-accent">
+                      {s.telefono}
+                    </a>
+                    <br />
+                    <a href={`mailto:${s.email}`} className="text-ink-2 underline">
+                      {s.email}
+                    </a>
+                  </Dato>
+                  {(s.empresa || s.cif) && (
+                    <Dato k="Empresa">
+                      {s.empresa}
+                      <span className="value ml-2 text-sm text-ink-3">{s.cif}</span>
+                    </Dato>
+                  )}
+                </dl>
+                {s.notas && (
+                  <p className="mt-4 border-l-2 border-rule-strong bg-sunken px-4 py-3 text-base text-ink-2">
+                    {s.notas}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+          <h2 className="display-3 mt-12 text-ink">Alquiler y servicios</h2>
+        </section>
+      )}
 
       {solicitudes.length === 0 ? (
         <p className="mt-10 border border-rule bg-sunken p-6 text-base text-ink-2">

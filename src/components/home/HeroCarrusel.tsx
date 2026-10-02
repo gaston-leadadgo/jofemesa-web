@@ -181,7 +181,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
           onClick={() => ir(activa + paso)}
           aria-label={`Portada ${nombre}: ${ROTULO[ORDEN[(activa + paso + ORDEN.length) % ORDEN.length]]}`}
           className={cn(
-            "group absolute top-1/2 z-40 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-white/10 text-ink-inv backdrop-blur-md transition-colors duration-200 hover:border-accent hover:bg-accent xl:flex",
+            "group absolute top-1/2 z-40 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-white shadow-[0_10px_30px_-8px_rgba(0,0,0,.55)] transition-colors duration-200 hover:bg-accent-hover xl:flex",
             lado,
           )}
         >
@@ -249,7 +249,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
               type="button"
               onClick={() => ir(activa - 1)}
               aria-label="Portada anterior"
-              className="flex size-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-ink-inv backdrop-blur-md transition-colors duration-200 hover:border-accent hover:bg-accent"
+              className="flex size-11 items-center justify-center rounded-full bg-accent text-white transition-colors duration-200 hover:bg-accent-hover"
             >
               <ChevronLeft size={20} strokeWidth={2} aria-hidden="true" />
             </button>

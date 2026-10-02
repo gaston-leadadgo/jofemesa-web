@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { CONVOCATORIAS } from "@/content/es/convocatorias";
+import { esCursoId } from "@/content/es/formacion";
 
 /**
  * El mismo esquema en cliente y servidor. La validación de cliente es
@@ -41,6 +43,20 @@ function cifValido(v: string): boolean {
 
 const HOY = () => new Date().toISOString().slice(0, 10);
 
+/**
+ * Nueve dígitos, fijo o móvil, con o sin +34. Se comprueban los dígitos y
+ * no la forma de agruparlos: «600 123 456», «91 123 45 67» y «600123456»
+ * son el mismo teléfono.
+ */
+const telefono = () =>
+  z
+    .string()
+    .trim()
+    .refine(
+      (v) => /^(?:\+34|0034)?[6789]\d{8}$/.test(v.replace(/[\s.\-()]/g, "")),
+      "Revisa el teléfono: nueve dígitos, fijo o móvil.",
+    );
+
 export const esquemaSolicitud = z
   .object({
     /**
@@ -56,7 +72,6 @@ export const esquemaSolicitud = z
         "recambios",
         "mantenimiento",
         "transporte",
-        "formacion",
         "servicios",
       ])
       .default("alquiler"),
@@ -79,13 +94,7 @@ export const esquemaSolicitud = z
     empresa: z.string().trim().min(2, "Necesitamos el nombre de la empresa."),
     cif: z.string().trim().min(1, "Necesitamos el CIF o NIF."),
     contacto: z.string().trim().min(2, "¿Con quién hablamos?"),
-    telefono: z
-      .string()
-      .trim()
-      .regex(
-        /^(?:\+34[\s-]?)?[6789]\d{2}[\s-]?\d{2}[\s-]?\d{2}[\s-]?\d{2}$/,
-        "Revisa el teléfono: nueve dígitos, fijo o móvil.",
-      ),
+    telefono: telefono(),
     email: z.string().trim().email("Revisa el correo electrónico."),
 
     notas: z.string().trim().max(2000).optional().default(""),
@@ -106,6 +115,63 @@ export const esquemaSolicitud = z
   });
 
 export type DatosSolicitud = z.infer<typeof esquemaSolicitud>;
+
+/**
+ * Solicitud de formación. Formulario propio y no el de alquiler: aquí no
+ * hay obra, ni máquinas, ni fechas de entrega; hay un curso, una
+ * convocatoria (o un curso a medida) y cuántas personas van. Y puede
+ * pedirlo un particular, así que empresa y CIF son opcionales.
+ */
+export const esquemaFormacion = z
+  .object({
+    curso: z.string().refine(esCursoId, "Elige el curso que te interesa."),
+    /** Id de la convocatoria. Vacío = otra fecha o curso a medida. */
+    convocatoria: z.string().trim().optional().default(""),
+    lugar: z
+      .enum(["", "jofemesa", "cliente", "indiferente"])
+      .optional()
+      .default(""),
+    localidad: z.string().trim().max(120).optional().default(""),
+    alumnos: z.coerce
+      .number({ error: "Dinos cuántas personas se van a formar." })
+      .int("Indica un número entero de personas.")
+      .min(1, "Al menos una persona.")
+      .max(500, "Para más de 500 personas, llámanos."),
+
+    contacto: z.string().trim().min(2, "¿Con quién hablamos?"),
+    telefono: telefono(),
+    email: z.string().trim().email("Revisa el correo electrónico."),
+    empresa: z.string().trim().optional().default(""),
+    cif: z.string().trim().optional().default(""),
+
+    notas: z.string().trim().max(2000).optional().default(""),
+    consentimiento: z.literal(
+      "on",
+      "Necesitamos tu consentimiento para poder contactarte.",
+    ),
+
+    _trampa: z.string().max(0).optional().default(""),
+    _t: z.string().optional().default(""),
+  })
+  .superRefine((d, ctx) => {
+    if (!d.convocatoria) return;
+    const c = CONVOCATORIAS.find((x) => x.id === d.convocatoria);
+    if (!c || c.curso !== d.curso) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["convocatoria"],
+        message: "Esa convocatoria no es de este curso. Elige otra fecha.",
+      });
+    } else if (c.fecha < HOY()) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["convocatoria"],
+        message: "Esa convocatoria ya ha pasado. Elige otra fecha.",
+      });
+    }
+  });
+
+export type DatosFormacion = z.infer<typeof esquemaFormacion>;
 
 /**
  * El CIF se comprueba pero NO bloquea: rechazar un lead real por un dígito

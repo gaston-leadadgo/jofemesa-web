@@ -17,6 +17,27 @@ PUERTO=3000 node scripts/verificar-servidor.mjs
 
 ---
 
+## Entrega del 02/10/2026
+
+- **Información de cada curso.** En el calendario, «Consultar plazas» pasa a ser
+  «Ver información del curso»: abre la ficha detallada encima de /formacion
+  (ruta interceptada, como la ficha de máquina) y cada curso tiene además su
+  página propia en `/formacion/cursos/[curso]`. Los doce cursos salen tal cual de
+  `Material/Cursos/Listado_de_cursos_con_espacio_para_descripciones.docx`: cinco
+  con convocatoria abierta y siete a medida.
+- **Formulario de formación propio** en `/formacion/solicitar`: curso,
+  convocatoria (o curso a medida y dónde), personas y contacto; empresa y CIF
+  opcionales. Guarda en `.data/solicitudes-formacion.jsonl` y aparece en
+  `/admin/solicitudes`. Los enlaces antiguos `?asunto=formacion` redirigen aquí.
+- **Cambios de /formacion** (`CAMBIOS JOFEMESA FORMACIÓN.docx`): datos de autoridad
+  (AENOR, IPAF, convocatorias, cursos) en un bloque bajo la cabecera, y el
+  titular del catálogo pasa a «Si no encuentras el curso que necesitas, lo
+  diseñamos exclusivamente para ti», con «Convocatorias abiertas» y «Resto de cursos».
+- **Flechas del hero en rojo** de marca; el hover las oscurece.
+- **Teléfono:** el formulario rechazaba «600 123 456» (solo aceptaba 3-2-2-2).
+  Ahora se validan los nueve dígitos sin importar cómo se agrupen.
+- `@modal/[...resto]` cierra el modal al navegar desde dentro de él.
+
 ## Entrega del 28/09/2026
 
 - **Delegaciones según el PDF de Interempresas 2026.** Castellón ya no

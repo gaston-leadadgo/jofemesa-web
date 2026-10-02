@@ -3,9 +3,16 @@
 import { redirect } from "next/navigation";
 import { appendFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
-import { esquemaSolicitud, type DatosSolicitud } from "./schema";
+import {
+  esquemaFormacion,
+  esquemaSolicitud,
+  type DatosFormacion,
+  type DatosSolicitud,
+} from "./schema";
 import { getMaquina } from "@/lib/catalog";
 import { DELEGACIONES_OPERATIVAS } from "@/content/es/empresa";
+import { CONVOCATORIAS } from "@/content/es/convocatorias";
+import { CURSOS, SEDES_CURSO, partesFecha, type CursoId } from "@/content/es/formacion";
 
 export interface EstadoFormulario {
   ok: boolean;
@@ -146,4 +153,118 @@ export async function enviarSolicitud(
   ]);
 
   redirect(`/consultar-disponibilidad/gracias?ref=${ref}`);
+}
+
+/* ============================================================
+   Formación: su propio formulario, su propia bandeja
+   ============================================================ */
+
+const LUGARES: Record<string, string> = {
+  jofemesa: "En las instalaciones de Jofemesa",
+  cliente: "En las instalaciones del cliente",
+  indiferente: "Que lo aconseje Formación",
+};
+
+/** Lo que se guarda: los datos y su lectura humana. */
+function resumenFormacion(d: DatosFormacion) {
+  const curso = CURSOS[d.curso as CursoId];
+  const conv = CONVOCATORIAS.find((c) => c.id === d.convocatoria);
+  const fecha = conv
+    ? (() => {
+        const f = partesFecha(conv.fecha);
+        return `${f.diaSemana} ${f.dia} de ${f.mes} de ${f.anio}, ${conv.inicio}–${conv.fin} h · ${SEDES_CURSO[conv.sede].nombre}`;
+      })()
+    : null;
+  return {
+    cursoNombre: curso.titulo,
+    convocatoriaTexto: fecha ?? "Otra fecha o curso a medida",
+    lugarTexto: LUGARES[d.lugar] ?? null,
+  };
+}
+
+export async function enviarSolicitudFormacion(
+  _previo: EstadoFormulario,
+  formData: FormData,
+): Promise<EstadoFormulario> {
+  const crudo = Object.fromEntries(formData.entries()) as Record<string, string>;
+
+  if (crudo._trampa) return { ok: true };
+  const t0 = Number(crudo._t);
+  if (t0 && Date.now() - t0 < 3000) {
+    return {
+      ok: false,
+      errores: { _global: "Envío demasiado rápido. Inténtalo otra vez." },
+      valores: crudo,
+    };
+  }
+
+  const r = esquemaFormacion.safeParse(crudo);
+  if (!r.success) {
+    const errores: Record<string, string> = {};
+    for (const issue of r.error.issues) {
+      const clave = String(issue.path[0] ?? "_global");
+      errores[clave] ??= issue.message;
+    }
+    return { ok: false, errores, valores: crudo };
+  }
+
+  const d = r.data;
+  const ref = referencia().replace(/^SOL/, "FOR");
+  const legible = resumenFormacion(d);
+  const registro = {
+    ref,
+    recibida: new Date().toISOString(),
+    tipo: "formacion",
+    ...d,
+    ...legible,
+    _trampa: undefined,
+    _t: undefined,
+  };
+
+  console.log(
+    [
+      "",
+      "─".repeat(62),
+      `  NUEVA SOLICITUD DE FORMACIÓN  ${ref}`,
+      "─".repeat(62),
+      `  Curso         ${legible.cursoNombre}`,
+      `  Convocatoria  ${legible.convocatoriaTexto}`,
+      legible.lugarTexto ? `  Dónde         ${legible.lugarTexto}${d.localidad ? ` · ${d.localidad}` : ""}` : null,
+      `  Alumnos       ${d.alumnos}`,
+      `  Contacto      ${d.contacto} · ${d.telefono} · ${d.email}`,
+      d.empresa || d.cif ? `  Empresa       ${d.empresa} ${d.cif}` : null,
+      d.notas ? `  Notas         ${d.notas}` : null,
+      "─".repeat(62),
+      "",
+    ]
+      .filter(Boolean)
+      .join("\n"),
+  );
+
+  try {
+    const dir = join(process.cwd(), ".data");
+    await mkdir(dir, { recursive: true });
+    await appendFile(
+      join(dir, "solicitudes-formacion.jsonl"),
+      JSON.stringify(registro) + "\n",
+      "utf8",
+    );
+  } catch (e) {
+    console.error("No se pudo escribir la solicitud de formación en disco:", e);
+  }
+
+  const url = process.env.LEADS_WEBHOOK_URL;
+  if (url) {
+    try {
+      await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(registro),
+      });
+    } catch (e) {
+      console.error("El webhook de leads falló:", e);
+    }
+  }
+
+  redirect(`/formacion/solicitar/gracias?ref=${ref}`);
 }

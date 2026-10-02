@@ -1,3 +1,4 @@
+import { TODOS_LOS_CURSOS } from "@/content/es/formacion";
 import type { MetadataRoute } from "next";
 import { CATALOGO } from "@/lib/catalog";
 import { FAMILIAS } from "@/lib/catalog/familias";
@@ -22,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/servicios`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
     { url: `${base}/delegaciones`, priority: 0.8, changeFrequency: "monthly", lastModified: ahora },
     { url: `${base}/formacion`, priority: 0.8, changeFrequency: "weekly", lastModified: ahora },
+    ...TODOS_LOS_CURSOS.map((c) => ({
+      url: `${base}/formacion/cursos/${c}`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+      lastModified: ahora,
+    })),
     ...(MODULOS.noticias
       ? [{ url: `${base}/noticias`, priority: 0.7, changeFrequency: "weekly" as const, lastModified: ahora }]
       : []),

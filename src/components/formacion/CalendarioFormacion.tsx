@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Clock, MapPin, Navigation, ArrowRight, X } from "lucide-react";
+import { Clock, MapPin, Navigation, ArrowRight, X, Info } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { CONVOCATORIAS } from "@/content/es/convocatorias";
 import {
@@ -12,9 +12,10 @@ import {
   nombreMes,
   partesFecha,
   type Convocatoria,
-  type CursoId,
+  type CursoConvocatoriaId,
   type SedeCursoId,
 } from "@/content/es/formacion";
+import { elegirCursoCalendario, useCursoCalendario, useHoy } from "@/lib/formacion/estado";
 
 /**
  * El calendario de convocatorias, en LISTA y no en rejilla de mes: con
@@ -27,18 +28,18 @@ import {
  * la limpieza ocurre al hidratar.
  */
 
-const hoyIso = () => {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-};
-const sinSuscripcion = () => () => {};
-const enServidor = () => null;
-
-type Filtro = { curso: CursoId | null; sede: SedeCursoId | null; mes: string | null };
+type FiltroLocal = { sede: SedeCursoId | null; mes: string | null };
+type Filtro = FiltroLocal & { curso: CursoConvocatoriaId | null };
 
 export function CalendarioFormacion() {
-  const hoy = useSyncExternalStore(sinSuscripcion, hoyIso, enServidor);
-  const [filtro, setFiltro] = useState<Filtro>({ curso: null, sede: null, mes: null });
+  const hoy = useHoy();
+  const curso = useCursoCalendario();
+  const [local, setLocal] = useState<FiltroLocal>({ sede: null, mes: null });
+  const filtro: Filtro = { ...local, curso };
+  const setFiltro = ({ curso: c, ...resto }: Filtro) => {
+    if (c !== curso) elegirCursoCalendario(c);
+    setLocal(resto);
+  };
 
   const vigentes = useMemo(
     () => (hoy ? CONVOCATORIAS.filter((c) => c.fecha >= hoy) : CONVOCATORIAS),
@@ -66,10 +67,10 @@ export function CalendarioFormacion() {
     return [...g.entries()];
   }, [visibles]);
 
-  const cuenta = (curso: CursoId | null) =>
+  const cuenta = (id: CursoConvocatoriaId | null) =>
     vigentes.filter(
       (c) =>
-        (!curso || c.curso === curso) &&
+        (!id || c.curso === id) &&
         (!filtro.sede || c.sede === filtro.sede) &&
         (!filtro.mes || partesFecha(c.fecha).claveMes === filtro.mes),
     ).length;
@@ -209,9 +210,7 @@ function Chip({
 }
 
 function Plazas({ c }: { c: Convocatoria }) {
-  if (c.plazas == null || c.ocupadas == null) {
-    return <span className="text-sm text-ink-3">Consultar plazas</span>;
-  }
+  if (c.plazas == null || c.ocupadas == null) return null;
   const libres = Math.max(0, c.plazas - c.ocupadas);
   const tono =
     libres === 0 ? "bg-accent" : libres <= 3 ? "bg-wait" : "bg-ok";
@@ -244,10 +243,9 @@ function Fila({ c, esHoy }: { c: Convocatoria; esHoy: boolean }) {
   const curso = CURSOS[c.curso];
   const sede = SEDES_CURSO[c.sede];
   const completo = c.plazas != null && c.ocupadas != null && c.ocupadas >= c.plazas;
-  const contexto = `${curso.nombre}${curso.norma ? ` (${curso.norma})` : ""} · ${f.diaSemana} ${f.dia} de ${f.mes} de ${f.anio} · ${sede.nombre}`;
 
   return (
-    <li className="grid gap-4 border-b border-rule p-4 last:border-b-0 md:grid-cols-[4.5rem_1fr_auto] md:items-center md:gap-6 md:px-6 lg:grid-cols-[4.5rem_minmax(0,1.3fr)_minmax(0,1fr)_9rem_auto]">
+    <li className="grid gap-4 border-b border-rule p-4 last:border-b-0 md:grid-cols-[4.5rem_1fr_auto] md:items-center md:gap-6 md:px-6 lg:grid-cols-[4.5rem_minmax(0,1.2fr)_minmax(0,1fr)_auto]">
       {/* Fecha */}
       <div className="flex items-center gap-3 md:block md:text-center">
         <div
@@ -282,6 +280,10 @@ function Fila({ c, esHoy }: { c: Convocatoria; esHoy: boolean }) {
             {c.inicio} – {c.fin} h
           </span>
         </div>
+        {/* Cuando el panel gestione plazas, el estado aparece aquí. */}
+        <div className="mt-2 empty:hidden">
+          <Plazas c={c} />
+        </div>
       </div>
 
       {/* Sede */}
@@ -303,21 +305,24 @@ function Fila({ c, esHoy }: { c: Convocatoria; esHoy: boolean }) {
         </a>
       </div>
 
-      {/* Plazas */}
-      <div className="md:col-start-2 lg:col-start-auto">
-        <Plazas c={c} />
-      </div>
-
-      {/* Acción */}
-      <div className="md:col-start-3 md:row-span-2 md:row-start-1 lg:col-start-auto lg:row-span-1 lg:row-start-auto">
+      {/* Acciones: la información del curso y la plaza. */}
+      <div className="flex flex-col gap-2 md:col-start-3 md:row-span-2 md:row-start-1 lg:col-start-auto lg:row-span-1 lg:row-start-auto">
+        <Link
+          href={`/formacion/cursos/${curso.id}`}
+          scroll={false}
+          className="inline-flex h-11 items-center justify-center gap-2 border border-rule-control bg-surface px-5 text-sm font-semibold whitespace-nowrap text-ink transition-colors duration-200 hover:border-ink hover:bg-sunken pastilla"
+        >
+          <Info size={15} strokeWidth={2} aria-hidden="true" className="text-accent" />
+          Ver información del curso
+        </Link>
         {completo ? (
-          <span className="inline-flex h-11 items-center rounded-full border border-rule px-5 text-sm font-semibold text-ink-3">
+          <span className="inline-flex h-11 items-center justify-center rounded-full border border-rule px-5 text-sm font-semibold text-ink-3">
             Sin plazas
           </span>
         ) : (
           <Link
-            href={`/consultar-disponibilidad?asunto=formacion&contexto=${encodeURIComponent(contexto)}`}
-            className="btn-accent inline-flex h-11 w-full items-center justify-center gap-2 bg-accent px-5 text-sm font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover pastilla md:w-auto"
+            href={`/formacion/solicitar?convocatoria=${encodeURIComponent(c.id)}`}
+            className="btn-accent inline-flex h-11 items-center justify-center gap-2 bg-accent px-5 text-sm font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-accent-hover pastilla"
           >
             Solicitar plaza
             <ArrowRight size={15} strokeWidth={2} aria-hidden="true" />

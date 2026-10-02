@@ -22,7 +22,10 @@ export default async function ModalMaquina({
   if (!m) notFound();
 
   return (
-    <ModalShell titulo={`${m.marca} ${m.modelo}`} slug={m.slug}>
+    <ModalShell
+      titulo={`${m.marca} ${m.modelo}`}
+      enlace={{ href: `/maquina/${m.slug}`, texto: "Abrir la ficha" }}
+    >
       <FichaMaquina maquina={m} variante="modal" />
     </ModalShell>
   );
