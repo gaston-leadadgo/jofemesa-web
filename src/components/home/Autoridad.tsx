@@ -152,7 +152,7 @@ export function Autoridad() {
 
         {/* Fabricantes: una tira, no una rejilla con aire. */}
         <div className="mt-6 flex flex-col gap-3 border-t border-rule pt-5 md:flex-row md:items-center md:gap-6">
-          <h3 className="label shrink-0 text-ink-3">Fabricantes de la flota</h3>
+          <h3 className="label shrink-0 text-ink-3">Nuestros fabricantes</h3>
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {FABRICANTES_FLOTA.map((f) => (
               <li

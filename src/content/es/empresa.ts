@@ -52,6 +52,16 @@ export const TELEFONO_PRINCIPAL = {
 
 export const EMAIL_PRINCIPAL = "jofemesa@jofemesa.com";
 
+/**
+ * Perfiles en redes que dio el cliente (06/10/2026). Se guardan sin los
+ * parámetros de seguimiento que traían copiados (`?lipi=…`, `?hl=es`).
+ */
+export const REDES = [
+  { id: "linkedin", nombre: "LinkedIn", url: "https://www.linkedin.com/company/jofemesa/" },
+  { id: "facebook", nombre: "Facebook", url: "https://www.facebook.com/Jofemesaempresa" },
+  { id: "instagram", nombre: "Instagram", url: "https://www.instagram.com/jofemesaempresa/" },
+] as const;
+
 export const WHATSAPP = {
   /** Pendiente de que el cliente confirme un número de WhatsApp Business. */
   numero: null as string | null,

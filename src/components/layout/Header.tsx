@@ -14,6 +14,7 @@ import { IconoMaquina } from "@/components/marca/IconoMaquina";
 import { DesplegableDelegaciones } from "./DesplegableDelegaciones";
 import { DesplegableTelefonos } from "./DesplegableTelefonos";
 import { ContadorFundacion } from "@/components/marca/ContadorFundacion";
+import { RedesSociales } from "@/components/marca/RedesSociales";
 
 /**
  * La cabecera.
@@ -98,11 +99,18 @@ export function Header() {
         data-surface="dark"
         className="relative z-50 hidden border-b border-rule-inverse bg-inverse md:block"
       >
-        <div className="container-placa flex h-9 items-center justify-between gap-6">
+        {/* Tres columnas para que las redes queden centradas de verdad,
+            mida lo que mida el contador de la izquierda. */}
+        <div className="container-placa flex h-9 items-center justify-between gap-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           {/* Caja baja: dos frases largas en versalitas espaciadas, y lo
               primero que ve cualquiera al entrar es un cartel. */}
           <ContadorFundacion />
-          <div className="flex h-full items-center gap-6">
+          <RedesSociales
+            tamano={15}
+            className="hidden h-full gap-1 lg:flex"
+            enlaceClassName="h-full w-8 text-ink-inv-2 hover:text-white"
+          />
+          <div className="flex h-full items-center justify-end gap-6">
             <DesplegableDelegaciones />
             <span aria-hidden="true" className="h-3.5 w-px bg-rule-inverse" />
             <Link
@@ -409,6 +417,12 @@ export function Header() {
                 ))}
               </ul>
             </details>
+            {/* En móvil la franja de arriba no se ve: las redes van aquí. */}
+            <RedesSociales
+              tamano={20}
+              className="mt-6 justify-center gap-2"
+              enlaceClassName="size-12 rounded-full border border-rule-control text-ink-2 hover:border-ink hover:text-ink"
+            />
           </nav>
         </div>
       )}

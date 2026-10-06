@@ -301,6 +301,12 @@ p = await html("/");
 t("el menú principal lleva Formación", p.cuerpo.includes('href="/formacion"'));
 t("el hero tiene las dos portadas", p.cuerpo.includes("Alquiler de maquinaria para que tu obra no se pare") && p.cuerpo.includes("Formación de operadores para trabajar seguro"));
 t("la portada sigue con un solo h1", cuenta(p.cuerpo, /<h1[\s>]/g) === 1);
+t("la franja superior enlaza a LinkedIn, Facebook e Instagram", [
+  "https://www.linkedin.com/company/jofemesa/",
+  "https://www.facebook.com/Jofemesaempresa",
+  "https://www.instagram.com/jofemesaempresa/",
+].every((u) => p.cuerpo.includes(`href="${u}"`)) && !p.cuerpo.includes("lipi="));
+t("el rótulo dice «Nuestros fabricantes»", p.cuerpo.includes("Nuestros fabricantes") && !p.cuerpo.includes("Fabricantes de la flota"));
 
 p = await html("/delegaciones");
 t("Castellón ya no figura", !p.cuerpo.includes("Castellón") && !p.cuerpo.includes("Almassora"));
