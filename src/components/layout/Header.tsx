@@ -99,18 +99,11 @@ export function Header() {
         data-surface="dark"
         className="relative z-50 hidden border-b border-rule-inverse bg-inverse md:block"
       >
-        {/* Tres columnas para que las redes queden centradas de verdad,
-            mida lo que mida el contador de la izquierda. */}
-        <div className="container-placa flex h-9 items-center justify-between gap-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+        <div className="container-placa flex h-9 items-center justify-between gap-6">
           {/* Caja baja: dos frases largas en versalitas espaciadas, y lo
               primero que ve cualquiera al entrar es un cartel. */}
           <ContadorFundacion />
-          <RedesSociales
-            tamano={15}
-            className="hidden h-full gap-1 lg:flex"
-            enlaceClassName="h-full w-8 text-ink-inv-2 hover:text-white"
-          />
-          <div className="flex h-full items-center justify-end gap-6">
+          <div className="flex h-full items-center gap-6">
             <DesplegableDelegaciones />
             <span aria-hidden="true" className="h-3.5 w-px bg-rule-inverse" />
             <Link

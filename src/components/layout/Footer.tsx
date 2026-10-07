@@ -13,6 +13,7 @@ import {
 import { FAMILIAS } from "@/lib/catalog/familias";
 import { MODULOS } from "@/lib/modulos";
 import { Hexagono } from "@/components/marca/Hexagono";
+import { RedesSociales } from "@/components/marca/RedesSociales";
 
 /**
  * El pie.
@@ -89,6 +90,11 @@ export function Footer() {
               <Mail size={15} strokeWidth={1.75} aria-hidden="true" />
               {EMAIL_PRINCIPAL}
             </a>
+            <RedesSociales
+              tamano={18}
+              className="mt-3 gap-2"
+              enlaceClassName="size-11 rounded-full border border-rule-inverse text-ink-inv-2 hover:border-accent-dark hover:text-white"
+            />
           </div>
 
           {/* ---------- Familias ---------- */}

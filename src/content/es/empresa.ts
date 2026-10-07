@@ -464,6 +464,10 @@ export const DATOS_PENDIENTES = [
     nota: "Hay 27 fotos oficiales de JOFEMESA de tijeras eléctricas, diésel e híbridas. El resto del catálogo sale con dibujo técnico hasta que lleguen las fotografías de esas familias.",
   },
   {
+    campo: "Logos de AENOR e IPAF",
+    nota: "Pedidos el 07/10/2026. No están en el material entregado y en jofemesa.com solo hay un «IPAF Afiliado» en JPG de 150 px, que se vería pixelado y no dice «centro de formación». Hace falta: las marcas de certificación AENOR de UNE 58923 y UNE 58451 y el logo de centro de formación IPAF, en SVG o PNG grande, tal como se los dio cada certificadora. Mientras, la web los nombra en texto.",
+  },
+  {
     campo: "Dos brazos eléctricos renombrados",
     nota: "Con el material del 07/10/2026, el catálogo en PDF decía «Haulotte HA-15TP» y «JLG E600JP», pero la foto y la ficha del cliente son de la HA15 IP y la E600SJP. La web usa ya esos nombres (con sus medidas del catálogo). Ojo: la ficha de JLG que mandaron la titula «EC600SJP»; en la web va «E600SJP», como en su foto. Confirmar cuál es.",
   },
