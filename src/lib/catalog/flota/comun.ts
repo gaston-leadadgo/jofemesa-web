@@ -76,13 +76,14 @@ export function num(n: number, decimales = 0): string {
    ------------------------------------------------------------ */
 
 /**
- * Las 34 fotos oficiales de JOFEMESA que entregó el cliente. Son sus
+ * Las fotos oficiales de JOFEMESA que entregó el cliente. Son sus
  * propias creatividades de producto —máquinas de su flota, con su
  * rotulación y su marca de agua—, así que no hay ningún problema de
  * derechos y no hace falta ninguna etiqueta de «foto de referencia».
  *
  * Van COMPLETAS en `completa/`: la creatividad cuadrada original, a su
- * tamaño (1254×1254), solo convertida a WebP. Nada de recortes ni
+ * tamaño (1254×1254 casi todas; las que no, en `DIMENSIONES_FOTO`), solo
+ * convertida a WebP. Nada de recortes ni
  * reencuadres: cada pieza lleva el logotipo de JOFEMESA, la marca y el
  * modelo del fabricante y los grafismos de la casa, y la versión 4:3 que
  * había antes se comía todo eso —y en algunas, parte de la máquina—.
@@ -131,10 +132,44 @@ export const CON_FOTO = new Set([
   "jlg-1230-es",
   "jlg-nano-sp-plus",
   "jlg-toucan-12e",
+  // Brazos articulados eléctricos, híbridos y diésel, entregados el 07/10/2026.
+  "genie-z-30-20-n",
+  "genie-z-34-22-n",
+  "genie-z-40-23-n-rj",
+  "genie-z-45-25j-dc",
+  "haulotte-ha15-ip",
+  "jlg-e600sjp",
+  "jlg-ec520aj",
+  "manitou-170-aetj-l",
+  "snorkel-a38e",
+  "genie-z-45-fe",
+  "genie-z-60-37-fe",
+  "haulotte-ha20-le-pro",
+  "genie-z-34-22-rt",
+  "jlg-340-aj",
+  "jlg-450aj-sii",
+  "genie-z-45-25j-rt",
+  "haulotte-ha16-rtj-pro",
+  "jlg-520-aj",
+  "genie-z-51-30j-rt",
+  "jlg-600-aj",
+  "haulotte-ha20-rtj-pro",
+  "genie-z-62-40",
+  "haulotte-ha26-rtj-pro",
+  "genie-z-80-60",
+  "jlg-800-aj",
+  "haulotte-ha32-rtj-pro",
+  "jlg-1250-ajp",
+  "genie-zx-135-70",
 ]);
 
+/** Fotos que no son la creatividad cuadrada de 1254×1254. */
+export const DIMENSIONES_FOTO: Record<string, readonly [number, number]> = {
+  "genie-z-34-22-rt": [1024, 1536],
+};
+
 /**
- * Las 34 fichas técnicas de fabricante que entregó el cliente, con su
+ * Las fichas técnicas de fabricante que entregó el cliente, con su
  * tamaño real en bytes para que el enlace de descarga lo anuncie.
  * Si un modelo no está aquí, el botón de ficha NO se dibuja: nunca una
  * descarga rota.
@@ -155,7 +190,25 @@ export const FICHAS: Record<string, number> = {
   "genie-gs-4390": 713898,
   "genie-gs-4655": 932956,
   "genie-gs-5390": 713898,
+  "genie-z-30-20-n": 890402,
+  "genie-z-34-22-n": 633435,
+  "genie-z-34-22-rt": 669162,
+  "genie-z-40-23-n-rj": 851430,
+  "genie-z-45-25j-dc": 806096,
+  "genie-z-45-25j-rt": 1040393,
+  "genie-z-45-fe": 1460520,
+  "genie-z-51-30j-rt": 994306,
+  "genie-z-60-37-fe": 1797475,
+  "genie-z-62-40": 1057370,
+  "genie-z-80-60": 788880,
+  "genie-zx-135-70": 1255567,
   "haulotte-compact-14": 494026,
+  "haulotte-ha15-ip": 1240086,
+  "haulotte-ha16-rtj-pro": 2150016,
+  "haulotte-ha20-le-pro": 5596894,
+  "haulotte-ha20-rtj-pro": 3515911,
+  "haulotte-ha26-rtj-pro": 2045467,
+  "haulotte-ha32-rtj-pro": 1328156,
   "haulotte-hs15-e-pro": 2497665,
   "haulotte-hs18-e-pro": 2497665,
   "haulotte-star-10": 1645447,
@@ -165,12 +218,22 @@ export const FICHAS: Record<string, number> = {
   "jcb-s1930e": 96393,
   "jcb-s4550e": 96393,
   "jlg-1230-es": 299477,
+  "jlg-1250-ajp": 946700,
   "jlg-2032es": 157454,
   "jlg-2632es": 1476489,
+  "jlg-340-aj": 1244828,
   "jlg-4045r": 173687,
+  "jlg-450aj-sii": 4364114,
+  "jlg-520-aj": 409339,
+  "jlg-600-aj": 1012809,
+  "jlg-800-aj": 999196,
+  "jlg-e600sjp": 1323340,
+  "jlg-ec520aj": 2131548,
   "jlg-es4046": 2144294,
   "jlg-nano-sp-plus": 1099911,
   "jlg-toucan-12e": 824810,
+  "manitou-170-aetj-l": 1753845,
+  "snorkel-a38e": 1071165,
   "snorkel-s3370-rt": 1611150,
   "snorkel-s3970-rt": 1611150,
   "snorkel-s4740e": 155309,
@@ -303,8 +366,8 @@ export function construir(
             {
               src: `/img/maquinas/oficial/completa/${slug}.webp`,
               alt: `${f.marca} ${f.modelo} de la flota de JOFEMESA`,
-              ancho: 1254,
-              alto: 1254,
+              ancho: DIMENSIONES_FOTO[slug]?.[0] ?? 1254,
+              alto: DIMENSIONES_FOTO[slug]?.[1] ?? 1254,
               origen: "jofemesa.com" as const,
             },
           ]

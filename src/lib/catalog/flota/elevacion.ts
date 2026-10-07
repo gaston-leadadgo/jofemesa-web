@@ -301,12 +301,12 @@ const brazosElectricos: Fila[] = [
   { marca: "Genie", modelo: "Z-30/20 N", h: 11, ancho: 1170, hb: 2000, peso: 6450, carga: 227 },
   { marca: "Genie", modelo: "Z-34/22 N", h: 12, ancho: 1420, hb: 2000, peso: 5171, carga: 227 },
   { marca: "Snorkel", modelo: "A38E", h: 13, ancho: 1490, hb: 2000, peso: 3795, carga: 215 },
-  { marca: "Haulotte", modelo: "HA-15TP", h: 15, ancho: 1500, hb: 2000, peso: 7730, carga: 230 },
+  { marca: "Haulotte", modelo: "HA15 IP", h: 15, ancho: 1500, hb: 2000, peso: 7730, carga: 230 },
   { marca: "Genie", modelo: "Z-40/23 N RJ", h: 15, ancho: 1420, hb: 1980, peso: 6940, carga: 227 },
   { marca: "Genie", modelo: "Z-45/25J DC", h: 16, ancho: 1830, hb: 2000, peso: 7190, carga: 227 },
   { marca: "Manitou", modelo: "170 AETJ-L", h: 17, ancho: 1750, hb: 1970, peso: 7435, carga: 227 },
   { marca: "JLG", modelo: "EC520AJ", h: 18, ancho: 2260, hb: 2270, peso: 7985, carga: 250 },
-  { marca: "JLG", modelo: "E600JP", h: 20, ancho: 2420, hb: 2540, peso: 7815, carga: 230 },
+  { marca: "JLG", modelo: "E600SJP", h: 20, ancho: 2420, hb: 2540, peso: 7815, carga: 230 },
 ];
 
 const tijerasHibridas: Fila[] = [

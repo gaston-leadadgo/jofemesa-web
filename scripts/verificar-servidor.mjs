@@ -312,6 +312,12 @@ p = await html("/delegaciones");
 t("Castellón ya no figura", !p.cuerpo.includes("Castellón") && !p.cuerpo.includes("Almassora"));
 t("la sede de Formación figura como sede", p.cuerpo.includes('id="formacion"') && p.cuerpo.includes("formacion@jofemesa.com"));
 
+for (const slug of ["genie-z-34-22-rt", "haulotte-ha15-ip", "jlg-e600sjp", "genie-z-45-fe", "jlg-1250-ajp"]) {
+  const m = await html(`/maquina/${slug}`);
+  t(`los brazos articulados ya tienen foto y ficha: ${slug}`, m.estado === 200 && m.cuerpo.includes(`oficial/completa/${slug}.webp`) && m.cuerpo.includes(`/fichas/${slug}.pdf`));
+}
+t("la ficha de la HA15 IP se descarga", (await fetch(BASE + "/fichas/haulotte-ha15-ip.pdf")).status === 200);
+t("los nombres viejos ya no existen", (await html("/maquina/haulotte-ha-15tp")).estado === 404 && (await html("/maquina/jlg-e600jp")).estado === 404);
 p = await html("/maquina/jlg-nano-sp-plus");
 t("las columnas verticales ya tienen foto completa", p.cuerpo.includes("oficial/completa/jlg-nano-sp-plus.webp"));
 t("no queda ninguna foto recortada", !p.cuerpo.includes("oficial/tarjeta/") && !p.cuerpo.includes("oficial/recorte/"));

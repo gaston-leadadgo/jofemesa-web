@@ -464,6 +464,10 @@ export const DATOS_PENDIENTES = [
     nota: "Hay 27 fotos oficiales de JOFEMESA de tijeras eléctricas, diésel e híbridas. El resto del catálogo sale con dibujo técnico hasta que lleguen las fotografías de esas familias.",
   },
   {
+    campo: "Dos brazos eléctricos renombrados",
+    nota: "Con el material del 07/10/2026, el catálogo en PDF decía «Haulotte HA-15TP» y «JLG E600JP», pero la foto y la ficha del cliente son de la HA15 IP y la E600SJP. La web usa ya esos nombres (con sus medidas del catálogo). Ojo: la ficha de JLG que mandaron la titula «EC600SJP»; en la web va «E600SJP», como en su foto. Confirmar cuál es.",
+  },
+  {
     campo: "Fichas de los cursos: pregunta de los EPI",
     nota: "El documento de cursos (02/10/2026) repite en los doce cursos «¿Qué EPI necesito para realizar el curso o trabajar con una Plataforma Elevadora?», también en puente grúa o carretillas. Se publica la coletilla solo en los dos cursos de plataformas (PEMP e IPAF); en el resto la pregunta termina en «realizar el curso». Las respuestas van tal cual.",
   },

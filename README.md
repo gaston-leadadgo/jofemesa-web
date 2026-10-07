@@ -17,6 +17,16 @@ PUERTO=3000 node scripts/verificar-servidor.mjs
 
 ---
 
+## Entrega del 07/10/2026
+
+- **Fotos y fichas de los 28 brazos articulados** (`Material/Material 7-10`): 9 eléctricos,
+  3 híbridos y 16 diésel. Fotos enteras en `public/img/maquinas/oficial/completa/`, fichas en
+  `public/fichas/`. Quedan 62 máquinas con foto y ficha, 83 con dibujo técnico.
+- La foto de la Genie Z-34/22 RT es vertical (1024×1536): se publica entera; sus medidas van en
+  `DIMENSIONES_FOTO`.
+- «Haulotte HA-15TP» pasa a **HA15 IP** y «JLG E600JP» a **E600SJP**, como en la foto y la
+  ficha del cliente (anotado en `/admin/datos-pendientes`).
+
 ## Entrega del 02/10/2026
 
 - **Información de cada curso.** En el calendario, «Consultar plazas» pasa a ser
