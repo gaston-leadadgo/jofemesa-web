@@ -1,0 +1,192 @@
+[
+ {
+  "id": "madrid",
+  "nombre": "Madrid",
+  "provincia": "Madrid",
+  "pais": "España",
+  "direccion": "A-2 dirección Barcelona, km 15,300 (vía de servicio)",
+  "cp": "28022",
+  "localidad": "Madrid",
+  "telefono": "91 361 31 31",
+  "tel": "+34913613131",
+  "email": "jofemesamadrid@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Sede central de alquiler",
+   "Parque de elevación y maquinaria de obra",
+   "Taller y asistencia técnica móvil"
+  ],
+  "mapa": {
+   "x": 46,
+   "y": 43.3
+  },
+  "central": true
+ },
+ {
+  "id": "asturias",
+  "nombre": "Asturias",
+  "provincia": "Asturias",
+  "pais": "España",
+  "direccion": "Parque Empresarial Principado de Asturias, Avda. del Aluminio, 20",
+  "cp": "33490",
+  "localidad": "Avilés",
+  "telefono": "985 985 212",
+  "tel": "+34985985212",
+  "email": "jofemesa@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Domicilio social y origen de la empresa",
+   "Venta y recambios de manutención",
+   "Distribución Jungheinrich"
+  ],
+  "mapa": {
+   "x": 28.1,
+   "y": 5.5
+  }
+ },
+ {
+  "id": "valladolid",
+  "nombre": "Valladolid",
+  "provincia": "Valladolid",
+  "pais": "España",
+  "direccion": "Polígono Industrial San Cristóbal, C/ Pirita, 2",
+  "cp": "47012",
+  "localidad": "Valladolid",
+  "telefono": "983 525 363",
+  "tel": "+34983525363",
+  "email": "valladolid@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Plataformas elevadoras",
+   "Carretillas industriales"
+  ],
+  "mapa": {
+   "x": 37.4,
+   "y": 28.9
+  }
+ },
+ {
+  "id": "valencia",
+  "nombre": "Valencia",
+  "provincia": "Valencia",
+  "pais": "España",
+  "direccion": "Polígono Industrial Parc Sagunt, C/ Braç de la Creu, s/n",
+  "cp": "46520",
+  "localidad": "Puerto de Sagunto",
+  "telefono": "962 680 581",
+  "tel": "+34962680581",
+  "email": "valencia@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Elevación y maquinaria de obra",
+   "Servicio de estiba en puerto"
+  ],
+  "mapa": {
+   "x": 71.5,
+   "y": 53.2
+  }
+ },
+ {
+  "id": "alicante",
+  "nombre": "Alicante",
+  "provincia": "Alicante",
+  "pais": "España",
+  "direccion": "Carretera d'Ocaña, 64D",
+  "cp": "03006",
+  "localidad": "Alicante",
+  "telefono": "965 74 21 75",
+  "tel": "+34965742175",
+  "email": "alquileresalicante@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Elevación para edificación e industria"
+  ],
+  "mapa": {
+   "x": 69.6,
+   "y": 68.9
+  }
+ },
+ {
+  "id": "sevilla",
+  "nombre": "Sevilla",
+  "provincia": "Sevilla",
+  "pais": "España",
+  "direccion": "Polígono Industrial Polysol, C/ Polysol Tres, 6",
+  "cp": "41500",
+  "localidad": "Alcalá de Guadaíra",
+  "telefono": "955 77 63 63",
+  "tel": "+34955776363",
+  "email": "jofemesasevilla@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Elevación y movimiento de tierras",
+   "Taller y recambios"
+  ],
+  "mapa": {
+   "x": 28.7,
+   "y": 81.2
+  }
+ },
+ {
+  "id": "malaga",
+  "nombre": "Málaga",
+  "provincia": "Málaga",
+  "pais": "España",
+  "direccion": "Polígono Industrial Guadalhorce, C/ Hermanas Bronte, 70",
+  "cp": "29004",
+  "localidad": "Málaga",
+  "telefono": "951 173 730",
+  "tel": "+34951173730",
+  "email": "alquileresamalaga@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Elevación para infraestructura y edificación"
+  ],
+  "mapa": {
+   "x": 39,
+   "y": 88.8
+  }
+ },
+ {
+  "id": "oporto",
+  "nombre": "Oporto",
+  "provincia": "Oporto",
+  "pais": "Portugal",
+  "direccion": "Rua Central do Olival, n.º 7494",
+  "cp": "4415-957",
+  "localidad": "Vila Nova de Gaia",
+  "telefono": "+351 220 946 176",
+  "tel": "+351220946176",
+  "email": "logistica.porto@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Plataformas elevadoras",
+   "Logística del norte"
+  ],
+  "mapa": {
+   "x": 7.6,
+   "y": 35.1
+  }
+ },
+ {
+  "id": "lisboa",
+  "nombre": "Lisboa",
+  "provincia": "Setúbal",
+  "pais": "Portugal",
+  "direccion": "Quinta da Marquesa I, junto a Autoeuropa",
+  "cp": "2954-024",
+  "localidad": "Quinta do Anjo, Palmela",
+  "telefono": "+351 211 333 790",
+  "tel": "+351211333790",
+  "email": "jofemesa.portugal@jofemesa.com",
+  "horario": null,
+  "servicios": [
+   "Alquiler de equipos",
+   "Asistencia técnica"
+  ],
+  "mapa": {
+   "x": 5,
+   "y": 66.1
+  }
+ }
+]

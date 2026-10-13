@@ -1,0 +1,1049 @@
+/* ==========================================================================
+   JOFEMESA · 20 GLOBAL
+   Cabecera, franja superior, menú (Mega Menu de Elementor Pro), menú móvil,
+   pie y barra móvil. Traducción de src/components/layout/*.tsx y
+   src/components/marca/{ContadorFundacion,RedesSociales}.tsx.
+   Estructura en Elementor: estructura/01-cabecera.md, 02-pie.md, 04-globales.md.
+   Breakpoints del original: md 768 · lg 1024 · xl 1440 (min-width).
+   ========================================================================== */
+
+/* ---------- Animaciones y contador (fuera del ámbito: no se prefijan) ---------- */
+
+@property --jm-n {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@keyframes jm-contar-cifra {
+  from { --jm-n: 0; }
+}
+@keyframes jm-panel-entra {
+  from { opacity: 0; transform: translate3d(0, 12px, 0) scale(0.99); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes jm-ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+/* ==========================================================================
+   1 · Plantilla de cabecera: pegajosa entera
+   La franja (37 px con su filete) se va con el scroll y la cabecera se
+   queda: el envoltorio de Theme Builder se pega con `top` negativo. Así
+   funciona aunque Elementor meta la plantilla en su propio <header>.
+   ========================================================================== */
+
+body.jm .elementor-location-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+@media (min-width: 768px) {
+  body.jm .elementor-location-header { top: calc(-2.25rem - 1px); }
+}
+/* Barra de administración de WordPress (solo con sesión iniciada). */
+@media (min-width: 600px) and (max-width: 767px) {
+  body.jm.admin-bar .elementor-location-header { top: 46px; }
+}
+@media (min-width: 768px) and (max-width: 782px) {
+  body.jm.admin-bar .elementor-location-header { top: calc(46px - 2.25rem - 1px); }
+}
+@media (min-width: 783px) {
+  body.jm.admin-bar .elementor-location-header { top: calc(32px - 2.25rem - 1px); }
+}
+
+/* Botones propios: Hello Elementor pinta borde, fondo y color rosa en
+   button y en sus estados. Se anulan los cuatro. */
+body.jm .jm-desplegable__boton,
+body.jm .jm-desplegable__boton:hover,
+body.jm .jm-desplegable__boton:focus,
+body.jm .jm-desplegable__boton:active,
+body.jm .jm-boton-menu,
+body.jm .jm-boton-menu:hover,
+body.jm .jm-boton-menu:focus,
+body.jm .jm-boton-menu:active {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Paneles desplegables: entrada común (panel-entra .18s). */
+body.jm .jm-desplegable__panel[hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  body.jm .jm-desplegable__panel:not([hidden]) { animation: jm-panel-entra 0.18s var(--jm-ease-entrance); }
+}
+body.jm .jm-desplegable__chevron { transition: transform 200ms var(--jm-ease-ui); flex: none; }
+body.jm .jm-desplegable.jm-abierto .jm-desplegable__chevron { transform: rotate(180deg); }
+
+/* Insignias «Central» / «Sede» */
+body.jm .jm-insignia {
+  margin-left: 0.5rem;
+  display: inline-block;
+  border-radius: var(--jm-radius-full);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  background: var(--jm-accent-tint);
+  color: var(--jm-accent);
+}
+body.jm .jm-insignia--sede { background: var(--jm-sunken); color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   2 · Franja superior (oscura, solo desde md)
+   ========================================================================== */
+
+body.jm .jm-franja {
+  position: relative;
+  z-index: 50;
+  display: none;
+  border-bottom: 1px solid var(--jm-rule-inverse);
+  background-color: var(--jm-inverse);
+  color: var(--jm-ink-inv-2);
+}
+@media (min-width: 768px) {
+  body.jm .jm-franja { display: flex; }
+}
+body.jm .jm-franja :focus-visible { outline-color: var(--jm-accent-dark); }
+body.jm .jm-franja .jm-desplegable__panel :focus-visible { outline-color: var(--jm-accent); }
+
+body.jm .jm-franja__fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+body.jm .jm-franja__derecha {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: stretch;
+  height: 100%;
+  width: auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+body.jm .jm-franja__derecha > .elementor-element { height: 100%; display: flex; align-items: center; width: auto; }
+
+/* «¿Qué máquina necesito?» (widget Título con enlace) y su separador. */
+body.jm .jm-franja__enlace {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 1.5rem;
+  color: var(--jm-ink-inv-2);
+}
+body.jm .jm-franja__enlace::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0.875rem;
+  transform: translateY(-50%);
+  background: var(--jm-rule-inverse);
+}
+body.jm .jm-franja__enlace a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: var(--jm-ink-inv-2);
+  text-decoration: underline;
+  text-decoration-color: var(--jm-rule-inverse);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 4px;
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-franja__enlace a:hover { color: var(--jm-accent-dark); }
+
+/* ---------- Contador de fundación ---------- */
+body.jm .jm-contador {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--jm-ink-inv-2);
+}
+body.jm .jm-contador__pulso { position: relative; display: flex; width: 0.375rem; height: 0.375rem; flex: none; }
+body.jm .jm-contador__onda,
+body.jm .jm-contador__punto {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--jm-radius-full);
+  background: var(--jm-accent-dark);
+}
+body.jm .jm-contador__onda { position: absolute; inset: 0; opacity: 0.7; }
+body.jm .jm-contador__punto { position: relative; }
+@media (prefers-reduced-motion: no-preference) {
+  body.jm .jm-contador__onda { animation: jm-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+}
+body.jm .jm-contador__cifras { white-space: nowrap; }
+body.jm .jm-contador__sep { color: var(--jm-ink-inv-3); }
+body.jm .jm-contador__desde { display: none; color: var(--jm-ink-inv-3); }
+@media (min-width: 1024px) {
+  body.jm .jm-contador__desde { display: inline; }
+}
+body.jm .jm-cifra {
+  counter-reset: jm-n var(--jm-n);
+  color: var(--jm-ink-inv);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  animation: jm-contar-cifra 1.6s var(--jm-ease-entrance) both;
+  animation-delay: var(--jm-retardo-cifra, 0ms);
+}
+body.jm .jm-cifra::after { content: counter(jm-n); }
+@media (prefers-reduced-motion: reduce) {
+  body.jm .jm-cifra { animation: none; }
+}
+
+/* ---------- Desplegable de delegaciones ---------- */
+body.jm .jm-desplegable--delegaciones { position: relative; height: 100%; }
+body.jm .jm-delegaciones__boton,
+body.jm .jm-delegaciones__boton:focus {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--jm-ink-inv-2);
+  font-family: var(--jm-font-sans);
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-delegaciones__boton:hover { color: var(--jm-accent-dark); }
+body.jm .jm-desplegable--delegaciones.jm-abierto .jm-delegaciones__boton { color: var(--jm-ink-inv); }
+body.jm .jm-delegaciones__pin { color: var(--jm-accent-dark); flex: none; }
+
+body.jm .jm-panel-delegaciones {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  margin-top: 0.375rem;
+  width: min(34rem, calc(100vw - 2rem));
+  transform-origin: top right;
+  overflow: hidden;
+  border: 1px solid var(--jm-rule);
+  border-radius: var(--jm-radius-2xl);
+  background: var(--jm-surface);
+  color: var(--jm-ink);
+  box-shadow: var(--jm-shadow-panel);
+  text-transform: none;
+  letter-spacing: 0;
+}
+body.jm .jm-panel-delegaciones__cab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--jm-rule);
+  padding: 0.75rem 1.25rem;
+}
+body.jm .jm-panel-delegaciones__titulo { font-size: 0.875rem; font-weight: 600; line-height: 1.43; color: var(--jm-ink); }
+body.jm .jm-panel-delegaciones__mapa {
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--jm-accent);
+}
+body.jm .jm-panel-delegaciones__mapa:hover { text-decoration: underline; }
+body.jm .jm-panel-delegaciones__cuerpo {
+  max-height: min(78vh, 40rem);
+  overflow-y: auto;
+  padding: 1rem 1.25rem;
+}
+body.jm .jm-panel-delegaciones__grupo--sep {
+  margin-top: 1rem;
+  border-top: 1px solid var(--jm-rule);
+  padding-top: 1rem;
+}
+body.jm .jm-panel-delegaciones__pais { color: var(--jm-ink-3); }
+body.jm .jm-panel-delegaciones__lista {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.25rem 1.5rem;
+  list-style: none;
+}
+@media (min-width: 768px) {
+  body.jm .jm-panel-delegaciones__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+body.jm .jm-panel-delegaciones__item { display: flex; align-items: flex-start; gap: 0.625rem; padding: 0.25rem 0; }
+body.jm .jm-panel-delegaciones__pin { margin-top: 0.125rem; flex: none; color: var(--jm-accent); }
+body.jm .jm-panel-delegaciones__datos { min-width: 0; }
+body.jm .jm-panel-delegaciones__nombre {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.43;
+  color: var(--jm-ink);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-panel-delegaciones__nombre:hover { color: var(--jm-accent); }
+body.jm .jm-panel-delegaciones__localidad {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.33;
+  color: var(--jm-ink-3);
+}
+body.jm .jm-panel-delegaciones__tel {
+  margin-top: 0.125rem;
+  display: flex;
+  min-height: 1.5rem;
+  width: fit-content;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: var(--jm-ink-2);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-panel-delegaciones__tel:hover { color: var(--jm-accent); }
+
+/* ==========================================================================
+   3 · Cabecera
+   ========================================================================== */
+
+body.jm .jm-cabecera {
+  position: relative;
+  z-index: 40;
+  height: 3.75rem;
+  border-bottom: 1px solid var(--jm-rule);
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: height 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cabecera.jm-compacta { height: 3.5rem; }
+@media (min-width: 768px) {
+  body.jm .jm-cabecera { height: 4.5rem; }
+  body.jm .jm-cabecera.jm-compacta { height: 3.75rem; }
+}
+
+body.jm .jm-cabecera__fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (min-width: 1024px) {
+  body.jm .jm-cabecera__fila { gap: 1.5rem; }
+}
+
+/* Logotipo (widget Imagen con enlace a la portada) */
+body.jm .jm-cabecera__logo { flex: none; width: auto; }
+body.jm .jm-cabecera__logo a { display: flex; min-height: 2.75rem; align-items: center; }
+body.jm .jm-cabecera__logo img { display: block; height: 1.75rem; width: auto; max-width: none; }
+@media (min-width: 768px) {
+  body.jm .jm-cabecera__logo img { height: 2.25rem; }
+}
+
+/* Acciones de la derecha */
+body.jm .jm-cabecera__acciones {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto;
+}
+@media (min-width: 768px) {
+  body.jm .jm-cabecera__acciones { gap: 0.75rem; }
+}
+
+/* En móvil el panel de teléfonos se ancla a la cabecera, no al botón:
+   los contenedores intermedios dejan de ser posicionados. */
+@media (max-width: 767px) {
+  body.jm .jm-cabecera__fila,
+  body.jm .jm-cabecera__acciones,
+  body.jm .jm-cabecera__acciones > .elementor-element { position: static; }
+}
+
+/* «Consultar disponibilidad»: jm-btn jm-btn--acento + esta clase. */
+body.jm .elementor-widget-button.jm-btn.jm-cabecera__cta { display: none; }
+@media (min-width: 768px) {
+  body.jm .elementor-widget-button.jm-btn.jm-cabecera__cta { display: contents; }
+  body.jm .jm-cabecera__cta .elementor-button { min-height: 2.75rem; height: 2.75rem; padding: 0 1.25rem; font-size: 1rem; }
+}
+
+/* Hamburguesa */
+body.jm .jm-boton-menu,
+body.jm .jm-boton-menu:hover,
+body.jm .jm-boton-menu:focus {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--jm-rule-control);
+  color: var(--jm-ink);
+}
+body.jm .jm-boton-menu__cerrar { display: none; }
+body.jm .jm-boton-menu[aria-expanded="true"] .jm-boton-menu__abrir { display: none; }
+body.jm .jm-boton-menu[aria-expanded="true"] .jm-boton-menu__cerrar { display: block; }
+@media (min-width: 1024px) {
+  body.jm .jm-boton-menu,
+  body.jm .jm-boton-menu:hover,
+  body.jm .jm-boton-menu:focus { display: none; }
+  body.jm .jm-cabecera__acciones .elementor-widget-shortcode.jm-cabecera__hamburguesa { display: none; }
+}
+
+/* ---------- Desplegable de teléfonos ---------- */
+@media (min-width: 768px) {
+  body.jm .jm-desplegable--telefonos { position: relative; }
+}
+body.jm .jm-telefonos__boton,
+body.jm .jm-telefonos__boton:hover,
+body.jm .jm-telefonos__boton:focus {
+  display: flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--jm-rule-control);
+  color: var(--jm-ink);
+  transition: color 200ms var(--jm-ease-ui), background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-telefonos__boton:hover { background-color: var(--jm-sunken); }
+body.jm .jm-desplegable--telefonos.jm-abierto .jm-telefonos__boton { color: var(--jm-accent); }
+body.jm .jm-telefonos__numero,
+body.jm .jm-telefonos__chevron { display: none; }
+@media (min-width: 1440px) {
+  body.jm .jm-telefonos__boton,
+  body.jm .jm-telefonos__boton:hover,
+  body.jm .jm-telefonos__boton:focus { width: auto; border: 0; padding: 0; background: transparent; }
+  body.jm .jm-telefonos__boton:hover { color: var(--jm-accent); }
+  body.jm .jm-telefonos__numero { display: inline; }
+  body.jm .jm-telefonos__chevron { display: block; }
+}
+
+body.jm .jm-panel-telefonos {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  right: 1rem;
+  z-index: 50;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--jm-rule);
+  border-radius: var(--jm-radius-2xl);
+  background: var(--jm-surface);
+  color: var(--jm-ink);
+  box-shadow: var(--jm-shadow-panel);
+}
+@media (min-width: 768px) {
+  body.jm .jm-panel-telefonos { left: auto; right: 0; width: 20rem; }
+}
+body.jm .jm-panel-telefonos__titulo {
+  border-bottom: 1px solid var(--jm-rule);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.43;
+  color: var(--jm-ink);
+}
+body.jm .jm-panel-telefonos__cuerpo { max-height: min(78vh, 42rem); overflow-y: auto; padding: 0.375rem 0; }
+body.jm .jm-panel-telefonos__cuerpo ul { list-style: none; }
+body.jm .jm-panel-telefonos__otros {
+  margin-top: 0.375rem;
+  border-top: 1px solid var(--jm-rule);
+  padding: 0.75rem 1rem 0.25rem;
+  color: var(--jm-ink-3);
+}
+body.jm .jm-telefonos__fila {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-telefonos__fila:hover { background-color: var(--jm-sunken); }
+body.jm .jm-telefonos__quien {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: var(--jm-ink);
+}
+body.jm .jm-telefonos__nombre { font-weight: 600; }
+body.jm .jm-telefonos__fila:hover .jm-telefonos__nombre,
+body.jm .jm-telefonos__fila:hover .jm-telefonos__numero-fila { color: var(--jm-accent); }
+body.jm .jm-telefonos__detalle { margin-left: 0.375rem; font-size: 0.75rem; color: var(--jm-ink-3); }
+body.jm .jm-telefonos__numero-fila { flex: none; font-size: 0.875rem; white-space: nowrap; color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   4 · Menú principal (widget Menú / Mega Menu de Elementor Pro)
+   Clase en el widget: jm-menu. Visible desde lg (1024).
+   ========================================================================== */
+
+body.jm .jm-menu { display: none; }
+@media (min-width: 1024px) {
+  body.jm .jm-menu { display: block; width: auto; flex: 0 1 auto; }
+}
+body.jm .jm-menu .e-n-menu-toggle { display: none; }
+body.jm .jm-menu .e-n-menu-wrapper { display: block; background: none; }
+body.jm .jm-menu .e-n-menu-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 1440px) {
+  body.jm .jm-menu .e-n-menu-heading { gap: 1.75rem; }
+}
+body.jm .jm-menu .e-n-menu-item { margin: 0; padding: 0; }
+body.jm .jm-menu .e-n-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+body.jm .jm-menu .e-n-menu-title-container {
+  position: relative;
+  padding: 0.5rem 0;
+  font-family: var(--jm-font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--jm-ink-2);
+  text-decoration: none;
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-menu .e-n-menu-title-text { font: inherit; color: inherit; }
+body.jm .jm-menu .e-n-menu-title-container:hover { color: var(--jm-ink); }
+body.jm .jm-menu .jm-activo .e-n-menu-title-container { color: var(--jm-ink); }
+body.jm .jm-menu .jm-activo .e-n-menu-title-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.125rem;
+  width: 100%;
+  height: 2px;
+  background: var(--jm-accent);
+}
+/* Chevron de «Alquiler»: botón propio del widget (aria-expanded). */
+body.jm .jm-menu .e-n-menu-dropdown-icon,
+body.jm .jm-menu .e-n-menu-dropdown-icon:hover,
+body.jm .jm-menu .e-n-menu-dropdown-icon:focus {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--jm-ink-3);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-menu .e-n-menu-dropdown-icon:hover { color: var(--jm-ink); }
+body.jm .jm-menu .e-n-menu-dropdown-icon[aria-expanded="true"] { color: var(--jm-accent); }
+body.jm .jm-menu .e-n-menu-dropdown-icon svg { width: 15px; height: 15px; fill: currentColor; transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-menu .e-n-menu-dropdown-icon i { font-size: 13px; transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-menu .e-n-menu-dropdown-icon[aria-expanded="true"] svg,
+body.jm .jm-menu .e-n-menu-dropdown-icon[aria-expanded="true"] i { transform: rotate(180deg); }
+
+/* El hueco del desplegable no pinta nada: lo pinta el panel. */
+body.jm .jm-menu .e-n-menu-content { background: none; border: 0; box-shadow: none; padding: 0; z-index: 50; }
+
+/* Panel de Alquiler (contenedor dentro del desplegable, clase jm-menu__panel). */
+body.jm .jm-menu__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: min(42rem, calc(100vw - 4rem));
+  max-width: none;
+  margin-top: 0;
+  border: 1px solid var(--jm-rule);
+  background-color: var(--jm-surface);
+  box-shadow: var(--jm-shadow-panel);
+  transform-origin: top left;
+}
+@media (prefers-reduced-motion: no-preference) {
+  body.jm .jm-menu__panel { animation: jm-panel-entra 0.18s var(--jm-ease-entrance); }
+}
+body.jm .jm-menu__panel-cab {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--jm-rule);
+  padding: 0.625rem 1rem;
+}
+body.jm .jm-menu__panel-titulo { color: var(--jm-ink-3); width: auto; }
+
+/* Enlace con flecha (widget Botón con clase jm-enlace-flecha): «Catálogo completo». */
+body.jm .elementor-widget-button.jm-enlace-flecha { width: auto; }
+body.jm .jm-enlace-flecha .elementor-button-wrapper { display: contents; }
+body.jm .jm-enlace-flecha .elementor-button,
+body.jm .jm-enlace-flecha .elementor-button:hover,
+body.jm .jm-enlace-flecha .elementor-button:focus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-family: var(--jm-font-sans);
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--jm-accent);
+  fill: currentColor;
+}
+body.jm .jm-enlace-flecha .elementor-button:hover { text-decoration: underline; }
+body.jm .jm-enlace-flecha .elementor-button-content-wrapper { display: inline-flex; align-items: center; gap: 0.375rem; flex-direction: row; }
+body.jm .jm-enlace-flecha .elementor-button-icon { order: 2; margin: 0; display: inline-flex; }
+body.jm .jm-enlace-flecha .elementor-button-icon svg { width: 13px; height: 13px; fill: currentColor; }
+body.jm .jm-enlace-flecha .elementor-button-icon i { font-size: 11px; }
+
+/* [jm_menu_familias]: las seis familias con icono, en dos columnas. */
+body.jm .jm-familias-menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--jm-rule);
+  border-radius: var(--jm-radius-2xl);
+  background: var(--jm-rule);
+  list-style: none;
+}
+body.jm .jm-familias-menu__item { background: var(--jm-surface); }
+body.jm .jm-familias-menu__enlace {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-familias-menu__enlace:hover { background: var(--jm-sunken); }
+body.jm .jm-familias-menu__icono { display: block; flex: none; width: 2.25rem; height: 1.75rem; color: var(--jm-accent); }
+body.jm .jm-familias-menu__texto { min-width: 0; }
+body.jm .jm-familias-menu__nombre {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.43;
+  color: var(--jm-ink);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-familias-menu__enlace:hover .jm-familias-menu__nombre { color: var(--jm-accent); }
+body.jm .jm-familias-menu__detalle { display: block; color: var(--jm-ink-3); }
+
+/* ==========================================================================
+   5 · Menú móvil (contenedor con ID «menu-movil», clase jm-menu-movil)
+   ========================================================================== */
+
+body.jm .jm-menu-movil { display: none; }
+body.jm .jm-menu-movil.jm-abierto {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--jm-menu-movil-top, 3.75rem);
+  bottom: 0;
+  z-index: 50;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--jm-rule);
+  background-color: var(--jm-surface);
+}
+@media (min-width: 1024px) {
+  body.jm .jm-menu-movil.jm-abierto { display: none; }
+}
+/* En el editor de Elementor el panel se ve en su sitio para poder editarlo. */
+body.elementor-editor-active.jm .jm-menu-movil,
+body.jm.elementor-editor-active .jm-menu-movil {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  outline: 1px dashed var(--jm-rule-control);
+}
+
+body.jm .jm-menu-movil__cuerpo { display: flex; flex-direction: column; gap: 0; padding-bottom: 2rem; }
+
+body.jm .jm-nav-movil__lista,
+body.jm .jm-familias-movil { list-style: none; }
+body.jm .jm-nav-movil__enlace {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--jm-rule);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--jm-ink);
+}
+body.jm .jm-nav-movil__enlace.jm-activo { color: var(--jm-accent); }
+body.jm .jm-nav-movil__flecha { flex: none; color: var(--jm-rule-strong); }
+
+body.jm .jm-familias-movil { border-bottom: 1px solid var(--jm-rule); padding: 0.375rem 0; }
+body.jm .jm-familias-movil__enlace {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 0.25rem;
+  font-size: 1rem;
+  color: var(--jm-ink-2);
+}
+body.jm .jm-familias-movil__icono { display: block; flex: none; width: 2rem; height: 1.5rem; color: var(--jm-accent); }
+
+/* CTA del panel: jm-btn jm-btn--acento jm-btn--lg jm-btn--bloque + jm-menu-movil__cta */
+body.jm .jm-menu-movil__cta .elementor-button { margin-top: 1.5rem; }
+
+/* «Llamar a una delegación» ([jm_desplegable_telefonos variante="lista"]) */
+body.jm .jm-llamar {
+  margin-top: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--jm-rule-control);
+  border-radius: var(--jm-radius-3xl);
+}
+body.jm .jm-llamar__resumen {
+  display: flex;
+  height: 3.5rem;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--jm-ink);
+}
+body.jm .jm-llamar__resumen::-webkit-details-marker { display: none; }
+body.jm .jm-llamar__resumen::marker { content: ""; }
+body.jm .jm-llamar__chevron { transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-llamar[open] .jm-llamar__chevron { transform: rotate(180deg); }
+body.jm .jm-llamar__lista { list-style: none; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-llamar__lista li { border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-llamar__lista li:last-child { border-bottom: 0; }
+body.jm .jm-llamar__fila {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+}
+body.jm .jm-llamar__nombre { font-weight: 500; color: var(--jm-ink); }
+body.jm .jm-llamar__nombre .jm-insignia { font-size: 0.75rem; }
+body.jm .jm-llamar__numero { color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   6 · Redes sociales ([jm_redes])
+   ========================================================================== */
+
+body.jm .jm-redes { display: flex; align-items: center; list-style: none; }
+body.jm .jm-redes li { display: flex; height: 100%; }
+body.jm .jm-redes__enlace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-redes__enlace svg { display: block; }
+
+body.jm .jm-redes--pie { margin-top: 0.75rem; gap: 0.5rem; }
+body.jm .jm-redes--pie .jm-redes__enlace {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--jm-rule-inverse);
+  border-radius: var(--jm-radius-full);
+  color: var(--jm-ink-inv-2);
+}
+body.jm .jm-redes--pie .jm-redes__enlace:hover { border-color: var(--jm-accent-dark); color: #fff; }
+
+body.jm .jm-redes--movil { margin-top: 1.5rem; justify-content: center; gap: 0.5rem; }
+body.jm .jm-redes--movil .jm-redes__enlace {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--jm-rule-control);
+  border-radius: var(--jm-radius-full);
+  color: var(--jm-ink-2);
+}
+body.jm .jm-redes--movil .jm-redes__enlace:hover { border-color: var(--jm-ink); color: var(--jm-ink); }
+
+body.jm .jm-redes--franja { height: 100%; gap: 0.25rem; }
+body.jm .jm-redes--franja .jm-redes__enlace { height: 100%; padding: 0 0.25rem; color: var(--jm-ink-inv-2); }
+body.jm .jm-redes--franja .jm-redes__enlace:hover { color: var(--jm-accent-dark); }
+
+/* ==========================================================================
+   7 · Pie
+   ========================================================================== */
+
+body.jm .jm-pie {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--jm-inverse);
+  color: var(--jm-ink-inv-2);
+}
+body.jm .jm-pie :focus-visible { outline-color: var(--jm-accent-dark); }
+/* Filigrana: el hexágono del isotipo, el único ornamento del sistema. */
+body.jm .jm-pie::before {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  bottom: -6rem;
+  z-index: -1;
+  width: 20rem;
+  height: 20rem;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 88'%3E%3Cpath d='M27 2h46l25 42-25 42H27L2 44 27 2Z' fill='none' stroke='white' stroke-opacity='0.035' stroke-width='5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+body.jm .jm-pie__cuerpo { padding-block: 2.5rem; }
+@media (min-width: 768px) {
+  body.jm .jm-pie__cuerpo { padding-block: 3rem; }
+}
+body.jm .jm-pie__rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  body.jm .jm-pie__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  body.jm .jm-pie__rejilla { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; }
+  body.jm .jm-pie__marca { grid-column: span 3; }
+  body.jm .jm-pie__familias { grid-column: span 3; }
+  body.jm .jm-pie__secciones { grid-column: span 2; }
+  body.jm .jm-pie__delegaciones { grid-column: span 4; }
+}
+body.jm .jm-pie__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: auto;
+  min-width: 0;
+}
+body.jm .jm-pie__delegaciones { align-items: stretch; }
+
+/* Marca */
+body.jm .jm-pie__logo img { display: block; height: 2rem; width: auto; max-width: none; }
+body.jm .jm-pie__lema {
+  margin-top: 1.25rem;
+  max-width: 26ch;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--jm-ink-inv);
+}
+body.jm .jm-pie__razon {
+  margin-top: 0.75rem;
+  max-width: 38ch;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: var(--jm-ink-inv-3);
+}
+body.jm .jm-pie__correo { margin-top: 1rem; }
+body.jm .jm-pie__correo .elementor-icon-list-item,
+body.jm .jm-pie__correo .elementor-icon-list-item a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--jm-ink-inv-2);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-pie__correo .elementor-icon-list-item a:hover { color: var(--jm-accent-dark); }
+body.jm .jm-pie__correo .elementor-icon-list-icon { display: inline-flex; color: inherit; padding: 0; }
+body.jm .jm-pie__correo .elementor-icon-list-icon svg { width: 15px; height: 15px; fill: currentColor; }
+body.jm .jm-pie__correo .elementor-icon-list-icon i { font-size: 14px; color: inherit; }
+body.jm .jm-pie__correo .elementor-icon-list-text { color: inherit; padding: 0; }
+
+/* Títulos de columna (h2 con jm-label) */
+body.jm .jm-pie__titulo { color: var(--jm-ink-inv-3); }
+body.jm .jm-pie__titulo--sep { margin-top: 1.5rem; }
+
+/* Listas de enlaces (widget Lista de iconos, sin iconos) */
+body.jm .jm-pie__lista { margin-top: 0.75rem; display: grid; gap: 0.125rem; }
+body.jm .jm-pie__lista .elementor-icon-list-item { display: block; }
+body.jm .jm-pie__lista .elementor-icon-list-item a,
+body.jm .jm-pie__lista .elementor-icon-list-item > .elementor-icon-list-text {
+  display: inline-block;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: var(--jm-ink-inv-2);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-pie__lista .elementor-icon-list-item a:hover { color: var(--jm-accent-dark); }
+body.jm .jm-pie__lista .elementor-icon-list-icon { display: none; }
+
+/* [jm_delegaciones_pie] */
+body.jm .jm-pie-delegaciones {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem 1.5rem;
+  list-style: none;
+}
+@media (min-width: 1024px) {
+  body.jm .jm-pie-delegaciones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+body.jm .jm-pie-delegaciones__item { border-bottom: 1px solid var(--jm-rule-inverse); padding-bottom: 0.625rem; }
+body.jm .jm-pie-delegaciones__enlace { display: block; }
+body.jm .jm-pie-delegaciones__nombre {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.43;
+  color: var(--jm-ink-inv);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-pie-delegaciones__tel {
+  margin-top: 0.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: var(--jm-ink-inv-2);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm a.jm-pie-delegaciones__enlace:hover .jm-pie-delegaciones__nombre,
+body.jm a.jm-pie-delegaciones__enlace:hover .jm-pie-delegaciones__tel { color: var(--jm-accent-dark); }
+
+/* Certificados: título + [jm_certificados] en un contenedor jm-pie__certificados */
+body.jm .jm-pie__certificados {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.375rem 1rem;
+}
+body.jm .jm-pie__certificados > .elementor-element { width: auto; max-width: 100%; }
+body.jm .jm-pie__certificados-titulo { flex: none; color: var(--jm-ink-inv-3); }
+body.jm .jm-certificados { display: flex; flex-wrap: wrap; gap: 0.375rem 0.75rem; list-style: none; }
+body.jm .jm-certificados__item { font-size: 0.875rem; color: var(--jm-ink-inv-2); }
+
+/* Faldón rojo */
+body.jm .jm-pie__faldon { background-color: var(--jm-accent); }
+body.jm .jm-pie__faldon-fila {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 0.875rem;
+}
+@media (min-width: 768px) {
+  body.jm .jm-pie__faldon-fila { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+body.jm .jm-pie__faldon-fila > .elementor-element { width: auto; }
+body.jm .jm-pie__copy { font-size: 0.875rem; line-height: 1.43; color: #fff; }
+body.jm .jm-pie__legales { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+body.jm .jm-pie__legales .elementor-icon-list-item { display: block; }
+body.jm .jm-pie__legales .elementor-icon-list-icon { display: none; }
+body.jm .jm-pie__legales .elementor-icon-list-item a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-underline-offset: 4px;
+  transition: color 200ms var(--jm-ease-ui), text-decoration-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-pie__legales .elementor-icon-list-item a:hover { color: #fff; text-decoration-color: #fff; }
+body.jm .jm-pie__legales .elementor-icon-list-text { color: inherit; }
+body.jm .jm-pie__faldon :focus-visible { outline-color: #fff; }
+
+/* ==========================================================================
+   8 · Barra móvil fija (se imprime en wp_footer, ver 60-global.php)
+   ========================================================================== */
+
+body.jm .jm-barra-movil__hueco { height: 4rem; }
+body.jm .jm-barra-movil {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  border-top: 1px solid var(--jm-rule-inverse);
+  background-color: var(--jm-inverse);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@media (min-width: 768px) {
+  body.jm .jm-barra-movil__hueco { height: 0; }
+  body.jm .jm-barra-movil { display: none; }
+}
+body.jm .jm-barra-movil :focus-visible { outline-color: var(--jm-accent-dark); }
+body.jm .jm-barra-movil__rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+body.jm .jm-barra-movil__rejilla--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body.jm .jm-barra-movil__accion {
+  display: flex;
+  min-height: 4rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  color: var(--jm-ink-inv);
+  border-left: 1px solid var(--jm-rule-inverse);
+}
+body.jm .jm-barra-movil__accion:first-child { border-left: 0; }
+body.jm .jm-barra-movil__accion--acento { background-color: var(--jm-accent); color: #fff; }
+body.jm .jm-barra-movil__accion:hover { color: #fff; }
+
+@media print {
+  body.jm .jm-barra-movil,
+  body.jm .jm-barra-movil__hueco,
+  body.jm .jm-franja { display: none !important; }
+}

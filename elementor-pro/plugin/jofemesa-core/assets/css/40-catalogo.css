@@ -1,0 +1,438 @@
+/* ==========================================================================
+   JOFEMESA · 40 CATÁLOGO DE ALQUILER Y TARJETA DE MÁQUINA
+   Traducción de AlquilerCliente.tsx, PanelFiltros.tsx, TiraCategorias.tsx,
+   TarjetaMaquina.tsx, ImagenMaquina.tsx, EtiquetaEnergia.tsx y DatoValor.tsx.
+   Estructura en estructura/20-alquiler.md y 21-loop-tarjeta-maquina.md.
+   ========================================================================== */
+
+/* === 0 · Piezas comunes del área ======================================== */
+
+/* Reinicio de los <button> propios. Hello Elementor pinta todos los botones
+   (borde y fondo rosa en :hover/:focus). `:where()` deja la especificidad
+   en (0,2,1): gana al tema y pierde ante cualquier regla de componente
+   escrita después. */
+body.jm :where(.jm-boton),
+body.jm :where(.jm-boton):hover,
+body.jm :where(.jm-boton):focus,
+body.jm :where(.jm-boton):active {
+  margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none;
+  background: none; color: inherit; font: inherit; line-height: inherit;
+  text-align: inherit; text-decoration: none; white-space: normal; cursor: pointer;
+  transition: color 200ms var(--jm-ease-ui), background-color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui), opacity 200ms var(--jm-ease-ui);
+}
+body.jm :where(.jm-boton):disabled { cursor: not-allowed; }
+
+/* `hidden` manda siempre dentro de las piezas del área. */
+body.jm .jm-cat-filtros [hidden], body.jm .jm-cat-barra [hidden], body.jm .jm-cat-pie [hidden],
+body.jm .jm-tiras [hidden], body.jm .jm-tira__flecha[hidden], body.jm .jm-tarjeta-maquina [hidden] { display: none; }
+
+body.jm .jm-ico { flex-shrink: 0; }
+
+/* Tarjetas que el filtro deja fuera o que aún no tocan («ver más»). */
+body.jm .elementor-widget-loop-grid .e-loop-item.jm-oculta { display: none; }
+
+/* --- Dato con su estado (DatoValor.tsx) --- */
+body.jm .jm-dato { color: var(--jm-ink); }
+body.jm .jm-dato--na { color: var(--jm-ink-3); }
+body.jm .jm-dato__unidad { margin-left: 0.25rem; color: var(--jm-ink-3); }
+body.jm .jm-pendiente.jm-dato { color: var(--jm-wait-ink); line-height: 1.35; }
+body.jm .jm-pendiente .jm-ico { width: 12px; height: 12px; }
+
+/* --- Foto que falta: dibujo técnico de la subcategoría --- */
+body.jm .jm-foto-pendiente {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.75rem; background: var(--jm-muted);
+}
+body.jm .jm-foto-pendiente__dibujo { display: flex; align-items: center; justify-content: center; height: 50%; max-width: 62%; color: var(--jm-rule-strong); }
+body.jm .jm-foto-pendiente__dibujo svg { height: 100%; width: auto; max-width: 100%; }
+body.jm .jm-foto-pendiente__texto { color: var(--jm-ink-3); }
+
+/* Miniaturas (bandeja, solicitud, comparador): foto sobre blanco o icono. */
+body.jm .jm-imagen-maquina__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+body.jm .jm-mini-icono {
+  position: absolute; inset: 18%; background: var(--jm-rule-strong);
+  -webkit-mask: var(--jm-icono) center / contain no-repeat; mask: var(--jm-icono) center / contain no-repeat;
+}
+
+/* === 1 · Tarjeta de máquina (Loop Item) ================================= */
+
+body.jm .jm-tarjeta-maquina {
+  display: flex; flex-direction: column; gap: 1rem; height: 100%;
+  padding: 1rem; box-sizing: border-box;
+}
+@media (min-width: 768px) { body.jm .jm-tarjeta-maquina { padding: 1.25rem; } }
+body.jm .jm-tarjeta-maquina:has(:focus-visible) { outline: 2px solid var(--jm-ink); outline-offset: 2px; }
+
+body.jm .jm-tarjeta-maquina__cabecera { display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+body.jm .jm-tarjeta-maquina__nombre { display: flex; flex-direction: column; min-width: 0; flex: 1 1 auto; }
+body.jm .jm-tarjeta-maquina__marca { color: var(--jm-ink-3); }
+body.jm .jm-tarjeta-maquina__modelo { margin-top: 0.25rem; color: var(--jm-ink); }
+/* min-h-11: 44 px de objetivo táctil y el alto de dos líneas reservado. */
+body.jm .jm-tarjeta-maquina__modelo a {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+  min-height: 2.75rem; color: var(--jm-ink); transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-tarjeta-maquina__modelo a:hover { color: var(--jm-accent); }
+body.jm .jm-tarjeta-maquina__sub {
+  margin-top: 0.125rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-3);
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+body.jm .jm-tarjeta-maquina__sub .elementor-heading-title { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+body.jm .jm-tarjeta-maquina__chips { display: flex; flex-direction: column; align-items: flex-end; gap: 0.375rem; flex-shrink: 0; }
+
+/* Etiqueta de alimentación: palabra + color, pares medidos AAA. */
+body.jm .jm-chip-energia {
+  display: inline-flex; flex-shrink: 0; align-items: center; padding: 0.25rem 0.625rem;
+  border: 1px solid var(--jm-rule-strong); border-radius: var(--jm-radius-full);
+  background: var(--jm-sunken); color: var(--jm-ink-2); white-space: nowrap;
+}
+body.jm .jm-energia-electrico .jm-chip-energia { border-color: #d3f0dd; background: #f0fdf4; color: #166534; }
+body.jm .jm-energia-hibrido .jm-chip-energia { border-color: #d8e6fe; background: #eff6ff; color: #1e40af; }
+body.jm .jm-traccion-4x4 .jm-chip-energia .elementor-heading-title::after { content: " 4x4"; }
+
+body.jm .jm-chip-gama { display: none; }
+body.jm .jm-gama .jm-chip-gama {
+  display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.625rem;
+  border: 1px solid #f3e0a8; border-radius: var(--jm-radius-full); background: #fffbeb; color: #7a5a00;
+}
+body.jm .jm-gama .jm-chip-gama::before {
+  content: ""; width: 11px; height: 11px; flex-shrink: 0; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z'/%3E%3Cpath d='m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65'/%3E%3Cpath d='m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z'/%3E%3Cpath d='m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65'/%3E%3Cpath d='m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* La plataforma de la foto: 6:5, la creatividad completa, sin zoom. */
+body.jm .jm-tarjeta-maquina__foto { position: relative; aspect-ratio: 6 / 5; overflow: hidden; }
+body.jm .jm-tarjeta-maquina__foto .jm-foto-maquina { position: absolute; inset: 0; border-radius: 0; }
+body.jm .jm-tarjeta-maquina__foto .jm-foto-maquina a { display: block; width: 100%; height: 100%; }
+body.jm .jm-tarjeta-maquina__foto .jm-foto-maquina img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: contain; }
+body.jm .jm-sin-foto .jm-foto-maquina { display: none; }
+
+/* Casilla de comparar SIEMPRE visible (la pone 42-comparador.js). */
+body.jm .jm-casilla-comparar {
+  position: absolute; top: 0.25rem; right: 0.25rem; z-index: 2;
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; cursor: pointer;
+}
+body.jm .jm-casilla-comparar__caja {
+  display: flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem;
+  border: 1px solid var(--jm-rule-strong); border-radius: var(--jm-radius-md);
+  background: rgba(255, 255, 255, 0.9); color: #fff; transition: background-color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-casilla-comparar__caja svg { opacity: 0; }
+body.jm .jm-casilla-comparar--marcada .jm-casilla-comparar__caja { border-color: var(--jm-ink); background: var(--jm-ink); }
+body.jm .jm-casilla-comparar--marcada .jm-casilla-comparar__caja svg { opacity: 1; }
+body.jm .jm-casilla-comparar--bloqueada { cursor: not-allowed; }
+body.jm .jm-casilla-comparar--bloqueada .jm-casilla-comparar__caja { opacity: 0.4; }
+body.jm .jm-casilla-comparar input:focus-visible + .jm-casilla-comparar__caja { outline: 2px solid var(--jm-accent); outline-offset: 2px; }
+
+/* Las tres cifras que deciden. Etiqueta en caja baja, sin recortar. */
+body.jm .jm-tarjeta-datos {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem;
+  margin: 0; padding: 0.625rem 0.5rem; text-align: center;
+}
+body.jm .jm-tarjeta-datos__item { display: flex; flex-direction: column; min-width: 0; }
+body.jm .jm-tarjeta-datos__v { order: 1; margin: 0; }
+body.jm .jm-tarjeta-datos__k {
+  order: 2; margin: 0.25rem 0 0; font-size: 0.6875rem; line-height: 1.25; font-weight: 500; color: var(--jm-ink-3);
+}
+
+body.jm .jm-tarjeta-maquina__desc { flex: 1 1 auto; font-size: 0.875rem; line-height: 1.625; color: var(--jm-ink-2); }
+body.jm .jm-tarjeta-maquina__desc .elementor-heading-title,
+body.jm .jm-tarjeta-maquina__desc p {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; margin: 0;
+}
+
+/* Las tres acciones: Ficha en rojo, Comparar, Consultar en tinta. */
+body.jm .jm-tarjeta-maquina__acciones { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-tarjeta-maquina__pareja { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+body.jm .jm-tarjeta-maquina__acciones .elementor-button { width: 100%; padding-inline: 0.5rem; gap: 0.375rem; }
+body.jm .jm-tarjeta-maquina .jm-btn--tinta .elementor-button:hover { background: var(--jm-inverse-2); }
+body.jm .jm-tarjeta-maquina .jm-btn--acento .elementor-button-icon { transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-tarjeta-maquina:hover .jm-btn--acento .elementor-button-icon { transform: translateX(0.125rem); }
+
+/* Botón Comparar (tarjeta). En la ficha tiene su propio aspecto (41-ficha). */
+body.jm .jm-btn-comparar .elementor-button {
+  border: 1px solid var(--jm-rule-strong); background: var(--jm-sunken); color: var(--jm-ink-2);
+}
+body.jm .jm-btn-comparar .elementor-button:hover { background: var(--jm-muted); color: var(--jm-ink); }
+body.jm .jm-btn-comparar.jm-comparar--activo .elementor-button { border-color: var(--jm-accent); background: var(--jm-accent-tint); color: var(--jm-accent); }
+body.jm .jm-btn-comparar.jm-comparar--bloqueado .elementor-button { cursor: not-allowed; opacity: 0.5; }
+/* Marcada: el icono de columnas cede su sitio a la marca de verificación. */
+body.jm .jm-btn-comparar.jm-comparar--activo .elementor-button-icon { display: none; }
+body.jm .jm-btn-comparar.jm-comparar--activo .elementor-button-content-wrapper::before {
+  content: ""; width: 15px; height: 15px; flex-shrink: 0; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* === 2 · Rejillas de tarjetas (Loop Grid) =============================== */
+/* La rejilla la pone la clase, no los controles de columnas del widget. */
+body.jm .elementor-widget-loop-grid.jm-rejilla-maquinas .elementor-loop-container.elementor-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  body.jm .elementor-widget-loop-grid.jm-rejilla-maquinas .elementor-loop-container.elementor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1440px) {
+  body.jm .elementor-widget-loop-grid.jm-rejilla-maquinas .elementor-loop-container.elementor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+body.jm .jm-catalogo-rejilla { margin-top: 1.5rem; }
+
+/* === 3 · Maquetación de la página de catálogo =========================== */
+
+body.jm .jm-catalogo-tiras { border-bottom: 1px solid var(--jm-rule); background: var(--jm-surface); }
+body.jm .jm-catalogo-tiras__interior { padding-block: 1rem; }
+
+body.jm .jm-catalogo { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-block: 2rem; }
+body.jm .jm-catalogo__principal { display: flex; flex-direction: column; min-width: 0; }
+/* En móvil la columna lateral no ocupa celda: el panel vive en la hoja. */
+body.jm .jm-catalogo__lateral { display: contents; }
+@media (min-width: 1024px) {
+  body.jm .jm-catalogo { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; }
+  body.jm .jm-catalogo__lateral { display: block; grid-column: span 3 / span 3; }
+  body.jm .jm-catalogo__principal { grid-column: span 9 / span 9; }
+}
+
+/* === 4 · Tiras de categorías ============================================ */
+
+body.jm .jm-tiras { display: flex; flex-direction: column; gap: 0.75rem; }
+body.jm .jm-tira { position: relative; }
+body.jm .jm-tira__pista {
+  display: flex; gap: 0.5rem; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 0.25rem;
+  scrollbar-width: thin; scrollbar-color: var(--jm-rule-strong) transparent;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+}
+body.jm .jm-tira__pista::-webkit-scrollbar { height: 6px; }
+body.jm .jm-tira__pista::-webkit-scrollbar-track { background: transparent; }
+body.jm .jm-tira__pista::-webkit-scrollbar-thumb { background: var(--jm-rule-strong); }
+@media (pointer: coarse) {
+  body.jm .jm-tira__pista { scrollbar-width: none; }
+  body.jm .jm-tira__pista::-webkit-scrollbar { display: none; }
+}
+/* Degradados de borde: la señal de «hay más» que no hay que leer. */
+body.jm .jm-tira__borde {
+  position: absolute; top: 0; bottom: 0; width: 2.5rem; pointer-events: none; opacity: 0;
+  transition: opacity 200ms var(--jm-ease-ui);
+}
+body.jm .jm-tira__borde--izq { left: 0; background: linear-gradient(to right, var(--jm-surface), transparent); }
+body.jm .jm-tira__borde--der { right: 0; background: linear-gradient(to left, var(--jm-surface), transparent); }
+body.jm .jm-tira--izq .jm-tira__borde--izq, body.jm .jm-tira--der .jm-tira__borde--der { opacity: 1; }
+body.jm .jm-boton.jm-tira__flecha {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 1;
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem;
+  border: 1px solid var(--jm-rule-control); background: var(--jm-surface); color: var(--jm-ink);
+  box-shadow: 0 1px 6px rgba(20, 23, 26, 0.14);
+}
+body.jm .jm-boton.jm-tira__flecha:hover { background: var(--jm-sunken); color: var(--jm-ink); }
+body.jm .jm-tira__flecha--izq { left: -0.25rem; }
+body.jm .jm-tira__flecha--der { right: -0.25rem; }
+
+body.jm .jm-tira__fam {
+  display: inline-flex; flex-shrink: 0; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 1rem;
+  border: 1px solid var(--jm-rule); background: var(--jm-surface); color: var(--jm-ink-2);
+  font-size: 1rem; white-space: nowrap; transition: color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui), background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-tira__fam:hover { border-color: var(--jm-rule-control); color: var(--jm-ink); }
+body.jm .jm-tira__fam[aria-current] { border-color: var(--jm-ink); background: var(--jm-ink); color: #fff; }
+body.jm .jm-tira__icono { display: inline-flex; width: 2rem; height: 1.5rem; flex-shrink: 0; color: var(--jm-accent); }
+body.jm .jm-tira__icono svg { width: 100%; height: 100%; }
+body.jm .jm-tira__fam[aria-current] .jm-tira__icono { color: #fff; }
+body.jm .jm-tira__n { font-size: 0.875rem; opacity: 0.7; }
+body.jm .jm-tira__n--sub { font-size: 0.75rem; }
+
+body.jm .jm-boton.jm-tira__sub {
+  display: inline-flex; flex-shrink: 0; align-items: center; gap: 0.5rem; min-height: 2.5rem; padding: 0 0.875rem;
+  border: 1px solid var(--jm-rule); background: var(--jm-surface); color: var(--jm-ink-2);
+  font-size: 0.875rem; white-space: nowrap;
+}
+body.jm .jm-boton.jm-tira__sub:hover { border-color: var(--jm-rule-control); background: var(--jm-surface); color: var(--jm-ink); }
+body.jm .jm-boton.jm-tira__sub[aria-pressed="true"] { border-color: var(--jm-accent); background: var(--jm-accent-tint); color: var(--jm-ink); }
+body.jm .jm-boton.jm-tira__sub--todas[aria-pressed="true"] { border-color: var(--jm-rule-control); background: var(--jm-sunken); color: var(--jm-ink); }
+body.jm .jm-boton.jm-tira__sub:disabled { cursor: not-allowed; opacity: 0.4; }
+
+/* === 5 · Panel de filtros técnicos ====================================== */
+
+body.jm .jm-cat-filtros__velo, body.jm .jm-cat-filtros__cerrar, body.jm .jm-cat-filtros__pie { display: none; }
+body.jm .jm-cat-filtros__titulo { margin: 0 0 1rem; color: var(--jm-ink-3); }
+
+@media (min-width: 1024px) {
+  body.jm .jm-cat-filtros__hoja {
+    position: sticky; top: 8rem; max-height: calc(100vh - 9rem); overflow-y: auto; padding-right: 0.5rem;
+  }
+}
+
+/* Hoja inferior en móvil: el contador ES el botón. */
+@media (max-width: 1023.98px) {
+  body.jm .jm-cat-filtros { display: none; }
+  body.jm .jm-cat-filtros.jm-cat-filtros--abierta { display: block; position: fixed; inset: 0; z-index: 60; }
+  body.jm .jm-cat-filtros--abierta .jm-boton.jm-cat-filtros__velo {
+    display: block; position: absolute; inset: 0; width: 100%; height: 100%;
+    background: rgba(20, 23, 26, 0.7); cursor: default;
+  }
+  body.jm .jm-cat-filtros__hoja {
+    position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column;
+    max-height: 92dvh; background: var(--jm-surface);
+  }
+  body.jm .jm-cat-filtros__cabecera {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--jm-rule);
+  }
+  body.jm .jm-cat-filtros__titulo { margin: 0; color: var(--jm-ink); }
+  body.jm .jm-boton.jm-cat-filtros__cerrar { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; color: var(--jm-ink); }
+  body.jm .jm-cat-filtros__cuerpo { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding-inline: 1.25rem; }
+  body.jm .jm-cat-filtros__pie { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-top: 1px solid var(--jm-rule); }
+}
+@media (max-width: 1023.98px) and (prefers-reduced-motion: no-preference) {
+  body.jm .jm-cat-filtros--abierta .jm-cat-filtros__velo { animation: jm-velo-entra 0.2s linear; }
+  body.jm .jm-cat-filtros--abierta .jm-cat-filtros__hoja { animation: jm-hoja-entra 0.26s var(--jm-ease-entrance); }
+}
+@keyframes jm-velo-entra { from { opacity: 0; } to { opacity: 1; } }
+@keyframes jm-hoja-entra { from { transform: translate3d(0, 100%, 0); } to { transform: none; } }
+
+body.jm .jm-boton.jm-cat-filtros__borrar {
+  min-height: 3rem; padding: 0 0.75rem; color: var(--jm-ink-2); font-size: 1rem;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-boton.jm-cat-filtros__ver {
+  display: flex; flex: 1 1 auto; align-items: center; justify-content: center; gap: 0.25rem; height: 3.5rem;
+  border-radius: var(--jm-radius-full); background: var(--jm-accent); color: #fff; font-size: 1rem; font-weight: 600;
+}
+body.jm .jm-boton.jm-cat-filtros__ver:hover { background: var(--jm-accent-hover); color: #fff; }
+
+body.jm .jm-cat-panel { border-block: 1px solid var(--jm-rule); }
+body.jm .jm-cat-panel__bloque, body.jm .jm-cat-grupo { padding-block: 1.25rem; }
+body.jm .jm-cat-panel > * + * { border-top: 1px solid var(--jm-rule); }
+body.jm .jm-cat-panel__etiqueta { display: block; color: var(--jm-ink); }
+
+/* Buscadores (panel y barra móvil) */
+body.jm .jm-cat-buscar { position: relative; }
+body.jm .jm-cat-buscar--panel { margin-top: 0.75rem; }
+body.jm .jm-cat-buscar--movil { flex: 1 1 auto; min-width: 0; }
+body.jm .jm-cat-buscar__ico { position: absolute; top: 50%; left: 0.875rem; transform: translateY(-50%); color: var(--jm-ink-3); pointer-events: none; }
+body.jm .jm-cat-buscar--movil .jm-cat-buscar__ico { left: 0.75rem; }
+body.jm input.jm-cat-buscar__campo {
+  display: block; box-sizing: border-box; width: 100%; min-width: 0; height: 3rem; margin: 0;
+  padding: 0 0.75rem 0 2.5rem; border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  background: var(--jm-surface); color: var(--jm-ink); font: inherit; font-size: 1rem; line-height: 1.2;
+}
+body.jm .jm-cat-buscar--movil input.jm-cat-buscar__campo { padding-left: 2.25rem; }
+body.jm input.jm-cat-buscar__campo::placeholder { color: var(--jm-ink-3); opacity: 1; }
+body.jm input.jm-cat-buscar__campo:focus { border-color: var(--jm-rule-control); }
+
+/* Grupos plegables */
+body.jm .jm-cat-grupo__titulo {
+  display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; color: var(--jm-ink);
+}
+body.jm .jm-cat-grupo__titulo::-webkit-details-marker { display: none; }
+body.jm .jm-cat-grupo__titulo::marker { content: ""; }
+body.jm .jm-cat-grupo__mas { color: var(--jm-ink-3); transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-cat-grupo[open] .jm-cat-grupo__mas { transform: rotate(45deg); }
+body.jm .jm-cat-grupo__cuerpo { margin-top: 1rem; }
+body.jm .jm-cat-grupo__nota { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-3); }
+body.jm .jm-cat-opciones { list-style: none; margin: 0; padding: 0; }
+
+/* Casillas cuadradas de 24 px con área táctil de 48. */
+body.jm .jm-cat-opcion {
+  display: flex; align-items: center; gap: 0.75rem; min-height: 3rem; margin: 0; cursor: pointer;
+  font-size: 1rem; font-weight: 400; color: var(--jm-ink-2); transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cat-opcion:hover { color: var(--jm-ink); }
+body.jm .jm-cat-opcion--vacia, body.jm .jm-cat-opcion--vacia:hover { cursor: not-allowed; color: var(--jm-ink-3); }
+body.jm .jm-cat-opcion--radio.jm-cat-opcion--marcada { font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-cat-opcion__caja {
+  display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem;
+  box-sizing: border-box; border: 2px solid var(--jm-rule-control); color: #fff;
+  transition: background-color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cat-opcion__caja svg { width: 1rem; height: 1rem; opacity: 0; }
+body.jm .jm-cat-opcion--marcada .jm-cat-opcion__caja { border-color: var(--jm-ink); background: var(--jm-ink); }
+body.jm .jm-cat-opcion--marcada .jm-cat-opcion__caja svg { opacity: 1; }
+body.jm .jm-cat-opcion--marcada .jm-cat-opcion__caja--radio { border-color: var(--jm-accent); background: var(--jm-accent); box-shadow: inset 0 0 0 3px #fff; }
+body.jm .jm-cat-opcion--vacia .jm-cat-opcion__caja { border-color: var(--jm-rule); opacity: 0.5; }
+body.jm .jm-cat-opcion input:focus-visible + .jm-cat-opcion__caja { outline: 2px solid var(--jm-accent); outline-offset: 2px; }
+body.jm .jm-cat-opcion__texto { flex: 1 1 auto; }
+body.jm .jm-cat-opcion__n { font-size: 0.875rem; color: var(--jm-ink-3); }
+
+body.jm .jm-cat-marca { display: block; margin: 0; }
+body.jm select.jm-cat-select {
+  display: block; box-sizing: border-box; width: 100%; height: 3rem; margin: 0; padding: 0 0.75rem;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  background-color: var(--jm-surface); color: var(--jm-ink); font: inherit; font-size: 1rem;
+}
+
+/* Salida al asesor */
+body.jm .jm-cat-asesor { padding: 1rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken); }
+body.jm .jm-cat-asesor__titulo { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-cat-asesor__ico { color: var(--jm-accent); }
+body.jm .jm-cat-asesor__texto { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-2); }
+body.jm .jm-cat-asesor__boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; height: 3rem; margin-top: 1rem;
+  border-radius: var(--jm-radius-full); background: var(--jm-ink); color: #fff; font-size: 1rem; font-weight: 600;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cat-asesor__boton:hover { background: var(--jm-inverse-2); color: #fff; }
+
+/* === 6 · Barra de control =============================================== */
+
+body.jm .jm-cat-barra { display: flex; flex-direction: column; gap: 0.75rem; }
+body.jm .jm-cat-barra__fila { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+body.jm .jm-cat-barra__cuenta { color: var(--jm-ink); }
+body.jm .jm-cat-barra__unidad { font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 400; color: var(--jm-ink-2); }
+body.jm .jm-cat-barra__orden { display: flex; flex-shrink: 0; align-items: center; gap: 0.5rem; margin: 0; }
+body.jm .jm-cat-barra__ordenar { display: none; color: var(--jm-ink-3); }
+body.jm select.jm-cat-select--orden { width: auto; max-width: 13rem; height: auto; min-height: 2.75rem; padding: 0 0.5rem; }
+@media (min-width: 1024px) {
+  body.jm .jm-cat-barra__ordenar { display: inline; }
+  body.jm select.jm-cat-select--orden { padding: 0 0.75rem; }
+}
+
+body.jm .jm-cat-barra__movil { display: flex; align-items: center; gap: 0.5rem; }
+@media (min-width: 1024px) { body.jm .jm-cat-barra__movil { display: none; } }
+body.jm .jm-boton.jm-cat-barra__filtrar {
+  display: inline-flex; flex-shrink: 0; align-items: center; gap: 0.5rem; height: 3rem; padding: 0 0.875rem;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  color: var(--jm-ink); font-size: 1rem; font-weight: 600;
+}
+body.jm .jm-boton.jm-cat-barra__filtrar:hover { background: var(--jm-sunken); color: var(--jm-ink); }
+body.jm .jm-cat-barra__activos { padding: 0 0.375rem; background: var(--jm-accent); color: #fff; font-size: 0.875rem; }
+
+body.jm .jm-cat-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+body.jm .jm-boton.jm-cat-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.25rem; padding: 0 0.75rem;
+  border: 1px solid var(--jm-rule); background: var(--jm-sunken); color: var(--jm-ink); font-size: 0.875rem;
+}
+body.jm .jm-boton.jm-cat-chip:hover { border-color: var(--jm-rule-strong); background: var(--jm-sunken); color: var(--jm-ink); }
+body.jm .jm-boton.jm-cat-chips__borrar {
+  min-height: 2.25rem; padding: 0 0.5rem; font-size: 0.875rem; color: var(--jm-ink-2);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-boton.jm-cat-chips__borrar:hover { color: var(--jm-ink); }
+
+/* === 7 · Estado vacío y «ver más» ======================================= */
+
+body.jm .jm-cat-vacio { margin-top: 2rem; padding: 2rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken); }
+body.jm .jm-cat-vacio__hex { display: block; width: 2rem; height: 2rem; color: var(--jm-rule-strong); }
+body.jm .jm-cat-vacio__titulo { margin-top: 1.25rem; color: var(--jm-ink); }
+body.jm .jm-cat-vacio__texto { margin-top: 0.75rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-cat-vacio__lista { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+body.jm .jm-boton.jm-cat-rescate {
+  display: inline-flex; align-items: center; min-height: 3rem; padding: 0 1rem;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  background: var(--jm-surface); color: var(--jm-ink); font-size: 1rem; font-weight: 600;
+}
+body.jm .jm-boton.jm-cat-rescate:hover { background: var(--jm-muted); color: var(--jm-ink); }
+body.jm .jm-cat-rescate__n { margin-left: 0.75rem; color: var(--jm-accent); }
+body.jm .jm-cat-vacio__ayuda { margin-top: 1.5rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-cat-vacio__ayuda a {
+  font-weight: 600; color: var(--jm-accent); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+
+body.jm .jm-cat-mas { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 2rem; }
+body.jm .jm-boton.jm-cat-mas__boton {
+  display: inline-flex; align-items: center; height: 3.5rem; padding: 0 2rem;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  color: var(--jm-ink); font-size: 1rem; font-weight: 600;
+}
+body.jm .jm-boton.jm-cat-mas__boton:hover { background: var(--jm-sunken); color: var(--jm-ink); }
+body.jm .jm-cat-mas__cuenta { color: var(--jm-ink-3); }

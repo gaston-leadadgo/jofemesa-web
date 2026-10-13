@@ -1,0 +1,27 @@
+[
+ {
+  "ref": "Ley 31/1995",
+  "titulo": "Prevención de Riesgos Laborales",
+  "nota": "Obliga a la empresa a garantizar la formación de cada trabajador en los riesgos de su puesto (art. 19)."
+ },
+ {
+  "ref": "Real Decreto 1215/1997",
+  "titulo": "Utilización de equipos de trabajo",
+  "nota": "Los equipos con riesgos específicos solo pueden manejarlos trabajadores con formación adecuada."
+ },
+ {
+  "ref": "Real Decreto 2177/2004",
+  "titulo": "Trabajos temporales en altura",
+  "nota": "Modifica el RD 1215/1997 para escaleras de mano, andamios y técnicas de acceso con cuerdas."
+ },
+ {
+  "ref": "UNE 58923",
+  "titulo": "Formación del operador de PEMP",
+  "nota": "Norma de referencia para la formación de operadores de plataformas elevadoras móviles de personal."
+ },
+ {
+  "ref": "UNE 58451",
+  "titulo": "Formación de operadores de carretillas",
+  "nota": "Norma de referencia para la formación de operadores de carretillas de manutención."
+ }
+]

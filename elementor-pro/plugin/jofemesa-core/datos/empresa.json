@@ -1,0 +1,387 @@
+{
+ "empresa": {
+  "nombre": "JOFEMESA",
+  "razonSocial": "JOFEME S.A.",
+  "cif": "A33098948",
+  "fundacion": 1987,
+  "fundacionIso": "1987-03-24",
+  "anios": 39,
+  "domicilioSocial": "Avda. del Aluminio, 20 — Parque Empresarial del Principado de Asturias, 33490 Avilés",
+  "web": "https://www.jofemesa.com"
+ },
+ "telefonoPrincipal": {
+  "visible": "91 361 31 31",
+  "tel": "+34913613131"
+ },
+ "email": "jofemesa@jofemesa.com",
+ "redes": [
+  {
+   "id": "linkedin",
+   "nombre": "LinkedIn",
+   "url": "https://www.linkedin.com/company/jofemesa/"
+  },
+  {
+   "id": "facebook",
+   "nombre": "Facebook",
+   "url": "https://www.facebook.com/Jofemesaempresa"
+  },
+  {
+   "id": "instagram",
+   "nombre": "Instagram",
+   "url": "https://www.instagram.com/jofemesaempresa/"
+  }
+ ],
+ "lema": "Llegamos lejos para estar cerca.",
+ "lemaEquipo": "Un equipo de profesionales siempre a tu disposición",
+ "sedeFormacion": {
+  "id": "formacion",
+  "nombre": "Formación",
+  "tipo": "Sede de formación",
+  "provincia": "Madrid",
+  "pais": "España",
+  "direccion": "Pol. Ind. Las Fronteras, C/ Mar Mediterráneo, 1",
+  "cp": "28830",
+  "localidad": "San Fernando de Henares",
+  "telefono": "649 755 883",
+  "tel": "+34649755883",
+  "email": "formacion@jofemesa.com"
+ },
+ "puntosContacto": [
+  {
+   "id": "madrid",
+   "nombre": "Madrid",
+   "provincia": "Madrid",
+   "pais": "España",
+   "direccion": "A-2 dirección Barcelona, km 15,300 (vía de servicio)",
+   "cp": "28022",
+   "localidad": "Madrid",
+   "telefono": "91 361 31 31",
+   "tel": "+34913613131",
+   "email": "jofemesamadrid@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Sede central de alquiler",
+    "Parque de elevación y maquinaria de obra",
+    "Taller y asistencia técnica móvil"
+   ],
+   "mapa": {
+    "x": 46,
+    "y": 43.3
+   },
+   "central": true
+  },
+  {
+   "id": "asturias",
+   "nombre": "Asturias",
+   "provincia": "Asturias",
+   "pais": "España",
+   "direccion": "Parque Empresarial Principado de Asturias, Avda. del Aluminio, 20",
+   "cp": "33490",
+   "localidad": "Avilés",
+   "telefono": "985 985 212",
+   "tel": "+34985985212",
+   "email": "jofemesa@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Domicilio social y origen de la empresa",
+    "Venta y recambios de manutención",
+    "Distribución Jungheinrich"
+   ],
+   "mapa": {
+    "x": 28.1,
+    "y": 5.5
+   }
+  },
+  {
+   "id": "valladolid",
+   "nombre": "Valladolid",
+   "provincia": "Valladolid",
+   "pais": "España",
+   "direccion": "Polígono Industrial San Cristóbal, C/ Pirita, 2",
+   "cp": "47012",
+   "localidad": "Valladolid",
+   "telefono": "983 525 363",
+   "tel": "+34983525363",
+   "email": "valladolid@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Plataformas elevadoras",
+    "Carretillas industriales"
+   ],
+   "mapa": {
+    "x": 37.4,
+    "y": 28.9
+   }
+  },
+  {
+   "id": "valencia",
+   "nombre": "Valencia",
+   "provincia": "Valencia",
+   "pais": "España",
+   "direccion": "Polígono Industrial Parc Sagunt, C/ Braç de la Creu, s/n",
+   "cp": "46520",
+   "localidad": "Puerto de Sagunto",
+   "telefono": "962 680 581",
+   "tel": "+34962680581",
+   "email": "valencia@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Elevación y maquinaria de obra",
+    "Servicio de estiba en puerto"
+   ],
+   "mapa": {
+    "x": 71.5,
+    "y": 53.2
+   }
+  },
+  {
+   "id": "alicante",
+   "nombre": "Alicante",
+   "provincia": "Alicante",
+   "pais": "España",
+   "direccion": "Carretera d'Ocaña, 64D",
+   "cp": "03006",
+   "localidad": "Alicante",
+   "telefono": "965 74 21 75",
+   "tel": "+34965742175",
+   "email": "alquileresalicante@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Elevación para edificación e industria"
+   ],
+   "mapa": {
+    "x": 69.6,
+    "y": 68.9
+   }
+  },
+  {
+   "id": "sevilla",
+   "nombre": "Sevilla",
+   "provincia": "Sevilla",
+   "pais": "España",
+   "direccion": "Polígono Industrial Polysol, C/ Polysol Tres, 6",
+   "cp": "41500",
+   "localidad": "Alcalá de Guadaíra",
+   "telefono": "955 77 63 63",
+   "tel": "+34955776363",
+   "email": "jofemesasevilla@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Elevación y movimiento de tierras",
+    "Taller y recambios"
+   ],
+   "mapa": {
+    "x": 28.7,
+    "y": 81.2
+   }
+  },
+  {
+   "id": "malaga",
+   "nombre": "Málaga",
+   "provincia": "Málaga",
+   "pais": "España",
+   "direccion": "Polígono Industrial Guadalhorce, C/ Hermanas Bronte, 70",
+   "cp": "29004",
+   "localidad": "Málaga",
+   "telefono": "951 173 730",
+   "tel": "+34951173730",
+   "email": "alquileresamalaga@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Elevación para infraestructura y edificación"
+   ],
+   "mapa": {
+    "x": 39,
+    "y": 88.8
+   }
+  },
+  {
+   "id": "formacion",
+   "nombre": "Formación",
+   "tipo": "Sede de formación",
+   "provincia": "Madrid",
+   "pais": "España",
+   "direccion": "Pol. Ind. Las Fronteras, C/ Mar Mediterráneo, 1",
+   "cp": "28830",
+   "localidad": "San Fernando de Henares",
+   "telefono": "649 755 883",
+   "tel": "+34649755883",
+   "email": "formacion@jofemesa.com"
+  },
+  {
+   "id": "oporto",
+   "nombre": "Oporto",
+   "provincia": "Oporto",
+   "pais": "Portugal",
+   "direccion": "Rua Central do Olival, n.º 7494",
+   "cp": "4415-957",
+   "localidad": "Vila Nova de Gaia",
+   "telefono": "+351 220 946 176",
+   "tel": "+351220946176",
+   "email": "logistica.porto@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Plataformas elevadoras",
+    "Logística del norte"
+   ],
+   "mapa": {
+    "x": 7.6,
+    "y": 35.1
+   }
+  },
+  {
+   "id": "lisboa",
+   "nombre": "Lisboa",
+   "provincia": "Setúbal",
+   "pais": "Portugal",
+   "direccion": "Quinta da Marquesa I, junto a Autoeuropa",
+   "cp": "2954-024",
+   "localidad": "Quinta do Anjo, Palmela",
+   "telefono": "+351 211 333 790",
+   "tel": "+351211333790",
+   "email": "jofemesa.portugal@jofemesa.com",
+   "horario": null,
+   "servicios": [
+    "Alquiler de equipos",
+    "Asistencia técnica"
+   ],
+   "mapa": {
+    "x": 5,
+    "y": 66.1
+   }
+  }
+ ],
+ "centros": [
+  {
+   "id": "takeuchi",
+   "nombre": "Distribuidor oficial Takeuchi",
+   "direccion": "Polígono Industrial Las Fronteras, C/ Mar Mediterráneo, 1",
+   "cp": "28830",
+   "localidad": "San Fernando de Henares, Madrid",
+   "telefono": "680 800 215",
+   "tel": "+34680800215",
+   "email": "ventastakeuchi@jofemesa.com"
+  }
+ ],
+ "certificaciones": [
+  {
+   "id": "iso-9001",
+   "nombre": "ISO 9001",
+   "descripcion": "Gestión de la calidad"
+  },
+  {
+   "id": "iso-14001",
+   "nombre": "ISO 14001",
+   "descripcion": "Gestión ambiental"
+  },
+  {
+   "id": "iso-45001",
+   "nombre": "ISO 45001",
+   "descripcion": "Seguridad y salud en el trabajo"
+  }
+ ],
+ "homologaciones": [
+  {
+   "id": "ipaf",
+   "nombre": "IPAF",
+   "descripcion": "Centro de formación homologado"
+  },
+  {
+   "id": "aenor-pemp",
+   "nombre": "AENOR · UNE 58923",
+   "descripcion": "Formación de operadores de PEMP"
+  },
+  {
+   "id": "aenor-carretillas",
+   "nombre": "AENOR · UNE 58451",
+   "descripcion": "Formación de operadores de carretillas"
+  }
+ ],
+ "afiliaciones": [
+  {
+   "id": "anapat",
+   "nombre": "ANAPAT",
+   "descripcion": "Asociación del sector"
+  },
+  {
+   "id": "aseamac",
+   "nombre": "ASEAMAC",
+   "descripcion": "Alquiler de maquinaria"
+  },
+  {
+   "id": "jungheinrich",
+   "nombre": "Jungheinrich",
+   "descripcion": "Partner oficial"
+  }
+ ],
+ "fabricantes": [
+  {
+   "nombre": "Genie",
+   "area": "Tijeras, brazos y telescópicas"
+  },
+  {
+   "nombre": "JLG",
+   "area": "Brazos, telescópicas y orugas"
+  },
+  {
+   "nombre": "Haulotte",
+   "area": "Tijeras, mástiles y brazos"
+  },
+  {
+   "nombre": "Manitou",
+   "area": "Manipuladores y carretillas"
+  },
+  {
+   "nombre": "Jungheinrich",
+   "area": "Partner de intralogística"
+  },
+  {
+   "nombre": "Takeuchi",
+   "area": "Retroexcavadoras"
+  },
+  {
+   "nombre": "JCB",
+   "area": "Retrocargadoras y tijeras"
+  },
+  {
+   "nombre": "Snorkel",
+   "area": "Tijeras y brazos"
+  },
+  {
+   "nombre": "Ausa",
+   "area": "Dúmperes 4x4"
+  },
+  {
+   "nombre": "Bomag",
+   "area": "Compactación"
+  },
+  {
+   "nombre": "Hamm",
+   "area": "Rodillos"
+  },
+  {
+   "nombre": "Wacker Neuson",
+   "area": "Compactación y carga"
+  },
+  {
+   "nombre": "Atlas Copco",
+   "area": "Aire comprimido y energía"
+  },
+  {
+   "nombre": "Himoinsa",
+   "area": "Grupos electrógenos"
+  },
+  {
+   "nombre": "Dagartech",
+   "area": "Grupos electrógenos"
+  },
+  {
+   "nombre": "Hilti",
+   "area": "Herramienta de obra"
+  }
+ ],
+ "flota": {
+  "equipos": "+5.000",
+  "nota": "Cifra de la creatividad entregada el 24/08/2026."
+ }
+}

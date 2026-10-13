@@ -1,0 +1,202 @@
+/* ==========================================================================
+   JOFEMESA · 41 FICHA DE MÁQUINA Y MODAL
+   Traducción de FichaMaquina.tsx, maquina/[slug]/page.tsx, BotonComparar.tsx
+   y ModalShell.tsx. Estructura en estructura/22-ficha-maquina.md.
+   ========================================================================== */
+
+/* === 1 · Página ========================================================= */
+
+body.jm .jm-ficha-pagina { padding-block: 2rem; }
+@media (min-width: 768px) { body.jm .jm-ficha-pagina { padding-block: 2.5rem; } }
+
+body.jm .jm-ficha-migas { margin: -0.375rem 0 2rem; color: var(--jm-ink-3); }
+body.jm .jm-ficha-migas .jm-migas { gap: 0 0.5rem; }
+body.jm .jm-ficha-migas a { display: inline-block; padding-block: 0.375rem; }
+body.jm .jm-ficha-migas .jm-migas a:hover { color: var(--jm-ink); }
+body.jm .jm-ficha-migas [aria-current] { color: var(--jm-ink); font-weight: 500; }
+
+/* === 2 · La ficha (también dentro del modal) ============================ */
+
+body.jm .jm-ficha { display: flex; flex-direction: column; min-width: 0; }
+body.jm .jm-ficha__rejilla { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+@media (min-width: 1024px) {
+  body.jm .jm-ficha__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+}
+/* En el modal: dos columnas desde 768 y 11fr/9fr (el gap se descuenta antes). */
+@media (min-width: 768px) {
+  body.jm .jm-modal .jm-ficha__rejilla { grid-template-columns: 11fr 9fr; gap: 2rem; }
+}
+body.jm .jm-ficha__media, body.jm .jm-ficha__datos { display: flex; flex-direction: column; min-width: 0; }
+
+body.jm .jm-ficha__foto {
+  position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+  border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-2xl); background: #fff;
+}
+body.jm .jm-ficha__foto .jm-foto-maquina { position: absolute; inset: 0; border-radius: 0; }
+body.jm .jm-ficha__foto .jm-foto-maquina img { width: 100%; height: 100%; object-fit: contain; }
+
+body.jm .jm-ficha-destacados { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+body.jm .jm-ficha-destacados li { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-ficha-destacados__ico { margin-top: 0.25rem; color: var(--jm-ok); }
+
+body.jm .jm-ficha__sub { color: var(--jm-ink-3); }
+body.jm .jm-ficha__marca { margin-top: 0.75rem; font-size: 1rem; font-weight: 600; color: var(--jm-ink-2); }
+body.jm .jm-ficha__modelo { margin-top: 0.25rem; color: var(--jm-ink); }
+/* En el modal el modelo baja a display-3. */
+body.jm .jm-modal .jm-ficha__modelo {
+  margin-top: 0; font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 400; line-height: 1.18; letter-spacing: -0.022em;
+}
+body.jm .jm-ficha__desc { margin-top: 1.25rem; color: var(--jm-ink-2); }
+
+body.jm .jm-ficha-gama {
+  display: flex; align-items: flex-start; gap: 0.75rem; margin-top: 1.25rem; padding: 0.75rem 1rem;
+  border-left: 2px solid var(--jm-wait); background: var(--jm-sunken); font-size: 1rem; color: var(--jm-ink-2);
+}
+body.jm .jm-ficha-gama strong { font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-ficha-gama__ico { margin-top: 0.25rem; color: var(--jm-wait-text); }
+
+/* Especificaciones */
+body.jm .jm-ficha__specs { margin-top: 2rem; }
+body.jm .jm-ficha__specs-titulo { padding-bottom: 0.75rem; border-bottom: 1px solid var(--jm-ink); color: var(--jm-ink); }
+body.jm .jm-specs__grupo { margin-top: 1.25rem; }
+body.jm .jm-specs__grupo-titulo { color: var(--jm-ink-3); }
+body.jm .jm-specs__lista { margin: 0.5rem 0 0; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-specs__fila {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  padding-block: 0.625rem; border-bottom: 1px solid var(--jm-rule);
+}
+body.jm .jm-specs__fila:last-child { border-bottom: 0; }
+body.jm .jm-specs__k { margin: 0; font-size: 1rem; font-weight: 400; color: var(--jm-ink-2); }
+body.jm .jm-specs__v { margin: 0; text-align: right; }
+body.jm .jm-specs__nota { margin-top: 1rem; font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-3); }
+
+/* Para qué se usa */
+body.jm .jm-ficha-aplicaciones { margin-top: 2rem; }
+body.jm .jm-ficha-aplicaciones__titulo { margin: 0; color: var(--jm-ink-3); }
+body.jm .jm-ficha-aplicaciones__lista { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0 0; padding: 0; list-style: none; }
+body.jm .jm-ficha-aplicaciones__lista li {
+  padding: 0.375rem 0.75rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken);
+  font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-2);
+}
+
+/* Se sirve desde */
+body.jm .jm-ficha__servicio { margin-top: 2rem; }
+body.jm .jm-ficha__servicio-titulo { color: var(--jm-ink-3); }
+body.jm .jm-ficha-delegaciones {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.25rem 1.5rem;
+  margin: 0.75rem 0 0; padding: 0; list-style: none;
+}
+body.jm .jm-ficha-delegaciones li { display: flex; align-items: center; gap: 0.5rem; padding-block: 0.25rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-ficha-delegaciones__marca { width: 0.75rem; height: 0.75rem; flex-shrink: 0; background: var(--jm-ok); }
+body.jm .jm-ficha__servicio-nota { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-3); }
+
+body.jm .jm-ficha-nota {
+  margin-top: 2rem; padding: 0.75rem 1rem; border-left: 2px solid var(--jm-accent);
+  background: var(--jm-accent-tint); font-size: 1rem; color: var(--jm-ink);
+}
+
+/* Acciones */
+body.jm .jm-ficha__acciones { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-ficha__acciones .jm-btn--acento .elementor-button { width: 100%; min-height: 3.5rem; }
+body.jm .jm-ficha__pareja { display: flex; flex-direction: column; gap: 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-ficha__pareja { flex-direction: row; } }
+body.jm .jm-ficha__pareja .jm-btn,
+body.jm .jm-ficha__pareja .jm-btn .elementor-button { min-height: 3rem; font-weight: 600; }
+@media (min-width: 768px) {
+  body.jm .jm-ficha__pareja a.jm-btn,
+  body.jm .jm-ficha__pareja .jm-btn .elementor-button { flex: 1 1 0%; }
+}
+body.jm .jm-ficha-pdf__peso { font-size: 0.875rem; color: var(--jm-ink-3); }
+body.jm .jm-ficha__telefono .elementor-button-text { font-family: var(--jm-font-mono); font-variant-numeric: tabular-nums; }
+
+/* Comparar en la ficha: rectángulo de 48 px; negro cuando está añadida. */
+body.jm .jm-ficha .jm-btn-comparar .elementor-button {
+  width: 100%; min-height: 3rem; border: 1px solid var(--jm-rule-control); border-radius: 0;
+  background: none; color: var(--jm-ink); font-size: 1rem;
+}
+body.jm .jm-ficha .jm-btn-comparar .elementor-button:hover { background: var(--jm-sunken); color: var(--jm-ink); }
+body.jm .jm-ficha .jm-btn-comparar.jm-comparar--activo .elementor-button { border-color: var(--jm-ink); background: var(--jm-ink); color: #fff; }
+
+/* Relacionadas y volver */
+body.jm .jm-ficha__relacionadas { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-ficha__relacionadas-titulo { color: var(--jm-ink); }
+body.jm .elementor-widget-loop-grid.jm-rejilla-relacionadas { margin-top: 2rem; }
+body.jm .elementor-widget-loop-grid.jm-rejilla-relacionadas .elementor-loop-container.elementor-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  body.jm .elementor-widget-loop-grid.jm-rejilla-relacionadas .elementor-loop-container.elementor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+body.jm .jm-ficha__volver { margin-top: 3rem; }
+body.jm .jm-ficha__volver .elementor-button { gap: 0.5rem; }
+
+/* === 3 · Modal genérico (44-modal.js) =================================== */
+
+body.jm dialog.jm-modal {
+  position: fixed; inset: 0; margin: 0; padding: 0; border: 0;
+  width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh;
+  background: transparent; color: var(--jm-ink); overflow: hidden;
+}
+body.jm dialog.jm-modal::backdrop { background: rgba(20, 23, 26, 0.72); }
+body.jm .jm-modal [hidden] { display: none; }
+
+body.jm .jm-modal__marco { display: flex; width: 100%; height: 100%; justify-content: center; align-items: stretch; padding: 0; box-sizing: border-box; }
+@media (min-width: 768px) { body.jm .jm-modal__marco { align-items: center; padding: 1.5rem; } }
+@media (min-width: 1024px) { body.jm .jm-modal__marco { padding: 2rem; } }
+
+body.jm .jm-modal__panel { position: relative; display: flex; flex-direction: column; width: 100%; height: 100%; background: var(--jm-surface); }
+@media (min-width: 768px) {
+  body.jm .jm-modal__panel {
+    width: min(1160px, 94vw); height: auto; max-height: 90dvh;
+    border: 1px solid var(--jm-ink); box-shadow: var(--jm-shadow-panel);
+  }
+}
+body.jm .jm-modal--completa .jm-modal__marco { padding: 0; align-items: stretch; }
+body.jm .jm-modal--completa .jm-modal__panel { width: 100%; height: 100%; max-height: none; border: 0; box-shadow: none; }
+
+body.jm .jm-modal__barra {
+  display: flex; flex-shrink: 0; align-items: center; justify-content: space-between; gap: 0.75rem;
+  padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--jm-rule); background: var(--jm-surface);
+}
+@media (min-width: 768px) { body.jm .jm-modal__barra { padding-inline: 1.25rem; } }
+body.jm .jm-modal__titulo { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--jm-ink-2); }
+body.jm .jm-modal__acciones { display: flex; flex-shrink: 0; align-items: center; gap: 0.25rem; }
+body.jm .jm-modal__enlace {
+  display: none; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 0.75rem;
+  font-size: 0.875rem; font-weight: 600; color: var(--jm-ink-2); transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-modal__enlace:hover, body.jm .jm-modal__enlace-movil:hover { color: var(--jm-accent); }
+body.jm .jm-boton.jm-modal__completa, body.jm .jm-boton.jm-modal__cerrar {
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; color: var(--jm-ink);
+}
+body.jm .jm-boton.jm-modal__completa { display: none; color: var(--jm-ink-2); }
+body.jm .jm-boton.jm-modal__completa:hover, body.jm .jm-boton.jm-modal__cerrar:hover { color: var(--jm-accent); }
+@media (min-width: 768px) {
+  body.jm .jm-modal__enlace:not([hidden]) { display: inline-flex; }
+  body.jm .jm-boton.jm-modal__completa { display: flex; }
+}
+
+/* El cuerpo es lo único que hace scroll: alto tope + min-height 0 + overflow. */
+body.jm .jm-modal__cuerpo { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 1.5rem 1.25rem; }
+@media (min-width: 768px) { body.jm .jm-modal__cuerpo { padding: 2rem; } }
+body.jm .jm-modal__cuerpo:focus { outline: none; }
+body.jm .jm-modal--completa .jm-modal__contenido { max-width: var(--jm-ancho-placa); margin-inline: auto; }
+
+body.jm .jm-modal__pie { flex-shrink: 0; padding: 0.5rem 1rem; border-top: 1px solid var(--jm-rule); background: var(--jm-sunken); }
+@media (min-width: 768px) { body.jm .jm-modal__pie { display: none; } }
+body.jm .jm-modal__enlace-movil { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 0.875rem; font-weight: 600; color: var(--jm-ink-2); }
+
+/* Dentro del modal, el contenedor de la página no vuelve a meter márgenes. */
+body.jm .jm-modal .jm-contenedor,
+body.jm .jm-modal .e-con.jm-contenedor { padding-inline: 0; max-width: none; }
+
+html.jm-modal-cargando, html.jm-modal-cargando body.jm a { cursor: progress; }
+
+@media (prefers-reduced-motion: no-preference) {
+  body.jm dialog.jm-modal[open] .jm-modal__panel { animation: jm-panel-entra 0.26s var(--jm-ease-entrance); }
+  body.jm dialog.jm-modal[open]::backdrop { animation: jm-velo-entra 0.2s linear; }
+}
+@keyframes jm-panel-entra {
+  from { opacity: 0; transform: translate3d(0, 12px, 0) scale(0.99); }
+  to { opacity: 1; transform: none; }
+}

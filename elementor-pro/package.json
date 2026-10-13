@@ -1,0 +1,16 @@
+{
+  "name": "jofemesa-elementor",
+  "private": true,
+  "type": "module",
+  "description": "Herramientas del paquete Elementor de JOFEMESA. Se ejecutan desde la raíz del proyecto Next (JOFEMESA-WEB).",
+  "scripts": {
+    "exportar": "cd .. && npx tsx elementor-pro/scripts/exportar-datos.tsx",
+    "asesor": "cd .. && npx -y esbuild@0.24.0 elementor-pro/scripts/entrada-asesor.ts --bundle --minify --format=iife --target=es2018 --alias:@=./src --outfile=elementor-pro/plugin/jofemesa-core/assets/js/asesor-motor.js",
+    "verificar": "node scripts/verificar-paquete.mjs",
+    "empaquetar": "node scripts/empaquetar.mjs",
+    "todo": "npm run exportar && npm run asesor && npm run verificar && npm run empaquetar"
+  },
+  "devDependencies": {
+    "php-parser": "^3.1.5"
+  }
+}

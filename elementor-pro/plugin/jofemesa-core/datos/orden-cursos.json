@@ -1,0 +1,18 @@
+{
+ "convocatoria": [
+  "plataformas",
+  "altura",
+  "confinados",
+  "andamios",
+  "carretillas"
+ ],
+ "aMedida": [
+  "ipaf",
+  "movimiento-de-tierras",
+  "carretillas-mas-10000-kg",
+  "gondolas-suspendidas",
+  "puente-grua",
+  "camion-pluma",
+  "estiba-y-eslingado"
+ ]
+}

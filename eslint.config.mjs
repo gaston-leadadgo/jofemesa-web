@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Paquete para WordPress: JS del navegador sin módulos y un motor minificado.
+    "elementor-pro/**",
   ]),
 ]);
 

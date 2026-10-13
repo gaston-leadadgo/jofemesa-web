@@ -1,0 +1,142 @@
+/* ==========================================================================
+   JOFEMESA · 42 COMPARADOR Y BANDEJA
+   Traducción de comparador/page.tsx, ComparadorCliente.tsx, AnadirMaquina.tsx,
+   TablaComparador.tsx y BandejaComparador.tsx.
+   Estructura en estructura/23-comparador.md.
+   ========================================================================== */
+
+body.jm .jm-comparador [hidden], body.jm .jm-bandeja[hidden], body.jm .jm-bandeja [hidden] { display: none; }
+
+/* === 1 · Página ========================================================= */
+
+body.jm .jm-comparador-pagina { padding-block: 1.5rem; }
+@media (min-width: 768px) { body.jm .jm-comparador-pagina { padding-block: 2rem; } }
+body.jm .jm-comparador-pagina__titulo { color: var(--jm-ink-3); }
+body.jm .jm-comparador-cuerpo { margin-top: 1.25rem; }
+
+body.jm .jm-comparador { display: flex; flex-direction: column; gap: 2rem; }
+body.jm .jm-comparador[aria-busy="true"] .jm-comparador__tabla { opacity: 0.6; transition: opacity 200ms var(--jm-ease-ui); }
+
+/* === 2 · Añadir máquina ================================================= */
+
+body.jm .jm-anadir { border: 1px solid var(--jm-rule); background: var(--jm-sunken); }
+body.jm .jm-anadir__campo { position: relative; }
+body.jm .jm-anadir__ico { position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); color: var(--jm-ink-3); pointer-events: none; }
+body.jm input.jm-anadir__input {
+  display: block; box-sizing: border-box; width: 100%; height: 3.25rem; margin: 0; padding: 0 1rem 0 2.75rem;
+  border: 0; border-radius: 0; background: transparent; color: var(--jm-ink); font: inherit; font-size: 1rem;
+}
+body.jm input.jm-anadir__input::placeholder { color: var(--jm-ink-3); opacity: 1; }
+body.jm input.jm-anadir__input:focus { outline: none; }
+body.jm .jm-anadir:focus-within { outline: 2px solid var(--jm-accent); outline-offset: 2px; }
+body.jm .jm-anadir__lista { max-height: 18rem; overflow-y: auto; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-anadir__item { border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-anadir__item:last-child { border-bottom: 0; }
+body.jm .jm-boton.jm-anadir__opcion { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 0.75rem 1rem; text-align: left; }
+body.jm .jm-boton.jm-anadir__opcion:hover { background: var(--jm-surface); }
+body.jm .jm-anadir__mas { display: inline-flex; flex-shrink: 0; color: var(--jm-accent); }
+body.jm .jm-anadir__texto { flex: 1 1 auto; min-width: 0; }
+body.jm .jm-anadir__nombre { display: block; font-size: 1rem; font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-anadir__sub { display: block; color: var(--jm-ink-3); }
+body.jm .jm-anadir__nada { padding: 0.75rem 1rem; font-size: 0.875rem; color: var(--jm-ink-3); }
+body.jm .jm-anadir-lleno { padding: 0.75rem 1rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken); font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-2); }
+
+/* === 3 · Tabla ========================================================== */
+
+body.jm .jm-comp-herramientas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin-bottom: 1.5rem; }
+body.jm .jm-boton.jm-comp-enlace {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 0.25rem;
+  font-size: 1rem; color: var(--jm-ink-2); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-boton.jm-comp-enlace:first-child { padding: 0; }
+body.jm .jm-boton.jm-comp-enlace:hover { color: var(--jm-ink); }
+body.jm .jm-boton.jm-comp-enlace--sm { margin-top: 0.5rem; gap: 0.375rem; padding: 0; font-size: 0.875rem; }
+
+/* Primera columna fija y cada máquina con scroll-snap: en móvil se avanza máquina a máquina. */
+body.jm .jm-comp-marco { overflow-x: auto; border: 1px solid var(--jm-rule); scroll-snap-type: x mandatory; }
+body.jm table.jm-comp-tabla { width: 100%; margin: 0; border-collapse: collapse; border: 0; text-align: left; font-size: 1rem; }
+body.jm .jm-comp-tabla th, body.jm .jm-comp-tabla td { border: 0; background: none; font-weight: inherit; }
+body.jm .jm-comp-tabla tbody tr { border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-comp-tabla tbody tr:last-child { border-bottom: 0; }
+body.jm .jm-comp-tabla tbody tr:nth-child(2n) > * { background: none; }
+body.jm .jm-comp-tabla th.jm-comp-tabla__esquina {
+  position: sticky; left: 0; z-index: 10; width: 8rem; min-width: 8rem; padding: 1rem; vertical-align: bottom;
+  border-right: 1px solid var(--jm-ink); border-bottom: 1px solid var(--jm-ink); background: var(--jm-surface); color: var(--jm-ink-3);
+}
+@media (min-width: 768px) { body.jm .jm-comp-tabla th.jm-comp-tabla__esquina { width: 13rem; min-width: 13rem; } }
+body.jm .jm-comp-tabla th.jm-comp-tabla__maquina {
+  width: 15rem; min-width: 15rem; padding: 1rem; vertical-align: bottom; scroll-snap-align: start;
+  border-bottom: 1px solid var(--jm-ink); background: var(--jm-surface);
+}
+body.jm .jm-comp-tabla__foto {
+  position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+  border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-xl); background: var(--jm-muted);
+}
+body.jm .jm-comp-tabla__sub { margin-top: 0.75rem; color: var(--jm-ink-3); }
+body.jm .jm-comp-tabla__marca { margin-top: 0.25rem; font-size: 0.875rem; color: var(--jm-ink-2); }
+body.jm .jm-comp-tabla__modelo { display: block; padding-block: 0.125rem; color: var(--jm-ink); transition: color 200ms var(--jm-ease-ui); }
+body.jm .jm-comp-tabla__modelo:hover { color: var(--jm-accent); }
+body.jm .jm-comp-tabla__consultar.jm-btn { display: flex; width: 100%; margin-top: 0.75rem; padding: 0; }
+body.jm .jm-comp-tabla th.jm-comp-tabla__k {
+  position: sticky; left: 0; z-index: 10; padding: 1rem; vertical-align: middle;
+  border-right: 1px solid var(--jm-rule); background: var(--jm-surface);
+}
+body.jm .jm-comp-tabla__k span { font-size: 0.875rem; font-weight: 600; color: var(--jm-ink-2); }
+body.jm .jm-comp-tabla td.jm-comp-tabla__v { padding: 1rem; text-align: right; vertical-align: middle; scroll-snap-align: start; }
+body.jm .jm-comp-tabla__celda { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.5rem; }
+/* Mejor valor: subrayado Y palabra. Nunca solo color. */
+body.jm .jm-dato--mejor { padding-bottom: 0.125rem; border-bottom: 2px solid var(--jm-ink); }
+body.jm .jm-comp-tabla__max { padding: 0.125rem 0.375rem; background: var(--jm-ink); color: #fff; }
+
+body.jm .jm-comp-una { margin-top: 1.25rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-comp-una a { font-weight: 600; color: var(--jm-accent); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+body.jm .jm-comp-final { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-comp-final__boton.jm-btn { min-height: 3.5rem; padding: 0 1.5rem; }
+
+body.jm .jm-comp-vacio {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem;
+  padding: 2rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken);
+}
+body.jm .jm-comp-vacio__hex { width: 2rem; height: 2rem; color: var(--jm-rule-strong); }
+body.jm .jm-comp-vacio__texto { max-width: 52ch; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-comp-vacio__boton.jm-btn { min-height: 3rem; padding: 0 1.25rem; }
+
+/* === 4 · Bandeja flotante =============================================== */
+/* En móvil se sienta justo encima de la barra de acciones, nunca encima. */
+body.jm .jm-bandeja {
+  position: fixed; left: 0; right: 0; bottom: 4rem; z-index: 30;
+  border-top: 1px solid var(--jm-rule); background: var(--jm-inverse); color: var(--jm-ink-inv);
+}
+@media (min-width: 768px) { body.jm .jm-bandeja { bottom: 0; } }
+body.jm .jm-bandeja__fila { display: flex; align-items: center; gap: 1rem; padding-block: 0.75rem; }
+body.jm .jm-bandeja__titulo { display: none; flex-shrink: 0; color: var(--jm-ink-inv-3); }
+@media (min-width: 768px) { body.jm .jm-bandeja__titulo { display: block; } }
+body.jm .jm-bandeja__n { margin-left: 0.5rem; color: var(--jm-ink-inv); }
+body.jm .jm-bandeja__lista { display: flex; flex: 1 1 auto; align-items: center; gap: 0.5rem; min-width: 0; margin: 0; padding: 0; overflow-x: auto; list-style: none; }
+body.jm .jm-bandeja__item {
+  position: relative; display: flex; flex-shrink: 0; align-items: center; gap: 0.5rem; padding-right: 0.25rem;
+  border: 1px solid var(--jm-rule-inverse); background: var(--jm-inverse-2);
+}
+body.jm .jm-bandeja__foto { position: relative; display: block; width: 2.75rem; height: 2.75rem; flex-shrink: 0; overflow: hidden; background: var(--jm-muted); }
+body.jm .jm-bandeja__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+body.jm .jm-bandeja__modelo { max-width: 8rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding-block: 0.25rem; font-size: 0.875rem; color: var(--jm-ink-inv); }
+body.jm .jm-boton.jm-bandeja__quitar { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; color: var(--jm-ink-inv-3); }
+body.jm .jm-boton.jm-bandeja__quitar:hover { color: var(--jm-ink-inv); }
+body.jm .jm-boton.jm-bandeja__vaciar {
+  display: none; flex-shrink: 0; min-height: 2.75rem; padding: 0 0.5rem; font-size: 0.875rem;
+  color: var(--jm-ink-inv-3); text-decoration: underline;
+}
+body.jm .jm-boton.jm-bandeja__vaciar:hover { color: var(--jm-ink-inv); }
+@media (min-width: 768px) { body.jm .jm-boton.jm-bandeja__vaciar { display: block; } }
+body.jm .jm-bandeja__ir.jm-btn { flex-shrink: 0; min-height: 3rem; padding: 0 1rem; gap: 0.5rem; }
+body.jm .jm-bandeja__ir-n { color: #fff; }
+@media (min-width: 768px) { body.jm .jm-bandeja__ir-n { display: none; } }
+body.jm .jm-bandeja :focus-visible { outline-color: var(--jm-accent-dark); }
+
+/* === 5 · Impresión: el jefe de obra se lleva la tabla a la caseta ======= */
+@media print {
+  body.jm .jm-bandeja, body.jm .jm-modal__barra, body.jm .jm-modal__pie { display: none !important; }
+  body.jm .jm-comp-marco { overflow: visible; border: 0; }
+  body.jm .jm-comp-tabla th.jm-comp-tabla__esquina, body.jm .jm-comp-tabla th.jm-comp-tabla__k { position: static; }
+  body.jm .jm-comp-tabla a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #666; }
+}

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   JOFEMESA · 90 ADAPTADOR ELEMENTOR <-> CLASES jm-
+   Se carga el ÚLTIMO. Hace que una clase puesta en «Avanzado → Clases CSS»
+   se comporte como si estuviera en la etiqueta real. Ver CONVENCIONES.md §4.
+   ========================================================================== */
+
+/* === 1 · Envoltorios ===================================================== */
+
+/* El div intermedio deja de dibujar caja: la clase del envoltorio vuelve a
+   ser, a efectos de maquetación, el padre directo del contenido. En
+   Elementor 3.24+ con «Optimizar el DOM» este div ya no existe y la regla
+   simplemente no aplica. */
+body.jm .elementor-widget > .elementor-widget-container { display: contents; }
+
+/* Elementor separa widgets con un margen propio; el ritmo lo ponen las
+   clases y el `gap` del contenedor. */
+body.jm .elementor-widget:not(:last-child) { margin-block-end: 0; }
+
+body.jm .jm-plano { display: contents; }
+
+body.jm .jm-hereda p,
+body.jm .jm-hereda .elementor-heading-title {
+  margin: 0; font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit;
+}
+
+body.jm .jm-fondo-img { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+body.jm .jm-fondo-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* === 2 · Títulos y textos ================================================ */
+/* Elementor pone line-height:1, color y tipografía del kit en
+   .elementor-heading-title. El texto hereda del envoltorio, que es donde va
+   la clase tipográfica. */
+body.jm .elementor-heading-title {
+  font: inherit; color: inherit; letter-spacing: inherit;
+  text-transform: inherit; text-wrap: inherit; line-height: inherit;
+  margin: 0; padding: 0;
+}
+body.jm .elementor-widget-heading { color: inherit; }
+body.jm .elementor-widget-text-editor { color: inherit; }
+body.jm .elementor-widget-text-editor p:last-child { margin-block-end: 0; }
+body.jm .elementor-widget-text-editor p + p { margin-top: 1em; }
+
+/* === 3 · Botones ========================================================= */
+/* El aspecto ya está en 01-base.css sobre `.jm-btn .elementor-button`. Aquí
+   solo se anula lo que pone Elementor y se ordena el interior. */
+body.jm .elementor-widget-button.jm-btn {
+  display: contents; /* el envoltorio no dibuja: el <a> es el botón */
+}
+body.jm .jm-btn .elementor-button-wrapper { display: contents; }
+body.jm .jm-btn .elementor-button-content-wrapper {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  flex-direction: row;
+}
+body.jm .jm-btn .elementor-button-icon { margin: 0; display: inline-flex; align-items: center; order: 2; }
+body.jm .jm-btn .elementor-align-icon-left .elementor-button-icon,
+body.jm .jm-btn .elementor-button-icon:first-child:not(:only-child) { order: 0; }
+body.jm .jm-btn .elementor-button-icon svg { width: 1em; height: 1em; fill: currentColor; }
+body.jm .jm-btn .elementor-button-icon i { font-size: 0.9em; line-height: 1; }
+body.jm .jm-btn .elementor-button-text { flex: none; }
+/* Un botón del ancho completo de su columna se pide con jm-btn--bloque. */
+body.jm .elementor-widget-button.jm-btn--bloque .elementor-button { display: flex; }
+
+/* === 4 · Listas de iconos ================================================ */
+body.jm .elementor-widget-icon-list .elementor-icon-list-items { display: contents; }
+body.jm .elementor-widget-icon-list .elementor-icon-list-item:not(:last-child)::after { display: none; }
+body.jm .elementor-icon-list-item { margin: 0; padding: 0; }
+body.jm .elementor-icon-list-text { color: inherit; padding: 0; font-size: inherit; }
+
+/* Lista de ventajas con check rojo (jm-ticks): FichaMaquina, Servicios. */
+body.jm .jm-ticks { display: grid; gap: 0.625rem; }
+body.jm .jm-ticks .elementor-icon-list-item { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-ticks .elementor-icon-list-icon { flex: none; margin-top: 0.3em; color: var(--jm-accent); }
+body.jm .jm-ticks .elementor-icon-list-icon svg { width: 1rem; height: 1rem; fill: currentColor; }
+body.jm .jm-ticks .elementor-icon-list-icon i { font-size: 0.9rem; color: var(--jm-accent); }
+
+/* Lista en línea con icono (teléfono, correo, dirección). */
+body.jm .jm-lista-linea { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+body.jm .jm-lista-linea .elementor-icon-list-item a,
+body.jm .jm-lista-linea .elementor-icon-list-item { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; }
+body.jm .jm-lista-linea .elementor-icon-list-icon svg { width: 1rem; height: 1rem; fill: currentColor; }
+
+/* === 5 · Icono suelto ==================================================== */
+/* Pastilla de icono (jm-pastilla-icono): el cuadrado rojo suave de las
+   tarjetas. El dibujo de máquina es un SVG subido (recursos/iconos). */
+body.jm .elementor-widget-icon .elementor-icon-wrapper { display: contents; }
+body.jm .jm-pastilla-icono {
+  display: grid; place-items: center; width: 2.75rem; height: 2.75rem;
+  border-radius: 1rem; background: var(--jm-accent-tint); color: var(--jm-accent);
+}
+body.jm .jm-pastilla-icono .elementor-icon { display: grid; place-items: center; width: 100%; height: 100%; font-size: 1.25rem; color: inherit; }
+body.jm .jm-pastilla-icono .elementor-icon svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; }
+body.jm .jm-icono-maquina .elementor-icon { color: var(--jm-accent); font-size: 0; }
+body.jm .jm-icono-maquina .elementor-icon svg { width: 100%; height: auto; fill: none; stroke: currentColor; }
+
+/* === 6 · Imágenes ======================================================== */
+body.jm .elementor-widget-image img { display: block; vertical-align: top; }
+body.jm .elementor-widget-image figure,
+body.jm .elementor-widget-image .elementor-image { margin: 0; display: contents; }
+/* Foto de máquina: la creatividad completa, nunca recortada. */
+body.jm .jm-foto-maquina { background: #fff; border-radius: var(--jm-radius-2xl); overflow: hidden; }
+body.jm .jm-foto-maquina img { width: 100%; height: 100%; object-fit: contain; aspect-ratio: 1 / 1; }
+
+/* === 7 · Acordeón (por si se usa en preguntas frecuentes) =============== */
+body.jm .jm-acordeon .e-n-accordion-item { border-block-start: 1px solid var(--jm-rule); background: none; }
+body.jm .jm-acordeon .e-n-accordion-item:last-of-type { border-block-end: 1px solid var(--jm-rule); }
+body.jm .jm-acordeon .e-n-accordion-item-title { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; background: none; border: 0; font-family: var(--jm-font-display); font-size: 1.125rem; font-weight: 500; color: var(--jm-ink); }
+body.jm .jm-acordeon .elementor-accordion-item { border: 0; border-block-start: 1px solid var(--jm-rule); }
+body.jm .jm-acordeon .elementor-tab-title { padding: 1.25rem 0; border: 0; background: none; }
+body.jm .jm-acordeon .elementor-tab-content { border: 0; padding: 0 0 1.25rem; color: var(--jm-ink-2); }
+
+/* === 8 · Estados de botón que pinta el tema ============================== */
+/* Hello Elementor y casi todos los temas pintan button:hover/:focus/:active.
+   Se neutralizan los cuatro estados en los controles propios del paquete. */
+body.jm button.jm-reset,
+body.jm button.jm-reset:hover,
+body.jm button.jm-reset:focus,
+body.jm button.jm-reset:active {
+  background: none; border: 0; box-shadow: none; color: inherit; padding: 0; text-decoration: none;
+}
+body.jm [data-jm] button:not(.jm-btn):hover,
+body.jm [data-jm] button:not(.jm-btn):focus,
+body.jm [data-jm] button:not(.jm-btn):active { box-shadow: none; }
+
+/* === 9 · Contenedores ==================================================== */
+/* Lo correcto es poner relleno y hueco por defecto a 0 en Ajustes del sitio
+   (guía, paso 0). Esto lo deja atado también por CSS. */
+body.jm .e-con { --padding-top: 0px; --padding-bottom: 0px; --padding-left: 0px; --padding-right: 0px; }
+body.jm .e-con.jm-contenedor,
+body.jm .e-con > .e-con-inner.jm-contenedor {
+  --content-width: var(--jm-ancho-placa);
+  max-width: var(--jm-ancho-placa);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) { body.jm .e-con.jm-contenedor { padding-inline: 2rem; } }
+@media (min-width: 1024px) { body.jm .e-con.jm-contenedor { padding-inline: 3rem; } }
+@media (min-width: 1440px) { body.jm .e-con.jm-contenedor { padding-inline: 4rem; } }
+/* Las clases de sección ganan al relleno a cero de arriba. */
+body.jm .e-con.jm-seccion { padding-block: 3.5rem; }
+@media (min-width: 768px) { body.jm .e-con.jm-seccion { padding-block: 4.5rem; } }
+@media (min-width: 1024px) { body.jm .e-con.jm-seccion { padding-block: 5.5rem; } }
+body.jm .e-con.jm-seccion-sm { padding-block: 2.5rem; }
+@media (min-width: 1024px) { body.jm .e-con.jm-seccion-sm { padding-block: 3.5rem; } }
+
+/* El widget Shortcode no añade nada visual: su contenido es el HTML del
+   plugin y debe comportarse como hijo directo del contenedor. */
+body.jm .elementor-widget-shortcode .elementor-shortcode { display: contents; }
+
+/* Loop Grid: la rejilla la pone la clase del widget (jm-rejilla-tarjetas…),
+   no los controles de columnas de Elementor. */
+body.jm .elementor-widget-loop-grid .e-loop-item { height: 100%; }
+
+/* === 10 · Traducciones propias =========================================== */
+/* Cada componente documenta aquí, con una línea, qué se rompió y por qué.
+   Las traducciones de sección viven en sus archivos 2x-*.css. */

@@ -1,0 +1,233 @@
+/* ==========================================================================
+   JOFEMESA · 45 FORMULARIOS
+   Aspecto GENÉRICO del widget Formulario de Elementor Pro bajo la clase
+   `jm-form` (Avanzado → Clases CSS del widget). Lo usan la solicitud de
+   alquiler y la de formación. Traducción de los campos de
+   FormularioDisponibilidad.tsx: etiqueta-campo, campos de 48 px, casilla
+   cuadrada de 24 px, errores en rojo oscuro y envío en rojo de marca.
+
+   Elementor genera reglas por widget de hasta (0,5,0) (colores y tipos
+   globales por defecto del formulario): por eso todo cuelga del prefijo
+   `body.jm .jm-form.elementor-widget-form`, que llega a (0,6,1)+.
+   Al final, lo propio de /consultar-disponibilidad/ (columnas y lista).
+   ========================================================================== */
+
+body.jm .jm-form.elementor-widget-form [hidden] { display: none; }
+
+/* === 1 · Rejilla de campos ============================================== */
+/* El ancho de columna del campo (100 % / 50 %) sigue mandando: 50 % ocupa
+   una de las dos columnas desde 768 px; el resto, las dos. */
+body.jm .jm-form.elementor-widget-form .elementor-form-fields-wrapper {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; margin: 0;
+}
+@media (min-width: 768px) {
+  body.jm .jm-form.elementor-widget-form .elementor-form-fields-wrapper,
+  body.jm .jm-form.elementor-widget-form .jm-solicitud__col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-column {
+  width: auto; max-width: none; min-width: 0; margin: 0; padding: 0; grid-column: 1 / -1;
+  display: flex; flex-direction: column; align-items: stretch;
+}
+@media (min-width: 768px) {
+  body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-col-50,
+  body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-col-33,
+  body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-col-40,
+  body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-col-25 { grid-column: auto / span 1; }
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-type-hidden,
+body.jm .jm-form.elementor-widget-form .elementor-field-type-honeypot { display: none; }
+
+/* === 2 · Etiquetas ====================================================== */
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-field-label {
+  display: block; margin: 0 0 0.5rem; padding: 0;
+  font-family: var(--jm-font-sans); font-size: 0.875rem; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  color: var(--jm-ink);
+}
+body.jm .jm-form.elementor-widget-form .elementor-mark-required .elementor-field-label::after {
+  content: "*"; padding-inline-start: 0.25em; color: var(--jm-accent);
+}
+
+/* === 3 · Campos ========================================================= */
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-field.elementor-field-textual {
+  box-sizing: border-box; width: 100%; height: 3rem; min-height: 3rem; margin: 0; padding: 0 0.75rem;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-xl);
+  background-color: var(--jm-surface); color: var(--jm-ink); box-shadow: none;
+  font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 400; line-height: 1.2;
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-field.elementor-field-textual::placeholder { color: var(--jm-ink-3); opacity: 1; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-field.elementor-field-textual:focus { box-shadow: none; outline: none; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-field.elementor-field-textual:focus-visible { outline: 2px solid var(--jm-accent); outline-offset: 2px; }
+
+/* Los desplegables, en pastilla; el textarea, recto y de cuatro líneas. */
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-select-wrapper { width: 100%; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-select-wrapper select.elementor-field.elementor-field-textual {
+  border-radius: var(--jm-radius-full); padding-right: 2.5rem;
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-select-wrapper::before {
+  right: 1rem; color: var(--jm-ink-3); font-size: 0.75rem;
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-group textarea.elementor-field.elementor-field-textual {
+  height: auto; min-height: 0; padding: 0.75rem; border-radius: 0; line-height: 1.6; resize: vertical;
+}
+/* Cifras en monoespaciada: teléfono, CIF (que además va en pastilla). */
+body.jm .jm-form.elementor-widget-form .elementor-field-group-telefono .elementor-field.elementor-field-textual,
+body.jm .jm-form.elementor-widget-form .elementor-field-group-cif .elementor-field.elementor-field-textual {
+  font-family: var(--jm-font-mono); font-weight: 500; font-variant-numeric: tabular-nums;
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-group-cif .elementor-field.elementor-field-textual { border-radius: var(--jm-radius-full); }
+
+/* Fecha nativa: mismo alto, sin el relleno extra de algunos navegadores. */
+body.jm .jm-form.elementor-widget-form .elementor-field-group input[type="date"].elementor-field-textual { -webkit-appearance: none; appearance: none; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group input[type="date"]::-webkit-date-and-time-value { text-align: left; }
+
+/* === 4 · Casilla de aceptación (24 px, cuadrada, check blanco) ========== */
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance .elementor-field-label { display: none; }
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance .elementor-field-subgroup { display: block; margin: 0; }
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance .elementor-field-option {
+  display: flex; align-items: flex-start; gap: 0.75rem; margin: 0; padding: 0; cursor: pointer;
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance input[type="checkbox"] {
+  -webkit-appearance: none; appearance: none; flex-shrink: 0; width: 1.5rem; height: 1.5rem; margin: 0.125rem 0 0; padding: 0;
+  border: 2px solid var(--jm-rule-control); border-radius: 0; background: var(--jm-surface) center / 1rem 1rem no-repeat; cursor: pointer;
+  transition: background-color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance input[type="checkbox"]:checked {
+  border-color: var(--jm-ink); background-color: var(--jm-ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5 6.5 12 13 4.5' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance input[type="checkbox"]:focus-visible { outline: 2px solid var(--jm-accent); outline-offset: 2px; }
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance .elementor-field-option label {
+  margin: 0; padding: 0; font-size: 0.875rem; font-weight: 400; line-height: 1.43; color: var(--jm-ink-2); cursor: pointer;
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance.elementor-field-required .elementor-field-option label::after {
+  content: " *"; color: var(--jm-accent);
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-type-acceptance a {
+  font-weight: 600; color: var(--jm-accent); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+
+/* === 5 · HTML, ayudas y avisos ========================================== */
+body.jm .jm-form.elementor-widget-form .elementor-field-type-html { font-size: 0.875rem; line-height: 1.43; color: var(--jm-ink-2); }
+/* Un campo HTML con ID que empieza por «ayuda» se pega al campo de encima (mt-2). */
+body.jm .jm-form.elementor-widget-form .elementor-field-type-html[class*="elementor-field-group-ayuda"] { margin-top: -0.75rem; color: var(--jm-ink-3); }
+body.jm .jm-form.elementor-widget-form .jm-form-titulo {
+  padding-bottom: 0.75rem; border-bottom: 1px solid var(--jm-rule-strong); color: var(--jm-ink);
+  font-family: var(--jm-font-display); font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 400; line-height: 1.18; letter-spacing: -0.022em;
+}
+body.jm .jm-form.elementor-widget-form .jm-form-aviso { display: block; margin-top: 0.5rem; font-size: 0.875rem; color: var(--jm-wait-text); }
+
+/* Errores: el texto, en rojo oscuro y seminegrita, debajo del campo. */
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-message.elementor-help-inline,
+body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-message-danger {
+  display: block; margin-top: 0.5rem; padding: 0; font-size: 0.875rem; font-weight: 600; line-height: 1.43; color: var(--jm-danger);
+}
+body.jm .jm-form.elementor-widget-form .elementor-message.elementor-message-danger::before,
+body.jm .jm-form.elementor-widget-form .elementor-message.elementor-message-success::before { display: none; }
+body.jm .jm-form.elementor-widget-form form > .elementor-message {
+  grid-column: 1 / -1; margin-top: 1.25rem; padding: 0.75rem 1rem; font-size: 1rem;
+  border-left: 2px solid var(--jm-danger); background: var(--jm-accent-tint); color: var(--jm-ink);
+}
+body.jm .jm-form.elementor-widget-form form > .elementor-message-success { border-left-color: var(--jm-ok); background: var(--jm-sunken); }
+
+body.jm .jm-form.elementor-widget-form .jm-form-resumen {
+  display: flex; align-items: flex-start; gap: 0.75rem; grid-column: 1 / -1; padding: 0.75rem 1rem;
+  border-left: 2px solid var(--jm-danger); background: var(--jm-accent-tint);
+}
+body.jm .jm-form.elementor-widget-form .jm-form-resumen[hidden] { display: none; }
+body.jm .jm-form.elementor-widget-form .jm-form-resumen:focus { outline: none; }
+body.jm .jm-form-resumen__ico { flex-shrink: 0; margin-top: 0.125rem; color: var(--jm-danger); }
+body.jm .jm-form-resumen__titulo { font-size: 1rem; font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-form-resumen__texto { margin-top: 0.25rem; font-size: 0.875rem; color: var(--jm-ink-2); }
+
+/* === 6 · Botón de envío (aspecto jm-btn--acento, 56 px) ================= */
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit { margin-top: 0.75rem; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"] {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; min-height: 3.5rem; height: 3.5rem;
+  padding: 0 2rem; border: 0; border-radius: var(--jm-radius-full);
+  background: var(--jm-accent); color: #fff; box-shadow: none;
+  font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 600; line-height: 1.2; text-transform: none; letter-spacing: 0;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+@media (min-width: 768px) {
+  body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"] { width: auto; }
+}
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"]:hover,
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"]:focus { background: var(--jm-accent-hover); color: #fff; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"]:active { background: var(--jm-accent-active); }
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"]:focus-visible { outline: 2px solid var(--jm-ink); outline-offset: 2px; }
+body.jm .jm-form.elementor-widget-form .elementor-form-waiting .elementor-button[type="submit"],
+body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-field-type-submit .elementor-button[type="submit"]:disabled { opacity: 0.7; }
+
+/* ==========================================================================
+   /consultar-disponibilidad/ (estructura/52-consultar-disponibilidad.md)
+   ========================================================================== */
+
+body.jm .jm-solicitud-pagina { padding-block: 2.5rem; }
+@media (min-width: 768px) { body.jm .jm-solicitud-pagina { padding-block: 3.5rem; } }
+body.jm .jm-solicitud-pagina__titulo { max-width: 26ch; color: var(--jm-ink); }
+body.jm .jm-solicitud-pagina__lede { margin-top: 1.25rem; max-width: 58ch; color: var(--jm-ink-2); }
+body.jm .jm-form-solicitud { margin-top: 3rem; }
+
+/* Dos columnas (las crea 43-solicitud.js): qué se pide 5/12 · quién lo pide 7/12. */
+body.jm .jm-form.elementor-widget-form form.jm-form--columnas .elementor-form-fields-wrapper { gap: 2.5rem; }
+@media (min-width: 768px) {
+  body.jm .jm-form.elementor-widget-form form.jm-form--columnas .elementor-form-fields-wrapper { grid-template-columns: minmax(0, 1fr); }
+}
+@media (min-width: 1024px) {
+  body.jm .jm-form.elementor-widget-form form.jm-form--columnas .elementor-form-fields-wrapper {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; align-items: start;
+  }
+}
+body.jm .jm-form.elementor-widget-form .jm-solicitud__col {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; align-content: start; min-width: 0;
+}
+body.jm .jm-form.elementor-widget-form .jm-solicitud__col .jm-solicitud__cabecera { grid-column: 1 / -1; margin-bottom: 0.75rem; }
+
+body.jm .jm-solicitud__cabecera { display: flex; flex-direction: column; }
+body.jm .jm-solicitud-asunto {
+  display: inline-flex; align-self: flex-start; align-items: center; gap: 0.625rem; margin-bottom: 1.25rem;
+  padding: 0.5rem 0.75rem; border-left: 2px solid var(--jm-accent); background: var(--jm-sunken); color: var(--jm-ink);
+}
+body.jm .jm-solicitud__titulo { padding-bottom: 0.75rem; border-bottom: 1px solid var(--jm-rule-strong); color: var(--jm-ink); }
+
+body.jm .jm-solicitud-maquinas [hidden] { display: none; }
+body.jm .jm-solicitud-maquinas__lista { margin: 1.25rem 0 0; padding: 0; list-style: none; border-block: 1px solid var(--jm-rule); }
+body.jm .jm-solicitud-maquinas__item { display: flex; align-items: center; gap: 1rem; padding-block: 0.75rem; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-solicitud-maquinas__item:first-child { border-top: 0; }
+body.jm .jm-solicitud-maquinas__foto {
+  position: relative; display: block; width: 3.5rem; height: 3.5rem; flex-shrink: 0; overflow: hidden;
+  border: 1px solid var(--jm-rule); background: var(--jm-muted);
+}
+body.jm .jm-solicitud-maquinas__foto .jm-foto-pendiente { background: var(--jm-muted); }
+body.jm .jm-solicitud-maquinas__nombre { flex: 1 1 auto; min-width: 0; }
+body.jm .jm-solicitud-maquinas__marca { display: block; color: var(--jm-ink-3); }
+body.jm .jm-solicitud-maquinas__modelo { display: block; font-size: 1rem; font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-boton.jm-solicitud-maquinas__quitar { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; color: var(--jm-ink-2); }
+body.jm .jm-boton.jm-solicitud-maquinas__quitar:hover { color: var(--jm-accent); }
+body.jm .jm-solicitud-maquinas__vacio { margin-top: 1.25rem; padding: 1.25rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken); font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-solicitud-maquinas__vacio a,
+body.jm .jm-solicitud-contexto a { font-weight: 600; color: var(--jm-accent); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+body.jm .jm-solicitud-contexto { margin-top: 1.5rem; padding: 0.75rem 1rem; border-left: 2px solid var(--jm-accent); background: var(--jm-accent-tint); }
+body.jm .jm-solicitud-contexto__k { color: var(--jm-ink-2); }
+body.jm .jm-solicitud-contexto__v { margin-top: 0.375rem; font-size: 1rem; color: var(--jm-ink); }
+
+/* Ritmo de la columna derecha: consentimiento mt-6, envío mt-8, nota mt-4. */
+body.jm .jm-form.elementor-widget-form .elementor-field-group-consentimiento { margin-top: 0.25rem; }
+body.jm .jm-form.elementor-widget-form .elementor-field-group-nota_envio { margin-top: -0.25rem; color: var(--jm-ink-2); }
+
+/* Página de gracias */
+body.jm .jm-gracias { padding-block: 3rem; }
+@media (min-width: 768px) { body.jm .jm-gracias { padding-block: 4rem; } }
+body.jm .jm-gracias__cuerpo { max-width: 60ch; }
+body.jm .jm-gracias__hex { width: 2.5rem; height: 2.5rem; color: var(--jm-accent); }
+body.jm .jm-gracias__titulo { margin-top: 2rem; color: var(--jm-ink); }
+body.jm .jm-gracias__lede { margin-top: 2rem; color: var(--jm-ink-2); }
+body.jm .jm-gracias__botones { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+@media (min-width: 768px) { body.jm .jm-gracias__botones { flex-direction: row; } }
+body.jm .jm-gracias__botones .jm-btn .elementor-button { min-height: 3.5rem; }
+@media (min-width: 768px) {
+  body.jm .jm-form.elementor-widget-form .jm-solicitud__col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+body.jm .jm-gracias__hex { display: block; }
+body.jm .jm-gracias__hex .elementor-icon { display: block; width: 100%; height: 100%; font-size: 0; color: inherit; }
+body.jm .jm-gracias__hex svg { width: 100%; height: 100%; fill: currentColor; }

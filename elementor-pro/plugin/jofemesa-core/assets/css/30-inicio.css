@@ -1,0 +1,748 @@
+/* ==========================================================================
+   JOFEMESA · 30 INICIO
+   La portada: src/app/(site)/page.tsx y src/components/home/*.
+   Montaje: estructura/10-inicio.md. Mismos valores que las utilidades de
+   Tailwind del original (1 = 0,25rem; md 768, lg 1024, xl 1440).
+
+   Índice
+     0  Piezas comunes de la portada (cabecera de sección, enlaces, iconos)
+     1  S1 Hero en carrusel (+ keyframes de globals.css)
+     2  Buscador del hero          [jm_buscador]
+     3  Próxima convocatoria       [jm_proxima_convocatoria]
+     4  S2 Partners
+     5  S3 Garantías
+     6  S4 Necesidades (6 familias)
+     7  S5 Asesor empotrado (la banda; el panel está en 31-asesor.css)
+     8  S6 Destacadas (Loop Carousel)
+     9  S7 Cobertura + mapa         [jm_delegaciones_lista] [jm_mapa]
+    10  S8 Autoridad                [jm_antiguedad] [jm_fabricantes]
+    11  S10 Cierre
+   ========================================================================== */
+
+/* ==========================================================================
+   0 · Piezas comunes
+   ========================================================================== */
+
+/* Contenedores de maquetación propios: sin el hueco por defecto de Elementor. */
+body.jm .jm-pila { display: flex; flex-direction: column; gap: 0; }
+body.jm .jm-fila { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0; }
+
+/* Cabecera de sección: bloque de texto + acción a la derecha (md+). */
+body.jm .jm-cabecera-seccion {
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  body.jm .jm-cabecera-seccion { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+}
+body.jm .jm-cabecera-seccion--4 { gap: 1rem; }
+body.jm .jm-cabecera-seccion__texto { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+body.jm .jm-cabecera-seccion__texto .jm-label { color: var(--jm-accent); }
+body.jm .jm-oscuro .jm-cabecera-seccion__texto .jm-label { color: var(--jm-accent-dark); }
+
+/* Ritmo vertical de titular y entradilla (mt-3 / mt-4) y anchos de medida. */
+body.jm .jm-mt-3 { margin-top: 0.75rem; }
+body.jm .jm-mt-4 { margin-top: 1rem; }
+body.jm .jm-ch-22 { max-width: 22ch; }
+body.jm .jm-ch-24 { max-width: 24ch; }
+body.jm .jm-ch-28 { max-width: 28ch; }
+body.jm .jm-ch-52 { max-width: 52ch; }
+body.jm .jm-ch-54 { max-width: 54ch; }
+body.jm .jm-tinta { color: var(--jm-ink); }
+body.jm .jm-oscuro .jm-tinta { color: var(--jm-ink-inv); }
+body.jm .jm-sin-corte { white-space: nowrap; }
+body.jm .jm-texto-inv { color: var(--jm-ink-inv); }
+
+/* Elementor da a cada widget el ancho que diga su contenedor (100 % si en el
+   panel la dirección es «columna»). En los contenedores de esta página que
+   ordenan en fila, el envoltorio del widget mide lo que su contenido. */
+body.jm :is(.jm-fila, .jm-hero__kicker, .jm-hero__enlaces, .jm-hero__botones, .jm-cabecera-seccion,
+  .jm-destacadas__acciones, .jm-necesidad, .jm-garantias__sellos, .jm-tira-fabricantes,
+  .jm-cobertura__botones, .jm-cierre__botones) > .elementor-element {
+  width: auto; max-width: 100%;
+}
+body.jm :is(.jm-necesidad, .jm-cabecera-seccion) > .e-con { width: auto; }
+
+/* Enlace con flecha: el <a> no se estira dentro de una columna flex. */
+body.jm :is(.jm-hero, .jm-partners, .jm-necesidades, .jm-asesor-banda, .jm-destacadas, .jm-cobertura, .jm-autoridad) .jm-btn--enlace .elementor-button {
+  align-self: flex-start; justify-content: flex-start;
+}
+body.jm :is(.jm-hero, .jm-partners, .jm-necesidades, .jm-destacadas, .jm-cobertura, .jm-autoridad) .jm-btn--enlace .elementor-button-icon { transition: transform 200ms var(--jm-ease-ui); }
+body.jm :is(.jm-hero, .jm-partners, .jm-necesidades, .jm-destacadas, .jm-cobertura, .jm-autoridad) .jm-btn--enlace .elementor-button:hover .elementor-button-icon { transform: translateX(0.125rem); }
+body.jm :is(.jm-hero, .jm-partners, .jm-necesidades, .jm-destacadas, .jm-cobertura, .jm-autoridad) .jm-btn--enlace .elementor-button-icon svg { width: 1rem; height: 1rem; }
+
+/* Enlace blanco sobre oscuro con subrayado del mismo color (Cobertura, Autoridad). */
+body.jm .jm-enlace-claro .elementor-button,
+body.jm .jm-oscuro .jm-enlace-claro .elementor-button {
+  color: var(--jm-ink-inv); text-decoration-color: currentColor;
+}
+body.jm .jm-enlace-claro .elementor-button:hover,
+body.jm .jm-oscuro .jm-enlace-claro .elementor-button:hover { color: var(--jm-accent-dark); }
+
+/* Icono de línea (Lucide subido como SVG): 22 px, rojo, trazo 1,75. */
+body.jm .jm-icono-linea { color: var(--jm-accent); line-height: 0; }
+body.jm .jm-icono-linea .elementor-icon { display: inline-flex; font-size: 1.375rem; color: inherit; line-height: 0; }
+body.jm .jm-icono-linea .elementor-icon svg,
+body.jm .jm-icono-linea .elementor-icon i { width: 1.375rem; height: 1.375rem; fill: none; stroke: currentColor; color: inherit; }
+body.jm .jm-icono-linea .elementor-icon i { font-size: 1.25rem; }
+
+/* Solo móvil / desde md */
+@media (min-width: 768px) { body.jm .jm-solo-movil { display: none; } }
+body.jm .jm-desde-md { display: none; }
+@media (min-width: 768px) { body.jm .jm-desde-md { display: revert; } }
+
+/* Pista horizontal (globals.css · pista-horizontal) */
+body.jm .jm-pista-horizontal {
+  scrollbar-width: thin; scrollbar-color: var(--jm-rule-strong) transparent;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+}
+body.jm .jm-pista-horizontal::-webkit-scrollbar { height: 6px; }
+body.jm .jm-pista-horizontal::-webkit-scrollbar-track { background: transparent; }
+body.jm .jm-pista-horizontal::-webkit-scrollbar-thumb { background: var(--jm-rule-strong); }
+@media (pointer: coarse) {
+  body.jm .jm-pista-horizontal { scrollbar-width: none; }
+  body.jm .jm-pista-horizontal::-webkit-scrollbar { display: none; }
+}
+
+/* Rejilla de celdas separadas por filete de 1 px (gap-px + fondo filete). */
+body.jm .jm-celdas {
+  display: grid; gap: 1px; background: var(--jm-rule);
+  border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-2xl); overflow: hidden;
+}
+
+/* Tira de fabricantes: rótulo + [jm_fabricantes] */
+body.jm .jm-tira-fabricantes { display: flex; flex-direction: column; gap: 0.75rem; }
+@media (min-width: 768px) {
+  body.jm .jm-tira-fabricantes { flex-direction: row; align-items: center; gap: 1.5rem; }
+}
+body.jm .jm-tira-fabricantes .jm-label { flex-shrink: 0; color: var(--jm-ink-3); }
+body.jm .jm-fabricantes { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; list-style: none; margin: 0; padding: 0; }
+body.jm .jm-fabricantes li { margin: 0; font-size: 1rem; line-height: 1.5; }
+body.jm .jm-fabricantes--partners li { font-weight: 500; color: var(--jm-ink-3); }
+body.jm .jm-fabricantes--autoridad li { font-weight: 600; color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   1 · S1 Hero en carrusel (Hero.tsx + HeroCarrusel.tsx)
+   Raíz:     Contenedor .jm-hero  [data-jm|hero]
+   Portadas: Contenedor .jm-hero__portada [data-jm-portada|alquiler]
+   El estado lo pone 30-hero.js: data-estado="activa|previa" en cada portada,
+   data-pausado y data-jm-listo en la raíz.
+   ========================================================================== */
+
+body.jm .jm-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 0;
+  min-height: calc(100svh - var(--jm-alto-cabecera) - var(--jm-alto-barra-movil));
+  background-color: var(--jm-inverse); color: var(--jm-ink-inv-2);
+}
+
+/* Todas las portadas en la misma celda: la sección mide lo que la más alta. */
+body.jm .jm-hero__portada {
+  position: relative; isolation: isolate;
+  grid-column: 1; grid-row: 1; min-width: 0; width: 100%;
+  display: flex; flex-direction: column; justify-content: center; align-items: stretch; gap: 0;
+  z-index: 0; opacity: 0; pointer-events: none;
+}
+body.jm .jm-hero__portada[data-estado="activa"] { z-index: 20; opacity: 1; pointer-events: auto; }
+body.jm .jm-hero__portada[data-estado="previa"] { z-index: 10; opacity: 1; }
+/* Sin JS (o antes de que arranque): solo la primera portada. */
+body.jm .jm-hero:not([data-jm-listo]) .jm-hero__portada--inicial { z-index: 20; opacity: 1; pointer-events: auto; }
+
+/* Cortina: la portada entrante se descubre de derecha a izquierda. */
+body.jm .jm-hero__portada.jm-hero--cortina { animation: jm-hero-cortina 1s cubic-bezier(0.77, 0, 0.175, 1) both; }
+
+/* Foto a sangre (widget Imagen con jm-fondo-img jm-hero__foto). */
+body.jm .jm-hero__foto { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+body.jm .jm-hero__foto img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; }
+body.jm .jm-hero__foto--alquiler img { object-position: 72% center; }
+body.jm .jm-hero__foto--formacion img { object-position: 80% center; }
+/* Mientras no llegue la foto de Formación: la de obra en espejo y con velo extra. */
+body.jm .jm-hero__foto--provisional img { object-position: 20% center; transform: scaleX(-1); }
+body.jm .jm-hero__foto--provisional::before {
+  content: ""; position: absolute; inset: 0; z-index: 2; background: rgba(20, 23, 26, 0.35); pointer-events: none;
+}
+body.jm .jm-hero__portada[data-estado="activa"] .jm-hero__foto img {
+  animation: jm-hero-acercar 9s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+/* Velo medido: el texto a la izquierda, la máquina limpia a la derecha. */
+body.jm .jm-hero__foto::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(20, 23, 26, 0.96), rgba(20, 23, 26, 0.86), rgba(20, 23, 26, 0.5));
+}
+@media (min-width: 1024px) {
+  body.jm .jm-hero__foto::after {
+    background: linear-gradient(to right, rgba(20, 23, 26, 0.96) 0%, rgba(20, 23, 26, 0.78) 56%, rgba(20, 23, 26, 0) 90%);
+  }
+}
+
+/* Texto: container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12 */
+body.jm .jm-hero__texto { position: relative; width: 100%; display: flex; flex-direction: column; gap: 0; padding-top: 3rem; padding-bottom: 2.5rem; }
+@media (min-width: 768px) { body.jm .jm-hero__texto { padding-top: 4rem; padding-bottom: 3rem; } }
+/* La columna: max-w-[60ch] pb-20 md:pb-16 lg:max-w-[56%] */
+body.jm .jm-hero__columna { display: flex; flex-direction: column; align-items: stretch; gap: 0; max-width: 60ch; padding-bottom: 5rem; }
+@media (min-width: 768px) { body.jm .jm-hero__columna { padding-bottom: 4rem; } }
+@media (min-width: 1024px) { body.jm .jm-hero__columna { max-width: 56%; } }
+
+body.jm .jm-hero__kicker { display: flex; flex-flow: row wrap; align-items: center; gap: 0.5rem 0.75rem; }
+body.jm .jm-hero__pastilla {
+  display: inline-flex; align-items: center; gap: 0.5rem; width: auto;
+  padding: 0.375rem 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--jm-radius-full);
+  background: rgba(255, 255, 255, 0.1); color: var(--jm-ink-inv-2);
+}
+body.jm .jm-hero__pastilla::before {
+  content: ""; flex: none; width: 0.375rem; height: 0.375rem; border-radius: 9999px; background: var(--jm-accent);
+}
+body.jm .jm-hero__zona { display: none; color: var(--jm-ink-inv-3); }
+@media (min-width: 768px) { body.jm .jm-hero__zona { display: inline; } }
+
+body.jm .jm-hero .jm-hero__titulo { margin-top: 1.5rem; max-width: 24ch; color: var(--jm-ink-inv); }
+body.jm .jm-hero .jm-hero__titulo--corto { max-width: 22ch; }
+body.jm .jm-hero__lede { margin-top: 1.25rem; max-width: 52ch; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-inv-2); }
+@media (min-width: 1024px) { body.jm .jm-hero__lede { font-size: 1.125rem; } }
+body.jm .jm-hero__buscador { margin-top: 1.75rem; max-width: 36rem; }
+
+/* Enlaces de la portada de Alquiler: mt-6 flex-wrap gap-x-6 gap-y-2 */
+body.jm .jm-hero__enlaces { margin-top: 1.5rem; display: flex; flex-flow: row wrap; align-items: center; gap: 0.5rem 1.5rem; }
+body.jm .jm-hero .jm-hero__enlace-acento .elementor-button {
+  color: var(--jm-accent-dark); text-decoration-color: currentColor; font-size: 1rem;
+}
+body.jm .jm-hero .jm-hero__enlace-acento .elementor-button:hover { color: #fff; }
+body.jm .jm-hero .jm-hero__enlace-suave .elementor-button {
+  display: none; font-weight: 400; color: var(--jm-ink-inv-2); text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+@media (min-width: 768px) { body.jm .jm-hero .jm-hero__enlace-suave .elementor-button { display: inline-flex; } }
+body.jm .jm-hero .jm-hero__enlace-suave .elementor-button:hover { color: var(--jm-ink-inv); }
+
+/* Botones de la portada de Formación: mt-8 flex-wrap gap-3 */
+body.jm .jm-hero__botones { margin-top: 2rem; display: flex; flex-flow: row wrap; align-items: center; gap: 0.75rem; }
+body.jm .jm-hero .jm-hero__btn-claro .elementor-button:hover { background: #fff; border-color: #fff; color: var(--jm-ink); }
+body.jm .jm-hero__proxima { margin-top: 2rem; display: none; }
+@media (min-width: 768px) { body.jm .jm-hero__proxima { display: block; } }
+
+/* Entrada escalonada del texto: .jm-entra-0 … .jm-entra-4 (data-entra + --i) */
+body.jm .jm-entra-0 { --i: 0; }
+body.jm .jm-entra-1 { --i: 1; }
+body.jm .jm-entra-2 { --i: 2; }
+body.jm .jm-entra-3 { --i: 3; }
+body.jm .jm-entra-4 { --i: 4; }
+body.jm .jm-hero--entra :is(.jm-entra-0, .jm-entra-1, .jm-entra-2, .jm-entra-3, .jm-entra-4) {
+  animation: jm-hero-subir 0.8s var(--jm-ease-entrance) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 420ms);
+}
+/* Entre la primera pintura y el arranque del JS el texto espera oculto; si el
+   JS no llega, se muestra solo a los 2,5 s. */
+html[data-motor] body.jm .jm-hero:not([data-jm-listo]) :is(.jm-entra-0, .jm-entra-1, .jm-entra-2, .jm-entra-3, .jm-entra-4) {
+  opacity: 0; animation: jm-hero-rescate 0s linear 2.5s forwards;
+}
+
+/* La cuchilla roja que cruza con la cortina (la crea el JS). */
+body.jm .jm-hero__cuchilla {
+  position: absolute; top: 0; bottom: 0; left: 0; z-index: 30; width: 0.75rem;
+  background: var(--jm-accent); pointer-events: none;
+  box-shadow: 0 0 40px 6px rgba(227, 6, 19, 0.45);
+  animation: jm-hero-cuchilla 1s cubic-bezier(0.77, 0, 0.175, 1) both;
+}
+
+/* ---------- Controles (los crea el JS) ---------- */
+body.jm .jm-hero button.jm-hero__flecha,
+body.jm .jm-hero button.jm-hero__flecha:hover,
+body.jm .jm-hero button.jm-hero__flecha:focus,
+body.jm .jm-hero button.jm-hero__pestana,
+body.jm .jm-hero button.jm-hero__pestana:hover,
+body.jm .jm-hero button.jm-hero__pestana:focus,
+body.jm .jm-hero button.jm-hero__boton,
+body.jm .jm-hero button.jm-hero__boton:hover,
+body.jm .jm-hero button.jm-hero__boton:focus {
+  margin: 0; padding: 0; border: 0; box-shadow: none; text-transform: none; letter-spacing: normal;
+  font-family: var(--jm-font-sans); line-height: 1.2; cursor: pointer;
+}
+body.jm .jm-hero svg.jm-ico { display: block; flex: none; }
+
+/* Flechas laterales: solo desde 1440 px */
+body.jm .jm-hero button.jm-hero__flecha {
+  position: absolute; top: 50%; z-index: 40; display: none;
+  width: 3.5rem; height: 3.5rem; transform: translateY(-50%);
+  align-items: center; justify-content: center; border-radius: 9999px;
+  background: var(--jm-accent); color: #fff;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.55);
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-hero button.jm-hero__flecha:hover { background: var(--jm-accent-hover); color: #fff; box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.55); }
+body.jm .jm-hero button.jm-hero__flecha--anterior { left: 1rem; }
+body.jm .jm-hero button.jm-hero__flecha--siguiente { right: 1rem; }
+@media (min-width: 1440px) { body.jm .jm-hero button.jm-hero__flecha { display: flex; } }
+body.jm .jm-hero__flecha svg { transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-hero__flecha--anterior:hover svg { transform: translateX(-0.125rem); }
+body.jm .jm-hero__flecha--siguiente:hover svg { transform: translateX(0.125rem); }
+
+/* Mando inferior: pestañas con progreso + flechas */
+body.jm .jm-hero__mando { position: absolute; left: 0; right: 0; bottom: 0; z-index: 40; }
+body.jm .jm-hero__mando-fila { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; padding-bottom: 1.25rem; }
+@media (min-width: 768px) { body.jm .jm-hero__mando-fila { padding-bottom: 1.75rem; } }
+body.jm .jm-hero__pestanas { display: flex; gap: 0.5rem; }
+@media (min-width: 768px) { body.jm .jm-hero__pestanas { gap: 0.75rem; } }
+
+body.jm .jm-hero button.jm-hero__pestana {
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 0.5rem;
+  min-height: 2.75rem; width: 6rem; text-align: left; background: none; color: inherit;
+}
+@media (min-width: 768px) { body.jm .jm-hero button.jm-hero__pestana { width: 10rem; } }
+body.jm .jm-hero__rotulo { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--jm-ink-inv-3); transition: color 300ms var(--jm-ease-ui); }
+body.jm .jm-hero__pestana:hover .jm-hero__rotulo { color: var(--jm-ink-inv-2); }
+body.jm .jm-hero__pestana[aria-selected="true"] .jm-hero__rotulo { color: var(--jm-ink-inv); }
+body.jm .jm-hero__carril { position: relative; display: block; width: 100%; height: 3px; overflow: hidden; border-radius: 9999px; background: rgba(255, 255, 255, 0.2); }
+body.jm .jm-hero__progreso {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 100%;
+  transform-origin: left; border-radius: 9999px; background: var(--jm-accent);
+  animation: jm-hero-progreso var(--duracion-hero, 8s) linear both;
+}
+body.jm .jm-hero[data-pausado] .jm-hero__progreso { animation-play-state: paused; }
+body.jm .jm-hero--quieto .jm-hero__progreso { animation: none; }
+
+body.jm .jm-hero__botones-mando { display: flex; align-items: center; gap: 0.5rem; }
+body.jm .jm-hero button.jm-hero__boton {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  height: 2.75rem; min-width: 2.75rem; border-radius: 9999px;
+  background: var(--jm-accent); color: #fff; font-size: 0.875rem; font-weight: 600;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-hero button.jm-hero__boton:hover { background: var(--jm-accent-hover); color: #fff; }
+body.jm .jm-hero button.jm-hero__boton--atras { width: 2.75rem; }
+body.jm .jm-hero button.jm-hero__boton--siguiente { width: 2.75rem; }
+body.jm .jm-hero__boton-texto { display: none; }
+@media (min-width: 768px) {
+  body.jm .jm-hero button.jm-hero__boton--siguiente { width: auto; padding: 0 0.5rem 0 1rem; }
+  body.jm .jm-hero__boton-texto { display: inline; }
+}
+body.jm .jm-hero__boton-circulo { display: flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.2); }
+body.jm .jm-hero__boton-circulo svg { transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-hero__boton--siguiente:hover .jm-hero__boton-circulo svg { transform: translateX(0.125rem); }
+
+/* Pista de scroll, decorativa (solo xl) */
+body.jm .jm-hero__pista {
+  position: absolute; left: 0; right: 0; bottom: 1.5rem; z-index: 30; display: none;
+  justify-content: center; color: var(--jm-ink-inv-3); pointer-events: none;
+}
+@media (min-width: 1440px) { body.jm .jm-hero__pista { display: flex; } }
+@media (prefers-reduced-motion: no-preference) {
+  body.jm .jm-hero__pista svg { animation: jm-latir-abajo 2.4s ease-in-out infinite; }
+}
+
+@keyframes jm-hero-cortina {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes jm-hero-cuchilla {
+  0% { transform: translateX(100vw); opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(-1rem); opacity: 0; }
+}
+@keyframes jm-hero-acercar {
+  from { scale: 1.09; }
+  to { scale: 1; }
+}
+@keyframes jm-hero-subir {
+  from { opacity: 0; transform: translate3d(0, 1.25rem, 0); }
+}
+@keyframes jm-hero-progreso {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes jm-hero-rescate { to { opacity: 1; } }
+@keyframes jm-latir-abajo {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(5px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.jm .jm-hero__portada.jm-hero--cortina,
+  body.jm .jm-hero__portada[data-estado="activa"] .jm-hero__foto img,
+  body.jm .jm-hero--entra :is(.jm-entra-0, .jm-entra-1, .jm-entra-2, .jm-entra-3, .jm-entra-4),
+  body.jm .jm-hero__progreso { animation: none !important; }
+  body.jm .jm-hero__cuchilla { display: none; }
+}
+
+/* ==========================================================================
+   2 · Buscador del hero  [jm_buscador]  (Buscador.tsx)
+   ========================================================================== */
+
+body.jm .jm-buscador { display: block; }
+body.jm .jm-buscador__caja {
+  display: flex; flex-direction: column; margin: 0;
+  padding: 0.25rem; border: 1px solid var(--jm-rule-strong); border-radius: var(--jm-radius-2xl);
+  background: var(--jm-surface); box-shadow: 0 1px 2px rgba(20, 23, 26, 0.04);
+  transition: box-shadow 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-buscador__caja:focus-within { border-color: var(--jm-rule-control); box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.12); }
+@media (min-width: 768px) {
+  body.jm .jm-buscador__caja { flex-direction: row; border-radius: 9999px; padding: 0.375rem; }
+}
+body.jm .jm-buscador__campo { position: relative; flex: 1 1 0%; min-width: 0; }
+body.jm .jm-buscador__lupa {
+  position: absolute; top: 50%; left: 1rem; transform: translateY(-50%);
+  color: var(--jm-ink-3); pointer-events: none;
+}
+body.jm .jm-buscador input.jm-buscador__input,
+body.jm .jm-buscador input.jm-buscador__input:focus {
+  display: block; width: 100%; height: 3.25rem; margin: 0;
+  padding: 0 1rem 0 2.75rem; border: 0; border-radius: 0; box-shadow: none; outline: none;
+  background: transparent; color: var(--jm-ink);
+  font-family: var(--jm-font-sans); font-size: 1rem; line-height: 1.5;
+  -webkit-appearance: none; appearance: none;
+}
+body.jm .jm-buscador input.jm-buscador__input::placeholder { color: var(--jm-ink-3); opacity: 1; }
+body.jm .jm-buscador input.jm-buscador__input::-webkit-search-decoration { -webkit-appearance: none; }
+
+body.jm .jm-buscador button.jm-buscador__boton,
+body.jm .jm-buscador button.jm-buscador__boton:hover,
+body.jm .jm-buscador button.jm-buscador__boton:focus,
+body.jm .jm-buscador button.jm-buscador__boton:active {
+  display: flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 0.5rem;
+  height: 3.25rem; margin: 0.25rem 0 0; padding: 0 1.5rem;
+  border: 0; border-radius: 9999px; box-shadow: none;
+  background: var(--jm-accent); color: #fff;
+  font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 600; line-height: 1.2;
+  text-transform: none; letter-spacing: normal; white-space: nowrap; cursor: pointer;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-buscador button.jm-buscador__boton:hover { background: var(--jm-accent-hover); }
+body.jm .jm-buscador button.jm-buscador__boton:active { background: var(--jm-accent-active); }
+body.jm .jm-buscador button.jm-buscador__boton:focus-visible { outline: 2px solid var(--jm-ink); outline-offset: 2px; }
+@media (min-width: 768px) {
+  body.jm .jm-buscador button.jm-buscador__boton,
+  body.jm .jm-buscador button.jm-buscador__boton:hover,
+  body.jm .jm-buscador button.jm-buscador__boton:focus,
+  body.jm .jm-buscador button.jm-buscador__boton:active { margin-top: 0; }
+}
+body.jm .jm-buscador__flecha { transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-buscador__boton:hover .jm-buscador__flecha { transform: translateX(0.125rem); }
+
+body.jm .jm-buscador__nota { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-buscador--oscuro .jm-buscador__nota { color: var(--jm-ink-inv-2); }
+
+body.jm .jm-buscador__atajos { margin-top: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+body.jm .jm-buscador__rotulo { margin-top: 0.875rem; flex-shrink: 0; color: var(--jm-ink-3); }
+body.jm .jm-buscador--oscuro .jm-buscador__rotulo { color: var(--jm-ink-inv-3); }
+body.jm .jm-buscador__pista {
+  display: flex; min-width: 0; gap: 0.5rem; overflow-x: auto;
+  scrollbar-width: thin; scrollbar-color: var(--jm-rule-strong) transparent;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+}
+@media (pointer: coarse) {
+  body.jm .jm-buscador__pista { scrollbar-width: none; }
+  body.jm .jm-buscador__pista::-webkit-scrollbar { display: none; }
+}
+@media (min-width: 768px) { body.jm .jm-buscador__pista { flex-wrap: wrap; overflow: visible; } }
+body.jm .jm-buscador__atajo {
+  display: inline-flex; align-items: center; flex-shrink: 0; min-height: 2.75rem; padding: 0 0.75rem;
+  border: 1px solid var(--jm-rule); background: var(--jm-sunken); color: var(--jm-ink-2);
+  font-size: 0.875rem; line-height: 1.25rem; white-space: nowrap; text-decoration: none;
+  transition: background-color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui), color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-buscador__atajo:hover { border-color: var(--jm-rule-control); background: var(--jm-surface); color: var(--jm-ink); }
+
+/* ==========================================================================
+   3 · Próxima convocatoria  [jm_proxima_convocatoria]
+   ========================================================================== */
+
+body.jm .jm-proxima[hidden] { display: none; }
+body.jm .jm-proxima__tarjeta {
+  display: flex; max-width: 36rem; align-items: center; gap: 1rem;
+  padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1); color: var(--jm-ink-inv);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+body.jm .jm-proxima__fecha {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 4rem; height: 4rem; border-radius: var(--jm-radius-2xl); background: var(--jm-accent); color: #fff;
+}
+body.jm .jm-proxima__dia { font-family: var(--jm-font-display); font-size: 1.5rem; line-height: 1; }
+body.jm .jm-proxima__mes { margin-top: 0.25rem; font-size: 0.75rem; line-height: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.025em; }
+body.jm .jm-proxima__cuerpo { min-width: 0; flex: 1 1 0%; }
+body.jm .jm-proxima__rotulo { display: flex; align-items: center; gap: 0.375rem; color: var(--jm-ink-inv-3); }
+body.jm .jm-proxima__ico { color: var(--jm-accent-dark); flex: none; }
+body.jm .jm-proxima__curso {
+  margin-top: 0.125rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 1rem; line-height: 1.5rem; font-weight: 600;
+}
+body.jm .jm-proxima__norma { font-weight: 400; color: var(--jm-ink-inv-2); }
+body.jm .jm-proxima__sede { margin-top: 0.125rem; display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-inv-2); }
+body.jm .jm-proxima__semana { text-transform: capitalize; }
+body.jm .jm-proxima__enlace {
+  display: none; flex-shrink: 0; align-items: center; gap: 0.375rem; white-space: nowrap;
+  font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--jm-ink-inv);
+  text-decoration: underline; text-decoration-color: var(--jm-accent); text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-proxima__enlace:hover { color: var(--jm-accent-dark); }
+@media (min-width: 1024px) { body.jm .jm-proxima__enlace { display: inline-flex; } }
+
+/* ==========================================================================
+   4 · S2 Partners (Partners.tsx)
+   ========================================================================== */
+
+body.jm .jm-partners { border-bottom: 1px solid var(--jm-rule); background: var(--jm-surface); }
+body.jm .jm-partners__cuerpo { padding-top: 2.5rem; padding-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0; }
+@media (min-width: 768px) { body.jm .jm-partners__cuerpo { padding-top: 3rem; padding-bottom: 3rem; } }
+body.jm .jm-partners__rejilla { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { body.jm .jm-partners__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+body.jm .jm-partners__tarjeta { display: flex; flex-direction: column; gap: 0; background: var(--jm-surface); padding: 1.5rem; }
+@media (min-width: 768px) { body.jm .jm-partners__tarjeta { padding: 2rem; } }
+
+/* «Partner oficial» con la insignia (BadgeCheck de Lucide, 15 px, trazo 2,25) */
+body.jm .jm-partners__insignia { display: flex; align-items: center; gap: 0.5rem; color: var(--jm-accent); }
+body.jm .jm-partners__insignia::before {
+  content: ""; flex: none; width: 15px; height: 15px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+/* Logotipo: h-8 w-auto self-start (si se estira, se deforma) */
+body.jm .jm-partners__logo { margin-top: 1.25rem; align-self: flex-start; line-height: 0; }
+body.jm .jm-partners__logo img { height: 2rem; width: auto; max-width: none; }
+body.jm .jm-partners__marca {
+  margin-top: 1.25rem; display: flex; height: 2.25rem; align-items: center;
+  font-family: var(--jm-font-display); font-size: 1.75rem; line-height: 1; font-weight: 500;
+  letter-spacing: -0.02em; color: var(--jm-ink);
+}
+body.jm .jm-partners__texto { margin-top: 1.25rem; flex: 1 1 0%; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-2); }
+body.jm .jm-partners__enlace .elementor-button { margin-top: 1.5rem; }
+body.jm .jm-partners__fabricantes { margin-top: 1.75rem; }
+
+/* ==========================================================================
+   5 · S3 Garantías (Garantias.tsx)
+   ========================================================================== */
+
+body.jm .jm-garantias { border-bottom: 1px solid var(--jm-rule); background: var(--jm-sunken); }
+body.jm .jm-garantias__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 1024px) { body.jm .jm-garantias__rejilla { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+body.jm .jm-garantia { display: flex; flex-direction: column; align-items: flex-start; gap: 0; background: var(--jm-sunken); padding: 1.25rem 1rem; }
+@media (min-width: 768px) { body.jm .jm-garantia { padding: 1.5rem 1.25rem; } }
+body.jm .jm-garantia__titulo { margin-top: 0.75rem; color: var(--jm-ink); }
+body.jm .jm-garantia__texto { margin-top: 0.375rem; max-width: 34ch; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+
+body.jm .jm-garantias__sellos {
+  display: flex; flex-direction: column; gap: 0.5rem 1.5rem;
+  border-top: 1px solid var(--jm-rule); padding-top: 1rem; padding-bottom: 1rem;
+}
+@media (min-width: 768px) { body.jm .jm-garantias__sellos { flex-direction: row; align-items: center; } }
+body.jm .jm-garantias__sellos .jm-label-sm { flex-shrink: 0; color: var(--jm-ink-3); }
+body.jm .jm-garantias__sellos-lista { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem 1rem; }
+body.jm .jm-garantias__sellos-lista .elementor-icon-list-item {
+  font-family: var(--jm-font-mono); font-size: 0.875rem; line-height: 1.2; font-weight: 500;
+  font-variant-numeric: tabular-nums; color: var(--jm-ink-2);
+}
+body.jm .jm-garantias__sellos-lista .elementor-icon-list-icon { display: none; }
+
+/* ==========================================================================
+   6 · S4 Necesidades (Necesidades.tsx)
+   ========================================================================== */
+
+body.jm .jm-necesidades { border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-necesidades__rejilla { margin-top: 2rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { body.jm .jm-necesidades__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { body.jm .jm-necesidades__rejilla { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* La tarjeta es un contenedor con etiqueta HTML «a». */
+body.jm .jm-necesidad {
+  display: flex; flex-direction: row; flex-wrap: nowrap; align-items: flex-start; gap: 1rem;
+  height: 100%; padding: 1.25rem; background: var(--jm-surface); color: inherit; text-decoration: none;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+@media (min-width: 768px) { body.jm .jm-necesidad { padding: 1.5rem; } }
+body.jm .jm-necesidad:hover { background: var(--jm-sunken); }
+
+body.jm .jm-necesidad__icono { flex-shrink: 0; margin-top: 0.125rem; width: 3.5rem; height: 2.75rem; color: var(--jm-accent); line-height: 0; transition: transform 300ms ease-out; }
+@media (min-width: 768px) { body.jm .jm-necesidad__icono { width: 4.5rem; height: 3.5rem; } }
+body.jm .jm-necesidad__icono .elementor-icon { display: block; width: 100%; height: 100%; font-size: 0; color: inherit; }
+body.jm .jm-necesidad__icono .elementor-icon svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; }
+@media (prefers-reduced-motion: no-preference) {
+  body.jm .jm-necesidad:hover .jm-necesidad__icono { transform: translateY(-0.125rem); }
+}
+body.jm .jm-necesidad__cuerpo { display: flex; flex-direction: column; gap: 0; min-width: 0; flex: 1 1 0%; }
+body.jm .jm-necesidad__titulo { display: block; color: var(--jm-ink); transition: color 200ms var(--jm-ease-ui); }
+body.jm .jm-necesidad:hover .jm-necesidad__titulo { color: var(--jm-accent); }
+body.jm .jm-necesidad__texto { margin-top: 0.375rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-necesidad__meta { margin-top: 0.75rem; border-top: 1px solid var(--jm-rule); padding-top: 0.75rem; color: var(--jm-ink-3); }
+body.jm .jm-necesidad__flecha { flex-shrink: 0; margin-top: 0.25rem; color: var(--jm-rule-strong); line-height: 0; transition: transform 200ms var(--jm-ease-ui), color 200ms var(--jm-ease-ui); }
+body.jm .jm-necesidad__flecha .elementor-icon { display: inline-flex; font-size: 1.125rem; color: inherit; }
+body.jm .jm-necesidad__flecha .elementor-icon svg { width: 1.125rem; height: 1.125rem; fill: none; stroke: currentColor; }
+body.jm .jm-necesidad:hover .jm-necesidad__flecha { transform: translateX(0.25rem); color: var(--jm-accent); }
+
+/* ==========================================================================
+   7 · S5 Asesor empotrado: la banda oscura (el panel, en 31-asesor.css)
+   ========================================================================== */
+
+body.jm .jm-asesor-banda { border-top: 1px solid var(--jm-rule-inverse); border-bottom: 1px solid var(--jm-rule-inverse); }
+body.jm .jm-asesor-banda__cabeza { display: flex; flex-direction: column; gap: 0; margin-bottom: 1.75rem; max-width: 54ch; }
+body.jm .jm-asesor-banda .jm-asesor-banda__titulo { color: var(--jm-ink-inv); }
+body.jm .jm-asesor-banda__lede { margin-top: 1rem; color: var(--jm-ink-inv-2); }
+
+/* ==========================================================================
+   8 · S6 Destacadas (Destacadas.tsx) — Loop Carousel + jm-tarjeta-maquina
+   ========================================================================== */
+
+body.jm .jm-destacadas { border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-destacadas__acciones { display: flex; flex-shrink: 0; flex-direction: row; align-items: center; gap: 0.75rem; }
+body.jm .jm-destacadas__flechas { display: none; align-items: center; gap: 0.375rem; }
+@media (min-width: 768px) { body.jm .jm-destacadas__flechas { display: flex; } }
+body.jm .jm-destacadas button.jm-destacadas__flecha,
+body.jm .jm-destacadas button.jm-destacadas__flecha:hover,
+body.jm .jm-destacadas button.jm-destacadas__flecha:focus {
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem;
+  margin: 0; padding: 0; border: 1px solid var(--jm-rule-control); border-radius: 0; box-shadow: none;
+  background: transparent; color: var(--jm-ink); cursor: pointer;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-destacadas button.jm-destacadas__flecha:hover { background: var(--jm-sunken); }
+
+/* El carrusel: mt-7 pb-5, 20 px entre tarjetas (Espacio entre diapositivas: 20). */
+body.jm .jm-destacadas__carrusel { margin-top: 1.75rem; padding-bottom: 1.25rem; }
+body.jm .jm-destacadas__carrusel .swiper-slide { height: auto; }
+body.jm .jm-destacadas__carrusel .e-loop-item { height: 100%; }
+/* Las flechas propias del widget se esconden: manda el par de la cabecera. */
+body.jm .jm-destacadas__carrusel .elementor-swiper-button { display: none; }
+body.jm .jm-destacadas__carrusel .swiper-pagination { display: none; }
+body.jm .jm-destacadas__pie { color: var(--jm-ink-3); }
+
+/* ==========================================================================
+   9 · S7 Cobertura (Cobertura.tsx) + mapa (Mapa.tsx)
+   ========================================================================== */
+
+body.jm .jm-cobertura { border-bottom: 1px solid var(--jm-rule-inverse); color: var(--jm-ink-inv-2); }
+body.jm .jm-cobertura__rejilla { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+@media (min-width: 1024px) {
+  body.jm .jm-cobertura__rejilla { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.5rem; }
+  body.jm .jm-cobertura__texto { grid-column: span 7 / span 7; }
+}
+body.jm .jm-cobertura__texto { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+body.jm .jm-cobertura__mapa { order: -9999; min-width: 0; }
+@media (min-width: 1024px) { body.jm .jm-cobertura__mapa { order: 0; grid-column: span 5 / span 5; } }
+
+body.jm .jm-cobertura__lista {
+  margin: 1.75rem 0 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px; background: var(--jm-rule-inverse);
+  border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-2xl); overflow: hidden;
+}
+@media (min-width: 768px) { body.jm .jm-cobertura__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1440px) { body.jm .jm-cobertura__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+body.jm .jm-cobertura__celda { margin: 0; background: var(--jm-inverse-2); padding: 0.875rem 1rem; }
+body.jm .jm-cobertura__cabeza { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+body.jm .jm-cobertura__nombre { font-size: 1rem; line-height: 1.5rem; font-weight: 600; color: var(--jm-ink-inv); }
+body.jm .jm-cobertura__pais { flex-shrink: 0; padding: 0.125rem 0.375rem; background: var(--jm-wait); color: var(--jm-wait-ink); }
+body.jm .jm-cobertura__localidad { margin-top: 0.125rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-inv-3); }
+body.jm .jm-cobertura__tel {
+  margin-top: 0.375rem; display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; color: var(--jm-ink-inv-2); transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cobertura__tel svg { flex-shrink: 0; }
+body.jm .jm-cobertura__tel:hover { color: var(--jm-accent-dark); }
+
+body.jm .jm-cobertura__botones { margin-top: 1.5rem; display: flex; flex-direction: column; align-items: stretch; gap: 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-cobertura__botones { flex-direction: row; align-items: center; } }
+body.jm .jm-cobertura__pie { margin-top: 1.5rem; border-top: 1px solid var(--jm-rule-inverse); padding-top: 1.25rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-inv-3); }
+
+/* Mapa [jm_mapa]: traduce las variables --color-* del SVG (como 60-paginas.css
+   con [jm_mapa_delegaciones]) y fija la medida dentro de Cobertura. */
+body.jm .jm-mapa {
+  --color-inverse: var(--jm-inverse); --color-inverse-2: var(--jm-inverse-2);
+  --color-muted: var(--jm-muted); --color-accent: var(--jm-accent);
+  --color-rule-inverse: var(--jm-rule-inverse); --color-rule-strong: var(--jm-rule-strong);
+  --color-ink-2: var(--jm-ink-2); --color-ink-inv-2: var(--jm-ink-inv-2);
+}
+body.jm .jm-mapa svg { display: block; width: 100%; height: auto; overflow: visible; }
+body.jm .jm-cobertura__mapa .jm-mapa { margin-inline: auto; width: 100%; max-width: 28rem; }
+body.jm .jm-mapa--oscuro text { fill: var(--jm-ink-inv-2); font-family: var(--jm-font-mono); }
+body.jm .jm-mapa--claro text { fill: var(--jm-ink-2); font-family: var(--jm-font-mono); }
+
+/* Animado: la costa se traza y los puntos caen de norte a sur (70 ms). */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motor] body.jm .jm-mapa--animado path:first-of-type {
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+    animation: jm-trazar-costa 1400ms var(--jm-ease-entrance) forwards;
+  }
+  html[data-motor] body.jm .jm-mapa--animado g {
+    opacity: 0; transform: translateY(-3px);
+    animation: jm-caer-punto 420ms var(--jm-ease-entrance) forwards;
+    animation-delay: calc(500ms + var(--retardo-punto, 0ms));
+  }
+}
+body.jm .jm-mapa--animado g:nth-of-type(2) { --retardo-punto: 70ms; }
+body.jm .jm-mapa--animado g:nth-of-type(3) { --retardo-punto: 140ms; }
+body.jm .jm-mapa--animado g:nth-of-type(4) { --retardo-punto: 210ms; }
+body.jm .jm-mapa--animado g:nth-of-type(5) { --retardo-punto: 280ms; }
+body.jm .jm-mapa--animado g:nth-of-type(6) { --retardo-punto: 350ms; }
+body.jm .jm-mapa--animado g:nth-of-type(7) { --retardo-punto: 420ms; }
+body.jm .jm-mapa--animado g:nth-of-type(8) { --retardo-punto: 490ms; }
+body.jm .jm-mapa--animado g:nth-of-type(9) { --retardo-punto: 560ms; }
+body.jm .jm-mapa--animado g:nth-of-type(10) { --retardo-punto: 630ms; }
+body.jm .jm-mapa--animado g:nth-of-type(11) { --retardo-punto: 700ms; }
+body.jm .jm-mapa--animado g:nth-of-type(12) { --retardo-punto: 770ms; }
+@keyframes jm-trazar-costa { to { stroke-dashoffset: 0; } }
+@keyframes jm-caer-punto { to { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   10 · S8 Autoridad (Autoridad.tsx)
+   ========================================================================== */
+
+body.jm .jm-autoridad { border-bottom: 1px solid var(--jm-rule); background: var(--jm-sunken); }
+body.jm .jm-autoridad__rejilla { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+@media (min-width: 1024px) {
+  body.jm .jm-autoridad__rejilla { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.5rem; }
+  body.jm .jm-autoridad__texto { grid-column: span 7 / span 7; }
+  body.jm .jm-autoridad__tarjeta { grid-column: span 5 / span 5; }
+}
+body.jm .jm-autoridad__texto { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+
+body.jm .jm-autoridad__cifras { margin-top: 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { body.jm .jm-autoridad__cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+body.jm .jm-autoridad__cifra { display: flex; flex-direction: column; gap: 0; background: var(--jm-surface); padding: 1rem; }
+body.jm .jm-autoridad__cifra .jm-label-sm { color: var(--jm-ink-3); }
+body.jm .jm-autoridad__cifra .jm-value-lg { margin-top: 0.375rem; color: var(--jm-ink); }
+
+/* La tarjeta oscura de la antigüedad (sin radio, como el original) */
+body.jm .jm-autoridad__tarjeta {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;
+  border: 1px solid var(--jm-rule-inverse); padding: 1.5rem;
+}
+@media (min-width: 1024px) { body.jm .jm-autoridad__tarjeta { padding: 2rem; } }
+body.jm .jm-autoridad__tarjeta-cabeza { display: flex; flex-direction: column; gap: 0; }
+body.jm .jm-autoridad__tarjeta .jm-label-sm { color: var(--jm-ink-inv-3); }
+body.jm .jm-autoridad__antiguedad {
+  margin-top: 0.75rem; font-size: clamp(1.5rem, 2.6vw, 2.25rem); line-height: 1; font-weight: 700;
+  letter-spacing: -0.02em; color: var(--jm-ink-inv);
+}
+body.jm .jm-autoridad__desde { margin-top: 1rem; color: var(--jm-accent-dark); }
+body.jm .jm-autoridad__parrafo { font-size: 1rem; line-height: 1.5rem; color: var(--jm-ink-inv-2); }
+
+body.jm .jm-autoridad__pilares { margin-top: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { body.jm .jm-autoridad__pilares { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { body.jm .jm-autoridad__pilares { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+body.jm .jm-pilar { display: flex; flex-direction: column; align-items: stretch; gap: 0; background: var(--jm-surface); padding: 1.25rem; }
+body.jm .jm-pilar__titulo { margin-top: 1rem; color: var(--jm-ink); }
+body.jm .jm-pilar__texto { margin-top: 0.5rem; flex: 1 1 0%; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-pilar__pie { margin-top: 1rem; border-top: 1px solid var(--jm-rule); padding-top: 0.75rem; color: var(--jm-ink-3); }
+
+body.jm .jm-autoridad__fabricantes { margin-top: 1.5rem; border-top: 1px solid var(--jm-rule); padding-top: 1.25rem; }
+
+/* ==========================================================================
+   11 · S10 Cierre
+   ========================================================================== */
+
+body.jm .jm-cierre { position: relative; background: var(--jm-inverse); }
+/* Filete de seguridad: la única aparición del ámbar de la marca (h-1). */
+body.jm .jm-cierre::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 0.25rem; background: var(--jm-wait); }
+body.jm .jm-cierre__cuerpo { display: flex; flex-direction: column; align-items: stretch; gap: 0; text-align: center; }
+body.jm .jm-cierre__cuerpo .jm-label { color: var(--jm-accent-dark); }
+body.jm .jm-cierre .jm-cierre__titulo { margin: 1rem auto 0; max-width: 24ch; color: var(--jm-ink-inv); }
+body.jm .jm-cierre__lede { margin: 1rem auto 0; max-width: 54ch; color: var(--jm-ink-inv-2); }
+body.jm .jm-cierre__botones { margin-top: 1.75rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-cierre__botones { flex-direction: row; } }
+body.jm .jm-cierre__botones .elementor-button { width: 100%; }
+@media (min-width: 768px) { body.jm .jm-cierre__botones .elementor-button { width: auto; } }
+body.jm .jm-cierre__tel .elementor-button,
+body.jm .jm-cierre__tel .elementor-button:hover {
+  border-color: var(--jm-rule-inverse); background: transparent; color: var(--jm-ink-inv);
+}
+body.jm .jm-cierre__tel .elementor-button:hover { background: var(--jm-inverse-2); }
+body.jm .jm-cierre__tel .elementor-button-text { font-family: var(--jm-font-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+body.jm .jm-cierre__tel .elementor-button-icon { order: 0; }
+body.jm .jm-cierre__tel .elementor-button-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; }

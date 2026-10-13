@@ -17,6 +17,13 @@ PUERTO=3000 node scripts/verificar-servidor.mjs
 
 ---
 
+## Paquete para WordPress + Elementor Pro (13/10/2026)
+
+`elementor-pro/` lleva la web a Elementor Pro en versión híbrida (widgets nativos editables):
+el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, JS y shortcodes),
+un plano por plantilla o página en `estructura/` y la guía paso a paso en
+`elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
+
 ## Entrega del 07/10/2026
 
 - **Fotos y fichas de los 28 brazos articulados** (`Material/Material 7-10`): 9 eléctricos,

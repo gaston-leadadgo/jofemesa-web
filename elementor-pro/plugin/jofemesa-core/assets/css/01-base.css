@@ -1,0 +1,371 @@
+/* ==========================================================================
+   JOFEMESA · 01 BASE
+   El sistema de diseño de la web Next.js (src/app/globals.css) traducido a
+   clases `jm-`. Mismos valores, mismos nombres de token.
+   Todo va bajo `body.jm` (lo añade el plugin): ver CONVENCIONES.md §2.
+   ========================================================================== */
+
+:root {
+  /* ---------- Superficies ---------- */
+  --jm-surface: #ffffff;
+  --jm-sunken: #f6f8f9;
+  --jm-muted: #eef1f3;
+  --jm-inverse: #14171a;
+  --jm-inverse-2: #1f2428;
+
+  /* ---------- Filetes ---------- */
+  --jm-rule: #eceff1;
+  --jm-rule-strong: #d7dde1;
+  --jm-rule-control: #b5bfc6;
+  --jm-rule-inverse: rgba(255, 255, 255, 0.14);
+
+  /* ---------- Texto ---------- */
+  --jm-ink: #14171a;
+  --jm-ink-2: #4a545c;
+  --jm-ink-3: #6b7780;
+  --jm-ink-inv: #ffffff;
+  --jm-ink-inv-2: #c3cbd1;
+  --jm-ink-inv-3: #8a9199;
+
+  /* ---------- El acento. Uno solo. ---------- */
+  --jm-accent: #e30613;
+  --jm-accent-hover: #c20510;
+  --jm-accent-active: #a80410;
+  --jm-accent-dark: #ff4438;
+  --jm-accent-tint: #fff5f5;
+
+  /* ---------- Estado ---------- */
+  --jm-ok: #0e7a46;
+  --jm-ok-dark: #3fcf8e;
+  --jm-wait: #efbb20;
+  --jm-wait-ink: #14171a;
+  --jm-wait-text: #8a5a00;
+  --jm-danger: #a81208;
+
+  /* ---------- Tipografía ---------- */
+  --jm-font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --jm-font-mono: "Geist Mono", ui-monospace, monospace;
+  --jm-font-display: "Archivo", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------- Radios ---------- */
+  --jm-radius-sm: 0.5rem;
+  --jm-radius-md: 0.75rem;
+  --jm-radius-lg: 1rem;
+  --jm-radius-xl: 1.25rem;
+  --jm-radius-2xl: 1.75rem;
+  --jm-radius-3xl: 2rem;
+  --jm-radius-full: 9999px;
+
+  /* ---------- Sombras ---------- */
+  --jm-shadow-tarjeta: 0 1px 2px rgba(20, 23, 26, 0.04);
+  --jm-shadow-tarjeta-hover: 0 8px 28px -12px rgba(20, 23, 26, 0.14), 0 2px 6px rgba(20, 23, 26, 0.05);
+  --jm-shadow-panel: 0 24px 64px -16px rgba(20, 23, 26, 0.28);
+  --jm-shadow-sticky: 0 -1px 0 0 #eceff1, 0 -8px 24px -12px rgba(20, 23, 26, 0.14);
+
+  /* ---------- Curvas ---------- */
+  --jm-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --jm-ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---------- Medidas de página ---------- */
+  --jm-alto-cabecera: 60px;
+  --jm-alto-barra-movil: 65px;
+  --jm-ancho-placa: 1320px;
+}
+@media (min-width: 768px) {
+  :root {
+    --jm-alto-cabecera: 108px;
+    --jm-alto-barra-movil: 0px;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
+
+body.jm {
+  background: var(--jm-surface);
+  color: var(--jm-ink);
+  font-family: var(--jm-font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  body.jm { font-size: 1.0625rem; }
+}
+
+/* El tema (incluso Hello) pone tipografía y margen a las etiquetas. Se
+   devuelven a cero: el ritmo lo ponen las clases, no la etiqueta. */
+body.jm h1, body.jm h2, body.jm h3, body.jm h4, body.jm h5, body.jm h6 {
+  margin: 0;
+  color: inherit;
+  font-family: var(--jm-font-display);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+body.jm p { margin: 0; }
+body.jm a { color: inherit; text-decoration: none; }
+body.jm img { max-width: 100%; height: auto; }
+body.jm ul, body.jm ol { margin: 0; padding: 0; }
+body.jm button { font: inherit; }
+
+/* Foco visible siempre. Nunca se quita el anillo. */
+body.jm :focus-visible { outline: 2px solid var(--jm-accent); outline-offset: 2px; }
+body.jm .jm-oscuro :focus-visible { outline-color: var(--jm-accent-dark); }
+body.jm .jm-btn--acento .elementor-button:focus-visible,
+body.jm .jm-btn--acento:focus-visible { outline-color: var(--jm-ink); }
+
+body.jm ::selection { background: var(--jm-accent); color: #fff; }
+
+/* ==========================================================================
+   Escala tipográfica
+   ========================================================================== */
+
+body.jm .jm-display-1 {
+  font-family: var(--jm-font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300; line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance;
+}
+body.jm .jm-display-2 {
+  font-family: var(--jm-font-display);
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  font-weight: 300; line-height: 1.1; letter-spacing: -0.028em; text-wrap: balance;
+}
+body.jm .jm-display-3 {
+  font-family: var(--jm-font-display);
+  font-size: clamp(1.375rem, 2vw, 1.875rem);
+  font-weight: 400; line-height: 1.18; letter-spacing: -0.022em; text-wrap: balance;
+}
+/* El titular de las cabeceras interiores (CabeceraSeccion): más macizo. */
+body.jm .jm-titular-placa {
+  font-family: var(--jm-font-display);
+  font-size: clamp(1.9rem, 3.4vw, 3.25rem);
+  font-weight: 800; line-height: 1; letter-spacing: -0.03em; text-wrap: balance;
+}
+body.jm .jm-title {
+  font-family: var(--jm-font-display);
+  font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+  font-weight: 500; line-height: 1.3; letter-spacing: -0.015em;
+}
+body.jm .jm-lede {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-weight: 400; line-height: 1.55; text-wrap: pretty;
+}
+body.jm .jm-label {
+  font-family: var(--jm-font-sans);
+  font-size: 0.6875rem; font-weight: 500; line-height: 1.35;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+body.jm .jm-label-sm {
+  font-family: var(--jm-font-sans);
+  font-size: 0.625rem; font-weight: 500; line-height: 1.35;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+body.jm .jm-etiqueta-campo {
+  font-family: var(--jm-font-sans);
+  font-size: 0.875rem; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+}
+body.jm .jm-meta {
+  font-family: var(--jm-font-sans);
+  font-size: 0.8125rem; font-weight: 500; line-height: 1.5; letter-spacing: 0;
+}
+body.jm .jm-value {
+  font-family: var(--jm-font-mono);
+  font-size: 1rem; font-weight: 500; line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+body.jm .jm-value-lg {
+  font-family: var(--jm-font-mono);
+  font-size: 1.375rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Colores de texto puntuales */
+body.jm .jm-acento { color: var(--jm-accent); }
+body.jm .jm-oscuro .jm-acento { color: var(--jm-accent-dark); }
+body.jm .jm-texto-2 { color: var(--jm-ink-2); }
+body.jm .jm-texto-3 { color: var(--jm-ink-3); }
+body.jm .jm-oscuro .jm-texto-2 { color: var(--jm-ink-inv-2); }
+body.jm .jm-oscuro .jm-texto-3 { color: var(--jm-ink-inv-3); }
+
+/* ==========================================================================
+   Superficies
+   ========================================================================== */
+
+body.jm .jm-oscuro { background-color: var(--jm-inverse); color: var(--jm-ink-inv-2); }
+body.jm .jm-oscuro h1, body.jm .jm-oscuro h2, body.jm .jm-oscuro h3 { color: var(--jm-ink-inv); }
+body.jm .jm-hundido { background-color: var(--jm-sunken); }
+
+body.jm .jm-tarjeta {
+  background-color: var(--jm-surface);
+  border: 1px solid var(--jm-rule);
+  border-radius: var(--jm-radius-2xl);
+  box-shadow: var(--jm-shadow-tarjeta);
+  transition: border-color 200ms var(--jm-ease-ui), box-shadow 200ms var(--jm-ease-ui), transform 200ms var(--jm-ease-ui);
+}
+@media (hover: hover) {
+  body.jm .jm-tarjeta:hover { border-color: var(--jm-rule-strong); box-shadow: var(--jm-shadow-tarjeta-hover); }
+}
+body.jm .jm-panel {
+  background-color: var(--jm-sunken);
+  border: 1px solid var(--jm-rule);
+  border-radius: var(--jm-radius-lg);
+}
+body.jm .jm-pastilla { border-radius: var(--jm-radius-full); }
+
+body.jm .jm-ambiente-claro { position: relative; isolation: isolate; }
+body.jm .jm-ambiente-claro::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(1200px 700px at 78% -12%, rgba(216, 31, 19, 0.07), transparent 62%),
+    repeating-linear-gradient(to right, rgba(20, 23, 26, 0.03) 0 1px, transparent 1px 8.3333%);
+}
+body.jm .jm-ambiente-oscuro { position: relative; isolation: isolate; background-color: var(--jm-inverse); color: var(--jm-ink-inv-2); }
+body.jm .jm-ambiente-oscuro::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(900px 520px at 12% 0%, rgba(255, 68, 56, 0.1), transparent 60%);
+}
+
+/* ==========================================================================
+   Contenedor y ritmo de sección
+   ========================================================================== */
+
+body.jm .jm-contenedor {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--jm-ancho-placa);
+  padding-inline: 1.25rem;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) { body.jm .jm-contenedor { padding-inline: 2rem; } }
+@media (min-width: 1024px) { body.jm .jm-contenedor { padding-inline: 3rem; } }
+@media (min-width: 1440px) { body.jm .jm-contenedor { padding-inline: 4rem; } }
+
+body.jm .jm-seccion { padding-block: 3.5rem; }
+@media (min-width: 768px) { body.jm .jm-seccion { padding-block: 4.5rem; } }
+@media (min-width: 1024px) { body.jm .jm-seccion { padding-block: 5.5rem; } }
+body.jm .jm-seccion-sm { padding-block: 2.5rem; }
+@media (min-width: 1024px) { body.jm .jm-seccion-sm { padding-block: 3.5rem; } }
+
+body.jm .jm-borde-abajo { border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-oscuro.jm-borde-abajo { border-bottom-color: var(--jm-rule-inverse); }
+
+body.jm .jm-hero-alto { min-height: calc(100svh - var(--jm-alto-cabecera) - var(--jm-alto-barra-movil)); }
+
+/* Visibilidad para lectores de pantalla */
+body.jm .jm-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* ==========================================================================
+   Botones
+   El aspecto vive en `.jm-btn` (para HTML propio de los shortcodes) y el
+   adaptador lo traslada al <a class="elementor-button"> de los widgets.
+   ========================================================================== */
+
+body.jm .jm-btn,
+body.jm .jm-btn .elementor-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3.25rem; padding: 0 1.5rem;
+  border: 1px solid transparent; border-radius: var(--jm-radius-full);
+  font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 600; line-height: 1.2;
+  text-decoration: none; text-align: center; white-space: nowrap; cursor: pointer;
+  background: transparent; color: inherit;
+  transition: background-color 200ms var(--jm-ease-ui), color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-btn--sm, body.jm .jm-btn--sm .elementor-button { min-height: 2.75rem; padding: 0 1.25rem; font-size: 0.875rem; }
+body.jm .jm-btn--lg, body.jm .jm-btn--lg .elementor-button { min-height: 3.5rem; padding: 0 2rem; }
+body.jm .jm-btn--bloque, body.jm .jm-btn--bloque .elementor-button { width: 100%; }
+
+body.jm .jm-btn--acento, body.jm .jm-btn--acento .elementor-button { background: var(--jm-accent); color: #fff; }
+body.jm .jm-btn--acento:hover, body.jm .jm-btn--acento .elementor-button:hover { background: var(--jm-accent-hover); color: #fff; }
+body.jm .jm-btn--acento:active, body.jm .jm-btn--acento .elementor-button:active { background: var(--jm-accent-active); }
+
+body.jm .jm-btn--tinta, body.jm .jm-btn--tinta .elementor-button { background: var(--jm-ink); color: #fff; }
+body.jm .jm-btn--tinta:hover, body.jm .jm-btn--tinta .elementor-button:hover { background: #000; color: #fff; }
+
+body.jm .jm-btn--contorno, body.jm .jm-btn--contorno .elementor-button { background: var(--jm-surface); color: var(--jm-ink); border-color: var(--jm-rule-control); }
+body.jm .jm-btn--contorno:hover, body.jm .jm-btn--contorno .elementor-button:hover { background: var(--jm-sunken); border-color: var(--jm-ink); color: var(--jm-ink); }
+
+body.jm .jm-btn--contorno-claro, body.jm .jm-btn--contorno-claro .elementor-button { background: transparent; color: var(--jm-ink-inv); border-color: rgba(255, 255, 255, 0.3); }
+body.jm .jm-btn--contorno-claro:hover, body.jm .jm-btn--contorno-claro .elementor-button:hover { background: rgba(255, 255, 255, 0.08); color: #fff; border-color: rgba(255, 255, 255, 0.6); }
+
+body.jm .jm-btn--enlace, body.jm .jm-btn--enlace .elementor-button {
+  min-height: 2.75rem; padding: 0; border: 0; border-radius: 0; background: none;
+  color: var(--jm-accent); font-weight: 600;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-btn--enlace:hover, body.jm .jm-btn--enlace .elementor-button:hover { color: var(--jm-accent-hover); background: none; }
+body.jm .jm-oscuro .jm-btn--enlace, body.jm .jm-oscuro .jm-btn--enlace .elementor-button { color: var(--jm-ink-inv); text-decoration-color: var(--jm-accent); }
+body.jm .jm-oscuro .jm-btn--enlace:hover, body.jm .jm-oscuro .jm-btn--enlace .elementor-button:hover { color: var(--jm-accent-dark); }
+
+/* Chip de norma o estado */
+body.jm .jm-chip {
+  display: inline-flex; align-items: center; gap: 0.375rem;
+  padding: 0.125rem 0.625rem; border-radius: var(--jm-radius-full);
+  font-size: 0.75rem; font-weight: 600; line-height: 1.6;
+  background: var(--jm-accent-tint); color: var(--jm-accent);
+}
+body.jm .jm-chip--contorno { background: none; border: 1px solid var(--jm-rule-strong); color: var(--jm-ink-2); }
+
+/* Dato pendiente: siempre marca + palabra (DatoValor.tsx) */
+body.jm .jm-pendiente {
+  display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.5rem;
+  background: var(--jm-wait); color: var(--jm-wait-ink);
+  font-size: 0.625rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+}
+body.jm .jm-estimado { text-decoration: underline; text-decoration-color: var(--jm-wait); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+/* ==========================================================================
+   Movimiento · motor de revelado
+   Los estados ocultos solo existen con html[data-motor], que pone el JS.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motor] body.jm [data-revelar] {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    transition: opacity 0.45s var(--jm-ease-entrance), transform 0.45s var(--jm-ease-entrance);
+    transition-delay: calc(var(--retardo, 0) * 55ms);
+  }
+  html[data-motor] body.jm [data-revelar="izquierda"] { transform: translate3d(-18px, 0, 0); }
+  html[data-motor] body.jm [data-revelar="escala"] { transform: scale(0.985); }
+  html[data-motor] body.jm [data-revelar="linea"] {
+    opacity: 1; transform: none; clip-path: inset(0 0 105% 0);
+    transition: clip-path 0.6s var(--jm-ease-entrance);
+    transition-delay: calc(var(--retardo, 0) * 55ms);
+  }
+  html[data-motor] body.jm [data-revelar][data-visible] { opacity: 1; transform: none; clip-path: inset(0 0 -0.2em 0); }
+}
+
+body.jm .jm-filete { position: relative; }
+body.jm .jm-filete::after {
+  content: ""; position: absolute; bottom: -1px; left: 0; height: 2px; width: 100%;
+  transform-origin: left; background: var(--jm-accent);
+  transform: scaleX(0); transition: transform 0.5s var(--jm-ease-entrance);
+}
+body.jm .jm-filete[data-visible]::after,
+html:not([data-motor]) body.jm .jm-filete::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  body.jm *, body.jm *::before, body.jm *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Impresión: el jefe de obra imprime el comparador
+   ========================================================================== */
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  body.jm { background: #fff; font-size: 10pt; }
+  body.jm .jm-no-imprimir,
+  body.jm header.elementor-location-header,
+  body.jm footer.elementor-location-footer { display: none !important; }
+}

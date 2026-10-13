@@ -1,0 +1,642 @@
+/* ==========================================================================
+   JOFEMESA · 50 FORMACIÓN
+   /formacion/ (página), ficha del curso (Single «curso»), Loop Items de
+   curso y de convocatoria, /formacion/solicitar/ y su página de gracias.
+   Traducción de src/app/(site)/formacion/*, src/components/formacion/* y
+   src/components/forms/FormularioFormacion.tsx. Mismos valores que las
+   utilidades de Tailwind (escala 1 = 0,25rem).
+   Montaje: estructura/40-formacion.md, 41, 42 y 43.
+   ========================================================================== */
+
+/* Lo que el JS esconde con `hidden` no lo puede volver a enseñar un display. */
+body.jm .jm-cal [hidden],
+body.jm .jm-proximas [hidden],
+body.jm .jm-form-formacion [hidden],
+body.jm .jm-form-formacion .jm-oculto { display: none !important; }
+
+/* ==========================================================================
+   1 · Ritmo de sección de la página (py-10 md:py-12 lg:py-14, scroll-mt-32)
+   ========================================================================== */
+body.jm .jm-fseccion,
+body.jm .e-con.jm-fseccion { padding-block: 2.5rem; }
+@media (min-width: 768px) { body.jm .jm-fseccion, body.jm .e-con.jm-fseccion { padding-block: 3rem; } }
+@media (min-width: 1024px) { body.jm .jm-fseccion, body.jm .e-con.jm-fseccion { padding-block: 3.5rem; } }
+body.jm .jm-ancla-indice { scroll-margin-top: 8rem; }
+
+/* Rótulo + titular de cada sección */
+body.jm .jm-fo-titular { margin-top: 0.75rem; color: var(--jm-ink); }
+body.jm .jm-fo-titular--36 { max-width: 36ch; }
+body.jm .jm-fo-titular--24 { max-width: 24ch; }
+body.jm .jm-fo-intro { margin-top: 1rem; max-width: 60ch; font-size: 1rem; color: var(--jm-ink-2); }
+
+/* Botón de 48 px (h-12 px-5) de las tarjetas oscuras y las sedes */
+body.jm .jm-btn--h12, body.jm .jm-btn--h12 .elementor-button { min-height: 3rem; padding: 0 1.25rem; }
+
+/* ==========================================================================
+   2 · Bloque de autoridad bajo la cabecera
+   ========================================================================== */
+body.jm .jm-fo-autoridad-seccion { border-bottom: 1px solid var(--jm-rule); background: var(--jm-surface); }
+body.jm .jm-fo-autoridad,
+body.jm .e-con.jm-fo-autoridad {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.5rem; row-gap: 1.5rem; padding-block: 1.75rem;
+}
+@media (min-width: 768px) { body.jm .jm-fo-autoridad, body.jm .e-con.jm-fo-autoridad { padding-block: 2rem; } }
+@media (min-width: 1024px) { body.jm .jm-fo-autoridad, body.jm .e-con.jm-fo-autoridad { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+body.jm .jm-fo-autoridad__item,
+body.jm .e-con.jm-fo-autoridad__item { display: block; border-left: 2px solid var(--jm-accent); padding-left: 1rem; }
+body.jm .jm-fo-autoridad__v {
+  display: block; font-family: var(--jm-font-display); font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  line-height: 1; font-weight: 800; letter-spacing: -0.02em; color: var(--jm-ink);
+}
+body.jm .jm-fo-autoridad__t { display: block; margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.375; color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   3 · Índice fijo de la página
+   ========================================================================== */
+body.jm .jm-indice,
+body.jm .e-con.jm-indice {
+  position: sticky; top: 3.5rem; z-index: 30;
+  border-bottom: 1px solid var(--jm-rule);
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
+@media (min-width: 768px) { body.jm .jm-indice, body.jm .e-con.jm-indice { top: 3.75rem; } }
+body.jm .jm-indice__pista,
+body.jm .e-con.jm-indice__pista {
+  display: flex; flex-direction: row; flex-wrap: nowrap; gap: 0.25rem;
+  overflow-x: auto; padding-block: 0.5rem;
+  scrollbar-width: thin; scrollbar-color: var(--jm-rule-strong) transparent;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+}
+body.jm .jm-indice__pista::-webkit-scrollbar { height: 6px; }
+body.jm .jm-indice__pista::-webkit-scrollbar-thumb { background: var(--jm-rule-strong); }
+@media (pointer: coarse) {
+  body.jm .jm-indice__pista { scrollbar-width: none; }
+  body.jm .jm-indice__pista::-webkit-scrollbar { display: none; }
+}
+body.jm .jm-indice__enlace .elementor-button {
+  min-height: 2.5rem; padding: 0 1rem; flex-shrink: 0;
+  border: 0; border-radius: var(--jm-radius-full); background: none;
+  font-size: 0.875rem; font-weight: 500; color: var(--jm-ink-2);
+}
+body.jm .jm-indice__enlace .elementor-button:hover,
+body.jm .jm-indice__enlace .elementor-button:focus-visible { background: var(--jm-sunken); color: var(--jm-ink); }
+
+/* ==========================================================================
+   4 · Catálogo de cursos
+   ========================================================================== */
+body.jm .jm-cursos__sub,
+body.jm .e-con.jm-cursos__sub {
+  margin-top: 2.25rem; display: flex; flex-direction: row; flex-wrap: wrap;
+  align-items: flex-end; justify-content: space-between; column-gap: 1rem; row-gap: 0.25rem;
+  border-bottom: 1px solid var(--jm-rule-strong); padding-bottom: 0.75rem;
+}
+body.jm .jm-cursos__sub--medida,
+body.jm .e-con.jm-cursos__sub--medida { margin-top: 2.75rem; }
+body.jm .jm-cursos__sub-nota { font-size: 0.875rem; color: var(--jm-ink-3); }
+
+/* La rejilla: el Loop Grid (jm-plano) y la tarjeta oscura son hermanos. */
+body.jm .jm-cursos-rejilla,
+body.jm .e-con.jm-cursos-rejilla { margin-top: 1.5rem; display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { body.jm .jm-cursos-rejilla, body.jm .e-con.jm-cursos-rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { body.jm .jm-cursos-rejilla, body.jm .e-con.jm-cursos-rejilla { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1440px) { body.jm .jm-cursos-rejilla--4, body.jm .e-con.jm-cursos-rejilla--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+body.jm .jm-cursos-rejilla .elementor-widget-loop-grid,
+body.jm .jm-cursos-rejilla .elementor-loop-container { display: contents; }
+body.jm .jm-cursos-rejilla .e-loop-item { height: 100%; }
+
+/* ---------- Tarjeta de curso (Loop Item «Tarjeta de curso») ---------- */
+body.jm .jm-tcurso,
+body.jm .e-con.jm-tcurso { display: flex; flex-direction: column; height: 100%; padding: 1.5rem; }
+body.jm .jm-tcurso__cabeza,
+body.jm .e-con.jm-tcurso__cabeza { display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+body.jm .jm-tcurso__nombre { margin-top: 1.25rem; font-size: 1.125rem; font-weight: 600; line-height: 1.4; color: var(--jm-ink); }
+body.jm .jm-tcurso__para { margin-top: 0.5rem; flex: 1 1 auto; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-2); }
+body.jm .jm-tcurso__duracion { margin-top: 1rem; font-size: 0.875rem; color: var(--jm-ink-3); }
+body.jm .jm-tcurso__duracion .elementor-icon-list-item { display: inline-flex; align-items: center; gap: 0.375rem; }
+body.jm .jm-tcurso__duracion .elementor-icon-list-icon { display: inline-flex; color: inherit; }
+body.jm .jm-tcurso__duracion .elementor-icon-list-icon i,
+body.jm .jm-tcurso__duracion .elementor-icon-list-icon svg { width: 0.875rem; height: 0.875rem; font-size: 0.875rem; fill: currentColor; color: inherit; }
+body.jm .jm-tcurso__pie,
+body.jm .e-con.jm-tcurso__pie {
+  margin-top: 1.25rem; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center;
+  column-gap: 1.25rem; row-gap: 0.25rem; border-top: 1px solid var(--jm-rule); padding-top: 0.75rem;
+}
+
+/* Enlaces de texto de la tarjeta: «Ver información del curso» y «5 convocatorias» */
+body.jm .jm-tcurso__info .elementor-button,
+body.jm .jm-tcurso__convs {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0;
+  border: 0; border-radius: 0; background: none;
+  font-size: 0.875rem; font-weight: 600; color: var(--jm-ink);
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-tcurso__info .elementor-button:hover { background: none; color: var(--jm-accent); }
+body.jm .jm-tcurso__info .elementor-button-icon { color: var(--jm-accent); }
+body.jm .jm-tcurso__convs { color: var(--jm-accent); }
+body.jm .jm-tcurso__convs:hover { color: var(--jm-accent-hover); }
+body.jm .jm-tcurso__convs svg { flex: none; }
+
+/* Chips del curso ([jm_curso_chips]) */
+body.jm .jm-curso-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+body.jm .jm-curso-chip {
+  display: inline-flex; align-items: center; gap: 0.25rem; border-radius: var(--jm-radius-full);
+  padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 600; line-height: 1.33;
+}
+body.jm .jm-curso-chip--norma { border: 1px solid var(--jm-rule-strong); color: var(--jm-ink-2); }
+body.jm .jm-curso-chip--norma svg { color: var(--jm-accent); }
+body.jm .jm-curso-chip--acento { gap: 0.375rem; background: var(--jm-accent-tint); color: var(--jm-accent); }
+body.jm .jm-curso-chip--contorno { border: 1px solid var(--jm-rule-strong); color: var(--jm-ink-2); }
+
+/* ---------- Tarjeta oscura («Ver el calendario», «¿No está tu curso?») ---------- */
+body.jm .jm-tcurso-oscura,
+body.jm .e-con.jm-tcurso-oscura {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;
+  border-radius: var(--jm-radius-3xl); background: var(--jm-inverse); padding: 1.5rem; color: var(--jm-ink-inv-2);
+}
+@media (min-width: 1024px) { body.jm .jm-tcurso-oscura--medida, body.jm .e-con.jm-tcurso-oscura--medida { grid-column: span 2 / span 2; } }
+@media (min-width: 1440px) { body.jm .jm-tcurso-oscura--medida, body.jm .e-con.jm-tcurso-oscura--medida { grid-column: span 1 / span 1; } }
+body.jm .jm-tcurso-oscura__icono {
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem;
+  border-radius: var(--jm-radius-2xl); background: var(--jm-accent); color: #fff;
+}
+body.jm .jm-tcurso-oscura__icono .elementor-icon { display: grid; place-items: center; font-size: 1.25rem; color: #fff; }
+body.jm .jm-tcurso-oscura__icono .elementor-icon svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+body.jm .jm-tcurso-oscura__cifra {
+  margin-top: 1.25rem; font-family: var(--jm-font-display); font-size: 2.25rem; line-height: 1;
+  font-weight: 800; letter-spacing: -0.02em; color: var(--jm-ink-inv);
+}
+body.jm .jm-tcurso-oscura__titulo { margin-top: 1.25rem; font-size: 1.125rem; font-weight: 600; color: var(--jm-ink-inv); }
+body.jm .jm-tcurso-oscura__texto { margin-top: 0.5rem; font-size: 1rem; line-height: 1.625; }
+
+/* ==========================================================================
+   5 · Calendario: filtros ([jm_calendario_filtros])
+   ========================================================================== */
+body.jm .jm-cal-zona { margin-top: 1.5rem; }
+body.jm .jm-cal__filtros {
+  border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-3xl);
+  background: var(--jm-surface); padding: 1rem; box-shadow: var(--jm-shadow-tarjeta);
+}
+@media (min-width: 768px) { body.jm .jm-cal__filtros { padding: 1.25rem; } }
+body.jm .jm-cal__rotulo { color: var(--jm-ink-3); }
+body.jm .jm-cal__chips { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* Hello Elementor pinta los botones de rosa en :hover y :focus: se fijan
+   los cuatro estados. */
+body.jm .jm-cal__chip,
+body.jm .jm-cal__chip:focus {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.5rem; padding: 0 1rem;
+  border: 1px solid var(--jm-rule-strong); border-radius: var(--jm-radius-full);
+  background: var(--jm-surface); color: var(--jm-ink-2); box-shadow: none;
+  font-family: var(--jm-font-sans); font-size: 0.875rem; font-weight: 500; line-height: 1.2;
+  text-transform: none; cursor: pointer;
+  transition: background-color 200ms var(--jm-ease-ui), color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cal__chip:hover { border-color: var(--jm-ink); background: var(--jm-surface); color: var(--jm-ink); }
+body.jm .jm-cal__chip[aria-pressed="true"],
+body.jm .jm-cal__chip[aria-pressed="true"]:hover,
+body.jm .jm-cal__chip[aria-pressed="true"]:focus { border-color: var(--jm-ink); background: var(--jm-ink); color: #fff; }
+body.jm .jm-cal__chip-n { opacity: 0.7; font-size: inherit; }
+
+body.jm .jm-cal__selects { margin-top: 1rem; display: grid; gap: 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-cal__selects { grid-template-columns: 1fr 1fr auto; align-items: end; } }
+body.jm .jm-cal__campo { display: block; margin: 0; }
+body.jm .jm-cal__campo .jm-etiqueta-campo { color: var(--jm-ink-2); }
+body.jm select.jm-cal__select {
+  display: block; margin-top: 0.375rem; height: 3rem; width: 100%;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  background-color: var(--jm-surface); padding: 0 1rem;
+  font-family: var(--jm-font-sans); font-size: 1rem; color: var(--jm-ink);
+}
+body.jm .jm-cal__quitar,
+body.jm .jm-cal__quitar:focus {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem;
+  height: 3rem; padding: 0 1rem; border: 0; border-radius: var(--jm-radius-full);
+  background: none; color: var(--jm-ink-2); box-shadow: none;
+  font-family: var(--jm-font-sans); font-size: 0.875rem; font-weight: 600; cursor: pointer;
+  transition: background-color 200ms var(--jm-ease-ui), color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cal__quitar:hover { background: var(--jm-sunken); color: var(--jm-ink); }
+
+body.jm .jm-cal__cuenta { margin-top: 1.5rem; font-size: 0.875rem; color: var(--jm-ink-3); }
+body.jm .jm-cal__vacio {
+  margin-top: 1rem; border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-3xl);
+  background: var(--jm-sunken); padding: 2rem; text-align: center;
+}
+body.jm .jm-cal__vacio .jm-title { color: var(--jm-ink); }
+body.jm .jm-cal__vacio-texto { margin-top: 0.5rem; font-size: 1rem; color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   6 · Calendario: la lista (Loop Grid jm_convocatorias con .jm-cal-lista)
+   El JS agrupa por mes: mete un <h3 class="jm-cal__mes"> delante de la
+   primera fila de cada mes y marca primera/última para redondear el bloque.
+   ========================================================================== */
+body.jm .jm-cal-lista .elementor-loop-container {
+  display: flex; flex-direction: column; gap: 0; grid-template-columns: none;
+}
+body.jm .jm-cal-lista .e-loop-item {
+  height: auto; overflow: hidden; background: var(--jm-surface);
+  border: 1px solid var(--jm-rule); border-top-width: 0;
+}
+/* Sin JS: el primer elemento cierra el bloque por arriba. */
+body.jm .jm-cal-lista .elementor-loop-container > .e-loop-item:first-child,
+body.jm .jm-cal-lista .e-loop-item.jm-conv--primera {
+  border-top-width: 1px; border-top-left-radius: var(--jm-radius-3xl); border-top-right-radius: var(--jm-radius-3xl);
+}
+body.jm .jm-cal-lista .elementor-loop-container > .e-loop-item:last-child,
+body.jm .jm-cal-lista .e-loop-item.jm-conv--ultima {
+  border-bottom-left-radius: var(--jm-radius-3xl); border-bottom-right-radius: var(--jm-radius-3xl);
+}
+body.jm .jm-cal-lista .e-loop-item.jm-conv--primera { margin-top: 0.75rem; }
+body.jm .jm-cal-lista .e-loop-item.jm-conv--oculta,
+body.jm .jm-cal-lista .e-loop-item.jm-conv--pasada { display: none; }
+
+body.jm .jm-cal__mes {
+  margin-top: 1.5rem; display: flex; align-items: baseline; gap: 0.75rem;
+  font-family: var(--jm-font-display); font-size: 1.25rem; font-weight: 500; line-height: 1.4; color: var(--jm-ink);
+}
+body.jm .jm-cal__mes-n { font-family: var(--jm-font-sans); font-size: 0.875rem; color: var(--jm-ink-3); }
+
+/* ---------- La fila (Loop Item «Fila de convocatoria») ---------- */
+body.jm .jm-conv,
+body.jm .e-con.jm-conv { display: grid; gap: 1rem; padding: 1rem; }
+@media (min-width: 768px) {
+  body.jm .jm-conv, body.jm .e-con.jm-conv {
+    grid-template-columns: 4.5rem 1fr auto; align-items: center; gap: 1.5rem; padding-inline: 1.5rem;
+  }
+  body.jm .jm-conv__sede { grid-column-start: 2; }
+  body.jm .jm-conv__acciones { grid-column-start: 3; grid-row: 1 / span 2; }
+}
+@media (min-width: 1024px) {
+  body.jm .jm-conv, body.jm .e-con.jm-conv { grid-template-columns: 4.5rem minmax(0, 1.2fr) minmax(0, 1fr) auto; }
+  body.jm .jm-conv__sede { grid-column-start: auto; }
+  body.jm .jm-conv__acciones { grid-column-start: auto; grid-row: auto; }
+}
+
+/* Fecha ([jm_convocatoria_fecha]) */
+body.jm .jm-conv__fecha { display: flex; align-items: center; gap: 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-conv__fecha { display: block; text-align: center; } }
+body.jm .jm-conv__cuadro {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 4rem; height: 4rem; border-radius: var(--jm-radius-2xl); background: var(--jm-sunken); color: var(--jm-ink);
+}
+body.jm .jm-conv__fecha--hoy .jm-conv__cuadro { background: var(--jm-accent); color: #fff; }
+body.jm .jm-conv__dia { font-family: var(--jm-font-display); font-size: 1.5rem; line-height: 1; }
+body.jm .jm-conv__mes {
+  margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.025em; opacity: 0.8;
+}
+body.jm .jm-conv__semana { display: block; font-size: 0.875rem; color: var(--jm-ink-3); text-transform: capitalize; }
+@media (min-width: 768px) { body.jm .jm-conv__semana { margin-top: 0.375rem; } }
+
+/* Curso */
+body.jm .jm-conv__curso,
+body.jm .e-con.jm-conv__curso { display: block; min-width: 0; }
+body.jm .jm-conv__curso-nombre { font-size: 1rem; font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-conv__meta,
+body.jm .e-con.jm-conv__meta {
+  margin-top: 0.375rem; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center;
+  column-gap: 0.75rem; row-gap: 0.25rem; font-size: 0.875rem; color: var(--jm-ink-2);
+}
+body.jm .jm-conv__norma {
+  border-radius: var(--jm-radius-full); background: var(--jm-accent-tint);
+  padding: 0.125rem 0.625rem; font-size: 0.75rem; font-weight: 600; color: var(--jm-accent);
+}
+body.jm .jm-conv__norma:has(.elementor-heading-title:empty) { display: none; }
+body.jm .jm-conv__horario .elementor-icon-list-item { display: inline-flex; align-items: center; gap: 0.375rem; }
+body.jm .jm-conv__horario .elementor-icon-list-icon { display: inline-flex; color: var(--jm-ink-3); }
+body.jm .jm-conv__horario .elementor-icon-list-icon i,
+body.jm .jm-conv__horario .elementor-icon-list-icon svg { width: 0.8125rem; height: 0.8125rem; font-size: 0.8125rem; fill: currentColor; color: var(--jm-ink-3); }
+body.jm .jm-conv__plazas { margin-top: 0.5rem; }
+body.jm .jm-conv__plazas:not(:has(.jm-plazas)) { display: none; }
+
+/* Plazas ([jm_convocatoria_plazas]) */
+body.jm .jm-plazas { display: flex; flex-direction: column; gap: 0.375rem; }
+body.jm .jm-plazas__texto { font-size: 0.875rem; font-weight: 600; }
+body.jm .jm-plazas--libres .jm-plazas__texto { color: var(--jm-ok); }
+body.jm .jm-plazas--ultimas .jm-plazas__texto { color: var(--jm-wait-text); }
+body.jm .jm-plazas--completo .jm-plazas__texto { color: var(--jm-accent); }
+body.jm .jm-plazas__barra { display: block; height: 0.375rem; width: 7rem; overflow: hidden; border-radius: var(--jm-radius-full); background: var(--jm-rule); }
+body.jm .jm-plazas__barra span { display: block; height: 100%; border-radius: var(--jm-radius-full); background: var(--jm-ok); }
+body.jm .jm-plazas--ultimas .jm-plazas__barra span { background: var(--jm-wait); }
+body.jm .jm-plazas--completo .jm-plazas__barra span { background: var(--jm-accent); }
+
+/* Sede */
+body.jm .jm-conv__sede,
+body.jm .e-con.jm-conv__sede { display: block; min-width: 0; }
+body.jm .jm-conv__sede-nombre .elementor-icon-list-item {
+  display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 600; color: var(--jm-ink);
+}
+body.jm .jm-conv__sede-nombre .elementor-icon-list-icon { display: inline-flex; color: var(--jm-accent); }
+body.jm .jm-conv__sede-nombre .elementor-icon-list-icon i,
+body.jm .jm-conv__sede-nombre .elementor-icon-list-icon svg { width: 0.875rem; height: 0.875rem; font-size: 0.875rem; fill: currentColor; color: var(--jm-accent); }
+body.jm .jm-conv__zona { font-weight: 400; color: var(--jm-ink-3); }
+body.jm .jm-conv__direccion { margin-top: 0.125rem; font-size: 0.75rem; color: var(--jm-ink-3); }
+body.jm .jm-conv__maps .elementor-button {
+  margin-top: 0.25rem; display: inline-flex; align-items: center; gap: 0.375rem;
+  min-height: 2rem; padding: 0; border: 0; border-radius: 0; background: none;
+  font-size: 0.75rem; font-weight: 600; color: var(--jm-accent);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-conv__maps .elementor-button:hover { background: none; color: var(--jm-accent-hover); }
+body.jm .jm-conv__maps .elementor-button-icon { order: 0; }
+
+/* Acciones */
+body.jm .jm-conv__acciones,
+body.jm .e-con.jm-conv__acciones { display: flex; flex-direction: column; align-items: stretch; gap: 0.5rem; }
+body.jm .jm-conv__info .elementor-button { white-space: nowrap; }
+body.jm .jm-conv__info .elementor-button-icon { order: 0; color: var(--jm-accent); }
+body.jm .jm-conv__info .elementor-button:hover { border-color: var(--jm-ink); }
+body.jm .jm-conv__sin-plazas {
+  display: none; align-items: center; justify-content: center; height: 2.75rem; padding: 0 1.25rem;
+  border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-full);
+  font-size: 0.875rem; font-weight: 600; color: var(--jm-ink-3);
+}
+body.jm .jm-conv--completo .jm-conv__sin-plazas,
+body.jm .e-loop-item:has([data-completo]) .jm-conv__sin-plazas { display: inline-flex; }
+body.jm .jm-conv--completo .jm-conv__plaza,
+body.jm .e-loop-item:has([data-completo]) .jm-conv__plaza { display: none; }
+
+/* ==========================================================================
+   7 · Sedes de formación
+   ========================================================================== */
+body.jm .jm-sedes,
+body.jm .e-con.jm-sedes { margin-top: 1.5rem; display: grid; gap: 1rem; }
+@media (min-width: 768px) { body.jm .jm-sedes, body.jm .e-con.jm-sedes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+body.jm .jm-sede,
+body.jm .e-con.jm-sede { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
+@media (min-width: 768px) { body.jm .jm-sede, body.jm .e-con.jm-sede { padding: 1.75rem; } }
+body.jm .jm-sede__tipo { color: var(--jm-ink-3); }
+body.jm .jm-sede__nombre { margin-top: 0.25rem; font-family: var(--jm-font-display); font-size: 1.5rem; line-height: 1.33; color: var(--jm-ink); }
+body.jm .jm-sede__dir,
+body.jm .e-con.jm-sede__dir { display: flex; flex-direction: row; align-items: flex-start; gap: 0.75rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-sede__pin { flex: none; margin-top: 0.25rem; color: var(--jm-accent); }
+body.jm .jm-sede__pin .elementor-icon { font-size: 1.0625rem; color: var(--jm-accent); }
+body.jm .jm-sede__pin .elementor-icon svg { width: 1.0625rem; height: 1.0625rem; fill: currentColor; }
+body.jm .jm-sede__contacto .elementor-icon-list-item a,
+body.jm .jm-sede__contacto .elementor-icon-list-item { transition: color 200ms var(--jm-ease-ui); }
+body.jm .jm-sede__contacto .elementor-icon-list-item:first-child .elementor-icon-list-text { font-family: var(--jm-font-mono); color: var(--jm-ink); }
+body.jm .jm-sede__contacto .elementor-icon-list-item:last-child .elementor-icon-list-text {
+  color: var(--jm-ink-2); text-decoration: underline; text-decoration-color: var(--jm-rule-strong); text-underline-offset: 4px;
+}
+body.jm .jm-sede__contacto .elementor-icon-list-item a:hover .elementor-icon-list-text { color: var(--jm-accent); }
+body.jm .jm-sede__llegar { margin-top: auto; }
+
+/* ==========================================================================
+   8 · Legislación
+   ========================================================================== */
+body.jm .jm-legis,
+body.jm .e-con.jm-legis { display: grid; gap: 2.5rem; }
+@media (min-width: 1024px) {
+  body.jm .jm-legis, body.jm .e-con.jm-legis { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  body.jm .jm-legis__intro { grid-column: span 4 / span 4; }
+  body.jm .jm-legis__lista { grid-column: span 8 / span 8; }
+}
+body.jm .jm-legis__intro,
+body.jm .e-con.jm-legis__intro { display: block; }
+body.jm .jm-legis__texto { margin-top: 1rem; font-size: 1rem; color: var(--jm-ink-2); }
+body.jm .jm-legis__lista,
+body.jm .e-con.jm-legis__lista {
+  display: grid; gap: 1px; overflow: hidden; border: 1px solid var(--jm-rule);
+  border-radius: var(--jm-radius-3xl); background: var(--jm-rule);
+}
+body.jm .jm-legis__item,
+body.jm .e-con.jm-legis__item { display: flex; flex-direction: row; gap: 1rem; background: var(--jm-surface); padding: 1.25rem; }
+@media (min-width: 768px) { body.jm .jm-legis__item, body.jm .e-con.jm-legis__item { padding: 1.5rem; } }
+body.jm .jm-legis__icono { flex: none; margin-top: 0.25rem; }
+body.jm .jm-legis__icono .elementor-icon { font-size: 1.125rem; color: var(--jm-ink-3); }
+body.jm .jm-legis__icono .elementor-icon svg { width: 1.125rem; height: 1.125rem; fill: currentColor; }
+body.jm .jm-legis__ref { font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-legis__tit { font-weight: 400; color: var(--jm-ink-2); }
+body.jm .jm-legis__nota { margin-top: 0.25rem; font-size: 0.875rem; line-height: 1.625; color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   9 · Ficha del curso (Single «curso»; también dentro del modal)
+   ========================================================================== */
+body.jm .jm-ficha-pagina,
+body.jm .e-con.jm-ficha-pagina { padding-block: 2.5rem; }
+@media (min-width: 768px) { body.jm .jm-ficha-pagina, body.jm .e-con.jm-ficha-pagina { padding-block: 3.5rem; } }
+
+/* «← Todos los cursos de Formación» / «← Volver al calendario de formación» */
+body.jm .jm-volver .elementor-button {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0;
+  border: 0; border-radius: 0; background: none;
+  font-size: 0.875rem; font-weight: 600; color: var(--jm-ink-2);
+}
+body.jm .jm-volver .elementor-button:hover { background: none; color: var(--jm-accent); }
+body.jm .jm-volver .elementor-button-icon { order: 0; }
+body.jm .jm-volver--ficha .elementor-button { margin-bottom: 2rem; }
+body.jm .jm-volver--solicitar .elementor-button { margin-bottom: 1.5rem; }
+
+body.jm .jm-ficha-curso,
+body.jm .e-con.jm-ficha-curso { display: block; }
+body.jm .jm-ficha-curso__titulo {
+  margin-top: 1rem; max-width: 30ch; font-family: var(--jm-font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1.05; font-weight: 800;
+  letter-spacing: -0.02em; text-wrap: balance; color: var(--jm-ink);
+}
+body.jm .jm-ficha-curso__desc { margin-top: 1rem; max-width: 68ch; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-2); }
+@media (min-width: 768px) { body.jm .jm-ficha-curso__desc { font-size: 1.125rem; } }
+
+body.jm .jm-ficha-curso__datos,
+body.jm .e-con.jm-ficha-curso__datos {
+  margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px;
+  overflow: hidden; border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-2xl); background: var(--jm-rule);
+}
+@media (min-width: 768px) { body.jm .jm-ficha-curso__datos, body.jm .e-con.jm-ficha-curso__datos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+body.jm .jm-ficha-curso__dato,
+body.jm .e-con.jm-ficha-curso__dato { display: block; background: var(--jm-surface); padding: 0.75rem 1rem; }
+body.jm .jm-ficha-curso__dato--ancho,
+body.jm .e-con.jm-ficha-curso__dato--ancho { grid-column: span 2 / span 2; }
+@media (min-width: 768px) { body.jm .jm-ficha-curso__dato--ancho, body.jm .e-con.jm-ficha-curso__dato--ancho { grid-column: span 1 / span 1; } }
+body.jm .jm-ficha-curso__k { color: var(--jm-ink-3); }
+body.jm .jm-ficha-curso__k .elementor-icon-list-item { display: inline-flex; align-items: center; gap: 0.375rem; }
+body.jm .jm-ficha-curso__k .elementor-icon-list-icon { display: inline-flex; color: var(--jm-accent); }
+body.jm .jm-ficha-curso__k .elementor-icon-list-icon i,
+body.jm .jm-ficha-curso__k .elementor-icon-list-icon svg { width: 0.9375rem; height: 0.9375rem; font-size: 0.9375rem; fill: currentColor; color: var(--jm-accent); }
+body.jm .jm-ficha-curso__v { margin-top: 0.25rem; font-size: 0.875rem; font-weight: 600; color: var(--jm-ink); }
+
+body.jm .jm-ficha-curso__cuerpo,
+body.jm .e-con.jm-ficha-curso__cuerpo { margin-top: 2rem; display: grid; gap: 2rem; }
+@media (min-width: 768px) { body.jm .jm-ficha-curso__cuerpo, body.jm .e-con.jm-ficha-curso__cuerpo { grid-template-columns: minmax(0, 1fr) 21rem; } }
+@media (min-width: 1024px) { body.jm .jm-ficha-curso__cuerpo, body.jm .e-con.jm-ficha-curso__cuerpo { gap: 3rem; } }
+
+/* Preguntas: el contenido de la entrada (<h3> + <p>, <p class="jm-nota">).
+   Dentro del contenido sí valen los selectores de hermano: no son widgets. */
+body.jm .jm-ficha-curso__preguntas h3 {
+  font-size: 1.125rem; font-weight: 600; line-height: 1.4; color: var(--jm-ink);
+}
+body.jm .jm-ficha-curso__preguntas h3 ~ h3 { margin-top: 1.25rem; border-top: 1px solid var(--jm-rule); padding-top: 1.25rem; }
+body.jm .jm-ficha-curso__preguntas p { margin: 0.5rem 0 0; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-2); }
+body.jm .jm-ficha-curso__preguntas p.jm-nota {
+  margin-top: 0.75rem; border-left: 2px solid var(--jm-rule-strong); padding-left: 0.75rem;
+  font-size: 0.875rem; color: var(--jm-ink-3);
+}
+body.jm .jm-ficha-curso__preguntas a {
+  font-weight: 600; color: var(--jm-accent);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-ficha-curso__preguntas a:hover { color: var(--jm-accent-hover); }
+
+body.jm .jm-ficha-curso__aside,
+body.jm .e-con.jm-ficha-curso__aside { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 768px) {
+  body.jm .jm-ficha-curso__aside, body.jm .e-con.jm-ficha-curso__aside { position: sticky; top: 1rem; align-self: start; }
+}
+body.jm .jm-ficha-cta,
+body.jm .e-con.jm-ficha-cta { display: block; border-radius: var(--jm-radius-3xl); background: var(--jm-inverse); padding: 1.25rem; color: var(--jm-ink-inv-2); }
+body.jm .jm-ficha-cta__titulo { font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 600; color: var(--jm-ink-inv); }
+body.jm .jm-ficha-cta__texto { margin-top: 0.375rem; font-size: 0.875rem; line-height: 1.625; }
+body.jm .jm-ficha-cta__boton .elementor-button { margin-top: 1rem; display: flex; width: 100%; }
+
+/* Próximas convocatorias ([jm_proximas_curso]) */
+body.jm .jm-proximas { border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-3xl); background: var(--jm-surface); padding: 1.25rem; }
+body.jm .jm-proximas__titulo { display: flex; align-items: center; gap: 0.375rem; color: var(--jm-ink-3); }
+body.jm .jm-proximas__vacio { margin-top: 0.75rem; font-size: 0.875rem; color: var(--jm-ink-2); }
+body.jm .jm-proximas__lista { margin-top: 0.75rem; list-style: none; padding: 0; }
+body.jm .jm-proximas__item { display: flex; align-items: center; gap: 0.75rem; padding-block: 0.75rem; }
+body.jm .jm-proximas__item ~ .jm-proximas__item { border-top: 1px solid var(--jm-rule); }
+body.jm .jm-proximas__cuadro {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 3rem; height: 3rem; border-radius: var(--jm-radius-xl); background: var(--jm-sunken); color: var(--jm-ink);
+}
+body.jm .jm-proximas__dia { font-family: var(--jm-font-display); font-size: 1.125rem; line-height: 1; }
+body.jm .jm-proximas__mes { margin-top: 0.125rem; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.025em; text-transform: uppercase; opacity: 0.8; }
+body.jm .jm-proximas__cuerpo { min-width: 0; flex: 1 1 0%; }
+body.jm .jm-proximas__semana { display: block; font-size: 0.875rem; font-weight: 600; color: var(--jm-ink); text-transform: capitalize; }
+body.jm .jm-proximas__sede { display: flex; align-items: center; gap: 0.25rem; font-size: 0.75rem; color: var(--jm-ink-3); }
+body.jm .jm-proximas__plaza {
+  display: inline-flex; align-items: center; gap: 0.25rem; flex-shrink: 0; height: 2.25rem; padding: 0 0.875rem;
+  border-radius: var(--jm-radius-full); background: var(--jm-accent);
+  font-size: 0.75rem; font-weight: 600; color: #fff; transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-proximas__plaza:hover { background: var(--jm-accent-hover); color: #fff; }
+body.jm .jm-proximas__todas {
+  margin-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.375rem; min-height: 2.5rem;
+  font-size: 0.875rem; font-weight: 600; color: var(--jm-accent);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-proximas__todas:hover { color: var(--jm-accent-hover); }
+
+/* Teléfono de Formación ([jm_tel_formacion]) */
+body.jm .jm-tel-formacion__a { display: inline-flex; align-items: center; gap: 0.5rem; transition: color 200ms var(--jm-ease-ui), background-color 200ms var(--jm-ease-ui); }
+body.jm .jm-placa__telefono .jm-tel-formacion__a { min-height: 2.75rem; font-size: 1rem; color: var(--jm-ink-inv-2); }
+body.jm .jm-placa__telefono .jm-tel-formacion__a:hover { color: var(--jm-accent-dark); }
+body.jm .jm-tel-formacion--ficha { margin-top: 0.75rem; }
+body.jm .jm-tel-formacion--ficha .jm-tel-formacion__a { display: flex; justify-content: center; min-height: 2.5rem; font-size: 0.875rem; color: var(--jm-ink-inv); }
+body.jm .jm-tel-formacion--ficha .jm-tel-formacion__a:hover { color: var(--jm-accent-dark); }
+body.jm .jm-tel-formacion--texto .jm-tel-formacion__a {
+  gap: 0.375rem; white-space: nowrap; color: var(--jm-ink);
+  text-decoration: underline; text-decoration-color: var(--jm-accent); text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-tel-formacion--texto .jm-value { font-size: inherit; }
+body.jm .jm-tel-formacion--boton .jm-tel-formacion__a {
+  justify-content: center; height: 3.5rem; padding: 0 1.5rem; width: 100%; box-sizing: border-box;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-full);
+  font-size: 1rem; font-weight: 600; color: var(--jm-ink);
+}
+@media (min-width: 768px) { body.jm .jm-tel-formacion--boton .jm-tel-formacion__a { width: auto; } }
+body.jm .jm-tel-formacion--boton .jm-tel-formacion__a:hover { background: var(--jm-sunken); }
+
+/* ==========================================================================
+   10 · /formacion/solicitar/ y el formulario
+   ========================================================================== */
+body.jm .jm-solicitar,
+body.jm .e-con.jm-solicitar { padding-block: 2.5rem; }
+@media (min-width: 768px) { body.jm .jm-solicitar, body.jm .e-con.jm-solicitar { padding-block: 3.5rem; } }
+body.jm .jm-solicitar__titulo { margin-top: 0.75rem; max-width: 24ch; color: var(--jm-ink); }
+body.jm .jm-solicitar__lede { margin-top: 1.25rem; max-width: 58ch; color: var(--jm-ink-2); }
+body.jm .jm-form-formacion { margin-top: 3rem; }
+
+/* Las dos columnas las crea el JS (.jm-form-formacion__col). La clase
+   doble gana a los márgenes de columna que escribe Elementor por widget. */
+body.jm .jm-form-formacion.jm-form-formacion .elementor-form-fields-wrapper {
+  display: grid; gap: 2.5rem; margin: 0; align-items: start;
+}
+@media (min-width: 1024px) {
+  body.jm .jm-form-formacion.jm-form-formacion .elementor-form-fields-wrapper { grid-template-columns: 5fr 7fr; gap: 3rem; }
+}
+body.jm .jm-form-formacion__col { display: grid; gap: 1.25rem; align-content: start; min-width: 0; }
+body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col .elementor-field-group {
+  width: 100%; max-width: none; flex: none; margin: 0; padding: 0; grid-column: 1 / -1;
+}
+@media (min-width: 768px) {
+  body.jm .jm-form-formacion__col--curso { grid-template-columns: 9rem minmax(0, 1fr); }
+  body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col--curso .elementor-field-group-alumnos { grid-column: 1; }
+  body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col--curso .elementor-field-group-localidad { grid-column: 2; }
+  body.jm .jm-form-formacion__col--quien { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col--quien .elementor-field-group-telefono,
+  body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col--quien .elementor-field-group-email,
+  body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col--quien .elementor-field-group-empresa,
+  body.jm .jm-form-formacion.jm-form-formacion .jm-form-formacion__col--quien .elementor-field-group-cif { grid-column: auto; }
+}
+/* Cifras en monoespaciada, como la clase value del original. */
+body.jm .jm-form-formacion .elementor-field-group-alumnos input,
+body.jm .jm-form-formacion .elementor-field-group-telefono input,
+body.jm .jm-form-formacion .elementor-field-group-cif input { font-family: var(--jm-font-mono); font-variant-numeric: tabular-nums; }
+
+/* Titulares de bloque (campos HTML «bloque_curso» y «bloque_quien») */
+body.jm .jm-form__bloque {
+  margin: 0; border-bottom: 1px solid var(--jm-rule-strong); padding-bottom: 0.75rem; color: var(--jm-ink);
+}
+body.jm .jm-form__info {
+  display: inline-flex; align-items: center; gap: 0.375rem; min-height: 2.5rem;
+  font-size: 0.875rem; font-weight: 600; color: var(--jm-accent);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+body.jm .jm-form__info:hover { color: var(--jm-accent-hover); }
+body.jm .jm-form__aviso {
+  margin: 0; border-left: 2px solid var(--jm-accent); background: var(--jm-accent-tint);
+  padding: 0.75rem 1rem; font-size: 0.875rem; color: var(--jm-ink-2);
+}
+body.jm .jm-form__ayuda { display: block; width: 100%; margin-top: 0.5rem; font-size: 0.875rem; color: var(--jm-ink-3); }
+body.jm .jm-form__aviso-cif { display: block; width: 100%; margin-top: 0.25rem; font-size: 0.875rem; color: var(--jm-wait-text); }
+
+/* «¿Dónde prefieres la formación?»: cada opción es una caja que se marca */
+body.jm .jm-form-formacion .elementor-field-group-lugar .elementor-field-subgroup { display: grid; gap: 0.5rem; width: 100%; margin-top: 0.5rem; }
+body.jm .jm-form-formacion .elementor-field-group-lugar .elementor-field-option {
+  display: flex; align-items: center; gap: 0.75rem; min-height: 3rem; margin: 0; padding: 0 0 0 1rem;
+  border: 1px solid var(--jm-rule-control); border-radius: var(--jm-radius-xl); background: var(--jm-surface);
+  cursor: pointer;
+}
+body.jm .jm-form-formacion .elementor-field-group-lugar .elementor-field-option:has(input:checked) { border-color: var(--jm-ink); background: var(--jm-sunken); }
+body.jm .jm-form-formacion .elementor-field-group-lugar .elementor-field-option input { width: 1rem; height: 1rem; margin: 0; accent-color: var(--jm-accent); }
+body.jm .jm-form-formacion .elementor-field-group-lugar .elementor-field-option label {
+  flex: 1 1 auto; align-self: stretch; display: flex; align-items: center; padding-right: 1rem;
+  font-size: 1rem; color: var(--jm-ink); cursor: pointer;
+}
+
+/* Enviar */
+body.jm .jm-form-formacion.jm-form-formacion .e-form__buttons { margin-top: 0.75rem; }
+body.jm .jm-form-formacion.jm-form-formacion .e-form__buttons .elementor-button {
+  width: 100%; min-height: 3.5rem; padding: 0 2rem; border: 0; border-radius: var(--jm-radius-full);
+  background: var(--jm-accent); color: #fff; font-size: 1rem; font-weight: 600;
+}
+body.jm .jm-form-formacion.jm-form-formacion .e-form__buttons .elementor-button:hover { background: var(--jm-accent-hover); }
+body.jm .jm-form-formacion.elementor-form-waiting .e-form__buttons .elementor-button,
+body.jm .jm-form-formacion .elementor-form-waiting .e-form__buttons .elementor-button { opacity: 0.7; }
+@media (min-width: 768px) {
+  body.jm .jm-form-formacion.jm-form-formacion .e-form__buttons .elementor-button { width: auto; }
+}
+body.jm .jm-form-formacion__nota { grid-column: 1 / -1; margin-top: 0; font-size: 0.875rem; color: var(--jm-ink-2); }
+
+/* ==========================================================================
+   11 · /formacion/solicitar/gracias/
+   ========================================================================== */
+body.jm .jm-gracias,
+body.jm .e-con.jm-gracias { padding-block: 3rem; }
+@media (min-width: 768px) { body.jm .jm-gracias, body.jm .e-con.jm-gracias { padding-block: 4rem; } }
+body.jm .jm-gracias__cuerpo,
+body.jm .e-con.jm-gracias__cuerpo { display: block; max-width: 60ch; }
+body.jm .jm-gracias__hex { display: block; width: 2.5rem; height: 2.5rem; color: var(--jm-accent); }
+body.jm .jm-gracias__hex svg { display: block; width: 100%; height: 100%; }
+body.jm .jm-gracias__titulo { margin-top: 2rem; color: var(--jm-ink); }
+body.jm .jm-gracias__lede { margin-top: 2rem; color: var(--jm-ink-2); }
+body.jm .jm-referencia { margin-top: 1.5rem; border: 1px solid var(--jm-rule); background: var(--jm-sunken); padding: 1rem 1.25rem; }
+body.jm .jm-referencia__k { display: block; color: var(--jm-ink-3); }
+body.jm .jm-referencia__v { display: block; margin-top: 0.25rem; color: var(--jm-ink); }
+body.jm .jm-gracias__botones,
+body.jm .e-con.jm-gracias__botones { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 768px) { body.jm .jm-gracias__botones, body.jm .e-con.jm-gracias__botones { flex-direction: row; } }
+body.jm .jm-gracias__volver .elementor-button { min-height: 3.5rem; padding: 0 1.5rem; }

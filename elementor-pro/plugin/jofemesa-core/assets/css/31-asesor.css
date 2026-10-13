@@ -1,0 +1,190 @@
+/* ==========================================================================
+   JOFEMESA · 31 ASESOR
+   src/components/asesor/Asesor.tsx — el panel claro con las tres preguntas
+   y el resultado. Lo genera [jm_asesor] + 31-asesor.js.
+   · En portada va dentro de la banda oscura (30-inicio.css §7).
+   · En /asesor/ va bajo la placa (10-placa.css), con py-10.
+   El panel es SIEMPRE claro: se fijan colores para que no herede los de
+   `.jm-oscuro` (titulares blancos, enlaces blancos).
+   ========================================================================== */
+
+body.jm .jm-asesor--pagina { padding-block: 2.5rem; }
+
+body.jm .jm-asesor__panel {
+  overflow: hidden; border: 1px solid var(--jm-rule); border-radius: var(--jm-radius-3xl);
+  background: var(--jm-surface); color: var(--jm-ink);
+  box-shadow: 0 18px 50px -24px rgba(20, 23, 26, 0.35);
+}
+body.jm .jm-asesor__panel :focus-visible { outline-color: var(--jm-accent); }
+body.jm .jm-asesor svg.jm-ico { display: inline-block; flex: none; vertical-align: middle; }
+
+/* ---------- Barra de estado ---------- */
+body.jm .jm-asesor__barra {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem;
+  border-bottom: 1px solid var(--jm-rule); background: var(--jm-sunken); padding: 0.75rem 1rem;
+}
+@media (min-width: 768px) { body.jm .jm-asesor__barra { padding-inline: 1.5rem; } }
+body.jm .jm-asesor__estado { display: flex; align-items: center; gap: 0.75rem; }
+body.jm .jm-asesor__contador { color: var(--jm-ink-2); }
+body.jm .jm-asesor__canales { display: flex; gap: 0.375rem; }
+body.jm .jm-asesor__canal { display: block; width: 2rem; height: 0.375rem; overflow: hidden; border-radius: 9999px; background: var(--jm-rule); }
+/* Tres canales fijos y dentro una barra que CRECE: el movimiento acusa recibo. */
+body.jm .jm-asesor__relleno {
+  display: block; height: 100%; transform-origin: left; border-radius: 9999px; background: var(--jm-accent);
+  transform: scaleX(0); transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+body.jm .jm-asesor__relleno[data-lleno] { transform: scaleX(1); }
+
+body.jm .jm-asesor__acciones { display: flex; align-items: center; gap: 0.25rem; }
+body.jm .jm-asesor button.jm-asesor__accion,
+body.jm .jm-asesor button.jm-asesor__accion:hover,
+body.jm .jm-asesor button.jm-asesor__accion:focus,
+body.jm .jm-asesor button.jm-asesor__accion:active {
+  display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.375rem;
+  margin: 0; padding: 0 0.75rem; border: 0; border-radius: 0; box-shadow: none; background: none;
+  font-family: var(--jm-font-sans); font-size: 0.875rem; line-height: 1.25rem; text-transform: none; letter-spacing: normal;
+  cursor: pointer; transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-asesor button.jm-asesor__accion[hidden] { display: none; }
+body.jm .jm-asesor button.jm-asesor__accion--atras { font-weight: 600; color: var(--jm-ink); }
+body.jm .jm-asesor button.jm-asesor__accion--atras:hover { color: var(--jm-accent); }
+body.jm .jm-asesor button.jm-asesor__accion--reiniciar { font-weight: 400; color: var(--jm-ink-2); }
+body.jm .jm-asesor button.jm-asesor__accion--reiniciar:hover { color: var(--jm-ink); }
+
+/* ---------- Preguntas ---------- */
+body.jm .jm-asesor__preguntas {
+  margin: 0; min-width: 0; border: 0; padding: 1.25rem 1rem;
+}
+@media (min-width: 768px) { body.jm .jm-asesor__preguntas { padding: 1.5rem; } }
+body.jm .jm-asesor__preguntas[hidden] { display: none; }
+body.jm .jm-asesor .jm-asesor__enunciado {
+  display: block; float: none; width: auto; margin: 0 0 0.25rem; padding: 0; border: 0;
+  color: var(--jm-ink); outline: none;
+}
+body.jm .jm-asesor__intro { margin-bottom: 1.5rem; max-width: 60ch; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-asesor__intro em { font-style: normal; font-weight: 600; }
+body.jm .jm-asesor__enlace-catalogo { color: var(--jm-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+
+body.jm .jm-asesor__selectores { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+@media (min-width: 1024px) { body.jm .jm-asesor__selectores { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+body.jm .jm-asesor__campo { display: block; margin: 0; font-weight: inherit; }
+body.jm .jm-asesor__etiqueta { display: flex; align-items: center; gap: 0.625rem; color: var(--jm-ink); }
+body.jm .jm-asesor__numero {
+  display: flex; flex-shrink: 0; width: 1.5rem; height: 1.5rem; align-items: center; justify-content: center;
+  border-radius: 9999px; font-size: 0.75rem; line-height: 1;
+  background: var(--jm-accent-tint); color: var(--jm-accent);
+  transition: background-color 300ms var(--jm-ease-ui), color 300ms var(--jm-ease-ui);
+}
+body.jm .jm-asesor__campo--bloqueado .jm-asesor__numero { background: var(--jm-muted); color: var(--jm-ink-3); }
+body.jm .jm-asesor__campo--hecho .jm-asesor__numero { background: var(--jm-accent); color: #fff; }
+
+body.jm .jm-asesor__select { position: relative; display: block; margin-top: 0.625rem; }
+body.jm .jm-asesor__select select,
+body.jm .jm-asesor__select select:focus {
+  display: block; width: 100%; height: 3.25rem; margin: 0;
+  padding: 0 2.5rem 0 0.875rem; border: 1px solid var(--jm-rule-strong); border-radius: var(--jm-radius-xl);
+  background: var(--jm-surface); background-image: none; color: var(--jm-ink); box-shadow: none;
+  font-family: var(--jm-font-sans); font-size: 1rem; line-height: 1.5; cursor: pointer;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  transition: border-color 200ms var(--jm-ease-ui), box-shadow 200ms var(--jm-ease-ui);
+}
+body.jm .jm-asesor__select select:hover { border-color: var(--jm-rule-control); }
+body.jm .jm-asesor__select select:focus { border-color: var(--jm-accent); box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.12); outline: none; }
+body.jm .jm-asesor__campo--hecho .jm-asesor__select select { border-color: var(--jm-ink); }
+body.jm .jm-asesor__campo--hecho .jm-asesor__select select:focus { border-color: var(--jm-accent); }
+body.jm .jm-asesor__select select:disabled,
+body.jm .jm-asesor__select select:disabled:hover {
+  cursor: not-allowed; border-color: var(--jm-rule); background: var(--jm-sunken); color: var(--jm-ink-3); opacity: 1;
+}
+body.jm .jm-asesor__chevron {
+  position: absolute; top: 50%; right: 0.75rem; transform: translateY(-50%);
+  color: var(--jm-ink-3); pointer-events: none;
+}
+body.jm .jm-asesor__campo--bloqueado .jm-asesor__chevron { color: var(--jm-rule-strong); }
+body.jm .jm-asesor__motivo { margin-top: 0.5rem; display: block; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-3); }
+body.jm .jm-asesor__motivo[hidden] { display: none; }
+
+/* La descripción de lo ya elegido, que en un <select> no cabe. */
+body.jm .jm-asesor__ayudas {
+  margin: 1.25rem 0 0; padding: 0.875rem 1rem; list-style: none;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  border-left: 2px solid var(--jm-accent);
+}
+body.jm .jm-asesor__ayudas[hidden] { display: none; }
+body.jm .jm-asesor__ayudas li { margin: 0; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-asesor__ayuda-label { font-weight: 600; color: var(--jm-ink); }
+
+body.jm .jm-asesor__pista { margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-asesor__pista-ico { color: var(--jm-ink-3); }
+
+/* ---------- Resultado ---------- */
+body.jm .jm-asesor__resultado { padding: 1.25rem 1rem; }
+@media (min-width: 768px) { body.jm .jm-asesor__resultado { padding: 1.5rem; } }
+body.jm .jm-asesor__resultado[hidden] { display: none; }
+body.jm .jm-asesor__cabeza { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+body.jm .jm-asesor__cuenta { font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+
+body.jm .jm-asesor__filas { margin: 1.25rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--jm-rule); border-bottom: 1px solid var(--jm-rule); }
+body.jm .jm-asesor__fila { margin: 0; display: flex; flex-direction: column; gap: 1rem; padding-block: 1rem; border-top: 1px solid var(--jm-rule); }
+body.jm .jm-asesor__fila:first-child { border-top: 0; }
+@media (min-width: 768px) { body.jm .jm-asesor__fila { flex-direction: row; align-items: center; } }
+
+body.jm .jm-asesor__miniatura {
+  position: relative; display: block; flex-shrink: 0; width: 7rem; height: 5rem; overflow: hidden;
+  border: 1px solid var(--jm-rule); background: var(--jm-muted);
+}
+body.jm .jm-asesor__miniatura img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: contain; background: #fff; }
+body.jm .jm-asesor__dibujo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--jm-rule-strong); }
+body.jm .jm-asesor__dibujo svg { width: auto; height: 50%; max-width: 62%; }
+
+body.jm .jm-asesor__info { min-width: 0; flex: 1 1 0%; }
+body.jm .jm-asesor__sub { color: var(--jm-ink-3); }
+body.jm .jm-asesor .jm-asesor__nombre { margin-top: 0.125rem; color: var(--jm-ink); }
+body.jm .jm-asesor__nombre a { display: inline-block; padding-block: 0.125rem; color: var(--jm-ink); transition: color 200ms var(--jm-ease-ui); }
+body.jm .jm-asesor__nombre a:hover { color: var(--jm-accent); }
+body.jm .jm-asesor__datos { margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+body.jm .jm-asesor__dato { display: flex; align-items: baseline; gap: 0.375rem; }
+body.jm .jm-asesor__dato dt { color: var(--jm-ink-3); }
+body.jm .jm-asesor__dato dd { margin: 0; }
+body.jm .jm-asesor__valor { color: var(--jm-ink); }
+body.jm .jm-asesor__unidad { margin-left: 0.25rem; color: var(--jm-ink-3); }
+body.jm .jm-asesor__nd { color: var(--jm-ink-3); }
+body.jm .jm-asesor .jm-pendiente svg { flex: none; }
+
+/* Tres razones, con el check verde */
+body.jm .jm-asesor__razones { margin: 0; padding: 0; list-style: none; flex-shrink: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+@media (min-width: 768px) { body.jm .jm-asesor__razones { max-width: 32ch; } }
+body.jm .jm-asesor__razones li { margin: 0; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
+body.jm .jm-asesor__check { margin-top: 0.125rem; color: var(--jm-ok); }
+
+body.jm .jm-asesor__alt-rotulo { margin-top: 1.5rem; color: var(--jm-ink-3); }
+body.jm .jm-asesor__filas--alt { margin-top: 0.75rem; }
+
+/* Sin resultados */
+body.jm .jm-asesor__vacio { margin-top: 1.25rem; padding: 1.25rem; }
+body.jm .jm-asesor__vacio-titulo { color: var(--jm-ink); }
+body.jm .jm-asesor__vacio-texto { margin-top: 0.5rem; max-width: 70ch; font-size: 1rem; line-height: 1.5rem; color: var(--jm-ink-2); }
+body.jm .jm-asesor__vacio-tel {
+  margin-top: 1rem; display: inline-flex; min-height: 3rem; align-items: center; gap: 0.5rem;
+  padding: 0 1.25rem; border: 1px solid var(--jm-rule-control); border-radius: 9999px;
+  background: var(--jm-surface); color: var(--jm-ink); font-size: 1rem; font-weight: 600;
+  transition: background-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-asesor__vacio-tel:hover { background: var(--jm-sunken); color: var(--jm-ink); }
+
+/* Acciones del resultado */
+body.jm .jm-asesor__cta { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-asesor__cta { flex-direction: row; align-items: center; } }
+body.jm .jm-asesor .jm-asesor__consultar,
+body.jm .jm-asesor .jm-asesor__consultar:hover { color: #fff; text-decoration: none; }
+body.jm .jm-asesor__catalogo {
+  display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.5rem; align-self: flex-start;
+  font-size: 1rem; font-weight: 600; color: var(--jm-accent);
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;
+  transition: color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-asesor .jm-asesor__catalogo:hover { color: var(--jm-accent-hover); }
+body.jm .jm-asesor__catalogo svg { transition: transform 200ms var(--jm-ease-ui); }
+body.jm .jm-asesor__catalogo:hover svg { transform: translateX(0.125rem); }
+@media (min-width: 768px) { body.jm .jm-asesor__catalogo { align-self: auto; } }

@@ -1,0 +1,107 @@
+/* ==========================================================================
+   JOFEMESA · 10 PLACA (cabecera de las páginas interiores)
+   Traducción de src/components/marca/CabeceraSeccion.tsx.
+
+   Estructura en Elementor (ver estructura/03-placa.md):
+
+   Contenedor  .jm-placa  [section, ancho completo]           ← fondo oscuro
+   ├─ Imagen   .jm-fondo-img .jm-placa__foto   (opcional)     ← foto a sangre
+   ├─ HTML     .jm-placa__velo                (si hay foto)   ← degradado
+   ├─ HTML     .jm-placa__galon               (si NO hay foto)← galón de marca
+   └─ Contenedor .jm-contenedor .jm-placa__cuerpo
+      ├─ Shortcode [jm_migas]  .jm-placa__migas  (opcional)
+      └─ Contenedor .jm-placa__rejilla
+         ├─ Contenedor .jm-placa__texto
+         │  ├─ Título   .jm-label .jm-placa__kicker
+         │  ├─ Título   .jm-titular-placa .jm-placa__titulo  (h1)
+         │  ├─ Texto    .jm-placa__lede
+         │  └─ Contenedor .jm-placa__botones  → Botón jm-btn jm-btn--acento · Botón jm-btn jm-btn--enlace
+         └─ Contenedor .jm-placa__datos  (hasta 3 hijos .jm-placa__dato)
+            └─ Contenedor .jm-placa__dato → Título .jm-placa__dato-k · Título .jm-placa__dato-v
+   ========================================================================== */
+
+body.jm .jm-placa {
+  position: relative; isolation: isolate; overflow: hidden;
+  background-color: var(--jm-inverse);
+  color: var(--jm-ink-inv-2);
+  border-bottom: 1px solid var(--jm-rule-inverse);
+}
+body.jm .jm-placa::before { /* ambient-dark */
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: radial-gradient(900px 520px at 12% 0%, rgba(255, 68, 56, 0.1), transparent 60%);
+}
+body.jm .jm-placa__foto { z-index: -2; }
+body.jm .jm-placa__foto img { object-position: center; }
+body.jm .jm-placa__velo {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(to top, var(--jm-inverse), rgba(20, 23, 26, 0.9), rgba(20, 23, 26, 0.55));
+}
+@media (min-width: 1024px) {
+  body.jm .jm-placa__velo {
+    background: linear-gradient(to right, var(--jm-inverse) 30%, rgba(20, 23, 26, 0.8) 70%, rgba(20, 23, 26, 0.5));
+  }
+}
+body.jm .jm-placa__galon {
+  position: absolute; top: -5rem; right: -4rem; width: 34rem; z-index: -1;
+  color: rgba(255, 255, 255, 0.035); pointer-events: none; display: none;
+}
+@media (min-width: 1024px) { body.jm .jm-placa__galon { display: block; } }
+body.jm .jm-placa__galon svg { width: 100%; height: auto; }
+
+body.jm .jm-placa__cuerpo { position: relative; padding-block: 2.25rem; }
+@media (min-width: 768px) { body.jm .jm-placa__cuerpo { padding-block: 3rem; } }
+@media (min-width: 1024px) { body.jm .jm-placa__cuerpo { padding-block: 3.5rem; } }
+
+body.jm .jm-placa__migas { margin-bottom: 1.25rem; color: var(--jm-ink-inv-3); }
+
+body.jm .jm-placa__rejilla { display: grid; gap: 2rem; }
+@media (min-width: 1024px) {
+  body.jm .jm-placa__rejilla { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3rem; }
+  body.jm .jm-placa__texto { grid-column: span 7 / span 7; }
+  body.jm .jm-placa__datos,
+  body.jm .jm-placa__aside { grid-column: span 5 / span 5; align-self: end; }
+  body.jm .jm-placa__aside { align-self: center; }
+}
+body.jm .jm-placa__texto { display: flex; flex-direction: column; }
+
+body.jm .jm-placa__kicker { display: flex; align-items: center; gap: 0.75rem; color: var(--jm-accent-dark); }
+body.jm .jm-placa__titulo { margin-top: 1rem; max-width: 20ch; color: var(--jm-ink-inv); }
+body.jm .jm-placa__lede { margin-top: 1.25rem; max-width: 56ch; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-inv-2); }
+@media (min-width: 1024px) { body.jm .jm-placa__lede { font-size: 1.125rem; } }
+
+body.jm .jm-placa__botones { margin-top: 1.75rem; display: flex; flex-flow: row wrap; align-items: center; gap: 0.75rem 1.5rem; }
+body.jm .jm-placa__botones .jm-btn--enlace .elementor-button { color: var(--jm-ink-inv); text-decoration-color: currentColor; }
+body.jm .jm-placa__botones .jm-btn--enlace .elementor-button:hover { color: var(--jm-accent-dark); }
+
+/* Raíl de hasta tres cifras */
+body.jm .jm-placa__datos {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px;
+  border: 1px solid var(--jm-rule-inverse); background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem; overflow: hidden;
+}
+body.jm .jm-placa__dato { background: var(--jm-inverse); padding: 1rem 0.75rem; }
+@media (min-width: 768px) { body.jm .jm-placa__dato { padding-inline: 1rem; } }
+body.jm .jm-placa__dato-k {
+  font-size: 0.625rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  line-height: 1.35; color: var(--jm-ink-inv-3);
+}
+body.jm .jm-placa__dato-v {
+  margin-top: 0.5rem; font-family: var(--jm-font-mono); font-variant-numeric: tabular-nums;
+  font-size: clamp(0.95rem, 1.5vw, 1.3rem); line-height: 1.25; font-weight: 600;
+  text-wrap: balance; color: var(--jm-ink-inv);
+}
+
+/* Teléfono bajo los botones (Formación, Contacto) */
+body.jm .jm-placa__telefono {
+  margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem;
+  font-family: var(--jm-font-mono); color: var(--jm-ink-inv-2);
+}
+body.jm .jm-placa__telefono a:hover { color: var(--jm-accent-dark); }
+
+/* Migas de pan ([jm_migas]) — también fuera de la placa */
+body.jm .jm-migas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+body.jm .jm-migas a { transition: color 200ms var(--jm-ease-ui); }
+body.jm .jm-migas a:hover { color: var(--jm-accent); }
+body.jm .jm-placa .jm-migas a:hover { color: var(--jm-accent-dark); }
+body.jm .jm-migas__sep { opacity: 0.6; }
+body.jm .jm-migas [aria-current] { color: inherit; font-weight: 600; }

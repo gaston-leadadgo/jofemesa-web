@@ -1,0 +1,191 @@
+[
+ {
+  "key": "alturaTrabajo",
+  "etiqueta": "Altura de trabajo",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "alcanceHorizontal",
+  "etiqueta": "Alcance horizontal",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "alturaElevacion",
+  "etiqueta": "Altura de elevación",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "capacidadCarga",
+  "etiqueta": "Capacidad de carga",
+  "grupo": "capacidades",
+  "grupoNombre": "Capacidades",
+  "mejor": "mayor"
+ },
+ {
+  "key": "profundidadExcavacion",
+  "etiqueta": "Profundidad de excavación",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "capacidadCazo",
+  "etiqueta": "Capacidad del cazo",
+  "grupo": "capacidades",
+  "grupoNombre": "Capacidades",
+  "mejor": null
+ },
+ {
+  "key": "potencia",
+  "etiqueta": "Potencia",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "caudalAire",
+  "etiqueta": "Caudal de aire",
+  "grupo": "capacidades",
+  "grupoNombre": "Capacidades",
+  "mejor": null
+ },
+ {
+  "key": "presionAire",
+  "etiqueta": "Presión de trabajo",
+  "grupo": "capacidades",
+  "grupoNombre": "Capacidades",
+  "mejor": null
+ },
+ {
+  "key": "anchoTrabajo",
+  "etiqueta": "Ancho de trabajo",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "fuerzaCentrifuga",
+  "etiqueta": "Fuerza centrífuga",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": null
+ },
+ {
+  "key": "dimensionesPlataforma",
+  "etiqueta": "Plataforma de trabajo",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": null
+ },
+ {
+  "key": "anchoTransporte",
+  "etiqueta": "Anchura",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": "menor"
+ },
+ {
+  "key": "alturaTransporte",
+  "etiqueta": "Altura replegada",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": "menor"
+ },
+ {
+  "key": "longitudTransporte",
+  "etiqueta": "Longitud",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": "menor"
+ },
+ {
+  "key": "peso",
+  "etiqueta": "Peso",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": null
+ },
+ {
+  "key": "pendienteSuperable",
+  "etiqueta": "Pendiente superable",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": null
+ },
+ {
+  "key": "velocidadTraslacion",
+  "etiqueta": "Velocidad de traslación",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": null
+ },
+ {
+  "key": "voltaje",
+  "etiqueta": "Voltaje",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "traccion",
+  "etiqueta": "Tracción",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "autonomia",
+  "etiqueta": "Autonomía",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "alturaPlataforma",
+  "etiqueta": "Altura de plataforma",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "personas",
+  "etiqueta": "Personas en plataforma",
+  "grupo": "capacidades",
+  "grupoNombre": "Capacidades",
+  "mejor": "mayor"
+ },
+ {
+  "key": "extensionPlataforma",
+  "etiqueta": "Extensión de plataforma",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "radioGiroInterior",
+  "etiqueta": "Radio de giro interior",
+  "grupo": "dimensiones",
+  "grupoNombre": "Dimensiones",
+  "mejor": "menor"
+ },
+ {
+  "key": "rotacionTorreta",
+  "etiqueta": "Rotación de torreta",
+  "grupo": "prestaciones",
+  "grupoNombre": "Prestaciones",
+  "mejor": "mayor"
+ },
+ {
+  "key": "motor",
+  "etiqueta": "Motor",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ }
+]

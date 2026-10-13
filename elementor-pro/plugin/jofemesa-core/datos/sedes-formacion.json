@@ -1,0 +1,28 @@
+[
+ {
+  "id": "san-fernando",
+  "nombre": "San Fernando de Henares",
+  "tipo": "Sede de formación",
+  "zona": "Madrid",
+  "direccion": "Pol. Ind. Las Fronteras, C/ Mar Adriático con Mar Mediterráneo, 1",
+  "cp": "28830",
+  "localidad": "San Fernando de Henares (Madrid)",
+  "maps": "https://maps.app.goo.gl/rEFVwDXHP6VVntpP7",
+  "telefono": "649 755 883",
+  "tel": "+34649755883",
+  "email": "formacion@jofemesa.com"
+ },
+ {
+  "id": "sagunto",
+  "nombre": "Puerto de Sagunto",
+  "tipo": "Delegación de Valencia",
+  "zona": "Valencia",
+  "direccion": "Pol. Ind. Parc Sagunt, C/ Braç de la Creu, s/n",
+  "cp": "46520",
+  "localidad": "Puerto de Sagunto (Valencia)",
+  "maps": "https://maps.app.goo.gl/PvgK3FYxzyomvngw9",
+  "telefono": "962 680 581",
+  "tel": "+34962680581",
+  "email": "formacion@jofemesa.com"
+ }
+]
