@@ -12,7 +12,7 @@ const ITEMS = [
 const chevron = { value: "fas fa-chevron-down", library: "fa-solid" };
 
 const menu = () => {
-  const m = w("n-menu", {
+  const m = w("mega-menu", {
     menu_name: "Principal",
     menu_items: ITEMS.map(([titulo, url, desplegable], i) => ({
       _id: `jmmenu${i}`,

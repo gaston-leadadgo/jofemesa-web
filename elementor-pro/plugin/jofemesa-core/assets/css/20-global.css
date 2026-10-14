@@ -595,6 +595,9 @@ body.jm .jm-menu__panel {
   box-shadow: var(--jm-shadow-panel);
   transform-origin: top left;
 }
+/* El JS del menú escribe en línea `width: var(--width)`: el ancho se da por
+   la variable, por encima de la regla general del adaptador (90-). */
+body.jm .e-con.e-con-full.jm-menu__panel { --width: min(42rem, calc(100vw - 4rem)); }
 @media (prefers-reduced-motion: no-preference) {
   body.jm .jm-menu__panel { animation: jm-panel-entra 0.18s var(--jm-ease-entrance); }
 }
