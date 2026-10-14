@@ -530,6 +530,29 @@ const JM_PLANTILLAS = [
     'tarjeta-delegacion' => ['Tarjeta de delegación', 'loop-item', [], 'delegacion'],
 ];
 
+/**
+ * Rehace la caché de condiciones del Theme Builder cuando el importador lo
+ * pide o cuando está vacía habiendo plantillas con condiciones (por ejemplo,
+ * tras una migración). Sin esa caché, cabecera, pie y fichas no se aplican.
+ */
+add_action('admin_init', function () {
+    if (!class_exists('\ElementorPro\Modules\ThemeBuilder\Module')) {
+        return;
+    }
+    $pedido = get_option('jm_regenerar_condiciones');
+    if (!$pedido && get_option('elementor_pro_theme_builder_conditions')) {
+        return;
+    }
+    if (!$pedido && !get_posts(['post_type' => 'elementor_library', 'numberposts' => 1, 'fields' => 'ids', 'meta_key' => '_elementor_conditions'])) {
+        return;
+    }
+    $gestor = \ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager();
+    if (method_exists($gestor, 'get_cache')) {
+        $gestor->get_cache()->regenerate();
+    }
+    delete_option('jm_regenerar_condiciones');
+});
+
 function jm_importar_plantillas(): array
 {
     if (!post_type_exists('elementor_library')) {
@@ -574,13 +597,12 @@ function jm_importar_plantillas(): array
         }
         $registro[] = $titulo . ': creada (ID ' . $id . ')';
     }
-    /* Elementor Pro guarda en caché qué plantilla va en cada sitio. */
-    if (class_exists('\ElementorPro\Modules\ThemeBuilder\Module')) {
-        $gestor = \ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager();
-        if (method_exists($gestor, 'get_cache')) {
-            $gestor->get_cache()->regenerate();
-        }
-    }
+    /* La caché de condiciones de Elementor Pro se rehace en la siguiente
+       carga del escritorio (jm_regenerar_condiciones): en esta misma
+       petición Elementor aún recuerda las plantillas recién creadas como
+       páginas normales y las descartaría. */
+    update_option('jm_regenerar_condiciones', 1, false);
+    $registro[] = 'Las condiciones se activan al cargar cualquier pantalla del escritorio.';
     return ['hecho' => count(JM_PLANTILLAS), 'total' => count(JM_PLANTILLAS), 'siguiente' => null, 'registro' => $registro];
 }
 
