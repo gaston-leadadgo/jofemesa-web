@@ -29,11 +29,25 @@ const atributos = (a) =>
 
 const limpio = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined && v !== ""));
 
-/** Etiqueta dinámica «Shortcode» de Elementor Pro, con Antes / Después. */
-export function dinamico(shortcode, { antes, despues } = {}) {
-  const ajustes = limpio({ shortcode, before: antes, after: despues });
-  return `[elementor-tag id="${id()}" name="shortcode" settings="${encodeURIComponent(JSON.stringify(ajustes))}"]`;
+/** Cualquier etiqueta dinámica de Elementor Pro. */
+export function etiqueta(nombre, ajustes = {}) {
+  return `[elementor-tag id="${id()}" name="${nombre}" settings="${encodeURIComponent(JSON.stringify(limpio(ajustes)))}"]`;
 }
+
+/** Etiqueta dinámica «Shortcode», con Antes / Después. */
+export function dinamico(shortcode, { antes, despues } = {}) {
+  return etiqueta("shortcode", { shortcode, before: antes, after: despues });
+}
+
+/** Etiqueta «Campo personalizado» (metadato de la entrada del bucle o de la ficha). */
+export const campo = (clave, { antes, despues } = {}) =>
+  etiqueta("post-custom-field", { key: "", custom_key: clave, before: antes, after: despues });
+
+/** URL de la entrada actual. */
+export const urlEntrada = () => etiqueta("post-url");
+
+/** Icono de Font Awesome para botones y listas. */
+export const fa = (nombre, estilo = "fas") => ({ value: `${estilo} fa-${nombre}`, library: estilo === "far" ? "fa-regular" : "fa-solid" });
 
 /**
  * Contenedor. o: { tag, fila, attrs, idcss, enlace }
@@ -58,7 +72,7 @@ export function c(clases, hijos = [], o = {}) {
 
 const widget = (tipo, ajustes) => ({ id: id(), elType: "widget", widgetType: tipo, settings: limpio(ajustes), elements: [] });
 
-/** Título. o: { dyn: [shortcode, {antes, despues}], enlace, attrs } */
+/** Título. o: { dyn: [shortcode, {antes, despues}], tag: etiqueta ya hecha, enlace, enlaceDyn, attrs } */
 export function h(tag, clases, texto, o = {}) {
   const s = {
     title: texto,
@@ -67,7 +81,14 @@ export function h(tag, clases, texto, o = {}) {
     _attributes: atributos(o.attrs),
     link: o.enlace ? { url: o.enlace, is_external: "", nofollow: "" } : undefined,
   };
-  if (o.dyn) s.__dynamic__ = { title: dinamico(...o.dyn) };
+  const d = {};
+  if (o.dyn) d.title = dinamico(...o.dyn);
+  if (o.etq) d.title = o.etq;
+  if (o.enlaceDyn) {
+    d.link = o.enlaceDyn;
+    s.link = { url: "", is_external: "", nofollow: "" };
+  }
+  if (Object.keys(d).length) s.__dynamic__ = d;
   return widget("heading", s);
 }
 
@@ -86,14 +107,14 @@ export function b(clases, texto, enlace, o = {}) {
     _attributes: atributos(o.attrs),
     _element_id: o.idcss,
   };
-  if (o.icono) {
-    const m = M[o.icono];
-    s.selected_icon = { value: { id: m.id, url: m.url }, library: "svg" };
+  if (o.icono || o.fa) {
+    const m = o.icono ? M[o.icono] : null;
+    s.selected_icon = m ? { value: { id: m.id, url: m.url }, library: "svg" } : o.fa;
     s.icon_align = o.pos === "antes" ? "row" : "row-reverse";
   }
   const dyn = {};
   if (o.dynTexto) dyn.text = dinamico(...o.dynTexto);
-  if (o.dynEnlace) dyn.link = dinamico(...o.dynEnlace);
+  if (o.dynEnlace) dyn.link = Array.isArray(o.dynEnlace) ? dinamico(...o.dynEnlace) : o.dynEnlace;
   if (Object.keys(dyn).length) s.__dynamic__ = dyn;
   return widget("button", s);
 }
@@ -101,6 +122,22 @@ export function b(clases, texto, enlace, o = {}) {
 /** Widget Shortcode. */
 export function sc(codigo, clases, o = {}) {
   return widget("shortcode", { shortcode: codigo, _css_classes: clases, _attributes: atributos(o.attrs) });
+}
+
+/** Imagen destacada de la entrada (fichas y tarjetas). o: { tamano, enlaceEntrada } */
+export function imgDestacada(clases, o = {}) {
+  const s = {
+    image: { id: "", url: "" },
+    image_size: o.tamano || "large",
+    _css_classes: clases,
+    link_to: o.enlaceEntrada ? "custom" : "none",
+    __dynamic__: { image: etiqueta("post-featured-image") },
+  };
+  if (o.enlaceEntrada) {
+    s.link = { url: "", is_external: "", nofollow: "" };
+    s.__dynamic__.link = urlEntrada();
+  }
+  return widget("image", s);
 }
 
 /** Imagen de la biblioteca (nombre en medios.json). */

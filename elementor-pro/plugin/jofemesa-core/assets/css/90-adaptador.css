@@ -18,6 +18,12 @@ body.jm .elementor-widget:not(:last-child) { margin-block-end: 0; }
 
 body.jm .jm-plano { display: contents; }
 
+/* Elementor da a cada contenedor `--width: 100%`. Dentro de una fila eso deja
+   sin sitio a sus hermanos (la tarjeta de máquina dejaba el nombre a 0 px).
+   En el original son <div> sin ancho: en columna o rejilla ocupan su celda y
+   en fila miden su contenido; los anchos concretos los ponen las clases. */
+body.jm .e-con.e-con-full { --width: auto; }
+
 body.jm .jm-hereda p,
 body.jm .jm-hereda .elementor-heading-title {
   margin: 0; font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit;
