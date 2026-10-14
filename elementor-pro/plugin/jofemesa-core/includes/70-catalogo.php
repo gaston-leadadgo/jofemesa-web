@@ -1139,3 +1139,21 @@ function jm_sc_referencia($atts): string
     return '<p class="jm-referencia"><span class="jm-label-sm jm-referencia__k">' . esc_html($atts['etiqueta']) . '</span>'
         . '<span class="jm-value-lg jm-referencia__v">' . esc_html($ref) . '</span></p>';
 }
+
+/**
+ * [jm_termino campo="jm_nombre_largo" url="si"]
+ * Nombre o metadato del término del archivo (familia o subcategoría). Con
+ * url="si" sale codificado para ir dentro de un enlace (etiqueta dinámica
+ * Shortcode del botón «Consultar disponibilidad» del listado de familia).
+ */
+function jm_sc_termino($atts): string
+{
+    $a = shortcode_atts(['campo' => 'name', 'url' => ''], $atts, 'jm_termino');
+    $termino = get_queried_object();
+    if (!$termino instanceof WP_Term) {
+        return '';
+    }
+    $valor = $a['campo'] === 'name' ? $termino->name : (string) get_term_meta($termino->term_id, sanitize_key($a['campo']), true);
+    return $a['url'] !== '' ? rawurlencode($valor) : esc_html($valor);
+}
+add_shortcode('jm_termino', 'jm_sc_termino');

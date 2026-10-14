@@ -34,7 +34,8 @@ function jm_ordenar_por(WP_Query $q, string $campo, string $sentido = 'ASC'): vo
 add_action('elementor/query/jm_catalogo', function (WP_Query $q) {
     $q->set('post_type', 'maquina');
     $q->set('posts_per_page', -1);
-    $q->set('no_found_rows', true);
+    /* Sin no_found_rows: el Loop Grid usa found_posts para decidir si
+       hay resultados; con él a 0 enseña «no se ha encontrado nada». */
     $q->set('meta_query', [
         'relation' => 'AND',
         ['key' => '_jmj_en_alquiler', 'value' => '1'],
@@ -86,7 +87,8 @@ foreach (['jm_cursos_convocatoria' => '1', 'jm_cursos_medida' => '0'] as $jm_id 
 add_action('elementor/query/jm_convocatorias', function (WP_Query $q) {
     $q->set('post_type', 'convocatoria');
     $q->set('posts_per_page', -1);
-    $q->set('no_found_rows', true);
+    /* Sin no_found_rows: el Loop Grid usa found_posts para decidir si
+       hay resultados; con él a 0 enseña «no se ha encontrado nada». */
     $q->set('meta_query', [
         'fecha' => ['key' => 'jm_fecha', 'value' => wp_date('Ymd'), 'compare' => '>=', 'type' => 'NUMERIC'],
     ]);

@@ -29,6 +29,7 @@ también como **etiqueta dinámica → Shortcode** dentro de un widget nativo (t
 | `[jm_delegaciones_lista]` | — | 10-inicio | `65-inicio.php` |
 | `[jm_migas]` | `inicio` (por defecto Alquiler) | 20-alquiler, 22-ficha-maquina | `70-catalogo.php` |
 | `[jm_referencia]` | `etiqueta` (por defecto Tu referencia) | 52-consultar-disponibilidad | `70-catalogo.php` |
+| `[jm_termino]` | `campo` (por defecto name), `url` | — | `70-catalogo.php` |
 | `[jm_catalogo_filtros]` | `familia` | 20-alquiler | `70-catalogo.php` |
 | `[jm_catalogo_categorias]` | `familia` | 20-alquiler | `70-catalogo.php` |
 | `[jm_catalogo_barra]` | — | 20-alquiler | `70-catalogo.php` |
