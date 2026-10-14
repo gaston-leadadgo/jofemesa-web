@@ -144,13 +144,14 @@ function jm_inicio_cifra_valor(string $que, string $familia = '')
     if (array_key_exists($clave, $cache)) {
         return $cache[$clave];
     }
-    $json = jm_datos('maquinas.json');
+    /* maquinas.json pesa ~1 MB: solo se lee en los casos que lo necesitan. */
+    $json = static fn() => jm_datos('maquinas.json');
     $ids = jm_inicio_ids_maquinas();
     $valor = '';
 
     switch ($que) {
         case 'referencias':
-            $valor = $ids ? count($ids) : count($json);
+            $valor = $ids ? count($ids) : count($json());
             break;
 
         case 'delegaciones':
@@ -195,7 +196,7 @@ function jm_inicio_cifra_valor(string $que, string $familia = '')
                 }
             }
             if (!$alturas) {
-                foreach ($json as $m) {
+                foreach ($json() as $m) {
                     if (isset($m['altura']) && is_numeric($m['altura'])) {
                         $alturas[] = (float) $m['altura'];
                     }
@@ -213,7 +214,7 @@ function jm_inicio_cifra_valor(string $que, string $familia = '')
                     }
                 }
             } else {
-                $valor = count(array_filter($json, static fn($m) => !empty($m['foto']) && !empty($m['ficha'])));
+                $valor = count(array_filter($json(), static fn($m) => !empty($m['foto']) && !empty($m['ficha'])));
             }
             break;
 

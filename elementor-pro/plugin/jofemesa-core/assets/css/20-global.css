@@ -702,9 +702,11 @@ body.jm .jm-menu-movil.jm-abierto {
 @media (min-width: 1024px) {
   body.jm .jm-menu-movil.jm-abierto { display: none; }
 }
-/* En el editor de Elementor el panel se ve en su sitio para poder editarlo. */
-body.elementor-editor-active.jm .jm-menu-movil,
-body.jm.elementor-editor-active .jm-menu-movil {
+/* En el editor de Elementor el panel se ve en su sitio para poder editarlo,
+   pero solo cuando se edita la cabecera (.elementor-edit-area-active). Al
+   editar una página, la cabecera es una vista previa y el panel abierto la
+   estiraba y tapaba la página entera. */
+body.elementor-editor-active.jm .elementor-edit-area-active .jm-menu-movil {
   display: flex;
   flex-direction: column;
   position: static;
