@@ -23,6 +23,7 @@ const JM_PASOS = [
     'cursos'        => 'Cursos',
     'convocatorias' => 'Convocatorias',
     'delegaciones'  => 'Delegaciones y sede de formación',
+    'plantillas'    => 'Plantillas del Theme Builder (vacías, con sus condiciones)',
 ];
 const JM_LOTE = ['maquinas' => 25, 'medios' => 4];
 
@@ -106,7 +107,8 @@ function jm_pantalla_importar(): void
             (se cambia en <a href="<?php echo esc_url(admin_url('admin.php?page=jofemesa')); ?>">Ajustes</a>).</p>
         <ol id="jm-pasos">
             <?php foreach (JM_PASOS as $id => $etiqueta) : ?>
-                <li data-paso="<?php echo esc_attr($id); ?>"><?php echo esc_html($etiqueta); ?> · <span>pendiente</span></li>
+                <li data-paso="<?php echo esc_attr($id); ?>"><?php echo esc_html($etiqueta); ?> · <span>pendiente</span>
+                    · <button type="button" class="button-link" data-solo="<?php echo esc_attr($id); ?>">Solo este paso</button></li>
             <?php endforeach; ?>
         </ol>
         <p><button class="button button-primary" id="jm-importar">Importar todo</button>
@@ -131,13 +133,13 @@ function jm_pantalla_importar(): void
             if (!j.success) throw new Error((j.data && j.data.mensaje) || 'Error en ' + paso);
             return j.data;
         }
-        boton.addEventListener('click', async function () {
+        async function correr(lista) {
             boton.disabled = true;
             var sinMedios = document.getElementById('jm-sin-medios').checked;
             try {
-                for (var i = 0; i < pasos.length; i++) {
-                    var paso = pasos[i];
-                    if (sinMedios && paso === 'medios') { estado(paso, 'omitido'); continue; }
+                for (var i = 0; i < lista.length; i++) {
+                    var paso = lista[i];
+                    if (sinMedios && paso === 'medios' && lista.length > 1) { estado(paso, 'omitido'); continue; }
                     var desde = 0;
                     while (desde !== null) {
                         estado(paso, 'en curso…');
@@ -148,11 +150,15 @@ function jm_pantalla_importar(): void
                     }
                     estado(paso, 'hecho');
                 }
-                anotar('Importación terminada. Guarda los enlaces permanentes (Ajustes → Enlaces permanentes) si es la primera vez.');
+                anotar(lista.length > 1 ? 'Importación terminada. Guarda los enlaces permanentes (Ajustes → Enlaces permanentes) si es la primera vez.' : 'Paso terminado.');
             } catch (e) {
-                anotar('ERROR: ' + e.message + ' · Vuelve a pulsar «Importar todo»: retoma sin duplicar.');
+                anotar('ERROR: ' + e.message + ' · Vuelve a pulsar: retoma sin duplicar.');
             }
             boton.disabled = false;
+        }
+        boton.addEventListener('click', function () { correr(pasos); });
+        document.querySelectorAll('[data-solo]').forEach(function (b) {
+            b.addEventListener('click', function () { correr([b.getAttribute('data-solo')]); });
         });
     })();
     </script>
@@ -197,6 +203,8 @@ function jm_importar_paso(string $paso, int $desde = 0): array
             return jm_importar_convocatorias();
         case 'delegaciones':
             return jm_importar_delegaciones();
+        case 'plantillas':
+            return jm_importar_plantillas();
     }
     return ['hecho' => 0, 'total' => 0, 'siguiente' => null, 'registro' => []];
 }
@@ -502,6 +510,78 @@ function jm_importar_delegaciones(): array
         }
     }
     return ['hecho' => count($puntos), 'total' => count($puntos), 'siguiente' => null, 'registro' => [count($puntos) . ' delegaciones y sedes']];
+}
+
+/**
+ * Plantillas vacías del Theme Builder con sus condiciones (ver
+ * estructura/00-ajustes-globales.md §7). Solo crea las que faltan: si ya
+ * existe una con la misma clave, no la toca (su contenido es el montaje).
+ */
+const JM_PLANTILLAS = [
+    'cabecera'           => ['Cabecera', 'header', ['include/general'], ''],
+    'pie'                => ['Pie', 'footer', ['include/general'], ''],
+    'ficha-maquina'      => ['Ficha de máquina', 'single-post', ['include/singular/maquina'], 'maquina'],
+    'listado-familia'    => ['Listado de familia', 'archive', ['include/archive/familia'], ''],
+    'ficha-curso'        => ['Ficha de curso', 'single-post', ['include/singular/curso'], 'curso'],
+    'error-404'          => ['Página 404', 'error-404', ['include/singular/not_found404'], ''],
+    'tarjeta-maquina'    => ['Tarjeta de máquina', 'loop-item', [], 'maquina'],
+    'tarjeta-curso'      => ['Tarjeta de curso', 'loop-item', [], 'curso'],
+    'fila-convocatoria'  => ['Fila de convocatoria', 'loop-item', [], 'convocatoria'],
+    'tarjeta-delegacion' => ['Tarjeta de delegación', 'loop-item', [], 'delegacion'],
+];
+
+function jm_importar_plantillas(): array
+{
+    if (!post_type_exists('elementor_library')) {
+        throw new RuntimeException('Elementor no está activo.');
+    }
+    $registro = [];
+    foreach (JM_PLANTILLAS as $clave => [$titulo, $tipo, $condiciones, $fuente]) {
+        $existe = get_posts([
+            'post_type'   => 'elementor_library',
+            'post_status' => 'any',
+            'numberposts' => 1,
+            'fields'      => 'ids',
+            'meta_key'    => '_jm_plantilla',
+            'meta_value'  => $clave,
+        ]);
+        if ($existe) {
+            $registro[] = $titulo . ': ya existía (ID ' . $existe[0] . ')';
+            continue;
+        }
+        $id = wp_insert_post(['post_type' => 'elementor_library', 'post_status' => 'publish', 'post_title' => $titulo], true);
+        if (is_wp_error($id)) {
+            throw new RuntimeException($titulo . ': ' . $id->get_error_message());
+        }
+        update_post_meta($id, '_jm_plantilla', $clave);
+        update_post_meta($id, '_elementor_template_type', $tipo);
+        update_post_meta($id, '_elementor_edit_mode', 'builder');
+        update_post_meta($id, '_elementor_data', '[]');
+        if (defined('ELEMENTOR_VERSION')) {
+            update_post_meta($id, '_elementor_version', ELEMENTOR_VERSION);
+        }
+        wp_set_object_terms($id, $tipo, 'elementor_library_type');
+        if ($condiciones) {
+            update_post_meta($id, '_elementor_conditions', $condiciones);
+        }
+        if ($fuente) {
+            /* Fuente del Loop Item y vista previa de la plantilla individual. */
+            $muestra = get_posts(['post_type' => $fuente, 'numberposts' => 1, 'fields' => 'ids']);
+            $ajustes = $tipo === 'loop-item'
+                ? ['source' => $fuente]
+                : ['preview_type' => 'single/' . $fuente, 'preview_id' => $muestra ? (string) $muestra[0] : ''];
+            update_post_meta($id, '_elementor_page_settings', $ajustes);
+        }
+        $registro[] = $titulo . ': creada (ID ' . $id . ')';
+    }
+    /* Elementor Pro guarda en caché qué plantilla va en cada sitio. */
+    if (class_exists('\ElementorPro\Modules\ThemeBuilder\Module')) {
+        $gestor = \ElementorPro\Modules\ThemeBuilder\Module::instance()->get_conditions_manager();
+        if (method_exists($gestor, 'get_cache')) {
+            $gestor->get_cache()->regenerate();
+        }
+    }
+    return ['hecho' => count(JM_PLANTILLAS), 'total' => count(JM_PLANTILLAS), 'siguiente' => null, 'registro' => $registro];
 }
 
 /** Igual que src/lib/utils/maps.ts: búsqueda de Google Maps por dirección. */

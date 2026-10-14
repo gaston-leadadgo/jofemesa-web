@@ -227,7 +227,8 @@ function jm_inicio_cifra_valor(string $que, string $familia = '')
             break;
 
         case 'fundacion':
-            $valor = (int) substr((string) jm_ajuste('fundacion'), 0, 4);
+            /* Texto, no número: un año no lleva separador de miles («1987»). */
+            $valor = substr((string) jm_ajuste('fundacion'), 0, 4);
             break;
 
         case 'equipos':
@@ -250,7 +251,9 @@ function jm_sc_cifra($atts): string
 {
     $a = shortcode_atts(['que' => 'referencias', 'familia' => '', 'plural' => ''], $atts, 'jm_cifra');
     $v = jm_inicio_cifra_valor(sanitize_key($a['que']), sanitize_title($a['familia']));
-    $texto = is_numeric($v) ? jm_inicio_num($v) : (string) $v;
+    /* Solo se formatean los números de verdad: los textos («+5.000», «1987»)
+       salen tal cual; is_numeric('+5.000') es cierto y daría «5». */
+    $texto = (is_int($v) || is_float($v)) ? jm_inicio_num($v) : (string) $v;
     if ($a['plural'] !== '') {
         $formas = array_map('trim', explode(',', $a['plural']));
         $palabra = ((float) $v === 1.0) ? $formas[0] : ($formas[1] ?? $formas[0] . 's');

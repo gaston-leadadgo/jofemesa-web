@@ -1,0 +1,102 @@
+{
+ "hero-alquiler": {
+  "id": 552,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/portada.jpg",
+  "alt": "Plataforma elevadora de tijera trabajando en la estructura de una nave"
+ },
+ "hero-formacion": {
+  "id": 553,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/formacion.jpg",
+  "alt": "Instructor explicando los mandos de una plataforma elevadora de tijera a dos alumnos con casco y arnés"
+ },
+ "jungheinrich": {
+  "id": 554,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/jungheinrich.webp",
+  "alt": "Jungheinrich"
+ },
+ "logo": {
+  "id": 555,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/logo-jofemesa.svg",
+  "alt": "JOFEMESA · Alquiler de maquinaria"
+ },
+ "logo-blanco": {
+  "id": 556,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/logo-jofemesa-blanco.svg",
+  "alt": "JOFEMESA"
+ },
+ "flecha": {
+  "id": 557,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-arrow-right.svg",
+  "alt": ""
+ },
+ "award": {
+  "id": 558,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-award.svg",
+  "alt": ""
+ },
+ "boxes": {
+  "id": 559,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-boxes.svg",
+  "alt": ""
+ },
+ "calendar-clock": {
+  "id": 560,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-calendar-clock.svg",
+  "alt": ""
+ },
+ "clock": {
+  "id": 561,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-clock.svg",
+  "alt": ""
+ },
+ "map-pin": {
+  "id": 562,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-map-pin.svg",
+  "alt": ""
+ },
+ "phone": {
+  "id": 563,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-phone.svg",
+  "alt": ""
+ },
+ "shield-check": {
+  "id": 564,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-shield-check.svg",
+  "alt": ""
+ },
+ "wrench": {
+  "id": 565,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/lucide-wrench.svg",
+  "alt": ""
+ },
+ "maquina-tijera": {
+  "id": 566,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-tijera.svg",
+  "alt": ""
+ },
+ "maquina-manipulador": {
+  "id": 567,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-manipulador.svg",
+  "alt": ""
+ },
+ "maquina-excavadora": {
+  "id": 568,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-excavadora.svg",
+  "alt": ""
+ },
+ "maquina-grupo": {
+  "id": 569,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-grupo.svg",
+  "alt": ""
+ },
+ "maquina-compresor": {
+  "id": 570,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-compresor.svg",
+  "alt": ""
+ },
+ "maquina-herramienta": {
+  "id": 571,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-herramienta.svg",
+  "alt": ""
+ }
+}
