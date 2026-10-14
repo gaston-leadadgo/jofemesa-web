@@ -57,6 +57,9 @@ function jm_registrar_tipos(): void
            poder pisarse curso a curso. */
         'show_in_menu'  => 'jm-formacion',
         'has_archive'   => false,
+        /* Sin query var: /formacion/solicitar/?curso=… es un parámetro del
+           formulario; con query var WordPress cargaba el curso en vez de la página. */
+        'query_var'     => false,
         'rewrite'       => ['slug' => 'formacion/cursos', 'with_front' => false],
         'supports'      => ['title', 'editor', 'custom-fields'],
     ]);
@@ -72,6 +75,8 @@ function jm_registrar_tipos(): void
         'show_in_rest'        => true,
         'show_in_menu'        => 'jm-formacion',
         'has_archive'         => false,
+        /* Igual que en curso: ?convocatoria=… es un parámetro del formulario. */
+        'query_var'           => false,
         'rewrite'             => ['slug' => 'convocatoria', 'with_front' => false],
         /* Sin campo de título: lo escribe el plugin («Curso · fecha · sede»). */
         'supports'            => ['custom-fields'],

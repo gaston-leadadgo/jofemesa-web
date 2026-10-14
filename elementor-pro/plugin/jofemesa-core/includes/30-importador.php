@@ -528,6 +528,7 @@ const JM_PLANTILLAS = [
     'tarjeta-curso'      => ['Tarjeta de curso', 'loop-item', [], 'curso'],
     'fila-convocatoria'  => ['Fila de convocatoria', 'loop-item', [], 'convocatoria'],
     'tarjeta-delegacion' => ['Tarjeta de delegación', 'loop-item', [], 'delegacion'],
+    'contacto-delegacion' => ['Delegación · contacto', 'loop-item', [], 'delegacion'],
 ];
 
 /**

@@ -26,7 +26,8 @@ body.jm .jm-form.elementor-widget-form .elementor-form-fields-wrapper {
 }
 body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-column {
   width: auto; max-width: none; min-width: 0; margin: 0; padding: 0; grid-column: 1 / -1;
-  display: flex; flex-direction: column; align-items: stretch;
+  display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch;
+  /* Elementor pone flex-wrap: wrap: en columna partía etiqueta y campo en dos columnas. */
 }
 @media (min-width: 768px) {
   body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-col-50,
@@ -36,6 +37,11 @@ body.jm .jm-form.elementor-widget-form .elementor-field-group.elementor-column {
 }
 body.jm .jm-form.elementor-widget-form .elementor-field-type-hidden,
 body.jm .jm-form.elementor-widget-form .elementor-field-type-honeypot { display: none; }
+/* El honeypot nativo se pinta como <div class="elementor-field-type-text"> sin
+   field-group: fuera de la rejilla para que no ocupe la primera celda. */
+body.jm .jm-form.elementor-widget-form .elementor-form-fields-wrapper > .elementor-field-type-text:not(.elementor-field-group) {
+  position: absolute; width: 0; height: 0; overflow: hidden;
+}
 
 /* === 2 · Etiquetas ====================================================== */
 body.jm .jm-form.elementor-widget-form .elementor-field-group .elementor-field-label {

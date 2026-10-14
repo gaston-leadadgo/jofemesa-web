@@ -1078,6 +1078,18 @@ function jm_cat_asuntos(): array
     ];
 }
 
+/* `?m=` lleva máquinas (slugs), pero `m` es también la query var de WordPress
+   para archivos por fecha: con un slug con cifras («genie-gr-15») WordPress
+   la leía como fecha y /comparador/ o /consultar-disponibilidad/ daban 404.
+   Si no es una fecha (solo cifras), se quita de la consulta; los shortcodes
+   siguen leyendo $_GET['m']. */
+add_filter('request', function (array $qv): array {
+    if (isset($qv['m']) && !ctype_digit((string) $qv['m'])) {
+        unset($qv['m']);
+    }
+    return $qv;
+});
+
 /* Formación tiene su propio formulario: los enlaces antiguos llegan allí. */
 add_action('template_redirect', function () {
     if (is_page('consultar-disponibilidad') && jm_cat_get('asunto') === 'formacion') {
