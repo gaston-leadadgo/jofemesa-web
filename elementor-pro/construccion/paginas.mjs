@@ -8,7 +8,7 @@ const icoFa = (f, clases) => w("icon", { selected_icon: f, _css_classes: clases 
 const flecha = { fa: fa("arrow-right"), pos: "despues" };
 
 /* ID del Loop Item «Delegación · contacto»: lo crea el importador (paso Plantillas). */
-const LOOP_CONTACTO = Number(process.env.JM_LOOP_CONTACTO || 0);
+const LOOP_CONTACTO = Number(process.env.JM_LOOP_CONTACTO || 693);
 
 /* ---------- /comparador/ ---------- */
 const comparador = () => [
