@@ -23,6 +23,11 @@ body.jm .jm-plano { display: contents; }
    En el original son <div> sin ancho: en columna o rejilla ocupan su celda y
    en fila miden su contenido; los anchos concretos los ponen las clases. */
 body.jm .e-con.e-con-full { --width: auto; }
+/* En móvil Elementor pone flex-wrap: wrap a los contenedores (contando con
+   --width: 100%). Con ancho automático, una columna con wrap medía lo que su
+   línea más larga (el hero de portada salía a 666 px y cortado). Las filas que
+   deben partirse ya lo dicen en su clase. */
+@media (max-width: 767px) { body.jm .e-con.e-con-full { --flex-wrap-mobile: nowrap; } }
 
 /* El atributo `hidden` que ponen los JS (flechas de las tiras, paneles)
    manda siempre sobre el `display` de las clases. */

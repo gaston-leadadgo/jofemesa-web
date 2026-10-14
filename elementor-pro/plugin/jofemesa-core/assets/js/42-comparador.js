@@ -249,7 +249,9 @@
       var l = lista();
       var oculta = !l.length || enComparador();
       b.hidden = oculta;
-      if (oculta) return;
+      /* Hueco al final de la página para que la bandeja no tape el pie. */
+      var alto = function () { document.documentElement.style.setProperty("--jm-alto-bandeja", b.hidden ? "0px" : b.offsetHeight + "px"); };
+      if (oculta) { alto(); return; }
       var idx = datosIndice().porSlug;
       ul.innerHTML = l.map(function (s) {
         var m = idx[s] || { s: s, ma: "", mo: s };
@@ -261,6 +263,7 @@
       if (n) n.textContent = l.length + "/" + MAX;
       if (ir) ir.setAttribute("href", rutaComparador() + "?m=" + l.join(","));
       if (irN) irN.textContent = "(" + l.length + ")";
+      alto();
     }
     b.addEventListener("click", function (e) {
       var q = e.target.closest("[data-jm-quitar]");

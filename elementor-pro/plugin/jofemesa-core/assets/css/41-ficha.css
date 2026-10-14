@@ -106,6 +106,8 @@ body.jm .jm-ficha__pareja .jm-btn .elementor-button { min-height: 3rem; font-wei
   body.jm .jm-ficha__pareja a.jm-btn,
   body.jm .jm-ficha__pareja .jm-btn .elementor-button { flex: 1 1 0%; }
 }
+/* El PDF llega por shortcode como <a> inline-flex: en móvil, a todo el ancho como el teléfono. */
+body.jm .jm-ficha__pareja a.jm-ficha-pdf { display: flex; }
 body.jm .jm-ficha-pdf__peso { font-size: 0.875rem; color: var(--jm-ink-3); }
 body.jm .jm-ficha__telefono .elementor-button-text { font-family: var(--jm-font-mono); font-variant-numeric: tabular-nums; }
 

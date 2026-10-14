@@ -1013,7 +1013,9 @@ body.jm .jm-pie__faldon :focus-visible { outline-color: #fff; }
    8 · Barra móvil fija (se imprime en wp_footer, ver 60-global.php)
    ========================================================================== */
 
-body.jm .jm-barra-movil__hueco { height: 4rem; }
+/* --jm-alto-bandeja: altura de la bandeja del comparador cuando está a la
+   vista (la pone 42-comparador.js); así no tapa el final del pie. */
+body.jm .jm-barra-movil__hueco { height: calc(4rem + var(--jm-alto-bandeja, 0px)); }
 body.jm .jm-barra-movil {
   position: fixed;
   left: 0;
@@ -1025,7 +1027,7 @@ body.jm .jm-barra-movil {
   padding-bottom: env(safe-area-inset-bottom);
 }
 @media (min-width: 768px) {
-  body.jm .jm-barra-movil__hueco { height: 0; }
+  body.jm .jm-barra-movil__hueco { height: var(--jm-alto-bandeja, 0px); }
   body.jm .jm-barra-movil { display: none; }
 }
 body.jm .jm-barra-movil :focus-visible { outline-color: var(--jm-accent-dark); }

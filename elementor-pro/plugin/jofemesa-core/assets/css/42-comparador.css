@@ -13,6 +13,10 @@ body.jm .jm-comparador-pagina { padding-block: 1.5rem; }
 @media (min-width: 768px) { body.jm .jm-comparador-pagina { padding-block: 2rem; } }
 body.jm .jm-comparador-pagina__titulo { color: var(--jm-ink-3); }
 body.jm .jm-comparador-cuerpo { margin-top: 1.25rem; }
+/* El adaptador pone --width:auto a los contenedores: aquí el cuerpo medía lo
+   que la tabla (643 px en móvil) y desbordaba la página. La tabla se desplaza
+   dentro de .jm-comp-marco. */
+body.jm .e-con.jm-comparador-cuerpo { --width: 100%; min-width: 0; }
 
 body.jm .jm-comparador { display: flex; flex-direction: column; gap: 2rem; }
 body.jm .jm-comparador[aria-busy="true"] .jm-comparador__tabla { opacity: 0.6; transition: opacity 200ms var(--jm-ease-ui); }
@@ -64,6 +68,15 @@ body.jm .jm-comp-tabla th.jm-comp-tabla__esquina {
   border-right: 1px solid var(--jm-ink); border-bottom: 1px solid var(--jm-ink); background: var(--jm-surface); color: var(--jm-ink-3);
 }
 @media (min-width: 768px) { body.jm .jm-comp-tabla th.jm-comp-tabla__esquina { width: 13rem; min-width: 13rem; } }
+/* El imán del scroll deja cada máquina a la derecha de la columna fija (sin
+   esto encajaba en el borde y la columna fija tapaba la primera máquina). En
+   móvil la columna fija no crece: si creciera, el desfase volvería. */
+body.jm .jm-comp-marco { scroll-padding-left: 8rem; }
+@media (max-width: 767px) {
+  body.jm .jm-comp-tabla th.jm-comp-tabla__esquina,
+  body.jm .jm-comp-tabla th.jm-comp-tabla__k { max-width: 8rem; box-sizing: border-box; }
+}
+@media (min-width: 768px) { body.jm .jm-comp-marco { scroll-padding-left: 13rem; } }
 body.jm .jm-comp-tabla th.jm-comp-tabla__maquina {
   width: 15rem; min-width: 15rem; padding: 1rem; vertical-align: bottom; scroll-snap-align: start;
   border-bottom: 1px solid var(--jm-ink); background: var(--jm-surface);
