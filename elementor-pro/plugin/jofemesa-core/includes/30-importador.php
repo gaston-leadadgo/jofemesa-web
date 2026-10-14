@@ -99,8 +99,9 @@ function jm_pantalla_importar(): void
             <strong><?php echo esc_html($n('cursos.json')); ?> cursos</strong>,
             <strong><?php echo esc_html($n('convocatorias.json')); ?> convocatorias</strong> y las delegaciones,
             con sus familias, fotos y fichas técnicas. Se puede repetir sin duplicar nada.</p>
-        <p><strong>Ojo:</strong> los campos de cada entrada se sobrescriben con los datos de origen.
-            Si has editado textos en el escritorio, impórtalo antes de editar o vuelve a hacer tus cambios después.</p>
+        <p><strong>Ojo:</strong> en máquinas, familias y delegaciones los campos se sobrescriben con los datos de origen.
+            Si has editado textos en el escritorio, impórtalo antes de editar o vuelve a hacer tus cambios después.<br>
+            <strong>Cursos y convocatorias</strong> solo se crean si faltan: los que ya existen (los gestiona Formación) no se tocan nunca.</p>
         <p>Origen de fotos y fichas: <code><?php echo esc_html(jm_ajuste('origen_media')); ?></code>
             (se cambia en <a href="<?php echo esc_url(admin_url('admin.php?page=jofemesa')); ?>">Ajustes</a>).</p>
         <ol id="jm-pasos">
@@ -391,22 +392,53 @@ function jm_html_preguntas(array $curso): string
     return $html;
 }
 
+/*
+ * Cursos y convocatorias: a partir de la primera importación los gestiona
+ * Formación desde el escritorio (Formación → Panel). Por eso estos dos pasos
+ * SOLO CREAN lo que falta y nunca sobrescriben un curso o una convocatoria
+ * que ya existe (aunque esté en la papelera): repetir la importación no
+ * puede deshacer el trabajo del cliente.
+ */
+function jm_existe_entrada(string $tipo, string $slug): bool
+{
+    return (bool) get_posts([
+        'post_type'   => $tipo,
+        'name'        => $slug,
+        'post_status' => ['publish', 'draft', 'pending', 'private', 'future', 'trash'],
+        'numberposts' => 1,
+        'fields'      => 'ids',
+    ]);
+}
+
 function jm_importar_cursos(): array
 {
     $cursos = jm_datos('cursos.json');
+    $nuevos = 0;
+    /* El importador ya escribe todos los datos: sin los automatismos del
+       panel al guardar (80-panel-formacion.php), que verían la entrada antes
+       de tener sus campos. */
+    $GLOBALS['jm_fo_lote'] = true;
     foreach ($cursos as $c) {
+        if (jm_existe_entrada('curso', $c['id'])) {
+            continue;
+        }
         $id = jm_entrada('curso', $c['id'], $c['nombre'], ['post_content' => jm_html_preguntas($c), 'menu_order' => $c['orden']]);
         foreach ([
             'jm_titulo_largo' => $c['titulo'], 'jm_nombre_corto' => $c['corto'], 'jm_norma' => $c['norma'] ?? '',
             'jm_certificacion' => $c['certificacion'] ?? '', 'jm_normativa' => implode(' · ', $c['normativa']),
             'jm_duracion' => $c['duracion'], 'jm_modalidad' => $c['modalidad'], 'jm_descripcion' => $c['descripcion'],
-            'jm_para_quien' => $c['paraQuien'], 'jm_convocatoria_abierta' => $c['convocatoriaAbierta'] ? '1' : '0',
-            'jm_orden' => $c['orden'],
+            'jm_para_quien' => $c['paraQuien'], 'jm_orden' => $c['orden'],
         ] as $k => $v) {
             jm_guardar_campo($id, $k, $v);
         }
+        $nuevos++;
     }
-    return ['hecho' => count($cursos), 'total' => count($cursos), 'siguiente' => null, 'registro' => [count($cursos) . ' cursos']];
+    $GLOBALS['jm_fo_lote'] = false;
+    $texto = $nuevos . ' cursos creados';
+    if ($nuevos < count($cursos)) {
+        $texto .= ' · ' . (count($cursos) - $nuevos) . ' ya existían y no se han tocado';
+    }
+    return ['hecho' => count($cursos), 'total' => count($cursos), 'siguiente' => null, 'registro' => [$texto]];
 }
 
 function jm_importar_convocatorias(): array
@@ -416,7 +448,12 @@ function jm_importar_convocatorias(): array
         $sedes[$s['id']] = $s['nombre'];
     }
     $lista = jm_datos('convocatorias.json');
+    $nuevas = 0;
+    $GLOBALS['jm_fo_lote'] = true;
     foreach ($lista as $cv) {
+        if (jm_existe_entrada('convocatoria', $cv['id'])) {
+            continue;
+        }
         $curso = get_page_by_path($cv['curso'], OBJECT, 'curso');
         if (!$curso) {
             throw new RuntimeException('Falta el curso «' . $cv['curso'] . '»: importa primero los cursos.');
@@ -431,8 +468,22 @@ function jm_importar_convocatorias(): array
             jm_guardar_campo($id, $k, $v);
         }
         wp_set_object_terms($id, [$cv['sede']], 'sede_formacion');
+        $termino = get_term_by('slug', $cv['sede'], 'sede_formacion');
+        if ($termino) {
+            jm_guardar_campo($id, 'jm_sede', (int) $termino->term_id);
+        }
+        $nuevas++;
     }
-    return ['hecho' => count($lista), 'total' => count($lista), 'siguiente' => null, 'registro' => [count($lista) . ' convocatorias']];
+    $GLOBALS['jm_fo_lote'] = false;
+    /* «Convocatoria abierta / A medida» de cada curso sale de sus fechas. */
+    if (function_exists('jm_fo_recalcular_cursos')) {
+        jm_fo_recalcular_cursos();
+    }
+    $texto = $nuevas . ' convocatorias creadas';
+    if ($nuevas < count($lista)) {
+        $texto .= ' · ' . (count($lista) - $nuevas) . ' ya existían y no se han tocado';
+    }
+    return ['hecho' => count($lista), 'total' => count($lista), 'siguiente' => null, 'registro' => [$texto]];
 }
 
 function jm_importar_delegaciones(): array

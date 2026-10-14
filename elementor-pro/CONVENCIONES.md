@@ -144,14 +144,21 @@ Taxonomías: `familia` (jerárquica: familia → subcategoría), `energia`,
 
 `jm_titulo_largo`, `jm_nombre_corto`, `jm_norma`, `jm_certificacion`,
 `jm_normativa`, `jm_duracion`, `jm_modalidad`, `jm_descripcion`,
-`jm_para_quien`, `jm_convocatoria_abierta` (sí/no). Las preguntas
-frecuentes del curso son el **contenido** de la entrada (widget
-*Contenido de la entrada*).
+`jm_para_quien`, `jm_orden`. Las preguntas frecuentes del curso son el
+**contenido** de la entrada (widget *Contenido de la entrada*).
+
+`jm_convocatoria_abierta` ('1'/'0') **no es un campo editable**: lo calcula
+el plugin (`jm_fo_recalcular_cursos`, 80-panel-formacion.php) según el curso
+tenga convocatorias publicadas de hoy en adelante. Se recalcula al guardar,
+borrar o restaurar una convocatoria y una vez al día.
 
 ### Convocatoria (`convocatoria`)
 
-`jm_fecha` (Y-m-d), `jm_curso` (objeto de entrada → curso), `jm_inicio`,
-`jm_fin`, `jm_plazas`, `jm_ocupadas`. Taxonomía `sede_formacion`.
+`jm_fecha` (Ymd), `jm_curso` (objeto de entrada → curso), `jm_sede`
+(campo de taxonomía que guarda el término de `sede_formacion`: una sola
+sede, obligatoria), `jm_inicio`, `jm_fin`, `jm_plazas`, `jm_ocupadas`.
+Sin título editable: el plugin lo escribe («Curso · 14/12/2026 · Sede») y
+pone el slug `2026-12-14-{curso}-{sede}`, que es el valor del formulario.
 
 ### Delegación (`delegacion`)
 

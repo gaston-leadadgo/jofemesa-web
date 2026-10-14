@@ -97,12 +97,17 @@ Y las cuatro reglas de montaje, que valen para todos los planos:
 2. *Ajustes → Enlaces permanentes* → **Guardar** (sin cambiar nada). Crea las
    URL `/maquina/…`, `/alquiler/{familia}/` y `/formacion/cursos/…`.
 3. *JOFEMESA → Ajustes*: revisa teléfonos, correos, redes y la fecha de
-   fundación. El campo *Correo que recibe las solicitudes* es el destino de
-   los formularios. *WhatsApp* vacío = la barra móvil sale sin ese botón.
+   fundación. *WhatsApp* vacío = la barra móvil sale sin ese botón. (El
+   destino de los formularios no se pone aquí: es la acción *Correo
+   electrónico* de cada formulario, Paso 5.)
 4. *JOFEMESA → Importar → Importar todo*. Unos minutos: crea 145 máquinas, 12
    cursos, 69 convocatorias y 10 delegaciones, y descarga 62 fotos y 62 fichas
    PDF desde el despliegue de Vercel. Si se corta, vuelve a pulsar: retoma
    sin duplicar.
+5. Aparece el menú **Formación** (Panel, Convocatorias, Cursos, Sedes, Guía
+   de uso). Ábrelo y comprueba que el panel muestra las convocatorias
+   importadas. Es lo que usará el cliente: ver *Formación: lo que gestiona el
+   cliente*, más abajo.
 
 **Comprueba antes de seguir** que el plugin responde: abre cualquier página
 del sitio, inspecciona y mira que el `<body>` lleva la clase `jm` y que se
@@ -203,7 +208,8 @@ correo**. Si no llega, el 90 % de las veces es que falta WP Mail SMTP.
 - [ ] Cambia un titular de la portada: se ve igual, solo cambia el texto.
 - [ ] Cambia la foto de una portada del hero.
 - [ ] Edita la descripción de una máquina en *Máquinas*: cambia en la tarjeta y en la ficha.
-- [ ] Crea una convocatoria nueva en *Cursos → Convocatorias*: aparece en el calendario y en el formulario.
+- [ ] Programa dos fechas de un curso «A medida» en *Formación → Panel → Programar fechas*: aparecen en el calendario y en el formulario, y el curso pasa solo a «Convocatoria abierta».
+- [ ] Envía una de esas fechas a la papelera desde la agenda y pulsa *Deshacer*: vuelve publicada.
 
 ---
 
@@ -252,6 +258,29 @@ parece un fallo.
 - **Los iconos de los widgets nativos** son de Font Awesome; los que pinta el
   plugin siguen siendo los de la web original.
 
+## Formación: lo que gestiona el cliente
+
+El equipo de Formación gestiona cursos, fechas y sedes desde el menú
+**Formación** del escritorio, sin abrir Elementor:
+
+- **Panel**: cifras, avisos (programación a punto de acabarse, fechas sin
+  curso o sin sede, convocatorias completas), *Programar fechas* (varias de
+  una vez, también pulsando días del calendario), agenda con plazas − / +,
+  *Programar otra igual* y papelera con *Deshacer*.
+- **Convocatorias** y **Cursos**: listados con columnas útiles, filtros por
+  curso y sede y vistas *Próximas* / *Celebradas*.
+- **Guía de uso**: el manual dentro del escritorio.
+
+Lo que hace solo el plugin (`80-panel-formacion.php`): «Convocatoria abierta /
+A medida» según haya fechas próximas, el título y el slug de cada
+convocatoria, los valores por defecto de un curso nuevo y el recálculo
+diario. Cursos y convocatorias usan el editor clásico y no tienen
+*Editar con Elementor*: su diseño es la plantilla del Theme Builder.
+
+**Al entregar:** crea al equipo de Formación un usuario con rol *Editor* y
+envíales `MANUAL-FORMACION.md` (o pásalo a PDF). Es el mismo texto que
+*Formación → Guía de uso*.
+
 ## Pendiente del lado del cliente
 
 - **Logos de AENOR e IPAF** originales (ver *datos pendientes* de la web).
@@ -276,6 +305,11 @@ npm run todo         # exporta datos, compila el asesor, verifica y genera el zi
 ```
 
 Sube el zip nuevo (*Plugins → Añadir nuevo → Subir* → reemplazar) y pulsa
-*JOFEMESA → Importar*. Ojo: la importación **sobrescribe** los campos de las
-entradas existentes. Si el cliente ya edita desde WordPress, a partir de ese
-momento la fuente de verdad es WordPress y no conviene reimportar.
+*JOFEMESA → Importar*. Ojo: en máquinas, familias y delegaciones la
+importación **sobrescribe** los campos de las entradas existentes. Si el
+cliente ya edita esos datos desde WordPress, a partir de ese momento la fuente
+de verdad es WordPress y no conviene reimportar.
+
+**Cursos y convocatorias nunca se sobrescriben**: el importador solo crea los
+que faltan (los busca por slug, también en la papelera). Así una
+reimportación no deshace lo que Formación haya cambiado en el panel.

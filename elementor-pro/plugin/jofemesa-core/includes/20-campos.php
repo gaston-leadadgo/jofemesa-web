@@ -18,7 +18,18 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/** Atajo para describir un campo ACF. */
+/**
+ * Clave ACF de un campo: única por tipo de contenido o taxonomía
+ * («field_curso_jm_descripcion»). Varios grupos repiten nombres
+ * (jm_descripcion, jm_orden, jm_icono…) y con claves iguales ACF mezclaba
+ * sus definiciones: el curso salía con las etiquetas de la máquina.
+ */
+function jm_clave_campo(string $contexto, string $nombre): string
+{
+    return 'field_' . $contexto . '_' . $nombre;
+}
+
+/** Atajo para describir un campo ACF. La clave definitiva la pone jm_grupos_de_campos. */
 function jm_campo(string $nombre, string $etiqueta, string $tipo = 'text', array $extra = []): array
 {
     return array_merge([
@@ -32,7 +43,7 @@ function jm_campo(string $nombre, string $etiqueta, string $tipo = 'text', array
 /** Definición de todos los grupos. La usa también el importador. */
 function jm_grupos_de_campos(): array
 {
-    return [
+    $grupos = [
         [
             'key'      => 'group_jm_maquina',
             'title'    => 'Datos de la máquina',
@@ -63,18 +74,21 @@ function jm_grupos_de_campos(): array
             'title'    => 'Datos del curso',
             'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'curso']]],
             'position' => 'acf_after_title',
+            'style'    => 'seamless',
+            /* «Convocatoria abierta / A medida» ya no es un campo: lo calcula
+               el plugin según el curso tenga o no fechas próximas
+               (jm_fo_recalcular_cursos en 80-panel-formacion.php). */
             'fields'   => [
-                jm_campo('jm_titulo_largo', 'Título completo', 'text', ['instructions' => 'Tal cual el documento de Formación.']),
-                jm_campo('jm_nombre_corto', 'Nombre para chips y filtros'),
-                jm_campo('jm_norma', 'Norma (chip)'),
-                jm_campo('jm_certificacion', 'Certificación'),
-                jm_campo('jm_normativa', 'Normativa que cumple', 'text', ['instructions' => 'Separada por « · ».']),
-                jm_campo('jm_duracion', 'Duración'),
-                jm_campo('jm_modalidad', 'Modalidad'),
-                jm_campo('jm_descripcion', 'Descripción', 'textarea', ['rows' => 3]),
-                jm_campo('jm_para_quien', 'Para quién (tarjeta)', 'textarea', ['rows' => 2]),
-                jm_campo('jm_convocatoria_abierta', 'Tiene convocatoria abierta', 'true_false', ['ui' => 1]),
-                jm_campo('jm_orden', 'Orden', 'number'),
+                jm_campo('jm_titulo_largo', 'Título completo', 'text', ['instructions' => 'El nombre oficial, tal cual el documento. Es el titular de la ficha. Vacío = el nombre de arriba.']),
+                jm_campo('jm_nombre_corto', 'Nombre corto', 'text', ['instructions' => 'Para los botones de filtro del calendario. Vacío = el nombre de arriba.', 'placeholder' => 'PEMP', 'wrapper' => ['width' => '50']]),
+                jm_campo('jm_norma', 'Norma', 'text', ['instructions' => 'Etiqueta junto al curso. Opcional.', 'placeholder' => 'UNE 58923', 'wrapper' => ['width' => '50']]),
+                jm_campo('jm_certificacion', 'Certificación', 'text', ['instructions' => 'Quién lo certifica. Opcional.', 'placeholder' => 'AENOR', 'wrapper' => ['width' => '50']]),
+                jm_campo('jm_normativa', 'Normativa que cumple', 'text', ['instructions' => 'Separa cada norma con « · ». Opcional.', 'placeholder' => 'UNE 58923 · ISO 18878', 'wrapper' => ['width' => '50']]),
+                jm_campo('jm_duracion', 'Duración', 'text', ['placeholder' => '8 horas', 'wrapper' => ['width' => '33']]),
+                jm_campo('jm_modalidad', 'Modalidad', 'text', ['placeholder' => 'Presencial', 'wrapper' => ['width' => '33']]),
+                jm_campo('jm_orden', 'Orden', 'number', ['instructions' => 'Posición en los listados (1 = primero). Vacío = al final.', 'min' => 0, 'step' => 1, 'wrapper' => ['width' => '34']]),
+                jm_campo('jm_descripcion', 'Descripción', 'textarea', ['rows' => 3, 'instructions' => 'Dos o tres frases: qué aprende el alumno y qué obtiene. Sale bajo el titular de la ficha.']),
+                jm_campo('jm_para_quien', 'Para quién es', 'textarea', ['rows' => 2, 'instructions' => 'Una frase para la tarjeta del curso en la página de Formación.']),
             ],
         ],
         [
@@ -82,13 +96,19 @@ function jm_grupos_de_campos(): array
             'title'    => 'Datos de la convocatoria',
             'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'convocatoria']]],
             'position' => 'acf_after_title',
+            'style'    => 'seamless',
             'fields'   => [
-                jm_campo('jm_curso', 'Curso', 'post_object', ['post_type' => ['curso'], 'return_format' => 'id', 'required' => 1]),
-                jm_campo('jm_fecha', 'Fecha', 'date_picker', ['display_format' => 'd/m/Y', 'return_format' => 'Ymd', 'first_day' => 1, 'required' => 1]),
-                jm_campo('jm_inicio', 'Hora de inicio', 'text', ['default_value' => '07:30', 'wrapper' => ['width' => '50']]),
-                jm_campo('jm_fin', 'Hora de fin', 'text', ['default_value' => '15:30', 'wrapper' => ['width' => '50']]),
-                jm_campo('jm_plazas', 'Plazas totales', 'number', ['instructions' => 'Vacío = «Consultar plazas».', 'wrapper' => ['width' => '50']]),
-                jm_campo('jm_ocupadas', 'Plazas ocupadas', 'number', ['wrapper' => ['width' => '50']]),
+                /* Desplegable normal (no el buscador AJAX de «objeto de entrada»):
+                   las opciones son los cursos, las pone jm_opciones_curso_acf. */
+                jm_campo('jm_curso', 'Curso', 'select', ['choices' => [], 'return_format' => 'value', 'required' => 1, 'ui' => 0, 'allow_null' => 1, 'placeholder' => 'Elige un curso', 'wrapper' => ['width' => '50']]),
+                /* Una sola sede y obligatoria. Guarda el término (save_terms),
+                   que es lo que leen el calendario y los formularios. */
+                jm_campo('jm_sede', 'Sede', 'taxonomy', ['taxonomy' => 'sede_formacion', 'field_type' => 'radio', 'allow_null' => 0, 'add_term' => 0, 'save_terms' => 1, 'load_terms' => 1, 'return_format' => 'id', 'multiple' => 0, 'required' => 1, 'instructions' => '¿Falta una sede? Créala en Formación → Sedes.', 'wrapper' => ['width' => '50']]),
+                jm_campo('jm_fecha', 'Fecha', 'date_picker', ['display_format' => 'd/m/Y', 'return_format' => 'Ymd', 'first_day' => 1, 'required' => 1, 'wrapper' => ['width' => '34']]),
+                jm_campo('jm_inicio', 'Hora de inicio', 'time_picker', ['display_format' => 'H:i', 'return_format' => 'H:i', 'default_value' => '07:30', 'wrapper' => ['width' => '33']]),
+                jm_campo('jm_fin', 'Hora de fin', 'time_picker', ['display_format' => 'H:i', 'return_format' => 'H:i', 'default_value' => '15:30', 'wrapper' => ['width' => '33']]),
+                jm_campo('jm_plazas', 'Plazas totales', 'number', ['instructions' => 'Opcional. Vacío = en la web sale «Consultar plazas».', 'min' => 0, 'step' => 1, 'wrapper' => ['width' => '50']]),
+                jm_campo('jm_ocupadas', 'Plazas ocupadas', 'number', ['instructions' => 'Con 3 o menos libres sale «Últimas plazas»; sin libres, «Completo».', 'min' => 0, 'step' => 1, 'wrapper' => ['width' => '50']]),
             ],
         ],
         [
@@ -134,8 +154,8 @@ function jm_grupos_de_campos(): array
             'title'    => 'Datos de la sede',
             'location' => [[['param' => 'taxonomy', 'operator' => '==', 'value' => 'sede_formacion']]],
             'fields'   => [
-                jm_campo('jm_tipo', 'Tipo'),
-                jm_campo('jm_zona', 'Zona'),
+                jm_campo('jm_tipo', 'Tipo', 'text', ['placeholder' => 'Sede de formación']),
+                jm_campo('jm_zona', 'Zona', 'text', ['instructions' => 'Provincia o zona que sale junto al nombre.', 'placeholder' => 'Madrid']),
                 jm_campo('jm_direccion', 'Dirección'),
                 jm_campo('jm_cp', 'Código postal'),
                 jm_campo('jm_localidad', 'Localidad'),
@@ -146,7 +166,33 @@ function jm_grupos_de_campos(): array
             ],
         ],
     ];
+    foreach ($grupos as &$grupo) {
+        $contexto = $grupo['location'][0][0]['value'];
+        foreach ($grupo['fields'] as &$campo) {
+            $campo['key'] = jm_clave_campo($contexto, $campo['name']);
+        }
+        unset($campo);
+    }
+    unset($grupo);
+    return $grupos;
 }
+
+/** Opciones del campo Curso de la convocatoria: ID => nombre (· norma). */
+add_filter('acf/load_field/name=jm_curso', function ($campo) {
+    $campo['choices'] = [];
+    $cursos = get_posts([
+        'post_type'   => 'curso',
+        'post_status' => ['publish', 'draft', 'private'],
+        'numberposts' => -1,
+        'meta_key'    => 'jm_orden',
+        'orderby'     => ['meta_value_num' => 'ASC', 'title' => 'ASC'],
+    ]);
+    foreach ($cursos as $c) {
+        $norma = (string) get_post_meta($c->ID, 'jm_norma', true);
+        $campo['choices'][$c->ID] = get_the_title($c) . ($norma ? ' · ' . $norma : '') . ($c->post_status !== 'publish' ? ' (borrador)' : '');
+    }
+    return $campo;
+});
 
 add_action('acf/include_fields', function () {
     if (!function_exists('acf_add_local_field_group')) {
@@ -182,11 +228,12 @@ add_action('init', function () {
 function jm_guardar_campo(int $post_id, string $nombre, $valor): void
 {
     update_post_meta($post_id, $nombre, $valor);
-    update_post_meta($post_id, '_' . $nombre, 'field_' . $nombre);
+    update_post_meta($post_id, '_' . $nombre, jm_clave_campo((string) get_post_type($post_id), $nombre));
 }
 
 function jm_guardar_campo_termino(int $term_id, string $nombre, $valor): void
 {
     update_term_meta($term_id, $nombre, $valor);
-    update_term_meta($term_id, '_' . $nombre, 'field_' . $nombre);
+    $termino = get_term($term_id);
+    update_term_meta($term_id, '_' . $nombre, jm_clave_campo($termino instanceof WP_Term ? $termino->taxonomy : '', $nombre));
 }

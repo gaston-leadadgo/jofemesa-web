@@ -80,8 +80,22 @@ for (const f of cssArchivos) {
   }
 }
 
+/* ---------- Escritorio (panel de Formación): fuera de body.jm, solo sintaxis ---------- */
+for (const f of lista(join(PLUGIN, "assets", "admin"), ".css")) {
+  const css = readFileSync(f, "utf8").replace(/\/\*[\s\S]*?\*\//g, "");
+  const prof = [...css].reduce((n, c) => n + (c === "{") - (c === "}"), 0);
+  if (prof !== 0) fallos.push(`${rel(f)}: llaves descompensadas (${prof})`);
+  for (const r of css.matchAll(/(^|[{}])\s*([^{}@][^{}]*?)\s*\{/g)) {
+    const sel = r[2].trim();
+    if (!sel || /^(from|to|\d+%)/.test(sel)) continue;
+    for (const s of partirSelectores(sel)) {
+      if (!s.startsWith("@") && !/^body\.jm-adm\b/.test(s)) fallos.push(`${rel(f)}: selector fuera de body.jm-adm → ${s.slice(0, 90)}`);
+    }
+  }
+}
+
 /* ---------- JS ---------- */
-for (const f of lista(join(PLUGIN, "assets", "js"), ".js")) {
+for (const f of [...lista(join(PLUGIN, "assets", "js"), ".js"), ...lista(join(PLUGIN, "assets", "admin"), ".js")]) {
   try {
     execFileSync(process.execPath, ["--check", f], { stdio: "pipe" });
   } catch (e) {

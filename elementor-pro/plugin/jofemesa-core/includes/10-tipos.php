@@ -28,7 +28,7 @@ function jm_registrar_tipos(): void
             'view_item'          => 'Ver ' . mb_strtolower($singular),
             'search_items'       => 'Buscar ' . mb_strtolower($plural),
             'not_found'          => 'No hay ' . mb_strtolower($plural),
-            'all_items'          => 'Todas las ' . mb_strtolower($plural),
+            'all_items'          => $plural,
             'menu_name'          => $plural,
         ];
     };
@@ -48,11 +48,14 @@ function jm_registrar_tipos(): void
         'labels'        => $etiquetas('Curso', 'Cursos', false),
         'public'        => true,
         'show_in_rest'  => true,
-        'menu_icon'     => 'dashicons-welcome-learn-more',
-        'menu_position' => 22,
+        /* Dentro del menú «Formación» (80-panel-formacion.php). Sin imagen
+           destacada (la ficha no la usa) ni «Editar con Elementor»: el
+           diseño de la ficha es la plantilla del Theme Builder y no debe
+           poder pisarse curso a curso. */
+        'show_in_menu'  => 'jm-formacion',
         'has_archive'   => false,
         'rewrite'       => ['slug' => 'formacion/cursos', 'with_front' => false],
-        'supports'      => ['title', 'editor', 'thumbnail', 'custom-fields', 'elementor'],
+        'supports'      => ['title', 'editor', 'custom-fields'],
     ]);
 
     /* Públicas para que aparezcan en el selector de fuente del Loop Grid,
@@ -64,10 +67,11 @@ function jm_registrar_tipos(): void
         'publicly_queryable'  => true,
         'exclude_from_search' => true,
         'show_in_rest'        => true,
-        'show_in_menu'        => 'edit.php?post_type=curso',
+        'show_in_menu'        => 'jm-formacion',
         'has_archive'         => false,
         'rewrite'             => ['slug' => 'convocatoria', 'with_front' => false],
-        'supports'            => ['title', 'custom-fields'],
+        /* Sin campo de título: lo escribe el plugin («Curso · fecha · sede»). */
+        'supports'            => ['custom-fields'],
     ]);
 
     register_post_type('delegacion', [
@@ -115,12 +119,25 @@ function jm_registrar_tipos(): void
     }
 
     register_taxonomy('sede_formacion', ['convocatoria'], [
-        'labels'            => ['name' => 'Sedes de formación', 'singular_name' => 'Sede de formación'],
+        'labels'            => [
+            'name'          => 'Sedes de formación',
+            'singular_name' => 'Sede de formación',
+            'menu_name'     => 'Sedes',
+            'add_new_item'  => 'Añadir sede',
+            'edit_item'     => 'Editar sede',
+            'search_items'  => 'Buscar sedes',
+            'not_found'     => 'No hay sedes',
+            'back_to_items' => '← Volver a las sedes',
+        ],
         'hierarchical'      => false,
         'public'            => false,
         'show_ui'           => true,
+        'show_in_menu'      => false,
         'show_in_rest'      => true,
-        'show_admin_column' => true,
+        /* La sede se elige en el campo «Sede» de la convocatoria (una sola y
+           obligatoria), no en la caja de etiquetas de WordPress. */
+        'meta_box_cb'       => false,
+        'show_admin_column' => false,
         'rewrite'           => false,
     ]);
 }
