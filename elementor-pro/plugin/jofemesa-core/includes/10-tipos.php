@@ -39,7 +39,10 @@ function jm_registrar_tipos(): void
         'show_in_rest'  => true,
         'menu_icon'     => 'dashicons-hammer',
         'menu_position' => 21,
-        'has_archive'   => false,
+        /* Con archivo: Elementor Pro solo ofrece la condición «archivo de
+           Familias» del Theme Builder si el tipo tiene archivo propio. La URL
+           /maquina/ no se usa: redirige a /alquiler/ (abajo). */
+        'has_archive'   => 'maquina',
         'rewrite'       => ['slug' => 'maquina', 'with_front' => false],
         'supports'      => ['title', 'thumbnail', 'custom-fields', 'elementor'],
     ]);
@@ -143,8 +146,22 @@ function jm_registrar_tipos(): void
 }
 add_action('init', 'jm_registrar_tipos');
 
-/* Convocatorias y delegaciones no tienen ficha: su URL lleva al listado. */
+/* Al actualizar el plugin (subir un zip nuevo no ejecuta la activación),
+   las reglas de URL se regeneran una vez si cambió la versión. */
+add_action('init', function () {
+    if (get_option('jm_version_reglas') !== JM_VERSION) {
+        flush_rewrite_rules(false);
+        update_option('jm_version_reglas', JM_VERSION, true);
+    }
+}, 99);
+
+/* Convocatorias y delegaciones no tienen ficha: su URL lleva al listado.
+   El archivo de máquinas tampoco: el catálogo es /alquiler/. */
 add_action('template_redirect', function () {
+    if (is_post_type_archive('maquina')) {
+        wp_safe_redirect(home_url('/alquiler/'), 301);
+        exit;
+    }
     if (is_singular('convocatoria')) {
         wp_safe_redirect(home_url('/formacion/#calendario'), 301);
         exit;

@@ -169,7 +169,7 @@ export function lista(clases, items, o = {}) {
       return limpio({
         _id: id(),
         text: x.texto,
-        selected_icon: m ? { value: { id: m.id, url: m.url }, library: "svg" } : { value: "", library: "" },
+        selected_icon: m ? { value: { id: m.id, url: m.url }, library: "svg" } : x.fa || { value: "", library: "" },
         link: x.enlace ? { url: x.enlace, is_external: "", nofollow: "" } : undefined,
       });
     }),
