@@ -421,6 +421,7 @@ body.jm .e-con.jm-ficha-pagina { padding-block: 2.5rem; }
 /* «← Todos los cursos de Formación» / «← Volver al calendario de formación» */
 body.jm .jm-volver .elementor-button {
   display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0;
+  align-self: flex-start; /* el contenedor es flex en columna: sin esto ocupa todo el ancho */
   border: 0; border-radius: 0; background: none;
   font-size: 0.875rem; font-weight: 600; color: var(--jm-ink-2);
 }

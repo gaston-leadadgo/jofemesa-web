@@ -24,6 +24,10 @@ body.jm .jm-plano { display: contents; }
    en fila miden su contenido; los anchos concretos los ponen las clases. */
 body.jm .e-con.e-con-full { --width: auto; }
 
+/* El atributo `hidden` que ponen los JS (flechas de las tiras, paneles)
+   manda siempre sobre el `display` de las clases. */
+body.jm [hidden] { display: none !important; }
+
 body.jm .jm-hereda p,
 body.jm .jm-hereda .elementor-heading-title {
   margin: 0; font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit;
@@ -95,6 +99,8 @@ body.jm .jm-pastilla-icono {
 }
 body.jm .jm-pastilla-icono .elementor-icon { display: grid; place-items: center; width: 100%; height: 100%; font-size: 1.25rem; color: inherit; }
 body.jm .jm-pastilla-icono .elementor-icon svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; }
+/* Los iconos de Font Awesome (svg.e-font-icon-svg) son de relleno, no de trazo. */
+body.jm .jm-pastilla-icono .elementor-icon svg.e-font-icon-svg { fill: currentColor; stroke: none; }
 body.jm .jm-icono-maquina .elementor-icon { color: var(--jm-accent); font-size: 0; }
 body.jm .jm-icono-maquina .elementor-icon svg { width: 100%; height: auto; fill: none; stroke: currentColor; }
 
