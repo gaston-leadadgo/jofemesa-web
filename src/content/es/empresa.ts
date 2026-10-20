@@ -468,6 +468,14 @@ export const DATOS_PENDIENTES = [
     nota: "Pedidos el 07/10/2026. No están en el material entregado y en jofemesa.com solo hay un «IPAF Afiliado» en JPG de 150 px, que se vería pixelado y no dice «centro de formación». Hace falta: las marcas de certificación AENOR de UNE 58923 y UNE 58451 y el logo de centro de formación IPAF, en SVG o PNG grande, tal como se los dio cada certificadora. Mientras, la web los nombra en texto.",
   },
   {
+    campo: "Genie S-85: ¿S-85 o S-85 XC?",
+    nota: "Con el material del 20/10/2026, la foto y el catálogo dicen «Genie S-85», pero la ficha técnica que mandaron es la de la «S-85 XC / S-85 XC FE». La web mantiene «S-85» con las medidas del catálogo. Confirmar el modelo exacto de la flota.",
+  },
+  {
+    campo: "Ficha de la JLG 860 SJ en inglés",
+    nota: "La ficha técnica de la JLG 860 SJ entregada el 20/10/2026 está en inglés (las demás, en castellano). Se publica tal cual; si tienen la versión en castellano, se cambia.",
+  },
+  {
     campo: "Dos brazos eléctricos renombrados",
     nota: "Con el material del 07/10/2026, el catálogo en PDF decía «Haulotte HA-15TP» y «JLG E600JP», pero la foto y la ficha del cliente son de la HA15 IP y la E600SJP. La web usa ya esos nombres (con sus medidas del catálogo). Ojo: la ficha de JLG que mandaron la titula «EC600SJP»; en la web va «E600SJP», como en su foto. Confirmar cuál es.",
   },

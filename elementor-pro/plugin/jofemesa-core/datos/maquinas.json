@@ -21124,8 +21124,16 @@
   "notaAsesor": null,
   "altura": 22,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jlg-660-sj.webp",
+   "alt": "JLG 660 SJ de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jlg-660-sj.pdf",
+   "bytes": 153485
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -21450,8 +21458,16 @@
   "notaAsesor": null,
   "altura": 22,
   "carga": 300,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/genie-s-65-xc.webp",
+   "alt": "Genie S-65 XC de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/genie-s-65-xc.pdf",
+   "bytes": 1022442
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -21776,8 +21792,16 @@
   "notaAsesor": null,
   "altura": 28,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jlg-860-sj.webp",
+   "alt": "JLG 860 SJ de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jlg-860-sj.pdf",
+   "bytes": 1146438
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -22102,8 +22126,16 @@
   "notaAsesor": null,
   "altura": 28,
   "carga": 227,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/genie-s-85.webp",
+   "alt": "Genie S-85 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/genie-s-85.pdf",
+   "bytes": 1527428
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -22428,8 +22460,16 @@
   "notaAsesor": null,
   "altura": 40,
   "carga": 227,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/genie-sx-125-xc.webp",
+   "alt": "Genie SX-125 XC de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/genie-sx-125-xc.pdf",
+   "bytes": 3384573
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -22754,8 +22794,16 @@
   "notaAsesor": null,
   "altura": 43,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jlg-1350-sjp.webp",
+   "alt": "JLG 1350 SJP de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jlg-1350-sjp.pdf",
+   "bytes": 972362
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -23080,8 +23128,16 @@
   "notaAsesor": null,
   "altura": 48,
   "carga": 340,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/genie-sx-150.webp",
+   "alt": "Genie SX-150 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/genie-sx-150.pdf",
+   "bytes": 1859251
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -23406,8 +23462,16 @@
   "notaAsesor": null,
   "altura": 57,
   "carga": 340,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/genie-sx-180.webp",
+   "alt": "Genie SX-180 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/genie-sx-180.pdf",
+   "bytes": 1527420
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -25694,8 +25758,16 @@
   "notaAsesor": null,
   "altura": 12,
   "carga": 120,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/klubb-k32.webp",
+   "alt": "Klubb K32 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/klubb-k32.pdf",
+   "bytes": 2696036
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -26020,8 +26092,16 @@
   "notaAsesor": null,
   "altura": 15,
   "carga": 225,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/socage-t315.webp",
+   "alt": "Socage T315 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/socage-t315.pdf",
+   "bytes": 1002889
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -26346,8 +26426,16 @@
   "notaAsesor": null,
   "altura": 20,
   "carga": 225,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/socage-da320.webp",
+   "alt": "Socage DA320 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/socage-da320.pdf",
+   "bytes": 1487824
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",

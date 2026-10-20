@@ -24,6 +24,16 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Entrega del 20/10/2026
+
+- **Fotos y fichas de los 8 brazos telescópicos diésel y las 3 plataformas sobre camión**
+  (`Material/Material 20-10`): JLG 660 SJ, 860 SJ y 1350 SJP; Genie S-65 XC, S-85, SX-125 XC,
+  SX-150 y SX-180; Klubb K32, Socage T315 y DA320. Ya son 73 máquinas con foto y ficha.
+- La ficha de la Socage DA320 venía con 11,8 MB (una imagen de 4944 px en un A4): se publica
+  reducida a 200 ppp, 1,5 MB, sin pérdida visible.
+- Dudas anotadas en `/admin/datos-pendientes`: la ficha de la Genie S-85 es la de la «S-85 XC»,
+  y la de la JLG 860 SJ está en inglés.
+
 ## Entrega del 07/10/2026
 
 - **Fotos y fichas de los 28 brazos articulados** (`Material/Material 7-10`): 9 eléctricos,

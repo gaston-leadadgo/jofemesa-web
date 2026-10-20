@@ -20,12 +20,13 @@ import {
   FAMILIAS,
   FAMILIA_POR_ID,
   SUBCATEGORIA_POR_SLUG,
-  numeroDe,
   relacionadas,
   specsAgrupadas,
   specsDestacadas,
 } from "@/lib/catalog";
-import { SPEC_DEFS, type SpecDef, type SpecValor, type IconoId } from "@/lib/catalog/types";
+/* numeroDe se importa de su archivo: con tsx 4.23 la reexportación
+   `export * from "./types"` no se ve desde un .tsx. */
+import { SPEC_DEFS, numeroDe, type SpecDef, type SpecValor, type IconoId } from "@/lib/catalog/types";
 import { num } from "@/lib/utils/format";
 import { IconoMaquina } from "@/components/marca/IconoMaquina";
 import { Mapa } from "@/components/marca/Mapa";
