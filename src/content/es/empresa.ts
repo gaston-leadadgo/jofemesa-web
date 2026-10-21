@@ -457,11 +457,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Están las 34 fichas de elevación. Para manutención de cargas, movimiento de tierras, compactación y energía el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
+    nota: "Hay 73 fichas técnicas de fabricante, todas de elevación (columnas, tijeras, brazos articulados y telescópicos, plataformas sobre camión). Faltan la tijera diésel Snorkel A46JRT y las seis plataformas sobre orugas. Para manutención de cargas, movimiento de tierras, compactación, energía y aire el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",
-    nota: "Hay 27 fotos oficiales de JOFEMESA de tijeras eléctricas, diésel e híbridas. El resto del catálogo sale con dibujo técnico hasta que lleguen las fotografías de esas familias.",
+    nota: "Hay 73 fotos oficiales de JOFEMESA, todas de elevación (entregas del 18/09, 07/10 y 20/10/2026). Quedan 72 máquinas con dibujo técnico: en elevación, la Snorkel A46JRT y las seis plataformas sobre orugas; el resto son de manutención, tierras, energía, aire y herramienta. El detalle, máquina a máquina, está en el PDF de material fotográfico pendiente.",
   },
   {
     campo: "Logos de AENOR e IPAF",

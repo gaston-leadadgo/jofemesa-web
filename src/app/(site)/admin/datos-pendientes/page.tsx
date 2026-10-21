@@ -85,8 +85,8 @@ export default function PaginaDatosPendientes() {
           {sinFicha} de {CATALOGO.length} referencias no tienen ficha técnica
           en PDF. Las {CATALOGO.length - sinFicha} que sí la tienen usan el
           documento del fabricante que aportó JOFEMESA: son las de
-          elevación —columnas verticales, tijeras eléctricas, diésel e
-          híbridas—. Para manutención de cargas, movimiento de tierras,
+          elevación —columnas verticales, tijeras, brazos articulados y
+          telescópicos, plataformas sobre camión—. Para manutención de cargas, movimiento de tierras,
           compactación, energía y aire, el catálogo general solo publica
           tablas, así que esas referencias salen con las cifras del catálogo
           y sin PDF.
