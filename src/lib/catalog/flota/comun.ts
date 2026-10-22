@@ -173,6 +173,21 @@ export const CON_FOTO = new Set([
   "klubb-k32",
   "socage-t315",
   "socage-da320",
+  // Plataformas sobre orugas, entregadas el 22/10/2026.
+  "imer-im-r15-da",
+  "jlg-x15j-plus",
+  "jlg-x17j-plus",
+  "easy-lift-r180",
+  "jlg-x20j-plus",
+  "teupen-leo30t",
+  // Carretillas eléctricas, entregadas el 22/10/2026.
+  "jungheinrich-efg-218k",
+  "jungheinrich-efg-220",
+  "jungheinrich-efg-318",
+  "jungheinrich-efg-320",
+  "heli-cpd25",
+  "jungheinrich-efg-vac-22",
+  "jungheinrich-efg-535k",
 ]);
 
 /** Fotos que no son la creatividad cuadrada de 1254×1254. */
@@ -187,6 +202,7 @@ export const DIMENSIONES_FOTO: Record<string, readonly [number, number]> = {
  * descarga rota.
  */
 export const FICHAS: Record<string, number> = {
+  "easy-lift-r180": 418690,
   "genie-gr-15": 846969,
   "genie-gr-26j": 1135269,
   "genie-gs-1432m": 817272,
@@ -231,7 +247,9 @@ export const FICHAS: Record<string, number> = {
   "haulotte-star-10": 1645447,
   "haulotte-star-8-ae": 1109533,
   "haulotte-swift-up-4-5-sp": 822806,
+  "heli-cpd25": 5500336,
   "holland-lift-b-195-dl": 4161249,
+  "imer-im-r15-da": 1998988,
   "jcb-s1930e": 96393,
   "jcb-s4550e": 96393,
   "jlg-1230-es": 299477,
@@ -252,6 +270,11 @@ export const FICHAS: Record<string, number> = {
   "jlg-es4046": 2144294,
   "jlg-nano-sp-plus": 1099911,
   "jlg-toucan-12e": 824810,
+  "jlg-x15j-plus": 1219809,
+  "jlg-x17j-plus": 1376461,
+  "jlg-x20j-plus": 712220,
+  "jungheinrich-efg-535k": 1101911,
+  "jungheinrich-efg-vac-22": 7489,
   "klubb-k32": 2696036,
   "manitou-170-aetj-l": 1753845,
   "snorkel-a38e": 1071165,
@@ -260,6 +283,7 @@ export const FICHAS: Record<string, number> = {
   "snorkel-s4740e": 155309,
   "socage-da320": 1487824,
   "socage-t315": 1002889,
+  "teupen-leo30t": 679498,
 };
 
 /* ------------------------------------------------------------

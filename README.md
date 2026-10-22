@@ -24,6 +24,20 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Entrega del 22/10/2026
+
+- **Fotos y fichas de las 6 plataformas sobre orugas** (`Material/Material 22-10`): Imer IM R15 DA,
+  JLG X15J PLUS, X17J PLUS y X20J PLUS, Easy Lift R180 y Teupen LEO30T. En elevación solo queda
+  sin foto la Snorkel A46JRT.
+- **Carretillas eléctricas, modelo a modelo**: las dos gamas genéricas («de 3 ruedas» y «de 4
+  ruedas») se abren en los 7 modelos de la flota, con su foto: Jungheinrich EFG 218k, 220, 318,
+  320, 535k y Vac 22, y Heli CPD25. Heli CPD25 y EFG 535k llevan los datos de su tabla VDI; la
+  Vac 22, los de su documento como «sin confirmar»; las otras cuatro, solo la capacidad que da su
+  nombre (sus fichas no sirven: una es de otros modelos de la serie y la otra llega vacía).
+- El catálogo pasa a 150 máquinas: 86 con foto y 82 con ficha.
+- Dudas anotadas en `/admin/datos-pendientes`: cuatro fichas en inglés, la de Imer titulada
+  «IM R 15 DA PRO», las fichas que faltan de cuatro carretillas y la de la EFG Vac 22.
+
 ## Entrega del 20/10/2026
 
 - **Fotos y fichas de los 8 brazos telescópicos diésel y las 3 plataformas sobre camión**

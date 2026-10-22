@@ -23797,8 +23797,16 @@
   "notaAsesor": null,
   "altura": 15,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/imer-im-r15-da.webp",
+   "alt": "Imer IM R15 DA de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/imer-im-r15-da.pdf",
+   "bytes": 1998988
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -24124,8 +24132,16 @@
   "notaAsesor": null,
   "altura": 15,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jlg-x15j-plus.webp",
+   "alt": "JLG X15J PLUS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jlg-x15j-plus.pdf",
+   "bytes": 1219809
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -24451,8 +24467,16 @@
   "notaAsesor": null,
   "altura": 17,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jlg-x17j-plus.webp",
+   "alt": "JLG X17J PLUS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jlg-x17j-plus.pdf",
+   "bytes": 1376461
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -24778,8 +24802,16 @@
   "notaAsesor": null,
   "altura": 18,
   "carga": 200,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/easy-lift-r180.webp",
+   "alt": "Easy Lift R180 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/easy-lift-r180.pdf",
+   "bytes": 418690
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -25105,8 +25137,16 @@
   "notaAsesor": null,
   "altura": 20,
   "carga": 230,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jlg-x20j-plus.webp",
+   "alt": "JLG X20J PLUS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jlg-x20j-plus.pdf",
+   "bytes": 712220
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -25432,8 +25472,16 @@
   "notaAsesor": null,
   "altura": 30,
   "carga": 400,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/teupen-leo30t.webp",
+   "alt": "Teupen LEO30T de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/teupen-leo30t.pdf",
+   "bytes": 679498
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -27281,10 +27329,10 @@
   "busqueda": "manitou manipulador telescopico giratorio manipulador telescopico giratorio todo terreno, de 3.200 a 4.000 kg de capacidad y alcance variable de 14 a 21 metros. torreta de giro continuo: descarga y posiciona en todo el perimetro sin mover la maquina. manipuladores telescopicos giratorios manutencion de cargas descarga en todo el perimetro sin mover la maquina trabajos donde no cabe una grua montaje industrial rehabilitacion en casco urbano"
  },
  {
-  "slug": "jungheinrich-contrapesada-electrica-de-3-ruedas",
+  "slug": "jungheinrich-efg-218k",
   "marca": "Jungheinrich",
-  "modelo": "Contrapesada eléctrica de 3 ruedas",
-  "titulo": "Jungheinrich Contrapesada eléctrica de 3 ruedas",
+  "modelo": "EFG 218k",
+  "titulo": "Jungheinrich EFG 218k",
   "familia": "manipulacion",
   "familiaNombre": "Manutención de cargas",
   "subcategoria": "carretillas-contrapesadas-electricas",
@@ -27294,7 +27342,7 @@
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
+  "gama": false,
   "destacada": false,
   "orden": 11400,
   "energia": "electrico",
@@ -27316,7 +27364,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Carretilla frontal contrapesada eléctrica de tres ruedas, de 1.600 a 2.000 kg de capacidad y hasta 7 m de elevación. Tres ruedas para girar en pasillos estrechos y motor eléctrico para trabajar dentro de nave sin emisiones.",
+  "descripcionCorta": "Carretilla eléctrica contrapesada de tres ruedas, de la serie EFG 2 de Jungheinrich. Gira en muy poco espacio para trabajar en pasillos estrechos y, al ser eléctrica, dentro de nave sin emisiones.",
   "aplicaciones": [
    "Carga y descarga de camión",
    "Trasiego de palets en almacén",
@@ -27329,45 +27377,26 @@
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": 2000,
-  "foto": null,
+  "carga": 1800,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-efg-218k.webp",
+   "alt": "Jungheinrich EFG 218k de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
   "ficha": null,
   "tarjeta": [
-   {
-    "key": "alturaElevacion",
-    "etiqueta": "Altura elev.",
-    "estado": "confirmado",
-    "texto": "7",
-    "unidad": "m",
-    "valor": 7,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    {
     "key": "capacidadCarga",
     "etiqueta": "Carga máx.",
     "estado": "estimado",
-    "texto": "2.000",
+    "texto": "1.800",
     "unidad": "kg",
-    "valor": 2000,
-    "nota": "El catálogo publica una gama de 1600 a 2000 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+    "valor": 1800,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 218k): falta la ficha del fabricante para confirmarla."
    }
   ],
   "specs": [
-   {
-    "grupo": "prestaciones",
-    "grupoNombre": "Prestaciones",
-    "filas": [
-     {
-      "key": "alturaElevacion",
-      "etiqueta": "Altura de elevación",
-      "estado": "confirmado",
-      "texto": "7",
-      "unidad": "m",
-      "valor": 7,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   },
    {
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
@@ -27376,10 +27405,10 @@
       "key": "capacidadCarga",
       "etiqueta": "Capacidad de carga",
       "estado": "estimado",
-      "texto": "2.000",
+      "texto": "1.800",
       "unidad": "kg",
-      "valor": 2000,
-      "nota": "El catálogo publica una gama de 1600 a 2000 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+      "valor": 1800,
+      "nota": "Capacidad deducida del nombre del modelo (EFG 218k): falta la ficha del fabricante para confirmarla."
      }
     ]
    }
@@ -27398,18 +27427,17 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "alturaElevacion": {
-    "estado": "confirmado",
-    "texto": "7",
-    "unidad": "m",
-    "valor": 7,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
     "estado": "estimado",
-    "texto": "2.000",
+    "texto": "1.800",
     "unidad": "kg",
-    "valor": 2000,
-    "nota": "El catálogo publica una gama de 1600 a 2000 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+    "valor": 1800,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 218k): falta la ficha del fabricante para confirmarla."
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -27551,18 +27579,18 @@
    }
   },
   "relacionadas": [
-   "jungheinrich-contrapesada-electrica-de-4-ruedas",
-   "jungheinrich-maquinas-de-almacen",
-   "manitou-manipulador-telescopico-rigido"
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-318",
+   "jungheinrich-efg-320"
   ],
   "enAlquiler": true,
-  "busqueda": "jungheinrich contrapesada electrica de 3 ruedas carretilla frontal contrapesada electrica de tres ruedas, de 1.600 a 2.000 kg de capacidad y hasta 7 m de elevacion. tres ruedas para girar en pasillos estrechos y motor electrico para trabajar dentro de nave sin emisiones. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+  "busqueda": "jungheinrich efg 218k carretilla electrica contrapesada de tres ruedas, de la serie efg 2 de jungheinrich. gira en muy poco espacio para trabajar en pasillos estrechos y, al ser electrica, dentro de nave sin emisiones. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
  },
  {
-  "slug": "jungheinrich-contrapesada-electrica-de-4-ruedas",
+  "slug": "jungheinrich-efg-220",
   "marca": "Jungheinrich",
-  "modelo": "Contrapesada eléctrica de 4 ruedas",
-  "titulo": "Jungheinrich Contrapesada eléctrica de 4 ruedas",
+  "modelo": "EFG 220",
+  "titulo": "Jungheinrich EFG 220",
   "familia": "manipulacion",
   "familiaNombre": "Manutención de cargas",
   "subcategoria": "carretillas-contrapesadas-electricas",
@@ -27572,8 +27600,8 @@
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
-  "destacada": true,
+  "gama": false,
+  "destacada": false,
   "orden": 11410,
   "energia": "electrico",
   "energiaNombre": "Eléctrico",
@@ -27594,7 +27622,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Carretilla frontal contrapesada eléctrica de cuatro ruedas, de 1.500 a 2.500 kg de capacidad y hasta 7 m de elevación. Más estabilidad que la de tres ruedas manteniendo el cero emisiones del interior.",
+  "descripcionCorta": "Carretilla eléctrica contrapesada de tres ruedas, la mayor de la serie EFG 2 de Jungheinrich. Maniobrable en pasillos estrechos y sin emisiones para trabajar dentro de nave.",
   "aplicaciones": [
    "Carga y descarga de camión",
    "Trasiego de palets en almacén",
@@ -27607,45 +27635,26 @@
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": 2500,
-  "foto": null,
+  "carga": 2000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-efg-220.webp",
+   "alt": "Jungheinrich EFG 220 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
   "ficha": null,
   "tarjeta": [
-   {
-    "key": "alturaElevacion",
-    "etiqueta": "Altura elev.",
-    "estado": "confirmado",
-    "texto": "7",
-    "unidad": "m",
-    "valor": 7,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    {
     "key": "capacidadCarga",
     "etiqueta": "Carga máx.",
     "estado": "estimado",
-    "texto": "2.500",
+    "texto": "2.000",
     "unidad": "kg",
-    "valor": 2500,
-    "nota": "El catálogo publica una gama de 1500 a 2500 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+    "valor": 2000,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 220): falta la ficha del fabricante para confirmarla."
    }
   ],
   "specs": [
-   {
-    "grupo": "prestaciones",
-    "grupoNombre": "Prestaciones",
-    "filas": [
-     {
-      "key": "alturaElevacion",
-      "etiqueta": "Altura de elevación",
-      "estado": "confirmado",
-      "texto": "7",
-      "unidad": "m",
-      "valor": 7,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   },
    {
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
@@ -27654,10 +27663,10 @@
       "key": "capacidadCarga",
       "etiqueta": "Capacidad de carga",
       "estado": "estimado",
-      "texto": "2.500",
+      "texto": "2.000",
       "unidad": "kg",
-      "valor": 2500,
-      "nota": "El catálogo publica una gama de 1500 a 2500 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+      "valor": 2000,
+      "nota": "Capacidad deducida del nombre del modelo (EFG 220): falta la ficha del fabricante para confirmarla."
      }
     ]
    }
@@ -27676,18 +27685,17 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "alturaElevacion": {
-    "estado": "confirmado",
-    "texto": "7",
-    "unidad": "m",
-    "valor": 7,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
     "estado": "estimado",
-    "texto": "2.500",
+    "texto": "2.000",
     "unidad": "kg",
-    "valor": 2500,
-    "nota": "El catálogo publica una gama de 1500 a 2500 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+    "valor": 2000,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 220): falta la ficha del fabricante para confirmarla."
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -27829,12 +27837,1531 @@
    }
   },
   "relacionadas": [
-   "jungheinrich-contrapesada-electrica-de-3-ruedas",
-   "jungheinrich-maquinas-de-almacen",
-   "manitou-manipulador-telescopico-rigido"
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-318",
+   "jungheinrich-efg-320"
   ],
   "enAlquiler": true,
-  "busqueda": "jungheinrich contrapesada electrica de 4 ruedas carretilla frontal contrapesada electrica de cuatro ruedas, de 1.500 a 2.500 kg de capacidad y hasta 7 m de elevacion. mas estabilidad que la de tres ruedas manteniendo el cero emisiones del interior. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+  "busqueda": "jungheinrich efg 220 carretilla electrica contrapesada de tres ruedas, la mayor de la serie efg 2 de jungheinrich. maniobrable en pasillos estrechos y sin emisiones para trabajar dentro de nave. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+ },
+ {
+  "slug": "jungheinrich-efg-318",
+  "marca": "Jungheinrich",
+  "modelo": "EFG 318",
+  "titulo": "Jungheinrich EFG 318",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-electricas",
+  "subcategoriaNombre": "Carretillas contrapesadas eléctricas",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11420,
+  "energia": "electrico",
+  "energiaNombre": "Eléctrico",
+  "entornos": [
+   "interior",
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla eléctrica contrapesada de cuatro ruedas, de la serie EFG 3 de Jungheinrich. Más estable que la de tres ruedas para carga y descarga de camión y almacén, sin emisiones.",
+  "aplicaciones": [
+   "Carga y descarga de camión",
+   "Trasiego de palets en almacén",
+   "Estanterías de altura media",
+   "Industria con exigencias de emisiones"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 1800,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-efg-318.webp",
+   "alt": "Jungheinrich EFG 318 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": null,
+  "tarjeta": [
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "estimado",
+    "texto": "1.800",
+    "unidad": "kg",
+    "valor": 1800,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 318): falta la ficha del fabricante para confirmarla."
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "estimado",
+      "texto": "1.800",
+      "unidad": "kg",
+      "valor": 1800,
+      "nota": "Capacidad deducida del nombre del modelo (EFG 318): falta la ficha del fabricante para confirmarla."
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "estimado",
+    "texto": "1.800",
+    "unidad": "kg",
+    "valor": 1800,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 318): falta la ficha del fabricante para confirmarla."
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-320"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich efg 318 carretilla electrica contrapesada de cuatro ruedas, de la serie efg 3 de jungheinrich. mas estable que la de tres ruedas para carga y descarga de camion y almacen, sin emisiones. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+ },
+ {
+  "slug": "jungheinrich-efg-320",
+  "marca": "Jungheinrich",
+  "modelo": "EFG 320",
+  "titulo": "Jungheinrich EFG 320",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-electricas",
+  "subcategoriaNombre": "Carretillas contrapesadas eléctricas",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11430,
+  "energia": "electrico",
+  "energiaNombre": "Eléctrico",
+  "entornos": [
+   "interior",
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla eléctrica contrapesada de cuatro ruedas, la mayor de la serie EFG 3 de Jungheinrich. Estable para carga de camión y trasiego de palets, con cero emisiones para el interior.",
+  "aplicaciones": [
+   "Carga y descarga de camión",
+   "Trasiego de palets en almacén",
+   "Estanterías de altura media",
+   "Industria con exigencias de emisiones"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 2000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-efg-320.webp",
+   "alt": "Jungheinrich EFG 320 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": null,
+  "tarjeta": [
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "estimado",
+    "texto": "2.000",
+    "unidad": "kg",
+    "valor": 2000,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 320): falta la ficha del fabricante para confirmarla."
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "estimado",
+      "texto": "2.000",
+      "unidad": "kg",
+      "valor": 2000,
+      "nota": "Capacidad deducida del nombre del modelo (EFG 320): falta la ficha del fabricante para confirmarla."
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "estimado",
+    "texto": "2.000",
+    "unidad": "kg",
+    "valor": 2000,
+    "nota": "Capacidad deducida del nombre del modelo (EFG 320): falta la ficha del fabricante para confirmarla."
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-318"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich efg 320 carretilla electrica contrapesada de cuatro ruedas, la mayor de la serie efg 3 de jungheinrich. estable para carga de camion y trasiego de palets, con cero emisiones para el interior. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+ },
+ {
+  "slug": "heli-cpd25",
+  "marca": "Heli",
+  "modelo": "CPD25",
+  "titulo": "Heli CPD25",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-electricas",
+  "subcategoriaNombre": "Carretillas contrapesadas eléctricas",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11440,
+  "energia": "electrico",
+  "energiaNombre": "Eléctrico",
+  "entornos": [
+   "interior",
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla eléctrica contrapesada de cuatro ruedas con batería de litio, 2.500 kg de capacidad y 3 m de elevación con el mástil estándar. Carga rápida en cualquier momento, para trabajar a varios turnos.",
+  "aplicaciones": [
+   "Carga y descarga de camión",
+   "Trasiego de palets en almacén",
+   "Estanterías de altura media",
+   "Industria con exigencias de emisiones"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 2500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/heli-cpd25.webp",
+   "alt": "Heli CPD25 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/heli-cpd25.pdf",
+   "bytes": 5500336
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.160",
+    "unidad": "mm",
+    "valor": 1160,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3",
+      "unidad": "m",
+      "valor": 3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "2.500",
+      "unidad": "kg",
+      "valor": 2500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.160",
+      "unidad": "mm",
+      "valor": 1160,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.000",
+      "unidad": "mm",
+      "valor": 2000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.502",
+      "unidad": "mm",
+      "valor": 3502,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "3.890",
+      "unidad": "kg",
+      "valor": 3890,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.160",
+    "unidad": "mm",
+    "valor": 1160,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.000",
+    "unidad": "mm",
+    "valor": 2000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.502",
+    "unidad": "mm",
+    "valor": 3502,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "3.890",
+    "unidad": "kg",
+    "valor": 3890,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-318"
+  ],
+  "enAlquiler": true,
+  "busqueda": "heli cpd25 carretilla electrica contrapesada de cuatro ruedas con bateria de litio, 2.500 kg de capacidad y 3 m de elevacion con el mastil estandar. carga rapida en cualquier momento, para trabajar a varios turnos. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+ },
+ {
+  "slug": "jungheinrich-efg-vac-22",
+  "marca": "Jungheinrich",
+  "modelo": "EFG Vac 22",
+  "titulo": "Jungheinrich EFG Vac 22",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-electricas",
+  "subcategoriaNombre": "Carretillas contrapesadas eléctricas",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11450,
+  "energia": "electrico",
+  "energiaNombre": "Eléctrico",
+  "entornos": [
+   "interior",
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla eléctrica contrapesada de cuatro ruedas de Jungheinrich, de 2.200 kg de capacidad y 3,1 m de elevación estándar, con bandajes superelásticos y batería de 80 V.",
+  "aplicaciones": [
+   "Carga y descarga de camión",
+   "Trasiego de palets en almacén",
+   "Estanterías de altura media",
+   "Industria con exigencias de emisiones"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 2200,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-efg-vac-22.webp",
+   "alt": "Jungheinrich EFG Vac 22 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jungheinrich-efg-vac-22.pdf",
+   "bytes": 7489
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "estimado",
+    "texto": "3,1",
+    "unidad": "m",
+    "valor": 3.1,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "estimado",
+    "texto": "2.200",
+    "unidad": "kg",
+    "valor": 2200,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   },
+   {
+    "key": "alturaTransporte",
+    "etiqueta": "Altura repl.",
+    "estado": "estimado",
+    "texto": "2.200",
+    "unidad": "mm",
+    "valor": 2200,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "estimado",
+      "texto": "3,1",
+      "unidad": "m",
+      "valor": 3.1,
+      "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "estimado",
+      "texto": "2.200",
+      "unidad": "kg",
+      "valor": 2200,
+      "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "estimado",
+      "texto": "2.200",
+      "unidad": "mm",
+      "valor": 2200,
+      "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "estimado",
+      "texto": "4.300",
+      "unidad": "kg",
+      "valor": 4300,
+      "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "estimado",
+    "texto": "3,1",
+    "unidad": "m",
+    "valor": 3.1,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   },
+   "capacidadCarga": {
+    "estado": "estimado",
+    "texto": "2.200",
+    "unidad": "kg",
+    "valor": 2200,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaTransporte": {
+    "estado": "estimado",
+    "texto": "2.200",
+    "unidad": "mm",
+    "valor": 2200,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "estimado",
+    "texto": "4.300",
+    "unidad": "kg",
+    "valor": 4300,
+    "nota": "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud."
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-318"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich efg vac 22 carretilla electrica contrapesada de cuatro ruedas de jungheinrich, de 2.200 kg de capacidad y 3,1 m de elevacion estandar, con bandajes superelasticos y bateria de 80 v. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
+ },
+ {
+  "slug": "jungheinrich-efg-535k",
+  "marca": "Jungheinrich",
+  "modelo": "EFG 535k",
+  "titulo": "Jungheinrich EFG 535k",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-electricas",
+  "subcategoriaNombre": "Carretillas contrapesadas eléctricas",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": true,
+  "orden": 11460,
+  "energia": "electrico",
+  "energiaNombre": "Eléctrico",
+  "entornos": [
+   "interior",
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla eléctrica contrapesada de cuatro ruedas de gran capacidad: 3.500 kg y 3,1 m de elevación con el mástil estándar. Para cargas pesadas en interior y exterior sin emisiones, con batería de 80 V.",
+  "aplicaciones": [
+   "Carga y descarga de camión",
+   "Trasiego de palets en almacén",
+   "Estanterías de altura media",
+   "Industria con exigencias de emisiones"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 3500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-efg-535k.webp",
+   "alt": "Jungheinrich EFG 535k de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jungheinrich-efg-535k.pdf",
+   "bytes": 1101911
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3,1",
+    "unidad": "m",
+    "valor": 3.1,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.340",
+    "unidad": "mm",
+    "valor": 1340,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3,1",
+      "unidad": "m",
+      "valor": 3.1,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.500",
+      "unidad": "kg",
+      "valor": 3500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.340",
+      "unidad": "mm",
+      "valor": 1340,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.300",
+      "unidad": "mm",
+      "valor": 2300,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.805",
+      "unidad": "mm",
+      "valor": 3805,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "5.968",
+      "unidad": "kg",
+      "valor": 5968,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3,1",
+    "unidad": "m",
+    "valor": 3.1,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.340",
+    "unidad": "mm",
+    "valor": 1340,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.300",
+    "unidad": "mm",
+    "valor": 2300,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.805",
+    "unidad": "mm",
+    "valor": 3805,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "5.968",
+    "unidad": "kg",
+    "valor": 5968,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-318"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich efg 535k carretilla electrica contrapesada de cuatro ruedas de gran capacidad: 3.500 kg y 3,1 m de elevacion con el mastil estandar. para cargas pesadas en interior y exterior sin emisiones, con bateria de 80 v. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
  },
  {
   "slug": "jungheinrich-contrapesada-diesel-de-4-ruedas",
@@ -28654,9 +30181,9 @@
    }
   },
   "relacionadas": [
-   "jungheinrich-contrapesada-electrica-de-3-ruedas",
-   "jungheinrich-contrapesada-electrica-de-4-ruedas",
-   "manitou-manipulador-telescopico-rigido"
+   "jungheinrich-efg-218k",
+   "jungheinrich-efg-220",
+   "jungheinrich-efg-318"
   ],
   "enAlquiler": true,
   "busqueda": "jungheinrich maquinas de almacen transpaletas electricas, apiladores y preparadoras de pedidos para el movimiento diario del almacen. somos partner oficial de jungheinrich, asi que la misma maquina se puede alquilar, comprar nueva o comprar reacondicionada. maquinas de almacen manutencion de cargas trasiego diario de palets apilado en estanterias preparacion de pedidos refuerzo de campana"

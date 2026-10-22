@@ -228,7 +228,7 @@ correo**. Si no llega, el 90 % de las veces es que falta WP Mail SMTP.
 | Un shortcode sale como texto `[jm_…]` | Está en un widget de Texto o HTML. Va en el widget **Shortcode**. |
 | El catálogo sale vacío | El Loop Grid no tiene `jm_catalogo` en *Consulta → ID de consulta*, o la importación no terminó. |
 | Las tarjetas no se filtran | Falta `[jm_catalogo_filtros]` en la página: es el que imprime los datos del filtro. |
-| Faltan fotos en algunas máquinas | 72 máquinas **no tienen foto** todavía (ver el listado de material pendiente): salen con el dibujo de su subcategoría. Si falta en una que sí la tiene, repite la importación. |
+| Faltan fotos en algunas máquinas | 64 máquinas **no tienen foto** todavía (ver el listado de material pendiente): salen con el dibujo de su subcategoría. Si falta en una que sí la tiene, repite la importación. |
 | La ficha se abre como página y no en modal | El botón «Ficha» no está dentro de un contenedor con `data-jm-modal` ni lleva la clase `jm-abrir-modal`. |
 | Los desplegables de curso o provincia del formulario salen vacíos | El ID del campo no es exactamente `curso`, `convocatoria`, `provincia` o `delegacion`. |
 | El formulario envía pero no llega el correo | Falta WP Mail SMTP o el correo de destino está mal en *JOFEMESA → Ajustes*. |
@@ -292,7 +292,7 @@ envíales `MANUAL-FORMACION.md` (o pásalo a PDF). Es el mismo texto que
   enlazan a `/privacidad/`. Esa página tiene que estar publicada con su texto
   antes de abrir la web: un formulario que enlaza a una página vacía es un
   incumplimiento del RGPD, no un detalle pendiente.
-- **Fotos de 72 máquinas** (ver `jofemesa-material-fotografico-pendiente.pdf`; se regenera con
+- **Fotos de 64 máquinas** (ver `jofemesa-material-fotografico-pendiente.pdf`; se regenera con
   `python scripts/material-fotografico-pendiente.py` cada vez que llega material).
 
 ## Mantenimiento: cómo actualizar los datos desde la web Next

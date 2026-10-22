@@ -457,11 +457,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Hay 73 fichas técnicas de fabricante, todas de elevación (columnas, tijeras, brazos articulados y telescópicos, plataformas sobre camión). Faltan la tijera diésel Snorkel A46JRT y las seis plataformas sobre orugas. Para manutención de cargas, movimiento de tierras, compactación, energía y aire el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
+    nota: "Hay 82 fichas técnicas: las 79 de elevación (solo falta la tijera diésel Snorkel A46JRT) y 3 de carretillas eléctricas (Heli CPD25, Jungheinrich EFG 535k y EFG Vac 22). Para el resto de manutención, movimiento de tierras, compactación, energía y aire el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",
-    nota: "Hay 73 fotos oficiales de JOFEMESA, todas de elevación (entregas del 18/09, 07/10 y 20/10/2026). Quedan 72 máquinas con dibujo técnico: en elevación, la Snorkel A46JRT y las seis plataformas sobre orugas; el resto son de manutención, tierras, energía, aire y herramienta. El detalle, máquina a máquina, está en el PDF de material fotográfico pendiente.",
+    nota: "Hay 86 fotos oficiales de JOFEMESA: 79 de elevación y las 7 carretillas eléctricas (entregas del 18/09, 07/10, 20/10 y 22/10/2026). Quedan 64 máquinas con dibujo técnico: en elevación, solo la Snorkel A46JRT; el resto son de manutención, tierras, energía, aire y herramienta. El detalle, máquina a máquina, está en el PDF de material fotográfico pendiente.",
   },
   {
     campo: "Logos de AENOR e IPAF",
@@ -474,6 +474,18 @@ export const DATOS_PENDIENTES = [
   {
     campo: "Ficha de la JLG 860 SJ en inglés",
     nota: "La ficha técnica de la JLG 860 SJ entregada el 20/10/2026 está en inglés (las demás, en castellano). Se publica tal cual; si tienen la versión en castellano, se cambia.",
+  },
+  {
+    campo: "Fichas de las plataformas sobre orugas en inglés",
+    nota: "Del material del 22/10/2026, las fichas de JLG X15J PLUS, JLG X20J PLUS, Teupen LEO30T e Imer IM R15 DA están en inglés (la de la X17J PLUS en castellano y la de Easy Lift trae varios idiomas, castellano incluido). Se publican tal cual; si tienen las versiones en castellano, se cambian. La ficha de Imer se titula «IM R 15 DA PRO»: confirmar si la unidad de flota es la versión PRO.",
+  },
+  {
+    campo: "Carretillas eléctricas: fichas que no sirven",
+    nota: "Con el material del 22/10/2026 las carretillas eléctricas pasan de dos gamas genéricas («de 3 ruedas» y «de 4 ruedas») a sus siete modelos, con foto. Pero cuatro llegaron sin datos utilizables: la ficha de las EFG 218k y EFG 220 es la de la serie EFG 213–218 y no incluye esos dos modelos, y la de las EFG 318 y EFG 320 tiene la tabla VDI vacía (el PDF se exportó sin datos). Se publican con foto y solo la capacidad que da su nombre (1.800 / 2.000 kg), sin ficha descargable. Hacen falta las fichas buenas de esos cuatro modelos.",
+  },
+  {
+    campo: "Ficha de la EFG Vac 22",
+    nota: "El documento de la Jungheinrich EFG Vac 22 no es del fabricante: es una hoja con la marca de JOFEMESA que dice basarse en el manual del modelo (2003) y en una web de especificaciones. Sus cifras se publican como «sin confirmar». Si hay ficha original de Jungheinrich, se sustituye.",
   },
   {
     campo: "Dos brazos eléctricos renombrados",

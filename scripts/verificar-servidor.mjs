@@ -318,7 +318,13 @@ for (const slug of ["genie-z-34-22-rt", "haulotte-ha15-ip", "jlg-e600sjp", "geni
 }
 t("la ficha de la HA15 IP se descarga", (await fetch(BASE + "/fichas/haulotte-ha15-ip.pdf")).status === 200);
 t("los nombres viejos ya no existen", (await html("/maquina/haulotte-ha-15tp")).estado === 404 && (await html("/maquina/jlg-e600jp")).estado === 404);
-for (const slug of ["jlg-660-sj", "genie-s-85", "genie-sx-180", "klubb-k32", "socage-da320"]) {
+for (const slug of ["heli-cpd25", "jungheinrich-efg-535k"]) {
+  const m = await html(`/maquina/${slug}`);
+  t(`carretilla eléctrica con foto y ficha: ${slug}`, m.estado === 200 && m.cuerpo.includes(`oficial/completa/${slug}.webp`) && m.cuerpo.includes(`/fichas/${slug}.pdf`));
+}
+t("las carretillas sin ficha buena no enlazan PDF", !(await html("/maquina/jungheinrich-efg-320")).cuerpo.includes("/fichas/jungheinrich-efg-320.pdf"));
+t("las gamas de carretilla eléctrica ya no existen", (await html("/maquina/jungheinrich-contrapesada-electrica-de-4-ruedas")).estado === 404);
+for (const slug of ["jlg-660-sj", "genie-s-85", "genie-sx-180", "klubb-k32", "socage-da320", "imer-im-r15-da", "teupen-leo30t"]) {
   const m = await html(`/maquina/${slug}`);
   t(`telescópicos y camión ya tienen foto y ficha: ${slug}`, m.estado === 200 && m.cuerpo.includes(`oficial/completa/${slug}.webp`) && m.cuerpo.includes(`/fichas/${slug}.pdf`));
 }

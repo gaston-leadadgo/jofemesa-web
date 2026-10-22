@@ -86,7 +86,7 @@ export default function PaginaDatosPendientes() {
           en PDF. Las {CATALOGO.length - sinFicha} que sí la tienen usan el
           documento del fabricante que aportó JOFEMESA: son las de
           elevación —columnas verticales, tijeras, brazos articulados y
-          telescópicos, plataformas sobre camión—. Para manutención de cargas, movimiento de tierras,
+          telescópicos, plataformas sobre camión y sobre orugas— y tres carretillas eléctricas. Para el resto de manutención de cargas, movimiento de tierras,
           compactación, energía y aire, el catálogo general solo publica
           tablas, así que esas referencias salen con las cifras del catálogo
           y sin PDF.

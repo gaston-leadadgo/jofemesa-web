@@ -105,7 +105,7 @@
   "necesidad": "Mover y elevar cargas",
   "necesidadDesc": "Carretillas y manipuladores para transportar, elevar y posicionar cargas con mayor eficacia.",
   "icono": "manipulador",
-  "total": 7,
+  "total": 12,
   "subcategorias": [
    {
     "nombre": "Manipuladores telescópicos rígidos",
@@ -129,7 +129,7 @@
     "claim": "Eficiencia y cero emisiones en almacén.",
     "descripcion": "Frontales de tres y cuatro ruedas, silenciosas, ágiles y compactas para carga y descarga en interiores.",
     "icono": "carretilla",
-    "total": 2
+    "total": 7
    },
    {
     "nombre": "Carretillas contrapesadas diésel",

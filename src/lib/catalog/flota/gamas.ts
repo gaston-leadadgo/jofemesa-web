@@ -3,7 +3,8 @@ import { conf, est, pend } from "../types";
 import { construir, type Fila, type PerfilSubcategoria } from "./comun";
 
 /**
- * MANUTENCIÓN DE CARGAS, ENERGÍA, AIRE Y HERRAMIENTA — 15 gamas.
+ * MANUTENCIÓN DE CARGAS, ENERGÍA, AIRE Y HERRAMIENTA — 13 gamas y los
+ * siete modelos de carretilla eléctrica (22/10/2026).
  *
  * Su catálogo general publica estas cuatro familias por RANGO, no modelo
  * a modelo: «capacidad de carga desde 2.000 hasta 7.000 kg», «potencia
@@ -282,28 +283,108 @@ const HERRAMIENTA: PerfilSubcategoria = {
    Las gamas
    ============================================================ */
 
+/*
+ * Carretillas eléctricas, modelo a modelo (material del 22/10/2026). Antes
+ * eran dos gamas del catálogo («de 3 ruedas», «de 4 ruedas»); con las fotos y
+ * fichas de la flota la gama se abre en sus siete modelos.
+ *
+ * Solo se publica lo que dicen las fichas:
+ *  - Heli CPD25 y EFG 535k: tabla VDI de su ficha (mástil estándar).
+ *  - EFG Vac 22: el documento entregado no es del fabricante (dice basarse en
+ *    un manual de 2003), así que sus cifras van como estimadas.
+ *  - EFG 218k, 220, 318 y 320: la ficha de la serie 2 no trae estos modelos y
+ *    la de la serie 3 llega con la tabla VDI vacía. Solo se da la capacidad
+ *    que lleva el propio nombre (Jungheinrich: 218 = 1.800 kg) y el resto
+ *    queda pendiente (anotado en /admin/datos-pendientes).
+ */
+const porNombre = (kg: number, modelo: string) =>
+  est(
+    kg,
+    "nomenclatura-modelo",
+    `Capacidad deducida del nombre del modelo (${modelo}): falta la ficha del fabricante para confirmarla.`,
+  );
+const vac22 = <T,>(v: T) =>
+  est(
+    v,
+    "ficha-pdf",
+    "Dato del documento entregado con la máquina, basado en el manual del modelo de 2003. La delegación confirma la unidad al responder tu solicitud.",
+  );
+
 const carretillasElectricas: Fila[] = [
   {
     marca: "Jungheinrich",
-    modelo: "Contrapesada eléctrica de 3 ruedas",
-    gama: true,
+    modelo: "EFG 218k",
+    tipo: "3 ruedas",
     descripcion:
-      "Carretilla frontal contrapesada eléctrica de tres ruedas, de 1.600 a 2.000 kg de capacidad y hasta 7 m de elevación. Tres ruedas para girar en pasillos estrechos y motor eléctrico para trabajar dentro de nave sin emisiones.",
+      "Carretilla eléctrica contrapesada de tres ruedas, de la serie EFG 2 de Jungheinrich. Gira en muy poco espacio para trabajar en pasillos estrechos y, al ser eléctrica, dentro de nave sin emisiones.",
+    extra: { capacidadCarga: porNombre(1800, "EFG 218k") },
+  },
+  {
+    marca: "Jungheinrich",
+    modelo: "EFG 220",
+    tipo: "3 ruedas",
+    descripcion:
+      "Carretilla eléctrica contrapesada de tres ruedas, la mayor de la serie EFG 2 de Jungheinrich. Maniobrable en pasillos estrechos y sin emisiones para trabajar dentro de nave.",
+    extra: { capacidadCarga: porNombre(2000, "EFG 220") },
+  },
+  {
+    marca: "Jungheinrich",
+    modelo: "EFG 318",
+    tipo: "4 ruedas",
+    descripcion:
+      "Carretilla eléctrica contrapesada de cuatro ruedas, de la serie EFG 3 de Jungheinrich. Más estable que la de tres ruedas para carga y descarga de camión y almacén, sin emisiones.",
+    extra: { capacidadCarga: porNombre(1800, "EFG 318") },
+  },
+  {
+    marca: "Jungheinrich",
+    modelo: "EFG 320",
+    tipo: "4 ruedas",
+    descripcion:
+      "Carretilla eléctrica contrapesada de cuatro ruedas, la mayor de la serie EFG 3 de Jungheinrich. Estable para carga de camión y trasiego de palets, con cero emisiones para el interior.",
+    extra: { capacidadCarga: porNombre(2000, "EFG 320") },
+  },
+  {
+    marca: "Heli",
+    modelo: "CPD25",
+    tipo: "4 ruedas",
+    descripcion:
+      "Carretilla eléctrica contrapesada de cuatro ruedas con batería de litio, 2.500 kg de capacidad y 3 m de elevación con el mástil estándar. Carga rápida en cualquier momento, para trabajar a varios turnos.",
     extra: {
-      capacidadCarga: rango(1600, 2000, "kg"),
-      alturaElevacion: conf(7, "catalogo-jofemesa"),
+      capacidadCarga: conf(2500),
+      alturaElevacion: conf(3),
+      anchoTransporte: conf(1160),
+      alturaTransporte: conf(2000),
+      longitudTransporte: conf(3502),
+      peso: conf(3890),
     },
   },
   {
     marca: "Jungheinrich",
-    modelo: "Contrapesada eléctrica de 4 ruedas",
-    gama: true,
+    modelo: "EFG Vac 22",
+    tipo: "4 ruedas",
+    descripcion:
+      "Carretilla eléctrica contrapesada de cuatro ruedas de Jungheinrich, de 2.200 kg de capacidad y 3,1 m de elevación estándar, con bandajes superelásticos y batería de 80 V.",
+    extra: {
+      capacidadCarga: vac22(2200),
+      alturaElevacion: vac22(3.1),
+      alturaTransporte: vac22(2200),
+      peso: vac22(4300),
+    },
+  },
+  {
+    marca: "Jungheinrich",
+    modelo: "EFG 535k",
+    tipo: "4 ruedas",
     destacada: true,
     descripcion:
-      "Carretilla frontal contrapesada eléctrica de cuatro ruedas, de 1.500 a 2.500 kg de capacidad y hasta 7 m de elevación. Más estabilidad que la de tres ruedas manteniendo el cero emisiones del interior.",
+      "Carretilla eléctrica contrapesada de cuatro ruedas de gran capacidad: 3.500 kg y 3,1 m de elevación con el mástil estándar. Para cargas pesadas en interior y exterior sin emisiones, con batería de 80 V.",
     extra: {
-      capacidadCarga: rango(1500, 2500, "kg"),
-      alturaElevacion: conf(7, "catalogo-jofemesa"),
+      capacidadCarga: conf(3500),
+      alturaElevacion: conf(3.1),
+      anchoTransporte: conf(1340),
+      alturaTransporte: conf(2300),
+      longitudTransporte: conf(3805),
+      peso: conf(5968),
     },
   },
 ];
