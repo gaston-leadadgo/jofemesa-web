@@ -105,7 +105,7 @@
   "necesidad": "Mover y elevar cargas",
   "necesidadDesc": "Carretillas y manipuladores para transportar, elevar y posicionar cargas con mayor eficacia.",
   "icono": "manipulador",
-  "total": 12,
+  "total": 19,
   "subcategorias": [
    {
     "nombre": "Manipuladores telescópicos rígidos",
@@ -137,7 +137,7 @@
     "claim": "Potencia constante para exteriores y patios logísticos.",
     "descripcion": "Frontales de cuatro ruedas con gran resistencia mecánica para ciclos intensivos de carga y descarga.",
     "icono": "carretilla",
-    "total": 1
+    "total": 8
    },
    {
     "nombre": "Carretillas todoterreno",

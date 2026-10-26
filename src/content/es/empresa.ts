@@ -457,11 +457,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Hay 82 fichas técnicas: las 79 de elevación (solo falta la tijera diésel Snorkel A46JRT) y 3 de carretillas eléctricas (Heli CPD25, Jungheinrich EFG 535k y EFG Vac 22). Para el resto de manutención, movimiento de tierras, compactación, energía y aire el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
+    nota: "Hay 90 fichas técnicas: las 79 de elevación (solo falta la tijera diésel Snorkel A46JRT), 3 de carretillas eléctricas (Heli CPD25, Jungheinrich EFG 535k y EFG Vac 22) y las 8 carretillas diésel (Baoli KBD y Jungheinrich DFG). Para el resto de manutención, movimiento de tierras, compactación, energía y aire el catálogo general solo da tablas, así que esas máquinas salen con las cifras del catálogo y sin PDF.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",
-    nota: "Hay 86 fotos oficiales de JOFEMESA: 79 de elevación y las 7 carretillas eléctricas (entregas del 18/09, 07/10, 20/10 y 22/10/2026). Quedan 64 máquinas con dibujo técnico: en elevación, solo la Snorkel A46JRT; el resto son de manutención, tierras, energía, aire y herramienta. El detalle, máquina a máquina, está en el PDF de material fotográfico pendiente.",
+    nota: "Hay 94 fotos oficiales de JOFEMESA: 79 de elevación, las 7 carretillas eléctricas y las 8 diésel (entregas del 18/09, 07/10, 20/10, 22/10 y 26/10/2026). Quedan 63 máquinas con dibujo técnico: en elevación, solo la Snorkel A46JRT; el resto son de manutención, tierras, energía, aire y herramienta. El detalle, máquina a máquina, está en el PDF de material fotográfico pendiente.",
   },
   {
     campo: "Logos de AENOR e IPAF",
@@ -486,6 +486,14 @@ export const DATOS_PENDIENTES = [
   {
     campo: "Ficha de la EFG Vac 22",
     nota: "El documento de la Jungheinrich EFG Vac 22 no es del fabricante: es una hoja con la marca de JOFEMESA que dice basarse en el manual del modelo (2003) y en una web de especificaciones. Sus cifras se publican como «sin confirmar». Si hay ficha original de Jungheinrich, se sustituye.",
+  },
+  {
+    campo: "Baoli KBD: ¿PLUS o G1?",
+    nota: "Con el material del 26/10/2026, las fotos dicen «KBD 20 PLUS», «KBD 25 PLUS», «KBD 30» y «KBD 35 PLUS», pero las tablas de las fichas de la KBD 25, 30 y 35 las titulan «KBD 25 / 30 / 35 G1 EU5» (la de la 20 sí dice «KBD 20+»). La web usa los nombres de las fotos con los datos de las fichas. Confirmar el modelo exacto de cada unidad.",
+  },
+  {
+    campo: "Convocatorias 2027: dos erratas del Excel",
+    nota: "En «CONVOCATORIAS ABIERTAS JOFEMESA 2027» el enlace de Maps de San Fernando va cambiando de fila en fila (…ntpP7, …ntpP8, …ntpP9… hasta …ntpP41: arrastre de celda en Excel). La web usa siempre el de la sede (…ntpP7), así que no afecta, pero conviene corregir el Excel. Además, la convocatoria de plataformas del 05/11/2027 en Sagunto viene dos veces: se publica una.",
   },
   {
     campo: "Dos brazos eléctricos renombrados",

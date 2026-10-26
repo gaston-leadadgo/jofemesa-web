@@ -3,8 +3,8 @@ import { conf, est, pend } from "../types";
 import { construir, type Fila, type PerfilSubcategoria } from "./comun";
 
 /**
- * MANUTENCIÓN DE CARGAS, ENERGÍA, AIRE Y HERRAMIENTA — 13 gamas y los
- * siete modelos de carretilla eléctrica (22/10/2026).
+ * MANUTENCIÓN DE CARGAS, ENERGÍA, AIRE Y HERRAMIENTA — 12 gamas, los siete
+ * modelos de carretilla eléctrica (22/10/2026) y los ocho diésel (26/10/2026).
  *
  * Su catálogo general publica estas cuatro familias por RANGO, no modelo
  * a modelo: «capacidad de carga desde 2.000 hasta 7.000 kg», «potencia
@@ -389,18 +389,58 @@ const carretillasElectricas: Fila[] = [
   },
 ];
 
-const carretillasDiesel: Fila[] = [
-  {
-    marca: "Jungheinrich",
-    modelo: "Contrapesada diésel de 4 ruedas",
-    gama: true,
-    descripcion:
-      "Carretilla frontal contrapesada diésel de cuatro ruedas, de 1.800 a 3.500 kg de capacidad y hasta 5,50 m de elevación. Para patios, campas y ciclos de carga continuos donde la autonomía manda.",
-    extra: {
-      capacidadCarga: rango(1800, 3500, "kg"),
-      alturaElevacion: conf(5.5, "catalogo-jofemesa"),
-    },
+/*
+ * Carretillas diésel, modelo a modelo (material del 26/10/2026), en lugar de
+ * la gama «contrapesada diésel de 4 ruedas». Datos de la tabla VDI de cada
+ * ficha, con el mástil estándar. Los nombres son los de la foto del cliente;
+ * las tablas de Baoli KBD 25, 30 y 35 los titulan «G1 EU5» (anotado en
+ * /admin/datos-pendientes).
+ */
+const diesel = (
+  marca: string,
+  modelo: string,
+  kg: number,
+  elev: number,
+  ancho: number,
+  plegado: number,
+  largo: number,
+  peso: number,
+  descripcion: string,
+  destacada = false,
+): Fila => ({
+  marca,
+  modelo,
+  tipo: "4 ruedas",
+  destacada,
+  descripcion,
+  extra: {
+    capacidadCarga: conf(kg),
+    alturaElevacion: conf(elev),
+    anchoTransporte: conf(ancho),
+    alturaTransporte: conf(plegado),
+    longitudTransporte: conf(largo),
+    peso: conf(peso),
   },
+});
+
+const carretillasDiesel: Fila[] = [
+  diesel("Baoli", "KBD 20 PLUS", 2000, 3, 1140, 2002, 3490, 3320,
+    "Carretilla diésel contrapesada de cuatro ruedas, 2.000 kg de capacidad y 3 m de elevación con el mástil estándar. Compacta, para patios y carga de camión donde la autonomía manda."),
+  diesel("Jungheinrich", "DFG 320s", 2000, 3.3, 1130, 2212, 3549, 3210,
+    "Carretilla diésel contrapesada de cuatro ruedas, 2.000 kg de capacidad y 3,3 m de elevación. Para exterior y ciclos continuos de carga y descarga."),
+  diesel("Baoli", "KBD 25 PLUS", 2500, 3, 1265, 2137, 3780, 4250,
+    "Carretilla diésel contrapesada de cuatro ruedas, 2.500 kg de capacidad y 3 m de elevación con el mástil estándar. Para patios logísticos, campas y carga de camión."),
+  diesel("Jungheinrich", "DFG 425s", 2500, 3.3, 1180, 2321, 3753, 3965,
+    "Carretilla diésel contrapesada de cuatro ruedas, 2.500 kg de capacidad y 3,3 m de elevación. Para exterior y ciclos intensivos de trabajo."),
+  diesel("Baoli", "KBD 30", 3000, 3, 1265, 2137, 3790, 4620,
+    "Carretilla diésel contrapesada de cuatro ruedas, 3.000 kg de capacidad y 3 m de elevación con el mástil estándar. Para cargas voluminosas en exterior y carga continua de camión."),
+  diesel("Jungheinrich", "DFG 430s", 3000, 3.3, 1320, 2325, 3853, 4580,
+    "Carretilla diésel contrapesada de cuatro ruedas, 3.000 kg de capacidad y 3,3 m de elevación. Para cargas pesadas en patio y campa.",
+    true),
+  diesel("Baoli", "KBD 35 PLUS", 3500, 3, 1265, 2137, 3870, 5060,
+    "Carretilla diésel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3 m de elevación con el mástil estándar. La mayor de la gama Baoli de la flota, para cargas pesadas en exterior."),
+  diesel("Jungheinrich", "DFG 435s", 3500, 3.3, 1320, 2405, 3933, 4995,
+    "Carretilla diésel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3,3 m de elevación. Para las cargas más pesadas de la flota diésel."),
 ];
 
 const carretillasTodoterreno: Fila[] = [

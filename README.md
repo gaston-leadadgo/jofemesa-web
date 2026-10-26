@@ -24,6 +24,17 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Entrega del 26/10/2026
+
+- **Carretillas diésel, modelo a modelo**: la gama genérica «contrapesada diésel de 4 ruedas» se
+  abre en los 8 modelos de la flota, con foto, ficha y los datos de su tabla VDI: Baoli KBD 20
+  PLUS, 25 PLUS, 30 y 35 PLUS, y Jungheinrich DFG 320s, 425s, 430s y 435s. La ficha de la
+  KBD 35 PLUS se publica con las imágenes a 200 ppp (de 8,5 a 7 MB).
+- **Convocatorias de 2027**: 224 fechas del Excel «CONVOCATORIAS ABIERTAS JOFEMESA 2027» (225
+  filas, una repetida). Los textos de /formacion ya no llevan el año escrito: lo calculan de las
+  convocatorias («en 2026 y 2027»), igual que el plugin con `[jm_formacion_cifra que="anios"]`.
+- El catálogo pasa a 157 máquinas: 94 con foto y 90 con ficha.
+
 ## Entrega del 22/10/2026
 
 - **Fotos y fichas de las 6 plataformas sobre orugas** (`Material/Material 22-10`): Imer IM R15 DA,

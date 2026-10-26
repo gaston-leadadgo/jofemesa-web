@@ -246,11 +246,15 @@ function jm_fo_cursos_abiertos(): array
  */
 function jm_fo_total_convocatorias(string $anio = '', int $curso = 0): int
 {
+    /* «todos»: todas las programadas (la web dice «en 2026 y 2027»). */
+    $todos = $anio === 'todos';
     $anio = preg_match('/^\d{4}$/', $anio) ? $anio : wp_date('Y');
     static $cache = [];
-    $clave = $anio . '-' . $curso;
+    $clave = ($todos ? 'todos' : $anio) . '-' . $curso;
     if (!isset($cache[$clave])) {
-        $meta = [['key' => 'jm_fecha', 'value' => [$anio . '0101', $anio . '1231'], 'compare' => 'BETWEEN', 'type' => 'NUMERIC']];
+        $meta = $todos
+            ? [['key' => 'jm_fecha', 'compare' => 'EXISTS']]
+            : [['key' => 'jm_fecha', 'value' => [$anio . '0101', $anio . '1231'], 'compare' => 'BETWEEN', 'type' => 'NUMERIC']];
         if ($curso) {
             $meta[] = ['key' => 'jm_curso', 'value' => (string) $curso];
         }
@@ -370,11 +374,35 @@ function jm_sc_formacion_curso($atts): string
 }
 add_shortcode('jm_curso', 'jm_sc_formacion_curso');
 
-/** [jm_formacion_cifra que="convocatorias|cursos|sedes" anio="2026"] */
+/**
+ * Años con convocatorias publicadas: «2026 y 2027». Para los textos de
+ * /formacion/, que así no hay que tocar cuando el cliente carga otro año.
+ */
+function jm_fo_anios_convocatorias(): string
+{
+    global $wpdb;
+    $anios = $wpdb->get_col($wpdb->prepare(
+        "SELECT DISTINCT LEFT(m.meta_value, 4) FROM {$wpdb->postmeta} m
+         JOIN {$wpdb->posts} p ON p.ID = m.post_id
+         WHERE m.meta_key = 'jm_fecha' AND p.post_type = %s AND p.post_status = 'publish' AND m.meta_value <> ''
+         ORDER BY 1",
+        'convocatoria'
+    ));
+    $anios = array_values(array_filter($anios, static fn($a) => preg_match('/^\d{4}$/', (string) $a)));
+    if (!$anios) {
+        return wp_date('Y');
+    }
+    $ultimo = array_pop($anios);
+    return $anios ? implode(', ', $anios) . ' y ' . $ultimo : $ultimo;
+}
+
+/** [jm_formacion_cifra que="convocatorias|cursos|sedes|anios" anio="2026|todos"] */
 function jm_sc_formacion_cifra($atts): string
 {
     $a = shortcode_atts(['que' => 'convocatorias', 'anio' => ''], $atts, 'jm_formacion_cifra');
     switch ($a['que']) {
+        case 'anios':
+            return esc_html(jm_fo_anios_convocatorias());
         case 'convocatorias':
             return esc_html((string) jm_fo_total_convocatorias($a['anio']));
         case 'cursos':

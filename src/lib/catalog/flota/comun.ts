@@ -188,6 +188,15 @@ export const CON_FOTO = new Set([
   "heli-cpd25",
   "jungheinrich-efg-vac-22",
   "jungheinrich-efg-535k",
+  // Carretillas diésel, entregadas el 26/10/2026.
+  "baoli-kbd-20-plus",
+  "baoli-kbd-25-plus",
+  "baoli-kbd-30",
+  "baoli-kbd-35-plus",
+  "jungheinrich-dfg-320s",
+  "jungheinrich-dfg-425s",
+  "jungheinrich-dfg-430s",
+  "jungheinrich-dfg-435s",
 ]);
 
 /** Fotos que no son la creatividad cuadrada de 1254×1254. */
@@ -202,6 +211,10 @@ export const DIMENSIONES_FOTO: Record<string, readonly [number, number]> = {
  * descarga rota.
  */
 export const FICHAS: Record<string, number> = {
+  "baoli-kbd-20-plus": 2929609,
+  "baoli-kbd-25-plus": 2764272,
+  "baoli-kbd-30": 2764422,
+  "baoli-kbd-35-plus": 7174191,
   "easy-lift-r180": 418690,
   "genie-gr-15": 846969,
   "genie-gr-26j": 1135269,
@@ -273,6 +286,10 @@ export const FICHAS: Record<string, number> = {
   "jlg-x15j-plus": 1219809,
   "jlg-x17j-plus": 1376461,
   "jlg-x20j-plus": 712220,
+  "jungheinrich-dfg-320s": 1730429,
+  "jungheinrich-dfg-425s": 1793118,
+  "jungheinrich-dfg-430s": 1793118,
+  "jungheinrich-dfg-435s": 1793118,
   "jungheinrich-efg-535k": 1101911,
   "jungheinrich-efg-vac-22": 7489,
   "klubb-k32": 2696036,

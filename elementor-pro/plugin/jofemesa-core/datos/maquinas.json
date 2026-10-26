@@ -27026,8 +27026,8 @@
   },
   "relacionadas": [
    "manitou-manipulador-telescopico-giratorio",
-   "jungheinrich-contrapesada-diesel-de-4-ruedas",
-   "manitou-carretilla-todo-terreno-diesel-4x4"
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s"
   ],
   "enAlquiler": true,
   "busqueda": "manitou manipulador telescopico rigido manipulador telescopico rigido todo terreno, de 2.000 a 7.000 kg de capacidad y alcance variable de 4 a 18 metros. sube palets a forjado, descarga camion y mueve acopio con una sola maquina. manipuladores telescopicos rigidos manutencion de cargas elevacion de palets a forjado descarga de camion en obra colocacion de encofrado y viguetas acopio y movimiento de material"
@@ -27322,8 +27322,8 @@
   },
   "relacionadas": [
    "manitou-manipulador-telescopico-rigido",
-   "jungheinrich-contrapesada-diesel-de-4-ruedas",
-   "manitou-carretilla-todo-terreno-diesel-4x4"
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s"
   ],
   "enAlquiler": true,
   "busqueda": "manitou manipulador telescopico giratorio manipulador telescopico giratorio todo terreno, de 3.200 a 4.000 kg de capacidad y alcance variable de 14 a 21 metros. torreta de giro continuo: descarga y posiciona en todo el perimetro sin mover la maquina. manipuladores telescopicos giratorios manutencion de cargas descarga en todo el perimetro sin mover la maquina trabajos donde no cabe una grua montaje industrial rehabilitacion en casco urbano"
@@ -29364,10 +29364,10 @@
   "busqueda": "jungheinrich efg 535k carretilla electrica contrapesada de cuatro ruedas de gran capacidad: 3.500 kg y 3,1 m de elevacion con el mastil estandar. para cargas pesadas en interior y exterior sin emisiones, con bateria de 80 v. carretillas contrapesadas electricas manutencion de cargas carga y descarga de camion trasiego de palets en almacen estanterias de altura media industria con exigencias de emisiones"
  },
  {
-  "slug": "jungheinrich-contrapesada-diesel-de-4-ruedas",
-  "marca": "Jungheinrich",
-  "modelo": "Contrapesada diésel de 4 ruedas",
-  "titulo": "Jungheinrich Contrapesada diésel de 4 ruedas",
+  "slug": "baoli-kbd-20-plus",
+  "marca": "Baoli",
+  "modelo": "KBD 20 PLUS",
+  "titulo": "Baoli KBD 20 PLUS",
   "familia": "manipulacion",
   "familiaNombre": "Manutención de cargas",
   "subcategoria": "carretillas-contrapesadas-diesel",
@@ -29377,7 +29377,7 @@
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
+  "gama": false,
   "destacada": false,
   "orden": 11600,
   "energia": "diesel",
@@ -29398,7 +29398,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Carretilla frontal contrapesada diésel de cuatro ruedas, de 1.800 a 3.500 kg de capacidad y hasta 5,50 m de elevación. Para patios, campas y ciclos de carga continuos donde la autonomía manda.",
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 2.000 kg de capacidad y 3 m de elevación con el mástil estándar. Compacta, para patios y carga de camión donde la autonomía manda.",
   "aplicaciones": [
    "Patios logísticos y campas",
    "Carga continua de camión",
@@ -29411,27 +29411,44 @@
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": 3500,
-  "foto": null,
-  "ficha": null,
+  "carga": 2000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/baoli-kbd-20-plus.webp",
+   "alt": "Baoli KBD 20 PLUS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/baoli-kbd-20-plus.pdf",
+   "bytes": 2929609
+  },
   "tarjeta": [
    {
     "key": "alturaElevacion",
     "etiqueta": "Altura elev.",
     "estado": "confirmado",
-    "texto": "5,5",
+    "texto": "3",
     "unidad": "m",
-    "valor": 5.5,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    {
     "key": "capacidadCarga",
     "etiqueta": "Carga máx.",
-    "estado": "estimado",
-    "texto": "3.500",
+    "estado": "confirmado",
+    "texto": "2.000",
     "unidad": "kg",
-    "valor": 3500,
-    "nota": "El catálogo publica una gama de 1800 a 3500 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+    "valor": 2000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.140",
+    "unidad": "mm",
+    "valor": 1140,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -29443,10 +29460,10 @@
       "key": "alturaElevacion",
       "etiqueta": "Altura de elevación",
       "estado": "confirmado",
-      "texto": "5,5",
+      "texto": "3",
       "unidad": "m",
-      "valor": 5.5,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "valor": 3,
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    },
@@ -29457,11 +29474,53 @@
      {
       "key": "capacidadCarga",
       "etiqueta": "Capacidad de carga",
-      "estado": "estimado",
-      "texto": "3.500",
+      "estado": "confirmado",
+      "texto": "2.000",
       "unidad": "kg",
-      "valor": 3500,
-      "nota": "El catálogo publica una gama de 1800 a 3500 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+      "valor": 2000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.140",
+      "unidad": "mm",
+      "valor": 1140,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.002",
+      "unidad": "mm",
+      "valor": 2002,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.490",
+      "unidad": "mm",
+      "valor": 3490,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "3.320",
+      "unidad": "kg",
+      "valor": 3320,
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    }
@@ -29481,17 +29540,17 @@
    },
    "alturaElevacion": {
     "estado": "confirmado",
-    "texto": "5,5",
+    "texto": "3",
     "unidad": "m",
-    "valor": 5.5,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "capacidadCarga": {
-    "estado": "estimado",
-    "texto": "3.500",
+    "estado": "confirmado",
+    "texto": "2.000",
     "unidad": "kg",
-    "valor": 3500,
-    "nota": "El catálogo publica una gama de 1800 a 3500 kg. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud."
+    "valor": 2000,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -29542,28 +29601,32 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "anchoTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "1.140",
+    "unidad": "mm",
+    "valor": 1140,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "alturaTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "2.002",
+    "unidad": "mm",
+    "valor": 2002,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "3.490",
+    "unidad": "mm",
+    "valor": 3490,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "3.320",
+    "unidad": "kg",
+    "valor": 3320,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "pendienteSuperable": {
     "estado": "no_aplica",
@@ -29633,12 +29696,2392 @@
    }
   },
   "relacionadas": [
-   "manitou-manipulador-telescopico-rigido",
-   "manitou-manipulador-telescopico-giratorio",
-   "manitou-carretilla-todo-terreno-diesel-4x4"
+   "jungheinrich-dfg-320s",
+   "baoli-kbd-25-plus",
+   "jungheinrich-dfg-425s"
   ],
   "enAlquiler": true,
-  "busqueda": "jungheinrich contrapesada diesel de 4 ruedas carretilla frontal contrapesada diesel de cuatro ruedas, de 1.800 a 3.500 kg de capacidad y hasta 5,50 m de elevacion. para patios, campas y ciclos de carga continuos donde la autonomia manda. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+  "busqueda": "baoli kbd 20 plus carretilla diesel contrapesada de cuatro ruedas, 2.000 kg de capacidad y 3 m de elevacion con el mastil estandar. compacta, para patios y carga de camion donde la autonomia manda. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "jungheinrich-dfg-320s",
+  "marca": "Jungheinrich",
+  "modelo": "DFG 320s",
+  "titulo": "Jungheinrich DFG 320s",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11610,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 2.000 kg de capacidad y 3,3 m de elevación. Para exterior y ciclos continuos de carga y descarga.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 2000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-dfg-320s.webp",
+   "alt": "Jungheinrich DFG 320s de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jungheinrich-dfg-320s.pdf",
+   "bytes": 1730429
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "2.000",
+    "unidad": "kg",
+    "valor": 2000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.130",
+    "unidad": "mm",
+    "valor": 1130,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3,3",
+      "unidad": "m",
+      "valor": 3.3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "2.000",
+      "unidad": "kg",
+      "valor": 2000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.130",
+      "unidad": "mm",
+      "valor": 1130,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.212",
+      "unidad": "mm",
+      "valor": 2212,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.549",
+      "unidad": "mm",
+      "valor": 3549,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "3.210",
+      "unidad": "kg",
+      "valor": 3210,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "2.000",
+    "unidad": "kg",
+    "valor": 2000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.130",
+    "unidad": "mm",
+    "valor": 1130,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.212",
+    "unidad": "mm",
+    "valor": 2212,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.549",
+    "unidad": "mm",
+    "valor": 3549,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "3.210",
+    "unidad": "kg",
+    "valor": 3210,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "baoli-kbd-25-plus",
+   "jungheinrich-dfg-425s"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich dfg 320s carretilla diesel contrapesada de cuatro ruedas, 2.000 kg de capacidad y 3,3 m de elevacion. para exterior y ciclos continuos de carga y descarga. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "baoli-kbd-25-plus",
+  "marca": "Baoli",
+  "modelo": "KBD 25 PLUS",
+  "titulo": "Baoli KBD 25 PLUS",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11620,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 2.500 kg de capacidad y 3 m de elevación con el mástil estándar. Para patios logísticos, campas y carga de camión.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 2500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/baoli-kbd-25-plus.webp",
+   "alt": "Baoli KBD 25 PLUS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/baoli-kbd-25-plus.pdf",
+   "bytes": 2764272
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.265",
+    "unidad": "mm",
+    "valor": 1265,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3",
+      "unidad": "m",
+      "valor": 3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "2.500",
+      "unidad": "kg",
+      "valor": 2500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.265",
+      "unidad": "mm",
+      "valor": 1265,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.137",
+      "unidad": "mm",
+      "valor": 2137,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.780",
+      "unidad": "mm",
+      "valor": 3780,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "4.250",
+      "unidad": "kg",
+      "valor": 4250,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.265",
+    "unidad": "mm",
+    "valor": 1265,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.137",
+    "unidad": "mm",
+    "valor": 2137,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.780",
+    "unidad": "mm",
+    "valor": 3780,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "4.250",
+    "unidad": "kg",
+    "valor": 4250,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s",
+   "jungheinrich-dfg-425s"
+  ],
+  "enAlquiler": true,
+  "busqueda": "baoli kbd 25 plus carretilla diesel contrapesada de cuatro ruedas, 2.500 kg de capacidad y 3 m de elevacion con el mastil estandar. para patios logisticos, campas y carga de camion. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "jungheinrich-dfg-425s",
+  "marca": "Jungheinrich",
+  "modelo": "DFG 425s",
+  "titulo": "Jungheinrich DFG 425s",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11630,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 2.500 kg de capacidad y 3,3 m de elevación. Para exterior y ciclos intensivos de trabajo.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 2500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-dfg-425s.webp",
+   "alt": "Jungheinrich DFG 425s de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jungheinrich-dfg-425s.pdf",
+   "bytes": 1793118
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.180",
+    "unidad": "mm",
+    "valor": 1180,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3,3",
+      "unidad": "m",
+      "valor": 3.3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "2.500",
+      "unidad": "kg",
+      "valor": 2500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.180",
+      "unidad": "mm",
+      "valor": 1180,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.321",
+      "unidad": "mm",
+      "valor": 2321,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.753",
+      "unidad": "mm",
+      "valor": 3753,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "3.965",
+      "unidad": "kg",
+      "valor": 3965,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.180",
+    "unidad": "mm",
+    "valor": 1180,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.321",
+    "unidad": "mm",
+    "valor": 2321,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.753",
+    "unidad": "mm",
+    "valor": 3753,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "3.965",
+    "unidad": "kg",
+    "valor": 3965,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s",
+   "baoli-kbd-25-plus"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich dfg 425s carretilla diesel contrapesada de cuatro ruedas, 2.500 kg de capacidad y 3,3 m de elevacion. para exterior y ciclos intensivos de trabajo. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "baoli-kbd-30",
+  "marca": "Baoli",
+  "modelo": "KBD 30",
+  "titulo": "Baoli KBD 30",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11640,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 3.000 kg de capacidad y 3 m de elevación con el mástil estándar. Para cargas voluminosas en exterior y carga continua de camión.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 3000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/baoli-kbd-30.webp",
+   "alt": "Baoli KBD 30 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/baoli-kbd-30.pdf",
+   "bytes": 2764422
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "3.000",
+    "unidad": "kg",
+    "valor": 3000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.265",
+    "unidad": "mm",
+    "valor": 1265,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3",
+      "unidad": "m",
+      "valor": 3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.000",
+      "unidad": "kg",
+      "valor": 3000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.265",
+      "unidad": "mm",
+      "valor": 1265,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.137",
+      "unidad": "mm",
+      "valor": 2137,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.790",
+      "unidad": "mm",
+      "valor": 3790,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "4.620",
+      "unidad": "kg",
+      "valor": 4620,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "3.000",
+    "unidad": "kg",
+    "valor": 3000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.265",
+    "unidad": "mm",
+    "valor": 1265,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.137",
+    "unidad": "mm",
+    "valor": 2137,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.790",
+    "unidad": "mm",
+    "valor": 3790,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "4.620",
+    "unidad": "kg",
+    "valor": 4620,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s",
+   "baoli-kbd-25-plus"
+  ],
+  "enAlquiler": true,
+  "busqueda": "baoli kbd 30 carretilla diesel contrapesada de cuatro ruedas, 3.000 kg de capacidad y 3 m de elevacion con el mastil estandar. para cargas voluminosas en exterior y carga continua de camion. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "jungheinrich-dfg-430s",
+  "marca": "Jungheinrich",
+  "modelo": "DFG 430s",
+  "titulo": "Jungheinrich DFG 430s",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": true,
+  "orden": 11650,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 3.000 kg de capacidad y 3,3 m de elevación. Para cargas pesadas en patio y campa.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 3000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-dfg-430s.webp",
+   "alt": "Jungheinrich DFG 430s de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jungheinrich-dfg-430s.pdf",
+   "bytes": 1793118
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "3.000",
+    "unidad": "kg",
+    "valor": 3000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.320",
+    "unidad": "mm",
+    "valor": 1320,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3,3",
+      "unidad": "m",
+      "valor": 3.3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.000",
+      "unidad": "kg",
+      "valor": 3000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.320",
+      "unidad": "mm",
+      "valor": 1320,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.325",
+      "unidad": "mm",
+      "valor": 2325,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.853",
+      "unidad": "mm",
+      "valor": 3853,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "4.580",
+      "unidad": "kg",
+      "valor": 4580,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "3.000",
+    "unidad": "kg",
+    "valor": 3000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.320",
+    "unidad": "mm",
+    "valor": 1320,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.325",
+    "unidad": "mm",
+    "valor": 2325,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.853",
+    "unidad": "mm",
+    "valor": 3853,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "4.580",
+    "unidad": "kg",
+    "valor": 4580,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s",
+   "baoli-kbd-25-plus"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich dfg 430s carretilla diesel contrapesada de cuatro ruedas, 3.000 kg de capacidad y 3,3 m de elevacion. para cargas pesadas en patio y campa. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "baoli-kbd-35-plus",
+  "marca": "Baoli",
+  "modelo": "KBD 35 PLUS",
+  "titulo": "Baoli KBD 35 PLUS",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11660,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3 m de elevación con el mástil estándar. La mayor de la gama Baoli de la flota, para cargas pesadas en exterior.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 3500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/baoli-kbd-35-plus.webp",
+   "alt": "Baoli KBD 35 PLUS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/baoli-kbd-35-plus.pdf",
+   "bytes": 7174191
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.265",
+    "unidad": "mm",
+    "valor": 1265,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3",
+      "unidad": "m",
+      "valor": 3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.500",
+      "unidad": "kg",
+      "valor": 3500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.265",
+      "unidad": "mm",
+      "valor": 1265,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.137",
+      "unidad": "mm",
+      "valor": 2137,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.870",
+      "unidad": "mm",
+      "valor": 3870,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "5.060",
+      "unidad": "kg",
+      "valor": 5060,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3",
+    "unidad": "m",
+    "valor": 3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.265",
+    "unidad": "mm",
+    "valor": 1265,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.137",
+    "unidad": "mm",
+    "valor": 2137,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.870",
+    "unidad": "mm",
+    "valor": 3870,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "5.060",
+    "unidad": "kg",
+    "valor": 5060,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s",
+   "baoli-kbd-25-plus"
+  ],
+  "enAlquiler": true,
+  "busqueda": "baoli kbd 35 plus carretilla diesel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3 m de elevacion con el mastil estandar. la mayor de la gama baoli de la flota, para cargas pesadas en exterior. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
+ },
+ {
+  "slug": "jungheinrich-dfg-435s",
+  "marca": "Jungheinrich",
+  "modelo": "DFG 435s",
+  "titulo": "Jungheinrich DFG 435s",
+  "familia": "manipulacion",
+  "familiaNombre": "Manutención de cargas",
+  "subcategoria": "carretillas-contrapesadas-diesel",
+  "subcategoriaNombre": "Carretillas contrapesadas diésel",
+  "icono": "carretilla",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 11670,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "2x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Carretilla diésel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3,3 m de elevación. Para las cargas más pesadas de la flota diésel.",
+  "aplicaciones": [
+   "Patios logísticos y campas",
+   "Carga continua de camión",
+   "Cargas voluminosas en exterior",
+   "Ciclos intensivos de trabajo"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "cargas"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 3500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jungheinrich-dfg-435s.webp",
+   "alt": "Jungheinrich DFG 435s de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jungheinrich-dfg-435s.pdf",
+   "bytes": 1793118
+  },
+  "tarjeta": [
+   {
+    "key": "alturaElevacion",
+    "etiqueta": "Altura elev.",
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.320",
+    "unidad": "mm",
+    "valor": 1320,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaElevacion",
+      "etiqueta": "Altura de elevación",
+      "estado": "confirmado",
+      "texto": "3,3",
+      "unidad": "m",
+      "valor": 3.3,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.500",
+      "unidad": "kg",
+      "valor": 3500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.320",
+      "unidad": "mm",
+      "valor": 1320,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.405",
+      "unidad": "mm",
+      "valor": 2405,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "longitudTransporte",
+      "etiqueta": "Longitud",
+      "estado": "confirmado",
+      "texto": "3.933",
+      "unidad": "mm",
+      "valor": 3933,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "4.995",
+      "unidad": "kg",
+      "valor": 4995,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "confirmado",
+    "texto": "3,3",
+    "unidad": "m",
+    "valor": 3.3,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.320",
+    "unidad": "mm",
+    "valor": 1320,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.405",
+    "unidad": "mm",
+    "valor": 2405,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "confirmado",
+    "texto": "3.933",
+    "unidad": "mm",
+    "valor": 3933,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "4.995",
+    "unidad": "kg",
+    "valor": 4995,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "baoli-kbd-20-plus",
+   "jungheinrich-dfg-320s",
+   "baoli-kbd-25-plus"
+  ],
+  "enAlquiler": true,
+  "busqueda": "jungheinrich dfg 435s carretilla diesel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3,3 m de elevacion. para las cargas mas pesadas de la flota diesel. carretillas contrapesadas diesel manutencion de cargas patios logisticos y campas carga continua de camion cargas voluminosas en exterior ciclos intensivos de trabajo"
  },
  {
   "slug": "manitou-carretilla-todo-terreno-diesel-4x4",
@@ -29912,7 +32355,7 @@
   "relacionadas": [
    "manitou-manipulador-telescopico-rigido",
    "manitou-manipulador-telescopico-giratorio",
-   "jungheinrich-contrapesada-diesel-de-4-ruedas"
+   "baoli-kbd-20-plus"
   ],
   "enAlquiler": true,
   "busqueda": "manitou carretilla todo terreno diesel 4x4 carretilla todo terreno diesel de cuatro ruedas motrices, de 1.500 a 2.500 kg de capacidad y hasta 4,60 m de elevacion. neumaticos de obra y traccion total para descargar material en solar sin pavimentar. carretillas todoterreno manutencion de cargas obra sin pavimentar descarga de material en solar terrenos con pendiente suministro a tajo"

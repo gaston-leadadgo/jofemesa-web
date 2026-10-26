@@ -100,7 +100,7 @@ const pagina = () => [
     c("jm-contenedor jm-fo-autoridad", [
       c("jm-fo-autoridad__item", [h("span", "jm-sr", "Certificación AENOR"), h("span", "jm-fo-autoridad__v", "AENOR"), h("span", "jm-fo-autoridad__t", "Cursos certificados en UNE 58923 (plataformas) y UNE 58451 (carretillas)")]),
       c("jm-fo-autoridad__item", [h("span", "jm-sr", "Homologación IPAF"), h("span", "jm-fo-autoridad__v", "IPAF"), h("span", "jm-fo-autoridad__t", "Centro homologado. Programa certificado por Bureau Veritas (ISO 18878)")]),
-      c("jm-fo-autoridad__item", [h("span", "jm-sr", "Convocatorias en 2026"), h("span", "jm-fo-autoridad__v", "69", { dyn: ['[jm_formacion_cifra que="convocatorias"]'] }), h("span", "jm-fo-autoridad__t", "Convocatorias en 2026, cada semana en Madrid y en Valencia")]),
+      c("jm-fo-autoridad__item", [h("span", "jm-sr", "Convocatorias en 2026 y 2027", { dyn: ['[jm_formacion_cifra que="anios"]', { antes: "Convocatorias en " }] }), h("span", "jm-fo-autoridad__v", "293", { dyn: ['[jm_formacion_cifra que="convocatorias" anio="todos"]'] }), h("span", "jm-fo-autoridad__t", "Convocatorias en 2026 y 2027, cada semana en Madrid y en Valencia", { dyn: ['[jm_formacion_cifra que="anios"]', { antes: "Convocatorias en ", despues: ", cada semana en Madrid y en Valencia" }] })]),
       c("jm-fo-autoridad__item", [h("span", "jm-sr", "Cursos"), h("span", "jm-fo-autoridad__v", "12", { dyn: ['[jm_formacion_cifra que="cursos"]'] }), t("jm-fo-autoridad__t jm-hereda", 'Cursos en catálogo y [jm_formacion_cifra que="sedes"] sedes de formación propias')]),
     ], { attrs: { "data-escalonar": "" } }),
   ], { tag: "section", attrs: { "aria-label": "Formación certificada" } }),
@@ -122,8 +122,8 @@ const pagina = () => [
         c("jm-tcurso-oscura", [
           c("", [
             icoFa(fa("calendar-alt"), "jm-tcurso-oscura__icono"),
-            h("p", "jm-tcurso-oscura__cifra", "69", { dyn: ['[jm_formacion_cifra que="convocatorias"]'] }),
-            t("jm-tcurso-oscura__texto jm-hereda", "convocatorias en 2026, todas de 07:30 a 15:30, en San Fernando de Henares y Puerto de Sagunto."),
+            h("p", "jm-tcurso-oscura__cifra", "293", { dyn: ['[jm_formacion_cifra que="convocatorias" anio="todos"]'] }),
+            t("jm-tcurso-oscura__texto jm-hereda", 'convocatorias en [jm_formacion_cifra que="anios"], todas de 07:30 a 15:30, en San Fernando de Henares y Puerto de Sagunto.'),
           ]),
           b("jm-btn jm-btn--acento jm-btn--h12", "Ver el calendario", "#calendario-todos", flechaFa),
         ]),

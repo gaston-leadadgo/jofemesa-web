@@ -25,7 +25,7 @@ const JM_PASOS = [
     'delegaciones'  => 'Delegaciones y sede de formación',
     'plantillas'    => 'Plantillas del Theme Builder (vacías, con sus condiciones)',
 ];
-const JM_LOTE = ['maquinas' => 25, 'medios' => 4];
+const JM_LOTE = ['maquinas' => 25, 'medios' => 4, 'convocatorias' => 40];
 
 /* ------------------------------------------------------------
    Menú
@@ -200,7 +200,7 @@ function jm_importar_paso(string $paso, int $desde = 0): array
         case 'cursos':
             return jm_importar_cursos();
         case 'convocatorias':
-            return jm_importar_convocatorias();
+            return jm_importar_convocatorias($desde);
         case 'delegaciones':
             return jm_importar_delegaciones();
         case 'plantillas':
@@ -449,13 +449,16 @@ function jm_importar_cursos(): array
     return ['hecho' => count($cursos), 'total' => count($cursos), 'siguiente' => null, 'registro' => [$texto]];
 }
 
-function jm_importar_convocatorias(): array
+function jm_importar_convocatorias(int $desde = 0): array
 {
     $sedes = [];
     foreach (jm_datos('sedes-formacion.json') as $s) {
         $sedes[$s['id']] = $s['nombre'];
     }
-    $lista = jm_datos('convocatorias.json');
+    $todas = jm_datos('convocatorias.json');
+    /* Por tandas: con un año entero (más de 200 fechas) una sola petición
+       podía pasarse del tiempo máximo del servidor. */
+    $lista = array_slice($todas, $desde, JM_LOTE['convocatorias']);
     $nuevas = 0;
     $GLOBALS['jm_fo_lote'] = true;
     foreach ($lista as $cv) {
@@ -483,15 +486,17 @@ function jm_importar_convocatorias(): array
         $nuevas++;
     }
     $GLOBALS['jm_fo_lote'] = false;
+    $hecho = min($desde + count($lista), count($todas));
+    $ultima = $hecho >= count($todas);
     /* «Convocatoria abierta / A medida» de cada curso sale de sus fechas. */
-    if (function_exists('jm_fo_recalcular_cursos')) {
+    if ($ultima && function_exists('jm_fo_recalcular_cursos')) {
         jm_fo_recalcular_cursos();
     }
-    $texto = $nuevas . ' convocatorias creadas';
+    $texto = 'Convocatorias ' . ($desde + 1) . '–' . $hecho . ' de ' . count($todas) . ': ' . $nuevas . ' creadas';
     if ($nuevas < count($lista)) {
         $texto .= ' · ' . (count($lista) - $nuevas) . ' ya existían y no se han tocado';
     }
-    return ['hecho' => count($lista), 'total' => count($lista), 'siguiente' => null, 'registro' => [$texto]];
+    return ['hecho' => $hecho, 'total' => count($todas), 'siguiente' => $ultima ? null : $hecho, 'registro' => [$texto]];
 }
 
 function jm_importar_delegaciones(): array

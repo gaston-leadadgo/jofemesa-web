@@ -17,7 +17,7 @@ import {
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
 import { CalendarioFormacion } from "@/components/formacion/CalendarioFormacion";
 import { EnlaceCalendario } from "@/components/formacion/EnlaceCalendario";
-import { CONVOCATORIAS } from "@/content/es/convocatorias";
+import { ANIOS_CONVOCATORIAS, CONVOCATORIAS } from "@/content/es/convocatorias";
 import {
   CURSOS,
   LEGISLACION,
@@ -148,8 +148,8 @@ export default function PaginaFormacion() {
                   {CONVOCATORIAS.length}
                 </p>
                 <p className="mt-2 text-base leading-relaxed">
-                  convocatorias en 2026, todas de 07:30 a 15:30, en San Fernando
-                  de Henares y Puerto de Sagunto.
+                  convocatorias en {ANIOS_CONVOCATORIAS}, todas de 07:30 a 15:30, en San
+                  Fernando de Henares y Puerto de Sagunto.
                 </p>
               </div>
               <EnlaceCalendario
@@ -313,9 +313,9 @@ const AUTORIDAD = [
     texto: "Centro homologado. Programa certificado por Bureau Veritas (ISO 18878)",
   },
   {
-    k: "Convocatorias en 2026",
+    k: `Convocatorias en ${ANIOS_CONVOCATORIAS}`,
     v: String(CONVOCATORIAS.length),
-    texto: "Convocatorias en 2026, cada semana en Madrid y en Valencia",
+    texto: `Convocatorias en ${ANIOS_CONVOCATORIAS}, cada semana en Madrid y en Valencia`,
   },
   {
     k: "Cursos",
