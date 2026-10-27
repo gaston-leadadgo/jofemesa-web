@@ -486,7 +486,7 @@ function FilaResultado({
               <div key={k} className="flex items-baseline gap-1.5">
                 <dt className="label-sm text-ink-3">{def.etiqueta}</dt>
                 <dd>
-                  <DatoValor dato={m.specs[k]} def={def} />
+                  <DatoValor dato={m.specs[k]} def={def} compacto />
                 </dd>
               </div>
             );

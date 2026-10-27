@@ -57423,7 +57423,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "20/22 kVA (16/17,6 kW)",
+    "texto": "20/22 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -57757,7 +57757,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "30/33 kVA (24/26,4 kW)",
+    "texto": "30/33 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58091,7 +58091,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "32,5/35,7 kVA (26/28,6 kW)",
+    "texto": "32,5/35,7 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58425,7 +58425,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "34/37 kVA (27/30 kW)",
+    "texto": "34/37 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58759,7 +58759,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "34/37 kVA (27/30 kW)",
+    "texto": "34/37 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59093,7 +59093,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "45/50 kVA (36/40 kW)",
+    "texto": "45/50 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59427,7 +59427,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "45/50 kVA (36/40 kW)",
+    "texto": "45/50 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59761,7 +59761,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "45/49,5 kVA (36/39,6 kW)",
+    "texto": "45/49,5 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60095,7 +60095,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "54/59 kVA (43/47 kW)",
+    "texto": "54/59 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60429,7 +60429,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "58/64 kVA (46/51 kW)",
+    "texto": "58/64 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60447,7 +60447,7 @@
     "key": "version",
     "etiqueta": "Versión",
     "estado": "confirmado",
-    "texto": "Insonorizado (Rental)",
+    "texto": "Insonorizado",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60763,7 +60763,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "60,3/65,9 kVA (48,2/52,7 kW)",
+    "texto": "60,3/65,9 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61097,7 +61097,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "93/102 kVA (74/82 kW)",
+    "texto": "93/102 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61431,7 +61431,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "100/110 kVA (80/88 kW)",
+    "texto": "100/110 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61449,7 +61449,7 @@
     "key": "version",
     "etiqueta": "Versión",
     "estado": "confirmado",
-    "texto": "Insonorizado (Rental)",
+    "texto": "Insonorizado",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61765,7 +61765,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "100/110 kVA (80/88 kW)",
+    "texto": "100/110 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61783,7 +61783,7 @@
     "key": "version",
     "etiqueta": "Versión",
     "estado": "confirmado",
-    "texto": "Insonorizado (Rental)",
+    "texto": "Insonorizado",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62099,7 +62099,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "106,15/116 kVA (84,92/92,8 kW)",
+    "texto": "106,15/116 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62433,7 +62433,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "136/150 kVA (109/120 kW)",
+    "texto": "136/150 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62767,7 +62767,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "150/166 kVA (120/133 kW)",
+    "texto": "150/166 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63101,7 +63101,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "152/168 kVA (122/134 kW)",
+    "texto": "152/168 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63435,7 +63435,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "152/167 kVA (121,6/133,6 kW)",
+    "texto": "152/167 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63769,7 +63769,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "190,96/210,89 kVA (152,77/168,71 kW)",
+    "texto": "190,96/210,89 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64103,7 +64103,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "200/220 kVA (160/176 kW)",
+    "texto": "200/220 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64437,7 +64437,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "4,1 kVA / N/D (4,1 kW / N/D)",
+    "texto": "4,1 kVA / N/D",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64455,7 +64455,7 @@
     "key": "version",
     "etiqueta": "Versión",
     "estado": "confirmado",
-    "texto": "No insonorizado (chasis abierto)",
+    "texto": "No insonorizado",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64771,7 +64771,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "200/220 kVA (160/176 kW)",
+    "texto": "200/220 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65105,7 +65105,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "8 kVA / N/D (6,5 kW / N/D)",
+    "texto": "8 kVA / N/D",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65123,7 +65123,7 @@
     "key": "version",
     "etiqueta": "Versión",
     "estado": "confirmado",
-    "texto": "No insonorizado (chasis móvil abierto)",
+    "texto": "No insonorizado",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65439,7 +65439,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "250/275 kVA (200/220 kW)",
+    "texto": "250/275 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65448,7 +65448,7 @@
     "key": "emisiones",
     "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "EU Stage II (uso estacionario)",
+    "texto": "EU Stage II",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65773,7 +65773,7 @@
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "300/330 kVA (240/264 kW)",
+    "texto": "300/330 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65782,7 +65782,7 @@
     "key": "emisiones",
     "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "EU Stage II (uso estacionario)",
+    "texto": "EU Stage II",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"

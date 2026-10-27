@@ -153,11 +153,15 @@ const maquinas = CATALOGO.map((m) => {
     foto: foto && { ruta: foto.src, alt: foto.alt, ancho: foto.ancho, alto: foto.alto },
     ficha: m.fichaTecnica && { ruta: m.fichaTecnica.src, bytes: m.fichaTecnica.bytes },
     /** Las tres cifras de la tarjeta. */
-    tarjeta: specsDestacadas(m).map((k) => ({
-      key: k,
-      etiqueta: DEF[k].etiquetaCorta ?? DEF[k].etiqueta,
-      ...dato(DEF[k], m.specs[k]),
-    })),
+    tarjeta: specsDestacadas(m).map((k) => {
+      const d = dato(DEF[k], m.specs[k]);
+      return {
+        key: k,
+        etiqueta: DEF[k].etiquetaCorta ?? DEF[k].etiqueta,
+        ...d,
+        texto: DEF[k].compacto && d.valor === null && d.texto !== "—" && d.texto !== "Pendiente" ? DEF[k].compacto(d.texto) : d.texto,
+      };
+    }),
     /** La tabla de la ficha: solo lo que aplica, por grupos. */
     specs: [...specsAgrupadas(m).entries()].map(([grupo, filas]) => ({
       grupo,

@@ -142,7 +142,15 @@ export interface SpecDef {
   mejor: "mayor" | "menor" | null;
   /** Familias en cuya tarjeta sale, en la franja de tres specs. */
   destacadaEn?: FamiliaId[];
+  /**
+   * Versión corta del texto para la franja de la tarjeta, donde no cabe
+   * «20/22 kVA (16/17,6 kW)». La ficha y el comparador dan el dato entero.
+   */
+  compacto?: (texto: string) => string;
 }
+
+/** Quita el paréntesis final: «20/22 kVA (16/17,6 kW)» → «20/22 kVA». */
+const sinParentesis = (texto: string) => texto.replace(/\s*\([^()]*\)\s*$/, "");
 
 export const SPEC_DEFS: readonly SpecDef[] = [
   {
@@ -397,6 +405,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     orden: 66,
     mejor: null,
     destacadaEn: ["energia"],
+    compacto: sinParentesis,
   },
   {
     key: "frecuencia",
@@ -424,6 +433,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     orden: 68,
     mejor: null,
     destacadaEn: ["energia"],
+    compacto: sinParentesis,
   },
   {
     key: "version",
@@ -433,6 +443,7 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     orden: 69,
     mejor: null,
     destacadaEn: ["energia"],
+    compacto: sinParentesis,
   },
 ] as const;
 

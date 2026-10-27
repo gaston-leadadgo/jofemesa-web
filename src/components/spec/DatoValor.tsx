@@ -24,11 +24,14 @@ export function DatoValor({
   def,
   className,
   invertido = false,
+  compacto = false,
 }: {
   dato: SpecValor | undefined;
   def: SpecDef;
   className?: string;
   invertido?: boolean;
+  /** En la tarjeta: la versión corta del texto (`def.compacto`). */
+  compacto?: boolean;
 }) {
   if (!dato || dato.estado === "no_aplica") {
     return (
@@ -56,8 +59,9 @@ export function DatoValor({
     );
   }
 
-  const texto =
+  const completo =
     typeof dato.valor === "number" ? num(dato.valor) : String(dato.valor);
+  const texto = compacto && def.compacto ? def.compacto(completo) : completo;
   const unidad = def.unidad && typeof dato.valor === "number" ? def.unidad : "";
 
   return (

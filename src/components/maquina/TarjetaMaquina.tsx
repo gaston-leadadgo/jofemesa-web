@@ -160,7 +160,7 @@ export function TarjetaMaquina({
           return (
             <div key={k} className="flex min-w-0 flex-col">
               <dd className="order-1">
-                <DatoValor dato={m.specs[k]} def={def} />
+                <DatoValor dato={m.specs[k]} def={def} compacto />
               </dd>
               {/* Caja baja y sin recortar. En versalitas, «ALTURA
                   TRABAJO» no entra en un tercio de tarjeta y salía
