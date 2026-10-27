@@ -329,6 +329,12 @@ for (const slug of ["baoli-kbd-30", "jungheinrich-dfg-435s"]) {
   t(`carretilla diésel con foto y ficha: ${slug}`, m.estado === 200 && m.cuerpo.includes(`oficial/completa/${slug}.webp`) && m.cuerpo.includes(`/fichas/${slug}.pdf`));
 }
 t("la gama de carretilla diésel ya no existe", (await html("/maquina/jungheinrich-contrapesada-diesel-de-4-ruedas")).estado === 404);
+for (const slug of ["ausa-c-201-h-x4", "manitou-mrt-2145-easy", "manitou-mt-1440-easy"]) {
+  const m = await html(`/maquina/${slug}`);
+  t(`todoterreno y manipuladores con foto y ficha: ${slug}`, m.estado === 200 && m.cuerpo.includes(`oficial/completa/${slug}.webp`) && m.cuerpo.includes(`/fichas/${slug}.pdf`));
+}
+p = await html("/maquina/himoinsa-hrfw60-s5");
+t("los grupos electrógenos llevan los datos del comparador", p.estado === 200 && p.cuerpo.includes("58/64 kVA") && p.cuerpo.includes("Nivel de emisiones") && p.cuerpo.includes("Insonorizado"));
 p = await html("/formacion");
 t("Formación ya cuenta las convocatorias de 2027", p.cuerpo.includes("2026 y 2027"));
 for (const slug of ["jlg-660-sj", "genie-s-85", "genie-sx-180", "klubb-k32", "socage-da320", "imer-im-r15-da", "teupen-leo30t"]) {

@@ -258,7 +258,7 @@ export const FAMILIAS: readonly Familia[] = [
     claim: "Si no hay red, que no falte energía",
     descripcion:
       "Grupos electrógenos y torres de iluminación para suministrar electricidad y luz temporal a obras, instalaciones, industria y eventos donde no puedes depender de la red.",
-    rango: "De 5 a 300 kVA",
+    rango: "De 4 a 330 kVA",
     necesidad: "Energía e iluminación",
     necesidadDesc:
       "Grupos electrógenos y torres de luz para llevar suministro allí donde la red no llega.",
@@ -269,7 +269,7 @@ export const FAMILIAS: readonly Familia[] = [
         slug: "grupos-electrogenos",
         claim: "Suministro eléctrico continuo e insonorizado.",
         descripcion:
-          "Generadores diésel Stage V de 20 a 300 kVA con cuadros de distribución y depósitos de gran autonomía.",
+          "Generadores insonorizados de 20 a 330 kVA de Himoinsa, Dagartech, Pramac y Atlas Copco, con cuadros de distribución y depósitos de gran autonomía.",
         icono: "grupo",
       },
       {
@@ -277,7 +277,7 @@ export const FAMILIAS: readonly Familia[] = [
         slug: "grupos-electrogenos-portatiles",
         claim: "Potencia que se lleva a mano.",
         descripcion:
-          "Grupos de gasolina de 5 a 10 kVA para herramienta, reformas e instalaciones puntuales.",
+          "Grupos Dagartech de 4,1 y 8 kVA para herramienta, reformas e instalaciones puntuales.",
         icono: "grupo",
       },
       {

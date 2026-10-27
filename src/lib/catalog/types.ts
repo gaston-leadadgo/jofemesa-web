@@ -110,7 +110,11 @@ export type SpecKey =
   | "extensionPlataforma"
   | "radioGiroInterior"
   | "motor"
-  | "rotacionTorreta";
+  | "rotacionTorreta"
+  | "potenciaPrpEsp"
+  | "frecuencia"
+  | "emisiones"
+  | "version";
 
 /** Una spec puede ser numérica (11,75) o textual ("Kubota D-1105"). */
 export type SpecValor = Dato<number | string>;
@@ -311,7 +315,8 @@ export const SPEC_DEFS: readonly SpecDef[] = [
   },
   {
     key: "voltaje",
-    etiqueta: "Voltaje",
+    /* «Tensión», como la llama el cliente en las fichas de grupos electrógenos. */
+    etiqueta: "Tensión",
     unidad: "",
     grupo: "motorizacion",
     orden: 185,
@@ -386,6 +391,48 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     grupo: "motorizacion",
     orden: 165,
     mejor: null,
+  },
+  /*
+   * Grupos electrógenos (material del 27/10/2026): los cinco datos que el
+   * cliente pide para el comparador, además de marca y modelo. Van como
+   * texto, tal cual su tabla («93/102 kVA (74/82 kW)», «EU Stage V»…).
+   */
+  {
+    key: "potenciaPrpEsp",
+    etiqueta: "Potencia (PRP/ESP)",
+    etiquetaCorta: "Potencia",
+    unidad: "",
+    grupo: "motorizacion",
+    orden: 66,
+    mejor: null,
+    destacadaEn: ["energia"],
+  },
+  {
+    key: "frecuencia",
+    etiqueta: "Frecuencia",
+    unidad: "",
+    grupo: "motorizacion",
+    orden: 67,
+    mejor: null,
+  },
+  {
+    key: "emisiones",
+    etiqueta: "Nivel de emisiones",
+    etiquetaCorta: "Emisiones",
+    unidad: "",
+    grupo: "motorizacion",
+    orden: 68,
+    mejor: null,
+    destacadaEn: ["energia"],
+  },
+  {
+    key: "version",
+    etiqueta: "Versión",
+    unidad: "",
+    grupo: "motorizacion",
+    orden: 69,
+    mejor: null,
+    destacadaEn: ["energia"],
   },
 ] as const;
 

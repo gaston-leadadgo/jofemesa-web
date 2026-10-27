@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       JOFEMESA · Núcleo
  * Description:       Catálogo de maquinaria, formación y delegaciones de JOFEMESA para Elementor Pro: tipos de contenido, campos, importador, estilos, scripts y shortcodes.
- * Version:           1.2.6
+ * Version:           1.2.7
  * Requires at least: 6.4
  * Requires PHP:      8.0
  * Author:            LeadAdGo
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('JM_VERSION', '1.2.6');
+define('JM_VERSION', '1.2.7');
 define('JM_DIR', plugin_dir_path(__FILE__));
 define('JM_URL', plugin_dir_url(__FILE__));
 

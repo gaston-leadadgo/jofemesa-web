@@ -165,6 +165,23 @@ const SUBCAT_PARAMETRO: Record<string, string[]> = {
   "e-aire": ["compresores-remolcables", "martillos-neumaticos"],
 };
 
+/**
+ * Potencia PRP de un grupo electrógeno, en kVA: el primer número de
+ * «93/102 kVA (74/82 kW)». Sin dato, `null`.
+ */
+function kvaPrp(m: Maquina): number | null {
+  const d = m.specs.potenciaPrpEsp;
+  if (!d || (d.estado !== "confirmado" && d.estado !== "estimado")) return null;
+  const n = /^\s*([\d.,]+)/.exec(String(d.valor));
+  return n ? Number(n[1].replace(",", ".")) : null;
+}
+
+/** Potencia PRP que pide cada respuesta de energía, en kVA. */
+const KVA_PARAMETRO: Record<string, [number, number]> = {
+  "e-medio": [30, 60],
+  "e-grande": [60.01, Infinity],
+};
+
 /* ---------- el motor ---------- */
 
 function evaluar(
@@ -195,11 +212,20 @@ function evaluar(
     if (c == null || c < cargaMin) return null;
   }
 
+  /* Grupos electrógenos: la potencia que se ha pedido, no cualquiera. */
+  const kva = KVA_PARAMETRO[r.parametro];
+  const kvaMaquina = kva ? kvaPrp(m) : null;
+  if (kva && kvaMaquina != null && (kvaMaquina < kva[0] || kvaMaquina > kva[1])) return null;
+
   if (r.entorno === "interior-limpio") {
     if (!m.facetas.entornos.includes("interior")) return null;
     if (m.facetas.energia === "diesel") return null;
   }
-  if (r.entorno === "exterior-obra") {
+  /* La tracción 4x4 u oruga se exige a lo que se mueve solo por la obra.
+     Grupos, compresores y herramienta van remolcados o a mano: antes esta
+     regla los dejaba fuera y «energía en obra exterior» no daba nada. */
+  const autopropulsada = !["energia", "aire-martillos", "herramienta-auxiliar"].includes(m.familia);
+  if (r.entorno === "exterior-obra" && autopropulsada) {
     if (m.facetas.traccion !== "4x4" && m.facetas.traccion !== "oruga")
       return null;
   }
@@ -217,6 +243,9 @@ function evaluar(
     if (subcats.includes(m.subcategoriaSlug)) {
       puntos += 30;
       razones.push("Encaja exactamente con lo que has descrito");
+      if (kvaMaquina != null) {
+        razones.push(`Da ${kvaMaquina.toLocaleString("es-ES", { maximumFractionDigits: 2 })} kVA en servicio principal (PRP)`);
+      }
     } else {
       puntos -= 10;
     }

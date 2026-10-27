@@ -24,6 +24,21 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Entrega del 27/10/2026
+
+- **Grupos electrógenos, modelo a modelo**: los 26 de la tabla del cliente (Dagartech, Pramac,
+  Himoinsa y Atlas Copco) sustituyen a las tres gamas. Campos nuevos para el comparador:
+  «Potencia (PRP/ESP)», «Frecuencia», «Nivel de emisiones» y «Versión»; «Voltaje» pasa a
+  llamarse «Tensión». Fotos y fichas, pendientes (las envía el cliente).
+- **Carretillas todoterreno (8) y manipuladores telescópicos (10)** con foto, ficha y datos:
+  Ausa C 150/201/250/251 H x4, Manitou MC 18-4/25-4 y MH 20-4T/25-4T; Ausa T204 H, JLG 4017,
+  Manitou MT 420 H, 625 H, 1235, 1440 Easy, 1840 Easy y MRT 1432, 1840 Easy, 2145 Easy. Sustituyen
+  a las tres gamas de Manitou.
+- **Asesor**: «Generador medio, de 30 a 60 kVA» y «de alta potencia» filtran por la potencia PRP
+  real; y «obra en exterior» ya no deja fuera grupos, compresores y herramienta (se exigía 4x4
+  también a lo que va remolcado).
+- El catálogo pasa a 195 máquinas: 112 con foto y 108 con ficha.
+
 ## Entrega del 26/10/2026
 
 - **Carretillas diésel, modelo a modelo**: la gama genérica «contrapesada diésel de 4 ruedas» se

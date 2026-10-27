@@ -25,12 +25,6 @@ import { construir, type Fila, type PerfilSubcategoria } from "./comun";
  * Hilti en herramienta).
  */
 
-const rango = (min: number, max: number, unidad: string) =>
-  est(
-    max,
-    "catalogo-jofemesa",
-    `El catálogo publica una gama de ${min.toLocaleString("es-ES")} a ${max.toLocaleString("es-ES")} ${unidad}. Aquí se muestra el máximo de la gama: la unidad concreta la confirma la delegación al responder tu solicitud.`,
-  );
 
 /* ============================================================
    Manutención de cargas
@@ -443,48 +437,88 @@ const carretillasDiesel: Fila[] = [
     "Carretilla diésel contrapesada de cuatro ruedas, 3.500 kg de capacidad y 3,3 m de elevación. Para las cargas más pesadas de la flota diésel."),
 ];
 
-const carretillasTodoterreno: Fila[] = [
-  {
-    marca: "Manitou",
-    modelo: "Carretilla todo terreno diésel 4x4",
-    gama: true,
-    descripcion:
-      "Carretilla todo terreno diésel de cuatro ruedas motrices, de 1.500 a 2.500 kg de capacidad y hasta 4,60 m de elevación. Neumáticos de obra y tracción total para descargar material en solar sin pavimentar.",
-    extra: {
-      capacidadCarga: rango(1500, 2500, "kg"),
-      alturaElevacion: conf(4.6, "catalogo-jofemesa"),
-    },
+/*
+ * Carretillas todoterreno y manipuladores telescópicos, modelo a modelo
+ * (material del 27/10/2026), en lugar de las tres gamas de Manitou. Datos de
+ * la ficha de cada modelo (mástil o configuración estándar); lo que la ficha
+ * no da en cifra (el alcance de la JLG 4017 y la MT 1235, la altura replegada
+ * de las MC) no se publica. Nombres como en la foto del cliente.
+ */
+interface DatosFicha {
+  kg: number;
+  /** Elevación, en m. */
+  elev: number;
+  /** Alcance, en m. */
+  alcance?: number;
+  /** Anchura, altura replegada y longitud, en mm. */
+  ancho?: number;
+  alto?: number;
+  largo?: number;
+  peso: number;
+  rotacion?: number;
+}
+const deFicha = (marca: string, modelo: string, d: DatosFicha, descripcion: string, destacada = false): Fila => ({
+  marca,
+  modelo,
+  destacada,
+  descripcion,
+  extra: {
+    capacidadCarga: conf(d.kg),
+    alturaElevacion: conf(d.elev),
+    ...(d.alcance != null ? { alcanceHorizontal: conf(d.alcance) } : {}),
+    ...(d.ancho != null ? { anchoTransporte: conf(d.ancho) } : {}),
+    ...(d.alto != null ? { alturaTransporte: conf(d.alto) } : {}),
+    ...(d.largo != null ? { longitudTransporte: conf(d.largo) } : {}),
+    peso: conf(d.peso),
+    ...(d.rotacion != null ? { rotacionTorreta: conf(d.rotacion) } : {}),
   },
+});
+
+const carretillasTodoterreno: Fila[] = [
+  deFicha("Ausa", "C 150 H x4", { kg: 1500, elev: 2.66, ancho: 1300, alto: 2037, peso: 2700 },
+    "Carretilla todoterreno 4x4 compacta de 1.500 kg y 2,66 m de elevación con el mástil estándar. Para descargar material en solar y obra sin pavimentar."),
+  deFicha("Manitou", "MC 18-4", { kg: 1800, elev: 3.3, ancho: 1450, largo: 4216, peso: 3606 },
+    "Carretilla todoterreno de cuatro ruedas motrices, 1.800 kg de capacidad y 3,3 m de elevación con el mástil estándar. Para obra y terrenos sin pavimentar."),
+  deFicha("Ausa", "C 201 H x4", { kg: 2000, elev: 3.3, ancho: 1520, alto: 2410, peso: 3635 },
+    "Carretilla todoterreno 4x4 de 2.000 kg y 3,3 m de elevación con el mástil estándar. Tracción total para descargar en solar y suministrar a tajo."),
+  deFicha("Manitou", "MH 20-4T", { kg: 2000, elev: 3.3, ancho: 1440, alto: 1990, largo: 4040, peso: 4040 },
+    "Carretilla todoterreno 4x4 de 2.000 kg y 3,3 m de elevación, con menos de 2 m de altura total para pasar por accesos bajos."),
+  deFicha("Ausa", "C 250 H x4", { kg: 2500, elev: 3.3, ancho: 1520, alto: 2460, peso: 4400 },
+    "Carretilla todoterreno 4x4 de 2.500 kg y 3,3 m de elevación con el mástil estándar. Para cargas pesadas en obra y terrenos con pendiente."),
+  deFicha("Ausa", "C 251 H x4", { kg: 2500, elev: 3.3, ancho: 1520, alto: 2460, peso: 4255 },
+    "Carretilla todoterreno 4x4 de 2.500 kg y 3,3 m de elevación con el mástil estándar. Tracción total para descarga de material en solar."),
+  deFicha("Manitou", "MC 25-4", { kg: 2500, elev: 3.3, ancho: 1450, largo: 4348, peso: 3928 },
+    "Carretilla todoterreno de cuatro ruedas motrices, 2.500 kg de capacidad y 3,3 m de elevación con el mástil estándar. Para obra y terrenos sin pavimentar.",
+    true),
+  deFicha("Manitou", "MH 25-4T", { kg: 2500, elev: 3.3, ancho: 1440, alto: 1990, largo: 4040, peso: 4340 },
+    "Carretilla todoterreno 4x4 de 2.500 kg y 3,3 m de elevación, con menos de 2 m de altura total para pasar por accesos bajos."),
 ];
 
 const manipuladores: Fila[] = [
-  {
-    marca: "Manitou",
-    modelo: "Manipulador telescópico rígido",
-    gama: true,
-    destacada: true,
-    descripcion:
-      "Manipulador telescópico rígido todo terreno, de 2.000 a 7.000 kg de capacidad y alcance variable de 4 a 18 metros. Sube palets a forjado, descarga camión y mueve acopio con una sola máquina.",
-    extra: {
-      capacidadCarga: rango(2000, 7000, "kg"),
-      alturaElevacion: rango(4, 18, "m"),
-    },
-  },
+  deFicha("Manitou", "MT 420 H", { kg: 2000, elev: 4.35, alcance: 2.65, ancho: 1490, alto: 1970, largo: 3640, peso: 4190 },
+    "Manipulador telescópico compacto de 2.000 kg y 4,35 m de elevación. Para descargar camión y mover material en obras con poco espacio."),
+  deFicha("Ausa", "T204 H", { kg: 2000, elev: 4.2, alcance: 2.6, ancho: 1595, alto: 1995, largo: 4664, peso: 4050 },
+    "Manipulador telescópico compacto de 2.000 kg y 4,2 m de elevación, con tracción 4x4 permanente. Para acopio y descarga en obra."),
+  deFicha("Manitou", "MT 625 H", { kg: 2500, elev: 5.85, alcance: 3.4, ancho: 1810, alto: 1920, largo: 3830, peso: 4800 },
+    "Manipulador telescópico compacto de 2.500 kg y 5,85 m de elevación. Para descarga de camión, acopio y trabajos en accesos bajos."),
+  deFicha("Manitou", "MT 1235", { kg: 3500, elev: 12, ancho: 2390, alto: 2580, largo: 5590, peso: 9400 },
+    "Manipulador telescópico de 3.500 kg y 12 m de elevación. Sube palets a forjado y coloca material en altura."),
+  deFicha("Manitou", "MT 1440 Easy", { kg: 4000, elev: 13.53, alcance: 9.46, ancho: 2360, alto: 2450, largo: 6020, peso: 10855 },
+    "Manipulador telescópico de 4.000 kg y 13,5 m de elevación, con 9,5 m de alcance. Para elevar palets a forjado y colocar encofrado.",
+    true),
+  deFicha("JLG", "4017", { kg: 4000, elev: 17.1, ancho: 2350, alto: 2663, largo: 6372, peso: 11500 },
+    "Manipulador telescópico de 4.000 kg y 17,1 m de elevación, con estabilizadores. Para colocar material en altura en obra de edificación."),
+  deFicha("Manitou", "MT 1840 Easy", { kg: 4000, elev: 17.55, alcance: 13.08, ancho: 2360, alto: 2450, largo: 6150, peso: 11710 },
+    "Manipulador telescópico de 4.000 kg y 17,5 m de elevación, con 13 m de alcance. Para colocar material en altura y descargar camión."),
 ];
 
 const giratorios: Fila[] = [
-  {
-    marca: "Manitou",
-    modelo: "Manipulador telescópico giratorio",
-    gama: true,
-    descripcion:
-      "Manipulador telescópico giratorio todo terreno, de 3.200 a 4.000 kg de capacidad y alcance variable de 14 a 21 metros. Torreta de giro continuo: descarga y posiciona en todo el perímetro sin mover la máquina.",
-    extra: {
-      capacidadCarga: rango(3200, 4000, "kg"),
-      alturaElevacion: rango(14, 21, "m"),
-      rotacionTorreta: conf(360, "catalogo-jofemesa"),
-    },
-  },
+  deFicha("Manitou", "MRT 1432", { kg: 3200, elev: 13.82, alcance: 11.63, ancho: 2390, alto: 2970, largo: 5350, peso: 12450, rotacion: 400 },
+    "Manipulador telescópico giratorio de 3.200 kg y 13,8 m de elevación, con torreta de 400°. Descarga y posiciona en todo el perímetro sin mover la máquina."),
+  deFicha("Manitou", "MRT 1840 Easy", { kg: 4000, elev: 17.9, alcance: 15.1, ancho: 2400, alto: 2970, largo: 5540, peso: 13300 },
+    "Manipulador telescópico giratorio de 4.000 kg y 17,9 m de elevación, con 15,1 m de alcance. Para montaje industrial y trabajos donde no cabe una grúa."),
+  deFicha("Manitou", "MRT 2145 Easy", { kg: 4500, elev: 20.6, alcance: 17.9, ancho: 2500, alto: 3020, largo: 6590, peso: 14530 },
+    "Manipulador telescópico giratorio de 4.500 kg y 20,6 m de elevación, con 17,9 m de alcance. El de más altura de la flota, para montaje y rehabilitación."),
 ];
 
 const almacen: Fila[] = [
@@ -505,44 +539,78 @@ const almacen: Fila[] = [
   },
 ];
 
-const grupos: Fila[] = [
-  {
-    marca: "Himoinsa",
-    modelo: "Grupo electrógeno Stage V de 20 a 300 kVA",
-    gama: true,
-    destacada: true,
+/*
+ * Grupos electrógenos, modelo a modelo (material del 27/10/2026), en lugar
+ * de las tres gamas del catálogo. Los cinco datos que el cliente pide para
+ * el comparador van tal cual su tabla «GRUPOS ELECTRÓGENOS FICHAS DE
+ * CARACTERÍSTICAS»: potencia PRP/ESP, frecuencia, tensión, emisiones y
+ * versión. Las fotos y fichas llegan aparte.
+ *  - Los dos Dagartech DGH (4,1 y 8 kVA, chasis abierto) van en portátiles.
+ *  - «HYW20 T5 INS 50 HZ» se publica como «HYW20 T5»: INS y 50 Hz ya están
+ *    en versión y frecuencia.
+ */
+const tablaGrupos = (v: string) => conf(v, "catalogo-jofemesa");
+const grupo = (
+  marca: string,
+  modelo: string,
+  potencia: string,
+  frecuencia: string,
+  tension: string,
+  emisiones: string,
+  version: string,
+  destacada = false,
+): Fila => {
+  const portatil = /abierto/i.test(version);
+  const tipo = version.replace(/\s*\(Rental\)/i, "").toLowerCase();
+  const rental = /rental/i.test(version) ? ", de la serie Rental" : "";
+  return {
+    marca,
+    modelo,
+    destacada,
     descripcion:
-      "Grupos electrógenos diésel insonorizados Stage V de 20 a 300 kVA, de Himoinsa y Atlas Copco. Cuadro de distribución, depósito de gran autonomía y nivel sonoro apto para casco urbano.",
+      `Grupo electrógeno ${portatil ? "portátil " : ""}${tipo}${rental}: ${potencia} de potencia PRP/ESP, ${frecuencia} y ${tension}, con nivel de emisiones ${emisiones}. ` +
+      (portatil
+        ? "Para herramienta eléctrica y trabajos puntuales donde no hay luz de obra."
+        : "Para obra sin acometida, respaldo en industria o eventos."),
     extra: {
-      potencia: conf("20 – 300 kVA", "catalogo-jofemesa"),
-      motor: conf("Diésel Stage V", "catalogo-jofemesa"),
+      potenciaPrpEsp: tablaGrupos(potencia),
+      frecuencia: tablaGrupos(frecuencia),
+      voltaje: tablaGrupos(tension),
+      emisiones: tablaGrupos(emisiones),
+      version: tablaGrupos(version),
     },
-  },
-  {
-    marca: "Dagartech",
-    modelo: "Grupo electrógeno Stage V de 30 a 300 kVA",
-    gama: true,
-    descripcion:
-      "Grupos electrógenos diésel Dagartech Stage V de 30 a 300 kVA, en versión de alquiler. Fabricación europea, arranque automático y cuadro preparado para obra.",
-    extra: {
-      potencia: conf("30 – 300 kVA", "catalogo-jofemesa"),
-      motor: conf("Diésel Stage V", "catalogo-jofemesa"),
-    },
-  },
-];
+  };
+};
 
+const grupos: Fila[] = [
+  grupo("Himoinsa", "HYW20 T5", "20/22 kVA (16/17,6 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Atlas Copco", "QAS 30 KD 55", "30/33 kVA (24/26,4 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
+  grupo("Pramac", "GSW35", "32,5/35,7 kVA (26/28,6 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Himoinsa", "HYW35", "34/37 kVA (27/30 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Himoinsa", "HYW35 T5", "34/37 kVA (27/30 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Atlas Copco", "QAS 45 KD 55", "45/50 kVA (36/40 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
+  grupo("Himoinsa", "HYW45 T5", "45/50 kVA (36/40 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Pramac", "GSW50", "45/49,5 kVA (36/39,6 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Dagartech", "DGDR 60 ST", "54/59 kVA (43/47 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado"),
+  grupo("Himoinsa", "HRFW60 S5", "58/64 kVA (46/51 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado (Rental)", true),
+  grupo("Pramac", "GPW60P/FS3A", "60,3/65,9 kVA (48,2/52,7 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Dagartech", "DGDR 100 ST", "93/102 kVA (74/82 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado"),
+  grupo("Himoinsa", "HRFW100", "100/110 kVA (80/88 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado (Rental)"),
+  grupo("Himoinsa", "HRFW100 T5", "100/110 kVA (80/88 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado (Rental)"),
+  grupo("Pramac", "GSW115", "106,15/116 kVA (84,92/92,8 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
+  grupo("Dagartech", "DGDR150", "136/150 kVA (109/120 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado"),
+  grupo("Atlas Copco", "QAS 150 FPT S5", "150/166 kVA (120/133 kW)", "50 Hz", "400 V", "EU Stage V", "Insonorizado"),
+  grupo("Himoinsa", "HFW160 T5", "152/168 kVA (122/134 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Pramac", "GSW167P", "152/167 kVA (121,6/133,6 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Pramac", "GSW210", "190,96/210,89 kVA (152,77/168,71 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
+  grupo("Atlas Copco", "QAS 200 FD S5", "200/220 kVA (160/176 kW)", "50 Hz", "400 V", "EU Stage V", "Insonorizado"),
+  grupo("Himoinsa", "HFW200 T5", "200/220 kVA (160/176 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  grupo("Dagartech", "DGVS 275 ST", "250/275 kVA (200/220 kW)", "50 Hz", "400/230 V", "EU Stage II (uso estacionario)", "Insonorizado"),
+  grupo("Dagartech", "DGVS 330 ST", "300/330 kVA (240/264 kW)", "50 Hz", "400/230 V", "EU Stage II (uso estacionario)", "Insonorizado"),
+];
 const gruposPortatiles: Fila[] = [
-  {
-    marca: "Dagartech",
-    modelo: "Grupo electrógeno portátil de gasolina",
-    gama: true,
-    descripcion:
-      "Grupos electrógenos portátiles de gasolina de 5 a 10 kVA, de Dagartech y Ayerbe. Los mueve una persona y dan corriente para herramienta eléctrica donde no hay luz de obra.",
-    extra: {
-      potencia: conf("5 – 10 kVA", "catalogo-jofemesa"),
-      motor: conf("Gasolina", "catalogo-jofemesa"),
-    },
-  },
+  grupo("Dagartech", "DGH 5000 B", "4,1 kVA / N/D (4,1 kW / N/D)", "50 Hz", "230 V", "EU Stage V", "No insonorizado (chasis abierto)"),
+  grupo("Dagartech", "DGH 9 TF BC", "8 kVA / N/D (6,5 kW / N/D)", "50 Hz", "400/230 V", "EU Stage V", "No insonorizado (chasis móvil abierto)"),
 ];
 
 const torres: Fila[] = [

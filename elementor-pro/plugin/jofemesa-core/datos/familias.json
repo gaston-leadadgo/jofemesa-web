@@ -105,7 +105,7 @@
   "necesidad": "Mover y elevar cargas",
   "necesidadDesc": "Carretillas y manipuladores para transportar, elevar y posicionar cargas con mayor eficacia.",
   "icono": "manipulador",
-  "total": 19,
+  "total": 34,
   "subcategorias": [
    {
     "nombre": "Manipuladores telescópicos rígidos",
@@ -113,7 +113,7 @@
     "claim": "Alcance y capacidad directa en obra.",
     "descripcion": "Todo terreno, para elevar cargas pesadas a alturas de hasta 18 metros con máxima estabilidad frontal.",
     "icono": "manipulador",
-    "total": 1
+    "total": 7
    },
    {
     "nombre": "Manipuladores telescópicos giratorios",
@@ -121,7 +121,7 @@
     "claim": "Versatilidad 360º para sustituir grúas ligeras.",
     "descripcion": "Torreta giratoria continua para descargar y posicionar materiales en todo el perímetro sin mover la máquina.",
     "icono": "giratorio",
-    "total": 1
+    "total": 3
    },
    {
     "nombre": "Carretillas contrapesadas eléctricas",
@@ -145,7 +145,7 @@
     "claim": "Tracción total en terrenos irregulares.",
     "descripcion": "Neumáticos de gran diámetro y tracción 4x4 para mover materiales en terrenos sin pavimentar y pendientes.",
     "icono": "todoterreno",
-    "total": 1
+    "total": 8
    },
    {
     "nombre": "Máquinas de almacén",
@@ -227,27 +227,27 @@
   "slug": "energia",
   "claim": "Si no hay red, que no falte energía",
   "descripcion": "Grupos electrógenos y torres de iluminación para suministrar electricidad y luz temporal a obras, instalaciones, industria y eventos donde no puedes depender de la red.",
-  "rango": "De 5 a 300 kVA",
+  "rango": "De 4 a 330 kVA",
   "necesidad": "Energía e iluminación",
   "necesidadDesc": "Grupos electrógenos y torres de luz para llevar suministro allí donde la red no llega.",
   "icono": "grupo",
-  "total": 4,
+  "total": 27,
   "subcategorias": [
    {
     "nombre": "Grupos electrógenos",
     "slug": "grupos-electrogenos",
     "claim": "Suministro eléctrico continuo e insonorizado.",
-    "descripcion": "Generadores diésel Stage V de 20 a 300 kVA con cuadros de distribución y depósitos de gran autonomía.",
+    "descripcion": "Generadores insonorizados de 20 a 330 kVA de Himoinsa, Dagartech, Pramac y Atlas Copco, con cuadros de distribución y depósitos de gran autonomía.",
     "icono": "grupo",
-    "total": 2
+    "total": 24
    },
    {
     "nombre": "Grupos electrógenos portátiles",
     "slug": "grupos-electrogenos-portatiles",
     "claim": "Potencia que se lleva a mano.",
-    "descripcion": "Grupos de gasolina de 5 a 10 kVA para herramienta, reformas e instalaciones puntuales.",
+    "descripcion": "Grupos Dagartech de 4,1 y 8 kVA para herramienta, reformas e instalaciones puntuales.",
     "icono": "grupo",
-    "total": 1
+    "total": 2
    },
    {
     "nombre": "Torres de iluminación",

@@ -127,7 +127,7 @@
  },
  {
   "key": "voltaje",
-  "etiqueta": "Voltaje",
+  "etiqueta": "Tensión",
   "grupo": "motorizacion",
   "grupoNombre": "Motorización",
   "mejor": null
@@ -184,6 +184,34 @@
  {
   "key": "motor",
   "etiqueta": "Motor",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "potenciaPrpEsp",
+  "etiqueta": "Potencia (PRP/ESP)",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "frecuencia",
+  "etiqueta": "Frecuencia",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "emisiones",
+  "etiqueta": "Nivel de emisiones",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "version",
+  "etiqueta": "Versión",
   "grupo": "motorizacion",
   "grupoNombre": "Motorización",
   "mejor": null
