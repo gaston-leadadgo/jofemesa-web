@@ -680,6 +680,79 @@ html:not([data-motor]) .filete-anim::after {
 }
 
 /* ------------------------------------------------------------
+   Carrusel de logotipos de fabricantes (portada)
+
+   Bucle continuo: la pista lleva la lista dos veces y se desplaza
+   la mitad de su ancho. Los bordes se funden con una máscara para
+   que los logos entren y salgan sin corte. Van en gris y recuperan
+   su color al pasar por encima; el carrusel se para mientras tanto.
+   ------------------------------------------------------------ */
+
+.carrusel-logos {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.carrusel-logos__pista {
+  display: flex;
+  width: max-content;
+}
+.carrusel-logos__lista {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
+}
+.carrusel-logos__logo {
+  max-width: none;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition:
+    filter 0.25s var(--ease-entrance),
+    opacity 0.25s var(--ease-entrance);
+}
+.carrusel-logos__logo:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes carrusel-logos {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .carrusel-logos__pista {
+    animation: carrusel-logos 50s linear infinite;
+  }
+  .carrusel-logos:hover .carrusel-logos__pista {
+    animation-play-state: paused;
+  }
+}
+
+/* Sin movimiento: filas quietas y sin la copia. */
+@media (prefers-reduced-motion: reduce) {
+  .carrusel-logos {
+    mask-image: none;
+  }
+  .carrusel-logos__pista,
+  .carrusel-logos__lista {
+    width: auto;
+    flex-wrap: wrap;
+    row-gap: 1.25rem;
+  }
+  .carrusel-logos__lista[data-copia] {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------
    Entrada de la hoja inferior de filtros
    ------------------------------------------------------------ */
 

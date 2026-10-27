@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck } from "lucide-react";
-import { FABRICANTES_FLOTA, CENTROS } from "@/content/es/empresa";
+import { CENTROS } from "@/content/es/empresa";
+import { CarruselFabricantes } from "@/components/home/CarruselFabricantes";
 
 /**
  * S2 · Distribuciones oficiales.
@@ -16,8 +17,8 @@ import { FABRICANTES_FLOTA, CENTROS } from "@/content/es/empresa";
  * La distinción importa y se rotula: **partner** de Jungheinrich (su
  * catálogo completo, incluida la gama reacondicionada JUNGSTARS) y
  * **distribuidor oficial** de Takeuchi, con centro propio. Lo demás son
- * fabricantes de la flota, que es otra cosa, y por eso van debajo en
- * gris y sin logotipo.
+ * fabricantes de la flota, que es otra cosa, y por eso van debajo, en
+ * una tira de logotipos en gris (`CarruselFabricantes`).
  */
 
 const TAKEUCHI = CENTROS.find((c) => c.id === "takeuchi");
@@ -105,21 +106,11 @@ export function Partners() {
 
         {/* Los fabricantes de la flota son otra cosa y se rotulan como
             tal: alquilamos su maquinaria, no los distribuimos. */}
-        <div className="mt-7 flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
+        <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
           <h3 className="label shrink-0 text-ink-3">Nuestros fabricantes</h3>
-          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            {FABRICANTES_FLOTA.filter(
-              (f) => !/jungheinrich|takeuchi/i.test(f.nombre),
-            ).map((f) => (
-              <li
-                key={f.nombre}
-                className="text-base font-medium text-ink-3"
-                title={f.area}
-              >
-                {f.nombre}
-              </li>
-            ))}
-          </ul>
+          <div className="min-w-0 flex-1">
+            <CarruselFabricantes />
+          </div>
         </div>
       </div>
     </section>
