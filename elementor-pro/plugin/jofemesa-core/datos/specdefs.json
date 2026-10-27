@@ -126,13 +126,6 @@
   "mejor": null
  },
  {
-  "key": "voltaje",
-  "etiqueta": "Tensión",
-  "grupo": "motorizacion",
-  "grupoNombre": "Motorización",
-  "mejor": null
- },
- {
   "key": "traccion",
   "etiqueta": "Tracción",
   "grupo": "motorizacion",
@@ -198,6 +191,13 @@
  {
   "key": "frecuencia",
   "etiqueta": "Frecuencia",
+  "grupo": "motorizacion",
+  "grupoNombre": "Motorización",
+  "mejor": null
+ },
+ {
+  "key": "voltaje",
+  "etiqueta": "Tensión",
   "grupo": "motorizacion",
   "grupoNombre": "Motorización",
   "mejor": null

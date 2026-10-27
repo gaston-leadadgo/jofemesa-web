@@ -314,15 +314,6 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     mejor: null,
   },
   {
-    key: "voltaje",
-    /* «Tensión», como la llama el cliente en las fichas de grupos electrógenos. */
-    etiqueta: "Tensión",
-    unidad: "",
-    grupo: "motorizacion",
-    orden: 185,
-    mejor: null,
-  },
-  {
     key: "traccion",
     etiqueta: "Tracción",
     unidad: "",
@@ -413,6 +404,15 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     unidad: "",
     grupo: "motorizacion",
     orden: 67,
+    mejor: null,
+  },
+  {
+    key: "voltaje",
+    /* «Tensión», como la llama el cliente en las fichas de grupos electrógenos. */
+    etiqueta: "Tensión",
+    unidad: "",
+    grupo: "motorizacion",
+    orden: 67.5,
     mejor: null,
   },
   {

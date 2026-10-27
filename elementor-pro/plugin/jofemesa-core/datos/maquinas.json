@@ -271,12 +271,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -332,6 +326,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -630,12 +630,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -691,6 +685,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -989,12 +989,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -1050,6 +1044,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -1348,12 +1348,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -1409,6 +1403,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -1707,12 +1707,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -1768,6 +1762,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -2066,12 +2066,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -2127,6 +2121,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -2425,12 +2425,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -2486,6 +2480,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -2784,12 +2784,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -2845,6 +2839,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -3143,12 +3143,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -3204,6 +3198,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -3502,12 +3502,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -3563,6 +3557,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -3861,12 +3861,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -3922,6 +3916,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -4220,12 +4220,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -4281,6 +4275,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -4579,12 +4579,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -4640,6 +4634,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -4938,12 +4938,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -4999,6 +4993,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -5297,12 +5297,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -5358,6 +5352,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -5656,12 +5656,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -5717,6 +5711,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -6015,12 +6015,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -6076,6 +6070,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -6374,12 +6374,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -6435,6 +6429,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -6733,12 +6733,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -6794,6 +6788,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -7092,12 +7092,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -7153,6 +7147,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -7451,12 +7451,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -7512,6 +7506,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -7810,12 +7810,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -7871,6 +7865,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -8169,12 +8169,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -8230,6 +8224,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -8528,12 +8528,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -8589,6 +8583,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -8887,12 +8887,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -8948,6 +8942,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -9246,12 +9246,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -9307,6 +9301,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -9605,12 +9605,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -9666,6 +9660,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -9964,12 +9964,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -10025,6 +10019,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -10323,12 +10323,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -10384,6 +10378,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -10682,12 +10682,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -10743,6 +10737,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -11041,12 +11041,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -11102,6 +11096,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -11400,12 +11400,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -11461,6 +11455,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -11759,12 +11759,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -11820,6 +11814,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -12118,12 +12118,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -12179,6 +12173,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -12477,12 +12477,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -12538,6 +12532,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -12836,12 +12836,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -12897,6 +12891,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -13195,12 +13195,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -13256,6 +13250,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -13554,12 +13554,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -13615,6 +13609,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -13912,12 +13912,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -13973,6 +13967,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -14270,12 +14270,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -14331,6 +14325,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -14628,12 +14628,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -14689,6 +14683,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -14986,12 +14986,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -15047,6 +15041,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -15344,12 +15344,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -15405,6 +15399,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -15702,12 +15702,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -15763,6 +15757,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -16052,12 +16052,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -16113,6 +16107,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -16410,12 +16410,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -16471,6 +16465,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -16768,12 +16768,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -16829,6 +16823,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -17126,12 +17126,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -17187,6 +17181,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -17484,12 +17484,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -17545,6 +17539,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -17842,12 +17842,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -17903,6 +17897,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -18200,12 +18200,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -18261,6 +18255,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -18558,12 +18558,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -18619,6 +18613,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -18916,12 +18916,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -18977,6 +18971,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -19274,12 +19274,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -19335,6 +19329,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -19632,12 +19632,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -19693,6 +19687,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -19990,12 +19990,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -20051,6 +20045,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -20348,12 +20348,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -20409,6 +20403,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -20706,12 +20706,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -20767,6 +20761,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -21064,12 +21064,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -21125,6 +21119,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -21422,12 +21422,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -21483,6 +21477,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -21780,12 +21780,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -21841,6 +21835,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -22138,12 +22138,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -22199,6 +22193,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -22496,12 +22496,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -22557,6 +22551,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -22854,12 +22854,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -22915,6 +22909,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -23212,12 +23212,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -23273,6 +23267,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -23570,12 +23570,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -23631,6 +23625,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -23928,12 +23928,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -23989,6 +23983,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -24286,12 +24286,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -24347,6 +24341,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -24644,12 +24644,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -24705,6 +24699,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -25002,12 +25002,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -25063,6 +25057,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -25360,12 +25360,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -25421,6 +25415,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -25719,12 +25719,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -25780,6 +25774,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -26078,12 +26078,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -26139,6 +26133,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -26437,12 +26437,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -26498,6 +26492,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -26796,12 +26796,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -26857,6 +26851,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -27155,12 +27155,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -27216,6 +27210,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -27514,12 +27514,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -27575,6 +27569,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -27872,12 +27872,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -27933,6 +27927,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -28230,12 +28230,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -28291,6 +28285,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -28588,12 +28588,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -28649,6 +28643,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -28962,12 +28962,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -29023,6 +29017,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -29336,12 +29336,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -29397,6 +29391,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -29710,12 +29710,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -29771,6 +29765,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -30074,12 +30074,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -30135,6 +30129,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -30448,12 +30448,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -30509,6 +30503,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -30812,12 +30812,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -30873,6 +30867,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -31186,12 +31186,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -31247,6 +31241,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -31569,12 +31569,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -31631,6 +31625,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -31944,12 +31944,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -32005,6 +31999,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -32318,12 +32318,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -32379,6 +32373,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -32600,12 +32600,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -32661,6 +32655,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -32882,12 +32882,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -32943,6 +32937,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -33164,12 +33164,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -33225,6 +33219,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -33446,12 +33446,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -33507,6 +33501,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -33811,12 +33811,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -33872,6 +33866,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -34156,12 +34156,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -34217,6 +34211,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -34521,12 +34521,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -34582,6 +34576,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -34885,12 +34885,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -34946,6 +34940,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -35249,12 +35249,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -35310,6 +35304,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -35613,12 +35613,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -35674,6 +35668,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -35977,12 +35977,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -36038,6 +36032,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -36341,12 +36341,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -36402,6 +36396,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -36705,12 +36705,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -36766,6 +36760,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -37069,12 +37069,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -37130,6 +37124,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -37433,12 +37433,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -37494,6 +37488,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -37787,12 +37787,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -37848,6 +37842,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -38141,12 +38141,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -38202,6 +38196,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -38495,12 +38495,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -38556,6 +38550,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -38859,12 +38859,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -38920,6 +38914,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -39213,12 +39213,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -39274,6 +39268,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -39567,12 +39567,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -39628,6 +39622,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -39921,12 +39921,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -39982,6 +39976,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -40285,12 +40285,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -40346,6 +40340,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -40580,12 +40580,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -40641,6 +40635,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -40914,12 +40914,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -40975,6 +40969,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -41248,12 +41248,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -41309,6 +41303,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -41582,12 +41582,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -41643,6 +41637,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -41916,12 +41916,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -41977,6 +41971,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -42250,12 +42250,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -42311,6 +42305,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -42584,12 +42584,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -42645,6 +42639,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -42918,12 +42918,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -42979,6 +42973,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -43252,12 +43252,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -43313,6 +43307,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -43586,12 +43586,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -43647,6 +43641,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -43920,12 +43920,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -43981,6 +43975,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -44254,12 +44254,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -44315,6 +44309,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -44588,12 +44588,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -44649,6 +44643,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -44922,12 +44922,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -44983,6 +44977,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -45256,12 +45256,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -45317,6 +45311,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -45590,12 +45590,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -45651,6 +45645,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -45924,12 +45924,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -45985,6 +45979,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -46258,12 +46258,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -46319,6 +46313,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -46592,12 +46592,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -46653,6 +46647,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -46926,12 +46926,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -46987,6 +46981,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -47260,12 +47260,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -47321,6 +47315,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -47594,12 +47594,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -47655,6 +47649,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -47928,12 +47928,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -47989,6 +47983,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -48262,12 +48262,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -48323,6 +48317,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -48596,12 +48596,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -48657,6 +48651,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -48930,12 +48930,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -48991,6 +48985,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -49264,12 +49264,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -49325,6 +49319,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -49598,12 +49598,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -49659,6 +49653,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -49932,12 +49932,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -49993,6 +49987,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -50266,12 +50266,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -50327,6 +50321,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -50600,12 +50600,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -50661,6 +50655,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -50934,12 +50934,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -50995,6 +50989,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -51268,12 +51268,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -51329,6 +51323,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -51602,12 +51602,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -51663,6 +51657,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -51936,12 +51936,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -51997,6 +51991,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -52270,12 +52270,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -52331,6 +52325,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -52604,12 +52604,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -52665,6 +52659,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -52938,12 +52938,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -52999,6 +52993,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -53272,12 +53272,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -53333,6 +53327,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -53606,12 +53606,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -53667,6 +53661,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -53940,12 +53940,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -54001,6 +53995,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -54274,12 +54274,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -54335,6 +54329,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -54608,12 +54608,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -54669,6 +54663,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -54942,12 +54942,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -55003,6 +54997,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -55276,12 +55276,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -55337,6 +55331,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -55610,12 +55610,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -55671,6 +55665,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -55944,12 +55944,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -56005,6 +55999,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -56278,12 +56278,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -56339,6 +56333,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -56612,12 +56612,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -56673,6 +56667,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -56946,12 +56946,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -57007,6 +57001,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -57280,12 +57280,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -57341,6 +57335,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -57453,15 +57453,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -57475,6 +57466,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -57609,13 +57609,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -57674,6 +57667,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -57787,15 +57787,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -57809,6 +57800,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -57943,13 +57943,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -58008,6 +58001,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58121,15 +58121,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -58143,6 +58134,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58277,13 +58277,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -58342,6 +58335,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58455,15 +58455,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -58477,6 +58468,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58611,13 +58611,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -58676,6 +58669,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58789,15 +58789,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -58811,6 +58802,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -58945,13 +58945,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -59010,6 +59003,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59123,15 +59123,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -59145,6 +59136,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59279,13 +59279,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -59344,6 +59337,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59457,15 +59457,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -59479,6 +59470,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59613,13 +59613,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -59678,6 +59671,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59791,15 +59791,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -59813,6 +59804,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59947,13 +59947,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -60012,6 +60005,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60125,15 +60125,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -60147,6 +60138,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60281,13 +60281,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -60346,6 +60339,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60459,15 +60459,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -60481,6 +60472,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60615,13 +60615,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -60680,6 +60673,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60793,15 +60793,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -60815,6 +60806,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60949,13 +60949,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -61014,6 +61007,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61127,15 +61127,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -61149,6 +61140,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61283,13 +61283,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -61348,6 +61341,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61461,15 +61461,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -61483,6 +61474,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61617,13 +61617,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -61682,6 +61675,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61795,15 +61795,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -61817,6 +61808,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61951,13 +61951,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -62016,6 +62009,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62129,15 +62129,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -62151,6 +62142,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62285,13 +62285,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -62350,6 +62343,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62463,15 +62463,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -62485,6 +62476,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62619,13 +62619,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -62684,6 +62677,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62797,15 +62797,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -62819,6 +62810,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62953,13 +62953,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -63018,6 +63011,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63131,15 +63131,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -63153,6 +63144,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63287,13 +63287,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -63352,6 +63345,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63465,15 +63465,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -63487,6 +63478,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63621,13 +63621,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -63686,6 +63679,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63799,15 +63799,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -63821,6 +63812,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63955,13 +63955,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -64020,6 +64013,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64133,15 +64133,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -64155,6 +64146,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64289,13 +64289,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -64354,6 +64347,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64467,15 +64467,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -64489,6 +64480,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64623,13 +64623,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -64688,6 +64681,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64801,15 +64801,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -64823,6 +64814,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64957,13 +64957,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -65022,6 +65015,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65135,15 +65135,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -65157,6 +65148,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65291,13 +65291,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -65356,6 +65349,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65469,15 +65469,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -65491,6 +65482,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65625,13 +65625,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -65690,6 +65683,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65803,15 +65803,6 @@
     "grupoNombre": "Motorización",
     "filas": [
      {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
@@ -65825,6 +65816,15 @@
       "etiqueta": "Frecuencia",
       "estado": "confirmado",
       "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65959,13 +65959,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -66024,6 +66017,13 @@
    "frecuencia": {
     "estado": "confirmado",
     "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -66253,12 +66253,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -66314,6 +66308,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -66553,12 +66553,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -66615,6 +66609,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -66828,12 +66828,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -66889,6 +66883,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -67102,12 +67102,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -67163,6 +67157,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -67352,12 +67352,6 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
    "traccion": {
     "estado": "no_aplica",
     "texto": "—",
@@ -67413,6 +67407,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
