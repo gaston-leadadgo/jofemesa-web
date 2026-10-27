@@ -113,5 +113,75 @@
   "id": 655,
   "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/maquina-columna.svg",
   "alt": ""
+ },
+ "fabricante-genie": {
+  "id": 1116,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/genie.webp",
+  "alt": "Genie"
+ },
+ "fabricante-jlg": {
+  "id": 1117,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/jlg.webp",
+  "alt": "JLG"
+ },
+ "fabricante-haulotte": {
+  "id": 1118,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/haulotte.webp",
+  "alt": "Haulotte"
+ },
+ "fabricante-manitou": {
+  "id": 1119,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/manitou.webp",
+  "alt": "Manitou"
+ },
+ "fabricante-jcb": {
+  "id": 1120,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/jcb.webp",
+  "alt": "JCB"
+ },
+ "fabricante-snorkel": {
+  "id": 1121,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/snorkel.webp",
+  "alt": "Snorkel"
+ },
+ "fabricante-ausa": {
+  "id": 1122,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/ausa.webp",
+  "alt": "Ausa"
+ },
+ "fabricante-bomag": {
+  "id": 1123,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/bomag.webp",
+  "alt": "Bomag"
+ },
+ "fabricante-hamm": {
+  "id": 1124,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/hamm.webp",
+  "alt": "Hamm"
+ },
+ "fabricante-wacker-neuson": {
+  "id": 1125,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/wacker-neuson.webp",
+  "alt": "Wacker Neuson"
+ },
+ "fabricante-atlas-copco": {
+  "id": 1126,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/atlas-copco.webp",
+  "alt": "Atlas Copco"
+ },
+ "fabricante-himoinsa": {
+  "id": 1127,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/himoinsa.webp",
+  "alt": "Himoinsa"
+ },
+ "fabricante-dagartech": {
+  "id": 1128,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/dagartech.webp",
+  "alt": "Dagartech"
+ },
+ "fabricante-hilti": {
+  "id": 1129,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/hilti.webp",
+  "alt": "Hilti"
  }
 }

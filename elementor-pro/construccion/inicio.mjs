@@ -1,7 +1,41 @@
 /** Portada · estructura/10-inicio.md */
-import { c, h, t, b, sc, img, ico, lista } from "./lib.mjs";
+import { c, h, t, b, sc, img, ico, lista, w, M } from "./lib.mjs";
 
 const flecha = { icono: "flecha", pos: "despues" };
+
+/* Logotipos de los fabricantes en el «Carrusel de imágenes» nativo de
+   Elementor: el cliente añade o quita marcas desde la galería del
+   widget. El desplazamiento continuo sale de autoplay a 0 ms con
+   transición lineal (CSS del propio widget). */
+const FABRICANTES = ["genie", "jlg", "haulotte", "manitou", "jcb", "snorkel", "ausa", "bomag", "hamm", "wacker-neuson", "atlas-copco", "himoinsa", "dagartech", "hilti"];
+const CSS_CARRUSEL = `/* Carrusel continuo de logos: transición lineal, logos en gris y color al pasar por encima. Para añadir o quitar marcas, edita la galería del widget. */
+selector { flex: 1; min-width: 0; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+selector .swiper-wrapper { transition-timing-function: linear !important; align-items: center; }
+selector .swiper-slide { display: flex; align-items: center; justify-content: center; height: 56px; padding: 0 22px; box-sizing: border-box; }
+selector .swiper-slide-image { max-height: 34px; max-width: 100%; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .7; transition: filter .25s, opacity .25s; }
+selector .swiper-slide-image:hover { filter: none; opacity: 1; }`;
+
+const carruselFabricantes = () =>
+  w("image-carousel", {
+    carousel: FABRICANTES.map((s) => ({ id: M[`fabricante-${s}`].id, url: M[`fabricante-${s}`].url })),
+    thumbnail_size: "full",
+    slides_to_show: "5",
+    slides_to_show_tablet: "3",
+    slides_to_show_mobile: "2",
+    slides_to_scroll: "1",
+    navigation: "none",
+    autoplay: "yes",
+    autoplay_speed: 0,
+    pause_on_hover: "yes",
+    pause_on_interaction: "no",
+    infinite: "yes",
+    speed: 3500,
+    image_spacing: "custom",
+    image_spacing_custom: { unit: "px", size: 0 },
+    link_to: "none",
+    _css_classes: "jm-carrusel-logos",
+    custom_css: CSS_CARRUSEL,
+  });
 
 const hero = () => [
   c("jm-hero jm-oscuro", [
@@ -60,7 +94,7 @@ const partners = () => [
       ]),
       c("jm-tira-fabricantes jm-partners__fabricantes", [
         h("h3", "jm-label", "Nuestros fabricantes"),
-        sc('[jm_fabricantes variante="partners"]'),
+        carruselFabricantes(),
       ]),
     ]),
   ], { tag: "section" }),
