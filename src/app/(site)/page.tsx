@@ -56,7 +56,9 @@ export default function Portada() {
           llega pintado en el HTML. */}
       <AsesorLocal />
 
-      <Destacadas maquinas={conFotoYFicha} />
+      {/* Doce en el carrusel; el titular da el total. Con todas (~180)
+          la portada pesaba 1,6 MB de HTML y pedía más de 200 imágenes. */}
+      <Destacadas maquinas={conFotoYFicha.slice(0, 12)} total={conFotoYFicha.length} />
       <Cobertura />
       <Autoridad />
       {MODULOS.noticias && <Noticias />}

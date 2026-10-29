@@ -21,7 +21,14 @@ import { TarjetaMaquina } from "@/components/maquina/TarjetaMaquina";
  * que se puedan ver todas»—: en un carrusel sin flecha, quien no sabe
  * que se arrastra se pierde la mitad del contenido.
  */
-export function Destacadas({ maquinas }: { maquinas: Maquina[] }) {
+export function Destacadas({
+  maquinas,
+  total,
+}: {
+  maquinas: Maquina[];
+  /** Cuántas hay con foto y ficha en total; el carrusel lleva una selección. */
+  total: number;
+}) {
   const pista = useRef<HTMLUListElement>(null);
 
   const mover = (sentido: -1 | 1) => {
@@ -38,7 +45,7 @@ export function Destacadas({ maquinas }: { maquinas: Maquina[] }) {
           <div data-revelar>
             <p className="label text-accent">Con ficha y foto oficial</p>
             <h2 className="display-2 mt-3 max-w-[24ch] text-ink">
-              {maquinas.length} máquinas que puedes decidir sin llamar
+              {total} máquinas que puedes decidir sin llamar
             </h2>
             <p className="lede mt-4 max-w-[52ch] text-ink-2">
               Fotografía de nuestra propia flota y ficha técnica del

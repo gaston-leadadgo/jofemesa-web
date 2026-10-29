@@ -54,7 +54,8 @@ add_action('elementor/query/jm_catalogo', function (WP_Query $q) {
 
 add_action('elementor/query/jm_destacadas', function (WP_Query $q) {
     $q->set('post_type', 'maquina');
-    $q->set('posts_per_page', -1);
+    /* El número lo pone el widget («Entradas por página»): con todas, la
+       portada pintaba ~180 tarjetas y pesaba 2 MB de HTML. */
     $q->set('meta_query', [
         'relation'  => 'AND',
         ['key' => '_thumbnail_id', 'compare' => 'EXISTS'],
