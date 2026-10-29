@@ -1,8 +1,8 @@
 {
  "hero-alquiler": {
-  "id": 552,
-  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/portada.jpg",
-  "alt": "Plataforma elevadora de tijera trabajando en la estructura de una nave"
+  "id": 1133,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/portada-1.jpg",
+  "alt": "Sede de JOFEMESA en Valencia, con plataformas elevadoras de brazo y de tijera en la campa"
  },
  "hero-formacion": {
   "id": 553,
@@ -183,5 +183,40 @@
   "id": 1129,
   "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/hilti.webp",
   "alt": "Hilti"
+ },
+ "sello-aenor-une-58923": {
+  "id": 1134,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/aenor-une-58923.webp",
+  "alt": "AENOR · UNE 58923"
+ },
+ "sello-aenor-une-58451": {
+  "id": 1135,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/aenor-une-58451.webp",
+  "alt": "AENOR · UNE 58451"
+ },
+ "sello-ipaf-centro-formacion": {
+  "id": 1136,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/ipaf-centro-formacion.webp",
+  "alt": "IPAF · Centro de formación homologado"
+ },
+ "sello-ipaf-afiliado": {
+  "id": 1137,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/ipaf-afiliado.webp",
+  "alt": "IPAF · Empresa afiliada"
+ },
+ "sello-anapat": {
+  "id": 1138,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/anapat.webp",
+  "alt": "ANAPAT"
+ },
+ "certificado-aenor-une-58923": {
+  "id": 1139,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/aenor-une-58923.pdf",
+  "alt": ""
+ },
+ "certificado-aenor-une-58451": {
+  "id": 1140,
+  "url": "https://jofemesa.kind-jones.51-83-41-165.plesk.page/wp-content/uploads/2026/10/aenor-une-58451.pdf",
+  "alt": ""
  }
 }

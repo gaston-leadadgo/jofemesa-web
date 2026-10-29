@@ -1,5 +1,5 @@
 /** Formación · estructura/40-formacion.md y 42-loop-curso-y-convocatoria.md */
-import { c, h, t, b, sc, html, img, ico, lista, w, fa, etiqueta, dinamico, campo, urlEntrada } from "./lib.mjs";
+import { c, h, t, b, sc, html, img, ico, lista, w, fa, etiqueta, dinamico, campo, urlEntrada, sellos } from "./lib.mjs";
 
 const flechaFa = { fa: fa("arrow-right"), pos: "despues" };
 const icoFa = (f, clases) => w("icon", { selected_icon: f, _css_classes: clases });
@@ -103,6 +103,7 @@ const pagina = () => [
       c("jm-fo-autoridad__item", [h("span", "jm-sr", "Convocatorias en 2026 y 2027", { dyn: ['[jm_formacion_cifra que="anios"]', { antes: "Convocatorias en " }] }), h("span", "jm-fo-autoridad__v", "293", { dyn: ['[jm_formacion_cifra que="convocatorias" anio="todos"]'] }), h("span", "jm-fo-autoridad__t", "Convocatorias en 2026 y 2027, cada semana en Madrid y en Valencia", { dyn: ['[jm_formacion_cifra que="anios"]', { antes: "Convocatorias en ", despues: ", cada semana en Madrid y en Valencia" }] })]),
       c("jm-fo-autoridad__item", [h("span", "jm-sr", "Cursos"), h("span", "jm-fo-autoridad__v", "12", { dyn: ['[jm_formacion_cifra que="cursos"]'] }), t("jm-fo-autoridad__t jm-hereda", 'Cursos en catálogo y [jm_formacion_cifra que="sedes"] sedes de formación propias')]),
     ], { attrs: { "data-escalonar": "" } }),
+    sellos("jm-contenedor jm-fo-sellos", ["aenor-une-58923", "aenor-une-58451", "ipaf-centro-formacion"], 52, [h("p", "jm-label-sm", "Certificados y homologaciones")], "border-top: 1px solid var(--jm-rule, #e4e4e7); padding-top: 20px; padding-bottom: 20px;"),
   ], { tag: "section", attrs: { "aria-label": "Formación certificada" } }),
   c("jm-indice", [
     c("jm-contenedor jm-indice__pista", [

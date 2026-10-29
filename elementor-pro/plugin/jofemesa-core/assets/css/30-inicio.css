@@ -153,7 +153,7 @@ body.jm .jm-hero__portada.jm-hero--cortina { animation: jm-hero-cortina 1s cubic
 /* Foto a sangre (widget Imagen con jm-fondo-img jm-hero__foto). */
 body.jm .jm-hero__foto { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
 body.jm .jm-hero__foto img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; }
-body.jm .jm-hero__foto--alquiler img { object-position: 72% center; }
+body.jm .jm-hero__foto--alquiler img { object-position: 60% center; }
 body.jm .jm-hero__foto--formacion img { object-position: 80% center; }
 /* Mientras no llegue la foto de Formación: la de obra en espejo y con velo extra. */
 body.jm .jm-hero__foto--provisional img { object-position: 20% center; transform: scaleX(-1); }

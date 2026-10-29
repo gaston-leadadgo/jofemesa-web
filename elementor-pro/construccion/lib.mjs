@@ -185,3 +185,25 @@ export function html(codigo, clases) {
 export function w(tipo, ajustes) {
   return widget(tipo, ajustes);
 }
+
+/**
+ * Fila de sellos con logotipo (medios.json: `sello-<id>`). Los de AENOR
+ * enlazan a su certificado (`certificado-<id>`). Todos a la misma
+ * altura, con CSS del propio contenedor para que siga siendo editable.
+ */
+export function sellos(clases, ids, alto, hijosAntes = [], cssExtra = "") {
+  const css = `/* Sellos con logotipo: misma altura para todos. Para cambiar uno, edita su widget de imagen. */
+selector { ${cssExtra} }
+selector .elementor-widget-image, selector .elementor-widget-heading { width: auto; }
+selector img { height: ${alto}px !important; width: auto !important; max-width: none !important; display: block; }
+selector a:hover img { opacity: .8; }`;
+  const cont = c(clases, [
+    ...hijosAntes,
+    ...ids.map((s) => {
+      const cert = M[`certificado-${s}`];
+      return img(`sello-${s}`, "jm-sello", cert ? { enlace: cert.url } : {});
+    }),
+  ], { fila: true });
+  Object.assign(cont.settings, { flex_wrap: "wrap", flex_align_items: "center", custom_css: css });
+  return cont;
+}

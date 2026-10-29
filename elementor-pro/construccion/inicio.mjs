@@ -1,5 +1,5 @@
 /** Portada · estructura/10-inicio.md */
-import { c, h, t, b, sc, img, ico, lista, w, M } from "./lib.mjs";
+import { c, h, t, b, sc, img, ico, lista, w, M, sellos } from "./lib.mjs";
 
 const flecha = { icono: "flecha", pos: "despues" };
 
@@ -114,7 +114,8 @@ const garantias = () => [
       ], { attrs: { "data-escalonar": "" } }),
       c("jm-garantias__sellos", [
         h("p", "jm-label-sm", "Certificados"),
-        lista("jm-garantias__sellos-lista", ["ISO 9001", "ISO 14001", "ISO 45001", "IPAF", "AENOR · UNE 58923", "AENOR · UNE 58451"], { enLinea: true }),
+        lista("jm-garantias__sellos-lista", ["ISO 9001", "ISO 14001", "ISO 45001"], { enLinea: true }),
+        sellos("jm-sellos", ["aenor-une-58923", "aenor-une-58451", "ipaf-centro-formacion", "ipaf-afiliado", "anapat"], 44, [], "width: auto; flex: 0 1 auto;"),
       ], { fila: true }),
     ]),
   ], { tag: "section" }),
