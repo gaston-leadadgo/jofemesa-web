@@ -58,7 +58,7 @@
     "claim": "Cuando la obra se pone seria, necesitas una máquina preparada para seguirla.",
     "descripcion": "Equipos pensados para trabajos exteriores que requieren capacidad de carga ampliada, gran autonomía y tracción 4x4 para responder en terrenos de obra complejos.",
     "icono": "tijera",
-    "total": 9
+    "total": 8
    },
    {
     "nombre": "Brazos articulados diésel",
@@ -66,7 +66,7 @@
     "claim": "Altura, alcance y terreno. Todo cuenta.",
     "descripcion": "Equipos articulados preparados para acceder a zonas elevadas y salvar obstáculos en trabajos exteriores y obras con terrenos difíciles y pendientes pronunciadas.",
     "icono": "brazo",
-    "total": 16
+    "total": 17
    },
    {
     "nombre": "Brazos telescópicos diésel",

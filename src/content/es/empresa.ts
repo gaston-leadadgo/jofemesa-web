@@ -504,7 +504,7 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Hay 185 fichas técnicas: toda elevación salvo la tijera diésel Snorkel A46JRT, las carretillas (sin las EFG 218k, 220, 318 y 320), todoterreno y manipuladores, y desde el 29/10/2026 todo el movimiento de tierras, la compactación y 24 de los 26 grupos electrógenos. Sin ficha quedan los Himoinsa HYW35 y HRFW100 (sin T5), la torre de iluminación, el compresor, los dos martillos y la herramienta Hilti.",
+    nota: "Hay 185 fichas técnicas: toda elevación salvo el brazo articulado diésel Snorkel A46JRT (el cliente confirmó el 29/10/2026 que no es una tijera; foto y ficha, en camino), las carretillas (sin las EFG 218k, 220, 318 y 320), todoterreno y manipuladores, y desde el 29/10/2026 todo el movimiento de tierras, la compactación y 24 de los 26 grupos electrógenos. Sin ficha quedan los Himoinsa HYW35 y HRFW100 (sin T5), la torre de iluminación, el compresor, los dos martillos y la herramienta Hilti.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",

@@ -15784,360 +15784,10 @@
   "relacionadas": [
    "snorkel-s3970-rt",
    "genie-gs-4069-rt",
-   "snorkel-a46jrt"
+   "genie-gs-3369-rt"
   ],
   "enAlquiler": true,
   "busqueda": "genie gs-4390 tijera diesel de 15 m de altura de trabajo y 680 kg de carga en plataforma. traccion a las cuatro ruedas, autonomia de jornada completa y estabilizadores para trabajar en terreno de obra sin preparar. tijeras diesel elevacion edificacion y obra civil montaje de estructura metalica cubiertas y naves en construccion subida de material a plataforma"
- },
- {
-  "slug": "snorkel-a46jrt",
-  "marca": "Snorkel",
-  "modelo": "A46JRT",
-  "titulo": "Snorkel A46JRT",
-  "familia": "elevacion",
-  "familiaNombre": "Elevación",
-  "subcategoria": "tijeras-diesel",
-  "subcategoriaNombre": "Tijeras diésel",
-  "icono": "tijera",
-  "lineas": [
-   "alquiler"
-  ],
-  "condicionVenta": null,
-  "gama": false,
-  "destacada": false,
-  "orden": 6060,
-  "energia": "diesel",
-  "energiaNombre": "Diésel",
-  "entornos": [
-   "exterior"
-  ],
-  "traccion": "4x4",
-  "requiereFormacion": true,
-  "delegaciones": [
-   "madrid",
-   "asturias",
-   "valladolid",
-   "valencia",
-   "alicante",
-   "sevilla",
-   "malaga",
-   "oporto",
-   "lisboa"
-  ],
-  "descripcionCorta": "Tijera diésel de 16 m de altura de trabajo y 227 kg de carga en plataforma. Tracción a las cuatro ruedas, autonomía de jornada completa y estabilizadores para trabajar en terreno de obra sin preparar.",
-  "aplicaciones": [
-   "Edificación y obra civil",
-   "Montaje de estructura metálica",
-   "Cubiertas y naves en construcción",
-   "Subida de material a plataforma"
-  ],
-  "destacados": [
-   "227 kg de carga en plataforma",
-   "Tracción 4x4 para terreno irregular",
-   "Autonomía de jornada completa"
-  ],
-  "trabajos": [
-   "altura"
-  ],
-  "notaAsesor": null,
-  "altura": 16,
-  "carga": 227,
-  "foto": null,
-  "ficha": null,
-  "tarjeta": [
-   {
-    "key": "alturaTrabajo",
-    "etiqueta": "Altura trabajo",
-    "estado": "confirmado",
-    "texto": "16",
-    "unidad": "m",
-    "valor": 16,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "capacidadCarga",
-    "etiqueta": "Carga máx.",
-    "estado": "confirmado",
-    "texto": "227",
-    "unidad": "kg",
-    "valor": 227,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "anchoTransporte",
-    "etiqueta": "Anchura",
-    "estado": "confirmado",
-    "texto": "2.100",
-    "unidad": "mm",
-    "valor": 2100,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  ],
-  "specs": [
-   {
-    "grupo": "prestaciones",
-    "grupoNombre": "Prestaciones",
-    "filas": [
-     {
-      "key": "alturaTrabajo",
-      "etiqueta": "Altura de trabajo",
-      "estado": "confirmado",
-      "texto": "16",
-      "unidad": "m",
-      "valor": 16,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   },
-   {
-    "grupo": "capacidades",
-    "grupoNombre": "Capacidades",
-    "filas": [
-     {
-      "key": "capacidadCarga",
-      "etiqueta": "Capacidad de carga",
-      "estado": "confirmado",
-      "texto": "227",
-      "unidad": "kg",
-      "valor": 227,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   },
-   {
-    "grupo": "dimensiones",
-    "grupoNombre": "Dimensiones",
-    "filas": [
-     {
-      "key": "anchoTransporte",
-      "etiqueta": "Anchura",
-      "estado": "confirmado",
-      "texto": "2.100",
-      "unidad": "mm",
-      "valor": 2100,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "alturaTransporte",
-      "etiqueta": "Altura replegada",
-      "estado": "confirmado",
-      "texto": "2.160",
-      "unidad": "mm",
-      "valor": 2160,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "peso",
-      "etiqueta": "Peso",
-      "estado": "confirmado",
-      "texto": "7.540",
-      "unidad": "kg",
-      "valor": 7540,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   }
-  ],
-  "comparador": {
-   "alturaTrabajo": {
-    "estado": "confirmado",
-    "texto": "16",
-    "unidad": "m",
-    "valor": 16,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "alcanceHorizontal": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaElevacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCarga": {
-    "estado": "confirmado",
-    "texto": "227",
-    "unidad": "kg",
-    "valor": 227,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "profundidadExcavacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCazo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "fuerzaCentrifuga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "dimensionesPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTransporte": {
-    "estado": "confirmado",
-    "texto": "2.100",
-    "unidad": "mm",
-    "valor": 2100,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "alturaTransporte": {
-    "estado": "confirmado",
-    "texto": "2.160",
-    "unidad": "mm",
-    "valor": 2160,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "peso": {
-    "estado": "confirmado",
-    "texto": "7.540",
-    "unidad": "kg",
-    "valor": 7540,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "pendienteSuperable": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "velocidadTraslacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "traccion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "autonomia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "personas": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "extensionPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "radioGiroInterior": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "rotacionTorreta": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potenciaPrpEsp": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "frecuencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "emisiones": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "version": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   }
-  },
-  "relacionadas": [
-   "genie-gs-4390",
-   "snorkel-s3970-rt",
-   "genie-gs-4069-rt"
-  ],
-  "enAlquiler": true,
-  "busqueda": "snorkel a46jrt tijera diesel de 16 m de altura de trabajo y 227 kg de carga en plataforma. traccion a las cuatro ruedas, autonomia de jornada completa y estabilizadores para trabajar en terreno de obra sin preparar. tijeras diesel elevacion edificacion y obra civil montaje de estructura metalica cubiertas y naves en construccion subida de material a plataforma"
  },
  {
   "slug": "genie-gs-5390",
@@ -16155,7 +15805,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": true,
-  "orden": 6070,
+  "orden": 6060,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -16490,9 +16140,9 @@
    }
   },
   "relacionadas": [
-   "snorkel-a46jrt",
    "genie-gs-4390",
-   "snorkel-s3970-rt"
+   "snorkel-s3970-rt",
+   "genie-gs-4069-rt"
   ],
   "enAlquiler": true,
   "busqueda": "genie gs-5390 tijera diesel de 18 m de altura de trabajo y 680 kg de carga en plataforma. traccion a las cuatro ruedas, autonomia de jornada completa y estabilizadores para trabajar en terreno de obra sin preparar. tijeras diesel elevacion edificacion y obra civil montaje de estructura metalica cubiertas y naves en construccion subida de material a plataforma"
@@ -16513,7 +16163,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 6080,
+  "orden": 6070,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -16849,8 +16499,8 @@
   },
   "relacionadas": [
    "genie-gs-5390",
-   "snorkel-a46jrt",
-   "genie-gs-4390"
+   "genie-gs-4390",
+   "snorkel-s3970-rt"
   ],
   "enAlquiler": true,
   "busqueda": "holland lift b-195 dl tijera diesel de 22 m de altura de trabajo y 750 kg de carga en plataforma. traccion a las cuatro ruedas, autonomia de jornada completa y estabilizadores para trabajar en terreno de obra sin preparar. tijeras diesel elevacion edificacion y obra civil montaje de estructura metalica cubiertas y naves en construccion subida de material a plataforma"
@@ -17924,7 +17574,7 @@
   "relacionadas": [
    "genie-z-45-25j-rt",
    "haulotte-ha16-rtj-pro",
-   "jlg-520-aj"
+   "snorkel-a46jrt"
   ],
   "enAlquiler": true,
   "busqueda": "jlg 450aj sii brazo articulado diesel de 16 m de altura de trabajo. salva obstaculos por arriba y por el lado, con traccion 4x4 y pendiente superable para llegar al punto de trabajo en terreno de obra. brazos articulados diesel elevacion obra civil e infraestructura trabajo por encima de obstaculos naves industriales en construccion mantenimiento de instalaciones exteriores"
@@ -18282,7 +17932,7 @@
   "relacionadas": [
    "jlg-450aj-sii",
    "haulotte-ha16-rtj-pro",
-   "jlg-520-aj"
+   "snorkel-a46jrt"
   ],
   "enAlquiler": true,
   "busqueda": "genie z-45/25j rt brazo articulado diesel de 16 m de altura de trabajo. salva obstaculos por arriba y por el lado, con traccion 4x4 y pendiente superable para llegar al punto de trabajo en terreno de obra. brazos articulados diesel elevacion obra civil e infraestructura trabajo por encima de obstaculos naves industriales en construccion mantenimiento de instalaciones exteriores"
@@ -18640,10 +18290,360 @@
   "relacionadas": [
    "jlg-450aj-sii",
    "genie-z-45-25j-rt",
-   "jlg-520-aj"
+   "snorkel-a46jrt"
   ],
   "enAlquiler": true,
   "busqueda": "haulotte ha16 rtj pro brazo articulado diesel de 16 m de altura de trabajo. salva obstaculos por arriba y por el lado, con traccion 4x4 y pendiente superable para llegar al punto de trabajo en terreno de obra. brazos articulados diesel elevacion obra civil e infraestructura trabajo por encima de obstaculos naves industriales en construccion mantenimiento de instalaciones exteriores"
+ },
+ {
+  "slug": "snorkel-a46jrt",
+  "marca": "Snorkel",
+  "modelo": "A46JRT",
+  "titulo": "Snorkel A46JRT",
+  "familia": "elevacion",
+  "familiaNombre": "Elevación",
+  "subcategoria": "brazos-articulados-diesel",
+  "subcategoriaNombre": "Brazos articulados diésel",
+  "icono": "brazo",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 7050,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "4x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Brazo articulado diésel de 16 m de altura de trabajo. Salva obstáculos por arriba y por el lado, con tracción 4x4 y pendiente superable para llegar al punto de trabajo en terreno de obra.",
+  "aplicaciones": [
+   "Obra civil e infraestructura",
+   "Trabajo por encima de obstáculos",
+   "Naves industriales en construcción",
+   "Mantenimiento de instalaciones exteriores"
+  ],
+  "destacados": [
+   "Alcance articulado sobre obstáculos",
+   "Tracción 4x4 y pendiente de obra",
+   "227 kg de carga en cesta"
+  ],
+  "trabajos": [
+   "altura"
+  ],
+  "notaAsesor": null,
+  "altura": 16,
+  "carga": 227,
+  "foto": null,
+  "ficha": null,
+  "tarjeta": [
+   {
+    "key": "alturaTrabajo",
+    "etiqueta": "Altura trabajo",
+    "estado": "confirmado",
+    "texto": "16",
+    "unidad": "m",
+    "valor": 16,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "227",
+    "unidad": "kg",
+    "valor": 227,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "2.100",
+    "unidad": "mm",
+    "valor": 2100,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "prestaciones",
+    "grupoNombre": "Prestaciones",
+    "filas": [
+     {
+      "key": "alturaTrabajo",
+      "etiqueta": "Altura de trabajo",
+      "estado": "confirmado",
+      "texto": "16",
+      "unidad": "m",
+      "valor": 16,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     }
+    ]
+   },
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "227",
+      "unidad": "kg",
+      "valor": 227,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "2.100",
+      "unidad": "mm",
+      "valor": 2100,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.160",
+      "unidad": "mm",
+      "valor": 2160,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "7.540",
+      "unidad": "kg",
+      "valor": 7540,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "confirmado",
+    "texto": "16",
+    "unidad": "m",
+    "valor": 16,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "227",
+    "unidad": "kg",
+    "valor": 227,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "2.100",
+    "unidad": "mm",
+    "valor": 2100,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.160",
+    "unidad": "mm",
+    "valor": 2160,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "7.540",
+    "unidad": "kg",
+    "valor": 7540,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potenciaPrpEsp": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "emisiones": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "version": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "jlg-450aj-sii",
+   "genie-z-45-25j-rt",
+   "haulotte-ha16-rtj-pro"
+  ],
+  "enAlquiler": true,
+  "busqueda": "snorkel a46jrt brazo articulado diesel de 16 m de altura de trabajo. salva obstaculos por arriba y por el lado, con traccion 4x4 y pendiente superable para llegar al punto de trabajo en terreno de obra. brazos articulados diesel elevacion obra civil e infraestructura trabajo por encima de obstaculos naves industriales en construccion mantenimiento de instalaciones exteriores"
  },
  {
   "slug": "jlg-520-aj",
@@ -18661,7 +18661,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7050,
+  "orden": 7060,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -19019,7 +19019,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7060,
+  "orden": 7070,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -19377,7 +19377,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7070,
+  "orden": 7080,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -19735,7 +19735,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7080,
+  "orden": 7090,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -20093,7 +20093,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7090,
+  "orden": 7100,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -20451,7 +20451,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7100,
+  "orden": 7110,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -20809,7 +20809,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7110,
+  "orden": 7120,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -21167,7 +21167,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7120,
+  "orden": 7130,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -21525,7 +21525,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7130,
+  "orden": 7140,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -21883,7 +21883,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7140,
+  "orden": 7150,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -22241,7 +22241,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 7150,
+  "orden": 7160,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [

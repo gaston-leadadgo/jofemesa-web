@@ -327,7 +327,6 @@ const tijerasDiesel: Fila[] = [
   { marca: "Snorkel", modelo: "S3970 RT", h: 14, ancho: 1800, hb: 2130, peso: 3790, carga: 350 },
   { marca: "Genie", modelo: "GS-4069 RT", h: 14, ancho: 1750, hb: 2740, peso: 4744, carga: 363 },
   { marca: "Genie", modelo: "GS-4390", h: 15, ancho: 2290, hb: 2930, peso: 5973, carga: 680, destacada: true },
-  { marca: "Snorkel", modelo: "A46JRT", h: 16, ancho: 2100, hb: 2160, peso: 7540, carga: 227 },
   { marca: "Genie", modelo: "GS-5390", h: 18, ancho: 2290, hb: 3150, peso: 7639, carga: 680, destacada: true },
   { marca: "Holland Lift", modelo: "B-195 DL", h: 22, ancho: 2440, hb: 2870, peso: 11990, carga: 750 },
 ];
@@ -338,6 +337,9 @@ const brazosDiesel: Fila[] = [
   { marca: "JLG", modelo: "450AJ SII", h: 16, ancho: 2340, hb: 2300, peso: 6250, carga: 230 },
   { marca: "Genie", modelo: "Z-45/25J RT", h: 16, ancho: 2290, hb: 2130, peso: 6460, carga: 227 },
   { marca: "Haulotte", modelo: "HA16 RTJ PRO", h: 16, ancho: 2300, hb: 2300, peso: 6650, carga: 230 },
+  // El catálogo la listaba entre las tijeras diésel; el cliente confirmó
+  // el 29/10/2026 que es un brazo articulado. Mismas cifras del catálogo.
+  { marca: "Snorkel", modelo: "A46JRT", h: 16, ancho: 2100, hb: 2160, peso: 7540, carga: 227 },
   { marca: "JLG", modelo: "520 AJ", h: 18, ancho: 2350, hb: 2270, peso: 7985, carga: 250 },
   { marca: "Genie", modelo: "Z-51/30J RT", h: 18, ancho: 1830, hb: 2130, peso: 7394, carga: 227 },
   { marca: "JLG", modelo: "600 AJ", h: 20, ancho: 2440, hb: 2560, peso: 10650, carga: 230 },
