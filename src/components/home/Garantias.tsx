@@ -3,8 +3,8 @@ import {
   CERTIFICACIONES,
   DELEGACIONES,
   EMPRESA,
-  HOMOLOGACIONES,
 } from "@/content/es/empresa";
+import { Sellos } from "@/components/marca/Sellos";
 import { ALQUILER } from "@/lib/catalog";
 
 /**
@@ -79,13 +79,13 @@ export function Garantias() {
           ))}
         </ul>
 
-        {/* Los sellos, en una sola línea de datos. No son logotipos de
-            terceros descargados de cualquier sitio: son los tres ISO que
-            publican y los tres de la contraportada de su catálogo. */}
-        <div className="flex flex-col gap-x-6 gap-y-2 border-t border-rule py-4 md:flex-row md:items-center">
+        {/* Los sellos. Los tres ISO van en texto porque no hay logotipo
+            suyo en el material; AENOR, IPAF y ANAPAT, con el logotipo
+            que envió el cliente el 29/10/2026. */}
+        <div className="flex flex-col gap-x-6 gap-y-3 border-t border-rule py-5 md:flex-row md:items-center">
           <p className="label-sm shrink-0 text-ink-3">Certificados</p>
           <ul className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-            {[...CERTIFICACIONES, ...HOMOLOGACIONES].map((c) => (
+            {CERTIFICACIONES.map((c) => (
               <li
                 key={c.id}
                 className="value text-sm text-ink-2"
@@ -95,6 +95,7 @@ export function Garantias() {
               </li>
             ))}
           </ul>
+          <Sellos alto={44} />
         </div>
       </div>
     </section>

@@ -168,7 +168,7 @@
   "necesidad": "Excavar, mover tierra y compactar",
   "necesidadDesc": "Equipos para excavar, cargar, desplazar, preparar el terreno y compactarlo.",
   "icono": "excavadora",
-  "total": 50,
+  "total": 53,
   "subcategorias": [
    {
     "nombre": "Retroexcavadoras",
@@ -200,7 +200,7 @@
     "claim": "Transporte ágil de tierra y escombros sobre cualquier terreno.",
     "descripcion": "Descarga elevada, tolvas giratorias y modelos autocargables para optimizar el ciclo de movimiento de material.",
     "icono": "dumper",
-    "total": 10
+    "total": 13
    },
    {
     "nombre": "Rodillos de compactación",

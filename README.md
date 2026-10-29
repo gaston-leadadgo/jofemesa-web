@@ -24,6 +24,18 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Entrega del 29/10/2026
+
+- **Fotos y fichas de 77 máquinas**: todo el movimiento de tierras (retroexcavadoras,
+  retrocargadoras, minicargadoras y dúmperes), toda la compactación y 24 de los 26 grupos
+  electrógenos.
+- **Dúmperes**: la Ausa D600AHG se sustituye por la D601 AHG y entran los Wacker Neuson DW30,
+  DW60 y DW90, con los datos de su ficha. Los AUSA ganan la carga útil de su ficha.
+- **Sellos con logotipo** (AENOR UNE 58923 y 58451, IPAF centro de formación y afiliado, ANAPAT)
+  en la portada y en /formacion; los de AENOR abren su certificado en PDF.
+- **Hero de Alquiler**: foto nueva de la sede.
+- El catálogo pasa a 198 máquinas: 189 con foto y 185 con ficha.
+
 ## Entrega del 27/10/2026
 
 - **Grupos electrógenos, modelo a modelo**: los 26 de la tabla del cliente (Dagartech, Pramac,

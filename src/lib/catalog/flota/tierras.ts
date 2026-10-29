@@ -1,8 +1,9 @@
 import type { Maquina } from "../types";
+import { conf } from "../types";
 import { construir, num, type Fila, type PerfilSubcategoria } from "./comun";
 
 /**
- * EXCAVACIÓN, MOVIMIENTO DE TIERRAS Y COMPACTACIÓN — 50 modelos.
+ * EXCAVACIÓN, MOVIMIENTO DE TIERRAS Y COMPACTACIÓN — 53 modelos.
  *
  * Transcripción de la página 4 del catálogo general, contrastada con el
  * documento «MAQUINARIA DE MOVIMIENTO DE TIERRAS Y COMPACTACIÓN SEGÚN
@@ -137,13 +138,19 @@ const DUMPERES: PerfilSubcategoria = {
     "Obra con accesos sin pavimentar",
     "Vertido en zanja y en encofrado",
   ],
+  /* La carga útil sale de la ficha del fabricante (material del
+     29/10/2026); la altura sin arco solo la publica AUSA. */
   describe: (f) =>
-    `Dúmper 4x4 de ${num(f.peso!)} kg con tolva de ${f.tolva} litros y descarga ${f.tipo!.toLowerCase()}. Tracción total para moverse por terreno sin preparar y ${num(f.sinArco!)} mm de altura sin arco para pasar por huecos bajos.`,
-  destacados: (f) => [
-    `Tolva de ${f.tolva} l`,
-    `Descarga ${f.tipo!.toLowerCase()}`,
-    `${num(f.sinArco!)} mm de altura sin arco`,
-  ],
+    `Dúmper 4x4 de ${num(f.peso!)} kg${f.carga ? ` y ${num(f.carga)} kg de carga útil` : ""}, con tolva de ${f.tolva} litros y descarga ${f.tipo!.toLowerCase()}. Tracción total para moverse por terreno sin preparar${f.sinArco ? ` y ${num(f.sinArco)} mm de altura sin arco para pasar por huecos bajos` : ""}.`,
+  destacados: (f) =>
+    [
+      `Tolva de ${f.tolva} l`,
+      f.carga ? `${num(f.carga)} kg de carga útil` : null,
+      `Descarga ${f.tipo!.toLowerCase()}`,
+      f.sinArco ? `${num(f.sinArco)} mm de altura sin arco` : null,
+    ]
+      .filter((d): d is string => d != null)
+      .slice(0, 3),
 };
 
 const RODILLOS: PerfilSubcategoria = {
@@ -269,17 +276,65 @@ const minicargadoras: Fila[] = [
   { marca: "Wacker Neuson", modelo: "WL28", peso: 2800, ancho: 1250, alturaTotal: 2340, carga: 2640 },
 ];
 
+/** Carga útil leída en la ficha del fabricante. */
+const cargaFicha = (kg: number): Pick<Fila, "carga" | "extra"> => ({
+  carga: kg,
+  extra: { capacidadCarga: conf(kg, "ficha-pdf") },
+});
+
+/**
+ * Dúmper que no está en el catálogo impreso: todas sus cifras salen de
+ * la ficha del fabricante. La tolva va de capacidad a nivel de agua a
+ * colmada, como en las de AUSA.
+ */
+function dumperDeFicha(
+  marca: string,
+  modelo: string,
+  tipo: string,
+  d: { carga: number; peso: number; tolva: string; ancho: number; alto: number; sinArco?: number },
+): Fila {
+  return {
+    marca,
+    modelo,
+    tipo,
+    peso: d.peso,
+    tolva: d.tolva,
+    ancho: d.ancho,
+    alturaTotal: d.alto,
+    sinArco: d.sinArco,
+    carga: d.carga,
+    extra: {
+      capacidadCarga: conf(d.carga, "ficha-pdf"),
+      peso: conf(d.peso, "ficha-pdf"),
+      capacidadCazo: conf(`${d.tolva} l`, "ficha-pdf"),
+      anchoTransporte: conf(d.ancho, "ficha-pdf"),
+      alturaTransporte: conf(d.alto, "ficha-pdf"),
+    },
+  };
+}
+
+/**
+ * El 29/10/2026 el cliente sustituyó la D600AHG por la D601 AHG y añadió
+ * los tres Wacker Neuson. De los DW, la foto de su flota es la de caja
+ * de volteo frontal, y esa es la columna de la ficha que se publica.
+ */
 const dumperes: Fila[] = [
-  { marca: "Ausa", modelo: "D100AHA", tipo: "Descarga elevada", peso: 1300, tolva: "345 – 565", ancho: 990, alturaTotal: 2620, sinArco: 2000 },
-  { marca: "Ausa", modelo: "D150AHA", tipo: "Descarga elevada", peso: 1510, tolva: "605 – 852", ancho: 1400, alturaTotal: 2560, sinArco: 1950 },
-  { marca: "Ausa", modelo: "D150AHG", tipo: "Giratoria", peso: 1650, tolva: "520 – 835", ancho: 1450, alturaTotal: 2600, sinArco: 1275, destacada: true },
-  { marca: "Ausa", modelo: "D250RHGS", tipo: "Giratoria autocargable", peso: 2170, tolva: "850 – 1.200", ancho: 1520, alturaTotal: 2240, sinArco: 2240 },
-  { marca: "Ausa", modelo: "D250AHG", tipo: "Giratoria", peso: 2650, tolva: "818 – 1.910", ancho: 1530, alturaTotal: 2740, sinArco: 1900 },
-  { marca: "Ausa", modelo: "D350AHG", tipo: "Giratoria", peso: 2831, tolva: "1.050 – 2.737", ancho: 1858, alturaTotal: 2770, sinArco: 1740 },
-  { marca: "Ausa", modelo: "D450AHG", tipo: "Giratoria", peso: 2970, tolva: "1.370 – 2.670", ancho: 1860, alturaTotal: 2820, sinArco: 2100 },
-  { marca: "Ausa", modelo: "D600AHG", tipo: "Giratoria", peso: 4380, tolva: "1.640 – 3.132", ancho: 2200, alturaTotal: 3250, sinArco: 2230 },
+  { marca: "Ausa", modelo: "D100AHA", tipo: "Elevada", peso: 1300, tolva: "345 – 565", ancho: 990, alturaTotal: 2620, sinArco: 2000, ...cargaFicha(1000) },
+  { marca: "Ausa", modelo: "D150AHA", tipo: "Elevada", peso: 1510, tolva: "605 – 852", ancho: 1400, alturaTotal: 2560, sinArco: 1950, ...cargaFicha(1500) },
+  { marca: "Ausa", modelo: "D150AHG", tipo: "Giratoria", peso: 1650, tolva: "520 – 835", ancho: 1450, alturaTotal: 2600, sinArco: 1275, destacada: true, ...cargaFicha(1500) },
+  { marca: "Ausa", modelo: "D250RHGS", tipo: "Giratoria autocargable", peso: 2170, tolva: "850 – 1.200", ancho: 1520, alturaTotal: 2240, sinArco: 2240, ...cargaFicha(2500) },
+  { marca: "Ausa", modelo: "D250AHG", tipo: "Giratoria", peso: 2650, tolva: "818 – 1.910", ancho: 1530, alturaTotal: 2740, sinArco: 1900, ...cargaFicha(2500) },
+  { marca: "Ausa", modelo: "D350AHG", tipo: "Giratoria", peso: 2831, tolva: "1.050 – 2.737", ancho: 1858, alturaTotal: 2770, sinArco: 1740, ...cargaFicha(3500) },
+  { marca: "Ausa", modelo: "D450AHG", tipo: "Giratoria", peso: 2970, tolva: "1.370 – 2.670", ancho: 1860, alturaTotal: 2820, sinArco: 2100, ...cargaFicha(4500) },
+  dumperDeFicha("Ausa", "D601 AHG", "Giratoria", { carga: 6000, peso: 4490, tolva: "1.665 – 3.154", ancho: 2210, alto: 3280, sinArco: 2290 }),
+  /* La ficha y la foto que llegaron para esta unidad son de la D 1000
+     APG: se publican, pero las cifras siguen siendo las del catálogo
+     hasta que el cliente confirme el modelo (DATOS_PENDIENTES). */
   { marca: "Ausa", modelo: "D1000AHG", tipo: "Giratoria", peso: 4379, tolva: "1.850 – 3.900", ancho: 2470, alturaTotal: 3330, sinArco: 2510 },
-  { marca: "Ausa", modelo: "D601 APG", tipo: "Giratoria", peso: 4345, tolva: "1.665 – 3.154", ancho: 2210, alturaTotal: 3280, sinArco: 2290 },
+  { marca: "Ausa", modelo: "D601 APG", tipo: "Giratoria", peso: 4345, tolva: "1.665 – 3.154", ancho: 2210, alturaTotal: 3280, sinArco: 2290, ...cargaFicha(6000) },
+  dumperDeFicha("Wacker Neuson", "DW30", "Frontal", { carga: 3000, peso: 2098, tolva: "1.110 – 1.800", ancho: 1730, alto: 2778 }),
+  dumperDeFicha("Wacker Neuson", "DW60", "Frontal", { carga: 6000, peso: 4483, tolva: "1.900 – 3.500", ancho: 2378, alto: 3340 }),
+  dumperDeFicha("Wacker Neuson", "DW90", "Frontal", { carga: 9000, peso: 4478, tolva: "2.400 – 4.600", ancho: 2400, alto: 3416 }),
 ];
 
 const rodillos: Fila[] = [

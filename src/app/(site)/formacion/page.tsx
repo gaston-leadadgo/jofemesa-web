@@ -15,6 +15,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
+import { Sellos } from "@/components/marca/Sellos";
 import { CalendarioFormacion } from "@/components/formacion/CalendarioFormacion";
 import { EnlaceCalendario } from "@/components/formacion/EnlaceCalendario";
 import { ANIOS_CONVOCATORIAS, CONVOCATORIAS } from "@/content/es/convocatorias";
@@ -93,6 +94,12 @@ export default function PaginaFormacion() {
             </div>
           ))}
         </dl>
+        {/* Los sellos de la formación, con su logotipo. Los de AENOR
+            abren el certificado. */}
+        <div className="container-placa flex flex-col gap-3 border-t border-rule py-5 md:flex-row md:items-center md:gap-6">
+          <p className="label-sm shrink-0 text-ink-3">Certificados y homologaciones</p>
+          <Sellos solo={["aenor-une-58923", "aenor-une-58451", "ipaf-centro-formacion"]} alto={52} />
+        </div>
       </section>
 
       {/* Índice de la página: cuatro saltos, no un menú. */}

@@ -380,6 +380,53 @@ export const AFILIACIONES = [
   },
 ] as const;
 
+/**
+ * Los sellos con logotipo, tal como los envió Formación el 07/10/2026
+ * (llegaron el 29/10/2026). Los dos de AENOR enlazan a su certificado:
+ * UNE 58923:2020 y UNE 58451:2016, en vigor hasta el 29/09/2029.
+ * `w` y `h` son las medidas del WebP, para reservar su hueco.
+ */
+export const SELLOS = [
+  {
+    id: "aenor-une-58923",
+    nombre: "AENOR · UNE 58923",
+    descripcion: "Certificado AENOR de formación de operadores de PEMP",
+    w: 284,
+    h: 240,
+    certificado: "/certificados/aenor-une-58923.pdf",
+  },
+  {
+    id: "aenor-une-58451",
+    nombre: "AENOR · UNE 58451",
+    descripcion: "Certificado AENOR de formación de operadores de carretillas",
+    w: 284,
+    h: 240,
+    certificado: "/certificados/aenor-une-58451.pdf",
+  },
+  {
+    id: "ipaf-centro-formacion",
+    nombre: "IPAF · Centro de formación homologado",
+    descripcion: "Centro de formación homologado por IPAF",
+    w: 431,
+    h: 240,
+  },
+  {
+    id: "ipaf-afiliado",
+    nombre: "IPAF · Empresa afiliada",
+    descripcion: "Empresa afiliada a IPAF",
+    w: 343,
+    h: 240,
+  },
+  {
+    id: "anapat",
+    nombre: "ANAPAT",
+    descripcion:
+      "Asociación Nacional de Alquiladores de Plataformas Aéreas de Trabajo",
+    w: 869,
+    h: 240,
+  },
+] as const;
+
 /** Fabricantes cuya maquinaria está en el catálogo general vigente. */
 export const FABRICANTES_FLOTA = [
   { nombre: "Genie", area: "Tijeras, brazos y telescópicas" },
@@ -457,15 +504,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Hay 108 fichas técnicas: las 79 de elevación (solo falta la tijera diésel Snorkel A46JRT), 11 de carretillas eléctricas y diésel, las 8 carretillas todoterreno y los 10 manipuladores telescópicos. Los 26 grupos electrógenos tienen ya sus datos para el comparador, pero sus fichas y fotos están por llegar. Movimiento de tierras, compactación, aire y torres de iluminación siguen con las cifras del catálogo y sin PDF.",
+    nota: "Hay 185 fichas técnicas: toda elevación salvo la tijera diésel Snorkel A46JRT, las carretillas (sin las EFG 218k, 220, 318 y 320), todoterreno y manipuladores, y desde el 29/10/2026 todo el movimiento de tierras, la compactación y 24 de los 26 grupos electrógenos. Sin ficha quedan los Himoinsa HYW35 y HRFW100 (sin T5), la torre de iluminación, el compresor, los dos martillos y la herramienta Hilti.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",
-    nota: "Hay 112 fotos oficiales de JOFEMESA (entregas del 18/09 al 27/10/2026): toda elevación salvo la Snorkel A46JRT, las 15 carretillas eléctricas y diésel, las 8 todoterreno y los 10 manipuladores telescópicos. Quedan 83 máquinas con dibujo técnico: los 26 grupos electrógenos (el cliente envía sus fotos aparte), movimiento de tierras, compactación, aire, torres de iluminación y herramienta. El detalle, máquina a máquina, está en el PDF de material fotográfico pendiente.",
-  },
-  {
-    campo: "Logos de AENOR e IPAF",
-    nota: "Pedidos el 07/10/2026. No están en el material entregado y en jofemesa.com solo hay un «IPAF Afiliado» en JPG de 150 px, que se vería pixelado y no dice «centro de formación». Hace falta: las marcas de certificación AENOR de UNE 58923 y UNE 58451 y el logo de centro de formación IPAF, en SVG o PNG grande, tal como se los dio cada certificadora. Mientras, la web los nombra en texto.",
+    nota: "Hay 189 fotos oficiales de JOFEMESA (entregas del 18/09 al 29/10/2026). Quedan 9 máquinas con dibujo técnico: la Snorkel A46JRT, la gama de máquinas de almacén de Jungheinrich, los Himoinsa HYW35 y HRFW100 (sin T5), la torre de iluminación, el compresor, los dos martillos y la herramienta Hilti. El detalle está en el PDF de material fotográfico pendiente.",
   },
   {
     campo: "Genie S-85: ¿S-85 o S-85 XC?",
@@ -497,7 +540,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Grupos electrógenos: dudas de la tabla",
-    nota: "De «GRUPOS ELECTRÓGENOS FICHAS DE CARACTERÍSTICAS» (27/10/2026): (1) «HYW20 T5 INS 50 HZ» se publica como «HYW20 T5», porque INS y 50 Hz ya están en versión y frecuencia; (2) Atlas Copco «QAS 30 KD 55» y «QAS 45 KD 55»: ¿«55» es una errata de «S5»? Se publica tal cual; (3) HRFW100 y HRFW100 T5, y HYW35 y HYW35 T5, tienen exactamente los mismos datos: confirmar que son dos máquinas distintas; (4) los dos Dagartech DGH dan la potencia ESP como «N/D». Faltan las fotos y fichas de los 26.",
+    nota: "De «GRUPOS ELECTRÓGENOS FICHAS DE CARACTERÍSTICAS» (27/10/2026): (1) «HYW20 T5 INS 50 HZ» se publica como «HYW20 T5», porque INS y 50 Hz ya están en versión y frecuencia; (2) Atlas Copco «QAS 30 KD 55» y «QAS 45 KD 55»: las fotos del 29/10 los rotulan «QAS 30 S5» y «QAS 45 S5», así que «55» parece errata de «S5». Se publica tal cual hasta que lo confirmen; (3) HRFW100 y HRFW100 T5, y HYW35 y HYW35 T5, tienen los mismos datos y el 29/10 solo llegaron foto y ficha de los T5: confirmar si los otros dos existen; (4) los dos Dagartech DGH dan la potencia ESP como «N/D». Fichas del 29/10 a revisar: la del Pramac GSW167P no es del fabricante (es una hoja que cita como fuentes a Pratec y GAM Rentals); la del Himoinsa HRFW-100 se titula «TD» y está en inglés, como la del Atlas Copco QAS 150; las de los QAS 30, 45 y 200 son la misma página de la gama QAS.",
+  },
+  {
+    campo: "Movimiento de tierras: nombres de las fotos y fichas",
+    nota: "Del material del 29/10/2026: la foto y la ficha de la Ausa D1000AHG son de la «D 1000 APG» (la ficha, en inglés, es de las D 1000 AP y APG); la Bomag BVP 20/50 D llega como «BP 20/50 D» (ficha en inglés); la ficha del dúmper Wacker Neuson DW60 está en inglés. En las Takeuchi, las fichas son de la TB210R, TB240, TB250-2, TB335R, TB350R y TB2150, y el catálogo dice TB 210, TB 240A, TB 250 2A, TB 335K, TB 350 y TB 2150R. La web mantiene los nombres del catálogo: confirmar el modelo de cada unidad. De los Wacker Neuson DW30, DW60 y DW90 se publican los datos de la caja de volteo frontal, que es la de las fotos.",
   },
   {
     campo: "Manipuladores: fichas en otros idiomas y nombres",

@@ -40720,8 +40720,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-210.webp",
+   "alt": "Takeuchi TB 210 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-210.pdf",
+   "bytes": 1085715
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -41054,8 +41062,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-216.webp",
+   "alt": "Takeuchi TB 216 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-216.pdf",
+   "bytes": 2892266
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -41388,8 +41404,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-230.webp",
+   "alt": "Takeuchi TB 230 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-230.pdf",
+   "bytes": 1452105
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -41722,8 +41746,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-235.webp",
+   "alt": "Takeuchi TB 235 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-235.pdf",
+   "bytes": 1231307
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -42056,8 +42088,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-240a.webp",
+   "alt": "Takeuchi TB 240A de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-240a.pdf",
+   "bytes": 1181407
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -42390,8 +42430,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-335k.webp",
+   "alt": "Takeuchi TB 335K de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-335k.pdf",
+   "bytes": 1950255
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -42724,8 +42772,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-250-2a.webp",
+   "alt": "Takeuchi TB 250 2A de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-250-2a.pdf",
+   "bytes": 1869980
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -43058,8 +43114,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-350.webp",
+   "alt": "Takeuchi TB 350 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-350.pdf",
+   "bytes": 1676123
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -43392,8 +43456,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-260.webp",
+   "alt": "Takeuchi TB 260 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-260.pdf",
+   "bytes": 1829167
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -43726,8 +43798,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-370.webp",
+   "alt": "Takeuchi TB 370 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-370.pdf",
+   "bytes": 2945883
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -44060,8 +44140,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-290.webp",
+   "alt": "Takeuchi TB 290 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-290.pdf",
+   "bytes": 1632427
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -44394,8 +44482,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tb-2150r.webp",
+   "alt": "Takeuchi TB 2150R de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tb-2150r.pdf",
+   "bytes": 1576190
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -44728,8 +44824,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/jcb-3cx.webp",
+   "alt": "JCB 3CX de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/jcb-3cx.pdf",
+   "bytes": 1901697
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -45062,8 +45166,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hidromek-hmk-102-b.webp",
+   "alt": "Hidromek HMK 102 B de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hidromek-hmk-102-b.pdf",
+   "bytes": 739033
+  },
   "tarjeta": [
    {
     "key": "profundidadExcavacion",
@@ -45396,8 +45508,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 386,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/manitou-850r.webp",
+   "alt": "Manitou 850R de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/manitou-850r.pdf",
+   "bytes": 1183613
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -45730,8 +45850,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 318,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bobcat-s70.webp",
+   "alt": "Bobcat S70 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bobcat-s70.pdf",
+   "bytes": 74855
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -46064,8 +46192,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 612,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/manitou-1350r.webp",
+   "alt": "Manitou 1350R de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/manitou-1350r.pdf",
+   "bytes": 1025337
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -46398,8 +46534,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 654,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bobcat-s450.webp",
+   "alt": "Bobcat S450 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bobcat-s450.pdf",
+   "bytes": 226942
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -46732,8 +46876,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 613,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/gehl-sl-r135.webp",
+   "alt": "Gehl SL-R135 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/gehl-sl-r135.pdf",
+   "bytes": 405715
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -47066,8 +47218,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 955,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tl-8.webp",
+   "alt": "Takeuchi TL 8 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tl-8.pdf",
+   "bytes": 5700470
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -47400,8 +47560,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 1145,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/takeuchi-tl-10.webp",
+   "alt": "Takeuchi TL 10 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/takeuchi-tl-10.pdf",
+   "bytes": 5700470
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -47734,8 +47902,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 2000,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-wl20.webp",
+   "alt": "Wacker Neuson WL20 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-wl20.pdf",
+   "bytes": 1022090
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -48068,8 +48244,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": 2640,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-wl28.webp",
+   "alt": "Wacker Neuson WL28 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-wl28.pdf",
+   "bytes": 1213300
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -48384,7 +48568,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 1.300 kg con tolva de 345 – 565 litros y descarga descarga elevada. Tracción total para moverse por terreno sin preparar y 2.000 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 1.300 kg y 1.000 kg de carga útil, con tolva de 345 – 565 litros y descarga elevada. Tracción total para moverse por terreno sin preparar y 2.000 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -48393,17 +48577,25 @@
   ],
   "destacados": [
    "Tolva de 345 – 565 l",
-   "Descarga descarga elevada",
-   "2.000 mm de altura sin arco"
+   "1.000 kg de carga útil",
+   "Descarga elevada"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 1000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d100aha.webp",
+   "alt": "Ausa D100AHA de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d100aha.pdf",
+   "bytes": 517003
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -48424,13 +48616,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "345 – 565 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "1.000",
+    "unidad": "kg",
+    "valor": 1000,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -48438,6 +48630,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "1.000",
+      "unidad": "kg",
+      "valor": 1000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -48503,10 +48704,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "1.000",
+    "unidad": "kg",
+    "valor": 1000,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -48681,7 +48883,7 @@
    "ausa-d250rhgs"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d100aha dumper 4x4 de 1.300 kg con tolva de 345 – 565 litros y descarga descarga elevada. traccion total para moverse por terreno sin preparar y 2.000 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d100aha dumper 4x4 de 1.300 kg y 1.000 kg de carga util, con tolva de 345 – 565 litros y descarga elevada. traccion total para moverse por terreno sin preparar y 2.000 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d150aha",
@@ -48718,7 +48920,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 1.510 kg con tolva de 605 – 852 litros y descarga descarga elevada. Tracción total para moverse por terreno sin preparar y 1.950 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 1.510 kg y 1.500 kg de carga útil, con tolva de 605 – 852 litros y descarga elevada. Tracción total para moverse por terreno sin preparar y 1.950 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -48727,17 +48929,25 @@
   ],
   "destacados": [
    "Tolva de 605 – 852 l",
-   "Descarga descarga elevada",
-   "1.950 mm de altura sin arco"
+   "1.500 kg de carga útil",
+   "Descarga elevada"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 1500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d150aha.webp",
+   "alt": "Ausa D150AHA de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d150aha.pdf",
+   "bytes": 399697
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -48758,13 +48968,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "605 – 852 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "1.500",
+    "unidad": "kg",
+    "valor": 1500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -48772,6 +48982,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "1.500",
+      "unidad": "kg",
+      "valor": 1500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -48837,10 +49056,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "1.500",
+    "unidad": "kg",
+    "valor": 1500,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -49015,7 +49235,7 @@
    "ausa-d250rhgs"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d150aha dumper 4x4 de 1.510 kg con tolva de 605 – 852 litros y descarga descarga elevada. traccion total para moverse por terreno sin preparar y 1.950 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d150aha dumper 4x4 de 1.510 kg y 1.500 kg de carga util, con tolva de 605 – 852 litros y descarga elevada. traccion total para moverse por terreno sin preparar y 1.950 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d150ahg",
@@ -49052,7 +49272,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 1.650 kg con tolva de 520 – 835 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 1.275 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 1.650 kg y 1.500 kg de carga útil, con tolva de 520 – 835 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 1.275 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -49061,17 +49281,25 @@
   ],
   "destacados": [
    "Tolva de 520 – 835 l",
-   "Descarga giratoria",
-   "1.275 mm de altura sin arco"
+   "1.500 kg de carga útil",
+   "Descarga giratoria"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 1500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d150ahg.webp",
+   "alt": "Ausa D150AHG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d150ahg.pdf",
+   "bytes": 398038
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -49092,13 +49320,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "520 – 835 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "1.500",
+    "unidad": "kg",
+    "valor": 1500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -49106,6 +49334,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "1.500",
+      "unidad": "kg",
+      "valor": 1500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -49171,10 +49408,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "1.500",
+    "unidad": "kg",
+    "valor": 1500,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -49349,7 +49587,7 @@
    "ausa-d250rhgs"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d150ahg dumper 4x4 de 1.650 kg con tolva de 520 – 835 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 1.275 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d150ahg dumper 4x4 de 1.650 kg y 1.500 kg de carga util, con tolva de 520 – 835 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 1.275 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d250rhgs",
@@ -49386,7 +49624,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 2.170 kg con tolva de 850 – 1.200 litros y descarga giratoria autocargable. Tracción total para moverse por terreno sin preparar y 2.240 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 2.170 kg y 2.500 kg de carga útil, con tolva de 850 – 1.200 litros y descarga giratoria autocargable. Tracción total para moverse por terreno sin preparar y 2.240 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -49395,17 +49633,25 @@
   ],
   "destacados": [
    "Tolva de 850 – 1.200 l",
-   "Descarga giratoria autocargable",
-   "2.240 mm de altura sin arco"
+   "2.500 kg de carga útil",
+   "Descarga giratoria autocargable"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 2500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d250rhgs.webp",
+   "alt": "Ausa D250RHGS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d250rhgs.pdf",
+   "bytes": 540860
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -49426,13 +49672,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "850 – 1.200 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -49440,6 +49686,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "2.500",
+      "unidad": "kg",
+      "valor": 2500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -49505,10 +49760,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -49683,7 +49939,7 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d250rhgs dumper 4x4 de 2.170 kg con tolva de 850 – 1.200 litros y descarga giratoria autocargable. traccion total para moverse por terreno sin preparar y 2.240 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d250rhgs dumper 4x4 de 2.170 kg y 2.500 kg de carga util, con tolva de 850 – 1.200 litros y descarga giratoria autocargable. traccion total para moverse por terreno sin preparar y 2.240 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d250ahg",
@@ -49720,7 +49976,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 2.650 kg con tolva de 818 – 1.910 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 1.900 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 2.650 kg y 2.500 kg de carga útil, con tolva de 818 – 1.910 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 1.900 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -49729,17 +49985,25 @@
   ],
   "destacados": [
    "Tolva de 818 – 1.910 l",
-   "Descarga giratoria",
-   "1.900 mm de altura sin arco"
+   "2.500 kg de carga útil",
+   "Descarga giratoria"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 2500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d250ahg.webp",
+   "alt": "Ausa D250AHG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d250ahg.pdf",
+   "bytes": 831341
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -49760,13 +50024,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "818 – 1.910 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -49774,6 +50038,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "2.500",
+      "unidad": "kg",
+      "valor": 2500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -49839,10 +50112,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "2.500",
+    "unidad": "kg",
+    "valor": 2500,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -50017,7 +50291,7 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d250ahg dumper 4x4 de 2.650 kg con tolva de 818 – 1.910 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 1.900 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d250ahg dumper 4x4 de 2.650 kg y 2.500 kg de carga util, con tolva de 818 – 1.910 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 1.900 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d350ahg",
@@ -50054,7 +50328,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 2.831 kg con tolva de 1.050 – 2.737 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 1.740 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 2.831 kg y 3.500 kg de carga útil, con tolva de 1.050 – 2.737 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 1.740 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -50063,17 +50337,25 @@
   ],
   "destacados": [
    "Tolva de 1.050 – 2.737 l",
-   "Descarga giratoria",
-   "1.740 mm de altura sin arco"
+   "3.500 kg de carga útil",
+   "Descarga giratoria"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 3500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d350ahg.webp",
+   "alt": "Ausa D350AHG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d350ahg.pdf",
+   "bytes": 142409
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -50094,13 +50376,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "1.050 – 2.737 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -50108,6 +50390,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.500",
+      "unidad": "kg",
+      "valor": 3500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -50173,10 +50464,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "3.500",
+    "unidad": "kg",
+    "valor": 3500,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -50351,7 +50643,7 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d350ahg dumper 4x4 de 2.831 kg con tolva de 1.050 – 2.737 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 1.740 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d350ahg dumper 4x4 de 2.831 kg y 3.500 kg de carga util, con tolva de 1.050 – 2.737 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 1.740 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d450ahg",
@@ -50388,7 +50680,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 2.970 kg con tolva de 1.370 – 2.670 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.100 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 2.970 kg y 4.500 kg de carga útil, con tolva de 1.370 – 2.670 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.100 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -50397,17 +50689,25 @@
   ],
   "destacados": [
    "Tolva de 1.370 – 2.670 l",
-   "Descarga giratoria",
-   "2.100 mm de altura sin arco"
+   "4.500 kg de carga útil",
+   "Descarga giratoria"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 4500,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d450ahg.webp",
+   "alt": "Ausa D450AHG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d450ahg.pdf",
+   "bytes": 492473
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -50428,13 +50728,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "1.370 – 2.670 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "4.500",
+    "unidad": "kg",
+    "valor": 4500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -50442,6 +50742,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "4.500",
+      "unidad": "kg",
+      "valor": 4500,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -50507,10 +50816,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "4.500",
+    "unidad": "kg",
+    "valor": 4500,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -50685,13 +50995,13 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d450ahg dumper 4x4 de 2.970 kg con tolva de 1.370 – 2.670 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.100 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d450ahg dumper 4x4 de 2.970 kg y 4.500 kg de carga util, con tolva de 1.370 – 2.670 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.100 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
-  "slug": "ausa-d600ahg",
+  "slug": "ausa-d601-ahg",
   "marca": "Ausa",
-  "modelo": "D600AHG",
-  "titulo": "Ausa D600AHG",
+  "modelo": "D601 AHG",
+  "titulo": "Ausa D601 AHG",
   "familia": "movimiento-tierras",
   "familiaNombre": "Excavación y movimiento de tierras",
   "subcategoria": "dumperes",
@@ -50722,7 +51032,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 4.380 kg con tolva de 1.640 – 3.132 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.230 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 4.490 kg y 6.000 kg de carga útil, con tolva de 1.665 – 3.154 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.290 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -50730,45 +51040,53 @@
    "Vertido en zanja y en encofrado"
   ],
   "destacados": [
-   "Tolva de 1.640 – 3.132 l",
-   "Descarga giratoria",
-   "2.230 mm de altura sin arco"
+   "Tolva de 1.665 – 3.154 l",
+   "6.000 kg de carga útil",
+   "Descarga giratoria"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 6000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d601-ahg.webp",
+   "alt": "Ausa D601 AHG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d601-ahg.pdf",
+   "bytes": 1116346
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
     "etiqueta": "Anchura",
     "estado": "confirmado",
-    "texto": "2.200",
+    "texto": "2.210",
     "unidad": "mm",
-    "valor": 2200,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 2210,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    {
     "key": "peso",
     "etiqueta": "Peso",
     "estado": "confirmado",
-    "texto": "4.380",
+    "texto": "4.490",
     "unidad": "kg",
-    "valor": 4380,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 4490,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "1.640 – 3.132 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "6.000",
+    "unidad": "kg",
+    "valor": 6000,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -50777,13 +51095,22 @@
     "grupoNombre": "Capacidades",
     "filas": [
      {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "6.000",
+      "unidad": "kg",
+      "valor": 6000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
       "estado": "confirmado",
-      "texto": "1.640 – 3.132 l",
+      "texto": "1.665 – 3.154 l",
       "unidad": "",
       "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    },
@@ -50795,28 +51122,28 @@
       "key": "anchoTransporte",
       "etiqueta": "Anchura",
       "estado": "confirmado",
-      "texto": "2.200",
+      "texto": "2.210",
       "unidad": "mm",
-      "valor": 2200,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "valor": 2210,
+      "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "alturaTransporte",
       "etiqueta": "Altura replegada",
       "estado": "confirmado",
-      "texto": "3.250",
+      "texto": "3.280",
       "unidad": "mm",
-      "valor": 3250,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "valor": 3280,
+      "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "peso",
       "etiqueta": "Peso",
       "estado": "confirmado",
-      "texto": "4.380",
+      "texto": "4.490",
       "unidad": "kg",
-      "valor": 4380,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "valor": 4490,
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    }
@@ -50841,10 +51168,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "6.000",
+    "unidad": "kg",
+    "valor": 6000,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -50854,10 +51182,10 @@
    },
    "capacidadCazo": {
     "estado": "confirmado",
-    "texto": "1.640 – 3.132 l",
+    "texto": "1.665 – 3.154 l",
     "unidad": "",
     "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "potencia": {
     "estado": "no_aplica",
@@ -50897,17 +51225,17 @@
    },
    "anchoTransporte": {
     "estado": "confirmado",
-    "texto": "2.200",
+    "texto": "2.210",
     "unidad": "mm",
-    "valor": 2200,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 2210,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "alturaTransporte": {
     "estado": "confirmado",
-    "texto": "3.250",
+    "texto": "3.280",
     "unidad": "mm",
-    "valor": 3250,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 3280,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "longitudTransporte": {
     "estado": "no_aplica",
@@ -50917,10 +51245,10 @@
    },
    "peso": {
     "estado": "confirmado",
-    "texto": "4.380",
+    "texto": "4.490",
     "unidad": "kg",
-    "valor": 4380,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "valor": 4490,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "pendienteSuperable": {
     "estado": "no_aplica",
@@ -51019,7 +51347,7 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d600ahg dumper 4x4 de 4.380 kg con tolva de 1.640 – 3.132 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.230 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d601 ahg dumper 4x4 de 4.490 kg y 6.000 kg de carga util, con tolva de 1.665 – 3.154 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.290 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d1000ahg",
@@ -51056,7 +51384,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 4.379 kg con tolva de 1.850 – 3.900 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.510 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 4.379 kg, con tolva de 1.850 – 3.900 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.510 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -51074,8 +51402,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d1000ahg.webp",
+   "alt": "Ausa D1000AHG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d1000ahg.pdf",
+   "bytes": 489930
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -51353,7 +51689,7 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d1000ahg dumper 4x4 de 4.379 kg con tolva de 1.850 – 3.900 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.510 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d1000ahg dumper 4x4 de 4.379 kg, con tolva de 1.850 – 3.900 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.510 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "ausa-d601-apg",
@@ -51390,7 +51726,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Dúmper 4x4 de 4.345 kg con tolva de 1.665 – 3.154 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.290 mm de altura sin arco para pasar por huecos bajos.",
+  "descripcionCorta": "Dúmper 4x4 de 4.345 kg y 6.000 kg de carga útil, con tolva de 1.665 – 3.154 litros y descarga giratoria. Tracción total para moverse por terreno sin preparar y 2.290 mm de altura sin arco para pasar por huecos bajos.",
   "aplicaciones": [
    "Transporte de tierra y escombro en obra",
    "Suministro de hormigón y árido",
@@ -51399,17 +51735,25 @@
   ],
   "destacados": [
    "Tolva de 1.665 – 3.154 l",
-   "Descarga giratoria",
-   "2.290 mm de altura sin arco"
+   "6.000 kg de carga útil",
+   "Descarga giratoria"
   ],
   "trabajos": [
    "tierra"
   ],
   "notaAsesor": null,
   "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
+  "carga": 6000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/ausa-d601-apg.webp",
+   "alt": "Ausa D601 APG de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/ausa-d601-apg.pdf",
+   "bytes": 1116444
+  },
   "tarjeta": [
    {
     "key": "anchoTransporte",
@@ -51430,13 +51774,13 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "capacidadCazo",
-    "etiqueta": "Cazo",
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
     "estado": "confirmado",
-    "texto": "1.665 – 3.154 l",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "texto": "6.000",
+    "unidad": "kg",
+    "valor": 6000,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -51444,6 +51788,15 @@
     "grupo": "capacidades",
     "grupoNombre": "Capacidades",
     "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "6.000",
+      "unidad": "kg",
+      "valor": 6000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
      {
       "key": "capacidadCazo",
       "etiqueta": "Capacidad del cazo",
@@ -51509,10 +51862,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "6.000",
+    "unidad": "kg",
+    "valor": 6000,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "profundidadExcavacion": {
     "estado": "no_aplica",
@@ -51687,7 +52041,1063 @@
    "ausa-d150ahg"
   ],
   "enAlquiler": true,
-  "busqueda": "ausa d601 apg dumper 4x4 de 4.345 kg con tolva de 1.665 – 3.154 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.290 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+  "busqueda": "ausa d601 apg dumper 4x4 de 4.345 kg y 6.000 kg de carga util, con tolva de 1.665 – 3.154 litros y descarga giratoria. traccion total para moverse por terreno sin preparar y 2.290 mm de altura sin arco para pasar por huecos bajos. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+ },
+ {
+  "slug": "wacker-neuson-dw30",
+  "marca": "Wacker Neuson",
+  "modelo": "DW30",
+  "titulo": "Wacker Neuson DW30",
+  "familia": "movimiento-tierras",
+  "familiaNombre": "Excavación y movimiento de tierras",
+  "subcategoria": "dumperes",
+  "subcategoriaNombre": "Dúmperes 4x4",
+  "icono": "dumper",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 23100,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "4x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Dúmper 4x4 de 2.098 kg y 3.000 kg de carga útil, con tolva de 1.110 – 1.800 litros y descarga frontal. Tracción total para moverse por terreno sin preparar.",
+  "aplicaciones": [
+   "Transporte de tierra y escombro en obra",
+   "Suministro de hormigón y árido",
+   "Obra con accesos sin pavimentar",
+   "Vertido en zanja y en encofrado"
+  ],
+  "destacados": [
+   "Tolva de 1.110 – 1.800 l",
+   "3.000 kg de carga útil",
+   "Descarga frontal"
+  ],
+  "trabajos": [
+   "tierra"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 3000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-dw30.webp",
+   "alt": "Wacker Neuson DW30 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-dw30.pdf",
+   "bytes": 420131
+  },
+  "tarjeta": [
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "1.730",
+    "unidad": "mm",
+    "valor": 1730,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "peso",
+    "etiqueta": "Peso",
+    "estado": "confirmado",
+    "texto": "2.098",
+    "unidad": "kg",
+    "valor": 2098,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "3.000",
+    "unidad": "kg",
+    "valor": 3000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "3.000",
+      "unidad": "kg",
+      "valor": 3000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "capacidadCazo",
+      "etiqueta": "Capacidad del cazo",
+      "estado": "confirmado",
+      "texto": "1.110 – 1.800 l",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "1.730",
+      "unidad": "mm",
+      "valor": 1730,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "2.778",
+      "unidad": "mm",
+      "valor": 2778,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "2.098",
+      "unidad": "kg",
+      "valor": 2098,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "3.000",
+    "unidad": "kg",
+    "valor": 3000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "confirmado",
+    "texto": "1.110 – 1.800 l",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "1.730",
+    "unidad": "mm",
+    "valor": 1730,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "2.778",
+    "unidad": "mm",
+    "valor": 2778,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "2.098",
+    "unidad": "kg",
+    "valor": 2098,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potenciaPrpEsp": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "emisiones": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "version": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "ausa-d100aha",
+   "ausa-d150aha",
+   "ausa-d150ahg"
+  ],
+  "enAlquiler": true,
+  "busqueda": "wacker neuson dw30 dumper 4x4 de 2.098 kg y 3.000 kg de carga util, con tolva de 1.110 – 1.800 litros y descarga frontal. traccion total para moverse por terreno sin preparar. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+ },
+ {
+  "slug": "wacker-neuson-dw60",
+  "marca": "Wacker Neuson",
+  "modelo": "DW60",
+  "titulo": "Wacker Neuson DW60",
+  "familia": "movimiento-tierras",
+  "familiaNombre": "Excavación y movimiento de tierras",
+  "subcategoria": "dumperes",
+  "subcategoriaNombre": "Dúmperes 4x4",
+  "icono": "dumper",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 23110,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "4x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Dúmper 4x4 de 4.483 kg y 6.000 kg de carga útil, con tolva de 1.900 – 3.500 litros y descarga frontal. Tracción total para moverse por terreno sin preparar.",
+  "aplicaciones": [
+   "Transporte de tierra y escombro en obra",
+   "Suministro de hormigón y árido",
+   "Obra con accesos sin pavimentar",
+   "Vertido en zanja y en encofrado"
+  ],
+  "destacados": [
+   "Tolva de 1.900 – 3.500 l",
+   "6.000 kg de carga útil",
+   "Descarga frontal"
+  ],
+  "trabajos": [
+   "tierra"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 6000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-dw60.webp",
+   "alt": "Wacker Neuson DW60 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-dw60.pdf",
+   "bytes": 695586
+  },
+  "tarjeta": [
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "2.378",
+    "unidad": "mm",
+    "valor": 2378,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "peso",
+    "etiqueta": "Peso",
+    "estado": "confirmado",
+    "texto": "4.483",
+    "unidad": "kg",
+    "valor": 4483,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "6.000",
+    "unidad": "kg",
+    "valor": 6000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "6.000",
+      "unidad": "kg",
+      "valor": 6000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "capacidadCazo",
+      "etiqueta": "Capacidad del cazo",
+      "estado": "confirmado",
+      "texto": "1.900 – 3.500 l",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "2.378",
+      "unidad": "mm",
+      "valor": 2378,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "3.340",
+      "unidad": "mm",
+      "valor": 3340,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "4.483",
+      "unidad": "kg",
+      "valor": 4483,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "6.000",
+    "unidad": "kg",
+    "valor": 6000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "confirmado",
+    "texto": "1.900 – 3.500 l",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "2.378",
+    "unidad": "mm",
+    "valor": 2378,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "3.340",
+    "unidad": "mm",
+    "valor": 3340,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "4.483",
+    "unidad": "kg",
+    "valor": 4483,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potenciaPrpEsp": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "emisiones": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "version": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "ausa-d100aha",
+   "ausa-d150aha",
+   "ausa-d150ahg"
+  ],
+  "enAlquiler": true,
+  "busqueda": "wacker neuson dw60 dumper 4x4 de 4.483 kg y 6.000 kg de carga util, con tolva de 1.900 – 3.500 litros y descarga frontal. traccion total para moverse por terreno sin preparar. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
+ },
+ {
+  "slug": "wacker-neuson-dw90",
+  "marca": "Wacker Neuson",
+  "modelo": "DW90",
+  "titulo": "Wacker Neuson DW90",
+  "familia": "movimiento-tierras",
+  "familiaNombre": "Excavación y movimiento de tierras",
+  "subcategoria": "dumperes",
+  "subcategoriaNombre": "Dúmperes 4x4",
+  "icono": "dumper",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 23120,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "4x4",
+  "requiereFormacion": true,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Dúmper 4x4 de 4.478 kg y 9.000 kg de carga útil, con tolva de 2.400 – 4.600 litros y descarga frontal. Tracción total para moverse por terreno sin preparar.",
+  "aplicaciones": [
+   "Transporte de tierra y escombro en obra",
+   "Suministro de hormigón y árido",
+   "Obra con accesos sin pavimentar",
+   "Vertido en zanja y en encofrado"
+  ],
+  "destacados": [
+   "Tolva de 2.400 – 4.600 l",
+   "9.000 kg de carga útil",
+   "Descarga frontal"
+  ],
+  "trabajos": [
+   "tierra"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": 9000,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-dw90.webp",
+   "alt": "Wacker Neuson DW90 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-dw90.pdf",
+   "bytes": 782076
+  },
+  "tarjeta": [
+   {
+    "key": "anchoTransporte",
+    "etiqueta": "Anchura",
+    "estado": "confirmado",
+    "texto": "2.400",
+    "unidad": "mm",
+    "valor": 2400,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "peso",
+    "etiqueta": "Peso",
+    "estado": "confirmado",
+    "texto": "4.478",
+    "unidad": "kg",
+    "valor": 4478,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "capacidadCarga",
+    "etiqueta": "Carga máx.",
+    "estado": "confirmado",
+    "texto": "9.000",
+    "unidad": "kg",
+    "valor": 9000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "capacidadCarga",
+      "etiqueta": "Capacidad de carga",
+      "estado": "confirmado",
+      "texto": "9.000",
+      "unidad": "kg",
+      "valor": 9000,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "capacidadCazo",
+      "etiqueta": "Capacidad del cazo",
+      "estado": "confirmado",
+      "texto": "2.400 – 4.600 l",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "anchoTransporte",
+      "etiqueta": "Anchura",
+      "estado": "confirmado",
+      "texto": "2.400",
+      "unidad": "mm",
+      "valor": 2400,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "alturaTransporte",
+      "etiqueta": "Altura replegada",
+      "estado": "confirmado",
+      "texto": "3.416",
+      "unidad": "mm",
+      "valor": 3416,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "4.478",
+      "unidad": "kg",
+      "valor": 4478,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "confirmado",
+    "texto": "9.000",
+    "unidad": "kg",
+    "valor": 9000,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "confirmado",
+    "texto": "2.400 – 4.600 l",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "confirmado",
+    "texto": "2.400",
+    "unidad": "mm",
+    "valor": 2400,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "alturaTransporte": {
+    "estado": "confirmado",
+    "texto": "3.416",
+    "unidad": "mm",
+    "valor": 3416,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "4.478",
+    "unidad": "kg",
+    "valor": 4478,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potenciaPrpEsp": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "emisiones": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "version": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "ausa-d100aha",
+   "ausa-d150aha",
+   "ausa-d150ahg"
+  ],
+  "enAlquiler": true,
+  "busqueda": "wacker neuson dw90 dumper 4x4 de 4.478 kg y 9.000 kg de carga util, con tolva de 2.400 – 4.600 litros y descarga frontal. traccion total para moverse por terreno sin preparar. dumperes 4x4 excavacion y movimiento de tierras transporte de tierra y escombro en obra suministro de hormigon y arido obra con accesos sin pavimentar vertido en zanja y en encofrado"
  },
  {
   "slug": "bomag-bw65h",
@@ -51742,8 +53152,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bw65h.webp",
+   "alt": "Bomag BW65H de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bw65h.pdf",
+   "bytes": 555138
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -52076,8 +53494,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hamm-hd8-vv.webp",
+   "alt": "Hamm HD8 VV de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hamm-hd8-vv.pdf",
+   "bytes": 413169
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -52410,8 +53836,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hamm-hd10-vv.webp",
+   "alt": "Hamm HD10 VV de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hamm-hd10-vv.pdf",
+   "bytes": 1112937
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -52744,8 +54178,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hamm-h7i.webp",
+   "alt": "Hamm H7i de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hamm-h7i.pdf",
+   "bytes": 1065111
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -53078,8 +54520,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hamm-h11i.webp",
+   "alt": "Hamm H11i de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hamm-h11i.pdf",
+   "bytes": 1061247
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -53412,8 +54862,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hamm-3414.webp",
+   "alt": "Hamm 3414 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hamm-3414.pdf",
+   "bytes": 1099997
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -53746,8 +55204,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/hamm-3518.webp",
+   "alt": "Hamm 3518 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/hamm-3518.pdf",
+   "bytes": 1096245
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -54080,8 +55546,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bw-211.webp",
+   "alt": "Bomag BW 211 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bw-211.pdf",
+   "bytes": 1275664
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -54414,8 +55888,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bt60.webp",
+   "alt": "Bomag BT60 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bt60.pdf",
+   "bytes": 549655
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -54748,8 +56230,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-bs50-4as.webp",
+   "alt": "Wacker Neuson BS50-4AS de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-bs50-4as.pdf",
+   "bytes": 623292
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -55082,8 +56572,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bp-12-50-a.webp",
+   "alt": "Bomag BP 12/50 A de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bp-12-50-a.pdf",
+   "bytes": 609614
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -55416,8 +56914,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/wacker-neuson-bpu-2540.webp",
+   "alt": "Wacker Neuson BPU 2540 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/wacker-neuson-bpu-2540.pdf",
+   "bytes": 742847
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -55750,8 +57256,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bvp-20-50-d.webp",
+   "alt": "Bomag BVP 20/50 D de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bvp-20-50-d.pdf",
+   "bytes": 445548
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -56084,8 +57598,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bpr-25-40-d.webp",
+   "alt": "Bomag BPR 25/40 D de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bpr-25-40-d.pdf",
+   "bytes": 476641
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -56418,8 +57940,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bpr-40-60-d.webp",
+   "alt": "Bomag BPR 40/60 D de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bpr-40-60-d.pdf",
+   "bytes": 514104
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -56752,8 +58282,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bpr-60-65-d.webp",
+   "alt": "Bomag BPR 60/65 D de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bpr-60-65-d.pdf",
+   "bytes": 452286
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -57086,8 +58624,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/bomag-bpr-70-70.webp",
+   "alt": "Bomag BPR 70/70 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/bomag-bpr-70-70.pdf",
+   "bytes": 489972
+  },
   "tarjeta": [
    {
     "key": "anchoTrabajo",
@@ -57416,8 +58962,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hyw20-t5.webp",
+   "alt": "Himoinsa HYW20 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hyw20-t5.pdf",
+   "bytes": 583958
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -57750,8 +59304,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-qas-30-kd-55.webp",
+   "alt": "Atlas Copco QAS 30 KD 55 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-qas-30-kd-55.pdf",
+   "bytes": 205992
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -58084,8 +59646,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/pramac-gsw35.webp",
+   "alt": "Pramac GSW35 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/pramac-gsw35.pdf",
+   "bytes": 1197838
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -58752,8 +60322,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hyw35-t5.webp",
+   "alt": "Himoinsa HYW35 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hyw35-t5.pdf",
+   "bytes": 583426
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -59086,8 +60664,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-qas-45-kd-55.webp",
+   "alt": "Atlas Copco QAS 45 KD 55 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-qas-45-kd-55.pdf",
+   "bytes": 205992
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -59420,8 +61006,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hyw45-t5.webp",
+   "alt": "Himoinsa HYW45 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hyw45-t5.pdf",
+   "bytes": 566190
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -59754,8 +61348,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/pramac-gsw50.webp",
+   "alt": "Pramac GSW50 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/pramac-gsw50.pdf",
+   "bytes": 412740
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -60088,8 +61690,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgdr-60-st.webp",
+   "alt": "Dagartech DGDR 60 ST de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgdr-60-st.pdf",
+   "bytes": 2035760
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -60422,8 +62032,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hrfw60-s5.webp",
+   "alt": "Himoinsa HRFW60 S5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hrfw60-s5.pdf",
+   "bytes": 519765
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -60756,8 +62374,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/pramac-gpw60p-fs3a.webp",
+   "alt": "Pramac GPW60P/FS3A de la flota de JOFEMESA",
+   "ancho": 1024,
+   "alto": 1024
+  },
+  "ficha": {
+   "ruta": "/fichas/pramac-gpw60p-fs3a.pdf",
+   "bytes": 620018
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -61090,8 +62716,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgdr-100-st.webp",
+   "alt": "Dagartech DGDR 100 ST de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgdr-100-st.pdf",
+   "bytes": 2106308
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -61758,8 +63392,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hrfw100-t5.webp",
+   "alt": "Himoinsa HRFW100 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hrfw100-t5.pdf",
+   "bytes": 1213825
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -62092,8 +63734,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/pramac-gsw115.webp",
+   "alt": "Pramac GSW115 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/pramac-gsw115.pdf",
+   "bytes": 185208
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -62426,8 +64076,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgdr150.webp",
+   "alt": "Dagartech DGDR150 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgdr150.pdf",
+   "bytes": 2104256
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -62760,8 +64418,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-qas-150-fpt-s5.webp",
+   "alt": "Atlas Copco QAS 150 FPT S5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-qas-150-fpt-s5.pdf",
+   "bytes": 255597
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -63094,8 +64760,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hfw160-t5.webp",
+   "alt": "Himoinsa HFW160 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hfw160-t5.pdf",
+   "bytes": 648061
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -63428,8 +65102,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/pramac-gsw167p.webp",
+   "alt": "Pramac GSW167P de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/pramac-gsw167p.pdf",
+   "bytes": 188903
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -63762,8 +65444,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/pramac-gsw210.webp",
+   "alt": "Pramac GSW210 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/pramac-gsw210.pdf",
+   "bytes": 1455300
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -64096,8 +65786,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-qas-200-fd-s5.webp",
+   "alt": "Atlas Copco QAS 200 FD S5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-qas-200-fd-s5.pdf",
+   "bytes": 205992
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -64430,8 +66128,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgh-5000-b.webp",
+   "alt": "Dagartech DGH 5000 B de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgh-5000-b.pdf",
+   "bytes": 1229185
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -64764,8 +66470,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hfw200-t5.webp",
+   "alt": "Himoinsa HFW200 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hfw200-t5.pdf",
+   "bytes": 640458
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -65098,8 +66812,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgh-9-tf-bc.webp",
+   "alt": "Dagartech DGH 9 TF BC de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgh-9-tf-bc.pdf",
+   "bytes": 1242460
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -65432,8 +67154,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgvs-275-st.webp",
+   "alt": "Dagartech DGVS 275 ST de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgvs-275-st.pdf",
+   "bytes": 2159705
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
@@ -65766,8 +67496,16 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgvs-330-st.webp",
+   "alt": "Dagartech DGVS 330 ST de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgvs-330-st.pdf",
+   "bytes": 2167941
+  },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",

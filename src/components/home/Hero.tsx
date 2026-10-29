@@ -27,10 +27,11 @@ export function Hero() {
   const fotos: Record<"alquiler" | "formacion", FotoHero> = {
     alquiler: {
       src: obra,
-      alt: "Plataforma elevadora de tijera trabajando en la estructura de una nave",
-      /* 72%: en móvil la sección es vertical y la franja visible cae
-         sobre la máquina en vez de sobre el cielo vacío. */
-      posicion: "object-[72%_center]",
+      alt: "Sede de JOFEMESA en Valencia, con plataformas elevadoras de brazo y de tijera en la campa",
+      /* Foto original de la sede de Valencia (29/10/2026), sin retocar:
+         el velo del carrusel ya da el contraste del texto. 60%: en móvil la franja visible cae entre
+         la fachada rotulada y las plataformas de brazo. */
+      posicion: "object-[60%_center]",
     },
     formacion: formacion
       ? {
