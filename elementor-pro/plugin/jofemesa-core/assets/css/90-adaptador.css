@@ -50,8 +50,11 @@ body.jm .elementor-heading-title {
   text-transform: inherit; text-wrap: inherit; line-height: inherit;
   margin: 0; padding: 0;
 }
-body.jm .elementor-widget-heading { color: inherit; }
-body.jm .elementor-widget-text-editor { color: inherit; }
+/* Con :where() para que no compita: a la misma especificidad, este
+   archivo (que se carga el último) pisaba el color de las clases de
+   componente, y el titular y el antetítulo de las cabeceras oscuras
+   (.jm-placa__titulo, .jm-placa__kicker) salían en el gris del bloque. */
+body.jm :where(.elementor-widget-heading, .elementor-widget-text-editor) { color: inherit; }
 body.jm .elementor-widget-text-editor p:last-child { margin-block-end: 0; }
 body.jm .elementor-widget-text-editor p + p { margin-top: 1em; }
 
