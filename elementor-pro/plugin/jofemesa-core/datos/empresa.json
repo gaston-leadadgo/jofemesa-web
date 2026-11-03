@@ -309,6 +309,11 @@
    "descripcion": "Alquiler de maquinaria"
   },
   {
+   "id": "aece",
+   "nombre": "AECE",
+   "descripcion": "Asociación del sector"
+  },
+  {
    "id": "jungheinrich",
    "nombre": "Jungheinrich",
    "descripcion": "Partner oficial"
@@ -374,10 +379,6 @@
   {
    "nombre": "Dagartech",
    "area": "Grupos electrógenos"
-  },
-  {
-   "nombre": "Hilti",
-   "area": "Herramienta de obra"
   }
  ],
  "flota": {

@@ -414,6 +414,8 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     grupo: "motorizacion",
     orden: 67,
     mejor: null,
+    /* En la tarjeta de energía, en lugar de la versión (cliente, 03/11/2026). */
+    destacadaEn: ["energia"],
   },
   {
     key: "voltaje",
@@ -442,7 +444,6 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     grupo: "motorizacion",
     orden: 69,
     mejor: null,
-    destacadaEn: ["energia"],
     compacto: sinParentesis,
   },
 ] as const;

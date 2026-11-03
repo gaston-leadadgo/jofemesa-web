@@ -44,11 +44,14 @@ export function Partners() {
                 en columna, `align-items: stretch` le gana a `w-auto` y
                 estiraba el logotipo a los 469 px de la tarjeta. Eso era
                 la deformación. */}
+            {/* SVG oficial (Wikimedia Commons, 03/11/2026): nítido a
+                cualquier tamaño. El WebP anterior se veía pixelado. */}
             <Image
-              src="/marca/jungheinrich.webp"
+              src="/marca/jungheinrich.svg"
               alt="Jungheinrich"
-              width={840}
-              height={124}
+              width={283}
+              height={42}
+              unoptimized
               className="mt-5 h-8 w-auto self-start"
             />
             <p className="mt-5 flex-1 text-base leading-relaxed text-ink-2">

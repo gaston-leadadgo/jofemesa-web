@@ -1,4 +1,5 @@
 import type { Familia, FamiliaId } from "./types";
+import { FLOTA } from "./flota";
 
 /**
  * Taxonomía de dos niveles: familia → subcategoría.
@@ -20,7 +21,7 @@ import type { Familia, FamiliaId } from "./types";
  * busca no piensa «necesito una plataforma articulada eléctrica», piensa
  * «tengo que llegar a una luminaria de una nave en activo».
  */
-export const FAMILIAS: readonly Familia[] = [
+export const FAMILIAS_TODAS: readonly Familia[] = [
   {
     id: "elevacion",
     nombre: "Elevación",
@@ -298,11 +299,11 @@ export const FAMILIAS: readonly Familia[] = [
     claim:
       "Cuando el trabajo necesita aire, presión y bastante menos delicadeza",
     descripcion:
-      "Compresores remolcables y martillos neumáticos para demolición, perforación, picado y cualquier aplicación que necesite suministro constante de aire comprimido.",
-    rango: "De 2 a 11 m³/min",
+      "Compresores remolcables para alimentar martillos y herramienta neumática, perforación, chorreado y cualquier aplicación que necesite suministro constante de aire comprimido.",
+    rango: "De 2,5 a 10,9 m³/min",
     necesidad: "Aire y demolición",
     necesidadDesc:
-      "Compresores, picadores y rompedores para cuando el trabajo pide potencia.",
+      "Compresores remolcables de 2,5 a 10,9 m³/min para cuando el trabajo pide aire.",
     icono: "compresor",
     subcategorias: [
       {
@@ -310,7 +311,7 @@ export const FAMILIAS: readonly Familia[] = [
         slug: "compresores-remolcables",
         claim: "Caudal constante sobre remolque para obra.",
         descripcion:
-          "Compresores diésel insonorizados de 2 a 11 m³/min de aire libre suministrado para alimentar herramienta neumática.",
+          "Compresores diésel de 2,5 a 10,9 m³/min de aire libre suministrado para alimentar herramienta neumática.",
         icono: "compresor",
       },
       {
@@ -349,8 +350,20 @@ export const FAMILIAS: readonly Familia[] = [
   },
 ] as const;
 
+/**
+ * Lo que se publica: solo las subcategorías con alguna máquina, y solo las
+ * familias que conservan alguna. Así una subcategoría que se vacía (Máquinas
+ * de almacén, martillos o herramienta, retiradas el 03/11/2026) desaparece
+ * del menú, la portada y los filtros, y vuelve sola cuando tenga producto.
+ */
+const CON_MAQUINAS = new Set(FLOTA.map((m) => m.subcategoriaSlug));
+export const FAMILIAS: readonly Familia[] = FAMILIAS_TODAS.map((f) => ({
+  ...f,
+  subcategorias: f.subcategorias.filter((s) => CON_MAQUINAS.has(s.slug)),
+})).filter((f) => f.subcategorias.length > 0);
+
 export const FAMILIA_POR_ID = Object.fromEntries(
-  FAMILIAS.map((f) => [f.id, f]),
+  FAMILIAS_TODAS.map((f) => [f.id, f]),
 ) as Record<FamiliaId, Familia>;
 
 export const SUBCATEGORIAS = FAMILIAS.flatMap((f) =>

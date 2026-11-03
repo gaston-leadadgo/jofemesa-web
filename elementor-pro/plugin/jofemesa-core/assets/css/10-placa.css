@@ -32,15 +32,21 @@ body.jm .jm-placa::before { /* ambient-dark */
 }
 body.jm .jm-placa__foto { z-index: -2; }
 body.jm .jm-placa__foto img { object-position: center; }
-body.jm .jm-placa__velo {
-  position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: linear-gradient(to top, var(--jm-inverse), rgba(20, 23, 26, 0.9), rgba(20, 23, 26, 0.55));
+/* El velo se pinta sobre la propia foto (::after del widget Imagen) y no
+   con el widget HTML .jm-placa__velo: Elementor no imprime un widget HTML
+   vacío, así que ese velo no salía y el texto blanco quedaba sobre la foto
+   sin contraste (cliente, 03/11/2026). Más denso a la izquierda, donde va
+   el texto, y abierto a la derecha para que se vea la escena. */
+body.jm .jm-placa__foto::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, var(--jm-inverse), rgba(20, 23, 26, 0.9) 55%, rgba(20, 23, 26, 0.6));
 }
 @media (min-width: 1024px) {
-  body.jm .jm-placa__velo {
-    background: linear-gradient(to right, var(--jm-inverse) 30%, rgba(20, 23, 26, 0.8) 70%, rgba(20, 23, 26, 0.5));
+  body.jm .jm-placa__foto::after {
+    background: linear-gradient(to right, rgba(20, 23, 26, 0.97) 0%, rgba(20, 23, 26, 0.9) 38%, rgba(20, 23, 26, 0.55) 62%, rgba(20, 23, 26, 0.12) 100%);
   }
 }
+body.jm .jm-placa__velo { display: none; }
 body.jm .jm-placa__galon {
   position: absolute; top: -5rem; right: -4rem; width: 34rem; z-index: -1;
   color: rgba(255, 255, 255, 0.035); pointer-events: none; display: none;

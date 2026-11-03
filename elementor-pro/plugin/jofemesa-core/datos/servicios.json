@@ -16,9 +16,9 @@
   },
   "icono": "carretilla",
   "credencial": {
-   "logo": "/marca/jungheinrich.webp",
-   "ancho": 840,
-   "alto": 124,
+   "logo": "/marca/jungheinrich.svg",
+   "ancho": 283,
+   "alto": 42,
    "alt": "Partner oficial de Jungheinrich",
    "texto": "Somos partner oficial de Jungheinrich y distribuimos todo su catálogo: contrapesadas eléctricas y diésel, mástil retráctil, trilaterales EKX y EFX, preparadoras de pedidos, transpaletas, apiladores y tractores de arrastre. También su gama reacondicionada JUNGSTARS."
   }

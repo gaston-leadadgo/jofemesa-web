@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { BandaFabricantes } from "@/components/layout/BandaFabricantes";
 import { BarraMovil } from "@/components/layout/BarraMovil";
 import { BandejaComparador } from "@/components/comparador/BandejaComparador";
 import { CompararProvider } from "@/lib/compare/context";
@@ -39,6 +40,7 @@ export default function LayoutSitio({
         {children}
       </main>
 
+      <BandaFabricantes />
       <Footer />
 
       {/* Sitio para la bandeja y la barra móvil, que son fijas. */}

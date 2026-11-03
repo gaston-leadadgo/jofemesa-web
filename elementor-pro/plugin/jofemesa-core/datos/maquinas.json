@@ -18348,8 +18348,16 @@
   "notaAsesor": null,
   "altura": 16,
   "carga": 227,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/snorkel-a46jrt.webp",
+   "alt": "Snorkel A46JRT de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/snorkel-a46jrt.pdf",
+   "bytes": 1059877
+  },
   "tarjeta": [
    {
     "key": "alturaTrabajo",
@@ -40373,301 +40381,6 @@
   "busqueda": "manitou mh 25-4t carretilla todoterreno 4x4 de 2.500 kg y 3,3 m de elevacion, con menos de 2 m de altura total para pasar por accesos bajos. carretillas todoterreno manutencion de cargas obra sin pavimentar descarga de material en solar terrenos con pendiente suministro a tajo"
  },
  {
-  "slug": "jungheinrich-maquinas-de-almacen",
-  "marca": "Jungheinrich",
-  "modelo": "Máquinas de almacén",
-  "titulo": "Jungheinrich Máquinas de almacén",
-  "familia": "manipulacion",
-  "familiaNombre": "Manutención de cargas",
-  "subcategoria": "maquinas-almacen",
-  "subcategoriaNombre": "Máquinas de almacén",
-  "icono": "almacen",
-  "lineas": [
-   "alquiler"
-  ],
-  "condicionVenta": null,
-  "gama": true,
-  "destacada": false,
-  "orden": 12000,
-  "energia": "electrico",
-  "energiaNombre": "Eléctrico",
-  "entornos": [
-   "interior"
-  ],
-  "traccion": "2x4",
-  "requiereFormacion": true,
-  "delegaciones": [
-   "madrid",
-   "asturias",
-   "valladolid",
-   "valencia",
-   "alicante",
-   "sevilla",
-   "malaga",
-   "oporto",
-   "lisboa"
-  ],
-  "descripcionCorta": "Transpaletas eléctricas, apiladores y preparadoras de pedidos para el movimiento diario del almacén. Somos partner oficial de Jungheinrich, así que la misma máquina se puede alquilar, comprar nueva o comprar reacondicionada.",
-  "aplicaciones": [
-   "Trasiego diario de palets",
-   "Apilado en estanterías",
-   "Preparación de pedidos",
-   "Refuerzo de campaña"
-  ],
-  "destacados": [],
-  "trabajos": [
-   "cargas"
-  ],
-  "notaAsesor": null,
-  "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
-  "tarjeta": [
-   {
-    "key": "alturaElevacion",
-    "etiqueta": "Altura elev.",
-    "estado": "pendiente",
-    "texto": "Pendiente",
-    "unidad": "",
-    "nota": "Va por modelo, no por gama. Te la confirmamos al consultar disponibilidad."
-   },
-   {
-    "key": "capacidadCarga",
-    "etiqueta": "Carga máx.",
-    "estado": "pendiente",
-    "texto": "Pendiente",
-    "unidad": "",
-    "nota": "La capacidad depende del equipo concreto. Dinos peso de palet y altura de estantería y te decimos cuál encaja."
-   }
-  ],
-  "specs": [
-   {
-    "grupo": "prestaciones",
-    "grupoNombre": "Prestaciones",
-    "filas": [
-     {
-      "key": "alturaElevacion",
-      "etiqueta": "Altura de elevación",
-      "estado": "pendiente",
-      "texto": "Pendiente",
-      "unidad": "",
-      "nota": "Va por modelo, no por gama. Te la confirmamos al consultar disponibilidad."
-     }
-    ]
-   },
-   {
-    "grupo": "capacidades",
-    "grupoNombre": "Capacidades",
-    "filas": [
-     {
-      "key": "capacidadCarga",
-      "etiqueta": "Capacidad de carga",
-      "estado": "pendiente",
-      "texto": "Pendiente",
-      "unidad": "",
-      "nota": "La capacidad depende del equipo concreto. Dinos peso de palet y altura de estantería y te decimos cuál encaja."
-     }
-    ]
-   }
-  ],
-  "comparador": {
-   "alturaTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alcanceHorizontal": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaElevacion": {
-    "estado": "pendiente",
-    "texto": "Pendiente",
-    "unidad": "",
-    "nota": "Va por modelo, no por gama. Te la confirmamos al consultar disponibilidad."
-   },
-   "capacidadCarga": {
-    "estado": "pendiente",
-    "texto": "Pendiente",
-    "unidad": "",
-    "nota": "La capacidad depende del equipo concreto. Dinos peso de palet y altura de estantería y te decimos cuál encaja."
-   },
-   "profundidadExcavacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCazo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "fuerzaCentrifuga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "dimensionesPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "pendienteSuperable": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "velocidadTraslacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "traccion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "autonomia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "personas": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "extensionPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "radioGiroInterior": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "rotacionTorreta": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potenciaPrpEsp": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "frecuencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "voltaje": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "emisiones": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "version": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   }
-  },
-  "relacionadas": [
-   "jungheinrich-efg-218k",
-   "jungheinrich-efg-220",
-   "jungheinrich-efg-318"
-  ],
-  "enAlquiler": true,
-  "busqueda": "jungheinrich maquinas de almacen transpaletas electricas, apiladores y preparadoras de pedidos para el movimiento diario del almacen. somos partner oficial de jungheinrich, asi que la misma maquina se puede alquilar, comprar nueva o comprar reacondicionada. maquinas de almacen manutencion de cargas trasiego diario de palets apilado en estanterias preparacion de pedidos refuerzo de campana"
- },
- {
   "slug": "takeuchi-tb-210",
   "marca": "Takeuchi",
   "modelo": "TB 210",
@@ -58983,19 +58696,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59325,19 +59038,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -59667,19 +59380,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60001,19 +59714,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60343,19 +60056,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -60685,19 +60398,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61027,19 +60740,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61369,19 +61082,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -61711,19 +61424,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62053,19 +61766,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62395,19 +62108,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -62737,19 +62450,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63071,19 +62784,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63413,19 +63126,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -63755,19 +63468,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64097,19 +63810,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64439,19 +64152,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -64781,19 +64494,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65123,19 +64836,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65465,19 +65178,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -65807,19 +65520,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -66149,19 +65862,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "No insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -66491,19 +66204,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "Stage IIIA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -66833,19 +66546,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage V",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "No insonorizado",
+    "texto": "EU Stage V",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67175,19 +66888,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage II",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage II",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67517,19 +67230,19 @@
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
     "estado": "confirmado",
-    "texto": "EU Stage II",
+    "texto": "50 Hz",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
    },
    {
-    "key": "version",
-    "etiqueta": "Versión",
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Insonorizado",
+    "texto": "EU Stage II",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -68079,10 +67792,10 @@
   "busqueda": "atlas copco torre de iluminacion led torres de iluminacion moviles con focos led y generador incorporado. mastil telescopico para cubrir una zona de acopio o un tajo completo en turno de noche, con consumo muy por debajo del halogenuro. torres de iluminacion energia e iluminacion turnos de noche en obra reparacion de via en horario nocturno eventos y montajes zonas de acopio sin alumbrado"
  },
  {
-  "slug": "atlas-copco-compresor-de-aire-remolcable",
+  "slug": "atlas-copco-xas-48",
   "marca": "Atlas Copco",
-  "modelo": "Compresor de aire remolcable",
-  "titulo": "Atlas Copco Compresor de aire remolcable",
+  "modelo": "XAS 48",
+  "titulo": "Atlas Copco XAS 48",
   "familia": "aire-martillos",
   "familiaNombre": "Aire comprimido y martillos",
   "subcategoria": "compresores-remolcables",
@@ -68092,8 +67805,8 @@
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
-  "destacada": true,
+  "gama": false,
+  "destacada": false,
   "orden": 31000,
   "energia": "diesel",
   "energiaNombre": "Diésel",
@@ -68113,7 +67826,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Compresores de aire remolcables insonorizados con aire libre suministrado de 2 a 11 m³/min. Se enganchan a un vehículo ligero y alimentan desde un martillo hasta una batería de herramienta neumática.",
+  "descripcionCorta": "Compresor remolcable de 2,5 m³/min a 7 bar y 500 kg: se engancha a un vehículo ligero y alimenta un martillo picador o herramienta neumática.",
   "aplicaciones": [
    "Alimentación de martillo neumático",
    "Perforación y barrenado",
@@ -68127,26 +67840,43 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-xas-48.webp",
+   "alt": "Atlas Copco XAS 48 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-xas-48.pdf",
+   "bytes": 85221
+  },
   "tarjeta": [
    {
     "key": "caudalAire",
     "etiqueta": "Caudal",
     "estado": "confirmado",
-    "texto": "2 – 11 m³/min",
+    "texto": "2,5 m³/min",
     "unidad": "",
     "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    {
-    "key": "motor",
-    "etiqueta": "Motor",
+    "key": "presionAire",
+    "etiqueta": "Presión",
     "estado": "confirmado",
-    "texto": "Diésel",
+    "texto": "7 bar",
     "unidad": "",
     "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "peso",
+    "etiqueta": "Peso",
+    "estado": "confirmado",
+    "texto": "500",
+    "unidad": "kg",
+    "valor": 500,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -68158,10 +67888,34 @@
       "key": "caudalAire",
       "etiqueta": "Caudal de aire",
       "estado": "confirmado",
-      "texto": "2 – 11 m³/min",
+      "texto": "2,5 m³/min",
       "unidad": "",
       "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "presionAire",
+      "etiqueta": "Presión de trabajo",
+      "estado": "confirmado",
+      "texto": "7 bar",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "500",
+      "unidad": "kg",
+      "valor": 500,
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    },
@@ -68173,10 +67927,10 @@
       "key": "motor",
       "etiqueta": "Motor",
       "estado": "confirmado",
-      "texto": "Diésel",
+      "texto": "Diésel Kubota D902, 18,5 kW",
       "unidad": "",
       "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    }
@@ -68226,16 +67980,346 @@
    },
    "caudalAire": {
     "estado": "confirmado",
-    "texto": "2 – 11 m³/min",
+    "texto": "2,5 m³/min",
     "unidad": "",
     "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "presionAire": {
+    "estado": "confirmado",
+    "texto": "7 bar",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "anchoTrabajo": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "confirmado",
+    "texto": "500",
+    "unidad": "kg",
+    "valor": 500,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "confirmado",
+    "texto": "Diésel Kubota D902, 18,5 kW",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "potenciaPrpEsp": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "frecuencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "voltaje": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "emisiones": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "version": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   }
+  },
+  "relacionadas": [
+   "atlas-copco-xas-58",
+   "atlas-copco-xas-68",
+   "compair-c-38"
+  ],
+  "enAlquiler": true,
+  "busqueda": "atlas copco xas 48 compresor remolcable de 2,5 m³/min a 7 bar y 500 kg: se engancha a un vehiculo ligero y alimenta un martillo picador o herramienta neumatica. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+ },
+ {
+  "slug": "atlas-copco-xas-58",
+  "marca": "Atlas Copco",
+  "modelo": "XAS 58",
+  "titulo": "Atlas Copco XAS 58",
+  "familia": "aire-martillos",
+  "familiaNombre": "Aire comprimido y martillos",
+  "subcategoria": "compresores-remolcables",
+  "subcategoriaNombre": "Compresores de aire remolcables",
+  "icono": "compresor",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 31010,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "remolcable",
+  "requiereFormacion": false,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Compresor remolcable de 3 m³/min a 7 bar y menos de 750 kg en orden de marcha. Para martillo y herramienta neumática en obra.",
+  "aplicaciones": [
+   "Alimentación de martillo neumático",
+   "Perforación y barrenado",
+   "Chorreo y limpieza a presión",
+   "Soplado de conducciones"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "energia"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-xas-58.webp",
+   "alt": "Atlas Copco XAS 58 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-xas-58.pdf",
+   "bytes": 85221
+  },
+  "tarjeta": [
+   {
+    "key": "caudalAire",
+    "etiqueta": "Caudal",
+    "estado": "confirmado",
+    "texto": "3,0 m³/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "presionAire",
+    "etiqueta": "Presión",
+    "estado": "confirmado",
+    "texto": "7 bar",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "motor",
+    "etiqueta": "Motor",
+    "estado": "confirmado",
+    "texto": "Diésel Kubota V1505, 26,5 kW",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "caudalAire",
+      "etiqueta": "Caudal de aire",
+      "estado": "confirmado",
+      "texto": "3,0 m³/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "presionAire",
+      "etiqueta": "Presión de trabajo",
+      "estado": "confirmado",
+      "texto": "7 bar",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "motorizacion",
+    "grupoNombre": "Motorización",
+    "filas": [
+     {
+      "key": "motor",
+      "etiqueta": "Motor",
+      "estado": "confirmado",
+      "texto": "Diésel Kubota V1505, 26,5 kW",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "confirmado",
+    "texto": "3,0 m³/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "presionAire": {
+    "estado": "confirmado",
+    "texto": "7 bar",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "anchoTrabajo": {
     "estado": "no_aplica",
@@ -68335,10 +68419,10 @@
    },
    "motor": {
     "estado": "confirmado",
-    "texto": "Diésel",
+    "texto": "Diésel Kubota V1505, 26,5 kW",
     "unidad": "",
     "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -68372,37 +68456,36 @@
    }
   },
   "relacionadas": [
-   "atlas-copco-martillo-picador-neumatico",
-   "atlas-copco-rompedor-neumatico",
-   "genie-gs-3369-rt"
+   "atlas-copco-xas-48",
+   "atlas-copco-xas-68",
+   "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco compresor de aire remolcable compresores de aire remolcables insonorizados con aire libre suministrado de 2 a 11 m³/min. se enganchan a un vehiculo ligero y alimentan desde un martillo hasta una bateria de herramienta neumatica. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 58 compresor remolcable de 3 m³/min a 7 bar y menos de 750 kg en orden de marcha. para martillo y herramienta neumatica en obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
-  "slug": "atlas-copco-martillo-picador-neumatico",
+  "slug": "atlas-copco-xas-68",
   "marca": "Atlas Copco",
-  "modelo": "Martillo picador neumático",
-  "titulo": "Atlas Copco Martillo picador neumático",
+  "modelo": "XAS 68",
+  "titulo": "Atlas Copco XAS 68",
   "familia": "aire-martillos",
   "familiaNombre": "Aire comprimido y martillos",
-  "subcategoria": "martillos-neumaticos",
-  "subcategoriaNombre": "Martillos neumáticos",
-  "icono": "martillo",
+  "subcategoria": "compresores-remolcables",
+  "subcategoriaNombre": "Compresores de aire remolcables",
+  "icono": "compresor",
   "lineas": [
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
-  "destacada": false,
-  "orden": 31200,
+  "gama": false,
+  "destacada": true,
+  "orden": 31020,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
-   "interior",
    "exterior"
   ],
-  "traccion": "2x4",
+  "traccion": "remolcable",
   "requiereFormacion": false,
   "delegaciones": [
    "madrid",
@@ -68415,12 +68498,12 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Martillos picadores neumáticos Atlas Copco para picado de hormigón, saneado de estructura y apertura de rozas. Se alimentan desde cualquiera de nuestros compresores remolcables.",
+  "descripcionCorta": "Compresor remolcable de 3,5 m³/min a 7 bar y menos de 750 kg. Más caudal para dos herramientas a la vez o un rompedor pesado.",
   "aplicaciones": [
-   "Demolición de solera y pavimento",
-   "Apertura de zanja en firme",
-   "Picado de hormigón",
-   "Saneado de estructura"
+   "Alimentación de martillo neumático",
+   "Perforación y barrenado",
+   "Chorreo y limpieza a presión",
+   "Soplado de conducciones"
   ],
   "destacados": [],
   "trabajos": [
@@ -68429,16 +68512,43 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-xas-68.webp",
+   "alt": "Atlas Copco XAS 68 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-xas-68.pdf",
+   "bytes": 85221
+  },
   "tarjeta": [
+   {
+    "key": "caudalAire",
+    "etiqueta": "Caudal",
+    "estado": "confirmado",
+    "texto": "3,5 m³/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
    {
     "key": "presionAire",
     "etiqueta": "Presión",
-    "estado": "pendiente",
-    "texto": "Pendiente",
+    "estado": "confirmado",
+    "texto": "7 bar",
     "unidad": "",
-    "nota": "Según modelo y puntero."
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "motor",
+    "etiqueta": "Motor",
+    "estado": "confirmado",
+    "texto": "Diésel Kubota V1505, 26,5 kW",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -68447,12 +68557,37 @@
     "grupoNombre": "Capacidades",
     "filas": [
      {
+      "key": "caudalAire",
+      "etiqueta": "Caudal de aire",
+      "estado": "confirmado",
+      "texto": "3,5 m³/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
       "key": "presionAire",
       "etiqueta": "Presión de trabajo",
-      "estado": "pendiente",
-      "texto": "Pendiente",
+      "estado": "confirmado",
+      "texto": "7 bar",
       "unidad": "",
-      "nota": "Según modelo y puntero."
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "motorizacion",
+    "grupoNombre": "Motorización",
+    "filas": [
+     {
+      "key": "motor",
+      "etiqueta": "Motor",
+      "estado": "confirmado",
+      "texto": "Diésel Kubota V1505, 26,5 kW",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    }
@@ -68501,16 +68636,18 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "confirmado",
+    "texto": "3,5 m³/min",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "presionAire": {
-    "estado": "pendiente",
-    "texto": "Pendiente",
+    "estado": "confirmado",
+    "texto": "7 bar",
     "unidad": "",
-    "nota": "Según modelo y puntero."
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "anchoTrabajo": {
     "estado": "no_aplica",
@@ -68609,10 +68746,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "confirmado",
+    "texto": "Diésel Kubota V1505, 26,5 kW",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -68646,37 +68784,36 @@
    }
   },
   "relacionadas": [
-   "atlas-copco-rompedor-neumatico",
-   "atlas-copco-compresor-de-aire-remolcable",
-   "genie-gs-3369-rt"
+   "atlas-copco-xas-48",
+   "atlas-copco-xas-58",
+   "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco martillo picador neumatico martillos picadores neumaticos atlas copco para picado de hormigon, saneado de estructura y apertura de rozas. se alimentan desde cualquiera de nuestros compresores remolcables. martillos neumaticos aire comprimido y martillos demolicion de solera y pavimento apertura de zanja en firme picado de hormigon saneado de estructura"
+  "busqueda": "atlas copco xas 68 compresor remolcable de 3,5 m³/min a 7 bar y menos de 750 kg. mas caudal para dos herramientas a la vez o un rompedor pesado. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
-  "slug": "atlas-copco-rompedor-neumatico",
-  "marca": "Atlas Copco",
-  "modelo": "Rompedor neumático",
-  "titulo": "Atlas Copco Rompedor neumático",
+  "slug": "compair-c-38",
+  "marca": "CompAir",
+  "modelo": "C-38",
+  "titulo": "CompAir C-38",
   "familia": "aire-martillos",
   "familiaNombre": "Aire comprimido y martillos",
-  "subcategoria": "martillos-neumaticos",
-  "subcategoriaNombre": "Martillos neumáticos",
-  "icono": "martillo",
+  "subcategoria": "compresores-remolcables",
+  "subcategoriaNombre": "Compresores de aire remolcables",
+  "icono": "compresor",
   "lineas": [
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
+  "gama": false,
   "destacada": false,
-  "orden": 31210,
+  "orden": 31030,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
-   "interior",
    "exterior"
   ],
-  "traccion": "2x4",
+  "traccion": "remolcable",
   "requiereFormacion": false,
   "delegaciones": [
    "madrid",
@@ -68689,12 +68826,12 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Rompedores neumáticos Atlas Copco y Toku para demolición de solera y pavimento y apertura de zanja en firme. Distintos pesos de maza según el espesor a romper.",
+  "descripcionCorta": "Compresor portátil de 3,8 m³/min a 7 bar con motor Cummins de cuatro cilindros. Regula el caudal según la demanda de aire para gastar menos combustible.",
   "aplicaciones": [
-   "Demolición de solera y pavimento",
-   "Apertura de zanja en firme",
-   "Picado de hormigón",
-   "Saneado de estructura"
+   "Alimentación de martillo neumático",
+   "Perforación y barrenado",
+   "Chorreo y limpieza a presión",
+   "Soplado de conducciones"
   ],
   "destacados": [],
   "trabajos": [
@@ -68703,16 +68840,43 @@
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/compair-c-38.webp",
+   "alt": "CompAir C-38 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/compair-c-38.pdf",
+   "bytes": 552981
+  },
   "tarjeta": [
+   {
+    "key": "caudalAire",
+    "etiqueta": "Caudal",
+    "estado": "confirmado",
+    "texto": "3,8 m³/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
    {
     "key": "presionAire",
     "etiqueta": "Presión",
-    "estado": "pendiente",
-    "texto": "Pendiente",
+    "estado": "confirmado",
+    "texto": "7 bar",
     "unidad": "",
-    "nota": "Según modelo y puntero."
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "peso",
+    "etiqueta": "Peso",
+    "estado": "confirmado",
+    "texto": "748",
+    "unidad": "kg",
+    "valor": 748,
+    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -68721,12 +68885,52 @@
     "grupoNombre": "Capacidades",
     "filas": [
      {
+      "key": "caudalAire",
+      "etiqueta": "Caudal de aire",
+      "estado": "confirmado",
+      "texto": "3,8 m³/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
       "key": "presionAire",
       "etiqueta": "Presión de trabajo",
-      "estado": "pendiente",
-      "texto": "Pendiente",
+      "estado": "confirmado",
+      "texto": "7 bar",
       "unidad": "",
-      "nota": "Según modelo y puntero."
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "dimensiones",
+    "grupoNombre": "Dimensiones",
+    "filas": [
+     {
+      "key": "peso",
+      "etiqueta": "Peso",
+      "estado": "confirmado",
+      "texto": "748",
+      "unidad": "kg",
+      "valor": 748,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   },
+   {
+    "grupo": "motorizacion",
+    "grupoNombre": "Motorización",
+    "filas": [
+     {
+      "key": "motor",
+      "etiqueta": "Motor",
+      "estado": "confirmado",
+      "texto": "Diésel Cummins A2300, 35,5 kW",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
      }
     ]
    }
@@ -68775,16 +68979,18 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "confirmado",
+    "texto": "3,8 m³/min",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "presionAire": {
-    "estado": "pendiente",
-    "texto": "Pendiente",
+    "estado": "confirmado",
+    "texto": "7 bar",
     "unidad": "",
-    "nota": "Según modelo y puntero."
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "anchoTrabajo": {
     "estado": "no_aplica",
@@ -68823,10 +69029,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "estado": "confirmado",
+    "texto": "748",
+    "unidad": "kg",
+    "valor": 748,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "pendienteSuperable": {
     "estado": "no_aplica",
@@ -68883,10 +69090,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "confirmado",
+    "texto": "Diésel Cummins A2300, 35,5 kW",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -68920,37 +69128,36 @@
    }
   },
   "relacionadas": [
-   "atlas-copco-martillo-picador-neumatico",
-   "atlas-copco-compresor-de-aire-remolcable",
-   "genie-gs-3369-rt"
+   "atlas-copco-xas-48",
+   "atlas-copco-xas-58",
+   "atlas-copco-xas-68"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco rompedor neumatico rompedores neumaticos atlas copco y toku para demolicion de solera y pavimento y apertura de zanja en firme. distintos pesos de maza segun el espesor a romper. martillos neumaticos aire comprimido y martillos demolicion de solera y pavimento apertura de zanja en firme picado de hormigon saneado de estructura"
+  "busqueda": "compair c-38 compresor portatil de 3,8 m³/min a 7 bar con motor cummins de cuatro cilindros. regula el caudal segun la demanda de aire para gastar menos combustible. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
-  "slug": "hilti-herramienta-electrica-de-obra",
-  "marca": "Hilti",
-  "modelo": "Herramienta eléctrica de obra",
-  "titulo": "Hilti Herramienta eléctrica de obra",
-  "familia": "herramienta-auxiliar",
-  "familiaNombre": "Herramienta auxiliar",
-  "subcategoria": "herramienta-obra",
-  "subcategoriaNombre": "Herramienta eléctrica de obra",
-  "icono": "herramienta",
+  "slug": "atlas-copco-xas-188",
+  "marca": "Atlas Copco",
+  "modelo": "XAS 188",
+  "titulo": "Atlas Copco XAS 188",
+  "familia": "aire-martillos",
+  "familiaNombre": "Aire comprimido y martillos",
+  "subcategoria": "compresores-remolcables",
+  "subcategoriaNombre": "Compresores de aire remolcables",
+  "icono": "compresor",
   "lineas": [
    "alquiler"
   ],
   "condicionVenta": null,
-  "gama": true,
+  "gama": false,
   "destacada": false,
-  "orden": 32000,
-  "energia": "electrico",
-  "energiaNombre": "Eléctrico",
+  "orden": 31040,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
   "entornos": [
-   "interior",
    "exterior"
   ],
-  "traccion": "2x4",
+  "traccion": "remolcable",
   "requiereFormacion": false,
   "delegaciones": [
    "madrid",
@@ -68963,24 +69170,98 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Martillos rompedores y perforadores, cortadoras de disco, perforadoras de corona al agua, clavadoras de fijación y niveles láser. Es el remate que la máquina grande no hace y que acaba parando el tajo si falta.",
+  "descripcionCorta": "Compresor diésel de 10,9 m³/min, el de más caudal de la flota: perforación, gunitado y chorreado, o una batería de herramientas neumáticas en la misma obra.",
   "aplicaciones": [
-   "Demolición ligera y picado",
-   "Corte de hormigón, asfalto y metal",
-   "Perforación de corona",
-   "Fijación y replanteo"
+   "Alimentación de martillo neumático",
+   "Perforación y barrenado",
+   "Chorreo y limpieza a presión",
+   "Soplado de conducciones"
   ],
   "destacados": [],
   "trabajos": [
-   "tierra"
+   "energia"
   ],
   "notaAsesor": null,
   "altura": null,
   "carga": null,
-  "foto": null,
-  "ficha": null,
-  "tarjeta": [],
-  "specs": [],
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/atlas-copco-xas-188.webp",
+   "alt": "Atlas Copco XAS 188 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/atlas-copco-xas-188.pdf",
+   "bytes": 5863996
+  },
+  "tarjeta": [
+   {
+    "key": "caudalAire",
+    "etiqueta": "Caudal",
+    "estado": "confirmado",
+    "texto": "10,9 m³/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "motor",
+    "etiqueta": "Motor",
+    "estado": "confirmado",
+    "texto": "Diésel, Fase V",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "presionAire",
+    "etiqueta": "Presión",
+    "estado": "pendiente",
+    "texto": "Pendiente",
+    "unidad": "",
+    "nota": "La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "capacidades",
+    "grupoNombre": "Capacidades",
+    "filas": [
+     {
+      "key": "caudalAire",
+      "etiqueta": "Caudal de aire",
+      "estado": "confirmado",
+      "texto": "10,9 m³/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "presionAire",
+      "etiqueta": "Presión de trabajo",
+      "estado": "pendiente",
+      "texto": "Pendiente",
+      "unidad": "",
+      "nota": "La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."
+     }
+    ]
+   },
+   {
+    "grupo": "motorizacion",
+    "grupoNombre": "Motorización",
+    "filas": [
+     {
+      "key": "motor",
+      "etiqueta": "Motor",
+      "estado": "confirmado",
+      "texto": "Diésel, Fase V",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     }
+    ]
+   }
+  ],
   "comparador": {
    "alturaTrabajo": {
     "estado": "no_aplica",
@@ -69025,16 +69306,17 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "confirmado",
+    "texto": "10,9 m³/min",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "pendiente",
+    "texto": "Pendiente",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "nota": "La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."
    },
    "anchoTrabajo": {
     "estado": "no_aplica",
@@ -69133,10 +69415,11 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
+    "estado": "confirmado",
+    "texto": "Diésel, Fase V",
     "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -69170,11 +69453,11 @@
    }
   },
   "relacionadas": [
-   "jlg-nano-sp-plus",
-   "jlg-1230-es",
-   "genie-gr-15"
+   "atlas-copco-xas-48",
+   "atlas-copco-xas-58",
+   "atlas-copco-xas-68"
   ],
   "enAlquiler": true,
-  "busqueda": "hilti herramienta electrica de obra martillos rompedores y perforadores, cortadoras de disco, perforadoras de corona al agua, clavadoras de fijacion y niveles laser. es el remate que la maquina grande no hace y que acaba parando el tajo si falta. herramienta electrica de obra herramienta auxiliar demolicion ligera y picado corte de hormigon, asfalto y metal perforacion de corona fijacion y replanteo"
+  "busqueda": "atlas copco xas 188 compresor diesel de 10,9 m³/min, el de mas caudal de la flota: perforacion, gunitado y chorreado, o una bateria de herramientas neumaticas en la misma obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  }
 ]

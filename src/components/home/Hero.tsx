@@ -36,10 +36,10 @@ export function Hero() {
     formacion: formacion
       ? {
           src: formacion,
-          alt: "Instructor explicando los mandos de una plataforma elevadora de tijera a dos alumnos con casco y arnés",
-          /* El grupo ocupa del 60 al 95 % del ancho: en móvil la franja
-             visible tiene que caer sobre ellos. Contraste medido con el
-             velo en el peor punto: 11,1:1 titular, 6,8:1 entradilla. */
+          alt: "Monitora de JOFEMESA Formación, con casco y arnés, da indicaciones a un operario en la cesta de una plataforma de brazo articulado",
+          /* Foto de prueba del 03/11/2026: la plataforma y la monitora
+             ocupan del 45 al 100 % del ancho. En móvil la franja visible
+             tiene que caer sobre ellas. */
           posicion: "object-[80%_center]",
         }
       : {

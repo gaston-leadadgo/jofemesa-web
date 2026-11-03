@@ -24,6 +24,22 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Cambios del 03/11/2026
+
+- **Compresores, modelo a modelo**: Atlas Copco XAS 48, 58, 68 y 188 y CompAir C-38, con foto y
+  ficha, en lugar de la gama. Foto y ficha de la Snorkel A46JRT.
+- **Fuera del catálogo**: máquinas de almacén, martillo picador, rompedor y herramienta eléctrica.
+  Las familias y subcategorías sin máquinas se ocultan solas (vuelven cuando tengan producto).
+- **Sellos**: sin ISO (son solo de Asturias). «Certificaciones» (AENOR, IPAF) y «Asociaciones»
+  (ANAPAT, AECE, ASEAMAC) con logotipo. Pilar de autoridad «Formación certificada».
+- **Carrusel de fabricantes encima del pie**, en todas las páginas; sin Hilti.
+- **Servicios**: 9 talleres propios (todas las delegaciones) y «Formaciones» en lugar de
+  «Homologaciones». **Formación**: las tarjetas oscuras van primero; velo más denso en la cabecera
+  y foto nueva de prueba. **Alquiler**: «Búsqueda de maquinarias» y el contorno de foco ya no se
+  corta; sin «Comparar» en subcategorías de una sola máquina. Tarjetas de energía con
+  «Frecuencia» en lugar de «Versión». Logo de Jungheinrich en SVG.
+- **Plugin 1.3.2**: caché de página del catálogo en WordPress y velo de cabecera que sí se pinta.
+
 ## Entrega del 29/10/2026
 
 - **Fotos y fichas de 77 máquinas**: todo el movimiento de tierras (retroexcavadoras,

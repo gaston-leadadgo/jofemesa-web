@@ -26,7 +26,7 @@ export default function PaginaAlquiler() {
         titulo="La máquina que te falta, lista para salir a tu obra."
         lede={
           <>
-            Plataformas, manutención, tierras, energía, aire y herramienta, con
+            Plataformas, manutención, tierras, energía y aire comprimido, con
             flota, taller y camiones propios. Filtra por altura, alimentación,
             uso o fabricante y pide disponibilidad: te contesta la delegación
             que tiene la máquina.

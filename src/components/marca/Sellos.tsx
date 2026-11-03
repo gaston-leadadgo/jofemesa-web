@@ -8,16 +8,22 @@ import { SELLOS } from "@/content/es/empresa";
  * ANAPAT ya es apaisado por naturaleza. Los de AENOR abren su
  * certificado en PDF, que es lo que da valor a un sello en una web.
  *
- * `solo` filtra por id cuando una página solo necesita algunos.
+ * `solo` filtra por id cuando una página solo necesita algunos, y
+ * `grupo` separa certificaciones (AENOR, IPAF) de asociaciones (ANAPAT,
+ * AECE, ASEAMAC).
  */
 export function Sellos({
   solo,
+  grupo,
   alto = 48,
 }: {
   solo?: readonly (typeof SELLOS)[number]["id"][];
+  grupo?: (typeof SELLOS)[number]["grupo"];
   alto?: number;
 }) {
-  const sellos = solo ? SELLOS.filter((s) => solo.includes(s.id)) : SELLOS;
+  const sellos = SELLOS.filter(
+    (s) => (!solo || solo.includes(s.id)) && (!grupo || s.grupo === grupo),
+  );
   return (
     <ul className="flex flex-wrap items-center gap-x-6 gap-y-4">
       {sellos.map((s) => {

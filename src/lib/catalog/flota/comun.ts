@@ -294,6 +294,13 @@ export const CON_FOTO = new Set([
   "takeuchi-tb-370",
   "takeuchi-tb-290",
   "takeuchi-tb-2150r",
+  // Compresores y Snorkel A46JRT, entregados el 03/11/2026.
+  "atlas-copco-xas-48",
+  "atlas-copco-xas-58",
+  "atlas-copco-xas-68",
+  "compair-c-38",
+  "atlas-copco-xas-188",
+  "snorkel-a46jrt",
 ]);
 
 /** Fotos que no son la creatividad cuadrada de 1254×1254. */
@@ -313,6 +320,10 @@ export const FICHAS: Record<string, number> = {
   "atlas-copco-qas-200-fd-s5": 205992,
   "atlas-copco-qas-30-kd-55": 205992,
   "atlas-copco-qas-45-kd-55": 205992,
+  "atlas-copco-xas-188": 5863996,
+  "atlas-copco-xas-48": 85221,
+  "atlas-copco-xas-58": 85221,
+  "atlas-copco-xas-68": 85221,
   "ausa-c-150-h-x4": 237879,
   "ausa-c-201-h-x4": 381044,
   "ausa-c-250-h-x4": 329900,
@@ -343,6 +354,7 @@ export const FICHAS: Record<string, number> = {
   "bomag-bvp-20-50-d": 445548,
   "bomag-bw-211": 1275664,
   "bomag-bw65h": 555138,
+  "compair-c-38": 552981,
   "dagartech-dgdr-100-st": 2106308,
   "dagartech-dgdr-60-st": 2035760,
   "dagartech-dgdr150": 2104256,
@@ -467,6 +479,7 @@ export const FICHAS: Record<string, number> = {
   "pramac-gsw35": 1197838,
   "pramac-gsw50": 412740,
   "snorkel-a38e": 1071165,
+  "snorkel-a46jrt": 1059877,
   "snorkel-s3370-rt": 1611150,
   "snorkel-s3970-rt": 1611150,
   "snorkel-s4740e": 155309,

@@ -1,6 +1,5 @@
 import { Boxes, ShieldCheck, MapPin, CalendarClock } from "lucide-react";
 import {
-  CERTIFICACIONES,
   DELEGACIONES,
   EMPRESA,
 } from "@/content/es/empresa";
@@ -79,23 +78,18 @@ export function Garantias() {
           ))}
         </ul>
 
-        {/* Los sellos. Los tres ISO van en texto porque no hay logotipo
-            suyo en el material; AENOR, IPAF y ANAPAT, con el logotipo
-            que envió el cliente el 29/10/2026. */}
-        <div className="flex flex-col gap-x-6 gap-y-3 border-t border-rule py-5 md:flex-row md:items-center">
-          <p className="label-sm shrink-0 text-ink-3">Certificados</p>
-          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-            {CERTIFICACIONES.map((c) => (
-              <li
-                key={c.id}
-                className="value text-sm text-ink-2"
-                title={c.descripcion}
-              >
-                {c.nombre}
-              </li>
-            ))}
-          </ul>
-          <Sellos alto={44} />
+        {/* Los sellos, todos con su logotipo: certificaciones a la
+            izquierda y asociaciones a la derecha. Las ISO no van: son
+            solo de la delegación de Asturias (cliente, 03/11/2026). */}
+        <div className="grid gap-x-10 gap-y-5 border-t border-rule py-5 lg:grid-cols-[auto_auto] lg:justify-between">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
+            <p className="label-sm shrink-0 text-ink-3">Certificaciones</p>
+            <Sellos grupo="certificacion" alto={44} />
+          </div>
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
+            <p className="label-sm shrink-0 text-ink-3">Asociaciones</p>
+            <Sellos grupo="asociacion" alto={36} />
+          </div>
         </div>
       </div>
     </section>

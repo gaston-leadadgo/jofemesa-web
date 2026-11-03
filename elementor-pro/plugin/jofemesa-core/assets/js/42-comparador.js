@@ -51,8 +51,19 @@
     var d = JM.json("jm-indice-maquinas") || {};
     indice = { base: d.base || "", lista: d.maquinas || [], porSlug: {} };
     if (d.max) MAX = d.max;
-    indice.lista.forEach(function (m) { indice.porSlug[m.s] = m; });
+    indice.porSub = {};
+    indice.lista.forEach(function (m) {
+      indice.porSlug[m.s] = m;
+      indice.porSub[m.subn] = (indice.porSub[m.subn] || 0) + 1;
+    });
     return indice;
+  }
+  /* Con una sola máquina en su subcategoría no hay nada que comparar: la
+     tarjeta y la ficha esconden el botón y la casilla (cliente, 03/11/2026). */
+  function comparable(s) {
+    var i = datosIndice();
+    var m = i.porSlug[s];
+    return !m || (i.porSub[m.subn] || 0) > 1;
   }
   function valido(s) {
     var i = datosIndice();
@@ -152,6 +163,12 @@
       if (!a) return;
       var s = slugDe(w);
       if (!s) return;
+      if (!comparable(s)) {
+        w.hidden = true;
+        var pareja = w.closest(".jm-tarjeta-maquina__pareja");
+        if (pareja) pareja.classList.add("jm-pareja--sola");
+        return;
+      }
       var marcada = l.indexOf(s) !== -1;
       var bloq = ll && !marcada;
       var enTarjeta = !!w.closest(".jm-tarjeta-maquina");
@@ -196,7 +213,7 @@
      ------------------------------------------------------------------ */
   function iniciarCasilla(foto) {
     var s = slugDe(foto);
-    if (!s || foto.querySelector(".jm-casilla-comparar")) return;
+    if (!s || !comparable(s) || foto.querySelector(".jm-casilla-comparar")) return;
     /* La foto es un segundo enlace a la ficha: fuera del tabulador. */
     foto.querySelectorAll("a").forEach(function (a) {
       a.tabIndex = -1;

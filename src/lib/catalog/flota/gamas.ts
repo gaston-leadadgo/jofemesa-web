@@ -521,23 +521,9 @@ const giratorios: Fila[] = [
     "Manipulador telescópico giratorio de 4.500 kg y 20,6 m de elevación, con 17,9 m de alcance. El de más altura de la flota, para montaje y rehabilitación."),
 ];
 
-const almacen: Fila[] = [
-  {
-    marca: "Jungheinrich",
-    modelo: "Máquinas de almacén",
-    gama: true,
-    descripcion:
-      "Transpaletas eléctricas, apiladores y preparadoras de pedidos para el movimiento diario del almacén. Somos partner oficial de Jungheinrich, así que la misma máquina se puede alquilar, comprar nueva o comprar reacondicionada.",
-    extra: {
-      capacidadCarga: pend(
-        "La capacidad depende del equipo concreto. Dinos peso de palet y altura de estantería y te decimos cuál encaja.",
-      ),
-      alturaElevacion: pend(
-        "Va por modelo, no por gama. Te la confirmamos al consultar disponibilidad.",
-      ),
-    },
-  },
-];
+/* Máquinas de almacén: retiradas del catálogo el 03/11/2026 a petición del
+   cliente. La subcategoría se queda definida y, sin filas, no se muestra. */
+const almacen: Fila[] = [];
 
 /*
  * Grupos electrógenos, modelo a modelo (material del 27/10/2026), en lugar
@@ -631,49 +617,58 @@ const torres: Fila[] = [
   },
 ];
 
-const compresores: Fila[] = [
-  {
-    marca: "Atlas Copco",
-    modelo: "Compresor de aire remolcable",
-    gama: true,
-    destacada: true,
-    descripcion:
-      "Compresores de aire remolcables insonorizados con aire libre suministrado de 2 a 11 m³/min. Se enganchan a un vehículo ligero y alimentan desde un martillo hasta una batería de herramienta neumática.",
+/**
+ * Compresores, modelo a modelo (material del 03/11/2026): sustituyen a la
+ * gama «Compresor de aire remolcable». Datos de cada ficha del fabricante.
+ *
+ *  - XAS 48, 58 y 68: la misma ficha de la gama XAS (versiones «Kd»).
+ *  - XAS 188: la ficha cubre la XAS 188-10 y la 188-14 PACE. Las dos dan
+ *    10,9 m³/min de caudal máximo; la presión depende de la versión, que no
+ *    sabemos, así que va pendiente.
+ *  - C-38: ficha de CompAir.
+ */
+function compresor(
+  marca: string,
+  modelo: string,
+  d: { caudal: string; presion?: string; motor: string; peso?: number },
+  descripcion: string,
+  destacada = false,
+): Fila {
+  return {
+    marca,
+    modelo,
+    destacada,
+    descripcion,
     extra: {
-      caudalAire: conf("2 – 11 m³/min", "catalogo-jofemesa"),
-      motor: conf("Diésel", "catalogo-jofemesa"),
+      caudalAire: conf(d.caudal, "ficha-pdf"),
+      presionAire: d.presion
+        ? conf(d.presion, "ficha-pdf")
+        : pend("La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."),
+      motor: conf(d.motor, "ficha-pdf"),
+      ...(d.peso ? { peso: conf(d.peso, "ficha-pdf") } : {}),
     },
-  },
+  };
+}
+
+const compresores: Fila[] = [
+  compresor("Atlas Copco", "XAS 48", { caudal: "2,5 m³/min", presion: "7 bar", motor: "Diésel Kubota D902, 18,5 kW", peso: 500 },
+    "Compresor remolcable de 2,5 m³/min a 7 bar y 500 kg: se engancha a un vehículo ligero y alimenta un martillo picador o herramienta neumática."),
+  compresor("Atlas Copco", "XAS 58", { caudal: "3,0 m³/min", presion: "7 bar", motor: "Diésel Kubota V1505, 26,5 kW" },
+    "Compresor remolcable de 3 m³/min a 7 bar y menos de 750 kg en orden de marcha. Para martillo y herramienta neumática en obra."),
+  compresor("Atlas Copco", "XAS 68", { caudal: "3,5 m³/min", presion: "7 bar", motor: "Diésel Kubota V1505, 26,5 kW" },
+    "Compresor remolcable de 3,5 m³/min a 7 bar y menos de 750 kg. Más caudal para dos herramientas a la vez o un rompedor pesado.", true),
+  compresor("CompAir", "C-38", { caudal: "3,8 m³/min", presion: "7 bar", motor: "Diésel Cummins A2300, 35,5 kW", peso: 748 },
+    "Compresor portátil de 3,8 m³/min a 7 bar con motor Cummins de cuatro cilindros. Regula el caudal según la demanda de aire para gastar menos combustible."),
+  compresor("Atlas Copco", "XAS 188", { caudal: "10,9 m³/min", motor: "Diésel, Fase V" },
+    "Compresor diésel de 10,9 m³/min, el de más caudal de la flota: perforación, gunitado y chorreado, o una batería de herramientas neumáticas en la misma obra."),
 ];
 
-const martillos: Fila[] = [
-  {
-    marca: "Atlas Copco",
-    modelo: "Martillo picador neumático",
-    gama: true,
-    descripcion:
-      "Martillos picadores neumáticos Atlas Copco para picado de hormigón, saneado de estructura y apertura de rozas. Se alimentan desde cualquiera de nuestros compresores remolcables.",
-    extra: { presionAire: pend("Según modelo y puntero.") },
-  },
-  {
-    marca: "Atlas Copco",
-    modelo: "Rompedor neumático",
-    gama: true,
-    descripcion:
-      "Rompedores neumáticos Atlas Copco y Toku para demolición de solera y pavimento y apertura de zanja en firme. Distintos pesos de maza según el espesor a romper.",
-    extra: { presionAire: pend("Según modelo y puntero.") },
-  },
-];
+/* Martillos y herramienta eléctrica: retirados el 03/11/2026 a petición del
+   cliente. Las subcategorías se quedan definidas (habrá producto de
+   herramienta auxiliar) y, sin filas, no se muestran en la web. */
+const martillos: Fila[] = [];
 
-const herramienta: Fila[] = [
-  {
-    marca: "Hilti",
-    modelo: "Herramienta eléctrica de obra",
-    gama: true,
-    descripcion:
-      "Martillos rompedores y perforadores, cortadoras de disco, perforadoras de corona al agua, clavadoras de fijación y niveles láser. Es el remate que la máquina grande no hace y que acaba parando el tajo si falta.",
-  },
-];
+const herramienta: Fila[] = [];
 
 export const FLOTA_GAMAS: Maquina[] = [
   ...construir(MANIPULADORES, 11000, manipuladores),

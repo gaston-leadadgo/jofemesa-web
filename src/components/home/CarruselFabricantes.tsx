@@ -35,7 +35,6 @@ const LOGOS: Record<string, { archivo: string; w: number; h: number }> = {
   "Atlas Copco": { archivo: "atlas-copco", w: 334, h: 160 },
   Himoinsa: { archivo: "himoinsa", w: 895, h: 160 },
   Dagartech: { archivo: "dagartech", w: 1195, h: 160 },
-  Hilti: { archivo: "hilti", w: 680, h: 160 },
 };
 
 /** Área visual común de cada logotipo, en px² CSS. */

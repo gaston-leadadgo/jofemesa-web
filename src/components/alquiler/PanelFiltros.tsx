@@ -67,10 +67,10 @@ export function PanelFiltros({
 
   return (
     <div className="divide-y divide-rule border-y border-rule">
-      {/* ---------- Búsqueda por modelo ---------- */}
+      {/* ---------- Búsqueda de maquinarias ---------- */}
       <div className="py-5">
         <label htmlFor={idBusqueda} className="label block text-ink">
-          Búsqueda por modelo
+          Búsqueda de maquinarias
         </label>
         <div className="relative mt-3">
           <Search

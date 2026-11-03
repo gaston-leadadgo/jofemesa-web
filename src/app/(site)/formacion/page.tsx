@@ -141,11 +141,8 @@ export default function PaginaFormacion() {
             </p>
           </div>
           <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-escalonar>
-            {ORDEN_CURSOS.map((id) => (
-              <TarjetaCurso key={id} id={id} convocatorias={porCurso(id)} />
-            ))}
-            {/* Sexta casilla: con cinco cursos la rejilla de tres dejaba un
-                hueco, y el hueco es justo lo que hacía la página vacía. */}
+            {/* La tarjeta oscura va la primera (cliente, 03/11/2026). Con
+                ella, los cinco cursos llenan la rejilla de tres sin hueco. */}
             <li className="flex flex-col justify-between gap-6 rounded-3xl bg-inverse p-6 text-ink-inv-2">
               <div>
                 <span className="flex size-11 items-center justify-center rounded-2xl bg-accent text-white">
@@ -167,6 +164,10 @@ export default function PaginaFormacion() {
                 <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
               </EnlaceCalendario>
             </li>
+
+            {ORDEN_CURSOS.map((id) => (
+              <TarjetaCurso key={id} id={id} convocatorias={porCurso(id)} />
+            ))}
           </ul>
 
           <div className="mt-11 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 border-b border-rule-strong pb-3">
@@ -176,9 +177,6 @@ export default function PaginaFormacion() {
             </p>
           </div>
           <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-escalonar>
-            {ORDEN_A_MEDIDA.map((id) => (
-              <TarjetaCurso key={id} id={id} convocatorias={0} />
-            ))}
             <li className="flex flex-col justify-between gap-6 rounded-3xl bg-inverse p-6 text-ink-inv-2 lg:col-span-2 xl:col-span-1">
               <div>
                 <span className="flex size-11 items-center justify-center rounded-2xl bg-accent text-white">
@@ -200,6 +198,10 @@ export default function PaginaFormacion() {
                 <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
               </Link>
             </li>
+
+            {ORDEN_A_MEDIDA.map((id) => (
+              <TarjetaCurso key={id} id={id} convocatorias={0} />
+            ))}
           </ul>
         </div>
       </section>

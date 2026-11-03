@@ -2,8 +2,6 @@ import Link from "next/link";
 import { Clock, Wrench, ShieldCheck, Award, ArrowRight } from "lucide-react";
 import {
   EMPRESA,
-  CERTIFICACIONES,
-  FABRICANTES_FLOTA,
   DELEGACIONES,
   FLOTA,
 } from "@/content/es/empresa";
@@ -44,10 +42,10 @@ const PILARES = [
   },
   {
     icono: ShieldCheck,
-    titulo: "Procesos certificados",
+    titulo: "Formación certificada",
     texto:
-      "Gestión auditada según ISO 9001, 14001 y 45001, con revisión del equipo antes de cada salida.",
-    pie: CERTIFICACIONES.map((c) => c.nombre).join(" · "),
+      "Centro de formación homologado por IPAF y certificado por AENOR en UNE 58923 (plataformas) y UNE 58451 (carretillas).",
+    pie: "AENOR · IPAF",
   },
   {
     icono: Award,
@@ -150,21 +148,8 @@ export function Autoridad() {
           ))}
         </div>
 
-        {/* Fabricantes: una tira, no una rejilla con aire. */}
-        <div className="mt-6 flex flex-col gap-3 border-t border-rule pt-5 md:flex-row md:items-center md:gap-6">
-          <h3 className="label shrink-0 text-ink-3">Nuestros fabricantes</h3>
-          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            {FABRICANTES_FLOTA.map((f) => (
-              <li
-                key={f.nombre}
-                className="text-base font-semibold text-ink-2"
-                title={f.area}
-              >
-                {f.nombre}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Los fabricantes ya no van aquí en texto: la tira de logos está
+            encima del pie, en todas las páginas (03/11/2026). */}
       </div>
     </section>
   );

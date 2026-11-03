@@ -515,7 +515,8 @@ add_shortcode('jm_delegaciones_pie', 'jm_sc_delegaciones_pie');
 function jm_sc_certificados(): string
 {
     $e = jm_empresa();
-    $todos = array_merge($e['certificaciones'] ?? [], $e['homologaciones'] ?? [], $e['afiliaciones'] ?? []);
+    /* Sin las ISO: son solo de la delegación de Asturias (cliente, 03/11/2026). */
+    $todos = array_merge($e['homologaciones'] ?? [], $e['afiliaciones'] ?? []);
     if (!$todos) {
         return '';
     }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Download, Phone, Check, Layers } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { DELEGACIONES_POR_ID, TELEFONO_PRINCIPAL } from "@/content/es/empresa";
-import { specsAgrupadas, relacionadas } from "@/lib/catalog";
+import { esComparable, specsAgrupadas, relacionadas } from "@/lib/catalog";
 import { SUBCATEGORIA_POR_SLUG, FAMILIA_POR_ID } from "@/lib/catalog/familias";
 import type { Maquina, SpecGrupo } from "@/lib/catalog/types";
 import { DatoValor } from "@/components/spec/DatoValor";
@@ -62,7 +62,9 @@ export function FichaMaquina({
       <div
         className={cn(
           "grid gap-8",
-          variante === "modal" ? "md:grid-cols-[11fr_9fr]" : "lg:grid-cols-2 lg:gap-12",
+          variante === "modal"
+            ? "md:grid-cols-[11fr_9fr]"
+            : "lg:grid-cols-2 lg:gap-12",
         )}
       >
         {/* ---------- Imagen ---------- */}
@@ -70,7 +72,11 @@ export function FichaMaquina({
           <div className="relative aspect-square overflow-hidden rounded-2xl border border-rule bg-white">
             <ImagenMaquina
               maquina={m}
-              sizes={variante === "modal" ? "600px" : "(min-width:1024px) 640px, 92vw"}
+              sizes={
+                variante === "modal"
+                  ? "600px"
+                  : "(min-width:1024px) 640px, 92vw"
+              }
               prioridad={variante === "pagina"}
             />
           </div>
@@ -78,7 +84,10 @@ export function FichaMaquina({
           {m.destacados.length > 0 && (
             <ul className="mt-6 space-y-2">
               {m.destacados.map((d) => (
-                <li key={d} className="flex items-start gap-2.5 text-base text-ink-2">
+                <li
+                  key={d}
+                  className="flex items-start gap-2.5 text-base text-ink-2"
+                >
                   <Check
                     size={17}
                     strokeWidth={2.5}
@@ -118,11 +127,14 @@ export function FichaMaquina({
                 className="mt-1 shrink-0 text-wait-text"
               />
               <span>
-                Esta ficha es la <strong className="font-semibold text-ink">gama completa</strong>,
-                no una unidad concreta. El catálogo de JOFEMESA publica esta
+                Esta ficha es la{" "}
+                <strong className="font-semibold text-ink">
+                  gama completa
+                </strong>
+                , no una unidad concreta. El catálogo de JOFEMESA publica esta
                 familia por rangos, así que aquí verás el máximo de la gama:
-                dinos qué necesitas mover y a qué altura y te decimos el
-                modelo exacto.
+                dinos qué necesitas mover y a qué altura y te decimos el modelo
+                exacto.
               </span>
             </p>
           )}
@@ -154,8 +166,8 @@ export function FichaMaquina({
             ))}
 
             <p className="mt-4 text-sm text-ink-3">
-              Las cifras salen del Catálogo General de Maquinaria de JOFEMESA
-              y de la ficha técnica del fabricante.
+              Las cifras salen del Catálogo General de Maquinaria de JOFEMESA y
+              de la ficha técnica del fabricante.
               {hayEstimadas
                 ? " Las subrayadas en ámbar están sin confirmar contra la unidad concreta: las comprobamos al responder tu solicitud."
                 : " La disponibilidad y las cotas de acceso las confirmamos al responder tu solicitud."}
@@ -198,16 +210,19 @@ export function FichaMaquina({
                     key={d}
                     className="flex items-center gap-2 py-1 text-base text-ink-2"
                   >
-                    <span aria-hidden="true" className="size-3 shrink-0 bg-ok" />
+                    <span
+                      aria-hidden="true"
+                      className="size-3 shrink-0 bg-ok"
+                    />
                     {del.nombre}
                   </li>
                 );
               })}
             </ul>
             <p className="mt-3 text-sm text-ink-3">
-              Con transporte propio entre delegaciones. La disponibilidad de
-              la fecha la confirma la delegación que te atiende al responder
-              tu solicitud.
+              Con transporte propio entre delegaciones. La disponibilidad de la
+              fecha la confirma la delegación que te atiende al responder tu
+              solicitud.
             </p>
           </div>
 
@@ -251,7 +266,9 @@ export function FichaMaquina({
               </a>
             </div>
 
-            <BotonComparar slug={m.slug} nombre={`${m.marca} ${m.modelo}`} />
+            {esComparable(m) && (
+              <BotonComparar slug={m.slug} nombre={`${m.marca} ${m.modelo}`} />
+            )}
           </div>
         </div>
       </div>

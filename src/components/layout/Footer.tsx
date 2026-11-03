@@ -4,7 +4,6 @@ import { Phone, Mail } from "lucide-react";
 import {
   PUNTOS_CONTACTO,
   EMPRESA,
-  CERTIFICACIONES,
   HOMOLOGACIONES,
   AFILIACIONES,
   EMAIL_PRINCIPAL,
@@ -179,7 +178,7 @@ export function Footer() {
             <div className="mt-6 flex flex-wrap gap-x-4 gap-y-1.5">
               <h2 className="label-sm shrink-0 text-ink-inv-3">Certificados</h2>
               <ul className="flex flex-wrap gap-x-3 gap-y-1.5">
-                {[...CERTIFICACIONES, ...HOMOLOGACIONES, ...AFILIACIONES].map(
+                {[...HOMOLOGACIONES, ...AFILIACIONES].map(
                   (c) => (
                     <li
                       key={c.id}

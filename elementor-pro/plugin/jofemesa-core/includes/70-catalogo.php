@@ -533,7 +533,7 @@ function jm_sc_catalogo_filtros($atts): string
 <div class="jm-cat-panel">
 
 <div class="jm-cat-panel__bloque">
-<label for="jm-cat-q" class="jm-label jm-cat-panel__etiqueta">Búsqueda por modelo</label>
+<label for="jm-cat-q" class="jm-label jm-cat-panel__etiqueta">Búsqueda de maquinarias</label>
 <div class="jm-cat-buscar jm-cat-buscar--panel">
 <?php echo jm_cat_icono('buscar', 17, 1.75, 'jm-cat-buscar__ico'); ?>
 <input id="jm-cat-q" type="search" class="jm-cat-buscar__campo" data-jm-q placeholder="GS-4390, Manitou, tijera diésel…" autocomplete="off">

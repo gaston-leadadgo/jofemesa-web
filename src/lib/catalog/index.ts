@@ -29,6 +29,17 @@ export const MARCAS = [...new Set(CATALOGO.map((m) => m.marca))].sort((a, b) =>
 );
 export const VENTA = CATALOGO.filter((m) => m.lineas.includes("venta"));
 
+/* Cuántas máquinas hay en cada subcategoría. Con una sola no hay nada
+   que comparar, y la tarjeta y la ficha esconden el comparador. */
+const POR_SUBCAT = new Map<string, number>();
+for (const m of CATALOGO)
+  POR_SUBCAT.set(
+    m.subcategoriaSlug,
+    (POR_SUBCAT.get(m.subcategoriaSlug) ?? 0) + 1,
+  );
+export const esComparable = (m: Pick<Maquina, "subcategoriaSlug">) =>
+  (POR_SUBCAT.get(m.subcategoriaSlug) ?? 0) > 1;
+
 const POR_SLUG = new Map(CATALOGO.map((m) => [m.slug, m]));
 export const getMaquina = (slug: string) => POR_SLUG.get(slug);
 
@@ -57,10 +68,7 @@ export interface Filtros {
 }
 
 export type OrdenId =
-  | "relevancia"
-  | "altura-asc"
-  | "altura-desc"
-  | "carga-desc";
+  "relevancia" | "altura-asc" | "altura-desc" | "carga-desc";
 
 export const FILTROS_VACIOS: Filtros = {
   familia: null,
@@ -77,25 +85,20 @@ export const FILTROS_VACIOS: Filtros = {
 };
 
 const normaliza = (s: string) =>
-  s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
 /**
  * Una máquina sin altura confirmada queda EXCLUIDA de un filtro de altura,
  * no se cuela con un 0. Es la diferencia entre "no lo sabemos" y "mide cero".
  */
-export function filtrar(
-  maquinas: readonly Maquina[],
-  f: Filtros,
-): Maquina[] {
+export function filtrar(maquinas: readonly Maquina[], f: Filtros): Maquina[] {
   const texto = f.texto ? normaliza(f.texto) : null;
 
   const res = maquinas.filter((m) => {
     if (f.familia && m.familia !== f.familia) return false;
     if (f.subcategoria && m.subcategoriaSlug !== f.subcategoria) return false;
-    if (f.energia.length && !f.energia.includes(m.facetas.energia)) return false;
+    if (f.energia.length && !f.energia.includes(m.facetas.energia))
+      return false;
     if (
       f.entorno.length &&
       !f.entorno.some((e) => m.facetas.entornos.includes(e))
@@ -180,7 +183,10 @@ export function contarFacetas(maquinas: readonly Maquina[], f: Filtros) {
     parcial: (v: T) => Partial<Filtros>,
   ) =>
     Object.fromEntries(
-      valores.map((v) => [v, filtrar(maquinas, { ...f, ...parcial(v) }).length]),
+      valores.map((v) => [
+        v,
+        filtrar(maquinas, { ...f, ...parcial(v) }).length,
+      ]),
     ) as Record<T, number>;
 
   return {
@@ -219,15 +225,27 @@ export function filtrosQueMasExcluyen(
       quitar: { cargaMin: null },
     });
   if (f.energia.length)
-    candidatos.push({ etiqueta: "el filtro de alimentación", quitar: { energia: [] } });
+    candidatos.push({
+      etiqueta: "el filtro de alimentación",
+      quitar: { energia: [] },
+    });
   if (f.entorno.length)
     candidatos.push({ etiqueta: "el filtro de uso", quitar: { entorno: [] } });
   if (f.marca)
-    candidatos.push({ etiqueta: "el filtro de fabricante", quitar: { marca: null } });
+    candidatos.push({
+      etiqueta: "el filtro de fabricante",
+      quitar: { marca: null },
+    });
   if (f.subcategoria)
-    candidatos.push({ etiqueta: "la subcategoría", quitar: { subcategoria: null } });
+    candidatos.push({
+      etiqueta: "la subcategoría",
+      quitar: { subcategoria: null },
+    });
   if (f.texto)
-    candidatos.push({ etiqueta: "la búsqueda por texto", quitar: { texto: null } });
+    candidatos.push({
+      etiqueta: "la búsqueda por texto",
+      quitar: { texto: null },
+    });
 
   const solos = candidatos
     .map((c) => ({
@@ -307,7 +325,13 @@ export function specsDestacadas(m: Maquina): SpecKey[] {
  * no tiene profundidad de excavación y nadie viene a comprobarlo.
  */
 export function specsAgrupadas(m: Maquina) {
-  const grupos = new Map<string, { def: (typeof SPEC_DEFS)[number]; dato: NonNullable<Maquina["specs"][SpecKey]> }[]>();
+  const grupos = new Map<
+    string,
+    {
+      def: (typeof SPEC_DEFS)[number];
+      dato: NonNullable<Maquina["specs"][SpecKey]>;
+    }[]
+  >();
   for (const def of SPEC_DEFS) {
     const dato = m.specs[def.key];
     if (!dato || dato.estado === "no_aplica") continue;

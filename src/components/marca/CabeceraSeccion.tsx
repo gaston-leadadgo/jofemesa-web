@@ -95,7 +95,7 @@ export function CabeceraSeccion({
           {/* Velo: la foto la elige otro, el contraste lo garantiza esto. */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-t from-inverse via-inverse/90 to-inverse/55 lg:bg-gradient-to-r lg:from-inverse lg:from-30% lg:via-inverse/80 lg:via-70% lg:to-inverse/50"
+            className="absolute inset-0 -z-10 bg-gradient-to-t from-inverse via-inverse/90 via-55% to-inverse/60 lg:bg-[linear-gradient(to_right,rgba(20,23,26,0.97)_0%,rgba(20,23,26,0.9)_38%,rgba(20,23,26,0.55)_62%,rgba(20,23,26,0.12)_100%)]"
           />
         </>
       ) : (

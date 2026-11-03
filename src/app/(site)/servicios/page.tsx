@@ -14,6 +14,7 @@ import { IconoMaquina } from "@/components/marca/IconoMaquina";
 import { CabeceraSeccion } from "@/components/marca/CabeceraSeccion";
 import { Mapa } from "@/components/marca/Mapa";
 import { fotoServicio } from "@/lib/img/ambiente";
+import { TODOS_LOS_CURSOS } from "@/content/es/formacion";
 
 export const metadata: Metadata = {
   title: "Servicios · venta, mantenimiento, transporte y formación",
@@ -35,10 +36,9 @@ export const metadata: Metadata = {
  * formulario, pero cada uno con su asunto ya puesto, así que la
  * solicitud llega sabiendo de qué va.
  */
-/** Las delegaciones que documentan taller propio en el catálogo. */
-const CON_TALLER = DELEGACIONES.filter((d) =>
-  d.servicios.some((x) => /taller/i.test(x)),
-);
+/** Todas las delegaciones de alquiler tienen taller propio (cliente,
+ *  03/11/2026). La sede de Formación no cuenta: no es un taller. */
+const CON_TALLER = DELEGACIONES;
 
 export default function PaginaServicios() {
   return (
@@ -51,7 +51,7 @@ export default function PaginaServicios() {
         datos={[
           { k: "Servicios", v: `${SERVICIOS.length}` },
           { k: "Talleres propios", v: `${CON_TALLER.length}` },
-          { k: "Homologaciones", v: `${HOMOLOGACIONES.length}` },
+          { k: "Formaciones", v: `${TODOS_LOS_CURSOS.length}` },
         ]}
         cta={{
           href: "/consultar-disponibilidad?asunto=servicios",
@@ -221,6 +221,7 @@ export default function PaginaServicios() {
                       alt={s.credencial.alt}
                       width={s.credencial.ancho}
                       height={s.credencial.alto}
+                      unoptimized
                       className="h-9 w-auto"
                     />
                     <p className="mt-5 text-base text-ink-2">

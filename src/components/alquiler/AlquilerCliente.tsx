@@ -181,7 +181,7 @@ export function AlquilerCliente({
       <div className="container-placa grid gap-8 py-8 lg:grid-cols-12 lg:gap-8">
         {/* ---------- Raíl de escritorio ---------- */}
         <aside className="hidden lg:col-span-3 lg:block">
-          <div className="sticky top-32 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2">
+          <div className="sticky top-32 -ml-1 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2 pl-1">
             <h2 className="label mb-4 text-ink-3">Filtros técnicos</h2>
             {panel}
           </div>

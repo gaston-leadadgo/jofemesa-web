@@ -330,6 +330,11 @@ export const CENTROS = [
   },
 ] as const;
 
+/**
+ * Las ISO son solo de la delegación de Asturias (cliente, 03/11/2026), así
+ * que la web ya no las publica como certificaciones de la empresa. Se
+ * conservan aquí por si se quieren mostrar en la ficha de esa delegación.
+ */
 export const CERTIFICACIONES = [
   {
     id: "iso-9001",
@@ -373,6 +378,7 @@ export const HOMOLOGACIONES = [
 export const AFILIACIONES = [
   { id: "anapat", nombre: "ANAPAT", descripcion: "Asociación del sector" },
   { id: "aseamac", nombre: "ASEAMAC", descripcion: "Alquiler de maquinaria" },
+  { id: "aece", nombre: "AECE", descripcion: "Asociación del sector" },
   {
     id: "jungheinrich",
     nombre: "Jungheinrich",
@@ -388,6 +394,7 @@ export const AFILIACIONES = [
  */
 export const SELLOS = [
   {
+    grupo: "certificacion",
     id: "aenor-une-58923",
     nombre: "AENOR · UNE 58923",
     descripcion: "Certificado AENOR de formación de operadores de PEMP",
@@ -396,6 +403,7 @@ export const SELLOS = [
     certificado: "/certificados/aenor-une-58923.pdf",
   },
   {
+    grupo: "certificacion",
     id: "aenor-une-58451",
     nombre: "AENOR · UNE 58451",
     descripcion: "Certificado AENOR de formación de operadores de carretillas",
@@ -404,6 +412,7 @@ export const SELLOS = [
     certificado: "/certificados/aenor-une-58451.pdf",
   },
   {
+    grupo: "certificacion",
     id: "ipaf-centro-formacion",
     nombre: "IPAF · Centro de formación homologado",
     descripcion: "Centro de formación homologado por IPAF",
@@ -411,6 +420,7 @@ export const SELLOS = [
     h: 240,
   },
   {
+    grupo: "certificacion",
     id: "ipaf-afiliado",
     nombre: "IPAF · Empresa afiliada",
     descripcion: "Empresa afiliada a IPAF",
@@ -418,11 +428,28 @@ export const SELLOS = [
     h: 240,
   },
   {
+    grupo: "asociacion",
     id: "anapat",
     nombre: "ANAPAT",
     descripcion:
       "Asociación Nacional de Alquiladores de Plataformas Aéreas de Trabajo",
     w: 869,
+    h: 240,
+  },
+  {
+    grupo: "asociacion",
+    id: "aece",
+    nombre: "AECE",
+    descripcion: "AECE",
+    w: 605,
+    h: 193,
+  },
+  {
+    grupo: "asociacion",
+    id: "aseamac",
+    nombre: "ASEAMAC",
+    descripcion: "Asociación de alquiler de maquinaria y equipos",
+    w: 1043,
     h: 240,
   },
 ] as const;
@@ -444,7 +471,6 @@ export const FABRICANTES_FLOTA = [
   { nombre: "Atlas Copco", area: "Aire comprimido y energía" },
   { nombre: "Himoinsa", area: "Grupos electrógenos" },
   { nombre: "Dagartech", area: "Grupos electrógenos" },
-  { nombre: "Hilti", area: "Herramienta de obra" },
 ] as const;
 
 /**
@@ -504,11 +530,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Hay 185 fichas técnicas: toda elevación salvo el brazo articulado diésel Snorkel A46JRT (el cliente confirmó el 29/10/2026 que no es una tijera; foto y ficha, en camino), las carretillas (sin las EFG 218k, 220, 318 y 320), todoterreno y manipuladores, y desde el 29/10/2026 todo el movimiento de tierras, la compactación y 24 de los 26 grupos electrógenos. Sin ficha quedan los Himoinsa HYW35 y HRFW100 (sin T5), la torre de iluminación, el compresor, los dos martillos y la herramienta Hilti.",
+    nota: "Hay 191 fichas técnicas. Sin ficha quedan las Jungheinrich EFG 218k, 220, 318 y 320, los Himoinsa HYW35 y HRFW100 (sin T5) y la torre de iluminación. Desde el 03/11/2026 están los cinco compresores y la Snorkel A46JRT.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",
-    nota: "Hay 189 fotos oficiales de JOFEMESA (entregas del 18/09 al 29/10/2026). Quedan 9 máquinas con dibujo técnico: la Snorkel A46JRT, la gama de máquinas de almacén de Jungheinrich, los Himoinsa HYW35 y HRFW100 (sin T5), la torre de iluminación, el compresor, los dos martillos y la herramienta Hilti. El detalle está en el PDF de material fotográfico pendiente.",
+    nota: "Hay 195 fotos oficiales de JOFEMESA (entregas del 18/09 al 03/11/2026). Quedan 3 máquinas con dibujo técnico: los Himoinsa HYW35 y HRFW100 (sin T5) y la torre de iluminación. El detalle está en el PDF de material fotográfico pendiente.",
   },
   {
     campo: "Genie S-85: ¿S-85 o S-85 XC?",
@@ -541,6 +567,10 @@ export const DATOS_PENDIENTES = [
   {
     campo: "Grupos electrógenos: dudas de la tabla",
     nota: "De «GRUPOS ELECTRÓGENOS FICHAS DE CARACTERÍSTICAS» (27/10/2026): (1) «HYW20 T5 INS 50 HZ» se publica como «HYW20 T5», porque INS y 50 Hz ya están en versión y frecuencia; (2) Atlas Copco «QAS 30 KD 55» y «QAS 45 KD 55»: las fotos del 29/10 los rotulan «QAS 30 S5» y «QAS 45 S5», así que «55» parece errata de «S5». Se publica tal cual hasta que lo confirmen; (3) HRFW100 y HRFW100 T5, y HYW35 y HYW35 T5, tienen los mismos datos y el 29/10 solo llegaron foto y ficha de los T5: confirmar si los otros dos existen; (4) los dos Dagartech DGH dan la potencia ESP como «N/D». Fichas del 29/10 a revisar: la del Pramac GSW167P no es del fabricante (es una hoja que cita como fuentes a Pratec y GAM Rentals); la del Himoinsa HRFW-100 se titula «TD» y está en inglés, como la del Atlas Copco QAS 150; las de los QAS 30, 45 y 200 son la misma página de la gama QAS.",
+  },
+  {
+    campo: "Compresor Atlas Copco XAS 188: ¿10 o 14 bar?",
+    nota: "La ficha del 03/11/2026 cubre la XAS 188-10 PACE (5 a 10,3 bar) y la XAS 188-14 PACE (5 a 14 bar). Las dos dan 10,9 m³/min de caudal máximo, que es lo que se publica; la presión sale como pendiente hasta que se confirme la versión. Las XAS 48, 58 y 68 llegaron con la misma ficha de gama (versiones «Kd», 7 bar).",
   },
   {
     campo: "Movimiento de tierras: nombres de las fotos y fichas",

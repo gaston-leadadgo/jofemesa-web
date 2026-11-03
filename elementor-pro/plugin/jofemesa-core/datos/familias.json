@@ -105,7 +105,7 @@
   "necesidad": "Mover y elevar cargas",
   "necesidadDesc": "Carretillas y manipuladores para transportar, elevar y posicionar cargas con mayor eficacia.",
   "icono": "manipulador",
-  "total": 34,
+  "total": 33,
   "subcategorias": [
    {
     "nombre": "Manipuladores telescópicos rígidos",
@@ -146,14 +146,6 @@
     "descripcion": "Neumáticos de gran diámetro y tracción 4x4 para mover materiales en terrenos sin pavimentar y pendientes.",
     "icono": "todoterreno",
     "total": 8
-   },
-   {
-    "nombre": "Máquinas de almacén",
-    "slug": "maquinas-almacen",
-    "claim": "El movimiento diario del almacén, sin esfuerzo.",
-    "descripcion": "Transpaletas, apiladores y preparadoras de pedidos eléctricas para el trasiego de palets y el trabajo en estanterías.",
-    "icono": "almacen",
-    "total": 1
    }
   ]
  },
@@ -265,51 +257,20 @@
   "nombreLargo": "Aire comprimido y martillos neumáticos",
   "slug": "aire-martillos",
   "claim": "Cuando el trabajo necesita aire, presión y bastante menos delicadeza",
-  "descripcion": "Compresores remolcables y martillos neumáticos para demolición, perforación, picado y cualquier aplicación que necesite suministro constante de aire comprimido.",
-  "rango": "De 2 a 11 m³/min",
+  "descripcion": "Compresores remolcables para alimentar martillos y herramienta neumática, perforación, chorreado y cualquier aplicación que necesite suministro constante de aire comprimido.",
+  "rango": "De 2,5 a 10,9 m³/min",
   "necesidad": "Aire y demolición",
-  "necesidadDesc": "Compresores, picadores y rompedores para cuando el trabajo pide potencia.",
+  "necesidadDesc": "Compresores remolcables de 2,5 a 10,9 m³/min para cuando el trabajo pide aire.",
   "icono": "compresor",
-  "total": 3,
+  "total": 5,
   "subcategorias": [
    {
     "nombre": "Compresores de aire remolcables",
     "slug": "compresores-remolcables",
     "claim": "Caudal constante sobre remolque para obra.",
-    "descripcion": "Compresores diésel insonorizados de 2 a 11 m³/min de aire libre suministrado para alimentar herramienta neumática.",
+    "descripcion": "Compresores diésel de 2,5 a 10,9 m³/min de aire libre suministrado para alimentar herramienta neumática.",
     "icono": "compresor",
-    "total": 1
-   },
-   {
-    "nombre": "Martillos neumáticos",
-    "slug": "martillos-neumaticos",
-    "claim": "Potencia de impacto para demolición y saneamiento.",
-    "descripcion": "Picadores y rompedores Atlas Copco y Toku, con punteros y cinceles de alta resistencia.",
-    "icono": "martillo",
-    "total": 2
-   }
-  ]
- },
- {
-  "id": "herramienta-auxiliar",
-  "nombre": "Herramienta auxiliar",
-  "nombreLargo": "Herramienta auxiliar de obra",
-  "slug": "herramienta-auxiliar",
-  "claim": "Porque no todo el trabajo pesa toneladas",
-  "descripcion": "Martillos eléctricos, cortadoras, perforadoras de corona, fijación y nivelación para completar trabajos de obra, instalación y mantenimiento.",
-  "rango": "Demolición, corte y perforación",
-  "necesidad": "Herramienta de obra",
-  "necesidadDesc": "Corte, perforación, demolición ligera y nivelación para cerrar el trabajo que la máquina grande no hace.",
-  "icono": "herramienta",
-  "total": 1,
-  "subcategorias": [
-   {
-    "nombre": "Herramienta eléctrica de obra",
-    "slug": "herramienta-obra",
-    "claim": "Demolición ligera, corte y perforación.",
-    "descripcion": "Martillos rompedores y perforadores, cortadoras de disco, perforadoras de corona, clavadoras y niveles láser.",
-    "icono": "herramienta",
-    "total": 1
+    "total": 5
    }
   ]
  }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Check, Columns3, ArrowRight, Layers } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { SPEC_POR_KEY, type Maquina } from "@/lib/catalog/types";
-import { specsDestacadas } from "@/lib/catalog";
+import { esComparable, specsDestacadas } from "@/lib/catalog";
 import { SUBCATEGORIA_POR_SLUG } from "@/lib/catalog/familias";
 import { useComparar, MAX_COMPARAR } from "@/lib/compare/context";
 import { ImagenMaquina } from "./ImagenMaquina";
@@ -52,6 +52,7 @@ export function TarjetaMaquina({
   const bloqueada = lleno && !marcada;
   const specs = specsDestacadas(m);
   const subcat = SUBCATEGORIA_POR_SLUG[m.subcategoriaSlug];
+  const comparable = esComparable(m);
 
   return (
     <article
@@ -118,39 +119,43 @@ export function TarjetaMaquina({
         {/* Casilla de comparar SIEMPRE visible: nunca revelada al hover.
             Un cuadrado se encuentra con guante; una marca de
             verificación no. */}
-        <label
-          className={cn(
-            "absolute top-1 right-1 z-2 flex size-11 cursor-pointer items-center justify-center",
-            bloqueada && "cursor-not-allowed",
-          )}
-          title={
-            bloqueada
-              ? `Máximo ${MAX_COMPARAR} máquinas — quita una para añadir otra`
-              : marcada
-                ? "Quitar del comparador"
-                : "Añadir al comparador"
-          }
-        >
-          <input
-            type="checkbox"
-            className="peer sr-only"
-            checked={marcada}
-            disabled={bloqueada}
-            onChange={() => alternar(m.slug)}
-            aria-label={`Comparar ${m.marca} ${m.modelo}`}
-          />
-          <span
+        {comparable && (
+          <label
             className={cn(
-              "flex size-6 items-center justify-center rounded-md border transition-colors duration-200",
-              marcada
-                ? "border-ink bg-ink text-white"
-                : "border-rule-strong bg-surface/90",
-              bloqueada && "opacity-40",
+              "absolute top-1 right-1 z-2 flex size-11 cursor-pointer items-center justify-center",
+              bloqueada && "cursor-not-allowed",
             )}
+            title={
+              bloqueada
+                ? `Máximo ${MAX_COMPARAR} máquinas — quita una para añadir otra`
+                : marcada
+                  ? "Quitar del comparador"
+                  : "Añadir al comparador"
+            }
           >
-            {marcada && <Check size={15} strokeWidth={3} aria-hidden="true" />}
-          </span>
-        </label>
+            <input
+              type="checkbox"
+              className="peer sr-only"
+              checked={marcada}
+              disabled={bloqueada}
+              onChange={() => alternar(m.slug)}
+              aria-label={`Comparar ${m.marca} ${m.modelo}`}
+            />
+            <span
+              className={cn(
+                "flex size-6 items-center justify-center rounded-md border transition-colors duration-200",
+                marcada
+                  ? "border-ink bg-ink text-white"
+                  : "border-rule-strong bg-surface/90",
+                bloqueada && "opacity-40",
+              )}
+            >
+              {marcada && (
+                <Check size={15} strokeWidth={3} aria-hidden="true" />
+              )}
+            </span>
+          </label>
+        )}
       </div>
 
       {/* ---------- Las tres cifras que deciden ---------- */}
@@ -180,7 +185,12 @@ export function TarjetaMaquina({
 
       {/* ---------- Las tres acciones ---------- */}
       <div className="space-y-2 border-t border-rule pt-3">
-        <div className="grid grid-cols-2 gap-2">
+        <div
+          className={cn(
+            "grid gap-2",
+            comparable ? "grid-cols-2" : "grid-cols-1",
+          )}
+        >
           {/* FICHA en rojo, por indicación expresa de la reunión. */}
           <Link
             href={`/maquina/${m.slug}`}
@@ -195,26 +205,28 @@ export function TarjetaMaquina({
             />
           </Link>
 
-          <button
-            type="button"
-            onClick={() => alternar(m.slug)}
-            disabled={bloqueada}
-            aria-pressed={marcada}
-            className={cn(
-              "pastilla flex h-11 items-center justify-center gap-1.5 border text-sm font-semibold transition-colors duration-200",
-              marcada
-                ? "border-accent bg-accent-tint text-accent"
-                : "border-rule-strong bg-sunken text-ink-2 hover:bg-muted hover:text-ink",
-              bloqueada && "cursor-not-allowed opacity-50",
-            )}
-          >
-            {marcada ? (
-              <Check size={15} strokeWidth={2.5} aria-hidden="true" />
-            ) : (
-              <Columns3 size={15} strokeWidth={2} aria-hidden="true" />
-            )}
-            {marcada ? "Añadida" : "Comparar"}
-          </button>
+          {comparable && (
+            <button
+              type="button"
+              onClick={() => alternar(m.slug)}
+              disabled={bloqueada}
+              aria-pressed={marcada}
+              className={cn(
+                "pastilla flex h-11 items-center justify-center gap-1.5 border text-sm font-semibold transition-colors duration-200",
+                marcada
+                  ? "border-accent bg-accent-tint text-accent"
+                  : "border-rule-strong bg-sunken text-ink-2 hover:bg-muted hover:text-ink",
+                bloqueada && "cursor-not-allowed opacity-50",
+              )}
+            >
+              {marcada ? (
+                <Check size={15} strokeWidth={2.5} aria-hidden="true" />
+              ) : (
+                <Columns3 size={15} strokeWidth={2} aria-hidden="true" />
+              )}
+              {marcada ? "Añadida" : "Comparar"}
+            </button>
+          )}
         </div>
 
         <Link

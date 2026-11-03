@@ -42,7 +42,7 @@ const pagina = () => [
         c("jm-placa__texto", [
           h("p", "jm-label jm-placa__kicker", "Catálogo de alquiler"),
           h("h1", "jm-titular-placa jm-placa__titulo", "La máquina que te falta, lista para salir a tu obra.", { attrs: { "data-revelar": "" } }),
-          t("jm-placa__lede jm-hereda", "Plataformas, manutención, tierras, energía, aire y herramienta, con flota, taller y camiones propios. Filtra por altura, alimentación, uso o fabricante y pide disponibilidad: te contesta la delegación que tiene la máquina.", { attrs: { "data-revelar": "", style: "--retardo:1" } }),
+          t("jm-placa__lede jm-hereda", "Plataformas, manutención, tierras, energía y aire comprimido, con flota, taller y camiones propios. Filtra por altura, alimentación, uso o fabricante y pide disponibilidad: te contesta la delegación que tiene la máquina.", { attrs: { "data-revelar": "", style: "--retardo:1" } }),
           c("jm-placa__botones", [
             b("jm-btn jm-btn--acento", "Consultar disponibilidad", "/consultar-disponibilidad/", flecha),
             b("jm-btn jm-btn--enlace", "No sé qué máquina necesito", "/asesor/"),
