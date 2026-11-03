@@ -33,7 +33,7 @@ export function Necesidades() {
               Dinos qué tienes que hacer. Nosotros ponemos la máquina.
             </h2>
             <p className="lede mt-4 max-w-[52ch] text-ink-2">
-              Seis familias y {ALQUILER.length} referencias en un solo
+              {FAMILIAS.length} familias y {ALQUILER.length} referencias en un solo
               catálogo, filtrable por altura, carga, alimentación y terreno.
             </p>
           </div>

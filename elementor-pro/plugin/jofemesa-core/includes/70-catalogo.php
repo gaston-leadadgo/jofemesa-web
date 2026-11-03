@@ -96,7 +96,7 @@ function jm_cat_familia_id(string $slug): string
             $mapa[$f['slug']] = $f['id'];
             $mapa[$f['id']] = $f['id'];
         }
-        $terminos = get_terms(['taxonomy' => 'familia', 'hide_empty' => false, 'parent' => 0]);
+        $terminos = get_terms(['taxonomy' => 'familia', 'hide_empty' => true, 'parent' => 0]);
         if (!is_wp_error($terminos)) {
             foreach ($terminos as $t) {
                 $id = (string) get_term_meta($t->term_id, 'jm_id', true);
@@ -209,13 +209,13 @@ function jm_cat_familias(): array
         }
     }
     $familias = [];
-    $terminos = get_terms(['taxonomy' => 'familia', 'hide_empty' => false, 'parent' => 0]);
+    $terminos = get_terms(['taxonomy' => 'familia', 'hide_empty' => true, 'parent' => 0]);
     if (!is_wp_error($terminos) && $terminos) {
         $orden = static fn($t) => (int) get_term_meta($t->term_id, 'jm_orden', true);
         usort($terminos, static fn($a, $b) => $orden($a) <=> $orden($b));
         foreach ($terminos as $t) {
             $id = jm_cat_familia_id($t->slug);
-            $subs = get_terms(['taxonomy' => 'familia', 'hide_empty' => false, 'parent' => $t->term_id]);
+            $subs = get_terms(['taxonomy' => 'familia', 'hide_empty' => true, 'parent' => $t->term_id]);
             $subs = is_wp_error($subs) ? [] : $subs;
             usort($subs, static fn($a, $b) => $orden($a) <=> $orden($b));
             $link = get_term_link($t);

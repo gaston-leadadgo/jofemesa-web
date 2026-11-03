@@ -177,7 +177,10 @@ function jm_familias_lista(): array
         $terminos = get_terms([
             'taxonomy'   => 'familia',
             'parent'     => 0,
-            'hide_empty' => false,
+            /* Solo familias con alguna máquina publicada: una que se vacía
+               (Herramienta auxiliar, 03/11/2026) sale del menú y de la
+               portada, y vuelve sola cuando tenga producto. */
+            'hide_empty' => true,
             'meta_key'   => 'jm_orden',
             'orderby'    => 'meta_value_num',
             'order'      => 'ASC',

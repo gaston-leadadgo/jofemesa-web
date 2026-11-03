@@ -137,7 +137,7 @@ const necesidades = () => [
         c("jm-cabecera-seccion__texto", [
           h("p", "jm-label", "Catálogo de alquiler"),
           h("h2", "jm-display-2 jm-tinta jm-mt-3 jm-ch-28", "Dinos qué tienes que hacer. Nosotros ponemos la máquina."),
-          t("jm-lede jm-texto-2 jm-mt-4 jm-ch-52 jm-hereda", 'Seis familias y [jm_cifra que="referencias"] referencias en un solo catálogo, filtrable por altura, carga, alimentación y terreno.'),
+          t("jm-lede jm-texto-2 jm-mt-4 jm-ch-52 jm-hereda", '[jm_cifra que="familias"] familias y [jm_cifra que="referencias"] referencias en un solo catálogo, filtrable por altura, carga, alimentación y terreno.'),
         ], { attrs: { "data-revelar": "" } }),
         b("jm-btn jm-btn--enlace", "Ver el catálogo completo", "/alquiler/", flecha),
       ]),

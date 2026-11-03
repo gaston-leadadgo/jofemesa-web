@@ -159,7 +159,7 @@ function jm_inicio_cifra_valor(string $que, string $familia = '')
             break;
 
         case 'familias':
-            $terminos = taxonomy_exists('familia') ? get_terms(['taxonomy' => 'familia', 'parent' => 0, 'hide_empty' => false, 'fields' => 'ids']) : [];
+            $terminos = taxonomy_exists('familia') ? get_terms(['taxonomy' => 'familia', 'parent' => 0, 'hide_empty' => true, 'fields' => 'ids']) : [];
             $valor = (!is_wp_error($terminos) && $terminos) ? count($terminos) : count(jm_datos('familias.json'));
             break;
 
@@ -279,7 +279,7 @@ function jm_sc_buscador($atts): string
     /* Las sugerencias del campo: las subcategorías (taxonomía familia, hijas). */
     $sugerencias = [];
     if (taxonomy_exists('familia')) {
-        $hijas = get_terms(['taxonomy' => 'familia', 'hide_empty' => false, 'childless' => true, 'parent' => '']);
+        $hijas = get_terms(['taxonomy' => 'familia', 'hide_empty' => true, 'childless' => true, 'parent' => '']);
         if (!is_wp_error($hijas)) {
             foreach ($hijas as $t) {
                 if ($t->parent) {
