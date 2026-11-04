@@ -225,7 +225,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
                   <span
                     className={cn(
                       "text-sm font-semibold transition-colors duration-300",
-                      esActiva ? "text-ink-inv" : "text-ink-inv-3 group-hover:text-ink-inv-2",
+                      "text-ink-inv",
                     )}
                   >
                     {ROTULO[id]}
@@ -286,7 +286,7 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
       {/* Pista de scroll, decorativa. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-6 z-30 hidden justify-center text-ink-inv-3 xl:flex"
+        className="pointer-events-none absolute inset-x-0 bottom-6 z-30 hidden justify-center text-ink-inv xl:flex"
       >
         <ChevronDown
           size={22}
@@ -306,11 +306,11 @@ function PortadaAlquiler() {
   return (
     <div className="max-w-[60ch] pb-20 md:pb-16 lg:max-w-[56%]">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2" data-entra style={{ "--i": 0 } as React.CSSProperties}>
-        <span className="label pastilla inline-flex items-center gap-2 border border-white/20 bg-white/10 px-3 py-1.5 text-ink-inv-2">
+        <span className="label pastilla inline-flex items-center gap-2 border border-white/20 bg-white/10 px-3 py-1.5 text-ink-inv">
           <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
           Desde {EMPRESA.fundacion} especialistas en maquinaria
         </span>
-        <span className="label hidden text-ink-inv-3 md:inline">España y Portugal</span>
+        <span className="label hidden text-ink-inv md:inline">España y Portugal</span>
       </div>
 
       <h1 className="display-1 mt-6 max-w-[24ch] text-ink-inv" data-entra style={{ "--i": 1 } as React.CSSProperties}>
@@ -318,7 +318,7 @@ function PortadaAlquiler() {
       </h1>
 
       <p
-        className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-inv-2 lg:text-lg"
+        className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-inv lg:text-lg"
         data-entra style={{ "--i": 2 } as React.CSSProperties}
       >
         Plataformas elevadoras, manipuladores, carretillas, movimiento de
@@ -348,7 +348,7 @@ function PortadaAlquiler() {
         </Link>
         <Link
           href="/alquiler"
-          className="hidden min-h-11 items-center text-base text-ink-inv-2 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors duration-200 hover:text-ink-inv md:inline-flex"
+          className="hidden min-h-11 items-center text-base text-ink-inv underline decoration-white/30 decoration-2 underline-offset-4 transition-colors duration-200 hover:text-ink-inv md:inline-flex"
         >
           Ver todo el catálogo
         </Link>
@@ -372,7 +372,7 @@ function PortadaFormacion() {
     <div className="pb-20 md:pb-16">
       <div className="max-w-[60ch] lg:max-w-[56%]">
         <div data-entra style={{ "--i": 0 } as React.CSSProperties}>
-          <span className="label pastilla inline-flex items-center gap-2 border border-white/20 bg-white/10 px-3 py-1.5 text-ink-inv-2">
+          <span className="label pastilla inline-flex items-center gap-2 border border-white/20 bg-white/10 px-3 py-1.5 text-ink-inv">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
             Departamento de Formación
           </span>
@@ -383,7 +383,7 @@ function PortadaFormacion() {
         </h2>
 
         <p
-          className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-inv-2 lg:text-lg"
+          className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-inv lg:text-lg"
           data-entra style={{ "--i": 2 } as React.CSSProperties}
         >
           Plataformas elevadoras, carretillas, trabajos en altura, andamios y
@@ -449,15 +449,15 @@ function ProximaConvocatoria({
         <span className="mt-1 text-xs font-semibold uppercase tracking-wide">{f.mesCorto}</span>
       </div>
       <div className="min-w-0 flex-1">
-        <p className="meta flex items-center gap-1.5 text-ink-inv-3">
+        <p className="meta flex items-center gap-1.5 text-ink-inv">
           <CalendarDays size={13} strokeWidth={2} aria-hidden="true" className="text-accent-dark" />
           Próxima convocatoria
         </p>
         <p className="mt-0.5 truncate text-base font-semibold">
           {c.nombre}
-          {c.norma && <span className="font-normal text-ink-inv-2"> · {c.norma}</span>}
+          {c.norma && <span className="font-normal text-ink-inv"> · {c.norma}</span>}
         </p>
-        <p className="mt-0.5 flex items-center gap-1.5 text-sm text-ink-inv-2">
+        <p className="mt-0.5 flex items-center gap-1.5 text-sm text-ink-inv">
           <MapPin size={13} strokeWidth={2} aria-hidden="true" className="text-accent-dark" />
           {s.nombre} · <span className="capitalize">{f.diaSemana}</span>
         </p>

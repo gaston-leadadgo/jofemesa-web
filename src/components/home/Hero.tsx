@@ -35,7 +35,7 @@ export function Hero() {
       /* La foto ya es oscura (atardecer): con el velo de siempre la mitad
          izquierda quedaba casi negra. Este es más ligero, para que se vea
          como la portada de Formación (cliente, 04/11/2026). */
-      velo: "bg-gradient-to-t from-inverse/88 via-inverse/62 to-inverse/25 lg:bg-gradient-to-r lg:from-inverse/80 lg:via-inverse/50 lg:via-45% lg:to-transparent lg:to-78%",
+      velo: "bg-gradient-to-t from-inverse/88 via-inverse/62 to-inverse/25 lg:bg-gradient-to-r lg:from-inverse/88 lg:via-inverse/58 lg:via-45% lg:to-transparent lg:to-78%",
     },
     formacion: formacion
       ? {

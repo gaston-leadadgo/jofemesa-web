@@ -180,7 +180,7 @@ body.jm .jm-hero__foto--alquiler::after {
 }
 @media (min-width: 1024px) {
   body.jm .jm-hero__foto--alquiler::after {
-    background: linear-gradient(to right, rgba(20, 23, 26, 0.8) 0%, rgba(20, 23, 26, 0.5) 45%, rgba(20, 23, 26, 0) 78%);
+    background: linear-gradient(to right, rgba(20, 23, 26, 0.88) 0%, rgba(20, 23, 26, 0.58) 45%, rgba(20, 23, 26, 0) 78%);
   }
 }
 
@@ -196,17 +196,17 @@ body.jm .jm-hero__kicker { display: flex; flex-flow: row wrap; align-items: cent
 body.jm .jm-hero__pastilla {
   display: inline-flex; align-items: center; gap: 0.5rem; width: auto;
   padding: 0.375rem 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--jm-radius-full);
-  background: rgba(255, 255, 255, 0.1); color: var(--jm-ink-inv-2);
+  background: rgba(255, 255, 255, 0.1); color: var(--jm-ink-inv);
 }
 body.jm .jm-hero__pastilla::before {
   content: ""; flex: none; width: 0.375rem; height: 0.375rem; border-radius: 9999px; background: var(--jm-accent);
 }
-body.jm .jm-hero__zona { display: none; color: var(--jm-ink-inv-3); }
+body.jm .jm-hero__zona { display: none; color: var(--jm-ink-inv); }
 @media (min-width: 768px) { body.jm .jm-hero__zona { display: inline; } }
 
 body.jm .jm-hero .jm-hero__titulo { margin-top: 1.5rem; max-width: 24ch; color: var(--jm-ink-inv); }
 body.jm .jm-hero .jm-hero__titulo--corto { max-width: 22ch; }
-body.jm .jm-hero__lede { margin-top: 1.25rem; max-width: 52ch; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-inv-2); }
+body.jm .jm-hero__lede { margin-top: 1.25rem; max-width: 52ch; font-size: 1rem; line-height: 1.625; color: var(--jm-ink-inv); }
 @media (min-width: 1024px) { body.jm .jm-hero__lede { font-size: 1.125rem; } }
 body.jm .jm-hero__buscador { margin-top: 1.75rem; max-width: 36rem; }
 
@@ -217,7 +217,7 @@ body.jm .jm-hero .jm-hero__enlace-acento .elementor-button {
 }
 body.jm .jm-hero .jm-hero__enlace-acento .elementor-button:hover { color: #fff; }
 body.jm .jm-hero .jm-hero__enlace-suave .elementor-button {
-  display: none; font-weight: 400; color: var(--jm-ink-inv-2); text-decoration-color: rgba(255, 255, 255, 0.3);
+  display: none; font-weight: 400; color: var(--jm-ink-inv); text-decoration-color: rgba(255, 255, 255, 0.45);
 }
 @media (min-width: 768px) { body.jm .jm-hero .jm-hero__enlace-suave .elementor-button { display: inline-flex; } }
 body.jm .jm-hero .jm-hero__enlace-suave .elementor-button:hover { color: var(--jm-ink-inv); }
@@ -296,8 +296,8 @@ body.jm .jm-hero button.jm-hero__pestana {
   min-height: 2.75rem; width: 6rem; text-align: left; background: none; color: inherit;
 }
 @media (min-width: 768px) { body.jm .jm-hero button.jm-hero__pestana { width: 10rem; } }
-body.jm .jm-hero__rotulo { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--jm-ink-inv-3); transition: color 300ms var(--jm-ease-ui); }
-body.jm .jm-hero__pestana:hover .jm-hero__rotulo { color: var(--jm-ink-inv-2); }
+body.jm .jm-hero__rotulo { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--jm-ink-inv); transition: color 300ms var(--jm-ease-ui); }
+body.jm .jm-hero__pestana:hover .jm-hero__rotulo { color: var(--jm-ink-inv); }
 body.jm .jm-hero__pestana[aria-selected="true"] .jm-hero__rotulo { color: var(--jm-ink-inv); }
 body.jm .jm-hero__carril { position: relative; display: block; width: 100%; height: 3px; overflow: hidden; border-radius: 9999px; background: rgba(255, 255, 255, 0.2); }
 body.jm .jm-hero__progreso {
@@ -320,7 +320,10 @@ body.jm .jm-hero button.jm-hero__boton--atras { width: 2.75rem; }
 body.jm .jm-hero button.jm-hero__boton--siguiente { width: 2.75rem; }
 body.jm .jm-hero__boton-texto { display: none; }
 @media (min-width: 768px) {
-  body.jm .jm-hero button.jm-hero__boton--siguiente { width: auto; padding: 0 0.5rem 0 1rem; }
+  /* También en :hover y :focus: el reset de botones de arriba tiene más
+     especificidad y le quitaba el padding al pasar el ratón (04/11/2026). */
+  body.jm .jm-hero button.jm-hero__boton--siguiente,
+  body.jm .jm-hero button.jm-hero__boton--siguiente:is(:hover, :focus, :focus-visible) { width: auto; padding: 0 0.5rem 0 1rem; }
   body.jm .jm-hero__boton-texto { display: inline; }
 }
 body.jm .jm-hero__boton-circulo { display: flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.2); }
@@ -330,7 +333,7 @@ body.jm .jm-hero__boton--siguiente:hover .jm-hero__boton-circulo svg { transform
 /* Pista de scroll, decorativa (solo xl) */
 body.jm .jm-hero__pista {
   position: absolute; left: 0; right: 0; bottom: 1.5rem; z-index: 30; display: none;
-  justify-content: center; color: var(--jm-ink-inv-3); pointer-events: none;
+  justify-content: center; color: var(--jm-ink-inv); pointer-events: none;
 }
 @media (min-width: 1440px) { body.jm .jm-hero__pista { display: flex; } }
 @media (prefers-reduced-motion: no-preference) {
@@ -427,11 +430,11 @@ body.jm .jm-buscador__flecha { transition: transform 200ms var(--jm-ease-ui); }
 body.jm .jm-buscador__boton:hover .jm-buscador__flecha { transform: translateX(0.125rem); }
 
 body.jm .jm-buscador__nota { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-2); }
-body.jm .jm-buscador--oscuro .jm-buscador__nota { color: var(--jm-ink-inv-2); }
+body.jm .jm-buscador--oscuro .jm-buscador__nota { color: var(--jm-ink-inv); }
 
 body.jm .jm-buscador__atajos { margin-top: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem; }
 body.jm .jm-buscador__rotulo { margin-top: 0.875rem; flex-shrink: 0; color: var(--jm-ink-3); }
-body.jm .jm-buscador--oscuro .jm-buscador__rotulo { color: var(--jm-ink-inv-3); }
+body.jm .jm-buscador--oscuro .jm-buscador__rotulo { color: var(--jm-ink-inv); }
 body.jm .jm-buscador__pista {
   display: flex; min-width: 0; gap: 0.5rem; overflow-x: auto;
   scrollbar-width: thin; scrollbar-color: var(--jm-rule-strong) transparent;
@@ -469,14 +472,14 @@ body.jm .jm-proxima__fecha {
 body.jm .jm-proxima__dia { font-family: var(--jm-font-display); font-size: 1.5rem; line-height: 1; }
 body.jm .jm-proxima__mes { margin-top: 0.25rem; font-size: 0.75rem; line-height: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.025em; }
 body.jm .jm-proxima__cuerpo { min-width: 0; flex: 1 1 0%; }
-body.jm .jm-proxima__rotulo { display: flex; align-items: center; gap: 0.375rem; color: var(--jm-ink-inv-3); }
+body.jm .jm-proxima__rotulo { display: flex; align-items: center; gap: 0.375rem; color: var(--jm-ink-inv); }
 body.jm .jm-proxima__ico { color: var(--jm-accent-dark); flex: none; }
 body.jm .jm-proxima__curso {
   margin-top: 0.125rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   font-size: 1rem; line-height: 1.5rem; font-weight: 600;
 }
-body.jm .jm-proxima__norma { font-weight: 400; color: var(--jm-ink-inv-2); }
-body.jm .jm-proxima__sede { margin-top: 0.125rem; display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-inv-2); }
+body.jm .jm-proxima__norma { font-weight: 400; color: var(--jm-ink-inv); }
+body.jm .jm-proxima__sede { margin-top: 0.125rem; display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; line-height: 1.25rem; color: var(--jm-ink-inv); }
 body.jm .jm-proxima__semana { text-transform: capitalize; }
 body.jm .jm-proxima__enlace {
   display: none; flex-shrink: 0; align-items: center; gap: 0.375rem; white-space: nowrap;

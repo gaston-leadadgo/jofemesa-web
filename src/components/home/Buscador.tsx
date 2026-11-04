@@ -105,7 +105,7 @@ export function Buscador({ oscuro = false }: { oscuro?: boolean }) {
           clara: `text-ink-2` mide 7,7:1 sobre blanco, pero sobre la foto
           era casi invisible. */}
       <p
-        className={`mt-3 text-sm ${oscuro ? "text-ink-inv-2" : "text-ink-2"}`}
+        className={`mt-3 text-sm ${oscuro ? "text-ink-inv" : "text-ink-2"}`}
       >
         Sin precios online: te confirmamos disponibilidad y presupuesto por
         teléfono o email.
@@ -120,7 +120,7 @@ export function Buscador({ oscuro = false }: { oscuro?: boolean }) {
           quedaba flotando entre las dos. */}
       <div className="mt-3 flex items-start gap-2">
         <span
-          className={`label-sm mt-3.5 shrink-0 ${oscuro ? "text-ink-inv-3" : "text-ink-3"}`}
+          className={`label-sm mt-3.5 shrink-0 ${oscuro ? "text-ink-inv" : "text-ink-3"}`}
         >
           Empieza por
         </span>
