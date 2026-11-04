@@ -87,7 +87,7 @@ const partners = () => [
         ]),
         c("jm-partners__tarjeta", [
           h("p", "jm-label jm-partners__insignia", "Distribuidor oficial"),
-          h("p", "jm-partners__marca", "Takeuchi"),
+          img("takeuchi", "jm-partners__logo"),
           t("jm-partners__texto jm-hereda", "Distribución oficial de Takeuchi en retroexcavadoras y miniexcavadoras, con venta, recambio original y servicio técnico propio. Centro en San Fernando de Henares, Madrid."),
           b("jm-btn jm-btn--enlace jm-partners__enlace", "Ver el centro Takeuchi", "/servicios/#venta", flecha),
         ]),
