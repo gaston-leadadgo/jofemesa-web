@@ -137,10 +137,6 @@ export default function PaginaContacto() {
                 </dl>
               </div>
 
-              <p className="mt-6 text-sm text-ink-3">
-                No publicamos horarios que no podamos garantizar. Llama a la
-                delegación y te lo confirmamos en el momento.
-              </p>
             </div>
 
             <div className="lg:col-span-7">

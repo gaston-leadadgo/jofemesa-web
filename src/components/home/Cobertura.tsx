@@ -109,10 +109,6 @@ export function Cobertura() {
           </div>
         </div>
 
-        <p className="mt-6 border-t border-rule-inverse pt-5 text-sm text-ink-inv-3">
-          No publicamos horarios que no podamos garantizar: llama a la
-          delegación y te lo confirmamos en el momento.
-        </p>
       </div>
     </section>
   );

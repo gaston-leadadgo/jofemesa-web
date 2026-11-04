@@ -293,8 +293,8 @@ export const FAMILIAS_TODAS: readonly Familia[] = [
   },
   {
     id: "aire-martillos",
-    nombre: "Aire comprimido y martillos",
-    nombreLargo: "Aire comprimido y martillos neumáticos",
+    nombre: "Aire comprimido",
+    nombreLargo: "Aire comprimido",
     slug: "aire-martillos",
     claim:
       "Cuando el trabajo necesita aire, presión y bastante menos delicadeza",

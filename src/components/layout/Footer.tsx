@@ -7,6 +7,7 @@ import {
   HOMOLOGACIONES,
   AFILIACIONES,
   EMAIL_PRINCIPAL,
+  EMAIL_DENUNCIAS,
   LEMA,
 } from "@/content/es/empresa";
 import { FAMILIAS } from "@/lib/catalog/familias";
@@ -88,6 +89,16 @@ export function Footer() {
             >
               <Mail size={15} strokeWidth={1.75} aria-hidden="true" />
               {EMAIL_PRINCIPAL}
+            </a>
+            <a
+              href={`mailto:${EMAIL_DENUNCIAS}`}
+              className="flex min-h-11 items-center gap-2 text-sm text-ink-inv-2 transition-colors duration-200 hover:text-accent-dark"
+            >
+              <Mail size={15} strokeWidth={1.75} aria-hidden="true" />
+              <span>
+                <span className="text-ink-inv-3">Canal de denuncias: </span>
+                {EMAIL_DENUNCIAS}
+              </span>
             </a>
             <RedesSociales
               tamano={18}

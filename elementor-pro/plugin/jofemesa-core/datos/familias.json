@@ -223,7 +223,7 @@
   "necesidad": "Energía e iluminación",
   "necesidadDesc": "Grupos electrógenos y torres de luz para llevar suministro allí donde la red no llega.",
   "icono": "grupo",
-  "total": 27,
+  "total": 25,
   "subcategorias": [
    {
     "nombre": "Grupos electrógenos",
@@ -231,7 +231,7 @@
     "claim": "Suministro eléctrico continuo e insonorizado.",
     "descripcion": "Generadores insonorizados de 20 a 330 kVA de Himoinsa, Dagartech, Pramac y Atlas Copco, con cuadros de distribución y depósitos de gran autonomía.",
     "icono": "grupo",
-    "total": 24
+    "total": 22
    },
    {
     "nombre": "Grupos electrógenos portátiles",
@@ -253,8 +253,8 @@
  },
  {
   "id": "aire-martillos",
-  "nombre": "Aire comprimido y martillos",
-  "nombreLargo": "Aire comprimido y martillos neumáticos",
+  "nombre": "Aire comprimido",
+  "nombreLargo": "Aire comprimido",
   "slug": "aire-martillos",
   "claim": "Cuando el trabajo necesita aire, presión y bastante menos delicadeza",
   "descripcion": "Compresores remolcables para alimentar martillos y herramienta neumática, perforación, chorreado y cualquier aplicación que necesite suministro constante de aire comprimido.",

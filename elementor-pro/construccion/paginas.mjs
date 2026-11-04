@@ -82,7 +82,6 @@ const contacto = () => [
             filaIcono(fa("building"), t("jm-contacto__domicilio jm-hereda", 'Domicilio social: Avda. del Aluminio, 20 — Parque Empresarial del Principado de Asturias, 33490 Avilés. CIF <span class="jm-value">A33098948</span>.')),
           ]),
         ]),
-        h("p", "jm-contacto__nota", "No publicamos horarios que no podamos garantizar. Llama a la delegación y te lo confirmamos en el momento."),
       ]),
       c("jm-contacto__col7", [
         h("h2", "jm-display-3", "Teléfonos de delegación"),

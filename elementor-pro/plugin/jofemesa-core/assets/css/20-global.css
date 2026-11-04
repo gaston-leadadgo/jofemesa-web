@@ -903,6 +903,7 @@ body.jm .jm-pie__razon {
   color: var(--jm-ink-inv-3);
 }
 body.jm .jm-pie__correo { margin-top: 1rem; }
+body.jm .jm-pie__correo .elementor-icon-list-items { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin: 0; }
 body.jm .jm-pie__correo .elementor-icon-list-item,
 body.jm .jm-pie__correo .elementor-icon-list-item a {
   display: inline-flex;

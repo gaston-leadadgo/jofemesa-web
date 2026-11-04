@@ -24,6 +24,17 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Cambios del 05/11/2026 (plugin 1.3.6)
+
+- Fuera la nota «No publicamos horarios…» de la portada (cobertura) y de Contacto: los horarios
+  de Google My Business están confirmados.
+- Retirados los Himoinsa HYW35 y HRFW100 (sin T5): no tenían foto ni ficha. El catálogo queda en
+  196 máquinas, 195 con foto y 191 con ficha.
+- Pie: el canal de denuncias (canal.denuncias@jofemesa.com), obligatorio, bajo el correo general.
+- Logo de Takeuchi sin el cuadrado rojo, algo más grande.
+- La familia de compresores se llama «Aire comprimido» (antes «Aire comprimido y martillos»); el
+  slug `aire-martillos` no cambia.
+
 ## Cambios del 03/11/2026
 
 - **Compresores, modelo a modelo**: Atlas Copco XAS 48, 58, 68 y 188 y CompAir C-38, con foto y
@@ -201,7 +212,7 @@ MAQUINARIA JOFEMESA** que entregó el cliente, tabla por tabla:
 | Manutención de cargas | 7 | Página 3, por rangos |
 | Excavación, tierras y compactación | 50 | Página 4 + el guion «SEGÚN GUIÓN» |
 | Energía e iluminación | 4 | Página 5, por rangos |
-| Aire comprimido y martillos | 3 | Página 5, por rangos |
+| Aire comprimido | 3 | Página 5, por rangos |
 | Herramienta auxiliar | 1 | Página 5 |
 
 **595 especificaciones confirmadas**, 34 fichas técnicas de fabricante en

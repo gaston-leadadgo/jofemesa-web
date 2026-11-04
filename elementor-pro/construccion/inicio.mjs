@@ -203,7 +203,6 @@ const cobertura = () => [
         ]),
         c("jm-cobertura__mapa", [sc('[jm_mapa tono="oscuro"]')], { attrs: { "data-revelar": "escala" } }),
       ]),
-      t("jm-cobertura__pie jm-hereda", "No publicamos horarios que no podamos garantizar: llama a la delegación y te lo confirmamos en el momento."),
     ]),
   ], { tag: "section" }),
 ];

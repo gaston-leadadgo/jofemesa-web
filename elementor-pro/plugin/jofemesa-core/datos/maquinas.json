@@ -59965,7 +59965,7 @@
   "relacionadas": [
    "atlas-copco-qas-30-kd-55",
    "pramac-gsw35",
-   "himoinsa-hyw35"
+   "himoinsa-hyw35-t5"
   ],
   "enAlquiler": true,
   "busqueda": "himoinsa hyw20 t5 grupo electrogeno insonorizado: 20/22 kva (16/17,6 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
@@ -60313,7 +60313,7 @@
   "relacionadas": [
    "himoinsa-hyw20-t5",
    "pramac-gsw35",
-   "himoinsa-hyw35"
+   "himoinsa-hyw35-t5"
   ],
   "enAlquiler": true,
   "busqueda": "atlas copco qas 30 kd 55 grupo electrogeno insonorizado: 30/33 kva (24/26,4 kw) de potencia prp/esp, 50 hz y 400 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
@@ -60661,350 +60661,10 @@
   "relacionadas": [
    "himoinsa-hyw20-t5",
    "atlas-copco-qas-30-kd-55",
-   "himoinsa-hyw35"
+   "himoinsa-hyw35-t5"
   ],
   "enAlquiler": true,
   "busqueda": "pramac gsw35 grupo electrogeno insonorizado: 32,5/35,7 kva (26/28,6 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
- },
- {
-  "slug": "himoinsa-hyw35",
-  "marca": "Himoinsa",
-  "modelo": "HYW35",
-  "titulo": "Himoinsa HYW35",
-  "familia": "energia",
-  "familiaNombre": "Energía e iluminación",
-  "subcategoria": "grupos-electrogenos",
-  "subcategoriaNombre": "Grupos electrógenos",
-  "icono": "grupo",
-  "lineas": [
-   "alquiler"
-  ],
-  "condicionVenta": null,
-  "gama": false,
-  "destacada": false,
-  "orden": 30030,
-  "energia": "diesel",
-  "energiaNombre": "Diésel",
-  "entornos": [
-   "exterior"
-  ],
-  "traccion": "remolcable",
-  "requiereFormacion": false,
-  "delegaciones": [
-   "madrid",
-   "asturias",
-   "valladolid",
-   "valencia",
-   "alicante",
-   "sevilla",
-   "malaga",
-   "oporto",
-   "lisboa"
-  ],
-  "descripcionCorta": "Grupo electrógeno insonorizado: 34/37 kVA (27/30 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones Stage IIIA. Para obra sin acometida, respaldo en industria o eventos.",
-  "aplicaciones": [
-   "Obra sin acometida eléctrica",
-   "Respaldo en industria",
-   "Eventos y rodajes",
-   "Ampliación de potencia temporal"
-  ],
-  "destacados": [],
-  "trabajos": [
-   "energia"
-  ],
-  "notaAsesor": null,
-  "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
-  "tarjeta": [
-   {
-    "key": "potenciaPrpEsp",
-    "etiqueta": "Potencia",
-    "estado": "confirmado",
-    "texto": "34/37 kVA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "frecuencia",
-    "etiqueta": "Frecuencia",
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
-    "estado": "confirmado",
-    "texto": "Stage IIIA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  ],
-  "specs": [
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "potenciaPrpEsp",
-      "etiqueta": "Potencia (PRP/ESP)",
-      "estado": "confirmado",
-      "texto": "34/37 kVA (27/30 kW)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "frecuencia",
-      "etiqueta": "Frecuencia",
-      "estado": "confirmado",
-      "texto": "50 Hz",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "emisiones",
-      "etiqueta": "Nivel de emisiones",
-      "estado": "confirmado",
-      "texto": "Stage IIIA",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "version",
-      "etiqueta": "Versión",
-      "estado": "confirmado",
-      "texto": "Insonorizado",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   }
-  ],
-  "comparador": {
-   "alturaTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alcanceHorizontal": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaElevacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "profundidadExcavacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCazo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAireHora": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "fuerzaCentrifuga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "dimensionesPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "pendienteSuperable": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "velocidadTraslacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "traccion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "autonomia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "personas": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "extensionPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "radioGiroInterior": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "rotacionTorreta": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potenciaPrpEsp": {
-    "estado": "confirmado",
-    "texto": "34/37 kVA (27/30 kW)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "frecuencia": {
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "emisiones": {
-    "estado": "confirmado",
-    "texto": "Stage IIIA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "version": {
-    "estado": "confirmado",
-    "texto": "Insonorizado",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  },
-  "relacionadas": [
-   "himoinsa-hyw20-t5",
-   "atlas-copco-qas-30-kd-55",
-   "pramac-gsw35"
-  ],
-  "enAlquiler": true,
-  "busqueda": "himoinsa hyw35 grupo electrogeno insonorizado: 34/37 kva (27/30 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
  },
  {
   "slug": "himoinsa-hyw35-t5",
@@ -61022,7 +60682,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30040,
+  "orden": 30030,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -61370,7 +61030,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30050,
+  "orden": 30040,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -61718,7 +61378,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30060,
+  "orden": 30050,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -62066,7 +61726,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30070,
+  "orden": 30060,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -62414,7 +62074,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30080,
+  "orden": 30070,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -62762,7 +62422,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": true,
-  "orden": 30090,
+  "orden": 30080,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -63110,7 +62770,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30100,
+  "orden": 30090,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -63458,7 +63118,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30110,
+  "orden": 30100,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -63791,346 +63451,6 @@
   "busqueda": "dagartech dgdr 100 st grupo electrogeno insonorizado: 93/102 kva (74/82 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones eu stage v. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
  },
  {
-  "slug": "himoinsa-hrfw100",
-  "marca": "Himoinsa",
-  "modelo": "HRFW100",
-  "titulo": "Himoinsa HRFW100",
-  "familia": "energia",
-  "familiaNombre": "Energía e iluminación",
-  "subcategoria": "grupos-electrogenos",
-  "subcategoriaNombre": "Grupos electrógenos",
-  "icono": "grupo",
-  "lineas": [
-   "alquiler"
-  ],
-  "condicionVenta": null,
-  "gama": false,
-  "destacada": false,
-  "orden": 30120,
-  "energia": "diesel",
-  "energiaNombre": "Diésel",
-  "entornos": [
-   "exterior"
-  ],
-  "traccion": "remolcable",
-  "requiereFormacion": false,
-  "delegaciones": [
-   "madrid",
-   "asturias",
-   "valladolid",
-   "valencia",
-   "alicante",
-   "sevilla",
-   "malaga",
-   "oporto",
-   "lisboa"
-  ],
-  "descripcionCorta": "Grupo electrógeno insonorizado, de la serie Rental: 100/110 kVA (80/88 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones Stage IIIA. Para obra sin acometida, respaldo en industria o eventos.",
-  "aplicaciones": [
-   "Obra sin acometida eléctrica",
-   "Respaldo en industria",
-   "Eventos y rodajes",
-   "Ampliación de potencia temporal"
-  ],
-  "destacados": [],
-  "trabajos": [
-   "energia"
-  ],
-  "notaAsesor": null,
-  "altura": null,
-  "carga": null,
-  "foto": null,
-  "ficha": null,
-  "tarjeta": [
-   {
-    "key": "potenciaPrpEsp",
-    "etiqueta": "Potencia",
-    "estado": "confirmado",
-    "texto": "100/110 kVA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "frecuencia",
-    "etiqueta": "Frecuencia",
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
-    "estado": "confirmado",
-    "texto": "Stage IIIA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  ],
-  "specs": [
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "potenciaPrpEsp",
-      "etiqueta": "Potencia (PRP/ESP)",
-      "estado": "confirmado",
-      "texto": "100/110 kVA (80/88 kW)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "frecuencia",
-      "etiqueta": "Frecuencia",
-      "estado": "confirmado",
-      "texto": "50 Hz",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "emisiones",
-      "etiqueta": "Nivel de emisiones",
-      "estado": "confirmado",
-      "texto": "Stage IIIA",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "version",
-      "etiqueta": "Versión",
-      "estado": "confirmado",
-      "texto": "Insonorizado (Rental)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   }
-  ],
-  "comparador": {
-   "alturaTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alcanceHorizontal": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaElevacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "profundidadExcavacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCazo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAireHora": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "fuerzaCentrifuga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "dimensionesPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "pendienteSuperable": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "velocidadTraslacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "traccion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "autonomia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "personas": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "extensionPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "radioGiroInterior": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "rotacionTorreta": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potenciaPrpEsp": {
-    "estado": "confirmado",
-    "texto": "100/110 kVA (80/88 kW)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "frecuencia": {
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "emisiones": {
-    "estado": "confirmado",
-    "texto": "Stage IIIA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "version": {
-    "estado": "confirmado",
-    "texto": "Insonorizado (Rental)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  },
-  "relacionadas": [
-   "himoinsa-hyw20-t5",
-   "atlas-copco-qas-30-kd-55",
-   "pramac-gsw35"
-  ],
-  "enAlquiler": true,
-  "busqueda": "himoinsa hrfw100 grupo electrogeno insonorizado, de la serie rental: 100/110 kva (80/88 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
- },
- {
   "slug": "himoinsa-hrfw100-t5",
   "marca": "Himoinsa",
   "modelo": "HRFW100 T5",
@@ -64146,7 +63466,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30130,
+  "orden": 30110,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -64494,7 +63814,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30140,
+  "orden": 30120,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -64842,7 +64162,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30150,
+  "orden": 30130,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -65190,7 +64510,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30160,
+  "orden": 30140,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -65538,7 +64858,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30170,
+  "orden": 30150,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -65886,7 +65206,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30180,
+  "orden": 30160,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -66234,7 +65554,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30190,
+  "orden": 30170,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -66582,7 +65902,7 @@
   "condicionVenta": null,
   "gama": false,
   "destacada": false,
-  "orden": 30200,
+  "orden": 30180,
   "energia": "diesel",
   "energiaNombre": "Diésel",
   "entornos": [
@@ -66913,6 +66233,702 @@
   ],
   "enAlquiler": true,
   "busqueda": "atlas copco qas 200 fd s5 grupo electrogeno insonorizado: 200/220 kva (160/176 kw) de potencia prp/esp, 50 hz y 400 v, con nivel de emisiones eu stage v. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
+ },
+ {
+  "slug": "himoinsa-hfw200-t5",
+  "marca": "Himoinsa",
+  "modelo": "HFW200 T5",
+  "titulo": "Himoinsa HFW200 T5",
+  "familia": "energia",
+  "familiaNombre": "Energía e iluminación",
+  "subcategoria": "grupos-electrogenos",
+  "subcategoriaNombre": "Grupos electrógenos",
+  "icono": "grupo",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 30190,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "remolcable",
+  "requiereFormacion": false,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Grupo electrógeno insonorizado: 200/220 kVA (160/176 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones Stage IIIA. Para obra sin acometida, respaldo en industria o eventos.",
+  "aplicaciones": [
+   "Obra sin acometida eléctrica",
+   "Respaldo en industria",
+   "Eventos y rodajes",
+   "Ampliación de potencia temporal"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "energia"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/himoinsa-hfw200-t5.webp",
+   "alt": "Himoinsa HFW200 T5 de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/himoinsa-hfw200-t5.pdf",
+   "bytes": 640458
+  },
+  "tarjeta": [
+   {
+    "key": "potenciaPrpEsp",
+    "etiqueta": "Potencia",
+    "estado": "confirmado",
+    "texto": "200/220 kVA",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   {
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
+    "estado": "confirmado",
+    "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   {
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
+    "estado": "confirmado",
+    "texto": "Stage IIIA",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "motorizacion",
+    "grupoNombre": "Motorización",
+    "filas": [
+     {
+      "key": "potenciaPrpEsp",
+      "etiqueta": "Potencia (PRP/ESP)",
+      "estado": "confirmado",
+      "texto": "200/220 kVA (160/176 kW)",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "frecuencia",
+      "etiqueta": "Frecuencia",
+      "estado": "confirmado",
+      "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "emisiones",
+      "etiqueta": "Nivel de emisiones",
+      "estado": "confirmado",
+      "texto": "Stage IIIA",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "version",
+      "etiqueta": "Versión",
+      "estado": "confirmado",
+      "texto": "Insonorizado",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potenciaPrpEsp": {
+    "estado": "confirmado",
+    "texto": "200/220 kVA (160/176 kW)",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "frecuencia": {
+    "estado": "confirmado",
+    "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "emisiones": {
+    "estado": "confirmado",
+    "texto": "Stage IIIA",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "version": {
+    "estado": "confirmado",
+    "texto": "Insonorizado",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   }
+  },
+  "relacionadas": [
+   "himoinsa-hyw20-t5",
+   "atlas-copco-qas-30-kd-55",
+   "pramac-gsw35"
+  ],
+  "enAlquiler": true,
+  "busqueda": "himoinsa hfw200 t5 grupo electrogeno insonorizado: 200/220 kva (160/176 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
+ },
+ {
+  "slug": "dagartech-dgvs-275-st",
+  "marca": "Dagartech",
+  "modelo": "DGVS 275 ST",
+  "titulo": "Dagartech DGVS 275 ST",
+  "familia": "energia",
+  "familiaNombre": "Energía e iluminación",
+  "subcategoria": "grupos-electrogenos",
+  "subcategoriaNombre": "Grupos electrógenos",
+  "icono": "grupo",
+  "lineas": [
+   "alquiler"
+  ],
+  "condicionVenta": null,
+  "gama": false,
+  "destacada": false,
+  "orden": 30200,
+  "energia": "diesel",
+  "energiaNombre": "Diésel",
+  "entornos": [
+   "exterior"
+  ],
+  "traccion": "remolcable",
+  "requiereFormacion": false,
+  "delegaciones": [
+   "madrid",
+   "asturias",
+   "valladolid",
+   "valencia",
+   "alicante",
+   "sevilla",
+   "malaga",
+   "oporto",
+   "lisboa"
+  ],
+  "descripcionCorta": "Grupo electrógeno insonorizado: 250/275 kVA (200/220 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones EU Stage II (uso estacionario). Para obra sin acometida, respaldo en industria o eventos.",
+  "aplicaciones": [
+   "Obra sin acometida eléctrica",
+   "Respaldo en industria",
+   "Eventos y rodajes",
+   "Ampliación de potencia temporal"
+  ],
+  "destacados": [],
+  "trabajos": [
+   "energia"
+  ],
+  "notaAsesor": null,
+  "altura": null,
+  "carga": null,
+  "foto": {
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgvs-275-st.webp",
+   "alt": "Dagartech DGVS 275 ST de la flota de JOFEMESA",
+   "ancho": 1254,
+   "alto": 1254
+  },
+  "ficha": {
+   "ruta": "/fichas/dagartech-dgvs-275-st.pdf",
+   "bytes": 2159705
+  },
+  "tarjeta": [
+   {
+    "key": "potenciaPrpEsp",
+    "etiqueta": "Potencia",
+    "estado": "confirmado",
+    "texto": "250/275 kVA",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   {
+    "key": "frecuencia",
+    "etiqueta": "Frecuencia",
+    "estado": "confirmado",
+    "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   {
+    "key": "emisiones",
+    "etiqueta": "Emisiones",
+    "estado": "confirmado",
+    "texto": "EU Stage II",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   }
+  ],
+  "specs": [
+   {
+    "grupo": "motorizacion",
+    "grupoNombre": "Motorización",
+    "filas": [
+     {
+      "key": "potenciaPrpEsp",
+      "etiqueta": "Potencia (PRP/ESP)",
+      "estado": "confirmado",
+      "texto": "250/275 kVA (200/220 kW)",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "frecuencia",
+      "etiqueta": "Frecuencia",
+      "estado": "confirmado",
+      "texto": "50 Hz",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "voltaje",
+      "etiqueta": "Tensión",
+      "estado": "confirmado",
+      "texto": "400/230 V",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "emisiones",
+      "etiqueta": "Nivel de emisiones",
+      "estado": "confirmado",
+      "texto": "EU Stage II (uso estacionario)",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     },
+     {
+      "key": "version",
+      "etiqueta": "Versión",
+      "estado": "confirmado",
+      "texto": "Insonorizado",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+     }
+    ]
+   }
+  ],
+  "comparador": {
+   "alturaTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alcanceHorizontal": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaElevacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCarga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "profundidadExcavacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "capacidadCazo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potencia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "presionAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTrabajo": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "fuerzaCentrifuga": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "dimensionesPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "anchoTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "longitudTransporte": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "peso": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "pendienteSuperable": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "velocidadTraslacion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "traccion": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "autonomia": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "alturaPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "personas": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "extensionPlataforma": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "radioGiroInterior": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "rotacionTorreta": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "motor": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "potenciaPrpEsp": {
+    "estado": "confirmado",
+    "texto": "250/275 kVA (200/220 kW)",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "frecuencia": {
+    "estado": "confirmado",
+    "texto": "50 Hz",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "voltaje": {
+    "estado": "confirmado",
+    "texto": "400/230 V",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "emisiones": {
+    "estado": "confirmado",
+    "texto": "EU Stage II (uso estacionario)",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   },
+   "version": {
+    "estado": "confirmado",
+    "texto": "Insonorizado",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
+   }
+  },
+  "relacionadas": [
+   "himoinsa-hyw20-t5",
+   "atlas-copco-qas-30-kd-55",
+   "pramac-gsw35"
+  ],
+  "enAlquiler": true,
+  "busqueda": "dagartech dgvs 275 st grupo electrogeno insonorizado: 250/275 kva (200/220 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones eu stage ii (uso estacionario). para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
  },
  {
   "slug": "dagartech-dgh-5000-b",
@@ -67263,10 +67279,10 @@
   "busqueda": "dagartech dgh 5000 b grupo electrogeno portatil no insonorizado (chasis abierto): 4,1 kva / n/d (4,1 kw / n/d) de potencia prp/esp, 50 hz y 230 v, con nivel de emisiones eu stage v. para herramienta electrica y trabajos puntuales donde no hay luz de obra. grupos electrogenos portatiles energia e iluminacion herramienta electrica en obra pequena reformas sin luz de obra instalaciones puntuales mantenimiento en campo"
  },
  {
-  "slug": "himoinsa-hfw200-t5",
-  "marca": "Himoinsa",
-  "modelo": "HFW200 T5",
-  "titulo": "Himoinsa HFW200 T5",
+  "slug": "dagartech-dgvs-330-st",
+  "marca": "Dagartech",
+  "modelo": "DGVS 330 ST",
+  "titulo": "Dagartech DGVS 330 ST",
   "familia": "energia",
   "familiaNombre": "Energía e iluminación",
   "subcategoria": "grupos-electrogenos",
@@ -67297,7 +67313,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Grupo electrógeno insonorizado: 200/220 kVA (160/176 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones Stage IIIA. Para obra sin acometida, respaldo en industria o eventos.",
+  "descripcionCorta": "Grupo electrógeno insonorizado: 300/330 kVA (240/264 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones EU Stage II (uso estacionario). Para obra sin acometida, respaldo en industria o eventos.",
   "aplicaciones": [
    "Obra sin acometida eléctrica",
    "Respaldo en industria",
@@ -67312,21 +67328,21 @@
   "altura": null,
   "carga": null,
   "foto": {
-   "ruta": "/img/maquinas/oficial/completa/himoinsa-hfw200-t5.webp",
-   "alt": "Himoinsa HFW200 T5 de la flota de JOFEMESA",
+   "ruta": "/img/maquinas/oficial/completa/dagartech-dgvs-330-st.webp",
+   "alt": "Dagartech DGVS 330 ST de la flota de JOFEMESA",
    "ancho": 1254,
    "alto": 1254
   },
   "ficha": {
-   "ruta": "/fichas/himoinsa-hfw200-t5.pdf",
-   "bytes": 640458
+   "ruta": "/fichas/dagartech-dgvs-330-st.pdf",
+   "bytes": 2167941
   },
   "tarjeta": [
    {
     "key": "potenciaPrpEsp",
     "etiqueta": "Potencia",
     "estado": "confirmado",
-    "texto": "200/220 kVA",
+    "texto": "300/330 kVA",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67344,7 +67360,7 @@
     "key": "emisiones",
     "etiqueta": "Emisiones",
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "EU Stage II",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67359,7 +67375,7 @@
       "key": "potenciaPrpEsp",
       "etiqueta": "Potencia (PRP/ESP)",
       "estado": "confirmado",
-      "texto": "200/220 kVA (160/176 kW)",
+      "texto": "300/330 kVA (240/264 kW)",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67386,7 +67402,7 @@
       "key": "emisiones",
       "etiqueta": "Nivel de emisiones",
       "estado": "confirmado",
-      "texto": "Stage IIIA",
+      "texto": "EU Stage II (uso estacionario)",
       "unidad": "",
       "valor": null,
       "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67568,7 +67584,7 @@
    },
    "potenciaPrpEsp": {
     "estado": "confirmado",
-    "texto": "200/220 kVA (160/176 kW)",
+    "texto": "300/330 kVA (240/264 kW)",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67589,7 +67605,7 @@
    },
    "emisiones": {
     "estado": "confirmado",
-    "texto": "Stage IIIA",
+    "texto": "EU Stage II (uso estacionario)",
     "unidad": "",
     "valor": null,
     "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
@@ -67608,7 +67624,7 @@
    "pramac-gsw35"
   ],
   "enAlquiler": true,
-  "busqueda": "himoinsa hfw200 t5 grupo electrogeno insonorizado: 200/220 kva (160/176 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones stage iiia. para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
+  "busqueda": "dagartech dgvs 330 st grupo electrogeno insonorizado: 300/330 kva (240/264 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones eu stage ii (uso estacionario). para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
  },
  {
   "slug": "dagartech-dgh-9-tf-bc",
@@ -67959,702 +67975,6 @@
   "busqueda": "dagartech dgh 9 tf bc grupo electrogeno portatil no insonorizado (chasis movil abierto): 8 kva / n/d (6,5 kw / n/d) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones eu stage v. para herramienta electrica y trabajos puntuales donde no hay luz de obra. grupos electrogenos portatiles energia e iluminacion herramienta electrica en obra pequena reformas sin luz de obra instalaciones puntuales mantenimiento en campo"
  },
  {
-  "slug": "dagartech-dgvs-275-st",
-  "marca": "Dagartech",
-  "modelo": "DGVS 275 ST",
-  "titulo": "Dagartech DGVS 275 ST",
-  "familia": "energia",
-  "familiaNombre": "Energía e iluminación",
-  "subcategoria": "grupos-electrogenos",
-  "subcategoriaNombre": "Grupos electrógenos",
-  "icono": "grupo",
-  "lineas": [
-   "alquiler"
-  ],
-  "condicionVenta": null,
-  "gama": false,
-  "destacada": false,
-  "orden": 30220,
-  "energia": "diesel",
-  "energiaNombre": "Diésel",
-  "entornos": [
-   "exterior"
-  ],
-  "traccion": "remolcable",
-  "requiereFormacion": false,
-  "delegaciones": [
-   "madrid",
-   "asturias",
-   "valladolid",
-   "valencia",
-   "alicante",
-   "sevilla",
-   "malaga",
-   "oporto",
-   "lisboa"
-  ],
-  "descripcionCorta": "Grupo electrógeno insonorizado: 250/275 kVA (200/220 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones EU Stage II (uso estacionario). Para obra sin acometida, respaldo en industria o eventos.",
-  "aplicaciones": [
-   "Obra sin acometida eléctrica",
-   "Respaldo en industria",
-   "Eventos y rodajes",
-   "Ampliación de potencia temporal"
-  ],
-  "destacados": [],
-  "trabajos": [
-   "energia"
-  ],
-  "notaAsesor": null,
-  "altura": null,
-  "carga": null,
-  "foto": {
-   "ruta": "/img/maquinas/oficial/completa/dagartech-dgvs-275-st.webp",
-   "alt": "Dagartech DGVS 275 ST de la flota de JOFEMESA",
-   "ancho": 1254,
-   "alto": 1254
-  },
-  "ficha": {
-   "ruta": "/fichas/dagartech-dgvs-275-st.pdf",
-   "bytes": 2159705
-  },
-  "tarjeta": [
-   {
-    "key": "potenciaPrpEsp",
-    "etiqueta": "Potencia",
-    "estado": "confirmado",
-    "texto": "250/275 kVA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "frecuencia",
-    "etiqueta": "Frecuencia",
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
-    "estado": "confirmado",
-    "texto": "EU Stage II",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  ],
-  "specs": [
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "potenciaPrpEsp",
-      "etiqueta": "Potencia (PRP/ESP)",
-      "estado": "confirmado",
-      "texto": "250/275 kVA (200/220 kW)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "frecuencia",
-      "etiqueta": "Frecuencia",
-      "estado": "confirmado",
-      "texto": "50 Hz",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "emisiones",
-      "etiqueta": "Nivel de emisiones",
-      "estado": "confirmado",
-      "texto": "EU Stage II (uso estacionario)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "version",
-      "etiqueta": "Versión",
-      "estado": "confirmado",
-      "texto": "Insonorizado",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   }
-  ],
-  "comparador": {
-   "alturaTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alcanceHorizontal": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaElevacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "profundidadExcavacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCazo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAireHora": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "fuerzaCentrifuga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "dimensionesPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "pendienteSuperable": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "velocidadTraslacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "traccion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "autonomia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "personas": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "extensionPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "radioGiroInterior": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "rotacionTorreta": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potenciaPrpEsp": {
-    "estado": "confirmado",
-    "texto": "250/275 kVA (200/220 kW)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "frecuencia": {
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "emisiones": {
-    "estado": "confirmado",
-    "texto": "EU Stage II (uso estacionario)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "version": {
-    "estado": "confirmado",
-    "texto": "Insonorizado",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  },
-  "relacionadas": [
-   "himoinsa-hyw20-t5",
-   "atlas-copco-qas-30-kd-55",
-   "pramac-gsw35"
-  ],
-  "enAlquiler": true,
-  "busqueda": "dagartech dgvs 275 st grupo electrogeno insonorizado: 250/275 kva (200/220 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones eu stage ii (uso estacionario). para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
- },
- {
-  "slug": "dagartech-dgvs-330-st",
-  "marca": "Dagartech",
-  "modelo": "DGVS 330 ST",
-  "titulo": "Dagartech DGVS 330 ST",
-  "familia": "energia",
-  "familiaNombre": "Energía e iluminación",
-  "subcategoria": "grupos-electrogenos",
-  "subcategoriaNombre": "Grupos electrógenos",
-  "icono": "grupo",
-  "lineas": [
-   "alquiler"
-  ],
-  "condicionVenta": null,
-  "gama": false,
-  "destacada": false,
-  "orden": 30230,
-  "energia": "diesel",
-  "energiaNombre": "Diésel",
-  "entornos": [
-   "exterior"
-  ],
-  "traccion": "remolcable",
-  "requiereFormacion": false,
-  "delegaciones": [
-   "madrid",
-   "asturias",
-   "valladolid",
-   "valencia",
-   "alicante",
-   "sevilla",
-   "malaga",
-   "oporto",
-   "lisboa"
-  ],
-  "descripcionCorta": "Grupo electrógeno insonorizado: 300/330 kVA (240/264 kW) de potencia PRP/ESP, 50 Hz y 400/230 V, con nivel de emisiones EU Stage II (uso estacionario). Para obra sin acometida, respaldo en industria o eventos.",
-  "aplicaciones": [
-   "Obra sin acometida eléctrica",
-   "Respaldo en industria",
-   "Eventos y rodajes",
-   "Ampliación de potencia temporal"
-  ],
-  "destacados": [],
-  "trabajos": [
-   "energia"
-  ],
-  "notaAsesor": null,
-  "altura": null,
-  "carga": null,
-  "foto": {
-   "ruta": "/img/maquinas/oficial/completa/dagartech-dgvs-330-st.webp",
-   "alt": "Dagartech DGVS 330 ST de la flota de JOFEMESA",
-   "ancho": 1254,
-   "alto": 1254
-  },
-  "ficha": {
-   "ruta": "/fichas/dagartech-dgvs-330-st.pdf",
-   "bytes": 2167941
-  },
-  "tarjeta": [
-   {
-    "key": "potenciaPrpEsp",
-    "etiqueta": "Potencia",
-    "estado": "confirmado",
-    "texto": "300/330 kVA",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "frecuencia",
-    "etiqueta": "Frecuencia",
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   {
-    "key": "emisiones",
-    "etiqueta": "Emisiones",
-    "estado": "confirmado",
-    "texto": "EU Stage II",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  ],
-  "specs": [
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "potenciaPrpEsp",
-      "etiqueta": "Potencia (PRP/ESP)",
-      "estado": "confirmado",
-      "texto": "300/330 kVA (240/264 kW)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "frecuencia",
-      "etiqueta": "Frecuencia",
-      "estado": "confirmado",
-      "texto": "50 Hz",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "voltaje",
-      "etiqueta": "Tensión",
-      "estado": "confirmado",
-      "texto": "400/230 V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "emisiones",
-      "etiqueta": "Nivel de emisiones",
-      "estado": "confirmado",
-      "texto": "EU Stage II (uso estacionario)",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     },
-     {
-      "key": "version",
-      "etiqueta": "Versión",
-      "estado": "confirmado",
-      "texto": "Insonorizado",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-     }
-    ]
-   }
-  ],
-  "comparador": {
-   "alturaTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alcanceHorizontal": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaElevacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCarga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "profundidadExcavacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "capacidadCazo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potencia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "caudalAireHora": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "presionAire": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTrabajo": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "fuerzaCentrifuga": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "dimensionesPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "anchoTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "longitudTransporte": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "peso": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "pendienteSuperable": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "velocidadTraslacion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "traccion": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "autonomia": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "alturaPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "personas": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "extensionPlataforma": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "radioGiroInterior": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "rotacionTorreta": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "motor": {
-    "estado": "no_aplica",
-    "texto": "—",
-    "unidad": "",
-    "nota": "No aplica a este tipo de máquina"
-   },
-   "potenciaPrpEsp": {
-    "estado": "confirmado",
-    "texto": "300/330 kVA (240/264 kW)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "frecuencia": {
-    "estado": "confirmado",
-    "texto": "50 Hz",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "voltaje": {
-    "estado": "confirmado",
-    "texto": "400/230 V",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "emisiones": {
-    "estado": "confirmado",
-    "texto": "EU Stage II (uso estacionario)",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   },
-   "version": {
-    "estado": "confirmado",
-    "texto": "Insonorizado",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato del Catálogo General de Maquinaria de JOFEMESA"
-   }
-  },
-  "relacionadas": [
-   "himoinsa-hyw20-t5",
-   "atlas-copco-qas-30-kd-55",
-   "pramac-gsw35"
-  ],
-  "enAlquiler": true,
-  "busqueda": "dagartech dgvs 330 st grupo electrogeno insonorizado: 300/330 kva (240/264 kw) de potencia prp/esp, 50 hz y 400/230 v, con nivel de emisiones eu stage ii (uso estacionario). para obra sin acometida, respaldo en industria o eventos. grupos electrogenos energia e iluminacion obra sin acometida electrica respaldo en industria eventos y rodajes ampliacion de potencia temporal"
- },
- {
   "slug": "atlas-copco-torre-de-iluminacion-led",
   "marca": "Atlas Copco",
   "modelo": "Torre de iluminación LED",
@@ -68955,7 +68275,7 @@
   "modelo": "XAS 48",
   "titulo": "Atlas Copco XAS 48",
   "familia": "aire-martillos",
-  "familiaNombre": "Aire comprimido y martillos",
+  "familiaNombre": "Aire comprimido",
   "subcategoria": "compresores-remolcables",
   "subcategoriaNombre": "Compresores de aire remolcables",
   "icono": "compresor",
@@ -69275,7 +68595,7 @@
    "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 48 compresor remolcable de 2.500 l/min a 7 bar y 500 kg: se engancha a un vehiculo ligero y alimenta un martillo picador o herramienta neumatica. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 48 compresor remolcable de 2.500 l/min a 7 bar y 500 kg: se engancha a un vehiculo ligero y alimenta un martillo picador o herramienta neumatica. compresores de aire remolcables aire comprimido alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "atlas-copco-xas-58",
@@ -69283,7 +68603,7 @@
   "modelo": "XAS 58",
   "titulo": "Atlas Copco XAS 58",
   "familia": "aire-martillos",
-  "familiaNombre": "Aire comprimido y martillos",
+  "familiaNombre": "Aire comprimido",
   "subcategoria": "compresores-remolcables",
   "subcategoriaNombre": "Compresores de aire remolcables",
   "icono": "compresor",
@@ -69603,7 +68923,7 @@
    "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 58 compresor remolcable de 3.000 l/min a 7 bar y menos de 750 kg en orden de marcha. para martillo y herramienta neumatica en obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 58 compresor remolcable de 3.000 l/min a 7 bar y menos de 750 kg en orden de marcha. para martillo y herramienta neumatica en obra. compresores de aire remolcables aire comprimido alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "atlas-copco-xas-68",
@@ -69611,7 +68931,7 @@
   "modelo": "XAS 68",
   "titulo": "Atlas Copco XAS 68",
   "familia": "aire-martillos",
-  "familiaNombre": "Aire comprimido y martillos",
+  "familiaNombre": "Aire comprimido",
   "subcategoria": "compresores-remolcables",
   "subcategoriaNombre": "Compresores de aire remolcables",
   "icono": "compresor",
@@ -69931,7 +69251,7 @@
    "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 68 compresor remolcable de 3.500 l/min a 7 bar y menos de 750 kg. mas caudal para dos herramientas a la vez o un rompedor pesado. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 68 compresor remolcable de 3.500 l/min a 7 bar y menos de 750 kg. mas caudal para dos herramientas a la vez o un rompedor pesado. compresores de aire remolcables aire comprimido alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "compair-c-38",
@@ -69939,7 +69259,7 @@
   "modelo": "C-38",
   "titulo": "CompAir C-38",
   "familia": "aire-martillos",
-  "familiaNombre": "Aire comprimido y martillos",
+  "familiaNombre": "Aire comprimido",
   "subcategoria": "compresores-remolcables",
   "subcategoriaNombre": "Compresores de aire remolcables",
   "icono": "compresor",
@@ -70259,7 +69579,7 @@
    "atlas-copco-xas-68"
   ],
   "enAlquiler": true,
-  "busqueda": "compair c-38 compresor portatil de 3.800 l/min a 7 bar con motor cummins de cuatro cilindros. regula el caudal segun la demanda de aire para gastar menos combustible. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "compair c-38 compresor portatil de 3.800 l/min a 7 bar con motor cummins de cuatro cilindros. regula el caudal segun la demanda de aire para gastar menos combustible. compresores de aire remolcables aire comprimido alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "atlas-copco-xas-188",
@@ -70267,7 +69587,7 @@
   "modelo": "XAS 188",
   "titulo": "Atlas Copco XAS 188",
   "familia": "aire-martillos",
-  "familiaNombre": "Aire comprimido y martillos",
+  "familiaNombre": "Aire comprimido",
   "subcategoria": "compresores-remolcables",
   "subcategoriaNombre": "Compresores de aire remolcables",
   "icono": "compresor",
@@ -70584,6 +69904,6 @@
    "atlas-copco-xas-68"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 188 compresor diesel de 10.900 l/min, el de mas caudal de la flota: perforacion, gunitado y chorreado, o una bateria de herramientas neumaticas en la misma obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 188 compresor diesel de 10.900 l/min, el de mas caudal de la flota: perforacion, gunitado y chorreado, o una bateria de herramientas neumaticas en la misma obra. compresores de aire remolcables aire comprimido alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  }
 ]

@@ -572,7 +572,8 @@ const grupos: Fila[] = [
   grupo("Himoinsa", "HYW20 T5", "20/22 kVA (16/17,6 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
   grupo("Atlas Copco", "QAS 30 KD 55", "30/33 kVA (24/26,4 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
   grupo("Pramac", "GSW35", "32,5/35,7 kVA (26/28,6 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
-  grupo("Himoinsa", "HYW35", "34/37 kVA (27/30 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
+  /* HYW35 y HRFW100 (sin T5): retirados el 05/11/2026 a petición del
+     cliente; no tenían foto ni ficha y repetían los datos de los T5. */
   grupo("Himoinsa", "HYW35 T5", "34/37 kVA (27/30 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
   grupo("Atlas Copco", "QAS 45 KD 55", "45/50 kVA (36/40 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
   grupo("Himoinsa", "HYW45 T5", "45/50 kVA (36/40 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
@@ -581,7 +582,6 @@ const grupos: Fila[] = [
   grupo("Himoinsa", "HRFW60 S5", "58/64 kVA (46/51 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado (Rental)", true),
   grupo("Pramac", "GPW60P/FS3A", "60,3/65,9 kVA (48,2/52,7 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado"),
   grupo("Dagartech", "DGDR 100 ST", "93/102 kVA (74/82 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado"),
-  grupo("Himoinsa", "HRFW100", "100/110 kVA (80/88 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado (Rental)"),
   grupo("Himoinsa", "HRFW100 T5", "100/110 kVA (80/88 kW)", "50 Hz", "400/230 V", "Stage IIIA", "Insonorizado (Rental)"),
   grupo("Pramac", "GSW115", "106,15/116 kVA (84,92/92,8 kW)", "50 Hz", "400 V", "Stage IIIA", "Insonorizado"),
   grupo("Dagartech", "DGDR150", "136/150 kVA (109/120 kW)", "50 Hz", "400/230 V", "EU Stage V", "Insonorizado"),

@@ -52,6 +52,9 @@ export const TELEFONO_PRINCIPAL = {
 
 export const EMAIL_PRINCIPAL = "jofemesa@jofemesa.com";
 
+/** Canal de denuncias, obligatorio (cliente, 05/11/2026). Va en el pie. */
+export const EMAIL_DENUNCIAS = "canal.denuncias@jofemesa.com";
+
 /**
  * Perfiles en redes que dio el cliente (06/10/2026). Se guardan sin los
  * parámetros de seguimiento que traían copiados (`?lipi=…`, `?hl=es`).
@@ -530,11 +533,11 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Fichas técnicas de manutención, tierras y energía",
-    nota: "Hay 191 fichas técnicas. Sin ficha quedan las Jungheinrich EFG 218k, 220, 318 y 320, los Himoinsa HYW35 y HRFW100 (sin T5) y la torre de iluminación. Desde el 03/11/2026 están los cinco compresores y la Snorkel A46JRT.",
+    nota: "Hay 191 fichas técnicas. Sin ficha quedan las Jungheinrich EFG 218k, 220, 318 y 320 y la torre de iluminación. Desde el 03/11/2026 están los cinco compresores y la Snorkel A46JRT.",
   },
   {
     campo: "Fotografía de manutención, tierras y energía",
-    nota: "Hay 195 fotos oficiales de JOFEMESA (entregas del 18/09 al 03/11/2026). Quedan 3 máquinas con dibujo técnico: los Himoinsa HYW35 y HRFW100 (sin T5) y la torre de iluminación. El detalle está en el PDF de material fotográfico pendiente.",
+    nota: "Hay 195 fotos oficiales de JOFEMESA (entregas del 18/09 al 03/11/2026). Queda 1 máquina con dibujo técnico: la torre de iluminación (los Himoinsa HYW35 y HRFW100 sin T5 se retiraron el 05/11/2026). El detalle está en el PDF de material fotográfico pendiente.",
   },
   {
     campo: "Genie S-85: ¿S-85 o S-85 XC?",
@@ -566,7 +569,7 @@ export const DATOS_PENDIENTES = [
   },
   {
     campo: "Grupos electrógenos: dudas de la tabla",
-    nota: "De «GRUPOS ELECTRÓGENOS FICHAS DE CARACTERÍSTICAS» (27/10/2026): (1) «HYW20 T5 INS 50 HZ» se publica como «HYW20 T5», porque INS y 50 Hz ya están en versión y frecuencia; (2) Atlas Copco «QAS 30 KD 55» y «QAS 45 KD 55»: las fotos del 29/10 los rotulan «QAS 30 S5» y «QAS 45 S5», así que «55» parece errata de «S5». Se publica tal cual hasta que lo confirmen; (3) HRFW100 y HRFW100 T5, y HYW35 y HYW35 T5, tienen los mismos datos y el 29/10 solo llegaron foto y ficha de los T5: confirmar si los otros dos existen; (4) los dos Dagartech DGH dan la potencia ESP como «N/D». Fichas del 29/10 a revisar: la del Pramac GSW167P no es del fabricante (es una hoja que cita como fuentes a Pratec y GAM Rentals); la del Himoinsa HRFW-100 se titula «TD» y está en inglés, como la del Atlas Copco QAS 150; las de los QAS 30, 45 y 200 son la misma página de la gama QAS.",
+    nota: "De «GRUPOS ELECTRÓGENOS FICHAS DE CARACTERÍSTICAS» (27/10/2026): (1) «HYW20 T5 INS 50 HZ» se publica como «HYW20 T5», porque INS y 50 Hz ya están en versión y frecuencia; (2) Atlas Copco «QAS 30 KD 55» y «QAS 45 KD 55»: las fotos del 29/10 los rotulan «QAS 30 S5» y «QAS 45 S5», así que «55» parece errata de «S5». Se publica tal cual hasta que lo confirmen; (3) HRFW100 y HYW35 sin T5 repetían los datos de los T5 y no tenían foto ni ficha: se retiraron el 05/11/2026 a petición del cliente; (4) los dos Dagartech DGH dan la potencia ESP como «N/D». Fichas del 29/10 a revisar: la del Pramac GSW167P no es del fabricante (es una hoja que cita como fuentes a Pratec y GAM Rentals); la del Himoinsa HRFW-100 se titula «TD» y está en inglés, como la del Atlas Copco QAS 150; las de los QAS 30, 45 y 200 son la misma página de la gama QAS.",
   },
   {
     campo: "Compresor Atlas Copco XAS 188: ¿10 o 14 bar?",

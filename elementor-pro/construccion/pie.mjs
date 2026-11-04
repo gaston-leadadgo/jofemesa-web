@@ -19,6 +19,12 @@ const pie = () => [
               text: "jofemesa@jofemesa.com",
               selected_icon: { value: "far fa-envelope", library: "fa-regular" },
               link: { url: "mailto:jofemesa@jofemesa.com", is_external: "", nofollow: "" },
+            }, {
+              /* Canal de denuncias: obligatorio (cliente, 05/11/2026). */
+              _id: "jmdenuncias",
+              text: "Canal de denuncias: canal.denuncias@jofemesa.com",
+              selected_icon: { value: "far fa-envelope", library: "fa-regular" },
+              link: { url: "mailto:canal.denuncias@jofemesa.com", is_external: "", nofollow: "" },
             }],
           }),
           sc('[jm_redes tamano="18" variante="pie"]'),
@@ -30,7 +36,7 @@ const pie = () => [
             ["Manutención de cargas", "/alquiler/manutencion/"],
             ["Excavación y movimiento de tierras", "/alquiler/movimiento-tierras/"],
             ["Energía e iluminación", "/alquiler/energia/"],
-            ["Aire comprimido y martillos", "/alquiler/aire-martillos/"],
+            ["Aire comprimido", "/alquiler/aire-martillos/"],
             ["Herramienta auxiliar", "/alquiler/herramienta-auxiliar/"],
           ])),
         ], { tag: "nav", attrs: { "aria-label": "Familias de maquinaria" } }),

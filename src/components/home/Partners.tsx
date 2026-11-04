@@ -34,7 +34,8 @@ const TAKEUCHI = CENTROS.find((c) => c.id === "takeuchi");
  * pesaría el doble que el compacto, así que el alto sale de un área visual
  * común, `AREA / proporción`, dentro de una caja de `CAJA` px. Los tres son
  * SVG oficiales: Jungheinrich de Wikimedia Commons, Takeuchi de
- * takeuchiglobal.com y Riversa de riversa.es.
+ * takeuchiglobal.com (solo el rótulo, sin el cuadrado rojo, como pidió el
+ * cliente el 05/11/2026) y Riversa de riversa.es.
  */
 const AREA = 6200;
 const CAJA = 48;
@@ -51,7 +52,7 @@ const DISTRIBUCIONES = [
   {
     id: "takeuchi",
     etiqueta: "Distribuidor oficial",
-    logo: { src: "/marca/takeuchi.svg", alt: "Takeuchi", w: 213, h: 36 },
+    logo: { src: "/marca/takeuchi.svg", alt: "Takeuchi", w: 169, h: 17 },
     texto:
       "Distribución oficial de Takeuchi en retroexcavadoras y miniexcavadoras, con venta, recambio original y servicio técnico propio." +
       (TAKEUCHI ? ` Centro en ${TAKEUCHI.localidad}.` : ""),
