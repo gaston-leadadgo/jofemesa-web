@@ -259,7 +259,7 @@
   "claim": "Cuando el trabajo necesita aire, presión y bastante menos delicadeza",
   "descripcion": "Compresores remolcables para alimentar martillos y herramienta neumática, perforación, chorreado y cualquier aplicación que necesite suministro constante de aire comprimido.",
   "rango": "De 2,5 a 10,9 m³/min",
-  "necesidad": "Aire y demolición",
+  "necesidad": "Aire comprimido",
   "necesidadDesc": "Compresores remolcables de 2,5 a 10,9 m³/min para cuando el trabajo pide aire.",
   "icono": "compresor",
   "total": 5,

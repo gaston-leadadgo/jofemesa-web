@@ -100,6 +100,36 @@ export function Necesidades() {
               </li>
             );
           })}
+          {/* Con cinco familias (03/11/2026) la rejilla dejaba un hueco:
+              lo ocupa la entrada al asesor, que es justo lo que busca
+              quien no sabe en qué familia mirar. */}
+          {FAMILIAS.length % 6 !== 0 && (
+            <li className="bg-sunken">
+              <Link
+                href="/asesor"
+                className="group flex h-full items-start gap-4 p-5 transition-colors duration-200 hover:bg-muted md:p-6"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="title block text-ink transition-colors duration-200 group-hover:text-accent">
+                    ¿No sabes cuál necesitas?
+                  </span>
+                  <span className="mt-1.5 block text-sm text-ink-2">
+                    Responde tres preguntas sobre el trabajo y el asesor te
+                    propone máquinas del catálogo.
+                  </span>
+                  <span className="meta mt-3 block border-t border-rule pt-3 text-accent">
+                    Abrir el asesor
+                  </span>
+                </span>
+                <ArrowRight
+                  size={18}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                  className="mt-1 shrink-0 text-accent transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </section>
