@@ -210,8 +210,13 @@ body.jm .jm-cifra::after { content: counter(jm-n); }
 
 /* ---------- Desplegable de delegaciones ---------- */
 body.jm .jm-desplegable--delegaciones { position: relative; height: 100%; }
+/* También en :hover y :active: el reset de botones de arriba pone font:
+   inherit con la misma especificidad y, al pasar el ratón, el rótulo
+   crecía al tamaño del texto de la franja (04/11/2026). */
 body.jm .jm-delegaciones__boton,
-body.jm .jm-delegaciones__boton:focus {
+body.jm .jm-delegaciones__boton:hover,
+body.jm .jm-delegaciones__boton:focus,
+body.jm .jm-delegaciones__boton:active {
   display: flex;
   height: 100%;
   align-items: center;
