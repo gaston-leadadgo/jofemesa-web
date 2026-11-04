@@ -27,7 +27,7 @@ export function Partners() {
   return (
     <section className="border-b border-rule bg-surface">
       <div className="container-placa py-10 md:py-12">
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-rule bg-rule md:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-rule bg-rule md:grid-cols-2 lg:grid-cols-3">
           {/* ---------- Jungheinrich ---------- */}
           <div className="flex flex-col bg-surface p-6 md:p-8">
             <p className="label flex items-center gap-2 text-accent">
@@ -97,6 +97,40 @@ export function Partners() {
               className="group mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-accent underline decoration-2 underline-offset-4 transition-colors duration-200 hover:text-accent-hover"
             >
               Ver el centro Takeuchi
+              <ArrowRight
+                size={15}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+              />
+            </Link>
+          </div>
+
+          {/* ---------- Riversa ----------
+              Nueva distribución, solo en Valencia (cliente, 04/11/2026).
+              Logotipo oficial de riversa.es. El texto es provisional hasta
+              que llegue su material. */}
+          <div className="flex flex-col bg-surface p-6 md:p-8 md:col-span-2 lg:col-span-1">
+            <p className="label flex items-center gap-2 text-accent">
+              <BadgeCheck size={15} strokeWidth={2.25} aria-hidden="true" />
+              Distribuidor en Valencia
+            </p>
+            <Image
+              src="/marca/riversa.svg"
+              alt="Riversa"
+              width={451}
+              height={163}
+              unoptimized
+              className="mt-4 h-11 w-auto self-start"
+            />
+            <p className="mt-4 flex-1 text-base leading-relaxed text-ink-2">
+              Distribuimos en Valencia los buggies de Riversa.
+            </p>
+            <Link
+              href="/delegaciones#valencia"
+              className="group mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-accent underline decoration-2 underline-offset-4 transition-colors duration-200 hover:text-accent-hover"
+            >
+              Ver la delegación de Valencia
               <ArrowRight
                 size={15}
                 strokeWidth={2}

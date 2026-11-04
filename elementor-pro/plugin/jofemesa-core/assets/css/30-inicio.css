@@ -485,6 +485,10 @@ body.jm .jm-partners__cuerpo { padding-top: 2.5rem; padding-bottom: 2.5rem; disp
 @media (min-width: 768px) { body.jm .jm-partners__cuerpo { padding-top: 3rem; padding-bottom: 3rem; } }
 body.jm .jm-partners__rejilla { grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 768px) { body.jm .jm-partners__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Con una tercera distribución (Riversa, 04/11/2026): tres columnas en
+   escritorio; en tableta la tercera ocupa la fila entera. */
+@media (min-width: 768px) and (max-width: 1023.98px) { body.jm .jm-partners__tarjeta:nth-child(3):last-child { grid-column: span 2; } }
+@media (min-width: 1024px) { body.jm .jm-partners__rejilla:has(> :nth-child(3)) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 body.jm .jm-partners__tarjeta { display: flex; flex-direction: column; gap: 0; background: var(--jm-surface); padding: 1.5rem; }
 @media (min-width: 768px) { body.jm .jm-partners__tarjeta { padding: 2rem; } }
 
@@ -498,6 +502,7 @@ body.jm .jm-partners__insignia::before {
 /* Logotipo: h-8 w-auto self-start (si se estira, se deforma) */
 body.jm .jm-partners__logo { margin-top: 1.25rem; align-self: flex-start; line-height: 0; }
 body.jm .jm-partners__logo img { height: 2rem; width: auto; max-width: none; }
+body.jm .jm-partners__logo--alto img { height: 2.75rem; }
 body.jm .jm-partners__marca {
   margin-top: 1.25rem; display: flex; height: 2.25rem; align-items: center;
   font-family: var(--jm-font-display); font-size: 1.75rem; line-height: 1; font-weight: 500;

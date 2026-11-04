@@ -97,7 +97,7 @@ export default function PaginaFormacion() {
         {/* Los sellos de la formación, con su logotipo. Los de AENOR
             abren el certificado. */}
         <div className="container-placa flex flex-col gap-3 border-t border-rule py-5 md:flex-row md:items-center md:gap-6">
-          <p className="label-sm shrink-0 text-ink-3">Certificados y homologaciones</p>
+          <p className="label-sm shrink-0 text-ink-3">Certificados y formaciones</p>
           <Sellos solo={["aenor-une-58923", "aenor-une-58451", "ipaf-centro-formacion"]} alto={52} />
         </div>
       </section>

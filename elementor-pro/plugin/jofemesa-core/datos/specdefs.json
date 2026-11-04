@@ -56,8 +56,15 @@
   "mejor": null
  },
  {
+  "key": "caudalAireHora",
+  "etiqueta": "Caudal de aire máximo",
+  "grupo": "capacidades",
+  "grupoNombre": "Capacidades",
+  "mejor": null
+ },
+ {
   "key": "presionAire",
-  "etiqueta": "Presión de trabajo",
+  "etiqueta": "Presión de trabajo máxima",
   "grupo": "capacidades",
   "grupoNombre": "Capacidades",
   "mejor": null

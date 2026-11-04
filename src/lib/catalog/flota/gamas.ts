@@ -1,6 +1,6 @@
 import type { Maquina } from "../types";
 import { conf, est, pend } from "../types";
-import { construir, type Fila, type PerfilSubcategoria } from "./comun";
+import { construir, num, type Fila, type PerfilSubcategoria } from "./comun";
 
 /**
  * MANUTENCIÓN DE CARGAS, ENERGÍA, AIRE Y HERRAMIENTA — 12 gamas, los siete
@@ -627,10 +627,17 @@ const torres: Fila[] = [
  *    sabemos, así que va pendiente.
  *  - C-38: ficha de CompAir.
  */
+/* El cliente pide (04/11/2026) solo las tres cifras de «Rendimiento»: caudal
+   en L/min, caudal máximo en m³/h y presión máxima. El resto está en la
+   ficha. Las dos unidades de caudal salen del m³/min de la ficha (×1.000 y
+   ×60). */
+const lMin = (m3min: number) => `${num(m3min * 1000)} L/min`;
+const m3h = (m3min: number) => `${num(m3min * 60)} m³/h`;
+
 function compresor(
   marca: string,
   modelo: string,
-  d: { caudal: string; presion?: string; motor: string; peso?: number },
+  d: { caudal: number; presion?: number },
   descripcion: string,
   destacada = false,
 ): Fila {
@@ -640,27 +647,26 @@ function compresor(
     destacada,
     descripcion,
     extra: {
-      caudalAire: conf(d.caudal, "ficha-pdf"),
+      caudalAire: conf(lMin(d.caudal), "ficha-pdf"),
+      caudalAireHora: conf(m3h(d.caudal), "ficha-pdf"),
       presionAire: d.presion
-        ? conf(d.presion, "ficha-pdf")
-        : pend("La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."),
-      motor: conf(d.motor, "ficha-pdf"),
-      ...(d.peso ? { peso: conf(d.peso, "ficha-pdf") } : {}),
+        ? conf(`${num(d.presion)} bar`, "ficha-pdf")
+        : pend("La presión máxima depende de la versión del equipo (10,3 o 14 bar). Te la confirmamos al consultar disponibilidad."),
     },
   };
 }
 
 const compresores: Fila[] = [
-  compresor("Atlas Copco", "XAS 48", { caudal: "2,5 m³/min", presion: "7 bar", motor: "Diésel Kubota D902, 18,5 kW", peso: 500 },
-    "Compresor remolcable de 2,5 m³/min a 7 bar y 500 kg: se engancha a un vehículo ligero y alimenta un martillo picador o herramienta neumática."),
-  compresor("Atlas Copco", "XAS 58", { caudal: "3,0 m³/min", presion: "7 bar", motor: "Diésel Kubota V1505, 26,5 kW" },
-    "Compresor remolcable de 3 m³/min a 7 bar y menos de 750 kg en orden de marcha. Para martillo y herramienta neumática en obra."),
-  compresor("Atlas Copco", "XAS 68", { caudal: "3,5 m³/min", presion: "7 bar", motor: "Diésel Kubota V1505, 26,5 kW" },
-    "Compresor remolcable de 3,5 m³/min a 7 bar y menos de 750 kg. Más caudal para dos herramientas a la vez o un rompedor pesado.", true),
-  compresor("CompAir", "C-38", { caudal: "3,8 m³/min", presion: "7 bar", motor: "Diésel Cummins A2300, 35,5 kW", peso: 748 },
-    "Compresor portátil de 3,8 m³/min a 7 bar con motor Cummins de cuatro cilindros. Regula el caudal según la demanda de aire para gastar menos combustible."),
-  compresor("Atlas Copco", "XAS 188", { caudal: "10,9 m³/min", motor: "Diésel, Fase V" },
-    "Compresor diésel de 10,9 m³/min, el de más caudal de la flota: perforación, gunitado y chorreado, o una batería de herramientas neumáticas en la misma obra."),
+  compresor("Atlas Copco", "XAS 48", { caudal: 2.5, presion: 7 },
+    "Compresor remolcable de 2.500 L/min a 7 bar y 500 kg: se engancha a un vehículo ligero y alimenta un martillo picador o herramienta neumática."),
+  compresor("Atlas Copco", "XAS 58", { caudal: 3, presion: 7 },
+    "Compresor remolcable de 3.000 L/min a 7 bar y menos de 750 kg en orden de marcha. Para martillo y herramienta neumática en obra."),
+  compresor("Atlas Copco", "XAS 68", { caudal: 3.5, presion: 7 },
+    "Compresor remolcable de 3.500 L/min a 7 bar y menos de 750 kg. Más caudal para dos herramientas a la vez o un rompedor pesado.", true),
+  compresor("CompAir", "C-38", { caudal: 3.8, presion: 7 },
+    "Compresor portátil de 3.800 L/min a 7 bar con motor Cummins de cuatro cilindros. Regula el caudal según la demanda de aire para gastar menos combustible."),
+  compresor("Atlas Copco", "XAS 188", { caudal: 10.9 },
+    "Compresor diésel de 10.900 L/min, el de más caudal de la flota: perforación, gunitado y chorreado, o una batería de herramientas neumáticas en la misma obra."),
 ];
 
 /* Martillos y herramienta eléctrica: retirados el 03/11/2026 a petición del

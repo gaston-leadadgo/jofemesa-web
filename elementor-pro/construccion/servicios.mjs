@@ -96,7 +96,7 @@ const cabecera = () => [
           c("jm-placa__botones", [b("jm-btn jm-btn--acento", "Pedir información", "/consultar-disponibilidad/?asunto=servicios", flecha)], { attrs: { "data-revelar": "", style: "--retardo:2" } }),
         ]),
         c("jm-placa__datos", [
-          ["Servicios", "4"], ["Talleres propios", "2"], ["Homologaciones", "3"],
+          ["Servicios", "4"], ["Talleres propios", "9"], ["Formaciones", "12"],
         ].map(([k, v]) => c("jm-placa__dato", [h("p", "jm-placa__dato-k", k), h("p", "jm-placa__dato-v", v)])), { attrs: { "data-escalonar": "" } }),
       ]),
     ]),

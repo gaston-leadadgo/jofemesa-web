@@ -208,6 +208,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -562,6 +568,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -926,6 +938,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -1280,6 +1298,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -1644,6 +1668,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -1998,6 +2028,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -2362,6 +2398,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -2716,6 +2758,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -3080,6 +3128,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -3434,6 +3488,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -3798,6 +3858,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -4152,6 +4218,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -4516,6 +4588,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -4870,6 +4948,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -5234,6 +5318,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -5588,6 +5678,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -5952,6 +6048,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -6306,6 +6408,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -6670,6 +6778,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -7024,6 +7138,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -7388,6 +7508,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -7742,6 +7868,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -8106,6 +8238,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -8460,6 +8598,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -8824,6 +8968,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -9178,6 +9328,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -9542,6 +9698,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -9896,6 +10058,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -10260,6 +10428,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -10614,6 +10788,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -10978,6 +11158,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -11332,6 +11518,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -11696,6 +11888,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -12050,6 +12248,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -12414,6 +12618,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -12768,6 +12978,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -13132,6 +13348,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -13486,6 +13708,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -13849,6 +14077,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -14202,6 +14436,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -14565,6 +14805,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -14918,6 +15164,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -15281,6 +15533,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -15634,6 +15892,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -15997,6 +16261,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -16350,6 +16620,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -16713,6 +16989,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -17066,6 +17348,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -17429,6 +17717,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -17782,6 +18076,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -18145,6 +18445,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -18498,6 +18804,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -18861,6 +19173,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -19214,6 +19532,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -19577,6 +19901,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -19930,6 +20260,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -20293,6 +20629,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -20646,6 +20988,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -21009,6 +21357,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -21362,6 +21716,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -21725,6 +22085,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -22078,6 +22444,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -22441,6 +22813,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -22794,6 +23172,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -23157,6 +23541,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -23510,6 +23900,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -23873,6 +24269,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -24226,6 +24628,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -24589,6 +24997,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -24947,6 +25361,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -25300,6 +25720,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -25664,6 +26090,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -26018,6 +26450,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -26382,6 +26820,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -26736,6 +27180,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -27100,6 +27550,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -27454,6 +27910,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -27817,6 +28279,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -28175,6 +28643,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -28528,6 +29002,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -28901,6 +29381,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -29280,6 +29766,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -29654,6 +30146,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -30013,6 +30511,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -30392,6 +30896,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -30751,6 +31261,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -31125,6 +31641,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -31513,6 +32035,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -31883,6 +32411,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -32262,6 +32796,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -32543,6 +33083,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -32830,6 +33376,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -33112,6 +33664,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -33389,6 +33947,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -33755,6 +34319,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -34097,6 +34667,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -34460,6 +35036,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -34829,6 +35411,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -35188,6 +35776,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -35557,6 +36151,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -35916,6 +36516,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -36285,6 +36891,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -36644,6 +37256,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -37013,6 +37631,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -37377,6 +38001,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -37727,6 +38357,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -38086,6 +38722,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -38435,6 +39077,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -38803,6 +39451,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -39153,6 +39807,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -39512,6 +40172,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -39861,6 +40527,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -40229,6 +40901,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -40567,6 +41245,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -40914,6 +41598,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -41251,6 +41941,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -41598,6 +42294,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -41935,6 +42637,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -42282,6 +42990,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -42619,6 +43333,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -42966,6 +43686,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -43303,6 +44029,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -43650,6 +44382,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -43987,6 +44725,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -44334,6 +45078,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -44671,6 +45421,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -45018,6 +45774,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -45355,6 +46117,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -45702,6 +46470,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -46039,6 +46813,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -46386,6 +47166,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -46723,6 +47509,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -47070,6 +47862,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -47407,6 +48205,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -47754,6 +48558,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -48091,6 +48901,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -48448,6 +49264,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -48795,6 +49617,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -49152,6 +49980,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -49499,6 +50333,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -49856,6 +50696,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -50203,6 +51049,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -50560,6 +51412,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -50912,6 +51770,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -51249,6 +52113,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -51606,6 +52476,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -51953,6 +52829,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -52310,6 +53192,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -52662,6 +53550,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -52998,6 +53892,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -53345,6 +54245,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -53682,6 +54588,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -54029,6 +54941,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -54366,6 +55284,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -54713,6 +55637,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -55050,6 +55980,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -55397,6 +56333,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -55734,6 +56676,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -56081,6 +57029,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -56418,6 +57372,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -56765,6 +57725,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -57102,6 +58068,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -57449,6 +58421,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -57786,6 +58764,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -58133,6 +59117,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -58475,6 +59465,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -58811,6 +59807,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -59158,6 +60160,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -59500,6 +60508,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -59829,6 +60843,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -60176,6 +61196,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -60513,6 +61539,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -60860,6 +61892,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -61197,6 +62235,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -61544,6 +62588,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -61881,6 +62931,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -62228,6 +63284,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -62570,6 +63632,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -62899,6 +63967,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -63246,6 +64320,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -63583,6 +64663,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -63930,6 +65016,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -64267,6 +65359,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -64614,6 +65712,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -64951,6 +66055,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -65298,6 +66408,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -65635,6 +66751,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -65982,6 +67104,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -66319,6 +67447,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -66666,6 +67800,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -67003,6 +68143,12 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "caudalAire": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
+   "caudalAireHora": {
     "estado": "no_aplica",
     "texto": "—",
     "unidad": "",
@@ -67350,6 +68496,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -67644,6 +68796,12 @@
     "unidad": "",
     "nota": "No aplica a este tipo de máquina"
    },
+   "caudalAireHora": {
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
+   },
    "presionAire": {
     "estado": "no_aplica",
     "texto": "—",
@@ -67826,7 +68984,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Compresor remolcable de 2,5 m³/min a 7 bar y 500 kg: se engancha a un vehículo ligero y alimenta un martillo picador o herramienta neumática.",
+  "descripcionCorta": "Compresor remolcable de 2.500 L/min a 7 bar y 500 kg: se engancha a un vehículo ligero y alimenta un martillo picador o herramienta neumática.",
   "aplicaciones": [
    "Alimentación de martillo neumático",
    "Perforación y barrenado",
@@ -67855,7 +69013,16 @@
     "key": "caudalAire",
     "etiqueta": "Caudal",
     "estado": "confirmado",
-    "texto": "2,5 m³/min",
+    "texto": "2.500 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "caudalAireHora",
+    "etiqueta": "Caudal máx.",
+    "estado": "confirmado",
+    "texto": "150 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -67868,15 +69035,6 @@
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
-   },
-   {
-    "key": "peso",
-    "etiqueta": "Peso",
-    "estado": "confirmado",
-    "texto": "500",
-    "unidad": "kg",
-    "valor": 500,
-    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -67888,46 +69046,25 @@
       "key": "caudalAire",
       "etiqueta": "Caudal de aire",
       "estado": "confirmado",
-      "texto": "2,5 m³/min",
+      "texto": "2.500 L/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "caudalAireHora",
+      "etiqueta": "Caudal de aire máximo",
+      "estado": "confirmado",
+      "texto": "150 m³/h",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "presionAire",
-      "etiqueta": "Presión de trabajo",
+      "etiqueta": "Presión de trabajo máxima",
       "estado": "confirmado",
       "texto": "7 bar",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato de la ficha técnica del fabricante"
-     }
-    ]
-   },
-   {
-    "grupo": "dimensiones",
-    "grupoNombre": "Dimensiones",
-    "filas": [
-     {
-      "key": "peso",
-      "etiqueta": "Peso",
-      "estado": "confirmado",
-      "texto": "500",
-      "unidad": "kg",
-      "valor": 500,
-      "nota": "Dato de la ficha técnica del fabricante"
-     }
-    ]
-   },
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "motor",
-      "etiqueta": "Motor",
-      "estado": "confirmado",
-      "texto": "Diésel Kubota D902, 18,5 kW",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
@@ -67980,7 +69117,14 @@
    },
    "caudalAire": {
     "estado": "confirmado",
-    "texto": "2,5 m³/min",
+    "texto": "2.500 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "caudalAireHora": {
+    "estado": "confirmado",
+    "texto": "150 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68029,11 +69173,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "peso": {
-    "estado": "confirmado",
-    "texto": "500",
-    "unidad": "kg",
-    "valor": 500,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
    },
    "pendienteSuperable": {
     "estado": "no_aplica",
@@ -68090,11 +69233,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "confirmado",
-    "texto": "Diésel Kubota D902, 18,5 kW",
+    "estado": "no_aplica",
+    "texto": "—",
     "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "nota": "No aplica a este tipo de máquina"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -68133,7 +69275,7 @@
    "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 48 compresor remolcable de 2,5 m³/min a 7 bar y 500 kg: se engancha a un vehiculo ligero y alimenta un martillo picador o herramienta neumatica. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 48 compresor remolcable de 2.500 l/min a 7 bar y 500 kg: se engancha a un vehiculo ligero y alimenta un martillo picador o herramienta neumatica. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "atlas-copco-xas-58",
@@ -68170,7 +69312,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Compresor remolcable de 3 m³/min a 7 bar y menos de 750 kg en orden de marcha. Para martillo y herramienta neumática en obra.",
+  "descripcionCorta": "Compresor remolcable de 3.000 L/min a 7 bar y menos de 750 kg en orden de marcha. Para martillo y herramienta neumática en obra.",
   "aplicaciones": [
    "Alimentación de martillo neumático",
    "Perforación y barrenado",
@@ -68199,7 +69341,16 @@
     "key": "caudalAire",
     "etiqueta": "Caudal",
     "estado": "confirmado",
-    "texto": "3,0 m³/min",
+    "texto": "3.000 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "caudalAireHora",
+    "etiqueta": "Caudal máx.",
+    "estado": "confirmado",
+    "texto": "180 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68209,15 +69360,6 @@
     "etiqueta": "Presión",
     "estado": "confirmado",
     "texto": "7 bar",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
-   },
-   {
-    "key": "motor",
-    "etiqueta": "Motor",
-    "estado": "confirmado",
-    "texto": "Diésel Kubota V1505, 26,5 kW",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68232,31 +69374,25 @@
       "key": "caudalAire",
       "etiqueta": "Caudal de aire",
       "estado": "confirmado",
-      "texto": "3,0 m³/min",
+      "texto": "3.000 L/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "caudalAireHora",
+      "etiqueta": "Caudal de aire máximo",
+      "estado": "confirmado",
+      "texto": "180 m³/h",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "presionAire",
-      "etiqueta": "Presión de trabajo",
+      "etiqueta": "Presión de trabajo máxima",
       "estado": "confirmado",
       "texto": "7 bar",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato de la ficha técnica del fabricante"
-     }
-    ]
-   },
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "motor",
-      "etiqueta": "Motor",
-      "estado": "confirmado",
-      "texto": "Diésel Kubota V1505, 26,5 kW",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
@@ -68309,7 +69445,14 @@
    },
    "caudalAire": {
     "estado": "confirmado",
-    "texto": "3,0 m³/min",
+    "texto": "3.000 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "caudalAireHora": {
+    "estado": "confirmado",
+    "texto": "180 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68418,11 +69561,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "confirmado",
-    "texto": "Diésel Kubota V1505, 26,5 kW",
+    "estado": "no_aplica",
+    "texto": "—",
     "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "nota": "No aplica a este tipo de máquina"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -68461,7 +69603,7 @@
    "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 58 compresor remolcable de 3 m³/min a 7 bar y menos de 750 kg en orden de marcha. para martillo y herramienta neumatica en obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 58 compresor remolcable de 3.000 l/min a 7 bar y menos de 750 kg en orden de marcha. para martillo y herramienta neumatica en obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "atlas-copco-xas-68",
@@ -68498,7 +69640,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Compresor remolcable de 3,5 m³/min a 7 bar y menos de 750 kg. Más caudal para dos herramientas a la vez o un rompedor pesado.",
+  "descripcionCorta": "Compresor remolcable de 3.500 L/min a 7 bar y menos de 750 kg. Más caudal para dos herramientas a la vez o un rompedor pesado.",
   "aplicaciones": [
    "Alimentación de martillo neumático",
    "Perforación y barrenado",
@@ -68527,7 +69669,16 @@
     "key": "caudalAire",
     "etiqueta": "Caudal",
     "estado": "confirmado",
-    "texto": "3,5 m³/min",
+    "texto": "3.500 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "caudalAireHora",
+    "etiqueta": "Caudal máx.",
+    "estado": "confirmado",
+    "texto": "210 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68537,15 +69688,6 @@
     "etiqueta": "Presión",
     "estado": "confirmado",
     "texto": "7 bar",
-    "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
-   },
-   {
-    "key": "motor",
-    "etiqueta": "Motor",
-    "estado": "confirmado",
-    "texto": "Diésel Kubota V1505, 26,5 kW",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68560,31 +69702,25 @@
       "key": "caudalAire",
       "etiqueta": "Caudal de aire",
       "estado": "confirmado",
-      "texto": "3,5 m³/min",
+      "texto": "3.500 L/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "caudalAireHora",
+      "etiqueta": "Caudal de aire máximo",
+      "estado": "confirmado",
+      "texto": "210 m³/h",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "presionAire",
-      "etiqueta": "Presión de trabajo",
+      "etiqueta": "Presión de trabajo máxima",
       "estado": "confirmado",
       "texto": "7 bar",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato de la ficha técnica del fabricante"
-     }
-    ]
-   },
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "motor",
-      "etiqueta": "Motor",
-      "estado": "confirmado",
-      "texto": "Diésel Kubota V1505, 26,5 kW",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
@@ -68637,7 +69773,14 @@
    },
    "caudalAire": {
     "estado": "confirmado",
-    "texto": "3,5 m³/min",
+    "texto": "3.500 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "caudalAireHora": {
+    "estado": "confirmado",
+    "texto": "210 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68746,11 +69889,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "confirmado",
-    "texto": "Diésel Kubota V1505, 26,5 kW",
+    "estado": "no_aplica",
+    "texto": "—",
     "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "nota": "No aplica a este tipo de máquina"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -68789,7 +69931,7 @@
    "compair-c-38"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 68 compresor remolcable de 3,5 m³/min a 7 bar y menos de 750 kg. mas caudal para dos herramientas a la vez o un rompedor pesado. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 68 compresor remolcable de 3.500 l/min a 7 bar y menos de 750 kg. mas caudal para dos herramientas a la vez o un rompedor pesado. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "compair-c-38",
@@ -68826,7 +69968,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Compresor portátil de 3,8 m³/min a 7 bar con motor Cummins de cuatro cilindros. Regula el caudal según la demanda de aire para gastar menos combustible.",
+  "descripcionCorta": "Compresor portátil de 3.800 L/min a 7 bar con motor Cummins de cuatro cilindros. Regula el caudal según la demanda de aire para gastar menos combustible.",
   "aplicaciones": [
    "Alimentación de martillo neumático",
    "Perforación y barrenado",
@@ -68855,7 +69997,16 @@
     "key": "caudalAire",
     "etiqueta": "Caudal",
     "estado": "confirmado",
-    "texto": "3,8 m³/min",
+    "texto": "3.800 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   {
+    "key": "caudalAireHora",
+    "etiqueta": "Caudal máx.",
+    "estado": "confirmado",
+    "texto": "228 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -68868,15 +70019,6 @@
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
-   },
-   {
-    "key": "peso",
-    "etiqueta": "Peso",
-    "estado": "confirmado",
-    "texto": "748",
-    "unidad": "kg",
-    "valor": 748,
-    "nota": "Dato de la ficha técnica del fabricante"
    }
   ],
   "specs": [
@@ -68888,46 +70030,25 @@
       "key": "caudalAire",
       "etiqueta": "Caudal de aire",
       "estado": "confirmado",
-      "texto": "3,8 m³/min",
+      "texto": "3.800 L/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "caudalAireHora",
+      "etiqueta": "Caudal de aire máximo",
+      "estado": "confirmado",
+      "texto": "228 m³/h",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "presionAire",
-      "etiqueta": "Presión de trabajo",
+      "etiqueta": "Presión de trabajo máxima",
       "estado": "confirmado",
       "texto": "7 bar",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato de la ficha técnica del fabricante"
-     }
-    ]
-   },
-   {
-    "grupo": "dimensiones",
-    "grupoNombre": "Dimensiones",
-    "filas": [
-     {
-      "key": "peso",
-      "etiqueta": "Peso",
-      "estado": "confirmado",
-      "texto": "748",
-      "unidad": "kg",
-      "valor": 748,
-      "nota": "Dato de la ficha técnica del fabricante"
-     }
-    ]
-   },
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "motor",
-      "etiqueta": "Motor",
-      "estado": "confirmado",
-      "texto": "Diésel Cummins A2300, 35,5 kW",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
@@ -68980,7 +70101,14 @@
    },
    "caudalAire": {
     "estado": "confirmado",
-    "texto": "3,8 m³/min",
+    "texto": "3.800 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "caudalAireHora": {
+    "estado": "confirmado",
+    "texto": "228 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -69029,11 +70157,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "peso": {
-    "estado": "confirmado",
-    "texto": "748",
-    "unidad": "kg",
-    "valor": 748,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "estado": "no_aplica",
+    "texto": "—",
+    "unidad": "",
+    "nota": "No aplica a este tipo de máquina"
    },
    "pendienteSuperable": {
     "estado": "no_aplica",
@@ -69090,11 +70217,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "confirmado",
-    "texto": "Diésel Cummins A2300, 35,5 kW",
+    "estado": "no_aplica",
+    "texto": "—",
     "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "nota": "No aplica a este tipo de máquina"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -69133,7 +70259,7 @@
    "atlas-copco-xas-68"
   ],
   "enAlquiler": true,
-  "busqueda": "compair c-38 compresor portatil de 3,8 m³/min a 7 bar con motor cummins de cuatro cilindros. regula el caudal segun la demanda de aire para gastar menos combustible. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "compair c-38 compresor portatil de 3.800 l/min a 7 bar con motor cummins de cuatro cilindros. regula el caudal segun la demanda de aire para gastar menos combustible. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  },
  {
   "slug": "atlas-copco-xas-188",
@@ -69170,7 +70296,7 @@
    "oporto",
    "lisboa"
   ],
-  "descripcionCorta": "Compresor diésel de 10,9 m³/min, el de más caudal de la flota: perforación, gunitado y chorreado, o una batería de herramientas neumáticas en la misma obra.",
+  "descripcionCorta": "Compresor diésel de 10.900 L/min, el de más caudal de la flota: perforación, gunitado y chorreado, o una batería de herramientas neumáticas en la misma obra.",
   "aplicaciones": [
    "Alimentación de martillo neumático",
    "Perforación y barrenado",
@@ -69199,16 +70325,16 @@
     "key": "caudalAire",
     "etiqueta": "Caudal",
     "estado": "confirmado",
-    "texto": "10,9 m³/min",
+    "texto": "10.900 L/min",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
    },
    {
-    "key": "motor",
-    "etiqueta": "Motor",
+    "key": "caudalAireHora",
+    "etiqueta": "Caudal máx.",
     "estado": "confirmado",
-    "texto": "Diésel, Fase V",
+    "texto": "654 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -69219,7 +70345,7 @@
     "estado": "pendiente",
     "texto": "Pendiente",
     "unidad": "",
-    "nota": "La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."
+    "nota": "La presión máxima depende de la versión del equipo (10,3 o 14 bar). Te la confirmamos al consultar disponibilidad."
    }
   ],
   "specs": [
@@ -69231,33 +70357,27 @@
       "key": "caudalAire",
       "etiqueta": "Caudal de aire",
       "estado": "confirmado",
-      "texto": "10,9 m³/min",
+      "texto": "10.900 L/min",
+      "unidad": "",
+      "valor": null,
+      "nota": "Dato de la ficha técnica del fabricante"
+     },
+     {
+      "key": "caudalAireHora",
+      "etiqueta": "Caudal de aire máximo",
+      "estado": "confirmado",
+      "texto": "654 m³/h",
       "unidad": "",
       "valor": null,
       "nota": "Dato de la ficha técnica del fabricante"
      },
      {
       "key": "presionAire",
-      "etiqueta": "Presión de trabajo",
+      "etiqueta": "Presión de trabajo máxima",
       "estado": "pendiente",
       "texto": "Pendiente",
       "unidad": "",
-      "nota": "La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."
-     }
-    ]
-   },
-   {
-    "grupo": "motorizacion",
-    "grupoNombre": "Motorización",
-    "filas": [
-     {
-      "key": "motor",
-      "etiqueta": "Motor",
-      "estado": "confirmado",
-      "texto": "Diésel, Fase V",
-      "unidad": "",
-      "valor": null,
-      "nota": "Dato de la ficha técnica del fabricante"
+      "nota": "La presión máxima depende de la versión del equipo (10,3 o 14 bar). Te la confirmamos al consultar disponibilidad."
      }
     ]
    }
@@ -69307,7 +70427,14 @@
    },
    "caudalAire": {
     "estado": "confirmado",
-    "texto": "10,9 m³/min",
+    "texto": "10.900 L/min",
+    "unidad": "",
+    "valor": null,
+    "nota": "Dato de la ficha técnica del fabricante"
+   },
+   "caudalAireHora": {
+    "estado": "confirmado",
+    "texto": "654 m³/h",
     "unidad": "",
     "valor": null,
     "nota": "Dato de la ficha técnica del fabricante"
@@ -69316,7 +70443,7 @@
     "estado": "pendiente",
     "texto": "Pendiente",
     "unidad": "",
-    "nota": "La presión depende de la versión del equipo (10 o 14 bar). Te la confirmamos al consultar disponibilidad."
+    "nota": "La presión máxima depende de la versión del equipo (10,3 o 14 bar). Te la confirmamos al consultar disponibilidad."
    },
    "anchoTrabajo": {
     "estado": "no_aplica",
@@ -69415,11 +70542,10 @@
     "nota": "No aplica a este tipo de máquina"
    },
    "motor": {
-    "estado": "confirmado",
-    "texto": "Diésel, Fase V",
+    "estado": "no_aplica",
+    "texto": "—",
     "unidad": "",
-    "valor": null,
-    "nota": "Dato de la ficha técnica del fabricante"
+    "nota": "No aplica a este tipo de máquina"
    },
    "potenciaPrpEsp": {
     "estado": "no_aplica",
@@ -69458,6 +70584,6 @@
    "atlas-copco-xas-68"
   ],
   "enAlquiler": true,
-  "busqueda": "atlas copco xas 188 compresor diesel de 10,9 m³/min, el de mas caudal de la flota: perforacion, gunitado y chorreado, o una bateria de herramientas neumaticas en la misma obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
+  "busqueda": "atlas copco xas 188 compresor diesel de 10.900 l/min, el de mas caudal de la flota: perforacion, gunitado y chorreado, o una bateria de herramientas neumaticas en la misma obra. compresores de aire remolcables aire comprimido y martillos alimentacion de martillo neumatico perforacion y barrenado chorreo y limpieza a presion soplado de conducciones"
  }
 ]

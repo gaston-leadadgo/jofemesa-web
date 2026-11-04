@@ -101,6 +101,7 @@ export type SpecKey =
   | "profundidadExcavacion"
   | "capacidadCazo"
   | "caudalAire"
+  | "caudalAireHora"
   | "presionAire"
   | "anchoTrabajo"
   | "fuerzaCentrifuga"
@@ -222,6 +223,8 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     destacadaEn: ["energia", "aire-martillos"],
   },
   {
+    /* Compresores: las tres cifras de «Rendimiento» que pidió el cliente
+       (04/11/2026), en litros por minuto y en m³ por hora. */
     key: "caudalAire",
     etiqueta: "Caudal de aire",
     etiquetaCorta: "Caudal",
@@ -232,13 +235,24 @@ export const SPEC_DEFS: readonly SpecDef[] = [
     destacadaEn: ["aire-martillos"],
   },
   {
+    key: "caudalAireHora",
+    etiqueta: "Caudal de aire máximo",
+    etiquetaCorta: "Caudal máx.",
+    unidad: "",
+    grupo: "capacidades",
+    orden: 85,
+    mejor: null,
+    destacadaEn: ["aire-martillos"],
+  },
+  {
     key: "presionAire",
-    etiqueta: "Presión de trabajo",
+    etiqueta: "Presión de trabajo máxima",
     etiquetaCorta: "Presión",
     unidad: "",
     grupo: "capacidades",
     orden: 90,
     mejor: null,
+    destacadaEn: ["aire-martillos"],
   },
   {
     key: "anchoTrabajo",
