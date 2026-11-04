@@ -173,6 +173,16 @@ body.jm .jm-hero__foto::after {
     background: linear-gradient(to right, rgba(20, 23, 26, 0.96) 0%, rgba(20, 23, 26, 0.78) 56%, rgba(20, 23, 26, 0) 90%);
   }
 }
+/* Alquiler: la foto (atardecer) ya es oscura; velo más ligero, como el de
+   Formación (cliente, 04/11/2026). También está en el CSS de la página. */
+body.jm .jm-hero__foto--alquiler::after {
+  background: linear-gradient(to top, rgba(20, 23, 26, 0.88), rgba(20, 23, 26, 0.62), rgba(20, 23, 26, 0.25));
+}
+@media (min-width: 1024px) {
+  body.jm .jm-hero__foto--alquiler::after {
+    background: linear-gradient(to right, rgba(20, 23, 26, 0.8) 0%, rgba(20, 23, 26, 0.5) 45%, rgba(20, 23, 26, 0) 78%);
+  }
+}
 
 /* Texto: container-placa relative w-full pt-12 pb-10 md:pt-16 md:pb-12 */
 body.jm .jm-hero__texto { position: relative; width: 100%; display: flex; flex-direction: column; gap: 0; padding-top: 3rem; padding-bottom: 2.5rem; }

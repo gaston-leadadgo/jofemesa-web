@@ -24,6 +24,8 @@ export type FotoHero = {
   posicion: string;
   /** La portada de Formación usa la de obra hasta que llegue la suya. */
   provisional?: boolean;
+  /** Clases del velo, si la foto pide uno distinto del de por defecto. */
+  velo?: string;
 };
 
 type Id = "alquiler" | "formacion";
@@ -138,7 +140,11 @@ export function HeroCarrusel({ fotos }: { fotos: Record<Id, FotoHero> }) {
                   foto de obra (11,3:1 titular, 6,1:1 entradilla). */}
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-inverse/96 via-inverse/86 to-inverse/50 lg:bg-gradient-to-r lg:from-inverse/96 lg:via-inverse/78 lg:via-56% lg:to-transparent lg:to-90%"
+                className={cn(
+                  "absolute inset-0",
+                  fotos[id].velo ??
+                    "bg-gradient-to-t from-inverse/96 via-inverse/86 to-inverse/50 lg:bg-gradient-to-r lg:from-inverse/96 lg:via-inverse/78 lg:via-56% lg:to-transparent lg:to-90%",
+                )}
               />
               {fotos[id].provisional && (
                 <div aria-hidden="true" className="absolute inset-0 bg-inverse/35" />
