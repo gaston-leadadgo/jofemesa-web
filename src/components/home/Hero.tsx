@@ -27,10 +27,10 @@ export function Hero() {
   const fotos: Record<"alquiler" | "formacion", FotoHero> = {
     alquiler: {
       src: obra,
-      alt: "Sede de JOFEMESA en Valencia, con plataformas elevadoras de brazo y de tijera en la campa",
-      /* Foto original de la sede de Valencia (29/10/2026), sin retocar:
-         el velo del carrusel ya da el contraste del texto. 60%: en móvil la franja visible cae entre
-         la fachada rotulada y las plataformas de brazo. */
+      alt: "Sede de JOFEMESA en Valencia al atardecer, con plataformas elevadoras de brazo y de tijera en la campa",
+      /* «Hero v2» de la agencia (04/11/2026), sobre la foto de la sede de
+         Valencia. 60%: en móvil la franja visible cae entre la fachada
+         rotulada y las plataformas de brazo. */
       posicion: "object-[60%_center]",
     },
     formacion: formacion
