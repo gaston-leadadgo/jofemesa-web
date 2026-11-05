@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
         destination: "/alquiler/manutencion",
         permanent: true,
       },
+      /* La familia de compresores cambió de slug el 05/11/2026. */
+      {
+        source: "/alquiler/aire-martillos/:resto*",
+        destination: "/alquiler/aire-comprimido/:resto*",
+        permanent: true,
+      },
       {
         source: "/creditos-imagen",
         destination: "/aviso-legal",

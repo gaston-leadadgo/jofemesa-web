@@ -57,7 +57,7 @@ propios: si cambias uno, cambia el otro.
 | 2.2 | Manutención de cargas | Familias · subelemento | `/alquiler/manutencion/` | — |
 | 2.3 | Excavación y movimiento de tierras | Familias · subelemento | `/alquiler/movimiento-tierras/` | — |
 | 2.4 | Energía e iluminación | Familias · subelemento | `/alquiler/energia/` | — |
-| 2.5 | Aire comprimido y martillos | Familias · subelemento | `/alquiler/aire-martillos/` | — |
+| 2.5 | Aire comprimido | Familias · subelemento | `/alquiler/aire-comprimido/` | — |
 | 2.6 | Herramienta auxiliar | Familias · subelemento | `/alquiler/herramienta-auxiliar/` | — |
 | 3 | Servicios | Página / enlace | `/servicios/` | — |
 | 4 | Formación | Página / enlace | `/formacion/` | — |

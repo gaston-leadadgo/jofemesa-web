@@ -36,7 +36,7 @@ const pie = () => [
             ["Manutención de cargas", "/alquiler/manutencion/"],
             ["Excavación y movimiento de tierras", "/alquiler/movimiento-tierras/"],
             ["Energía e iluminación", "/alquiler/energia/"],
-            ["Aire comprimido", "/alquiler/aire-martillos/"],
+            ["Aire comprimido", "/alquiler/aire-comprimido/"],
             ["Herramienta auxiliar", "/alquiler/herramienta-auxiliar/"],
           ])),
         ], { tag: "nav", attrs: { "aria-label": "Familias de maquinaria" } }),

@@ -39,7 +39,7 @@ Contenedor · div · Ancho completo · Clases: jm-pie                       ← 
 │     │       «Manutención de cargas» → /alquiler/manutencion/
 │     │       «Excavación y movimiento de tierras» → /alquiler/movimiento-tierras/
 │     │       «Energía e iluminación» → /alquiler/energia/
-│     │       «Aire comprimido y martillos» → /alquiler/aire-martillos/
+│     │       «Aire comprimido» → /alquiler/aire-comprimido/
 │     │       «Herramienta auxiliar» → /alquiler/herramienta-auxiliar/
 │     │
 │     ├─ Contenedor · Etiqueta HTML: nav · Clases: jm-pie__col jm-pie__secciones      ← 2/12

@@ -295,11 +295,13 @@ export const FAMILIAS_TODAS: readonly Familia[] = [
     id: "aire-martillos",
     nombre: "Aire comprimido",
     nombreLargo: "Aire comprimido",
-    slug: "aire-martillos",
+    /* Slug cambiado por el cliente en WordPress el 05/11/2026; el id
+       interno sigue siendo «aire-martillos». */
+    slug: "aire-comprimido",
     claim:
       "Cuando el trabajo necesita aire, presión y bastante menos delicadeza",
     descripcion:
-      "Compresores remolcables para alimentar martillos y herramienta neumática, perforación, chorreado y cualquier aplicación que necesite suministro constante de aire comprimido.",
+      "Compresores remolcables para herramienta neumática, perforación, chorreado y cualquier aplicación que necesite suministro constante de aire comprimido.",
     rango: "De 2,5 a 10,9 m³/min",
     necesidad: "Aire comprimido",
     necesidadDesc:

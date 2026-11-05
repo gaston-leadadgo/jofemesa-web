@@ -126,7 +126,7 @@ const FAMILIAS = [
   ["manutencion", "maquina-manipulador", "Mover y elevar cargas", "Carretillas y manipuladores para transportar, elevar y posicionar cargas con mayor eficacia.", "Hasta 7.000 kg y 21 m"],
   ["movimiento-tierras", "maquina-excavadora", "Excavar, mover tierra y compactar", "Equipos para excavar, cargar, desplazar, preparar el terreno y compactarlo.", "De 1,2 a 19 toneladas"],
   ["energia", "maquina-grupo", "Energía e iluminación", "Grupos electrógenos y torres de luz para llevar suministro allí donde la red no llega.", "De 5 a 300 kVA"],
-  ["aire-martillos", "maquina-compresor", "Aire comprimido", "Compresores remolcables de 2,5 a 10,9 m³/min para cuando el trabajo pide aire.", "De 2,5 a 10,9 m³/min"],
+  ["aire-comprimido", "maquina-compresor", "Aire comprimido", "Compresores remolcables de 2,5 a 10,9 m³/min para cuando el trabajo pide aire.", "De 2,5 a 10,9 m³/min"],
   // Herramienta auxiliar: sin máquinas desde el 03/11/2026. En la página, su casilla es la del asesor.
   // ["herramienta-auxiliar", "maquina-herramienta", "Herramienta de obra", "Corte, perforación, demolición ligera y nivelación para cerrar el trabajo que la máquina grande no hace.", "Demolición, corte y perforación"],
 ];

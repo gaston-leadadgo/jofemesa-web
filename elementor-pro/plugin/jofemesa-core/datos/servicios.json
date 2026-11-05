@@ -12,7 +12,11 @@
   ],
   "cta": {
    "texto": "Pedir presupuesto de venta",
-   "href": "/consultar-disponibilidad?asunto=venta"
+   "href": "mailto:jose@jofemesa.com?subject=Presupuesto%20de%20venta"
+  },
+  "telefono": {
+   "visible": "678 91 38 35",
+   "tel": "+34678913835"
   },
   "icono": "carretilla",
   "credencial": {
