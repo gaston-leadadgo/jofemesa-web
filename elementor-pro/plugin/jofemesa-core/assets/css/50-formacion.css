@@ -641,3 +641,25 @@ body.jm .jm-gracias__botones,
 body.jm .e-con.jm-gracias__botones { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
 @media (min-width: 768px) { body.jm .jm-gracias__botones, body.jm .e-con.jm-gracias__botones { flex-direction: row; } }
 body.jm .jm-gracias__volver .elementor-button { min-height: 3.5rem; padding: 0 1.5rem; }
+
+/* ==========================================================================
+   Calendario: «Ver más fechas» (cliente, 05/11/2026)
+   Se enseñan 12 fechas y el botón abre 12 más cada vez (50-formacion.js).
+   Mientras el JS arranca, solo se pintan las 16 primeras filas para que la
+   página no salte; sin JS (data-motor se quita a los 3 s) se ven todas.
+   ========================================================================== */
+html[data-motor] body.jm .jm-cal-lista:not(.jm-cal--listo) .e-loop-item:nth-child(n+17) { display: none; }
+
+body.jm .jm-cal__mas,
+body.jm .jm-cal__mas:focus {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  width: 100%; max-width: 22rem; height: 3.25rem; margin: 1.5rem auto 0; padding: 0 1.5rem;
+  border: 1px solid var(--jm-rule-control, var(--jm-rule)); border-radius: var(--jm-radius-full);
+  background: var(--jm-surface); color: var(--jm-ink); box-shadow: none;
+  font-family: var(--jm-font-sans); font-size: 1rem; font-weight: 600; cursor: pointer;
+  transition: background-color 200ms var(--jm-ease-ui), border-color 200ms var(--jm-ease-ui);
+}
+body.jm .jm-cal__mas:hover,
+body.jm .jm-cal__mas:active { background: var(--jm-sunken); border-color: var(--jm-ink-3); color: var(--jm-ink); }
+body.jm .jm-cal__mas:focus-visible { outline: 2px solid var(--jm-accent); outline-offset: 3px; }
+body.jm .jm-cal__mas[hidden] { display: none; }

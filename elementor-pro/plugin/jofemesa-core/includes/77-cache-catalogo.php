@@ -75,7 +75,9 @@ function jm_cache_aplica(): bool
 function jm_cache_archivo(): string
 {
     $ruta = strtok((string) ($_SERVER['REQUEST_URI'] ?? '/'), '?');
-    return jm_cache_dir() . md5(JM_VERSION . '|' . $ruta) . '.html';
+    /* Misma clave que drop-in/advanced-cache.php. Al actualizar el plugin la
+       carpeta se vacía (upgrader_process_complete), así que no lleva versión. */
+    return jm_cache_dir() . md5('jm|' . $ruta) . '.html';
 }
 
 /** Válido si es de hoy (hora de Madrid) y tiene menos de 24 h. */

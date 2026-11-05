@@ -66,6 +66,34 @@
     var vacio = raiz.querySelector(".jm-cal__vacio");
     var estado = { curso: null, sede: null, mes: null };
 
+    /* Se enseñan PASO fechas y un botón «Ver más fechas» va abriendo de
+       PASO en PASO (cliente, 05/11/2026): la página no se hace eterna y
+       quien busca algo concreto usa los filtros. Cambiar un filtro vuelve
+       a empezar por las PASO primeras. */
+    var PASO = 12;
+    var limite = PASO;
+    var ultimaFirma = null;
+    var lista0 = filas.length ? filas[0].el.parentNode : null;
+    var mas = document.createElement("button");
+    mas.type = "button";
+    mas.className = "jm-cal__mas";
+    mas.hidden = true;
+    if (lista0) {
+      var ancla = lista0.closest(".jm-cal-lista") || lista0;
+      ancla.parentNode.insertBefore(mas, ancla.nextSibling);
+      ancla.classList.add("jm-cal--listo");
+    }
+    mas.addEventListener("click", function () {
+      var antes = limite;
+      limite += PASO;
+      pintar();
+      var primera = vigentes.filter(function (f) { return pasa(f, false); })[antes];
+      if (primera) {
+        var foco = primera.el.querySelector("a, button");
+        if (foco) foco.focus({ preventScroll: true });
+      }
+    });
+
     /* Los meses salen de las vigentes, no del servidor. */
     if (selMes) {
       var meses = [];
@@ -83,7 +111,13 @@
     }
 
     function pintar() {
-      var visibles = vigentes.filter(function (f) { return pasa(f, false); });
+      var firma = estado.curso + "|" + estado.sede + "|" + estado.mes;
+      if (firma !== ultimaFirma) { limite = PASO; ultimaFirma = firma; }
+      var todas = vigentes.filter(function (f) { return pasa(f, false); });
+      var visibles = todas.slice(0, limite);
+      var quedan = todas.length - visibles.length;
+      mas.hidden = quedan <= 0;
+      mas.textContent = "Ver más fechas (" + quedan + (quedan === 1 ? " más)" : " más)");
       var hayFiltro = !!(estado.curso || estado.sede || estado.mes);
 
       /* Chips: estado y recuento (el recuento ignora el curso, como el original). */
@@ -102,10 +136,10 @@
       if (quitar) quitar.hidden = !hayFiltro;
 
       if (cuenta) {
-        cuenta.textContent = (visibles.length === 1 ? "1 convocatoria" : visibles.length + " convocatorias") +
+        cuenta.textContent = (todas.length === 1 ? "1 convocatoria" : visibles.length + " convocatorias") +
           (hayFiltro ? " con estos filtros" : " abiertas");
       }
-      if (vacio) vacio.hidden = visibles.length > 0;
+      if (vacio) vacio.hidden = todas.length > 0;
 
       /* Filas y cabeceras de mes. */
       var lista = filas.length ? filas[0].el.parentNode : null;
