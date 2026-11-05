@@ -60,7 +60,7 @@ export default function PaginaFormacion() {
     <>
       <CabeceraSeccion
         kicker="Departamento de Formación"
-        titulo="Formación de operadores, con la máquina delante."
+        titulo="Formación de operadores, con las mejores máquinas del sector."
         lede="Cursos certificados de plataformas elevadoras, carretillas, trabajos en altura, andamios y espacios confinados, con convocatorias cada semana en Madrid y en Valencia."
         foto={foto}
         cta={{ href: "#calendario", texto: "Ver convocatorias" }}

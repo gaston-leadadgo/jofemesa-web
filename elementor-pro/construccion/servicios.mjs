@@ -13,18 +13,13 @@ const SRV = [
     titulo: "También vendemos la máquina, no solo la alquilamos",
     lede: "Carretillas elevadoras contrapesadas y de almacén, nuevas y reacondicionadas. Y recambios originales para maquinaria de cualquier marca, no solo de la que vendemos.",
     puntos: ["Carretillas contrapesadas y de almacén, nuevas y reacondicionadas", "Recambios para maquinaria nueva y reacondicionada de cualquier marca", "Asesoramiento sobre compra o alquiler según el uso real que le vayas a dar"],
-    cta: ["Pedir presupuesto de venta", "/consultar-disponibilidad/?asunto=venta"],
+    /* Venta va directa al comercial (cliente, 05/11/2026). */
+    cta: ["Pedir presupuesto de venta", "mailto:jose@jofemesa.com?subject=Presupuesto%20de%20venta"],
+    tel: ["678 91 38 35", "tel:+34678913835"],
     paneles: () => [
       c("jm-srv__panel", [
         img("jungheinrich", "jm-srv__logo", { alt: "Partner oficial de Jungheinrich" }),
         t("jm-srv__panel-texto jm-hereda", "Somos partner oficial de Jungheinrich y distribuimos todo su catálogo: contrapesadas eléctricas y diésel, mástil retráctil, trilaterales EKX y EFX, preparadoras de pedidos, transpaletas, apiladores y tractores de arrastre. También su gama reacondicionada JUNGSTARS."),
-      ], { attrs: { "data-revelar": "escala" } }),
-      c("jm-srv__panel", [
-        h("p", "jm-label jm-srv__panel-label", "Distribuidor oficial"),
-        h("p", "jm-title jm-srv__panel-titulo", "Distribuidor oficial Takeuchi"),
-        h("p", "jm-srv__panel-dir", "Polígono Industrial Las Fronteras, C/ Mar Mediterráneo, 1, 28830 San Fernando de Henares, Madrid"),
-        lista("jm-enlace-tel jm-srv__panel-tel", [tel("680 800 215", "+34680800215")]),
-        h("p", "jm-enlace-correo jm-srv__panel-correo", "ventastakeuchi@jofemesa.com", { enlace: "mailto:ventastakeuchi@jofemesa.com" }),
       ], { attrs: { "data-revelar": "escala" } }),
     ],
   },
@@ -127,7 +122,7 @@ const bloques = () => SRV.map((s, i) =>
           ...(s.aviso ? [t("jm-aviso-pendiente jm-srv__aviso jm-hereda", s.aviso)] : []),
           c("jm-srv__ctas", [
             b("jm-btn jm-btn--acento jm-btn--h14", s.cta[0], s.cta[1], flecha),
-            b("jm-btn jm-btn--contorno jm-btn--h14 jm-btn--mono jm-srv__tel", "91 361 31 31", "tel:+34913613131", { fa: fa("phone"), pos: "antes" }),
+            b("jm-btn jm-btn--contorno jm-btn--h14 jm-btn--mono jm-srv__tel", (s.tel ?? ["91 361 31 31"])[0], (s.tel ?? [, "tel:+34913613131"])[1], { fa: fa("phone"), pos: "antes" }),
           ]),
         ], { attrs: { "data-revelar": "" } }),
         c("jm-srv__lado", s.paneles()),

@@ -5,7 +5,6 @@ import { ArrowRight, Check, Phone } from "lucide-react";
 import { SERVICIOS, FORMACION_PENDIENTE } from "@/content/es/servicios";
 import {
   TELEFONO_PRINCIPAL,
-  CENTROS,
   SEDE_FORMACION,
   HOMOLOGACIONES,
   DELEGACIONES,
@@ -182,11 +181,11 @@ export default function PaginaServicios() {
                     />
                   </Link>
                   <a
-                    href={`tel:${TELEFONO_PRINCIPAL.tel}`}
+                    href={`tel:${(s.telefono ?? TELEFONO_PRINCIPAL).tel}`}
                     className="inline-flex h-14 items-center justify-center gap-2 border border-rule-control px-6 text-base font-semibold text-ink transition-colors duration-200 hover:bg-surface pastilla"
                   >
                     <Phone size={17} strokeWidth={1.75} aria-hidden="true" />
-                    <span className="value">{TELEFONO_PRINCIPAL.visible}</span>
+                    <span className="value">{(s.telefono ?? TELEFONO_PRINCIPAL).visible}</span>
                   </a>
                 </div>
               </div>
@@ -230,38 +229,8 @@ export default function PaginaServicios() {
                   </div>
                 )}
 
-                {/* La segunda credencial de venta: son distribuidor
-                    oficial de Takeuchi, con dirección y teléfono
-                    propios en el catálogo general. */}
-                {s.id === "venta" && (
-                  <div
-                    className="border border-rule bg-surface p-6"
-                    data-revelar="escala"
-                  >
-                    <p className="label text-ink-3">Distribuidor oficial</p>
-                    {CENTROS.filter((c) => c.id === "takeuchi").map((c) => (
-                      <div key={c.id} className="mt-4">
-                        <p className="title text-ink">{c.nombre}</p>
-                        <p className="mt-2 text-base text-ink-2">
-                          {c.direccion}, {c.cp} {c.localidad}
-                        </p>
-                        <a
-                          href={`tel:${c.tel}`}
-                          className="value mt-4 inline-flex min-h-11 items-center gap-2 text-ink transition-colors duration-200 hover:text-accent"
-                        >
-                          <Phone size={16} strokeWidth={1.75} aria-hidden="true" />
-                          {c.telefono}
-                        </a>
-                        <a
-                          href={`mailto:${c.email}`}
-                          className="mt-1 block text-base text-ink-2 underline decoration-rule-strong underline-offset-4 transition-colors duration-200 hover:text-ink"
-                        >
-                          {c.email}
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                {/* El panel de Takeuchi se quitó de venta el 05/11/2026
+                    (cliente): este bloque queda solo para Jungheinrich. */}
 
                 {s.id === "formacion" && (
                   <div

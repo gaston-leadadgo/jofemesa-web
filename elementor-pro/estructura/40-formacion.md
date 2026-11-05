@@ -33,7 +33,7 @@ Contenedor · section · Clases: jm-placa
          ├─ Título · p · Clases: jm-label jm-placa__kicker
          │    «Departamento de Formación»
          ├─ Título · h1 · Clases: jm-titular-placa jm-placa__titulo · Atributos: data-revelar|
-         │    «Formación de operadores, con la máquina delante.»
+         │    «Formación de operadores, con las mejores máquinas del sector.»
          ├─ Editor de texto · Clases: jm-placa__lede jm-hereda · Atributos: data-revelar| y style|--retardo:1
          │    «Cursos certificados de plataformas elevadoras, carretillas, trabajos en altura, andamios y
          │     espacios confinados, con convocatorias cada semana en Madrid y en Valencia.»

@@ -85,7 +85,7 @@ const pagina = () => [
       c("jm-placa__rejilla", [
         c("jm-placa__texto", [
           h("p", "jm-label jm-placa__kicker", "Departamento de Formación"),
-          h("h1", "jm-titular-placa jm-placa__titulo", "Formación de operadores, con la máquina delante.", { attrs: { "data-revelar": "" } }),
+          h("h1", "jm-titular-placa jm-placa__titulo", "Formación de operadores, con las mejores máquinas del sector.", { attrs: { "data-revelar": "" } }),
           t("jm-placa__lede jm-hereda", "Cursos certificados de plataformas elevadoras, carretillas, trabajos en altura, andamios y espacios confinados, con convocatorias cada semana en Madrid y en Valencia.", { attrs: { "data-revelar": "", style: "--retardo:1" } }),
           c("jm-placa__botones", [
             b("jm-btn jm-btn--acento", "Ver convocatorias", "#calendario", flechaFa),

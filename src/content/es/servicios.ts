@@ -30,6 +30,8 @@ export interface BloqueServicio {
   entradilla: string;
   puntos: string[];
   cta: { texto: string; href: string };
+  /** Teléfono propio del bloque; si falta, el general. */
+  telefono?: { visible: string; tel: string };
   icono: IconoId;
   /** Credencial que se enseña dentro del bloque, si la hay. */
   credencial?: {
@@ -55,7 +57,10 @@ export const SERVICIOS: readonly BloqueServicio[] = [
       "Recambios para maquinaria nueva y reacondicionada de cualquier marca",
       "Asesoramiento sobre compra o alquiler según el uso real que le vayas a dar",
     ],
-    cta: { texto: "Pedir presupuesto de venta", href: "/consultar-disponibilidad?asunto=venta" },
+    /* Venta va directa al comercial: correo y móvil de José (cliente,
+       05/11/2026). */
+    cta: { texto: "Pedir presupuesto de venta", href: "mailto:jose@jofemesa.com?subject=Presupuesto%20de%20venta" },
+    telefono: { visible: "678 91 38 35", tel: "+34678913835" },
     icono: "carretilla",
     credencial: {
       logo: "/marca/jungheinrich.svg",
