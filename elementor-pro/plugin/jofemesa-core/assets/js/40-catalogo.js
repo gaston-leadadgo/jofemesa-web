@@ -158,7 +158,7 @@
     var rejilla = document.querySelector(".jm-catalogo-rejilla") || document;
     var elementos = {};
     var contenedor = null;
-    rejilla.querySelectorAll(".e-loop-item").forEach(function (el) {
+    function registrarTarjeta(el) {
       var m = null;
       var c = el.className.match(/(?:^|\s)jm-maq-(\S+)/);
       if (c) m = porSlug[c[1]];
@@ -169,7 +169,26 @@
       if (!m) return;
       elementos[m.s] = el;
       contenedor = contenedor || el.parentNode;
-    });
+    }
+    rejilla.querySelectorAll(".e-loop-item").forEach(registrarTarjeta);
+
+    /* Las tarjetas a partir de la 25 llegan dentro de un <template> (lo pone
+       el plugin al servir la página, 77-cache-catalogo.php) para que el
+       navegador no monte 200 tarjetas que nadie ve. Se sacan la primera vez
+       que un filtro, el orden o «Ver más» necesitan alguna. */
+    var reserva = rejilla.querySelector("template.jm-reserva");
+    function sacarReserva() {
+      if (!reserva) return;
+      var nuevas = Array.prototype.slice.call(reserva.content.querySelectorAll(".e-loop-item"));
+      var destino = contenedor || reserva.parentNode;
+      destino.insertBefore(reserva.content, reserva);
+      reserva.parentNode.removeChild(reserva);
+      reserva = null;
+      nuevas.forEach(function (el) {
+        registrarTarjeta(el);
+        if (JM.hidratar) JM.hidratar(el);
+      });
+    }
 
     var barra = document.querySelector('[data-jm-cat="barra"]');
     var pie = document.querySelector('[data-jm-cat="pie"]');
@@ -284,6 +303,7 @@
       var cuentas = contarFacetas(base, f, D.marcas);
 
       /* Tarjetas: orden y tandas. */
+      if (reserva && res.slice(0, visibles).some(function (m) { return !elementos[m.s]; })) sacarReserva();
       if (contenedor) {
         var dentro = {};
         var frag = document.createDocumentFragment();

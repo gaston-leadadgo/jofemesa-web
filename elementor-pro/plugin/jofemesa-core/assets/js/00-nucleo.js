@@ -67,6 +67,16 @@
     try { return JSON.parse(el.textContent); } catch (e) { return null; }
   }
 
+  /** Contenido que entra después de cargar (p. ej. las tarjetas que el
+      catálogo saca de su <template>): se ve ya, sin animación de entrada,
+      y los módulos registrados con enCada se inician en él. */
+  function hidratar(nodo) {
+    if (!nodo || !nodo.querySelectorAll) return;
+    if (nodo.matches && nodo.matches("[data-revelar], .jm-filete")) nodo.setAttribute("data-visible", "");
+    nodo.querySelectorAll("[data-revelar], .jm-filete").forEach(function (el) { el.setAttribute("data-visible", ""); });
+    registros.forEach(function (r) { barrer(nodo, r[0], r[1]); });
+  }
+
   /** Avisa a otros módulos (comparador, filtros…). */
   function emitir(nombre, detalle) {
     document.dispatchEvent(new CustomEvent("jm:" + nombre, { detail: detalle }));
@@ -80,6 +90,7 @@
     reducido: reducido,
     enEditor: enEditor,
     enCada: enCada,
+    hidratar: hidratar,
     guardar: guardar,
     leer: leer,
     hoy: hoy,

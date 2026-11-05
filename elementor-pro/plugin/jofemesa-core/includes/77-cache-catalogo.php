@@ -101,6 +101,10 @@ function jm_optimizar_html(string $html): string
        desplazamiento continuo dejaba los logos sin cargar. */
     $html = preg_replace('#<img class="swiper-slide-image"(?![^>]*\bloading=)#', '<img loading="lazy" decoding="async" class="swiper-slide-image"', $html);
 
+    if (str_contains($html, 'jm-catalogo-rejilla')) {
+        $html = jm_catalogo_reserva($html);
+    }
+
     $patron = '#<svg aria-hidden="true" class="(e-font-icon-svg [^"]+)" viewBox="([^"]+)" xmlns="http://www\.w3\.org/2000/svg">(.*?)</svg>#s';
     if (!preg_match_all($patron, $html, $m, PREG_SET_ORDER)) {
         return $html;
@@ -127,6 +131,64 @@ function jm_optimizar_html(string $html): string
         $html = preg_replace('#(<body[^>]*>)#', '$1' . $sprite, $html, 1);
     }
     return $html;
+}
+
+/**
+ * Catálogo: de las ~200 tarjetas del Loop Grid, las JM_CATALOGO_VISIBLES
+ * primeras quedan en la página y el resto va dentro de un <template>.
+ *
+ * El JS ya enseñaba 24 y ocultaba las demás, pero el navegador tenía que
+ * montar las 196 igual: 14.400 elementos en /alquiler/ (medido el
+ * 05/11/2026), lo que hundía la nota de PageSpeed en móvil. Lo que hay en
+ * un <template> no se monta, no ocupa estilos ni descarga imágenes; el JS
+ * del catálogo (40-catalogo.js) lo saca en cuanto un filtro, el orden o
+ * «Ver más» lo necesitan.
+ */
+const JM_CATALOGO_VISIBLES = 24;
+
+function jm_catalogo_reserva(string $html): string
+{
+    $marca = strpos($html, 'data-elementor-type="loop-item"');
+    if ($marca === false) {
+        return $html;
+    }
+    $inicio = strrpos(substr($html, 0, $marca), '<div');
+    if ($inicio === false || !preg_match_all('#<div\b|</div\s*>#i', $html, $t, PREG_OFFSET_CAPTURE, $inicio)) {
+        return $html;
+    }
+    $items = [];
+    $prof = 0;
+    $abierto = null;
+    foreach ($t[0] as [$etiqueta, $pos]) {
+        $cierra = $etiqueta[1] === '/';
+        if (!$cierra) {
+            if ($prof === 0) {
+                /* Un hermano que no es tarjeta: fin de la rejilla. */
+                if (!str_starts_with(substr($html, $pos, 200), '<div data-elementor-type="loop-item"')) {
+                    break;
+                }
+                $abierto = $pos;
+            }
+            $prof++;
+            continue;
+        }
+        if ($prof === 0) {
+            break; /* cierre del contenedor de la rejilla */
+        }
+        $prof--;
+        if ($prof === 0 && $abierto !== null) {
+            $items[] = [$abierto, $pos + strlen($etiqueta)];
+            $abierto = null;
+        }
+    }
+    if (count($items) <= JM_CATALOGO_VISIBLES || $prof !== 0) {
+        return $html;
+    }
+    $desde = $items[JM_CATALOGO_VISIBLES][0];
+    $hasta = end($items)[1];
+    return substr($html, 0, $desde)
+        . '<template class="jm-reserva">' . substr($html, $desde, $hasta - $desde) . '</template>'
+        . substr($html, $hasta);
 }
 
 add_action('template_redirect', function () {
