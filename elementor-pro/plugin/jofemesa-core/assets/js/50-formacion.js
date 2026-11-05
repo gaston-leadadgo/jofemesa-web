@@ -136,7 +136,7 @@
       if (quitar) quitar.hidden = !hayFiltro;
 
       if (cuenta) {
-        cuenta.textContent = (todas.length === 1 ? "1 convocatoria" : visibles.length + " convocatorias") +
+        cuenta.textContent = (todas.length === 1 ? "1 convocatoria" : todas.length + " convocatorias") +
           (hayFiltro ? " con estos filtros" : " abiertas");
       }
       if (vacio) vacio.hidden = todas.length > 0;
