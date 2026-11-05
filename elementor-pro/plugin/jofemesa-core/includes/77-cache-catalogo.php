@@ -1,22 +1,30 @@
 <?php
 /**
- * Caché de página del catálogo: /alquiler/ y /alquiler/{familia}/.
+ * Caché de página completa para visitantes anónimos.
  *
- * Los filtros trabajan sobre las tarjetas ya pintadas, así que estas
- * páginas imprimen las ~200 máquinas con el Loop Grid de Elementor. Sin
- * caché eso son unos 11 segundos de servidor en cada visita (medido el
- * 03/11/2026). Aquí la página se genera una vez y se guarda como HTML en
- * uploads/jm-cache/; las visitas siguientes la sirven tal cual.
+ * El servidor de jofemesa.com tarda de 2 a 15 segundos en generar cada
+ * página con Elementor (medido el 05/11/2026: Inicio 2,4 s, Servicios 5 s,
+ * Formación 12 s, Alquiler 15 s). Aquí cada página se genera una vez, se
+ * guarda como HTML en uploads/jm-cache/ y las visitas siguientes la reciben
+ * tal cual, en milisegundos.
  *
- * Solo para visitantes anónimos y peticiones GET. Los filtros van en la URL
- * pero se aplican en el navegador: el HTML es el mismo para cualquier
- * consulta, así que la clave es solo la ruta.
+ *   · Solo visitantes sin sesión y peticiones GET sin parámetros. Excepción:
+ *     el catálogo (/alquiler/ y familias), cuyos filtros van en la URL pero
+ *     se aplican en el navegador; ahí la clave es solo la ruta.
+ *   · Las páginas con parámetros (?m=… del formulario, ?ref=… de gracias,
+ *     búsquedas, vistas previas) nunca se guardan.
+ *   · Caduca a medianoche: el calendario de Formación quita las fechas
+ *     pasadas cada día.
+ *   · Se vacía al guardar contenido (entradas, términos, Elementor, ajustes,
+ *     menús, importaciones, actualización del plugin) y se vuelve a generar
+ *     sola en segundo plano (precalentado), para que el primer visitante
+ *     tampoco espere.
  *
- * Se vacía sola al guardar o borrar cualquier entrada (máquinas, páginas,
- * plantillas), al cambiar un término, al guardar en Elementor, al importar
- * y al actualizar el plugin. Y caduca a las 24 horas en cualquier caso.
+ * Además, en toda página servida a anónimos los iconos repetidos de
+ * Elementor (SVG en línea) se cambian por referencias a un único símbolo:
+ * en Formación eran 1.300 SVG iguales (630 KB de HTML).
  *
- * Cabecera de control: X-JM-Cache: HIT | MISS.
+ * Cabecera de control: X-JM-Cache: HIT | MISS | NO.
  */
 
 if (!defined('ABSPATH')) {
@@ -29,18 +37,39 @@ function jm_cache_dir(): string
     return trailingslashit($subidas['basedir']) . 'jm-cache/';
 }
 
-function jm_cache_aplica(): bool
+/** ¿Es una petición de visitante a una página pública? */
+function jm_cache_es_publica(): bool
 {
-    if (is_user_logged_in() || is_admin() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST)) {
+    if (is_user_logged_in() || is_admin() || wp_doing_ajax() || wp_doing_cron() || (defined('REST_REQUEST') && REST_REQUEST)) {
         return false;
     }
     if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'GET') {
         return false;
     }
-    if (isset($_GET['preview']) || isset($_GET['elementor-preview']) || isset($_GET['s'])) {
+    if (is_feed() || is_search() || is_preview() || is_404() || is_robots() || is_trackback()) {
         return false;
     }
+    if (isset($_GET['preview']) || isset($_GET['elementor-preview']) || isset($_GET['ver_borrador'])) {
+        return false;
+    }
+    return true;
+}
+
+function jm_cache_es_catalogo(): bool
+{
     return is_page('alquiler') || is_tax('familia');
+}
+
+/** ¿Se puede guardar? Página pública y sin parámetros (salvo el catálogo). */
+function jm_cache_aplica(): bool
+{
+    if (!jm_cache_es_publica()) {
+        return false;
+    }
+    if (!empty($_GET) && !jm_cache_es_catalogo()) {
+        return false;
+    }
+    return is_singular() || is_front_page() || is_tax() || is_post_type_archive();
 }
 
 function jm_cache_archivo(): string
@@ -49,35 +78,96 @@ function jm_cache_archivo(): string
     return jm_cache_dir() . md5(JM_VERSION . '|' . $ruta) . '.html';
 }
 
+/** Válido si es de hoy (hora de Madrid) y tiene menos de 24 h. */
+function jm_cache_vigente(string $archivo): bool
+{
+    if (!is_readable($archivo)) {
+        return false;
+    }
+    $t = (int) filemtime($archivo);
+    return (time() - $t) < DAY_IN_SECONDS && wp_date('Ymd', $t) === wp_date('Ymd');
+}
+
+/**
+ * Iconos de Elementor repetidos → un símbolo y referencias <use>.
+ * Solo los que aparecen más de una vez; el resto se queda igual.
+ */
+function jm_optimizar_html(string $html): string
+{
+    $patron = '#<svg aria-hidden="true" class="(e-font-icon-svg [^"]+)" viewBox="([^"]+)" xmlns="http://www\.w3\.org/2000/svg">(.*?)</svg>#s';
+    if (!preg_match_all($patron, $html, $m, PREG_SET_ORDER)) {
+        return $html;
+    }
+    $cuenta = [];
+    foreach ($m as $s) {
+        $k = md5($s[2] . '|' . $s[3]);
+        $cuenta[$k] = ($cuenta[$k] ?? 0) + 1;
+    }
+    $simbolos = [];
+    $html = preg_replace_callback($patron, function ($s) use ($cuenta, &$simbolos) {
+        $k = md5($s[2] . '|' . $s[3]);
+        if ($cuenta[$k] < 2) {
+            return $s[0];
+        }
+        $id = 'jmi-' . substr($k, 0, 10);
+        if (!isset($simbolos[$id])) {
+            $simbolos[$id] = '<symbol id="' . $id . '" viewBox="' . $s[2] . '">' . $s[3] . '</symbol>';
+        }
+        return '<svg aria-hidden="true" class="' . $s[1] . '" viewBox="' . $s[2] . '"><use href="#' . $id . '"></use></svg>';
+    }, $html);
+    if ($simbolos) {
+        $sprite = '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">' . implode('', $simbolos) . '</svg>';
+        $html = preg_replace('#(<body[^>]*>)#', '$1' . $sprite, $html, 1);
+    }
+    return $html;
+}
+
 add_action('template_redirect', function () {
+    if (!jm_cache_es_publica()) {
+        return;
+    }
     if (!jm_cache_aplica()) {
+        header('X-JM-Cache: NO');
+        ob_start(function (string $html): string {
+            return stripos($html, '</html>') !== false ? jm_optimizar_html($html) : $html;
+        });
         return;
     }
     $archivo = jm_cache_archivo();
-    if (is_readable($archivo) && (time() - (int) filemtime($archivo)) < DAY_IN_SECONDS) {
+    if (jm_cache_vigente($archivo)) {
         header('X-JM-Cache: HIT');
         readfile($archivo);
         exit;
     }
     header('X-JM-Cache: MISS');
     ob_start(function (string $html) use ($archivo): string {
-        if (http_response_code() === 200 && strlen($html) > 1000 && stripos($html, '</html>') !== false) {
+        if (stripos($html, '</html>') === false) {
+            return $html;
+        }
+        $html = jm_optimizar_html($html);
+        if (http_response_code() === 200 && strlen($html) > 1000) {
             wp_mkdir_p(dirname($archivo));
-            @file_put_contents($archivo, $html, LOCK_EX);
+            @file_put_contents($archivo . '.tmp', $html, LOCK_EX);
+            @rename($archivo . '.tmp', $archivo);
         }
         return $html;
     });
 }, 0);
+
+/* ------------------------------------------------------------
+   Vaciado
+   ------------------------------------------------------------ */
 
 function jm_cache_vaciar(): void
 {
     foreach ((array) glob(jm_cache_dir() . '*.html') as $archivo) {
         @unlink($archivo);
     }
+    jm_cache_programar_calentado(30);
 }
 
 /* Un solo vaciado por petición, al final: una importación toca miles de
-   metadatos y no hace falta borrar la carpeta en cada uno. */
+   datos y no hace falta borrar la carpeta en cada uno. */
 function jm_cache_marcar(): void
 {
     static $marcado = false;
@@ -88,16 +178,116 @@ function jm_cache_marcar(): void
 }
 
 add_action('save_post', function ($id) {
-    if (!wp_is_post_revision($id)) {
-        jm_cache_marcar();
+    if (wp_is_post_revision($id) || wp_is_post_autosave($id)) {
+        return;
     }
+    $tipo = get_post_type($id);
+    if (in_array($tipo, ['customize_changeset', 'oembed_cache', 'user_request', 'wp_global_styles'], true)) {
+        return;
+    }
+    jm_cache_marcar();
 });
 add_action('deleted_post', 'jm_cache_marcar');
 add_action('trashed_post', 'jm_cache_marcar');
-add_action('updated_post_meta', 'jm_cache_marcar');
-add_action('added_post_meta', 'jm_cache_marcar');
+add_action('transition_post_status', function ($nuevo, $viejo) {
+    if ($nuevo !== $viejo && $nuevo !== 'auto-draft' && $viejo !== 'new') {
+        jm_cache_marcar();
+    }
+}, 10, 2);
+/* Metadatos: solo los del plugin. Antes vaciaba con CUALQUIER metadato, y
+   WordPress y Elementor escriben metadatos internos al abrir el editor o
+   regenerar CSS: la caché casi nunca llegaba a servirse. */
+$jm_meta_vacia = function ($mid, $objeto, $clave) {
+    if (is_string($clave) && (str_starts_with($clave, 'jm_') || $clave === '_elementor_data' || $clave === '_thumbnail_id')) {
+        jm_cache_marcar();
+    }
+};
+add_action('updated_post_meta', $jm_meta_vacia, 10, 3);
+add_action('added_post_meta', $jm_meta_vacia, 10, 3);
+add_action('deleted_post_meta', $jm_meta_vacia, 10, 3);
 add_action('edited_term', 'jm_cache_marcar');
 add_action('created_term', 'jm_cache_marcar');
+add_action('delete_term', 'jm_cache_marcar');
 add_action('elementor/editor/after_save', 'jm_cache_marcar');
+add_action('elementor/core/files/clear_cache', 'jm_cache_marcar');
+add_action('wp_update_nav_menu', 'jm_cache_marcar');
 add_action('upgrader_process_complete', 'jm_cache_marcar');
+add_action('activated_plugin', 'jm_cache_marcar');
+add_action('deactivated_plugin', 'jm_cache_marcar');
 add_action('update_option_jm_ajustes', 'jm_cache_marcar');
+
+/* ------------------------------------------------------------
+   Precalentado: generar las páginas antes de que llegue nadie
+   ------------------------------------------------------------ */
+
+function jm_cache_programar_calentado(int $segundos): void
+{
+    if (!wp_next_scheduled('jm_cache_calentar', [0])) {
+        wp_schedule_single_event(time() + $segundos, 'jm_cache_calentar', [0]);
+    }
+}
+
+/** Primero las páginas y familias; después las fichas de máquina. */
+function jm_cache_urls(): array
+{
+    $urls = [home_url('/')];
+    foreach (get_posts(['post_type' => 'page', 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids', 'orderby' => 'menu_order']) as $id) {
+        $urls[] = get_permalink($id);
+    }
+    if (taxonomy_exists('familia')) {
+        foreach (get_terms(['taxonomy' => 'familia', 'hide_empty' => true]) as $t) {
+            $enlace = get_term_link($t);
+            if (!is_wp_error($enlace)) {
+                $urls[] = $enlace;
+            }
+        }
+    }
+    foreach (['curso', 'maquina'] as $tipo) {
+        if (post_type_exists($tipo)) {
+            foreach (get_posts(['post_type' => $tipo, 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids', 'orderby' => 'ID', 'order' => 'ASC']) as $id) {
+                $urls[] = get_permalink($id);
+            }
+        }
+    }
+    return array_values(array_unique(array_filter($urls)));
+}
+
+/* Tandas de 15 URL por ejecución, encadenadas, para no pasar del tiempo
+   máximo de PHP del hosting. */
+add_action('jm_cache_calentar', function ($desde = 0) {
+    if (function_exists('set_time_limit')) {
+        @set_time_limit(300);
+    }
+    $urls = jm_cache_urls();
+    $tanda = array_slice($urls, (int) $desde, 15);
+    $limite = time() + 240;
+    $hechas = 0;
+    foreach ($tanda as $url) {
+        if (time() > $limite) {
+            break;
+        }
+        wp_remote_get($url, [
+            'timeout'    => 45,
+            'sslverify'  => false,
+            'user-agent' => 'JOFEMESA-precalentado',
+            'headers'    => ['Cache-Control' => 'no-cache'],
+        ]);
+        $hechas++;
+    }
+    $siguiente = (int) $desde + $hechas;
+    if ($siguiente < count($urls)) {
+        wp_schedule_single_event(time() + 5, 'jm_cache_calentar', [$siguiente]);
+    }
+});
+
+/* Cada noche, pasada la medianoche (hora de Madrid), se regenera todo:
+   la caché del día anterior ya no vale. */
+add_action('init', function () {
+    if (!wp_next_scheduled('jm_cache_calentar_diario')) {
+        $manana = new DateTimeImmutable('tomorrow 00:05', wp_timezone());
+        wp_schedule_event($manana->getTimestamp(), 'daily', 'jm_cache_calentar_diario');
+    }
+});
+add_action('jm_cache_calentar_diario', function () {
+    jm_cache_programar_calentado(1);
+});

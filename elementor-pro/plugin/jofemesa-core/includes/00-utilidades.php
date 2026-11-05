@@ -207,6 +207,22 @@ add_action('wp_enqueue_scripts', function () {
        adaptador (90-) siempre carga después de los componentes. Dependen
        de los de Elementor para cargar detrás de ellos. */
     $previo = wp_style_is('elementor-frontend', 'registered') ? ['elementor-frontend'] : [];
+
+    /* Paquete agrupado y minificado (scripts/agrupar.mjs): 2 peticiones en
+       vez de 21. Los sueltos solo con SCRIPT_DEBUG o si falta el paquete. */
+    $paquete_css = JM_DIR . 'assets/dist/jm.min.css';
+    $paquete_js = JM_DIR . 'assets/dist/jm.min.js';
+    if (!(defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) && is_readable($paquete_css) && is_readable($paquete_js)) {
+        wp_enqueue_style('jm-estilos', JM_URL . 'assets/dist/jm.min.css', $previo, filemtime($paquete_css));
+        $motor = JM_DIR . 'assets/js/asesor-motor.js';
+        if (is_readable($motor)) {
+            wp_register_script('jm-asesor-motor', JM_URL . 'assets/js/asesor-motor.js', [], filemtime($motor), true);
+        }
+        wp_enqueue_script('jm-00-nucleo', JM_URL . 'assets/dist/jm.min.js', [], filemtime($paquete_js), true);
+        jm_localizar_datos();
+        return;
+    }
+
     $css = glob(JM_DIR . 'assets/css/*.css') ?: [];
     sort($css);
     foreach ($css as $archivo) {
@@ -230,6 +246,12 @@ add_action('wp_enqueue_scripts', function () {
         $previo = ['jm-00-nucleo'];
     }
 
+    jm_localizar_datos();
+}, 20);
+
+/** Datos globales para el JS del plugin (handle jm-00-nucleo, suelto o paquete). */
+function jm_localizar_datos(): void
+{
     wp_localize_script('jm-00-nucleo', 'JM_DATOS', [
         'inicio'    => home_url('/'),
         'ajax'      => admin_url('admin-ajax.php'),
@@ -244,7 +266,7 @@ add_action('wp_enqueue_scripts', function () {
             'solicitarCurso' => home_url('/formacion/solicitar/'),
         ],
     ]);
-}, 20);
+}
 
 /* El atributo `data-motor` se pone desde JS; si el JS no llega, la página
    se ve entera. Esto solo evita el parpadeo poniendo la marca antes de
