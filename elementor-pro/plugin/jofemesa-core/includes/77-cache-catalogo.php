@@ -94,6 +94,11 @@ function jm_cache_vigente(string $archivo): bool
  */
 function jm_optimizar_html(string $html): string
 {
+    /* Logos del carrusel de fabricantes (pie, en todas las páginas): carga
+       diferida nativa. El «lazyload» del widget usa el de Swiper y con el
+       desplazamiento continuo dejaba los logos sin cargar. */
+    $html = preg_replace('#<img class="swiper-slide-image"(?![^>]*\bloading=)#', '<img loading="lazy" decoding="async" class="swiper-slide-image"', $html);
+
     $patron = '#<svg aria-hidden="true" class="(e-font-icon-svg [^"]+)" viewBox="([^"]+)" xmlns="http://www\.w3\.org/2000/svg">(.*?)</svg>#s';
     if (!preg_match_all($patron, $html, $m, PREG_SET_ORDER)) {
         return $html;
