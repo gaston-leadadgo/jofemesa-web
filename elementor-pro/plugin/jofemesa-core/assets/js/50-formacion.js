@@ -30,8 +30,14 @@
      --------------------------------------------------------------------- */
   function iniciarCalendario(raiz) {
     var hoy = JM.hoy();
-    var marcas = document.querySelectorAll("[data-jm-conv]");
-    var filas = Array.prototype.map.call(marcas, function (m) {
+    /* A partir de la 17, las filas llegan dentro de un <template> (lo pone el
+       plugin al servir la página, 77-cache-catalogo.php): el móvil no monta
+       265 filas para enseñar 12. Sus datos se leen igual desde la reserva y
+       las filas se sacan cuando un filtro o «Ver más» las necesitan. */
+    var reserva = document.querySelector(".jm-cal-lista template.jm-reserva");
+    var marcas = Array.prototype.slice.call(document.querySelectorAll("[data-jm-conv]"));
+    if (reserva) marcas = marcas.concat(Array.prototype.slice.call(reserva.content.querySelectorAll("[data-jm-conv]")));
+    var filas = marcas.map(function (m) {
       var el = m.closest(".e-loop-item") || m.closest("[data-elementor-type='loop-item']") || m.parentElement;
       el.classList.add("jm-conv-fila");
       if (m.hasAttribute("data-completo")) el.classList.add("jm-conv--completo");
@@ -110,11 +116,22 @@
         (!estado.mes || f.mes === estado.mes);
     }
 
+    function sacarReserva() {
+      if (!reserva) return;
+      var fragmento = reserva.content;
+      var nuevas = filas.filter(function (f) { return f.el.parentNode === fragmento; });
+      reserva.parentNode.insertBefore(fragmento, reserva);
+      reserva.parentNode.removeChild(reserva);
+      reserva = null;
+      nuevas.forEach(function (f) { if (JM.hidratar) JM.hidratar(f.el); });
+    }
+
     function pintar() {
       var firma = estado.curso + "|" + estado.sede + "|" + estado.mes;
       if (firma !== ultimaFirma) { limite = PASO; ultimaFirma = firma; }
       var todas = vigentes.filter(function (f) { return pasa(f, false); });
       var visibles = todas.slice(0, limite);
+      if (reserva && visibles.some(function (f) { return f.el.parentNode === reserva.content; })) sacarReserva();
       var quedan = todas.length - visibles.length;
       mas.hidden = quedan <= 0;
       mas.textContent = "Ver más fechas (" + quedan + (quedan === 1 ? " más)" : " más)");

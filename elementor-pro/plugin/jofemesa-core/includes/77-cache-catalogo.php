@@ -101,8 +101,34 @@ function jm_optimizar_html(string $html): string
        desplazamiento continuo dejaba los logos sin cargar. */
     $html = preg_replace('#<img class="swiper-slide-image"(?![^>]*\bloading=)#', '<img loading="lazy" decoding="async" class="swiper-slide-image"', $html);
 
+    /* Prioridad de descarga: WordPress da fetchpriority="high" a la primera
+       imagen grande, que en esta web es el logo. La que de verdad pinta
+       la pantalla (LCP) es la foto del hero o de la placa de cabecera. */
+    foreach (['jm-hero__foto--alquiler', 'jm-placa__foto'] as $hero) {
+        $p = strpos($html, $hero);
+        $img = $p === false ? false : strpos($html, '<img ', $p);
+        if ($img !== false && $img - $p < 3000) {
+            $html = str_replace(' fetchpriority="high"', '', $html);
+            $img = strpos($html, '<img ', (int) strpos($html, $hero));
+            $html = substr_replace($html, '<img fetchpriority="high" ', $img, 5);
+            break;
+        }
+    }
+    /* La segunda portada del hero (Formación) entra a los segundos: que no
+       compita con la primera. */
+    $p = strpos($html, 'jm-hero__foto--formacion');
+    $img = $p === false ? false : strpos($html, '<img ', $p);
+    if ($img !== false && $img - $p < 3000) {
+        $html = substr_replace($html, '<img fetchpriority="low" ', $img, 5);
+    }
+
     if (str_contains($html, 'jm-catalogo-rejilla')) {
-        $html = jm_catalogo_reserva($html);
+        $html = jm_catalogo_reserva($html, 'jm-catalogo-rejilla', JM_CATALOGO_VISIBLES);
+    }
+    /* Formación: el calendario (Loop Grid .jm-cal-lista) enseña 12 fechas;
+       se dejan 16 montadas y el resto, hasta 265, en reserva. */
+    if (str_contains($html, 'jm-cal-lista')) {
+        $html = jm_catalogo_reserva($html, 'jm-cal-lista', 16);
     }
 
     $patron = '#<svg aria-hidden="true" class="(e-font-icon-svg [^"]+)" viewBox="([^"]+)" xmlns="http://www\.w3\.org/2000/svg">(.*?)</svg>#s';
@@ -146,9 +172,15 @@ function jm_optimizar_html(string $html): string
  */
 const JM_CATALOGO_VISIBLES = 24;
 
-function jm_catalogo_reserva(string $html): string
+function jm_catalogo_reserva(string $html, string $ancla = 'jm-catalogo-rejilla', int $visibles = JM_CATALOGO_VISIBLES): string
 {
-    $marca = strpos($html, 'data-elementor-type="loop-item"');
+    /* La primera tarjeta DESPUÉS del widget ancla: en Formación hay otros
+       Loop Grid (los cursos) antes del calendario. */
+    $desdeAncla = strpos($html, $ancla);
+    if ($desdeAncla === false) {
+        return $html;
+    }
+    $marca = strpos($html, 'data-elementor-type="loop-item"', $desdeAncla);
     if ($marca === false) {
         return $html;
     }
@@ -181,10 +213,10 @@ function jm_catalogo_reserva(string $html): string
             $abierto = null;
         }
     }
-    if (count($items) <= JM_CATALOGO_VISIBLES || $prof !== 0) {
+    if (count($items) <= $visibles || $prof !== 0) {
         return $html;
     }
-    $desde = $items[JM_CATALOGO_VISIBLES][0];
+    $desde = $items[$visibles][0];
     $hasta = end($items)[1];
     return substr($html, 0, $desde)
         . '<template class="jm-reserva">' . substr($html, $desde, $hasta - $desde) . '</template>'
@@ -311,7 +343,10 @@ function jm_cache_urls(): array
             }
         }
     }
-    foreach (['curso', 'maquina'] as $tipo) {
+    /* Las 196 fichas de máquina no: se guardan al primer visitante. Calentarlas
+       todas tenía al servidor ocupado varios minutos en cada vaciado, y este
+       hosting limita los procesos PHP simultáneos (las demás visitas esperaban). */
+    foreach (['curso'] as $tipo) {
         if (post_type_exists($tipo)) {
             foreach (get_posts(['post_type' => $tipo, 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids', 'orderby' => 'ID', 'order' => 'ASC']) as $id) {
                 $urls[] = get_permalink($id);
@@ -342,6 +377,8 @@ add_action('jm_cache_calentar', function ($desde = 0) {
             'headers'    => ['Cache-Control' => 'no-cache'],
         ]);
         $hechas++;
+        /* Respiro entre páginas: deja libre un proceso PHP para las visitas. */
+        usleep(1500000);
     }
     $siguiente = (int) $desde + $hechas;
     if ($siguiente < count($urls)) {
