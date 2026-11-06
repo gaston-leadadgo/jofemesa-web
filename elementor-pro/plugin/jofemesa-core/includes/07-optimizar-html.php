@@ -298,3 +298,71 @@ add_action('admin_init', function () {
         wp_schedule_single_event(time() + 10, 'jm_generar_tamanos');
     }
 });
+
+/* ------------------------------------------------------------
+   5 · JavaScript de Elementor diferido hasta el primer gesto
+   ------------------------------------------------------------ */
+
+/**
+ * PageSpeed móvil de Inicio (06/11/2026, 66 puntos): «Total Blocking Time
+ * 810 ms». Lo que bloquea es evaluar ~600 KB de JS en el móvil emulado:
+ * jQuery, Elementor y Elementor Pro, Swiper y el motor del asesor. Nada de
+ * eso hace falta para PINTAR la página (el HTML ya llega completo desde la
+ * caché): solo para menús, carruseles, formularios y el asesor.
+ *
+ * Esos scripts se sirven con type="jm/diferido" (el navegador no los
+ * descarga ni ejecuta) y un cargador los ejecuta, en su orden original, al
+ * primer gesto del visitante: mover el ratón, tocar, desplazarse o teclear.
+ * El clic que despertó la carga (p. ej. el botón del menú móvil) se repite
+ * cuando Elementor ya está listo.
+ *
+ * Se quedan como están: los datos JSON, las reglas de precarga, el núcleo
+ * del plugin (jm.min.js, que pinta el hero, el revelado, el catálogo y el
+ * calendario sin depender de jQuery) y el script de fondos diferidos de
+ * Elementor. Solo afecta a la página que ve el visitante: en el escritorio
+ * y en el editor no se toca nada.
+ */
+function jm_diferir_js(string $html): string
+{
+    if (!str_contains($html, 'elementor-frontend-js') || str_contains($html, 'jm/diferido')) {
+        return $html;
+    }
+    $n = 0;
+    $html = preg_replace_callback('#<script\b([^>]*)>(.*?)</script>#is', function ($m) use (&$n) {
+        $attrs = $m[1];
+        $cuerpo = $m[2];
+        if (preg_match('#\btype=[\'"]([^\'"]+)[\'"]#i', $attrs, $t) && !in_array(strtolower($t[1]), ['text/javascript', 'application/javascript'], true)) {
+            return $m[0]; /* JSON, ld+json, speculationrules… */
+        }
+        $conservar = str_contains($attrs, 'jofemesa-core/assets/dist/jm.min.js')
+            || str_contains($attrs, 'jofemesa-core/assets/js/00-nucleo.js')
+            || str_contains($attrs, 'id="jm-00-nucleo-js-extra"')
+            || str_contains($cuerpo, 'data-motor')
+            || str_contains($cuerpo, 'lazyloadRunObserver');
+        if ($conservar) {
+            return $m[0];
+        }
+        $n++;
+        $attrs = preg_replace('#\s+type=[\'"][^\'"]*[\'"]#i', '', $attrs);
+        return '<script type="jm/diferido"' . $attrs . '>' . $cuerpo . '</script>';
+    }, $html);
+    if (!$n) {
+        return $html;
+    }
+
+    $cargador = <<<'JS'
+(function(){var G=["keydown","mousedown","mousemove","touchstart","pointerdown","wheel","scroll","focusin"],o={passive:true,capture:true},e=0,C=[];
+function quitar(){G.forEach(function(g){window.removeEventListener(g,ir,o);});}
+function clic(v){if(e===2)return;var t=v.target,a=t&&t.closest?t.closest("a[href]"):null;if(a){var h=a.getAttribute("href")||"";if(h.charAt(0)!=="#"&&h.indexOf("javascript:")!==0)return;}v.preventDefault();v.stopImmediatePropagation();if(C.indexOf(t)<0)C.push(t);}
+function fin(){e=2;document.removeEventListener("click",clic,true);var j=window.jQuery;if(j){j(function(){setTimeout(function(){j(window).trigger("load");},0);});}document.dispatchEvent(new CustomEvent("jm:js-diferido"));setTimeout(function(){C.forEach(function(t){if(t.isConnected)t.click();});C=[];},350);}
+function ir(){if(e)return;e=1;quitar();document.addEventListener("click",clic,true);var L=Array.prototype.slice.call(document.querySelectorAll('script[type="jm/diferido"]'));
+(function sig(){var v=L.shift();if(!v){fin();return;}var s=document.createElement("script");Array.prototype.forEach.call(v.attributes,function(a){if(a.name!=="type")s.setAttribute(a.name,a.value);});
+if(v.src){s.async=false;s.onload=s.onerror=sig;v.parentNode.replaceChild(s,v);}else{s.text=v.text;v.parentNode.replaceChild(s,v);sig();}})();}
+G.forEach(function(g){window.addEventListener(g,ir,o);});
+document.addEventListener("click",function(v){if(!e){ir();clic(v);}},true);
+if(location.hash&&location.hash.length>1)ir();})();
+JS;
+    $fin = strripos($html, '</body>');
+    $script = '<script id="jm-cargador-js">' . $cargador . "</script>\n";
+    return $fin === false ? $html . $script : substr_replace($html, $script, $fin, 0);
+}

@@ -212,8 +212,9 @@
       if (JM.reducido) pintar();
     }
 
+    /* Primera portada sin animación de entrada: su texto ya está pintado
+       (LCP); las siguientes entran animadas al rotar. */
     pintar();
-    portadas[activa].classList.add("jm-hero--entra");
     ponerBarra();
     raiz.setAttribute("data-jm-listo", "");
   }

@@ -238,11 +238,9 @@ body.jm .jm-hero--entra :is(.jm-entra-0, .jm-entra-1, .jm-entra-2, .jm-entra-3, 
   animation: jm-hero-subir 0.8s var(--jm-ease-entrance) both;
   animation-delay: calc(var(--i, 0) * 90ms + 420ms);
 }
-/* Entre la primera pintura y el arranque del JS el texto espera oculto; si el
-   JS no llega, se muestra solo a los 2,5 s. */
-html[data-motor] body.jm .jm-hero:not([data-jm-listo]) :is(.jm-entra-0, .jm-entra-1, .jm-entra-2, .jm-entra-3, .jm-entra-4) {
-  opacity: 0; animation: jm-hero-rescate 0s linear 2.5s forwards;
-}
+/* El texto de la primera portada se pinta ya, sin esperar al JS ni a la
+   animación de entrada: es el elemento más grande de la pantalla (LCP en
+   PageSpeed móvil). La entrada animada queda para las portadas siguientes. */
 
 /* La cuchilla roja que cruza con la cortina (la crea el JS). */
 body.jm .jm-hero__cuchilla {

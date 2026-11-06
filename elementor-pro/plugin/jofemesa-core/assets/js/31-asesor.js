@@ -326,9 +326,13 @@
       JM.enCada('[data-jm="asesor"]', iniciar);
       return;
     }
-    window.addEventListener("load", function () {
+    var ir = function () {
       if (window.JMAsesor) JM.enCada('[data-jm="asesor"]', iniciar);
-    });
+    };
+    window.addEventListener("load", ir);
+    /* Con el JS diferido (07-optimizar-html.php) el motor llega al primer
+       gesto del visitante. */
+    document.addEventListener("jm:js-diferido", ir);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", arrancar);
   else arrancar();
