@@ -86,7 +86,7 @@ function jm_llms_txt(): string
     $l = [];
     $l[] = '# JOFEMESA · Alquiler de maquinaria';
     $l[] = '';
-    $l[] = '> ' . wp_strip_all_tags((string) get_bloginfo('description')) . '. JOFEME S.A., alquiler de maquinaria desde ' . jm_ajuste('fundacion') . ': plataformas elevadoras, manutención de cargas, excavación y movimiento de tierras, energía e iluminación y aire comprimido. Venta de maquinaria y recambios, servicio técnico propio, transporte y formación homologada de operadores.';
+    $l[] = '> ' . wp_strip_all_tags((string) get_bloginfo('description')) . '. JOFEME S.A., alquiler de maquinaria desde ' . substr((string) jm_ajuste('fundacion'), 0, 4) . ': plataformas elevadoras, manutención de cargas, excavación y movimiento de tierras, energía e iluminación y aire comprimido. Venta de maquinaria y recambios, servicio técnico propio, transporte y formación homologada de operadores.';
     $l[] = '';
     $l[] = 'Teléfono: ' . jm_ajuste('telefono') . '. Para pedir disponibilidad o precio usa el formulario de consulta; no hay compra ni pago online.';
     $l[] = '';

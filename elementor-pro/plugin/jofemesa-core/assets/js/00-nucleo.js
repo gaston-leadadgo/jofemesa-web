@@ -143,6 +143,20 @@
     });
   }
 
+  /* Imágenes aplazadas por el plugin (data-jm-src: p. ej. la segunda portada
+     del hero, 07-optimizar-html.php): se cargan cuando la página ya ha
+     terminado, para no competir con la foto principal. */
+  function cargarAplazadas() {
+    document.querySelectorAll("img[data-jm-src]").forEach(function (i) {
+      if (i.dataset.jmSizes) i.sizes = i.dataset.jmSizes;
+      if (i.dataset.jmSrcset) i.srcset = i.dataset.jmSrcset;
+      i.src = i.dataset.jmSrc;
+      i.removeAttribute("data-jm-src");
+    });
+  }
+  if (document.readyState === "complete") setTimeout(cargarAplazadas, 800);
+  else window.addEventListener("load", function () { setTimeout(cargarAplazadas, 800); });
+
   function arrancar() {
     iniciarRevelado();
     if (window.jQuery && window.elementorFrontend && window.elementorFrontend.hooks) {

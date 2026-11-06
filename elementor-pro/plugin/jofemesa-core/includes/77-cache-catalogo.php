@@ -133,6 +133,12 @@ function jm_optimizar_html(string $html): string
         $html = jm_catalogo_reserva($html, 'jm-cal-lista', 16);
     }
 
+    /* 07-optimizar-html.php: tamaños de imagen, hero y hojas agrupadas. */
+    $html = jm_tamanos_imagenes($html);
+    $html = jm_diferir_segunda_portada($html);
+    $html = jm_precargar_hero($html);
+    $html = jm_combinar_css($html);
+
     $patron = '#<svg aria-hidden="true" class="(e-font-icon-svg [^"]+)" viewBox="([^"]+)" xmlns="http://www\.w3\.org/2000/svg">(.*?)</svg>#s';
     if (!preg_match_all($patron, $html, $m, PREG_SET_ORDER)) {
         return $html;

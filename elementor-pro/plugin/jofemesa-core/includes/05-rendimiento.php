@@ -49,10 +49,34 @@ add_filter('wpcf7_load_css', function ($cargar) {
     return $cargar && jm_pagina_usa_cf7();
 });
 
-add_filter('wp_resource_hints', function (array $urls, string $tipo) {
-    if ($tipo === 'preconnect') {
-        $urls[] = ['href' => 'https://fonts.googleapis.com'];
-        $urls[] = ['href' => 'https://fonts.gstatic.com', 'crossorigin' => 'anonymous'];
+/* Las fuentes ya no vienen de Google (00-fuentes.css): fuera las
+   preconexiones y el dns-prefetch a sus dominios. */
+add_filter('wp_resource_hints', function (array $urls) {
+    return array_values(array_filter($urls, function ($u) {
+        $href = is_array($u) ? (string) ($u['href'] ?? '') : (string) $u;
+        return !str_contains($href, 'fonts.googleapis.com') && !str_contains($href, 'fonts.gstatic.com');
+    }));
+}, 99);
+
+/* jQuery: al pie de la página y sin jquery-migrate. En la cabecera
+   bloqueaba el primer pintado (~1,5 s en PageSpeed móvil, 06/11/2026) y
+   todo lo que lo usa (Elementor, el plugin) ya carga en el pie. En el
+   escritorio y en el editor de Elementor no se toca nada. */
+function jm_es_portada_publica(): bool
+{
+    return !is_admin() && !isset($_GET['elementor-preview']) && !(defined('REST_REQUEST') && REST_REQUEST);
+}
+add_action('wp_default_scripts', function ($scripts) {
+    if (!jm_es_portada_publica() || empty($scripts->registered['jquery'])) {
+        return;
     }
-    return $urls;
-}, 10, 2);
+    $scripts->registered['jquery']->deps = array_values(array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']));
+});
+add_action('wp_enqueue_scripts', function () {
+    if (!jm_es_portada_publica()) {
+        return;
+    }
+    foreach (['jquery', 'jquery-core', 'jquery-migrate'] as $h) {
+        wp_scripts()->add_data($h, 'group', 1);
+    }
+}, 999);

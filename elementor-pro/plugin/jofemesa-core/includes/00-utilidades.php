@@ -195,14 +195,16 @@ add_filter('body_class', function ($clases) {
     return $clases;
 });
 
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style(
-        'jm-tipos',
-        'https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap',
-        [],
-        null
-    );
+/* Las fuentes van alojadas en el plugin (assets/fuentes, @font-face en
+   assets/css/00-fuentes.css). Se precargan las dos que pinta la primera
+   pantalla para que el texto no espere a que llegue la hoja de estilos. */
+add_action('wp_head', function () {
+    foreach (['plus-jakarta-sans-latin', 'archivo-latin'] as $f) {
+        echo '<link rel="preload" href="' . esc_url(JM_URL . 'assets/fuentes/' . $f . '.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    }
+}, 2);
 
+add_action('wp_enqueue_scripts', function () {
     /* Todos los CSS de assets/css en orden alfabético, encadenados: así el
        adaptador (90-) siempre carga después de los componentes. Dependen
        de los de Elementor para cargar detrás de ellos. */
