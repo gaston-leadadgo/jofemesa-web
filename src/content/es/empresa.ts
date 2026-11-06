@@ -94,8 +94,10 @@ export interface Delegacion {
   telefono: string | null;
   tel: string | null;
   email: string | null;
-  /** No publican horarios en ninguna página. No se inventan. */
+  /** Horario facilitado por el cliente (06/11/2026); null = «Llámanos y te confirmamos el horario». */
   horario: string | null;
+  /** Enlace «Cómo llegar» facilitado por el cliente; si falta, se deriva de la dirección (urlMaps). */
+  maps?: string;
   /** Servicios verificados: unidades de negocio propias que sí documentan. */
   servicios: string[];
   /**
@@ -121,7 +123,7 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "91 361 31 31",
     tel: "+34913613131",
     email: "jofemesamadrid@jofemesa.com",
-    horario: null,
+    horario: "L–V: de 08:00 a 14:00 y de 15:00 a 18:00 h",
     servicios: [
       "Sede central de alquiler",
       "Parque de elevación y maquinaria de obra",
@@ -141,7 +143,8 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "985 985 212",
     tel: "+34985985212",
     email: "jofemesa@jofemesa.com",
-    horario: null,
+    horario: "L–V: de 08:00 a 13:30 y de 15:30 a 18:00 h",
+    maps: "https://maps.app.goo.gl/U41WUB3bcKuZoJdy5",
     servicios: [
       "Domicilio social y origen de la empresa",
       "Venta y recambios de manutención",
@@ -160,7 +163,8 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "983 525 363",
     tel: "+34983525363",
     email: "valladolid@jofemesa.com",
-    horario: null,
+    horario: "L–V: de 08:00 a 13:00 y de 15:00 a 18:00 h",
+    maps: "https://maps.app.goo.gl/ZcsA2ar8AbGk7Hyt8",
     servicios: ["Plataformas elevadoras", "Carretillas industriales"],
     mapa: { x: 37.4, y: 28.9 },
   },
@@ -175,7 +179,8 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "962 680 581",
     tel: "+34962680581",
     email: "valencia@jofemesa.com",
-    horario: null,
+    horario: "L–V: de 08:00 a 13:30 y de 15:30 a 18:00 h",
+    maps: "https://maps.app.goo.gl/GpWz6vNZuwYvWNM57",
     servicios: [
       "Elevación y maquinaria de obra",
       "Servicio de estiba en puerto",
@@ -193,7 +198,8 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "965 74 21 75",
     tel: "+34965742175",
     email: "alquileresalicante@jofemesa.com",
-    horario: null,
+    horario: "De 08:00 a 13:30 y de 15:30 a 18:00 h",
+    maps: "https://maps.app.goo.gl/6ieWZBfp3iXNTuzp6",
     servicios: ["Elevación para edificación e industria"],
     mapa: { x: 69.6, y: 68.9 },
   },
@@ -208,7 +214,8 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "955 77 63 63",
     tel: "+34955776363",
     email: "jofemesasevilla@jofemesa.com",
-    horario: null,
+    horario: "De 08:00 a 14:00 y de 16:00 a 18:00 h",
+    maps: "https://maps.app.goo.gl/PdPndeHV352qbJF9A",
     servicios: ["Elevación y movimiento de tierras", "Taller y recambios"],
     mapa: { x: 28.7, y: 81.2 },
   },
@@ -223,7 +230,8 @@ export const DELEGACIONES: readonly Delegacion[] = [
     telefono: "951 173 730",
     tel: "+34951173730",
     email: "alquileresamalaga@jofemesa.com",
-    horario: null,
+    horario: "De 08:00 a 14:00 y de 16:00 a 18:00 h",
+    maps: "https://maps.app.goo.gl/j7ycmW32wz1XZZsS7",
     servicios: ["Elevación para infraestructura y edificación"],
     mapa: { x: 39.0, y: 88.8 },
   },
@@ -295,6 +303,8 @@ export const SEDE_FORMACION = {
   telefono: "649 755 883",
   tel: "+34649755883",
   email: "formacion@jofemesa.com",
+  horario: "L–J: de 07:00 a 17:00 · V: de 07:30 a 15:30 h",
+  maps: "https://maps.app.goo.gl/DY3tcEhrzEqbWkkc7",
 } as const;
 
 /**

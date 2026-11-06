@@ -44,7 +44,9 @@
   "localidad": "San Fernando de Henares",
   "telefono": "649 755 883",
   "tel": "+34649755883",
-  "email": "formacion@jofemesa.com"
+  "email": "formacion@jofemesa.com",
+  "horario": "L–J: de 07:00 a 17:00 · V: de 07:30 a 15:30 h",
+  "maps": "https://maps.app.goo.gl/DY3tcEhrzEqbWkkc7"
  },
  "puntosContacto": [
   {
@@ -58,7 +60,7 @@
    "telefono": "91 361 31 31",
    "tel": "+34913613131",
    "email": "jofemesamadrid@jofemesa.com",
-   "horario": null,
+   "horario": "L–V: de 08:00 a 14:00 y de 15:00 a 18:00 h",
    "servicios": [
     "Sede central de alquiler",
     "Parque de elevación y maquinaria de obra",
@@ -81,7 +83,8 @@
    "telefono": "985 985 212",
    "tel": "+34985985212",
    "email": "jofemesa@jofemesa.com",
-   "horario": null,
+   "horario": "L–V: de 08:00 a 13:30 y de 15:30 a 18:00 h",
+   "maps": "https://maps.app.goo.gl/U41WUB3bcKuZoJdy5",
    "servicios": [
     "Domicilio social y origen de la empresa",
     "Venta y recambios de manutención",
@@ -103,7 +106,8 @@
    "telefono": "983 525 363",
    "tel": "+34983525363",
    "email": "valladolid@jofemesa.com",
-   "horario": null,
+   "horario": "L–V: de 08:00 a 13:00 y de 15:00 a 18:00 h",
+   "maps": "https://maps.app.goo.gl/ZcsA2ar8AbGk7Hyt8",
    "servicios": [
     "Plataformas elevadoras",
     "Carretillas industriales"
@@ -124,7 +128,8 @@
    "telefono": "962 680 581",
    "tel": "+34962680581",
    "email": "valencia@jofemesa.com",
-   "horario": null,
+   "horario": "L–V: de 08:00 a 13:30 y de 15:30 a 18:00 h",
+   "maps": "https://maps.app.goo.gl/GpWz6vNZuwYvWNM57",
    "servicios": [
     "Elevación y maquinaria de obra",
     "Servicio de estiba en puerto"
@@ -145,7 +150,8 @@
    "telefono": "965 74 21 75",
    "tel": "+34965742175",
    "email": "alquileresalicante@jofemesa.com",
-   "horario": null,
+   "horario": "De 08:00 a 13:30 y de 15:30 a 18:00 h",
+   "maps": "https://maps.app.goo.gl/6ieWZBfp3iXNTuzp6",
    "servicios": [
     "Elevación para edificación e industria"
    ],
@@ -165,7 +171,8 @@
    "telefono": "955 77 63 63",
    "tel": "+34955776363",
    "email": "jofemesasevilla@jofemesa.com",
-   "horario": null,
+   "horario": "De 08:00 a 14:00 y de 16:00 a 18:00 h",
+   "maps": "https://maps.app.goo.gl/PdPndeHV352qbJF9A",
    "servicios": [
     "Elevación y movimiento de tierras",
     "Taller y recambios"
@@ -186,7 +193,8 @@
    "telefono": "951 173 730",
    "tel": "+34951173730",
    "email": "alquileresamalaga@jofemesa.com",
-   "horario": null,
+   "horario": "De 08:00 a 14:00 y de 16:00 a 18:00 h",
+   "maps": "https://maps.app.goo.gl/j7ycmW32wz1XZZsS7",
    "servicios": [
     "Elevación para infraestructura y edificación"
    ],
@@ -206,7 +214,9 @@
    "localidad": "San Fernando de Henares",
    "telefono": "649 755 883",
    "tel": "+34649755883",
-   "email": "formacion@jofemesa.com"
+   "email": "formacion@jofemesa.com",
+   "horario": "L–J: de 07:00 a 17:00 · V: de 07:30 a 15:30 h",
+   "maps": "https://maps.app.goo.gl/DY3tcEhrzEqbWkkc7"
   },
   {
    "id": "oporto",

@@ -178,3 +178,33 @@ function jm_sc_paginas_delegacion_boton($atts): string
         . esc_html($a['pedir'] . $d['nombre']) . jm_pg_icono('arrow', 16, 2) . '</a>';
 }
 add_shortcode('jm_delegacion_boton', 'jm_sc_paginas_delegacion_boton');
+
+/* ------------------------------------------------------------
+   Corrección del cliente del 06/11/2026: «Cómo llegar» y horarios
+   ------------------------------------------------------------ */
+
+/**
+ * El cliente pasó el enlace de Google Maps y el horario de cada
+ * delegación (datos/empresa.json → puntosContacto). Se aplican una sola
+ * vez al entrar en el escritorio tras actualizar el plugin, sin tener que
+ * reimportar. Después se editan en Delegaciones → (cada una) → «Enlace de
+ * Google Maps» y «Horario», como siempre.
+ */
+add_action('admin_init', function () {
+    if (get_option('jm_delegaciones_20261106') || !current_user_can('edit_posts')) {
+        return;
+    }
+    foreach (jm_datos('empresa.json')['puntosContacto'] ?? [] as $p) {
+        $post = get_page_by_path((string) $p['id'], OBJECT, 'delegacion');
+        if (!$post) {
+            continue;
+        }
+        if (!empty($p['maps'])) {
+            jm_guardar_campo($post->ID, 'jm_maps', $p['maps']);
+        }
+        if (!empty($p['horario'])) {
+            jm_guardar_campo($post->ID, 'jm_horario', $p['horario']);
+        }
+    }
+    update_option('jm_delegaciones_20261106', 1, false);
+});

@@ -509,7 +509,7 @@ function jm_importar_delegaciones(): array
             'jm_cp' => $p['cp'] ?? '', 'jm_provincia' => $p['provincia'] ?? '', 'jm_pais' => $p['pais'] ?? 'España',
             'jm_telefono' => $p['telefono'] ?? '', 'jm_tel' => $p['tel'] ?? '', 'jm_email' => $p['email'] ?? '',
             'jm_maps' => $p['maps'] ?? jm_url_maps($p), 'jm_central' => !empty($p['central']) ? '1' : '0', 'jm_orden' => $i,
-            'jm_servicios' => implode("\n", $p['servicios'] ?? []),
+            'jm_servicios' => implode("\n", $p['servicios'] ?? []), 'jm_horario' => $p['horario'] ?? '',
         ] as $k => $v) {
             jm_guardar_campo($id, $k, $v);
         }

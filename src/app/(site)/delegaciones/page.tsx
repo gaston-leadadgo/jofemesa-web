@@ -41,8 +41,8 @@ export const metadata: Metadata = {
  * en ninguna parte y que la versión anterior de esta web tenía como
  * «contacto pendiente de confirmar».
  *
- * Los horarios siguen en blanco porque no los publican en ningún sitio.
- * La página lo dice en vez de inventarse un «L-V 8:00-18:00».
+ * Horarios y enlaces de «Cómo llegar» facilitados por el cliente el
+ * 06/11/2026; donde falte el horario, la página dice «Llámanos».
  *
  * La sede de Formación va en el bloque de España, como en la lámina del
  * PDF, pero se distingue: su botón no pide una máquina —no alquila—,
@@ -148,7 +148,7 @@ export default function PaginaDelegaciones() {
                           <span className="value text-sm">{d.cp}</span>{" "}
                           {d.localidad}
                           <a
-                            href={urlMaps(d)}
+                            href={("maps" in d && d.maps) || urlMaps(d)}
                             target="_blank"
                             rel="noopener"
                             className="mt-1 flex min-h-8 w-fit items-center gap-1.5 text-sm font-semibold text-accent underline decoration-2 underline-offset-4 hover:text-accent-hover"
