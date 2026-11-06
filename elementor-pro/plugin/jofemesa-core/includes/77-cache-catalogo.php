@@ -101,6 +101,8 @@ function jm_optimizar_html(string $html): string
        desplazamiento continuo dejaba los logos sin cargar. */
     $html = preg_replace('#<img class="swiper-slide-image"(?![^>]*\bloading=)#', '<img loading="lazy" decoding="async" class="swiper-slide-image"', $html);
 
+    $html = jm_accesibilidad_html($html);
+
     /* Prioridad de descarga: WordPress da fetchpriority="high" a la primera
        imagen grande, que en esta web es el logo. La que de verdad pinta
        la pantalla (LCP) es la foto del hero o de la placa de cabecera. */
