@@ -19,6 +19,11 @@ const parametro = (clave) => etiqueta("request-arg", { request_type: "get", para
 
 let n = 0;
 /** Campo del repetidor del formulario. */
+/* Campaña (UTM y gclid): campos ocultos que rellena assets/js/12-utm.js con
+   lo que trajo la URL de entrada del visitante. Para el webhook de Make. */
+const UTM = ["utm_source", "utm_medium", "utm_term", "utm_content", "utm_campaign", "gclid"];
+const camposUtm = () => UTM.map((id) => campo(id, "hidden", id));
+
 function campo(id, tipo, etiquetaTexto = "", o = {}) {
   const f = {
     _id: `f${(++n).toString(16).padStart(6, "0")}`,
@@ -103,6 +108,7 @@ const consultar = () => {
         campo("notas", "textarea", "Algo más que debamos saber", { filas: 4, marcador: "Altura del tajo, acceso, si hace falta operador, horario de entrega…" }),
         campo("consentimiento", "acceptance", "", { obligatorio: true }),
         campo("hp", "honeypot"),
+        ...camposUtm(),
         campo("nota_envio", "html", "", { html: "Sin compromiso y sin pago online. Confirmamos disponibilidad, transporte y condiciones contigo antes de formalizar nada." }),
       ], {
         para: CORREO_SOLICITUDES,
@@ -167,6 +173,7 @@ const solicitar = () => {
         campo("consentimiento", "acceptance", "", { obligatorio: true }),
         campo("referencia", "hidden"),
         campo("hp", "honeypot"),
+        ...camposUtm(),
       ], {
         para: CORREO_FORMACION,
         asunto: 'Nueva solicitud de formación [field id="referencia"]',

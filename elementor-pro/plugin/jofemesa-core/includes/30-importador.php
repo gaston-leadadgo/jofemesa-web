@@ -53,6 +53,7 @@ function jm_pantalla_ajustes(): void
         'facebook'           => ['Facebook', ''],
         'instagram'          => ['Instagram', ''],
         'whatsapp'           => ['WhatsApp Business', 'Número con prefijo (+34…). Si está vacío, la barra móvil sale sin el botón de WhatsApp.'],
+        'gtm'                => ['Google Tag Manager', 'ID del contenedor (GTM-XXXXXXX). Escribe «no» para quitarlo de la web.'],
         'origen_media'       => ['Origen de fotos y fichas', 'Web desde la que el importador descarga los medios.'],
     ];
     if (isset($_POST['jm_ajustes']) && check_admin_referer('jm_ajustes')) {

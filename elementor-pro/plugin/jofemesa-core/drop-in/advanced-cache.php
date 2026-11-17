@@ -34,8 +34,10 @@ if (!defined('ABSPATH')) {
     if (preg_match('#^/(wp-admin|wp-login|wp-json|wp-content|wp-includes|xmlrpc|feed|wp-cron)#', $ruta) || str_ends_with($ruta, '.php') || str_ends_with($ruta, '.xml') || str_ends_with($ruta, '.txt')) {
         return;
     }
-    /* Con parámetros solo el catálogo (sus filtros se aplican en el navegador). */
-    if (str_contains($uri, '?') && !str_starts_with($ruta, '/alquiler/')) {
+    /* Con parámetros solo el catálogo (sus filtros se aplican en el navegador).
+       Los de campaña (utm_*, gclid…) no cuentan: no cambian la página. */
+    $otros = array_diff_key($_GET, array_flip(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id', 'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', '_gl']));
+    if ($otros && !str_starts_with($ruta, '/alquiler/')) {
         return;
     }
     if (isset($_GET['preview']) || isset($_GET['elementor-preview']) || isset($_GET['s']) || isset($_GET['p']) || isset($_GET['page_id'])) {

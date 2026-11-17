@@ -66,7 +66,7 @@ function jm_cache_aplica(): bool
     if (!jm_cache_es_publica()) {
         return false;
     }
-    if (!empty($_GET) && !jm_cache_es_catalogo()) {
+    if (jm_get_sin_campana() && !jm_cache_es_catalogo()) {
         return false;
     }
     return is_singular() || is_front_page() || is_tax() || is_post_type_archive();

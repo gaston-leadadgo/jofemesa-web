@@ -338,7 +338,8 @@ function jm_diferir_js(string $html): string
             || str_contains($attrs, 'jofemesa-core/assets/js/00-nucleo.js')
             || str_contains($attrs, 'id="jm-00-nucleo-js-extra"')
             || str_contains($cuerpo, 'data-motor')
-            || str_contains($cuerpo, 'lazyloadRunObserver');
+            || str_contains($cuerpo, 'lazyloadRunObserver')
+            || str_contains($cuerpo, 'googletagmanager.com/gtm.js');
         if ($conservar) {
             return $m[0];
         }

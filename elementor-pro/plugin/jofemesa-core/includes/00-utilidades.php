@@ -50,6 +50,7 @@ function jm_ajustes_por_defecto(): array
         'telefono_formacion' => $e['sedeFormacion']['telefono'] ?? '',
         'email_formacion'   => $e['sedeFormacion']['email'] ?? '',
         'email_avisos'      => get_option('admin_email'),
+        'gtm'               => 'GTM-MZ78FD3K',
     ];
 }
 
