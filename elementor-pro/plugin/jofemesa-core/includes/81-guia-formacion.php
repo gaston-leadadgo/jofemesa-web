@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 function jm_fo_pantalla_guia(): void
 {
-    if (!current_user_can('edit_posts')) {
+    if (!current_user_can('edit_convocatorias')) {
         return;
     }
     $panel = admin_url('admin.php?page=jm-formacion');

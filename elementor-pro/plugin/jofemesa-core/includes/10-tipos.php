@@ -34,6 +34,9 @@ function jm_registrar_tipos(): void
     };
 
     register_post_type('maquina', [
+        /* Permisos propios del módulo (15-roles.php). */
+        'capability_type' => ['maquina', 'maquinas'],
+        'map_meta_cap'    => true,
         'labels'        => $etiquetas('Máquina', 'Máquinas'),
         'public'        => true,
         'show_in_rest'  => true,
@@ -48,6 +51,9 @@ function jm_registrar_tipos(): void
     ]);
 
     register_post_type('curso', [
+        /* Permisos propios del módulo (15-roles.php). */
+        'capability_type' => ['curso', 'cursos'],
+        'map_meta_cap'    => true,
         'labels'        => $etiquetas('Curso', 'Cursos', false),
         'public'        => true,
         'show_in_rest'  => true,
@@ -68,6 +74,9 @@ function jm_registrar_tipos(): void
        pero sin página propia: se excluyen de la búsqueda y del sitemap y
        su URL redirige al listado (ver jm_redirigir_sin_ficha). */
     register_post_type('convocatoria', [
+        /* Permisos propios del módulo (15-roles.php). */
+        'capability_type' => ['convocatoria', 'convocatorias'],
+        'map_meta_cap'    => true,
         'labels'              => $etiquetas('Convocatoria', 'Convocatorias'),
         'public'              => true,
         'publicly_queryable'  => true,
@@ -83,6 +92,9 @@ function jm_registrar_tipos(): void
     ]);
 
     register_post_type('delegacion', [
+        /* Permisos propios del módulo (15-roles.php). */
+        'capability_type' => ['delegacion', 'delegaciones'],
+        'map_meta_cap'    => true,
         'labels'              => $etiquetas('Delegación', 'Delegaciones'),
         'public'              => true,
         'publicly_queryable'  => true,
@@ -96,6 +108,7 @@ function jm_registrar_tipos(): void
     ]);
 
     register_taxonomy('familia', ['maquina'], [
+        'capabilities'      => jm_capacidades_taxonomia('maquinas'),
         'labels'            => [
             'name'          => 'Familias y subcategorías',
             'singular_name' => 'Familia',
@@ -116,6 +129,7 @@ function jm_registrar_tipos(): void
         'entorno'    => ['Uso', 'Usos'],
     ] as $tax => [$singular, $plural]) {
         register_taxonomy($tax, ['maquina'], [
+            'capabilities'      => jm_capacidades_taxonomia('maquinas'),
             'labels'            => ['name' => $plural, 'singular_name' => $singular],
             'hierarchical'      => false,
             'public'            => false,
@@ -127,6 +141,7 @@ function jm_registrar_tipos(): void
     }
 
     register_taxonomy('sede_formacion', ['convocatoria'], [
+        'capabilities'      => jm_capacidades_taxonomia('convocatorias'),
         'labels'            => [
             'name'          => 'Sedes de formación',
             'singular_name' => 'Sede de formación',

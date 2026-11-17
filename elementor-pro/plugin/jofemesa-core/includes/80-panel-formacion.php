@@ -227,13 +227,13 @@ add_filter('acf/validate_value/name=jm_ocupadas', function ($valido, $valor) {
    ============================================================ */
 
 add_action('admin_menu', function () {
-    add_menu_page('Formación', 'Formación', 'edit_posts', 'jm-formacion', 'jm_fo_pantalla_panel', 'dashicons-welcome-learn-more', 22);
-    add_submenu_page('jm-formacion', 'Panel de Formación', 'Panel', 'edit_posts', 'jm-formacion', 'jm_fo_pantalla_panel');
+    add_menu_page('Formación', 'Formación', 'edit_convocatorias', 'jm-formacion', 'jm_fo_pantalla_panel', 'dashicons-welcome-learn-more', 22);
+    add_submenu_page('jm-formacion', 'Panel de Formación', 'Panel', 'edit_convocatorias', 'jm-formacion', 'jm_fo_pantalla_panel');
 }, 9);
 
 add_action('admin_menu', function () {
-    add_submenu_page('jm-formacion', 'Sedes de formación', 'Sedes', 'manage_categories', 'edit-tags.php?taxonomy=sede_formacion&post_type=convocatoria');
-    add_submenu_page('jm-formacion', 'Guía de uso de Formación', 'Guía de uso', 'edit_posts', 'jm-formacion-guia', 'jm_fo_pantalla_guia');
+    add_submenu_page('jm-formacion', 'Sedes de formación', 'Sedes', 'edit_convocatorias', 'edit-tags.php?taxonomy=sede_formacion&post_type=convocatoria');
+    add_submenu_page('jm-formacion', 'Guía de uso de Formación', 'Guía de uso', 'edit_convocatorias', 'jm-formacion-guia', 'jm_fo_pantalla_guia');
 }, 11);
 
 /* Orden del submenú: lo que más se usa, primero. */
@@ -507,7 +507,7 @@ function jm_fo_fecha_corta(string $iso): string
 
 function jm_fo_pantalla_panel(): void
 {
-    if (!current_user_can('edit_posts')) {
+    if (!current_user_can('edit_convocatorias')) {
         return;
     }
     $d = jm_fo_admin_datos();
@@ -937,7 +937,7 @@ add_action('admin_post_jm_fo_crear', function () {
         wp_safe_redirect(add_query_arg($args, admin_url('admin.php?page=jm-formacion')) . (isset($args['creadas']) ? '#agenda' : '#nueva'));
         exit;
     };
-    if (!current_user_can('publish_posts')) {
+    if (!current_user_can('publish_convocatorias')) {
         $volver(['error' => 'permiso']);
     }
     $curso = isset($_POST['curso']) ? (int) $_POST['curso'] : 0;
@@ -1453,7 +1453,7 @@ add_filter('enter_title_here', function ($texto, $post) {
    ============================================================ */
 
 add_action('wp_dashboard_setup', function () {
-    if (!current_user_can('edit_posts')) {
+    if (!current_user_can('edit_convocatorias')) {
         return;
     }
     wp_add_dashboard_widget('jm_fo_escritorio', 'Formación · próximas convocatorias', function () {

@@ -24,6 +24,19 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## Usuarios y permisos (17/11/2026, plugin 1.4.6)
+
+En WordPress, Usuarios → Añadir nuevo → «Perfil»:
+
+| Perfil | Acceso |
+|---|---|
+| Administrador | Todo. Único que ve delegaciones, páginas de Elementor, plantillas, ajustes y plugins. |
+| Gestor de Formación | Menú Formación (panel, convocatorias, cursos, sedes, guía) y Formación → Solicitudes. Crea, edita y borra. |
+| Gestor de Maquinaria | Máquinas, familias, alimentaciones, fabricantes, usos y Máquinas → Solicitudes. Crea, edita y borra. |
+
+Cada tipo tiene permisos propios (`capability_type` en `10-tipos.php`); los perfiles se crean en `15-roles.php`.
+Las solicitudes salen de la tabla de envíos de Elementor (`82-solicitudes.php`), filtradas por formulario: Elementor solo deja ver sus envíos al administrador.
+
 ## Cambios del 05/11/2026 (plugin 1.3.6)
 
 - Fuera la nota «No publicamos horarios…» de la portada (cobertura) y de Contacto: los horarios
