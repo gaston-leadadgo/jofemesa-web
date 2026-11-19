@@ -24,6 +24,12 @@ el plugin `jofemesa-core` (tipos de contenido, campos ACF, importador, estilos, 
 un plano por plantilla o página en `estructura/` y la guía paso a paso en
 `elementor-pro/GUIA-MONTAJE.md`. Empieza por ahí.
 
+## A quién llegan las solicitudes (18/11/2026, plugin 1.4.8)
+
+- Alquiler: al correo de la delegación elegida; si no eligen, a la que atiende la provincia de la obra (campo «Provincias que atiende» de cada delegación, que el formulario marca solo). Reserva: jofemesamadrid@jofemesa.com.
+- Formación: al correo de la sede de la convocatoria (Formación → Sedes); sin convocatoria, al «Correo de Formación» de Ajustes. Reserva: formacion@jofemesa.com.
+- Lógica en `includes/51-destinos.php` (filtro `elementor_pro/forms/wp_mail_fields`).
+
 ## Usuarios y permisos (17/11/2026, plugin 1.4.6)
 
 En WordPress, Usuarios → Añadir nuevo → «Perfil»:

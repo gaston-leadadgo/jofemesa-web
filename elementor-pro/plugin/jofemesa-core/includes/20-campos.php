@@ -129,6 +129,7 @@ function jm_grupos_de_campos(): array
                 jm_campo('jm_maps', 'Enlace de Google Maps', 'url'),
                 jm_campo('jm_central', 'Es la central', 'true_false', ['ui' => 1]),
                 jm_campo('jm_servicios', 'Servicios', 'textarea', ['rows' => 3, 'instructions' => 'Uno por línea.']),
+                jm_campo('jm_provincias', 'Provincias que atiende', 'textarea', ['rows' => 4, 'instructions' => 'Una por línea, escritas como en el formulario (p. ej. «A Coruña», «Baleares»). Si en una solicitud de alquiler no eligen delegación, va a la que atiende la provincia de la obra, y a su correo llega el aviso.']),
                 jm_campo('jm_horario', 'Horario', 'text', ['instructions' => 'Vacío = «Llámanos y te lo confirmamos». No publiques un horario que no se pueda garantizar.']),
                 jm_campo('jm_orden', 'Orden', 'number'),
             ],

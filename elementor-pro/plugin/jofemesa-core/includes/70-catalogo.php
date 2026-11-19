@@ -1130,7 +1130,8 @@ function jm_sc_maquinas_solicitud(): string
         }
     }
     $contexto = jm_cat_get('contexto');
-    $html = '<div class="jm-solicitud-maquinas" data-jm="solicitud" data-delegaciones="' . esc_attr(wp_json_encode(jm_cat_delegaciones(), JSON_UNESCAPED_UNICODE)) . '">'
+    $html = '<div class="jm-solicitud-maquinas" data-jm="solicitud" data-delegaciones="' . esc_attr(wp_json_encode(jm_cat_delegaciones(), JSON_UNESCAPED_UNICODE)) . '"'
+        . ' data-provincias="' . esc_attr(wp_json_encode(array_map(static fn ($d) => $d['nombre'], jm_destinos_provincias()), JSON_UNESCAPED_UNICODE)) . '">'
         . '<ul class="jm-solicitud-maquinas__lista" data-jm-lista' . ($items ? '' : ' hidden') . '>' . $items . '</ul>'
         . '<div class="jm-solicitud-maquinas__vacio" data-jm-vacio' . ($items ? ' hidden' : '') . '><p>No has seleccionado ninguna máquina todavía. Puedes enviar la solicitud igualmente y te asesoramos, o <a href="' . esc_url(home_url('/alquiler/')) . '">elegir en el catálogo</a>.</p></div>';
     if ($contexto !== '') {

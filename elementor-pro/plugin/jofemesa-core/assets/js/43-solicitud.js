@@ -142,6 +142,25 @@
       });
     }
 
+    /* Provincia de la obra → delegación que la atiende (campo «Provincias que
+       atiende» de cada delegación). Solo mientras el visitante no haya
+       elegido delegación a mano. */
+    var provincia = campo(form, "provincia");
+    if (provincia && sel && sel.tagName === "SELECT") {
+      var porProvincia = {};
+      try { porProvincia = JSON.parse(raiz.getAttribute("data-provincias") || "{}"); } catch (e) { porProvincia = {}; }
+      var automatica = !sel.value;
+      sel.addEventListener("change", function (e) { if (e.isTrusted) automatica = !sel.value; });
+      provincia.addEventListener("change", function () {
+        if (!automatica) return;
+        var destino = JM.normaliza(porProvincia[provincia.value] || "");
+        sel.value = "";
+        Array.prototype.forEach.call(sel.options, function (o) {
+          if (destino && JM.normaliza(o.value) === destino) sel.value = o.value;
+        });
+      });
+    }
+
     /* El CIF se comprueba pero NO bloquea. */
     var cif = campo(form, "cif");
     if (cif) {
